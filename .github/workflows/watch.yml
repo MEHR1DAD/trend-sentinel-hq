@@ -1,0 +1,43 @@
+name: Sentinel Watch
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' # Every 5 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sentinel-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Sentinel Scan
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python backend/sentinel_eye.py
+
+      - name: Persist State
+        run: |
+          git config --global user.name "Sentinel Eye"
+          git config --global user.email "eye@sentinel.bot"
+          git add backend/sentinel_state.json
+          # Only commit if changed
+          git diff --staged --quiet || (git commit -m "👁️ State Update [skip ci]" && git pull --rebase origin main && git push)

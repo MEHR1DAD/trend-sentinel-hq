@@ -1,0 +1,35 @@
+name: Train Sentinel Brain
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Daily at Midnight
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Fetch & Learn
+        run: python backend/fetch_brain.py
+
+      - name: Save Knowledge
+        run: |
+          git config --global user.name "Sentinel Brain"
+          git config --global user.email "brain@sentinel.bot"
+          git add backend/trend_baselines.json
+          git commit -m "🧠 Brain Update: New Baselines" || echo "No changes"
+          git push
