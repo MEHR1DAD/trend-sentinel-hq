@@ -102,51 +102,63 @@ class Sentinel:
         
         return messages
 
+    def is_old_news(self, text):
+        """Check for old dates to avoid false positives."""
+        if re.search(r'(۱۳۹\d|۱۴۰[۰-۳])', text): return True
+        months_fa = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"]
+        current_month_idx = 10 # Bahman
+        for i, month in enumerate(months_fa):
+            if month in text and i < current_month_idx: return True
+        return False
+
     def detect_anomalies(self, messages):
         alerts = []
         now = time.time()
         
-        # Flatten alerts config
-        watch_patterns = []
-        conf = self.config.get('patterns', {})
-        if isinstance(conf, dict):
-            for k, v in conf.items():
-                watch_patterns.extend(v)
-        else:
-            watch_patterns = conf
-            
-        # Count occurrences in THIS BATCH
+        config_patterns = self.config.get('patterns', {})
+        incidents = config_patterns.get('incidents', [])
+        locations = config_patterns.get('locations', [])
+        status = config_patterns.get('status', [])
+        
+        # Track counts for this batch
         counts = {}
         
         for msg in messages:
             text = msg['text']
-            # Dedup check (simple)
             if text in self.seen_messages: continue
             self.seen_messages.add(text)
             
-            for pat in watch_patterns:
-                if pat in text:
-                    counts[pat] = counts.get(pat, 0) + 1
-                    
+            if self.is_old_news(text): continue
+            
+            # Find matches
+            found_incidents = [i for i in incidents if i in text]
+            found_locations = [l for l in locations if l in text]
+            found_status = [s for s in status if s in text]
+            
+            # 1. Composite Patterns (Incident + Location)
+            for loc in found_locations:
+                for inc in found_incidents:
+                    composite = f"{inc} در {loc}"
+                    counts[composite] = counts.get(composite, 0) + 1
+            
+            # 2. Status Patterns (Always valid)
+            for s in found_status:
+                counts[s] = counts.get(s, 0) + 1
+                
         # Analyze Spikes
         for pat, count in counts.items():
-            # 1. Check Baseline
-            normal_rate_hourly = self.baselines.get(pat, 0.1) # Default 0.1/hr
+            # Strict Threshold: Minimum 4 hits in 3 minutes
+            if count < 4: continue
             
-            # We are checking only the last few minutes, but let's assume
-            # if we see > 2 occurrences in a 3-minute scrape, that's HIGH.
-            # Normal rate 1/hr = 0.05/3min. 
-            # 2 occurrences >>> 0.05.
+            # Check Baseline
+            normal_rate = self.baselines.get(pat, 0.1)
             
-            # Simple Heuristic:
-            # If (Count >= 2) AND (Count > Normal_Rate_Hourly * 2): ALERT
-            # Meaning: It's happening 2x faster than the HOURLY rate, right now.
-            
-            if count >= 2 and count > (normal_rate_hourly * 2):
+            # Sensitivity: Must be > 10x normal rate (Flash Spike)
+            if count > (normal_rate * 10):
                 alerts.append({
                     'pattern': pat,
                     'count': count,
-                    'baseline': normal_rate_hourly
+                    'baseline': normal_rate
                 })
                 
         return alerts
@@ -159,8 +171,15 @@ class Sentinel:
             
             # Find example links
             links = []
+            
+            # Check if composite
+            keywords = [pat]
+            if " در " in pat:
+                keywords = pat.split(" در ")
+            
             for m in messages:
-                if pat in m['text']:
+                # Match ALL keywords
+                if all(k in m['text'] for k in keywords):
                     links.append(f"- [{m['node']}]({m['link']})")
                     if len(links) >= 3: break
                     
