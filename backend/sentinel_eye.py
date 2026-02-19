@@ -17,12 +17,27 @@ class Sentinel:
     def __init__(self):
         self.config = self.load_json(CONFIG_FILE)
         self.state = self.load_json(STATE_FILE)
-        self.baselines = self.load_json(BASELINE_FILE).get('baselines', {})
-        self.session = requests.Session()
-        # Mimic a browser to avoid instant block
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         })
+        
+        # Load Baseline (Try Remote Master First -> Local Fallback)
+        self.baselines = self.fetch_remote_baselines()
+
+    def fetch_remote_baselines(self):
+        remote_url = "https://mehr1dad.github.io/python-utils-collection/data/trend_history.json"
+        try:
+            print(f"📥 Fetching Master Baselines from {remote_url}...")
+            resp = self.session.get(remote_url, timeout=10)
+            if resp.status_code == 200:
+                data = resp.json()
+                print(f"✅ Loaded {len(data.get('baselines', {}))} baseline records.")
+                return data.get('baselines', {})
+        except Exception as e:
+            print(f"⚠️ Failed to fetch remote baselines: {e}")
+            
+        print("⚠️ Using local baseline fallback.")
+        return self.load_json(BASELINE_FILE).get('baselines', {})
         
         # In-memory deduplication for this run
         self.seen_messages = set()
