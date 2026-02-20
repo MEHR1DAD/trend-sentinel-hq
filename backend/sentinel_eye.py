@@ -17,6 +17,7 @@ class Sentinel:
     def __init__(self):
         self.config = self.load_json(CONFIG_FILE)
         self.state = self.load_json(STATE_FILE)
+        self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         })
