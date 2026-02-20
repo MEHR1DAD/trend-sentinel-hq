@@ -21,6 +21,7 @@ class Sentinel:
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         })
+        self.seen_messages = set()
         
         # Load Baseline (Try Remote Master First -> Local Fallback)
         self.baselines = self.fetch_remote_baselines()
@@ -39,9 +40,6 @@ class Sentinel:
             
         print("⚠️ Using local baseline fallback.")
         return self.load_json(BASELINE_FILE).get('baselines', {})
-        
-        # In-memory deduplication for this run
-        self.seen_messages = set()
 
     def load_json(self, path):
         if os.path.exists(path):
