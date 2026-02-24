@@ -125,6 +125,20 @@ class Sentinel:
             if month in text and i < current_month_idx: return True
         return False
 
+    def match_pattern(self, text, pattern):
+        """
+        Check if pattern exists in text as a whole word (regex boundary).
+        Handles Persian/Arabic word boundaries correctly.
+        """
+        try:
+            esc_pattern = re.escape(pattern)
+            if re.search(r'\b' + esc_pattern + r'\b', text):
+                return True
+        except:
+            if pattern in text:
+                return True
+        return False
+
     def detect_anomalies(self, messages):
         alerts = []
         now = time.time()
@@ -144,10 +158,10 @@ class Sentinel:
             
             if self.is_old_news(text): continue
             
-            # Find matches
-            found_incidents = [i for i in incidents if i in text]
-            found_locations = [l for l in locations if l in text]
-            found_status = [s for s in status if s in text]
+            # Find matches using strictly regex word boundaries
+            found_incidents = [i for i in incidents if self.match_pattern(text, i)]
+            found_locations = [l for l in locations if self.match_pattern(text, l)]
+            found_status = [s for s in status if self.match_pattern(text, s)]
             
             # 1. Composite Patterns (Incident + Location)
             for loc in found_locations:
@@ -192,8 +206,8 @@ class Sentinel:
                 keywords = pat.split(" در ")
             
             for m in messages:
-                # Match ALL keywords
-                if all(k in m['text'] for k in keywords):
+                # Match ALL keywords using word boundaries
+                if all(self.match_pattern(m['text'], k) for k in keywords):
                     links.append(f"- [{m['node']}]({m['link']})")
                     if len(links) >= 3: break
                     
