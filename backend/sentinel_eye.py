@@ -139,6 +139,12 @@ class Sentinel:
                 return True
         return False
 
+    def calculate_jaccard(self, text1, text2):
+        set1 = set(text1.split())
+        set2 = set(text2.split())
+        if not set1 or not set2: return 0.0
+        return len(set1.intersection(set2)) / len(set1.union(set2))
+
     def detect_anomalies(self, messages):
         alerts = []
         now = time.time()
@@ -150,10 +156,22 @@ class Sentinel:
         
         # Track counts for this batch
         counts = {}
+        unique_texts = [] # Store deduplicated texts for this batch
         
         for msg in messages:
             text = msg['text']
             if text in self.seen_messages: continue
+            
+            # Fuzzy Deduplication (Syndication Check)
+            is_syndicated = False
+            for utext in unique_texts:
+                if self.calculate_jaccard(text, utext) > 0.75:
+                    is_syndicated = True
+                    break
+                    
+            if is_syndicated: continue
+            
+            unique_texts.append(text)
             self.seen_messages.add(text)
             
             if self.is_old_news(text): continue
