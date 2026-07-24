@@ -3,11 +3,9 @@ import json
 import time
 import asyncio
 import re
-import requests
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from collections import deque
-from datetime import datetime
 
 # --- Config ---
 CONFIG_FILE = 'backend/sentinel_config.json'
@@ -22,7 +20,8 @@ BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
 class LiveSentinel:
-    def __init__(self):
+    def __init__(self, bot_client):
+        self.bot = bot_client
         self.config = self.load_json(CONFIG_FILE)
         self.nodes = self.config.get('nodes', [])
         
@@ -35,6 +34,7 @@ class LiveSentinel:
     def fetch_remote_baselines(self):
         remote_url = "https://mehr1dad.github.io/python-utils-collection/data/trend_history.json"
         try:
+            import requests
             print(f"📥 Fetching Master Baselines from {remote_url}...")
             resp = requests.get(remote_url, timeout=10)
             if resp.status_code == 200:
@@ -84,7 +84,7 @@ class LiveSentinel:
         while self.recent_messages and (now - self.recent_messages[0]['timestamp']) > 180: # 3 minutes
             self.recent_messages.popleft()
 
-    def process_message(self, text, node, msg_id):
+    async def process_message(self, text, node, msg_id):
         self.purge_old_messages()
         
         if not text: return
@@ -110,9 +110,9 @@ class LiveSentinel:
         }
         self.recent_messages.append(msg_obj)
         
-        self.detect_anomalies()
+        await self.detect_anomalies()
 
-    def detect_anomalies(self):
+    async def detect_anomalies(self):
         config_patterns = self.config.get('patterns', {})
         incidents = config_patterns.get('incidents', [])
         locations = config_patterns.get('locations', [])
@@ -155,10 +155,10 @@ class LiveSentinel:
                     continue
                     
                 self.last_alert_time[pat] = now
-                self.send_alert(pat, count, normal_rate, msg_pool[pat][:3])
+                await self.send_alert(pat, count, normal_rate, msg_pool[pat][:3])
 
-    def send_alert(self, pat, count, baseline, links):
-        if not BOT_TOKEN or not CHAT_ID: return
+    async def send_alert(self, pat, count, baseline, links):
+        if not BOT_TOKEN: return
         
         msg_text = (
             f"🚨 **SENTINEL ALERT: {pat}**\n\n"
@@ -168,33 +168,64 @@ class LiveSentinel:
             f"#TrendSentinel"
         )
         
-        try:
-            requests.post(
-                f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-                data={'chat_id': CHAT_ID, 'text': msg_text, 'parse_mode': 'Markdown', 'disable_web_page_preview': True}
-            )
-            print(f"🚨 SENT ALERT for {pat}")
-        except Exception as e:
-            print(f"Failed to send alert: {e}")
+        # Load subscribers dynamically
+        subs_data = self.load_json('backend/subscribers.json')
+        subs = set(subs_data.get('subscribers', []))
+        if CHAT_ID: subs.add(int(CHAT_ID))
+        
+        for sub in subs:
+            try:
+                await self.bot.send_message(sub, msg_text, link_preview=False)
+                print(f"🚨 SENT ALERT for {pat} to {sub}")
+            except Exception as e:
+                print(f"Failed to send alert to {sub}: {e}")
 
 async def main():
-    if not API_ID or not API_HASH or not SESSION_STRING:
+    if not API_ID or not API_HASH or not SESSION_STRING or not BOT_TOKEN:
         print("Error: Missing Telegram API credentials.")
         return
         
     print("👁️ Sentinel Eye (LIVE MODE): Initializing...")
-    sentinel = LiveSentinel()
     
+    bot = TelegramClient(StringSession(), int(API_ID), API_HASH)
     client = TelegramClient(StringSession(SESSION_STRING), int(API_ID), API_HASH)
     
+    sentinel = LiveSentinel(bot)
+    
+    @bot.on(events.NewMessage(pattern='/start'))
+    async def bot_start_handler(event):
+        chat_id = event.chat_id
+        data = sentinel.load_json('backend/subscribers.json')
+        subs = data.get('subscribers', [])
+        
+        if chat_id not in subs:
+            subs.append(chat_id)
+            with open('backend/subscribers.json', 'w', encoding='utf-8') as f:
+                json.dump({'subscribers': subs}, f, indent=2)
+            
+            await event.respond("✅ شما به سیستم هشدار فوری Sentinel اضافه شدید. از این پس هشدارهای اخبار فوری برای شما ارسال خواهد شد.")
+            print(f"➕ New subscriber added: {chat_id}")
+            
+            # Commit to GitHub
+            os.system('git config --global user.email "bot@sentinel.local"')
+            os.system('git config --global user.name "Sentinel Bot"')
+            os.system('git add backend/subscribers.json')
+            os.system('git commit -m "[skip ci] add new subscriber"')
+            os.system('git push')
+        else:
+            await event.respond("شما قبلاً در سیستم هشدار ثبت‌نام کرده‌اید. 🛡️")
+
     @client.on(events.NewMessage(chats=sentinel.nodes))
-    async def handler(event):
+    async def user_handler(event):
         sender = await event.get_chat()
         node_username = getattr(sender, 'username', 'unknown')
         text = event.message.message
         msg_id = event.message.id
-        sentinel.process_message(text, node_username, msg_id)
+        await sentinel.process_message(text, node_username, msg_id)
         
+    await bot.start(bot_token=BOT_TOKEN)
+    print("🤖 Bot listener started.")
+    
     await client.start()
     print("✅ Live listening started on", len(sentinel.nodes), "nodes.")
     
@@ -203,6 +234,8 @@ async def main():
     
     print("⏰ Max runtime reached. Exiting gracefully to allow restart.")
     await client.disconnect()
+    await bot.disconnect()
 
 if __name__ == "__main__":
     asyncio.run(main())
+
