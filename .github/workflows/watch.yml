@@ -1,21 +1,22 @@
-name: Sentinel Watch
+name: Sentinel Watch (Live API)
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # Every 5 minutes
+    - cron: '0 */4 * * *' # Every 4 hours (Guarantees overlap or restart)
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
-  group: sentinel-watch
-  cancel-in-progress: false
+  group: sentinel-live
+  cancel-in-progress: true # If a new cron triggers, kill the old one (prevent overlaps)
 
 jobs:
-  watch:
+  live_watch:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 350 # ~5.8 hours
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,18 +27,20 @@ jobs:
           python-version: '3.10'
 
       - name: Install Dependencies
-        run: pip install requests beautifulsoup4
+        run: pip install telethon requests
 
-      - name: Sentinel Scan
+      - name: Run Live Sentinel
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python backend/sentinel_eye.py
+          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+          TELEGRAM_SESSION_GENERAL: ${{ secrets.TELEGRAM_SESSION_GENERAL }}
+        run: python backend/live_sentinel.py
 
-      - name: Persist State
+      - name: Auto-Restart on Exit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name "Sentinel Eye"
-          git config --global user.email "eye@sentinel.bot"
-          git add backend/sentinel_state.json
-          # Only commit if changed
-          git diff --staged --quiet || (git commit -m "👁️ State Update [skip ci]" && git pull --rebase origin main && git push)
+          echo "Triggering the next run immediately..."
+          gh workflow run watch.yml --ref main || true
