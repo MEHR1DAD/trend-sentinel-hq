@@ -10,7 +10,7 @@ from collections import deque
 # --- Config ---
 CONFIG_FILE = 'backend/sentinel_config.json'
 BASELINE_FILE = 'backend/trend_baselines.json'
-MAX_RUNTIME_SEC = 5 * 3600 + 50 * 60  # 5 hours 50 minutes
+MAX_RUNTIME_SEC = 5 * 3600 + 40 * 60  # 5 hours 40 minutes (safe margin before 350m GitHub timeout)
 
 API_ID = os.environ.get("TELEGRAM_API_ID")
 API_HASH = os.environ.get("TELEGRAM_API_HASH")
