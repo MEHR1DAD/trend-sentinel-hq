@@ -18,7 +18,18 @@
         "entekhab_ir",
         "Alarabiya_far",
         "dw_farsi",
-        "thezoomon"
+        "thezoomon",
+        "iliaen",
+        "mamlekate",
+        "Economic_News_Channel",
+        "farsivoa",
+        "Farsi_Iranwire",
+        "Mr_Economy",
+        "euronewspe",
+        "myITiran",
+        "Eghtesadnews_com",
+        "Indypersian",
+        "persiannbloomberg"
     ],
     "patterns": {
         "incidents": [
