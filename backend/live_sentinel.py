@@ -31,6 +31,12 @@ class LiveSentinel:
         self.recent_messages = deque()
         self.last_alert_time = {} # pat -> timestamp
         
+        # Metrics
+        self.start_time = time.time()
+        self.total_msgs_processed = 0
+        self.last_msg_text = "No messages yet"
+        self.last_msg_time = "N/A"
+        
     def fetch_remote_baselines(self):
         remote_url = "https://mehr1dad.github.io/python-utils-collection/data/trend_history.json"
         try:
@@ -88,6 +94,10 @@ class LiveSentinel:
         self.purge_old_messages()
         
         if not text: return
+        self.total_msgs_processed += 1
+        self.last_msg_text = text[:100] + "..." if len(text) > 100 else text
+        self.last_msg_time = time.strftime("%Y-%m-%d %H:%M:%S")
+        
         text = text.replace('ي', 'ی').replace('ك', 'ک')
         
         if self.is_old_news(text): return
@@ -215,6 +225,24 @@ async def main():
         else:
             await event.respond("شما قبلاً در سیستم هشدار ثبت‌نام کرده‌اید. 🛡️")
 
+    @bot.on(events.NewMessage(pattern='/ping'))
+    async def bot_ping_handler(event):
+        uptime_mins = int((time.time() - sentinel.start_time) / 60)
+        await event.respond(f"✅ ربات بیدار است و در حال رصد اخبار می‌باشد.\\nزمان فعال بودن سرور: {uptime_mins} دقیقه")
+
+    @bot.on(events.NewMessage(pattern='/status'))
+    async def bot_status_handler(event):
+        uptime_mins = int((time.time() - sentinel.start_time) / 60)
+        msg = (
+            f"📊 **گزارش زنده Sentinel**\\n\\n"
+            f"⏱️ **مدت زمان بیداری:** {uptime_mins} دقیقه\\n"
+            f"📡 **منابع فعال:** {len(sentinel.nodes)} کانال\\n"
+            f"📥 **پیام‌های پردازش شده:** {sentinel.total_msgs_processed} پیام\\n"
+            f"آخرین پیام: {sentinel.last_msg_time}\\n"
+            f"متن: {sentinel.last_msg_text}\\n"
+        )
+        await event.respond(msg)
+
     @client.on(events.NewMessage(chats=sentinel.nodes))
     async def user_handler(event):
         sender = await event.get_chat()
@@ -233,6 +261,24 @@ async def main():
     await asyncio.sleep(MAX_RUNTIME_SEC)
     
     print("⏰ Max runtime reached. Exiting gracefully to allow restart.")
+    
+    # Generate and push session report
+    uptime_mins = int((time.time() - sentinel.start_time) / 60)
+    report_content = (
+        f"# Sentinel Session Report\\n\\n"
+        f"- **Uptime:** {uptime_mins} minutes\\n"
+        f"- **Messages Processed:** {sentinel.total_msgs_processed}\\n"
+        f"- **Last Message Text:** {sentinel.last_msg_text}\\n"
+        f"- **Last Message Time:** {sentinel.last_msg_time}\\n"
+    )
+    with open('session_report.md', 'w', encoding='utf-8') as f:
+        f.write(report_content)
+    os.system('git config --global user.email "bot@sentinel.local"')
+    os.system('git config --global user.name "Sentinel Bot"')
+    os.system('git add session_report.md')
+    os.system('git commit -m "[skip ci] save session report"')
+    os.system('git push')
+    
     await client.disconnect()
     await bot.disconnect()
 
