@@ -243,6 +243,14 @@ async def main():
         )
         await event.respond(msg)
 
+    @client.on(events.NewMessage(chats=sentinel.nodes))
+    async def user_handler(event):
+        sender = await event.get_chat()
+        node_username = getattr(sender, 'username', 'unknown')
+        text = event.message.message
+        msg_id = event.message.id
+        await sentinel.process_message(text, node_username, msg_id)
+
     async def active_poller():
         last_ids = {}
         while True:
