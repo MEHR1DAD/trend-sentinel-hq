@@ -228,18 +228,18 @@ async def main():
     @bot.on(events.NewMessage(pattern='/ping'))
     async def bot_ping_handler(event):
         uptime_mins = int((time.time() - sentinel.start_time) / 60)
-        await event.respond(f"✅ ربات بیدار است و در حال رصد اخبار می‌باشد.\\nزمان فعال بودن سرور: {uptime_mins} دقیقه")
+        await event.respond(f"✅ ربات بیدار است و در حال رصد اخبار می‌باشد.\nزمان فعال بودن سرور: {uptime_mins} دقیقه")
 
     @bot.on(events.NewMessage(pattern='/status'))
     async def bot_status_handler(event):
         uptime_mins = int((time.time() - sentinel.start_time) / 60)
         msg = (
-            f"📊 **گزارش زنده Sentinel**\\n\\n"
-            f"⏱️ **مدت زمان بیداری:** {uptime_mins} دقیقه\\n"
-            f"📡 **منابع فعال:** {len(sentinel.nodes)} کانال\\n"
-            f"📥 **پیام‌های پردازش شده:** {sentinel.total_msgs_processed} پیام\\n"
-            f"آخرین پیام: {sentinel.last_msg_time}\\n"
-            f"متن: {sentinel.last_msg_text}\\n"
+            f"📊 **گزارش زنده Sentinel**\n\n"
+            f"⏱️ **مدت زمان بیداری:** {uptime_mins} دقیقه\n"
+            f"📡 **منابع فعال:** {len(sentinel.nodes)} کانال\n"
+            f"📥 **پیام‌های پردازش شده:** {sentinel.total_msgs_processed} پیام\n"
+            f"آخرین پیام: {sentinel.last_msg_time}\n"
+            f"متن: {sentinel.last_msg_text}\n"
         )
         await event.respond(msg)
 
@@ -265,11 +265,11 @@ async def main():
     # Generate and push session report
     uptime_mins = int((time.time() - sentinel.start_time) / 60)
     report_content = (
-        f"# Sentinel Session Report\\n\\n"
-        f"- **Uptime:** {uptime_mins} minutes\\n"
-        f"- **Messages Processed:** {sentinel.total_msgs_processed}\\n"
-        f"- **Last Message Text:** {sentinel.last_msg_text}\\n"
-        f"- **Last Message Time:** {sentinel.last_msg_time}\\n"
+        f"# Sentinel Session Report\n\n"
+        f"- **Uptime:** {uptime_mins} minutes\n"
+        f"- **Messages Processed:** {sentinel.total_msgs_processed}\n"
+        f"- **Last Message Text:** {sentinel.last_msg_text}\n"
+        f"- **Last Message Time:** {sentinel.last_msg_time}\n"
     )
     with open('session_report.md', 'w', encoding='utf-8') as f:
         f.write(report_content)
