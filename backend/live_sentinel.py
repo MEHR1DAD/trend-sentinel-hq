@@ -243,24 +243,35 @@ async def main():
         )
         await event.respond(msg)
 
-    @client.on(events.NewMessage(chats=sentinel.nodes))
-    async def user_handler(event):
-        sender = await event.get_chat()
-        node_username = getattr(sender, 'username', 'unknown')
-        text = event.message.message
-        msg_id = event.message.id
-        await sentinel.process_message(text, node_username, msg_id)
+    async def active_poller():
+        last_ids = {}
+        while True:
+            for node in sentinel.nodes:
+                try:
+                    messages = await client.get_messages(node, limit=1)
+                    if messages:
+                        msg = messages[0]
+                        if node not in last_ids or msg.id > last_ids[node]:
+                            last_ids[node] = msg.id
+                            await sentinel.process_message(msg.message, node, msg.id)
+                except Exception as e:
+                    pass
+                await asyncio.sleep(1.5)
+            await asyncio.sleep(15)
         
     await bot.start(bot_token=BOT_TOKEN)
     print("🤖 Bot listener started.")
     
     await client.start()
-    print("✅ Live listening started on", len(sentinel.nodes), "nodes.")
+    print("✅ Live listening started on", len(sentinel.nodes), "nodes (Active Polling).")
+    
+    poller_task = asyncio.create_task(active_poller())
     
     # Run until time limit
     await asyncio.sleep(MAX_RUNTIME_SEC)
     
     print("⏰ Max runtime reached. Exiting gracefully to allow restart.")
+    poller_task.cancel()
     
     # Generate and push session report
     uptime_mins = int((time.time() - sentinel.start_time) / 60)
