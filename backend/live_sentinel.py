@@ -69,9 +69,11 @@ class LiveSentinel:
         
         # Filter out formal journalistic/recap language and news channel forwards
         news_stopwords = [
-            "vahidheadline", "خبر داد", "اعلام کرد", "گزارش داد", 
+            "vahidheadline", "vahidoonline", "خبر داد", "اعلام کرد", "گزارش داد", 
             "منتشر کرد", "به گزارش", "خبرگزاری", "ایسنا", "فارس", 
-            "تسنیم", "رویترز", "روز گذشته", "صبح امروز"
+            "تسنیم", "رویترز", "روز گذشته", "صبح امروز", "تأکید کرد", "تاکید کرد",
+            "هشدار داد", "افزود", "در پاسخ به", "در گفت‌وگو", "در گفتوگو", "مجری",
+            "بیان کرد", "اشاره کرد"
         ]
         
         text_lower = text.lower()
