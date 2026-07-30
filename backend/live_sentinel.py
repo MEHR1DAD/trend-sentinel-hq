@@ -24,6 +24,7 @@ class LiveSentinel:
         self.bot = bot_client
         self.config = self.load_json(CONFIG_FILE)
         self.nodes = self.config.get('nodes', [])
+        self.incident_severities = self.config.get('patterns', {}).get('incident_severities', {})
         
         self.baselines = self.fetch_remote_baselines()
         
@@ -171,7 +172,14 @@ class LiveSentinel:
                     self.alerted_msg_patterns[msg_key].add(pat)
                     # Immediate VIP Alert!
                     baseline = self.baselines.get(pat, 0.1)
-                    await self.send_alert(pat, "VIP_IMMEDIATE", baseline, [f"- [{node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"])
+                    
+                    is_silent = False
+                    for inc, sev in self.incident_severities.items():
+                        if pat.startswith(inc) and sev == "IMPORTANT":
+                            is_silent = True
+                            break
+                            
+                    await self.send_alert(pat, "VIP_IMMEDIATE", baseline, [f"- [{node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], is_silent=is_silent)
 
         # Fuzzy Deduplication against messages in the last 3 minutes
         is_syndicated = False
@@ -223,28 +231,35 @@ class LiveSentinel:
                     continue
                     
                 self.last_alert_time[pat] = now
-                await self.send_alert(pat, count, normal_rate, msg_pool[pat][:3])
+                
+                is_silent = False
+                for inc, sev in self.incident_severities.items():
+                    if pat.startswith(inc) and sev == "IMPORTANT":
+                        is_silent = True
+                        break
+                        
+                await self.send_alert(pat, count, normal_rate, msg_pool[pat][:3], is_silent=is_silent)
 
-    async def send_alert(self, pat, count, baseline, links):
+    async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False):
         if not BOT_TOKEN: return
         
-        msg_text = (
-            f"🚨 **SENTINEL ALERT: {pat}**\n\n"
+        icon = "🔕" if is_silent else "🚨"
+        alert_text = (
+            f"{icon} **SENTINEL ALERT: {pattern}**\n\n"
             f"🔥 Velocity: {count} hits (last 3m)\n"
-            f"📊 Normal Baseline: {baseline:.2f}/hr\n\n"
-            f"Sources:\n" + "\n".join(links) + "\n\n"
+            f"📊 Normal Baseline: {normal_rate:.2f}/hr\n\n"
+            f"Sources:\n" + "\n".join(context_msgs) + "\n\n"
             f"#TrendSentinel"
         )
         
-        # Load subscribers dynamically
-        subs_data = self.load_json('backend/subscribers.json')
-        subs = set(subs_data.get('subscribers', []))
+        data = self.load_json('backend/subscribers.json')
+        subs = set(data.get('subscribers', []))
         if CHAT_ID: subs.add(int(CHAT_ID))
         
         for sub in subs:
             try:
-                await self.bot.send_message(sub, msg_text, link_preview=False)
-                print(f"🚨 SENT ALERT for {pat} to {sub}")
+                await self.bot.send_message(sub, alert_text, link_preview=False, silent=is_silent)
+                print(f"{icon} SENT ALERT for {pattern} to {sub}")
             except Exception as e:
                 print(f"Failed to send alert to {sub}: {e}")
 
