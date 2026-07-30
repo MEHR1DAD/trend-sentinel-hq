@@ -2,6 +2,8 @@ import json
 import re
 from datetime import datetime, timezone
 
+import asyncio
+
 ECONOMY_STATE_FILE = "backend/economy_state.json"
 SUBSCRIBERS_FILE = "backend/subscribers.json"
 
@@ -11,6 +13,7 @@ class EconomicTracker:
         self.economic_dollar = config.get("economic_dollar", [])
         self.economic_tether = config.get("economic_tether", [])
         self.economic_gold = config.get("economic_gold", [])
+        self.lock = asyncio.Lock()
         
     def load_state(self):
         try:
@@ -60,9 +63,9 @@ class EconomicTracker:
             extracted['gold_gram'] = val
 
         # 4. Gold Ounce (انس طلا)
-        gold_numbers = re.findall(r'\b(?:[234]\d{3}(?:\.\d+)?)\b', text)
-        if gold_numbers and ("انس" in text or "اونس" in text or "ounce" in text.lower()):
-            extracted["gold_ounce"] = float(gold_numbers[0])
+        match_ounce = re.search(r'(?:انس|اونس|ounce|gold).*?([234]\d{3}(?:\.\d+)?)', text.lower())
+        if match_ounce:
+            extracted["gold_ounce"] = float(match_ounce.group(1))
 
         # 5. Dollar & Tether
         numbers = re.findall(r'\b(?:[4-9]\d{4}|1[0-5]\d{4}|[4-9]\d\.\d{2,3}|1[0-5]\d\.\d{2,3})\b', text)
@@ -102,97 +105,98 @@ class EconomicTracker:
         if not prices:
             return
             
-        state = self.load_state()
-        updates_made = False
-        
-        for asset, price in prices.items():
-            last_price = state.get(asset, {}).get("last_alerted_price", 0)
+        async with self.lock:
+            state = self.load_state()
+            updates_made = False
             
-            # Initial setup if 0
-            if last_price == 0:
-                state[asset]["last_alerted_price"] = price
-                state[asset]["timestamp"] = now_utc.isoformat()
-                updates_made = True
-                continue
+            for asset, price in prices.items():
+                last_price = state.get(asset, {}).get("last_alerted_price", 0)
                 
-            diff = price - last_price
-            abs_diff = abs(diff)
-            
-            if abs_diff > 0:
-                is_urgent = False
-                unit = "تومان"
-                
-                # Check thresholds
-                threshold_met = False
-                
-                if asset == "gold_ounce":
-                    if abs_diff >= 10:
-                        threshold_met = True
-                        asset_name = "انس جهانی طلا (Ounce Gold)"
-                        unit = "دلار"
-                elif asset == "gold_melted":
-                    if abs_diff >= 50000:
-                        threshold_met = True
-                        asset_name = "طلای آبشده (مظنه)"
-                elif asset == "gold_coin":
-                    if abs_diff >= 100000:
-                        threshold_met = True
-                        asset_name = "سکه امامی"
-                elif asset == "gold_gram":
-                    if abs_diff >= 1000000:
-                        threshold_met = True
-                        asset_name = "طلای ۱۸ عیار (گرم)"
-                else:
-                    # Dollar & Tether
-                    if abs_diff >= 500:
-                        threshold_met = True
-                        is_urgent = abs_diff >= 10000
-                        asset_name = {
-                            "dollar_fardaei": "دلار فردایی",
-                            "dollar_naghdi": "دلار نقدی",
-                            "tether": "تتر (USDT)"
-                        }.get(asset, asset)
-                
-                if not threshold_met:
+                # Initial setup if 0
+                if last_price == 0:
+                    state[asset]["last_alerted_price"] = price
+                    state[asset]["timestamp"] = now_utc.isoformat()
+                    updates_made = True
                     continue
                     
-                trend = "افزایش" if diff > 0 else "کاهش"
-                icon = "📈" if diff > 0 else "📉"
-                alert_icon = "🚨" if is_urgent else "🔕"
-                
-                # Format price differently if it's float
-                price_formatted = f"{price:,.1f}" if isinstance(price, float) else f"{price:,}"
-                diff_formatted = f"{abs_diff:,.1f}" if isinstance(abs_diff, float) else f"{abs_diff:,}"
-                
-                alert_text = (
-                    f"{alert_icon} **SENTINEL ECONOMY:** {icon} {asset_name}\n\n"
-                    f"جهش قیمت: **{price_formatted}** {unit}\n"
-                    f"تغییر: {diff_formatted} {unit} {trend}\n"
-                    f"منبع: [{node_username}](https://t.me/{node_username})\n\n"
-                    f"#TrendSentinel #Economy"
-                )
-                
-                # Send alert
-                try:
-                    with open(SUBSCRIBERS_FILE, "r") as f:
-                        subs = set(json.load(f).get('subscribers', []))
-                except:
-                    subs = set()
+                diff = price - last_price
+                abs_diff = abs(diff)
+            
+                if abs_diff > 0:
+                    is_urgent = False
+                    unit = "تومان"
                     
-                import os
-                CHAT_ID = os.environ.get('CHAT_ID')
-                if CHAT_ID: subs.add(int(CHAT_ID))
-                
-                for sub in subs:
-                    try:
-                        await self.bot.send_message(sub, alert_text, link_preview=False, silent=not is_urgent)
-                    except Exception as e:
-                        print(f"Economy alert failed for {sub}: {e}")
+                    # Check thresholds
+                    threshold_met = False
+                    
+                    if asset == "gold_ounce":
+                        if abs_diff >= 10:
+                            threshold_met = True
+                            asset_name = "انس جهانی طلا (Ounce Gold)"
+                            unit = "دلار"
+                    elif asset == "gold_melted":
+                        if abs_diff >= 50000:
+                            threshold_met = True
+                            asset_name = "طلای آبشده (مظنه)"
+                    elif asset == "gold_coin":
+                        if abs_diff >= 100000:
+                            threshold_met = True
+                            asset_name = "سکه امامی"
+                    elif asset == "gold_gram":
+                        if abs_diff >= 1000000:
+                            threshold_met = True
+                            asset_name = "طلای ۱۸ عیار (گرم)"
+                    else:
+                        # Dollar & Tether
+                        if abs_diff >= 500:
+                            threshold_met = True
+                            is_urgent = abs_diff >= 10000
+                            asset_name = {
+                                "dollar_fardaei": "دلار فردایی",
+                                "dollar_naghdi": "دلار نقدی",
+                                "tether": "تتر (USDT)"
+                            }.get(asset, asset)
+                    
+                    if not threshold_met:
+                        continue
                         
-                # Update state
-                state[asset]["last_alerted_price"] = price
-                state[asset]["timestamp"] = now_utc.isoformat()
-                updates_made = True
-                
-        if updates_made:
-            self.save_state(state)
+                    trend = "افزایش" if diff > 0 else "کاهش"
+                    icon = "📈" if diff > 0 else "📉"
+                    alert_icon = "🚨" if is_urgent else "🔕"
+                    
+                    # Format price differently if it's float
+                    price_formatted = f"{price:,.1f}" if isinstance(price, float) else f"{price:,}"
+                    diff_formatted = f"{abs_diff:,.1f}" if isinstance(abs_diff, float) else f"{abs_diff:,}"
+                    
+                    alert_text = (
+                        f"{alert_icon} **SENTINEL ECONOMY:** {icon} {asset_name}\n\n"
+                        f"جهش قیمت: **{price_formatted}** {unit}\n"
+                        f"تغییر: {diff_formatted} {unit} {trend}\n"
+                        f"منبع: [{node_username}](https://t.me/{node_username})\n\n"
+                        f"#TrendSentinel #Economy"
+                    )
+                    
+                    # Send alert
+                    try:
+                        with open(SUBSCRIBERS_FILE, "r") as f:
+                            subs = set(json.load(f).get('subscribers', []))
+                    except:
+                        subs = set()
+                        
+                    import os
+                    CHAT_ID = os.environ.get('CHAT_ID')
+                    if CHAT_ID: subs.add(int(CHAT_ID))
+                    
+                    for sub in subs:
+                        try:
+                            await self.bot.send_message(sub, alert_text, link_preview=False, silent=not is_urgent)
+                        except Exception as e:
+                            print(f"Economy alert failed for {sub}: {e}")
+                            
+                    # Update state
+                    state[asset]["last_alerted_price"] = price
+                    state[asset]["timestamp"] = now_utc.isoformat()
+                    updates_made = True
+                    
+            if updates_made:
+                self.save_state(state)
