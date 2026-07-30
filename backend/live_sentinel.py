@@ -67,6 +67,14 @@ class LiveSentinel:
     def is_old_news(self, text):
         if re.search(r'(۱۳۹\d|۱۴۰[۰-۳])', text): return True
         
+        # Strong indicators of live citizen reports that override any news stopwords
+        citizen_indicators = [
+            "پیام دریافتی", "دریافتی:", "پیام‌های دریافتی", "پیامهای دریافتی", 
+            "ارسالی:", "پیام:", "از پیام‌ها:", "از پیامها:"
+        ]
+        if any(ind in text for ind in citizen_indicators):
+            return False
+        
         # Filter out formal journalistic/recap language and news channel forwards
         news_stopwords = [
             "vahidheadline", "vahidoonline", "خبر داد", "اعلام کرد", "گزارش داد", 
