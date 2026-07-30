@@ -68,13 +68,13 @@ class LiveSentinel:
 
     def match_pattern(self, text, pattern):
         try:
+            # Using negative lookbehind/lookahead for Persian letters instead of \b 
+            # to prevent matching substrings inside words
             esc_pattern = re.escape(pattern)
-            if re.search(r'\b' + esc_pattern + r'\b', text):
-                return True
+            regex = r'(?<![آ-یa-zA-Z0-9_])' + esc_pattern + r'(?![آ-یa-zA-Z0-9_])'
+            return bool(re.search(regex, text))
         except:
-            if pattern in text:
-                return True
-        return False
+            return pattern in text
 
     def calculate_jaccard(self, text1, text2):
         set1 = set(text1.split())
