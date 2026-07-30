@@ -30,6 +30,7 @@ class LiveSentinel:
         # Buffer for messages in the last 3 minutes
         self.recent_messages = deque()
         self.last_alert_time = {} # pat -> timestamp
+        self.alerted_msg_patterns = {} # "node_msgid" -> set of patterns
         
         # Metrics
         self.start_time = time.time()
@@ -63,10 +64,6 @@ class LiveSentinel:
 
     def is_old_news(self, text):
         if re.search(r'(۱۳۹\d|۱۴۰[۰-۳])', text): return True
-        months_fa = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"]
-        current_month_idx = 10 # Bahman
-        for i, month in enumerate(months_fa):
-            if month in text and i < current_month_idx: return True
         return False
 
     def match_pattern(self, text, pattern):
@@ -90,7 +87,25 @@ class LiveSentinel:
         while self.recent_messages and (now - self.recent_messages[0]['timestamp']) > 180: # 3 minutes
             self.recent_messages.popleft()
 
-    async def process_message(self, text, node, msg_id):
+    def get_message_patterns(self, text):
+        config_patterns = self.config.get('patterns', {})
+        incidents = config_patterns.get('incidents', [])
+        locations = config_patterns.get('locations', [])
+        status = config_patterns.get('status', [])
+        
+        found_incidents = [i for i in incidents if self.match_pattern(text, i)]
+        found_locations = [l for l in locations if self.match_pattern(text, l)]
+        found_status = [s for s in status if self.match_pattern(text, s)]
+        
+        patterns = []
+        for loc in found_locations:
+            for inc in found_incidents:
+                patterns.append(f"{inc} در {loc}")
+        for s in found_status:
+            patterns.append(s)
+        return patterns
+
+    async def process_message(self, text, node, msg_id, is_edit=False):
         self.purge_old_messages()
         
         if not text: return
@@ -102,6 +117,22 @@ class LiveSentinel:
         
         if self.is_old_news(text): return
         
+        patterns_in_msg = self.get_message_patterns(text)
+        link = f"https://t.me/{node}/{msg_id}"
+        
+        # --- VIP CHANNELS LOGIC ---
+        if node in ['VahidOnline', 'iliaen'] and patterns_in_msg:
+            msg_key = f"{node}_{msg_id}"
+            if msg_key not in self.alerted_msg_patterns:
+                self.alerted_msg_patterns[msg_key] = set()
+                
+            for pat in patterns_in_msg:
+                if pat not in self.alerted_msg_patterns[msg_key]:
+                    self.alerted_msg_patterns[msg_key].add(pat)
+                    # Immediate VIP Alert!
+                    baseline = self.baselines.get(pat, 0.1)
+                    await self.send_alert(pat, "VIP_IMMEDIATE", baseline, [f"- [{node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"])
+
         # Fuzzy Deduplication against messages in the last 3 minutes
         is_syndicated = False
         for rm in self.recent_messages:
@@ -133,21 +164,8 @@ class LiveSentinel:
         
         for msg in self.recent_messages:
             text = msg['text']
+            patterns_in_msg = self.get_message_patterns(text)
             
-            found_incidents = [i for i in incidents if self.match_pattern(text, i)]
-            found_locations = [l for l in locations if self.match_pattern(text, l)]
-            found_status = [s for s in status if self.match_pattern(text, s)]
-            
-            patterns_in_msg = []
-            
-            for loc in found_locations:
-                for inc in found_incidents:
-                    composite = f"{inc} در {loc}"
-                    patterns_in_msg.append(composite)
-            
-            for s in found_status:
-                patterns_in_msg.append(s)
-                
             for pat in patterns_in_msg:
                 counts[pat] = counts.get(pat, 0) + 1
                 if pat not in msg_pool: msg_pool[pat] = []
@@ -250,6 +268,14 @@ async def main():
         text = event.message.message
         msg_id = event.message.id
         await sentinel.process_message(text, node_username, msg_id)
+
+    @client.on(events.MessageEdited(chats=sentinel.nodes))
+    async def edit_handler(event):
+        sender = await event.get_chat()
+        node_username = getattr(sender, 'username', 'unknown')
+        text = event.message.message
+        msg_id = event.message.id
+        await sentinel.process_message(text, node_username, msg_id, is_edit=True)
 
     async def active_poller():
         last_ids = {}
