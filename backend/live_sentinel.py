@@ -162,10 +162,18 @@ class LiveSentinel:
             
         return list(set(patterns))
 
-    async def process_message(self, text, node, msg_id, is_edit=False):
+    async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None):
+        # Ignore messages older than 10 minutes to prevent spam on bot restart (catch-up)
+        # or when old messages are edited.
+        if msg_date:
+            now_utc = datetime.now(timezone.utc)
+            if (now_utc - msg_date).total_seconds() > 600:
+                return
+                
         self.purge_old_messages()
         
         if not text: return
+        
         self.total_msgs_processed += 1
         self.last_msg_text = text[:100] + "..." if len(text) > 100 else text
         self.last_msg_time = time.strftime("%Y-%m-%d %H:%M:%S")
@@ -338,7 +346,8 @@ async def main():
         node_username = getattr(sender, 'username', 'unknown')
         text = event.message.message
         msg_id = event.message.id
-        await sentinel.process_message(text, node_username, msg_id)
+        msg_date = event.message.date
+        await sentinel.process_message(text, node_username, msg_id, msg_date=msg_date)
 
     @client.on(events.MessageEdited(chats=sentinel.nodes))
     async def edit_handler(event):
@@ -346,7 +355,8 @@ async def main():
         node_username = getattr(sender, 'username', 'unknown')
         text = event.message.message
         msg_id = event.message.id
-        await sentinel.process_message(text, node_username, msg_id, is_edit=True)
+        msg_date = event.message.date
+        await sentinel.process_message(text, node_username, msg_id, is_edit=True, msg_date=msg_date)
 
     async def active_poller():
         last_ids = {}
@@ -358,7 +368,7 @@ async def main():
                         msg = messages[0]
                         if node not in last_ids or msg.id > last_ids[node]:
                             last_ids[node] = msg.id
-                            await sentinel.process_message(msg.message, node, msg.id)
+                            await sentinel.process_message(msg.message, node, msg.id, msg_date=msg.date)
                 except Exception as e:
                     pass
                 await asyncio.sleep(1.5)
