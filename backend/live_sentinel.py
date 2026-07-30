@@ -26,7 +26,7 @@ class LiveSentinel:
         self.bot = bot_client
         self.config = self.load_json(CONFIG_FILE)
         self.nodes = self.config.get('nodes', [])
-        self.economic_nodes = self.config.get('economic_dollar', []) + self.config.get('economic_tether', [])
+        self.economic_nodes = self.config.get('economic_dollar', []) + self.config.get('economic_tether', []) + self.config.get('economic_gold', [])
         self.incident_severities = self.config.get('patterns', {}).get('incident_severities', {})
         
         self.baselines = self.fetch_remote_baselines()

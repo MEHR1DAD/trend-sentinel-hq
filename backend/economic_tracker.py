@@ -10,6 +10,7 @@ class EconomicTracker:
         self.bot = bot
         self.economic_dollar = config.get("economic_dollar", [])
         self.economic_tether = config.get("economic_tether", [])
+        self.economic_gold = config.get("economic_gold", [])
         
     def load_state(self):
         try:
@@ -19,7 +20,8 @@ class EconomicTracker:
             return {
                 "dollar_fardaei": {"last_alerted_price": 0, "timestamp": ""},
                 "dollar_naghdi": {"last_alerted_price": 0, "timestamp": ""},
-                "tether": {"last_alerted_price": 0, "timestamp": ""}
+                "tether": {"last_alerted_price": 0, "timestamp": ""},
+                "gold_ounce": {"last_alerted_price": 0, "timestamp": ""}
             }
             
     def save_state(self, state):
@@ -66,6 +68,11 @@ class EconomicTracker:
         if "تتر" in text or "usdt" in text.lower():
             extracted["tether"] = price
             
+        # Look for gold ounce (ranges typically 2000 to 4000)
+        gold_numbers = re.findall(r'\b(?:[234]\d{3}(?:\.\d+)?)\b', text)
+        if gold_numbers and ("انس" in text or "طلا" in text or "ounce" in text.lower() or "gold" in text.lower() or "اونس" in text):
+            extracted["gold_ounce"] = float(gold_numbers[0])
+            
         # Default fallback for dollar channels
         if not extracted and ("دلار" in text or "🇺🇸" in text):
             extracted["dollar_fardaei"] = price # Usually default is fardaei in these channels
@@ -98,22 +105,41 @@ class EconomicTracker:
             diff = price - last_price
             abs_diff = abs(diff)
             
-            if abs_diff >= 500:
-                is_urgent = abs_diff >= 10000
-                trend = "افزایش" if diff > 0 else "کاهش"
-                icon = "📈" if diff > 0 else "📉"
-                alert_icon = "🚨" if is_urgent else "🔕"
+            if abs_diff > 0:
+                is_urgent = False
+                unit = "تومان"
                 
-                asset_name = {
-                    "dollar_fardaei": "دلار فردایی",
-                    "dollar_naghdi": "دلار نقدی",
-                    "tether": "تتر (USDT)"
-                }.get(asset, asset)
+                if asset == "gold_ounce":
+                    if abs_diff >= 10:
+                        trend = "افزایش" if diff > 0 else "کاهش"
+                        icon = "📈" if diff > 0 else "📉"
+                        alert_icon = "🔕"
+                        asset_name = "انس جهانی طلا (Ounce Gold)"
+                        unit = "دلار"
+                    else:
+                        continue
+                else:
+                    if abs_diff >= 500:
+                        is_urgent = abs_diff >= 10000
+                        trend = "افزایش" if diff > 0 else "کاهش"
+                        icon = "📈" if diff > 0 else "📉"
+                        alert_icon = "🚨" if is_urgent else "🔕"
+                        asset_name = {
+                            "dollar_fardaei": "دلار فردایی",
+                            "dollar_naghdi": "دلار نقدی",
+                            "tether": "تتر (USDT)"
+                        }.get(asset, asset)
+                    else:
+                        continue
+                
+                # Format price differently if it's float
+                price_formatted = f"{price:,.1f}" if isinstance(price, float) else f"{price:,}"
+                diff_formatted = f"{abs_diff:,.1f}" if isinstance(abs_diff, float) else f"{abs_diff:,}"
                 
                 alert_text = (
                     f"{alert_icon} **SENTINEL ECONOMY:** {icon} {asset_name}\n\n"
-                    f"جهش قیمت: **{price:,}** تومان\n"
-                    f"تغییر: {abs_diff:,} تومان {trend}\n"
+                    f"جهش قیمت: **{price_formatted}** {unit}\n"
+                    f"تغییر: {diff_formatted} {unit} {trend}\n"
                     f"منبع: [{node_username}](https://t.me/{node_username})\n\n"
                     f"#TrendSentinel #Economy"
                 )

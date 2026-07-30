@@ -10,5 +10,9 @@
     "tether": {
         "last_alerted_price": 0,
         "timestamp": ""
+    },
+    "gold_ounce": {
+        "last_alerted_price": 0,
+        "timestamp": ""
     }
 }

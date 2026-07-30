@@ -44,7 +44,10 @@
         "USDTTetherp",
         "TetherLand",
         "nobitexprices",
-        "arz_talaaa"
+        "arz_talaaa",
+        "ICMOunce",
+        "OUNSGOLD",
+        "ounce_pricee"
     ],
     "patterns": {
         "incidents": [
@@ -2100,5 +2103,10 @@
         "TetherLand",
         "nobitexprices",
         "arz_talaaa"
+    ],
+    "economic_gold": [
+        "ICMOunce",
+        "OUNSGOLD",
+        "ounce_pricee"
     ]
 }
