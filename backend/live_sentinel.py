@@ -65,6 +65,19 @@ class LiveSentinel:
 
     def is_old_news(self, text):
         if re.search(r'(۱۳۹\d|۱۴۰[۰-۳])', text): return True
+        
+        # Filter out formal journalistic/recap language and news channel forwards
+        news_stopwords = [
+            "vahidheadline", "خبر داد", "اعلام کرد", "گزارش داد", 
+            "منتشر کرد", "به گزارش", "خبرگزاری", "ایسنا", "فارس", 
+            "تسنیم", "رویترز", "روز گذشته", "صبح امروز"
+        ]
+        
+        text_lower = text.lower()
+        for word in news_stopwords:
+            if word in text_lower:
+                return True
+                
         return False
 
     def match_pattern(self, text, pattern):
