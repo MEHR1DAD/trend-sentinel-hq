@@ -31,23 +31,7 @@
         "Indypersian",
         "persiannbloomberg",
         "Digiato",
-        "thezoomit",
-        "nerkhzani",
-        "tehran_sabza",
-        "DollarFerdowsi",
-        "gheymatDollarTehran",
-        "Pele_Ahani_Online1",
-        "dollar_tehran3bze",
-        "bonbast_dollar",
-        "irancurrency",
-        "DollarAfshar",
-        "USDTTetherp",
-        "TetherLand",
-        "nobitexprices",
-        "arz_talaaa",
-        "ICMOunce",
-        "OUNSGOLD",
-        "ounce_pricee"
+        "thezoomit"
     ],
     "patterns": {
         "incidents": [
@@ -2086,27 +2070,5 @@
     "settings": {
         "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
         "timeout": 10
-    },
-    "economic_dollar": [
-        "nerkhzani",
-        "tehran_sabza",
-        "DollarFerdowsi",
-        "gheymatDollarTehran",
-        "Pele_Ahani_Online1",
-        "dollar_tehran3bze",
-        "bonbast_dollar",
-        "irancurrency",
-        "DollarAfshar"
-    ],
-    "economic_tether": [
-        "USDTTetherp",
-        "TetherLand",
-        "nobitexprices",
-        "arz_talaaa"
-    ],
-    "economic_gold": [
-        "ICMOunce",
-        "OUNSGOLD",
-        "ounce_pricee"
-    ]
+    }
 }

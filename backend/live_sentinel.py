@@ -5,7 +5,6 @@ import asyncio
 import re
 from datetime import datetime, timezone
 from telethon import TelegramClient, events
-from economic_tracker import EconomicTracker
 from telethon.sessions import StringSession
 from collections import deque
 
@@ -26,11 +25,9 @@ class LiveSentinel:
         self.bot = bot_client
         self.config = self.load_json(CONFIG_FILE)
         self.nodes = self.config.get('nodes', [])
-        self.economic_nodes = self.config.get('economic_dollar', []) + self.config.get('economic_tether', []) + self.config.get('economic_gold', [])
         self.incident_severities = self.config.get('patterns', {}).get('incident_severities', {})
         
         self.baselines = self.fetch_remote_baselines()
-        self.economy = EconomicTracker(self.bot, self.config)
         
         # Buffer for messages in the last 3 minutes
         self.recent_messages = deque()
@@ -352,10 +349,6 @@ async def main():
         msg_id = event.message.id
         msg_date = event.message.date
         
-        if node_username in sentinel.economic_nodes:
-            await sentinel.economy.process_economy_message(text, node_username, msg_date)
-            return
-            
         await sentinel.process_message(text, node_username, msg_id, msg_date=msg_date)
 
     @client.on(events.MessageEdited(chats=sentinel.nodes))
@@ -366,10 +359,6 @@ async def main():
         msg_id = event.message.id
         msg_date = event.message.date
         
-        if node_username in sentinel.economic_nodes:
-            await sentinel.economy.process_economy_message(text, node_username, msg_date)
-            return
-            
         await sentinel.process_message(text, node_username, msg_id, is_edit=True, msg_date=msg_date)
 
     async def active_poller():
