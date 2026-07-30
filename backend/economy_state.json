@@ -1,0 +1,14 @@
+{
+    "dollar_fardaei": {
+        "last_alerted_price": 0,
+        "timestamp": ""
+    },
+    "dollar_naghdi": {
+        "last_alerted_price": 0,
+        "timestamp": ""
+    },
+    "tether": {
+        "last_alerted_price": 0,
+        "timestamp": ""
+    }
+}
