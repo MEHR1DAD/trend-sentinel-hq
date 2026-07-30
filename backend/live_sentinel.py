@@ -69,10 +69,10 @@ class LiveSentinel:
 
     def match_pattern(self, text, pattern):
         try:
-            # Using negative lookbehind/lookahead for Persian letters instead of \b 
-            # to prevent matching substrings inside words
+            # Using negative lookbehind/lookahead for Persian letters and ZWNJ (\u200c)
+            # to prevent matching substrings inside words (like شنبه in پنج‌شنبه)
             esc_pattern = re.escape(pattern)
-            regex = r'(?<![آ-یa-zA-Z0-9_])' + esc_pattern + r'(?![آ-یa-zA-Z0-9_])'
+            regex = r'(?<![آ-یa-zA-Z0-9_\u200c\u200d])' + esc_pattern + r'(?![آ-یa-zA-Z0-9_\u200c\u200d])'
             return bool(re.search(regex, text))
         except:
             return pattern in text
