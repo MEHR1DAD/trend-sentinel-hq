@@ -21,7 +21,10 @@ class EconomicTracker:
                 "dollar_fardaei": {"last_alerted_price": 0, "timestamp": ""},
                 "dollar_naghdi": {"last_alerted_price": 0, "timestamp": ""},
                 "tether": {"last_alerted_price": 0, "timestamp": ""},
-                "gold_ounce": {"last_alerted_price": 0, "timestamp": ""}
+                "gold_ounce": {"last_alerted_price": 0, "timestamp": ""},
+                "gold_melted": {"last_alerted_price": 0, "timestamp": ""},
+                "gold_coin": {"last_alerted_price": 0, "timestamp": ""},
+                "gold_gram": {"last_alerted_price": 0, "timestamp": ""}
             }
             
     def save_state(self, state):
@@ -35,47 +38,57 @@ class EconomicTracker:
         persian_to_en = str.maketrans('۰۱۲۳۴۵۶۷۸۹', '0123456789')
         text = text.translate(persian_to_en)
         
-        # Look for patterns like 60500 or 60.500 or 60.50
-        # Matches numbers like 50000 to 150000 or 50.00 to 150.00
-        numbers = re.findall(r'\b(?:[4-9]\d{4}|1[0-5]\d{4}|[4-9]\d\.\d{2,3}|1[0-5]\d\.\d{2,3})\b', text)
-        
-        if not numbers:
-            return extracted
-            
-        parsed_numbers = []
-        for n in numbers:
-            if '.' in n:
-                num = float(n)
-                if num < 200: # like 60.50
-                    num = int(num * 1000)
-                else: # like 60.500
-                    num = int(n.replace('.', ''))
-                parsed_numbers.append(num)
-            else:
-                parsed_numbers.append(int(n))
-                
-        if not parsed_numbers:
-            return extracted
-            
-        # Get the first plausible price (usually the most relevant in short channel updates)
-        price = parsed_numbers[0]
-        
-        if "فردای" in text or "فردا" in text:
-            extracted["dollar_fardaei"] = price
-        elif "نقد" in text or "تهران" in text or "امروز" in text:
-            extracted["dollar_naghdi"] = price
-            
-        if "تتر" in text or "usdt" in text.lower():
-            extracted["tether"] = price
-            
-        # Look for gold ounce (ranges typically 2000 to 4000)
+        # 1. Melted Gold (مظنه / آبشده)
+        match_melted = re.search(r'(?:مظنه|آبشده).*?(\d{4,8})', text)
+        if match_melted:
+            val = int(match_melted.group(1))
+            if val < 100000: val *= 1000
+            extracted['gold_melted'] = val
+
+        # 2. Coin (سکه / امامی)
+        match_coin = re.search(r'(?:سکه|امامی).*?(\d{4,8})', text)
+        if match_coin:
+            val = int(match_coin.group(1))
+            if val < 100000: val *= 1000
+            extracted['gold_coin'] = val
+
+        # 3. Gram Gold (گرم)
+        match_gram = re.search(r'(?:گرم|۱۸|18).*?(\d{4,8})', text)
+        if match_gram:
+            val = int(match_gram.group(1))
+            if val < 100000: val *= 1000
+            extracted['gold_gram'] = val
+
+        # 4. Gold Ounce (انس طلا)
         gold_numbers = re.findall(r'\b(?:[234]\d{3}(?:\.\d+)?)\b', text)
-        if gold_numbers and ("انس" in text or "طلا" in text or "ounce" in text.lower() or "gold" in text.lower() or "اونس" in text):
+        if gold_numbers and ("انس" in text or "اونس" in text or "ounce" in text.lower()):
             extracted["gold_ounce"] = float(gold_numbers[0])
-            
-        # Default fallback for dollar channels
-        if not extracted and ("دلار" in text or "🇺🇸" in text):
-            extracted["dollar_fardaei"] = price # Usually default is fardaei in these channels
+
+        # 5. Dollar & Tether
+        numbers = re.findall(r'\b(?:[4-9]\d{4}|1[0-5]\d{4}|[4-9]\d\.\d{2,3}|1[0-5]\d\.\d{2,3})\b', text)
+        if numbers:
+            parsed_numbers = []
+            for n in numbers:
+                if '.' in n:
+                    num = float(n)
+                    if num < 200: num = int(num * 1000)
+                    else: num = int(n.replace('.', ''))
+                    parsed_numbers.append(num)
+                else:
+                    parsed_numbers.append(int(n))
+                    
+            if parsed_numbers:
+                price = parsed_numbers[0]
+                if "فردای" in text or "فردا" in text:
+                    extracted["dollar_fardaei"] = price
+                elif "نقد" in text or "تهران" in text or "امروز" in text:
+                    extracted["dollar_naghdi"] = price
+                if "تتر" in text or "usdt" in text.lower():
+                    extracted["tether"] = price
+                
+                # Default fallback for dollar channels
+                if not extracted and ("دلار" in text or "🇺🇸" in text):
+                    extracted["dollar_fardaei"] = price
             
         return extracted
         
@@ -109,28 +122,43 @@ class EconomicTracker:
                 is_urgent = False
                 unit = "تومان"
                 
+                # Check thresholds
+                threshold_met = False
+                
                 if asset == "gold_ounce":
                     if abs_diff >= 10:
-                        trend = "افزایش" if diff > 0 else "کاهش"
-                        icon = "📈" if diff > 0 else "📉"
-                        alert_icon = "🔕"
+                        threshold_met = True
                         asset_name = "انس جهانی طلا (Ounce Gold)"
                         unit = "دلار"
-                    else:
-                        continue
+                elif asset == "gold_melted":
+                    if abs_diff >= 50000:
+                        threshold_met = True
+                        asset_name = "طلای آبشده (مظنه)"
+                elif asset == "gold_coin":
+                    if abs_diff >= 100000:
+                        threshold_met = True
+                        asset_name = "سکه امامی"
+                elif asset == "gold_gram":
+                    if abs_diff >= 1000000:
+                        threshold_met = True
+                        asset_name = "طلای ۱۸ عیار (گرم)"
                 else:
+                    # Dollar & Tether
                     if abs_diff >= 500:
+                        threshold_met = True
                         is_urgent = abs_diff >= 10000
-                        trend = "افزایش" if diff > 0 else "کاهش"
-                        icon = "📈" if diff > 0 else "📉"
-                        alert_icon = "🚨" if is_urgent else "🔕"
                         asset_name = {
                             "dollar_fardaei": "دلار فردایی",
                             "dollar_naghdi": "دلار نقدی",
                             "tether": "تتر (USDT)"
                         }.get(asset, asset)
-                    else:
-                        continue
+                
+                if not threshold_met:
+                    continue
+                    
+                trend = "افزایش" if diff > 0 else "کاهش"
+                icon = "📈" if diff > 0 else "📉"
+                alert_icon = "🚨" if is_urgent else "🔕"
                 
                 # Format price differently if it's float
                 price_formatted = f"{price:,.1f}" if isinstance(price, float) else f"{price:,}"
