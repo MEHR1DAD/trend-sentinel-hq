@@ -93,17 +93,57 @@ class LiveSentinel:
         locations = config_patterns.get('locations', [])
         status = config_patterns.get('status', [])
         
+        incident_mappings = config_patterns.get('incident_mappings', {})
+        generic_locations = config_patterns.get('generic_locations', [])
+        
         found_incidents = [i for i in incidents if self.match_pattern(text, i)]
         found_locations = [l for l in locations if self.match_pattern(text, l)]
         found_status = [s for s in status if self.match_pattern(text, s)]
         
-        patterns = []
-        for loc in found_locations:
-            for inc in found_incidents:
-                patterns.append(f"{inc} در {loc}")
+        # 1. Semantic Resolution for Incidents
+        resolved_incidents = set()
+        for inc in found_incidents:
+            mapped = False
+            for canonical, synonyms in incident_mappings.items():
+                if inc in synonyms or inc == canonical:
+                    resolved_incidents.add(canonical)
+                    mapped = True
+                    break
+            if not mapped:
+                resolved_incidents.add(inc)
+                
+        resolved_status = set()
         for s in found_status:
+            mapped = False
+            for canonical, synonyms in incident_mappings.items():
+                if s in synonyms or s == canonical:
+                    resolved_status.add(canonical)
+                    mapped = True
+                    break
+            if not mapped:
+                resolved_status.add(s)
+
+        # 2. Context-Aware Location Grouping
+        specific_cities = [l for l in found_locations if l not in generic_locations]
+        generic_locs = [l for l in found_locations if l in generic_locations]
+        
+        final_locations = set()
+        if specific_cities:
+            final_locations.update(specific_cities)
+            for gl in generic_locs:
+                for sc in specific_cities:
+                    final_locations.add(f"{gl} {sc}")
+        else:
+            final_locations.update(generic_locs)
+            
+        patterns = []
+        for loc in final_locations:
+            for inc in resolved_incidents:
+                patterns.append(f"{inc} در {loc}")
+        for s in resolved_status:
             patterns.append(s)
-        return patterns
+            
+        return list(set(patterns))
 
     async def process_message(self, text, node, msg_id, is_edit=False):
         self.purge_old_messages()
