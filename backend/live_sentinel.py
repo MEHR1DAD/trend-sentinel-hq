@@ -128,19 +128,22 @@ class LiveSentinel:
         specific_cities = [l for l in found_locations if l not in generic_locations]
         generic_locs = [l for l in found_locations if l in generic_locations]
         
-        final_locations = set()
         if specific_cities:
-            final_locations.update(specific_cities)
-            for gl in generic_locs:
-                for sc in specific_cities:
-                    final_locations.add(f"{gl} {sc}")
+            merged_cities = "، ".join(specific_cities)
+            if generic_locs:
+                merged_generics = " و ".join(generic_locs)
+                final_loc_str = f"{merged_generics} {merged_cities}"
+            else:
+                final_loc_str = merged_cities
+        elif generic_locs:
+            final_loc_str = "، ".join(generic_locs)
         else:
-            final_locations.update(generic_locs)
+            final_loc_str = ""
             
         patterns = []
-        for loc in final_locations:
+        if final_loc_str:
             for inc in resolved_incidents:
-                patterns.append(f"{inc} در {loc}")
+                patterns.append(f"{inc} در {final_loc_str}")
         for s in resolved_status:
             patterns.append(s)
             
