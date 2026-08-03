@@ -201,16 +201,6 @@ class LiveSentinel:
                     inc_title = f"{sorted_incidents[0]}، {sorted_incidents[1]} و {sorted_incidents[2]}"
                     
                 patterns.append(f"{inc_title} در {final_loc_str}")
-        elif resolved_incidents:
-            def inc_priority(inc):
-                sev = self.incident_severities.get(inc, "IMPORTANT")
-                return 0 if sev == "URGENT" else 1
-            sorted_incidents = sorted(list(resolved_incidents), key=inc_priority)
-            if len(sorted_incidents) == 1:
-                inc_title = sorted_incidents[0]
-            else:
-                inc_title = " و ".join(sorted_incidents[:2])
-            patterns.append(inc_title)
             
         for s in resolved_status:
             patterns.append(s)
