@@ -28,11 +28,13 @@ class LiveSentinel:
         self.incident_severities = self.config.get('patterns', {}).get('incident_severities', {})
         
         self.baselines = self.fetch_remote_baselines()
+        self.lock = asyncio.Lock()
         
         # Buffer for messages in the last 3 minutes
         self.recent_messages = deque()
         self.last_alert_time = {} # pat -> timestamp
         self.alerted_msg_patterns = {} # "node_msgid" -> set of patterns
+        self.recent_alert_sources = deque() # (timestamp, set_of_sources)
         
         # Metrics
         self.start_time = time.time()
@@ -178,82 +180,102 @@ class LiveSentinel:
             
         patterns = []
         if final_loc_str:
-            for inc in resolved_incidents:
-                patterns.append(f"{inc} در {final_loc_str}")
+            if resolved_incidents:
+                # Sort incidents by severity: URGENT first
+                def inc_priority(inc):
+                    sev = self.incident_severities.get(inc, "IMPORTANT")
+                    return 0 if sev == "URGENT" else 1
+                sorted_incidents = sorted(list(resolved_incidents), key=inc_priority)
+                
+                # Combine up to 3 incidents into one unified description to avoid multi-alert spam
+                if len(sorted_incidents) == 1:
+                    inc_title = sorted_incidents[0]
+                elif len(sorted_incidents) == 2:
+                    inc_title = f"{sorted_incidents[0]} و {sorted_incidents[1]}"
+                else:
+                    inc_title = f"{sorted_incidents[0]}، {sorted_incidents[1]} و {sorted_incidents[2]}"
+                    
+                patterns.append(f"{inc_title} در {final_loc_str}")
+        elif resolved_incidents:
+            def inc_priority(inc):
+                sev = self.incident_severities.get(inc, "IMPORTANT")
+                return 0 if sev == "URGENT" else 1
+            sorted_incidents = sorted(list(resolved_incidents), key=inc_priority)
+            if len(sorted_incidents) == 1:
+                inc_title = sorted_incidents[0]
+            else:
+                inc_title = " و ".join(sorted_incidents[:2])
+            patterns.append(inc_title)
+            
         for s in resolved_status:
             patterns.append(s)
             
         return list(set(patterns))
 
     async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None):
-        # Ignore messages older than 10 minutes to prevent spam on bot restart (catch-up)
-        # or when old messages are edited.
-        if msg_date:
-            now_utc = datetime.now(timezone.utc)
-            if (now_utc - msg_date).total_seconds() > 600:
-                return
-                
-        self.purge_old_messages()
-        
-        if not text: return
-        
-        self.total_msgs_processed += 1
-        self.last_msg_text = text[:100] + "..." if len(text) > 100 else text
-        self.last_msg_time = time.strftime("%Y-%m-%d %H:%M:%S")
-        
-        text = text.replace('ي', 'ی').replace('ك', 'ک')
-        
-        if self.is_old_news(text): return
-        
-        patterns_in_msg = self.get_message_patterns(text)
-        link = f"https://t.me/{node}/{msg_id}"
-        
-        # --- VIP CHANNELS LOGIC ---
-        if node in ['VahidOnline', 'iliaen'] and patterns_in_msg:
-            msg_key = f"{node}_{msg_id}"
-            if msg_key not in self.alerted_msg_patterns:
-                self.alerted_msg_patterns[msg_key] = set()
-                
-            for pat in patterns_in_msg:
-                if pat not in self.alerted_msg_patterns[msg_key]:
-                    self.alerted_msg_patterns[msg_key].add(pat)
-                    # Immediate VIP Alert!
-                    baseline = self.baselines.get(pat, 0.1)
+        async with self.lock:
+            # Ignore messages older than 10 minutes to prevent spam on bot restart (catch-up)
+            if msg_date:
+                now_utc = datetime.now(timezone.utc)
+                if (now_utc - msg_date).total_seconds() > 600:
+                    return
                     
-                    is_silent = False
-                    for inc, sev in self.incident_severities.items():
-                        if pat.startswith(inc) and sev == "IMPORTANT":
-                            is_silent = True
-                            break
-                            
-                    await self.send_alert(pat, "VIP_IMMEDIATE", baseline, [f"- [{node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], is_silent=is_silent)
+            self.purge_old_messages()
+            
+            if not text: return
+            
+            self.total_msgs_processed += 1
+            self.last_msg_text = text[:100] + "..." if len(text) > 100 else text
+            self.last_msg_time = time.strftime("%Y-%m-%d %H:%M:%S")
+            
+            text = text.replace('ي', 'ی').replace('ك', 'ک')
+            
+            if self.is_old_news(text): return
+            
+            patterns_in_msg = self.get_message_patterns(text)
+            link = f"https://t.me/{node}/{msg_id}"
+            
+            # --- VIP CHANNELS LOGIC ---
+            if node in ['VahidOnline', 'iliaen'] and patterns_in_msg:
+                msg_key = f"{node}_{msg_id}"
+                if msg_key not in self.alerted_msg_patterns:
+                    self.alerted_msg_patterns[msg_key] = set()
+                    
+                for pat in patterns_in_msg:
+                    if pat not in self.alerted_msg_patterns[msg_key]:
+                        self.alerted_msg_patterns[msg_key].add(pat)
+                        # Immediate VIP Alert!
+                        baseline = self.baselines.get(pat, 0.1)
+                        
+                        is_silent = True
+                        for inc, sev in self.incident_severities.items():
+                            if inc in pat and sev == "URGENT":
+                                is_silent = False
+                                break
+                                
+                        await self.send_alert(pat, "VIP_IMMEDIATE", baseline, [f"- [{node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], is_silent=is_silent)
 
-        # Fuzzy Deduplication against messages in the last 3 minutes
-        is_syndicated = False
-        for rm in self.recent_messages:
-            if self.calculate_jaccard(text, rm['text']) > 0.75:
-                is_syndicated = True
-                break
-                
-        if is_syndicated: return
-        
-        # Add to buffer
-        msg_obj = {
-            'text': text,
-            'node': node,
-            'timestamp': time.time(),
-            'link': f"https://t.me/{node}/{msg_id}"
-        }
-        self.recent_messages.append(msg_obj)
-        
-        await self.detect_anomalies()
+            # Fuzzy Deduplication against messages in the last 3 minutes
+            is_syndicated = False
+            for rm in self.recent_messages:
+                if self.calculate_jaccard(text, rm['text']) > 0.75:
+                    is_syndicated = True
+                    break
+                    
+            if is_syndicated: return
+            
+            # Add to buffer
+            msg_obj = {
+                'text': text,
+                'node': node,
+                'timestamp': time.time(),
+                'link': f"https://t.me/{node}/{msg_id}"
+            }
+            self.recent_messages.append(msg_obj)
+            
+            await self.detect_anomalies()
 
     async def detect_anomalies(self):
-        config_patterns = self.config.get('patterns', {})
-        incidents = config_patterns.get('incidents', [])
-        locations = config_patterns.get('locations', [])
-        status = config_patterns.get('status', [])
-        
         counts = {}
         msg_pool = {} # pat -> list of links
         
@@ -267,22 +289,40 @@ class LiveSentinel:
                 msg_pool[pat].append(f"- [{msg['node']}]({msg['link']})")
                 
         now = time.time()
+        # Clean up old alerted sources older than 15 minutes
+        while self.recent_alert_sources and (now - self.recent_alert_sources[0][0]) > 900:
+            self.recent_alert_sources.popleft()
+            
         for pat, count in counts.items():
             if count < 4: continue
             
             normal_rate = self.baselines.get(pat, 0.1)
             
             if count > (normal_rate * 10):
-                # Throttle alerts (1 alert per pattern per 30 minutes)
+                # 1. Throttle alerts (1 alert per pattern per 30 minutes)
                 if pat in self.last_alert_time and (now - self.last_alert_time[pat]) < 1800:
                     continue
                     
+                # 2. Source Overlap Deduplication (check against alerts in last 15 minutes)
+                current_sources = set(msg_pool[pat])
+                is_duplicate_story = False
+                for prev_time, prev_sources in self.recent_alert_sources:
+                    common_sources = current_sources.intersection(prev_sources)
+                    # If 2 or more sources are identical, it's the same syndicated news story!
+                    if len(common_sources) >= 2 or (len(current_sources) > 0 and len(common_sources) / len(current_sources) >= 0.5):
+                        is_duplicate_story = True
+                        break
+                        
+                if is_duplicate_story:
+                    continue
+                    
                 self.last_alert_time[pat] = now
+                self.recent_alert_sources.append((now, current_sources))
                 
-                is_silent = False
+                is_silent = True
                 for inc, sev in self.incident_severities.items():
-                    if pat.startswith(inc) and sev == "IMPORTANT":
-                        is_silent = True
+                    if inc in pat and sev == "URGENT":
+                        is_silent = False
                         break
                         
                 await self.send_alert(pat, count, normal_rate, msg_pool[pat][:3], is_silent=is_silent)
