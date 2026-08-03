@@ -86,22 +86,27 @@ class LiveSentinel:
             "بیان کرد", "اشاره کرد", "ترجمه ماشین", "ترجمه ماشینی", "به نقل از", 
             "نیویورک تایمز", "آسوشیتدپرس", "وال استریت", "کاخ سفید", "پنتاگون",
             
-            # Political figures and titles (to ignore quotes and diplomatic news)
+            # Political and military figures and titles (to ignore quotes, speeches and diplomatic news)
             "ترامپ", "نتانیاهو", "بایدن", "پوتین", "خامنه‌ای", "پزشکیان", "عراقچی", 
             "قالیباف", "ظریف", "سلامی", "قاآنی", "کامالا هریس", "بلینکن", "لوید آستین", 
             "جیک سالیوان", "گالانت", "کاتس", "هرتزوگ", "مکرون", "اردوغان", "بن سلمان", 
             "بشار اسد", "زلنسکی", "جوزپ بورل", "آنتونیو گوترش", "رافائل گروسی", "شولتز",
-            "کیر استارمر",
+            "کیر استارمر", "رضایی", "محسن رضایی", "باقری", "موسوی", "شمخانی", "کوثری",
             
             "وزیر خارجه", "وزیر امور خارجه", "وزیر دفاع", "سخنگوی", 
             "رئیس‌جمهور", "رییس‌جمهور", "رئیس جمهور", "رییس جمهور", 
-            "نخست‌وزیر", "نخست وزیر", "پادشاه", "رئیس مجلس", "رییس مجلس", "رهبر انقلاب"
+            "نخست‌وزیر", "نخست وزیر", "پادشاه", "رئیس مجلس", "رییس مجلس", "رهبر انقلاب",
+            "سرلشکر", "سردار", "امیر", "دریادار", "سرتیپ", "فرمانده کل"
         ]
         
         text_lower = text.lower()
         for word in news_stopwords:
             if word in text_lower:
                 return True
+                
+        # Detect official/speaker quotes with colon (e.g. "سرلشکر رضایی:", "سخنگوی دولت:", etc.)
+        if re.search(r'(?:سرلشکر|سردار|فرمانده|امیر|دریادار|سرتیپ|سخنگوی|وزیر|رئیس|رییس|پزشکیان|عراقچی|قالیباف|نتانیاهو|ترامپ|بایدن|پوتین|رضایی|باقری)\s*[\w‌]*:', text):
+            return True
                 
         return False
 
@@ -276,56 +281,59 @@ class LiveSentinel:
             await self.detect_anomalies()
 
     async def detect_anomalies(self):
-        counts = {}
-        msg_pool = {} # pat -> list of links
+        channel_pools = {} # pat -> dict of node -> link (ensuring 1 link per distinct channel)
         
         for msg in self.recent_messages:
             text = msg['text']
             patterns_in_msg = self.get_message_patterns(text)
             
             for pat in patterns_in_msg:
-                counts[pat] = counts.get(pat, 0) + 1
-                if pat not in msg_pool: msg_pool[pat] = []
-                msg_pool[pat].append(f"- [{msg['node']}]({msg['link']})")
+                if pat not in channel_pools:
+                    channel_pools[pat] = {}
+                # Keep latest message per channel for this pattern
+                channel_pools[pat][msg['node']] = msg['link']
                 
         now = time.time()
         # Clean up old alerted sources older than 15 minutes
         while self.recent_alert_sources and (now - self.recent_alert_sources[0][0]) > 900:
             self.recent_alert_sources.popleft()
             
-        for pat, count in counts.items():
-            if count < 4: continue
+        for pat, channels in channel_pools.items():
+            distinct_channel_count = len(channels)
+            # Rule: MUST be confirmed by at least 3 distinct channels!
+            if distinct_channel_count < 3:
+                continue
             
             normal_rate = self.baselines.get(pat, 0.1)
             
-            if count > (normal_rate * 10):
-                # 1. Throttle alerts (1 alert per pattern per 30 minutes)
-                if pat in self.last_alert_time and (now - self.last_alert_time[pat]) < 1800:
-                    continue
-                    
-                # 2. Source Overlap Deduplication (check against alerts in last 15 minutes)
-                current_sources = set(msg_pool[pat])
-                is_duplicate_story = False
-                for prev_time, prev_sources in self.recent_alert_sources:
-                    common_sources = current_sources.intersection(prev_sources)
-                    # If 2 or more sources are identical, it's the same syndicated news story!
-                    if len(common_sources) >= 2 or (len(current_sources) > 0 and len(common_sources) / len(current_sources) >= 0.5):
-                        is_duplicate_story = True
-                        break
-                        
-                if is_duplicate_story:
-                    continue
-                    
-                self.last_alert_time[pat] = now
-                self.recent_alert_sources.append((now, current_sources))
+            # 1. Throttle alerts (1 alert per pattern per 30 minutes)
+            if pat in self.last_alert_time and (now - self.last_alert_time[pat]) < 1800:
+                continue
                 
-                is_silent = True
-                for inc, sev in self.incident_severities.items():
-                    if inc in pat and sev == "URGENT":
-                        is_silent = False
-                        break
-                        
-                await self.send_alert(pat, count, normal_rate, msg_pool[pat][:3], is_silent=is_silent)
+            # 2. Source Overlap Deduplication (check against alerts in last 15 minutes)
+            source_links = [f"- [{node}]({link})" for node, link in channels.items()]
+            current_sources = set(channels.values())
+            is_duplicate_story = False
+            for prev_time, prev_sources in self.recent_alert_sources:
+                common_sources = current_sources.intersection(prev_sources)
+                # If 2 or more sources are identical, it's the same syndicated news story!
+                if len(common_sources) >= 2 or (len(current_sources) > 0 and len(common_sources) / len(current_sources) >= 0.5):
+                    is_duplicate_story = True
+                    break
+                    
+            if is_duplicate_story:
+                continue
+                
+            self.last_alert_time[pat] = now
+            self.recent_alert_sources.append((now, current_sources))
+            
+            is_silent = True
+            for inc, sev in self.incident_severities.items():
+                if inc in pat and sev == "URGENT":
+                    is_silent = False
+                    break
+                    
+            await self.send_alert(pat, distinct_channel_count, normal_rate, source_links[:3], is_silent=is_silent)
 
     async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False):
         if not BOT_TOKEN: return
