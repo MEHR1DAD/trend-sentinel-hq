@@ -21,10 +21,12 @@ BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
 class LiveSentinel:
-    def __init__(self, bot_client):
-        self.bot = bot_client
+    def __init__(self, bot):
+        self.bot = bot
         self.config = self.load_json(CONFIG_FILE)
-        self.nodes = self.config.get('nodes', [])
+        self.nodes = self.config.get('sources', {}).get('nodes', [])
+        
+        # Load severities
         self.incident_severities = self.config.get('patterns', {}).get('incident_severities', {})
         
         self.baselines = self.fetch_remote_baselines()
@@ -34,6 +36,7 @@ class LiveSentinel:
         self.recent_messages = deque()
         self.last_alert_time = {} # pat -> timestamp
         self.alerted_msg_patterns = {} # "node_msgid" -> set of patterns
+        self.vip_alert_history = {} # "node_msgid" -> dict(time, pattern, text)
         self.recent_alert_sources = deque() # (timestamp, set_of_sources)
         
         # Metrics
@@ -131,7 +134,7 @@ class LiveSentinel:
         while self.recent_messages and (now - self.recent_messages[0]['timestamp']) > 180: # 3 minutes
             self.recent_messages.popleft()
 
-    def get_message_patterns(self, text):
+    def get_message_patterns(self, text, is_citizen=False):
         config_patterns = self.config.get('patterns', {})
         incidents = config_patterns.get('incidents', [])
         locations = config_patterns.get('locations', [])
@@ -201,6 +204,14 @@ class LiveSentinel:
                     inc_title = f"{sorted_incidents[0]}، {sorted_incidents[1]} و {sorted_incidents[2]}"
                     
                 patterns.append(f"{inc_title} در {final_loc_str}")
+            elif is_citizen:
+                patterns.append(f"گزارش شهروندی در {final_loc_str}")
+        elif is_citizen:
+            if resolved_incidents:
+                inc_title = " و ".join(list(resolved_incidents)[:2])
+                patterns.append(f"گزارش شهروندی: {inc_title}")
+            else:
+                patterns.append("گزارش فوری دریافتی شهروندان")
             
         for s in resolved_status:
             patterns.append(s)
@@ -227,31 +238,65 @@ class LiveSentinel:
             
             if self.is_old_news(text): return
             
-            patterns_in_msg = self.get_message_patterns(text)
+            is_citizen_report = any(ind in text for ind in [
+                "پیام دریافتی", "دریافتی:", "پیام‌های دریافتی", "پیامهای دریافتی", 
+                "ارسالی:", "پیام:", "از پیام‌ها:", "از پیامها:"
+            ])
+            
+            patterns_in_msg = self.get_message_patterns(text, is_citizen=is_citizen_report)
             link = f"https://t.me/{node}/{msg_id}"
             
-            # --- VIP CHANNELS LOGIC ---
+            # --- VIP CHANNELS & CITIZEN REPORTS LOGIC ---
             vip_map = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen'}
             node_key = (node or '').lower()
             if node_key in vip_map and patterns_in_msg:
                 canonical_node = vip_map[node_key]
                 msg_key = f"{canonical_node}_{msg_id}"
-                if msg_key not in self.alerted_msg_patterns:
-                    self.alerted_msg_patterns[msg_key] = set()
+                now = time.time()
+                
+                # Check if this message was previously alerted and is now updated within 15 minutes (900s)
+                if msg_key in self.vip_alert_history:
+                    prev = self.vip_alert_history[msg_key]
+                    time_diff = now - prev['time']
                     
-                for pat in patterns_in_msg:
-                    if pat not in self.alerted_msg_patterns[msg_key]:
-                        self.alerted_msg_patterns[msg_key].add(pat)
-                        # Immediate VIP Alert!
-                        baseline = self.baselines.get(pat, 0.1)
+                    if is_edit and time_diff <= 900 and text != prev['text']:
+                        self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0], 'text': text}
+                        for pat in patterns_in_msg:
+                            baseline = self.baselines.get(pat, 0.1)
+                            await self.send_alert(
+                                f"{pat} (به‌روزرسانی خبر)", 
+                                "VIP_UPDATE", 
+                                baseline, 
+                                [f"- [{canonical_node}]({link}) (VIP Update)"], 
+                                is_silent=False
+                            )
+                else:
+                    self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0], 'text': text}
+                    if msg_key not in self.alerted_msg_patterns:
+                        self.alerted_msg_patterns[msg_key] = set()
                         
-                        is_silent = True
-                        for inc, sev in self.incident_severities.items():
-                            if inc in pat and sev == "URGENT":
+                    for pat in patterns_in_msg:
+                        if pat not in self.alerted_msg_patterns[msg_key]:
+                            self.alerted_msg_patterns[msg_key].add(pat)
+                            # Immediate VIP Alert!
+                            baseline = self.baselines.get(pat, 0.1)
+                            
+                            is_silent = True
+                            if is_citizen_report or canonical_node == 'VahidOnline':
                                 is_silent = False
-                                break
-                                
-                        await self.send_alert(pat, "VIP_IMMEDIATE", baseline, [f"- [{canonical_node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], is_silent=is_silent)
+                            else:
+                                for inc, sev in self.incident_severities.items():
+                                    if inc in pat and sev == "URGENT":
+                                        is_silent = False
+                                        break
+                                        
+                            await self.send_alert(
+                                pat, 
+                                "VIP_IMMEDIATE", 
+                                baseline, 
+                                [f"- [{canonical_node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], 
+                                is_silent=is_silent
+                            )
 
             # Fuzzy Deduplication against messages in the last 3 minutes
             is_syndicated = False
