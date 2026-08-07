@@ -209,10 +209,10 @@ class LiveSentinel:
 
     async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None):
         async with self.lock:
-            # Ignore messages older than 10 minutes to prevent spam on bot restart (catch-up)
+            # Ignore messages older than 15 minutes to prevent spam on bot restart (catch-up)
             if msg_date:
                 now_utc = datetime.now(timezone.utc)
-                if (now_utc - msg_date).total_seconds() > 600:
+                if (now_utc - msg_date).total_seconds() > 900:
                     return
                     
             self.purge_old_messages()
@@ -231,8 +231,11 @@ class LiveSentinel:
             link = f"https://t.me/{node}/{msg_id}"
             
             # --- VIP CHANNELS LOGIC ---
-            if node in ['VahidOnline', 'iliaen'] and patterns_in_msg:
-                msg_key = f"{node}_{msg_id}"
+            vip_map = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen'}
+            node_key = (node or '').lower()
+            if node_key in vip_map and patterns_in_msg:
+                canonical_node = vip_map[node_key]
+                msg_key = f"{canonical_node}_{msg_id}"
                 if msg_key not in self.alerted_msg_patterns:
                     self.alerted_msg_patterns[msg_key] = set()
                     
@@ -248,7 +251,7 @@ class LiveSentinel:
                                 is_silent = False
                                 break
                                 
-                        await self.send_alert(pat, "VIP_IMMEDIATE", baseline, [f"- [{node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], is_silent=is_silent)
+                        await self.send_alert(pat, "VIP_IMMEDIATE", baseline, [f"- [{canonical_node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], is_silent=is_silent)
 
             # Fuzzy Deduplication against messages in the last 3 minutes
             is_syndicated = False
@@ -401,10 +404,18 @@ async def main():
         )
         await event.respond(msg)
 
+    def resolve_node_username(chat_obj):
+        if not chat_obj: return 'unknown'
+        u = getattr(chat_obj, 'username', None)
+        if u: return u
+        title = getattr(chat_obj, 'title', None)
+        if title: return title
+        return 'unknown'
+
     @client.on(events.NewMessage(chats=sentinel.nodes))
     async def user_handler(event):
         sender = await event.get_chat()
-        node_username = getattr(sender, 'username', 'unknown')
+        node_username = resolve_node_username(sender)
         text = event.message.message
         msg_id = event.message.id
         msg_date = event.message.date
@@ -414,10 +425,10 @@ async def main():
     @client.on(events.MessageEdited(chats=sentinel.nodes))
     async def edit_handler(event):
         sender = await event.get_chat()
-        node_username = getattr(sender, 'username', 'unknown')
+        node_username = resolve_node_username(sender)
         text = event.message.message
         msg_id = event.message.id
-        msg_date = event.message.date
+        msg_date = getattr(event.message, 'edit_date', None) or event.message.date
         
         await sentinel.process_message(text, node_username, msg_id, is_edit=True, msg_date=msg_date)
 
