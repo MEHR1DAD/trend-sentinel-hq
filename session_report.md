@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 340 minutes
-- **Messages Processed:** 3585
-- **Last Message Text:** 🔸جودو به جمع رشته‌های ایران در المپیک جوانان اضافه شد
-
- 🔹با پیگیری‌های کمیته ملی المپیک، یک سهمیه در...
-- **Last Message Time:** 2026-08-31 13:52:50
+- **Messages Processed:** 2463
+- **Last Message Text:** پیمان مکه در کوتاه‌مدت؛ بازدارندگی علیه جمهوری اسلامی و نیروهای نیابتی‌اش - گفت‌وگو با فرزین، ندیمی ...
+- **Last Message Time:** 2026-08-31 21:41:08
