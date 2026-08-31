@@ -24,7 +24,7 @@ class LiveSentinel:
     def __init__(self, bot):
         self.bot = bot
         self.config = self.load_json(CONFIG_FILE)
-        self.nodes = self.config.get('sources', {}).get('nodes', [])
+        self.nodes = self.config.get('nodes', [])
         
         # Load severities
         self.incident_severities = self.config.get('patterns', {}).get('incident_severities', {})
