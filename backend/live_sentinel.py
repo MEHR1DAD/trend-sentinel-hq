@@ -269,7 +269,7 @@ class LiveSentinel:
                                 "VIP_UPDATE", 
                                 baseline, 
                                 [f"- [{canonical_node}]({link}) (VIP Update)"], 
-                                is_silent=False
+                                is_silent=True
                             )
                 else:
                     self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0], 'text': text}
