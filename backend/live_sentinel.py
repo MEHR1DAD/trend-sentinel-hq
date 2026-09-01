@@ -283,13 +283,14 @@ class LiveSentinel:
                             baseline = self.baselines.get(pat, 0.1)
                             
                             is_silent = True
-                            if is_citizen_report or canonical_node == 'VahidOnline':
-                                is_silent = False
-                            else:
-                                for inc, sev in self.incident_severities.items():
-                                    if inc in pat and sev == "URGENT":
-                                        is_silent = False
-                                        break
+                            if not is_edit:
+                                if is_citizen_report or canonical_node == 'VahidOnline':
+                                    is_silent = False
+                                else:
+                                    for inc, sev in self.incident_severities.items():
+                                        if inc in pat and sev == "URGENT":
+                                            is_silent = False
+                                            break
                                         
                             await self.send_alert(
                                 pat, 
