@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 340 minutes
-- **Messages Processed:** 2655
-- **Last Message Text:** ♦️عراق دومین مرز با ایران را هم بست
+- **Messages Processed:** 2651
+- **Last Message Text:** 🎥 خبرگزاری فارس: محسن نامجو با هماهنگی به ایران برگشت | شادمهر عقیلی هم به کشور بازخواهدگشت
 
-🔹مقام‌های عراقی گذرگاه چذابه در استان خوزستان را تا اطلاع ثانوی...
-- **Last Message Time:** 2026-09-12 09:41:14
+@Eghtes...
+- **Last Message Time:** 2026-09-12 17:43:26
