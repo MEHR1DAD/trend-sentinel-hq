@@ -221,10 +221,10 @@ class LiveSentinel:
 
     async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None):
         async with self.lock:
-            # Ignore messages older than 15 minutes to prevent spam on bot restart (catch-up)
+            # Ignore messages older than 3 minutes to prevent spam on bot restart (catch-up)
             if msg_date:
                 now_utc = datetime.now(timezone.utc)
-                if (now_utc - msg_date).total_seconds() > 900:
+                if (now_utc - msg_date).total_seconds() > 180:
                     return
                     
             self.purge_old_messages()
