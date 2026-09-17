@@ -69,7 +69,10 @@ class LiveSentinel:
             except: pass
         return {}
 
-    def is_old_news(self, text):
+    def is_old_news(self, text, node=None):
+        if node and node.lower() in ['vahidonline', 'iliaen']:
+            return False
+        
         if re.search(r'(۱۳۹\d|۱۴۰[۰-۳])', text): return True
         
         # Strong indicators of live citizen reports that override any news stopwords
@@ -116,11 +119,20 @@ class LiveSentinel:
 
     def match_pattern(self, text, pattern):
         try:
-            # Using negative lookbehind/lookahead for Persian letters and ZWNJ (\u200c)
+            # Strip Arabic/Persian diacritics
+            diacritics_regex = re.compile(r'[\u064B-\u065F\u0670]')
+            clean_text = diacritics_regex.sub('', text)
+            clean_pattern = diacritics_regex.sub('', pattern)
+            
+            # Replace ZWNJ with space for more flexible matching
+            clean_text = clean_text.replace('\u200c', ' ')
+            clean_pattern = clean_pattern.replace('\u200c', ' ')
+            
+            # Using negative lookbehind/lookahead for Persian letters
             # to prevent matching substrings inside words (like شنبه in پنج‌شنبه)
-            esc_pattern = re.escape(pattern)
-            regex = r'(?<![آ-یa-zA-Z0-9_\u200c\u200d])' + esc_pattern + r'(?![آ-یa-zA-Z0-9_\u200c\u200d])'
-            return bool(re.search(regex, text))
+            esc_pattern = re.escape(clean_pattern)
+            regex = r'(?<![آ-یa-zA-Z0-9_])' + esc_pattern + r'(?![آ-یa-zA-Z0-9_])'
+            return bool(re.search(regex, clean_text))
         except:
             return pattern in text
 
@@ -237,7 +249,7 @@ class LiveSentinel:
             
             text = text.replace('ي', 'ی').replace('ك', 'ک')
             
-            if self.is_old_news(text): return
+            if self.is_old_news(text, node): return
             
             is_citizen_report = any(ind in text for ind in [
                 "پیام دریافتی", "دریافتی:", "پیام‌های دریافتی", "پیامهای دریافتی", 
