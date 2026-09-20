@@ -187,6 +187,12 @@ class LiveSentinel:
         specific_cities = [l for l in found_locations if l not in generic_locations]
         generic_locs = [l for l in found_locations if l in generic_locations]
         
+        foreign_keywords = ['اسرائیل', 'لبنان', 'غزه', 'سوریه', 'عراق', 'اربیل', 'یمن', 'عربستان', 'تل آویو', 'حیفا', 'آمریکا']
+        has_foreign = any(fk in text for fk in foreign_keywords)
+        
+        if has_foreign and not specific_cities:
+            return []
+            
         if specific_cities:
             merged_cities = "، ".join(specific_cities)
             if generic_locs:
@@ -195,7 +201,11 @@ class LiveSentinel:
             else:
                 final_loc_str = merged_cities
         elif generic_locs:
-            final_loc_str = "، ".join(generic_locs)
+            # Allow standalone generic locations only for citizen reports
+            if is_citizen:
+                final_loc_str = "، ".join(generic_locs)
+            else:
+                final_loc_str = ""
         else:
             final_loc_str = ""
             
