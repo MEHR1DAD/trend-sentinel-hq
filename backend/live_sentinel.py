@@ -70,8 +70,6 @@ class LiveSentinel:
         return {}
 
     def is_old_news(self, text, node=None):
-        if re.search(r'(۱۳۹\d|۱۴۰[۰-۳])', text): return True
-        
         # Strong indicators of live citizen reports that override any news stopwords
         citizen_indicators = [
             "پیام دریافتی", "دریافتی:", "پیام‌های دریافتی", "پیامهای دریافتی", 
@@ -79,6 +77,9 @@ class LiveSentinel:
         ]
         if any(ind in text for ind in citizen_indicators):
             return False
+            
+        # Catch historical news (e.g. 13xx or 1400-1404)
+        if re.search(r'(۱۳\d{2}|۱۴۰[۰-۴]|13\d{2}|140[0-4])', text): return True
         
         # Filter out formal journalistic/recap language and news channel forwards
         news_stopwords = [
@@ -86,6 +87,7 @@ class LiveSentinel:
             "تسنیم", "مهر", "ایرنا", "ایلنا", "همشهری", "شرق", "رویترز", "روز گذشته", "صبح امروز", 
             "در پاسخ به", "در گفت‌وگو", "در گفتوگو", "مجری", "مصاحبه", "تلویزیون",
             "ترجمه ماشین", "ترجمه ماشینی", "به نقل از", 
+            "یادبود", "سالگرد", "خاطره",
             "نیویورک تایمز", "آسوشیتدپرس", "وال استریت", "کاخ سفید", "پنتاگون",
             "تست شد", "آزمایش شد", "آزمایش موفق", "با موفقیت", "رزمایش",
             
