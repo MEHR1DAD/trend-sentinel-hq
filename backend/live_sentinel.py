@@ -188,9 +188,6 @@ class LiveSentinel:
         foreign_keywords = ['اسرائیل', 'لبنان', 'غزه', 'سوریه', 'عراق', 'اربیل', 'یمن', 'عربستان', 'تل آویو', 'حیفا', 'آمریکا']
         has_foreign = any(fk in text for fk in foreign_keywords)
         
-        if has_foreign and not specific_cities:
-            return []
-            
         if specific_cities:
             merged_cities = "، ".join(specific_cities)
             if generic_locs:
@@ -224,18 +221,31 @@ class LiveSentinel:
                 else:
                     inc_title = f"{sorted_incidents[0]}، {sorted_incidents[1]} و {sorted_incidents[2]}"
                     
-                patterns.append(f"{inc_title} در {final_loc_str}")
+                pat = f"{inc_title} در {final_loc_str}"
+                if has_foreign or any(fk in final_loc_str for fk in foreign_keywords):
+                    pat += "||FOREIGN||"
+                patterns.append(pat)
             elif is_citizen:
-                patterns.append(f"گزارش شهروندی در {final_loc_str}")
+                pat = f"گزارش شهروندی در {final_loc_str}"
+                if has_foreign or any(fk in final_loc_str for fk in foreign_keywords):
+                    pat += "||FOREIGN||"
+                patterns.append(pat)
         elif is_citizen:
             if resolved_incidents:
                 inc_title = " و ".join(list(resolved_incidents)[:2])
-                patterns.append(f"گزارش شهروندی: {inc_title}")
+                pat = f"گزارش شهروندی: {inc_title}"
             else:
-                patterns.append("گزارش فوری دریافتی شهروندان")
+                pat = "گزارش فوری دریافتی شهروندان"
+            
+            if has_foreign:
+                pat += "||FOREIGN||"
+            patterns.append(pat)
             
         for s in resolved_status:
-            patterns.append(s)
+            pat = s
+            if has_foreign:
+                pat += "||FOREIGN||"
+            patterns.append(pat)
             
         return list(set(patterns))
 
@@ -283,9 +293,10 @@ class LiveSentinel:
                     if is_edit and time_diff <= 900 and text != prev['text']:
                         self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0], 'text': text}
                         for pat in patterns_in_msg:
-                            baseline = self.baselines.get(pat, 0.1)
+                            clean_pat = pat.replace("||FOREIGN||", "")
+                            baseline = self.baselines.get(clean_pat, 0.1)
                             await self.send_alert(
-                                f"{pat} (به‌روزرسانی خبر)", 
+                                f"{clean_pat} (به‌روزرسانی خبر)", 
                                 "VIP_UPDATE", 
                                 baseline, 
                                 [f"- [{canonical_node}]({link}) (VIP Update)"], 
@@ -297,18 +308,21 @@ class LiveSentinel:
                         self.alerted_msg_patterns[msg_key] = set()
                         
                     for pat in patterns_in_msg:
-                        if pat not in self.alerted_msg_patterns[msg_key]:
-                            self.alerted_msg_patterns[msg_key].add(pat)
+                        is_foreign = "||FOREIGN||" in pat
+                        clean_pat = pat.replace("||FOREIGN||", "")
+                        
+                        if clean_pat not in self.alerted_msg_patterns[msg_key]:
+                            self.alerted_msg_patterns[msg_key].add(clean_pat)
                             # Immediate VIP Alert!
-                            baseline = self.baselines.get(pat, 0.1)
+                            baseline = self.baselines.get(clean_pat, 0.1)
                             
                             is_silent = True
-                            if not is_edit:
+                            if not is_edit and not is_foreign:
                                 if is_citizen_report or canonical_node == 'VahidOnline':
                                     is_silent = False
                                 else:
                                     for inc, sev in self.incident_severities.items():
-                                        if inc in pat and sev == "URGENT":
+                                        if inc in clean_pat and sev == "URGENT":
                                             is_silent = False
                                             break
                                         
@@ -334,7 +348,8 @@ class LiveSentinel:
                 'text': text,
                 'node': node,
                 'timestamp': time.time(),
-                'link': f"https://t.me/{node}/{msg_id}"
+                'link': f"https://t.me/{node}/{msg_id}",
+                'is_citizen_report': is_citizen_report
             }
             self.recent_messages.append(msg_obj)
             
@@ -345,7 +360,8 @@ class LiveSentinel:
         
         for msg in self.recent_messages:
             text = msg['text']
-            patterns_in_msg = self.get_message_patterns(text)
+            is_citizen_report = msg.get('is_citizen_report', False)
+            patterns_in_msg = self.get_message_patterns(text, is_citizen=is_citizen_report)
             
             for pat in patterns_in_msg:
                 if pat not in channel_pools:
@@ -359,15 +375,18 @@ class LiveSentinel:
             self.recent_alert_sources.popleft()
             
         for pat, channels in channel_pools.items():
+            is_foreign = "||FOREIGN||" in pat
+            clean_pat = pat.replace("||FOREIGN||", "")
+            
             distinct_channel_count = len(channels)
             # Rule: MUST be confirmed by at least 3 distinct channels!
             if distinct_channel_count < 3:
                 continue
             
-            normal_rate = self.baselines.get(pat, 0.1)
+            normal_rate = self.baselines.get(clean_pat, 0.1)
             
             # 1. Throttle alerts (1 alert per pattern per 30 minutes)
-            if pat in self.last_alert_time and (now - self.last_alert_time[pat]) < 1800:
+            if clean_pat in self.last_alert_time and (now - self.last_alert_time[clean_pat]) < 1800:
                 continue
                 
             # 2. Source Overlap Deduplication (check against alerts in last 15 minutes)
@@ -384,16 +403,17 @@ class LiveSentinel:
             if is_duplicate_story:
                 continue
                 
-            self.last_alert_time[pat] = now
+            self.last_alert_time[clean_pat] = now
             self.recent_alert_sources.append((now, current_sources))
             
             is_silent = True
-            for inc, sev in self.incident_severities.items():
-                if inc in pat and sev == "URGENT":
-                    is_silent = False
-                    break
+            if not is_foreign:
+                for inc, sev in self.incident_severities.items():
+                    if inc in clean_pat and sev == "URGENT":
+                        is_silent = False
+                        break
                     
-            await self.send_alert(pat, distinct_channel_count, normal_rate, source_links[:3], is_silent=is_silent)
+            await self.send_alert(clean_pat, distinct_channel_count, normal_rate, source_links[:3], is_silent=is_silent)
 
     async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False):
         if not BOT_TOKEN: return
