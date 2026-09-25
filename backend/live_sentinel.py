@@ -185,7 +185,7 @@ class LiveSentinel:
         specific_cities = [l for l in found_locations if l not in generic_locations]
         generic_locs = [l for l in found_locations if l in generic_locations]
         
-        foreign_keywords = ['اسرائیل', 'لبنان', 'غزه', 'سوریه', 'عراق', 'اربیل', 'یمن', 'عربستان', 'تل آویو', 'حیفا', 'آمریکا']
+        foreign_keywords = ['اسرائیل', 'لبنان', 'غزه', 'فلسطین', 'سوریه', 'عراق', 'اربیل', 'یمن', 'عربستان', 'کویت', 'قطر', 'امارات', 'عمان', 'ترکیه', 'پاکستان', 'افغانستان', 'تل آویو', 'حیفا', 'آمریکا']
         has_foreign = any(fk in text for fk in foreign_keywords)
         
         if specific_cities:
