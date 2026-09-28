@@ -1,9 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 340 minutes
-- **Messages Processed:** 2995
-- **Last Message Text:** 🔴تراستی‌ها حدود ۷۰ هزار میلیارد تومان از بانک گردشگری دزدیدند!
+- **Messages Processed:** 2792
+- **Last Message Text:** «مصطفی تاج‌زاده»، فعال سیاسی و زندانی سیاسی، پس از پایان یک هفته مرخصی به زندان بازگشت.
 
-🔷 هادی قوامی نماینده مجلس: 
-🔷 تراستی...
-- **Last Message Time:** 2026-09-27 19:23:57
+«فخرالسادات...
+- **Last Message Time:** 2026-09-28 10:24:20
