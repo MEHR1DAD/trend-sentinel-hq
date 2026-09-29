@@ -20,7 +20,7 @@ SESSION_STRING = os.environ.get("TELEGRAM_SESSION_GENERAL")
 BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
-GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', 'AIzaSyDOM5h99kHlXaAqJO4BTzFMWcKHrhxCMBc')
+GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
 
 class LiveSentinel:
     def __init__(self, bot):
