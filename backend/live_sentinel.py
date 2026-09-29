@@ -446,13 +446,13 @@ class LiveSentinel:
             f"🔗 **منابع خبر:**\n" + "\n".join(context_msgs).replace('VIP Alert', 'هشدار ویژه').replace('VIP Update', 'به‌روزرسانی ویژه').replace('Edited', 'ویرایش شده') + "\n\n"
         )
         
-        # Add tags
+        # Add tags and channel signature
         if is_protest:
-            alert_text += "#دیده‌بان_اعتراضات"
             target_channel = "@DidebanEterazat"
+            alert_text += f"#دیده‌بان_اعتراضات\n\n{target_channel}"
         else:
-            alert_text += "#دیده‌بان_جنگ"
             target_channel = "@DidebanJang"
+            alert_text += f"#دیده‌بان_جنگ\n\n{target_channel}"
             
         # Send only to the public channel (as requested by user)
         subs = [target_channel]
