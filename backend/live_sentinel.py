@@ -336,7 +336,7 @@ class LiveSentinel:
                                             break
                                         
                             await self.send_alert(
-                                pat, 
+                                clean_pat, 
                                 "VIP_IMMEDIATE", 
                                 baseline, 
                                 [f"- [{canonical_node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], 
@@ -451,15 +451,11 @@ class LiveSentinel:
             alert_text += "#دیده‌بان_اعتراضات"
             target_channel = "@DidebanEterazat"
         else:
-            alert_text += "#دیده‌بان_تنش"
+            alert_text += "#دیده‌بان_جنگ"
             target_channel = "@DidebanJang"
             
-        data = self.load_json('backend/subscribers.json')
-        subs = set(data.get('subscribers', []))
-        if CHAT_ID: subs.add(int(CHAT_ID))
-        
-        # Also add the target public channel to the broadcast list
-        subs.add(target_channel)
+        # Send only to the public channel (as requested by user)
+        subs = [target_channel]
         
         for sub in subs:
             try:
