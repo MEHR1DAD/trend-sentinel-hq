@@ -275,9 +275,18 @@ class LiveSentinel:
             ])
             
             patterns_in_msg = self.get_message_patterns(text, is_citizen=is_citizen_report)
+            
+            # --- VIP CHANNELS EXCLUSIVE PROTESTS LOGIC ---
+            vip_map = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen'}
+            node_key = (node or '').lower()
+            
+            if node_key not in vip_map:
+                # If not VIP, drop any protest/strike patterns
+                patterns_in_msg = [p for p in patterns_in_msg if "اعتراض" not in p and "اعتصاب" not in p]
+                
             link = f"https://t.me/{node}/{msg_id}"
             
-            # --- VIP CHANNELS & CITIZEN REPORTS LOGIC ---
+            # --- VIP CHANNELS LOGIC ---
             vip_map = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen'}
             node_key = (node or '').lower()
             if node_key in vip_map and patterns_in_msg:
@@ -418,18 +427,39 @@ class LiveSentinel:
     async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False):
         if not BOT_TOKEN: return
         
-        icon = "🔕" if is_silent else "🚨"
+        is_protest = "اعتراض" in pattern or "اعتصاب" in pattern
+        
+        # Determine icon and channel
+        if is_silent:
+            icon = "🔕"
+        elif is_protest:
+            icon = "🛑" if "اعتصاب" in pattern else "📢"
+        else:
+            icon = "🚨"
+            
+        alert_title = f"گزارش مردمی: {pattern}" if is_protest else f"هشدار فوری: {pattern}"
+        
         alert_text = (
-            f"{icon} **SENTINEL ALERT: {pattern}**\n\n"
-            f"🔥 Velocity: {count} hits (last 3m)\n"
-            f"📊 Normal Baseline: {normal_rate:.2f}/hr\n\n"
-            f"Sources:\n" + "\n".join(context_msgs) + "\n\n"
-            f"#TrendSentinel"
+            f"{icon} **{alert_title}**\n\n"
+            f"⚡️ سرعت انتشار: {count if isinstance(count, str) else str(count) + ' گزارش'} (در ۳ دقیقه گذشته)\n"
+            f"📊 وضعیت عادی: {normal_rate:.2f} گزارش در ساعت\n\n"
+            f"🔗 **منابع خبر:**\n" + "\n".join(context_msgs).replace('VIP Alert', 'هشدار ویژه').replace('VIP Update', 'به‌روزرسانی ویژه').replace('Edited', 'ویرایش شده') + "\n\n"
         )
         
+        # Add tags
+        if is_protest:
+            alert_text += "#دیده‌بان_اعتراضات"
+            target_channel = "@DidebanEterazat"
+        else:
+            alert_text += "#دیده‌بان_تنش"
+            target_channel = "@DidebanJang"
+            
         data = self.load_json('backend/subscribers.json')
         subs = set(data.get('subscribers', []))
         if CHAT_ID: subs.add(int(CHAT_ID))
+        
+        # Also add the target public channel to the broadcast list
+        subs.add(target_channel)
         
         for sub in subs:
             try:
