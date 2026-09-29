@@ -8,7 +8,7 @@ API_ID = os.environ.get("TELEGRAM_API_ID")
 API_HASH = os.environ.get("TELEGRAM_API_HASH")
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 
-CHANNELS = ["@DidebanJang", "@DidebanEterazat"]
+CHANNELS = ["@DidebanJang", "@DidebanEterazat", "@DidehbanEghtesad"]
 
 async def main():
     if not API_ID or not API_HASH or not BOT_TOKEN:
@@ -31,7 +31,7 @@ async def main():
             async for msg in client.iter_messages(channel, offset_date=now):
                 if msg.date < yesterday:
                     break
-                if msg.text and ("هشدار فوری" in msg.text or "گزارش مردمی" in msg.text):
+                if msg.text and ("هشدار فوری" in msg.text or "گزارش مردمی" in msg.text or "گزارش اقتصادی" in msg.text):
                     count += 1
                     
             channel_counts[channel] = count
@@ -53,7 +53,8 @@ async def main():
             "📊 **گزارش شبانه رادار دیده‌بان**\n\n"
             f"مجموع هشدارهای ۲۴ ساعت گذشته: **{total_alerts} حادثه**\n\n"
             f"🔴 دیده‌بان جنگ: {channel_counts.get('@DidebanJang', 0)} هشدار\n"
-            f"🟠 دیده‌بان اعتراضات: {channel_counts.get('@DidebanEterazat', 0)} هشدار\n\n"
+            f"🟠 دیده‌بان اعتراضات: {channel_counts.get('@DidebanEterazat', 0)} هشدار\n"
+            f"📈 دیده‌بان اقتصاد: {channel_counts.get('@DidehbanEghtesad', 0)} هشدار\n\n"
             "سیستم به صورت ۲۴ ساعته در حال پایش لحظه‌ای منابع می‌باشد.\n\n"
             "🤖 *Powered by Sentinel AI*"
         )

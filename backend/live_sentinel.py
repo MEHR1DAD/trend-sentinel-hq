@@ -150,6 +150,7 @@ class LiveSentinel:
     def get_message_patterns(self, text, is_citizen=False):
         config_patterns = self.config.get('patterns', {})
         incidents = config_patterns.get('incidents', [])
+        economy = config_patterns.get('economy', [])
         locations = config_patterns.get('locations', [])
         status = config_patterns.get('status', [])
         
@@ -157,8 +158,13 @@ class LiveSentinel:
         generic_locations = config_patterns.get('generic_locations', [])
         
         found_incidents = [i for i in incidents if self.match_pattern(text, i)]
+        found_economy = [e for e in economy if self.match_pattern(text, e)]
         found_locations = [l for l in locations if self.match_pattern(text, l)]
         found_status = [s for s in status if self.match_pattern(text, s)]
+        
+        # Negative filter for economy to ignore government rates
+        if any(neg in text for neg in ["مرکز مبادله", "بانک مرکزی", "نیمایی", "دلار توافقی", "دولت"]):
+            found_economy = []
         
         # 1. Semantic Resolution for Incidents
         resolved_incidents = set()
@@ -247,6 +253,10 @@ class LiveSentinel:
             pat = s
             if has_foreign:
                 pat += "||FOREIGN||"
+            patterns.append(pat)
+            
+        for e in found_economy:
+            pat = e + "||ECONOMY||"
             patterns.append(pat)
             
         return list(set(patterns))
@@ -437,18 +447,28 @@ class LiveSentinel:
     async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False):
         if not BOT_TOKEN: return
         
+        is_economy = "||ECONOMY||" in pattern
+        pattern = pattern.replace("||ECONOMY||", "")
+        
         is_protest = "اعتراض" in pattern or "اعتصاب" in pattern
         
         # Determine icon and channel
         if is_silent:
             icon = "🔕"
+        elif is_economy:
+            icon = "📈"
         elif is_protest:
             icon = "🛑" if "اعتصاب" in pattern else "📢"
         else:
             icon = "🚨"
             
-        alert_title = f"گزارش مردمی: {pattern}" if is_protest else f"هشدار فوری: {pattern}"
-        
+        if is_economy:
+            alert_title = f"گزارش اقتصادی: {pattern}"
+        elif is_protest:
+            alert_title = f"گزارش مردمی: {pattern}"
+        else:
+            alert_title = f"هشدار فوری: {pattern}"
+            
         alert_text = (
             f"{icon} **{alert_title}**\n\n"
             f"⚡️ سرعت انتشار: {count if isinstance(count, str) else str(count) + ' گزارش'} (در ۳ دقیقه گذشته)\n"
@@ -457,7 +477,10 @@ class LiveSentinel:
         )
         
         # Add tags and channel signature
-        if is_protest:
+        if is_economy:
+            target_channel = "@DidehbanEghtesad"
+            alert_text += f"#دیده‌بان_اقتصاد\n\n{target_channel}"
+        elif is_protest:
             target_channel = "@DidebanEterazat"
             alert_text += f"#دیده‌بان_اعتراضات\n\n{target_channel}"
         else:
