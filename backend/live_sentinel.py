@@ -477,11 +477,50 @@ class LiveSentinel:
                 
         return sent_msg, target_channel, alert_text
 
+    async def get_fallback_gemini_model(self):
+        import urllib.request
+        import json
+        
+        url = f"https://generativelanguage.googleapis.com/v1beta/models?key={GEMINI_API_KEY}"
+        print(f"DEBUG: get_fallback url length: {len(url)}")
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        
+        loop = asyncio.get_running_loop()
+        def make_req():
+            with urllib.request.urlopen(req, timeout=15) as response:
+                return json.loads(response.read().decode('utf-8'))
+                
+        try:
+            data = await loop.run_in_executor(None, make_req)
+            models = data.get('models', [])
+            
+            # Filter models that support generateContent
+            valid_models = [m for m in models if "generateContent" in m.get("supportedGenerationMethods", [])]
+            
+            # Priority: 1. flash-lite, 2. flash, 3. pro
+            for priority in ["flash-lite", "flash", "pro"]:
+                for m in valid_models:
+                    if priority in m['name'].lower():
+                        return m['name'].split('models/')[1]
+            
+            # Ultimate fallback if nothing matches
+            if valid_models:
+                return valid_models[0]['name'].split('models/')[1]
+                
+        except Exception as e:
+            print(f"⚠️ Failed to list Gemini models: {e}")
+        
+        return "gemini-pro" # safe fallback
+
     async def append_ai_summary(self, target_channel, message_id, original_text, raw_texts):
         if not GEMINI_API_KEY:
             return
             
-        # Call Gemini API
+        if not hasattr(self, 'current_gemini_model'):
+            self.current_gemini_model = "gemini-flash-lite-latest"
+        
+        print(f"🤖 Starting AI summary injection using model: {self.current_gemini_model}")
+            
         prompt = (
             "تو یک دستیار هوشمند و بی‌طرف برای یک ربات خبری (دیده‌بان) هستی. "
             "متن خبرهای زیر از چند منبع مختلف (یا یک منبع طولانی) جمع‌آوری شده است. "
@@ -490,7 +529,6 @@ class LiveSentinel:
             + "\n---\n".join(raw_texts)
         )
         
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent?key={GEMINI_API_KEY}"
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
@@ -499,39 +537,52 @@ class LiveSentinel:
             }
         }
         
-        try:
-            import urllib.request
-            import urllib.error
-            import json
+        max_retries = 2
+        
+        for attempt in range(max_retries):
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
             
-            req = urllib.request.Request(
-                url, 
-                data=json.dumps(payload).encode('utf-8'),
-                headers={'Content-Type': 'application/json'},
-                method='POST'
-            )
-            
-            # Using loop.run_in_executor to make the blocking urllib call async-friendly
-            loop = asyncio.get_running_loop()
-            
-            def make_req():
-                with urllib.request.urlopen(req, timeout=15) as response:
-                    return json.loads(response.read().decode('utf-8'))
+            try:
+                import urllib.request
+                import urllib.error
+                import json
+                
+                req = urllib.request.Request(
+                    url, 
+                    data=json.dumps(payload).encode('utf-8'),
+                    headers={'Content-Type': 'application/json'},
+                    method='POST'
+                )
+                
+                loop = asyncio.get_running_loop()
+                def make_req():
+                    with urllib.request.urlopen(req, timeout=15) as response:
+                        return json.loads(response.read().decode('utf-8'))
+                        
+                try:
+                    data = await loop.run_in_executor(None, make_req)
+                    summary = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
                     
-            data = await loop.run_in_executor(None, make_req)
-            summary = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
-            
-            if summary:
-                # Inject summary before the sources
-                parts = original_text.split("🔗 **منابع خبر:**")
-                if len(parts) == 2:
-                    new_text = f"{parts[0]}🤖 **چکیده هوشمند:**\n{summary}\n\n🔗 **منابع خبر:**{parts[1]}"
-                    
-                    # Edit the message
-                    await self.bot.edit_message(target_channel, message_id, new_text, link_preview=False)
-                    print(f"✅ AI Summary added to message {message_id} in {target_channel}")
-        except Exception as e:
-            print(f"⚠️ Failed to append AI summary: {e}")
+                    if summary:
+                        parts = original_text.split("🔗 **منابع خبر:**")
+                        if len(parts) == 2:
+                            new_text = f"{parts[0]}🤖 **چکیده هوشمند:**\n{summary}\n\n🔗 **منابع خبر:**{parts[1]}"
+                            await self.bot.edit_message(target_channel, message_id, new_text, link_preview=False)
+                            print(f"✅ AI Summary added to message {message_id} in {target_channel} (Model: {self.current_gemini_model})")
+                            return # Success, exit function
+                            
+                except urllib.error.HTTPError as e:
+                    if e.code == 404 and attempt < max_retries - 1:
+                        print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
+                        self.current_gemini_model = await self.get_fallback_gemini_model()
+                        print(f"🔄 Retrying with model: {self.current_gemini_model}")
+                    else:
+                        print(f"⚠️ Gemini API HTTP Error: {e.code} - {e.reason}")
+                        return
+                        
+            except Exception as e:
+                print(f"⚠️ Failed to append AI summary: {e}")
+                return
 async def main():
     if not API_ID or not API_HASH or not SESSION_STRING or not BOT_TOKEN:
         print("Error: Missing Telegram API credentials.")
