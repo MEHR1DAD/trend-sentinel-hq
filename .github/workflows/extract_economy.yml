@@ -1,0 +1,38 @@
+name: Extract Economy Patterns
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install telethon
+
+      - name: Run Extraction
+        env:
+          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+          TELEGRAM_SESSION_GENERAL: ${{ secrets.TELEGRAM_SESSION_GENERAL }}
+        run: python extract_economy.py
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name 'Sentinel Bot'
+          git config --global user.email 'bot@sentinel.local'
+          git add economy_patterns.json
+          git commit -m "chore: Extract economy patterns"
+          git push
