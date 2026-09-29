@@ -20,6 +20,8 @@ SESSION_STRING = os.environ.get("TELEGRAM_SESSION_GENERAL")
 BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
+GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', 'AIzaSyDOM5h99kHlXaAqJO4BTzFMWcKHrhxCMBc')
+
 class LiveSentinel:
     def __init__(self, bot):
         self.bot = bot
@@ -304,13 +306,15 @@ class LiveSentinel:
                         for pat in patterns_in_msg:
                             clean_pat = pat.replace("||FOREIGN||", "")
                             baseline = self.baselines.get(clean_pat, 0.1)
-                            await self.send_alert(
+                            sent_msg, target_channel, alert_text = await self.send_alert(
                                 f"{clean_pat} (به‌روزرسانی خبر)", 
                                 "VIP_UPDATE", 
                                 baseline, 
                                 [f"- [{canonical_node}]({link}) (VIP Update)"], 
                                 is_silent=True
                             )
+                            if sent_msg:
+                                asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
                 else:
                     self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0], 'text': text}
                     if msg_key not in self.alerted_msg_patterns:
@@ -335,13 +339,15 @@ class LiveSentinel:
                                             is_silent = False
                                             break
                                         
-                            await self.send_alert(
+                            sent_msg, target_channel, alert_text = await self.send_alert(
                                 clean_pat, 
                                 "VIP_IMMEDIATE", 
                                 baseline, 
                                 [f"- [{canonical_node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], 
                                 is_silent=is_silent
                             )
+                            if sent_msg:
+                                asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
 
             # Fuzzy Deduplication against messages in the last 3 minutes
             is_syndicated = False
@@ -422,7 +428,11 @@ class LiveSentinel:
                         is_silent = False
                         break
                     
-            await self.send_alert(clean_pat, distinct_channel_count, normal_rate, source_links[:3], is_silent=is_silent)
+            raw_texts = [msg['text'] for msg in self.recent_messages if msg['node'] in channels and msg['link'] == channels[msg['node']]]
+            
+            sent_msg, target_channel, alert_text = await self.send_alert(clean_pat, distinct_channel_count, normal_rate, source_links[:3], is_silent=is_silent)
+            if sent_msg:
+                asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, raw_texts[:3]))
 
     async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False):
         if not BOT_TOKEN: return
@@ -457,13 +467,71 @@ class LiveSentinel:
         # Send only to the public channel (as requested by user)
         subs = [target_channel]
         
+        sent_msg = None
         for sub in subs:
             try:
-                await self.bot.send_message(sub, alert_text, link_preview=False, silent=is_silent)
+                sent_msg = await self.bot.send_message(sub, alert_text, link_preview=False, silent=is_silent)
                 print(f"{icon} SENT ALERT for {pattern} to {sub}")
             except Exception as e:
                 print(f"Failed to send alert to {sub}: {e}")
+                
+        return sent_msg, target_channel, alert_text
 
+    async def append_ai_summary(self, target_channel, message_id, original_text, raw_texts):
+        if not GEMINI_API_KEY:
+            return
+            
+        # Call Gemini API
+        prompt = (
+            "تو یک دستیار هوشمند و بی‌طرف برای یک ربات خبری (دیده‌بان) هستی. "
+            "متن خبرهای زیر از چند منبع مختلف (یا یک منبع طولانی) جمع‌آوری شده است. "
+            "لطفاً یک چکیده دقیق، بی‌طرفانه، بدون قضاوت و بسیار کوتاه (حداکثر ۲ خط) از مهم‌ترین اتفاق این اخبار بنویس. "
+            "هیچگونه تیتر، مقدمه، سلام، هشتگ یا توضیحات اضافه‌ای ننویس و فقط خودِ چکیده را ارائه بده.\n\nاخبار:\n"
+            + "\n---\n".join(raw_texts)
+        )
+        
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent?key={GEMINI_API_KEY}"
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 150,
+                "temperature": 0.3
+            }
+        }
+        
+        try:
+            import urllib.request
+            import urllib.error
+            import json
+            
+            req = urllib.request.Request(
+                url, 
+                data=json.dumps(payload).encode('utf-8'),
+                headers={'Content-Type': 'application/json'},
+                method='POST'
+            )
+            
+            # Using loop.run_in_executor to make the blocking urllib call async-friendly
+            loop = asyncio.get_running_loop()
+            
+            def make_req():
+                with urllib.request.urlopen(req, timeout=15) as response:
+                    return json.loads(response.read().decode('utf-8'))
+                    
+            data = await loop.run_in_executor(None, make_req)
+            summary = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
+            
+            if summary:
+                # Inject summary before the sources
+                parts = original_text.split("🔗 **منابع خبر:**")
+                if len(parts) == 2:
+                    new_text = f"{parts[0]}🤖 **چکیده هوشمند:**\n{summary}\n\n🔗 **منابع خبر:**{parts[1]}"
+                    
+                    # Edit the message
+                    await self.bot.edit_message(target_channel, message_id, new_text, link_preview=False)
+                    print(f"✅ AI Summary added to message {message_id} in {target_channel}")
+        except Exception as e:
+            print(f"⚠️ Failed to append AI summary: {e}")
 async def main():
     if not API_ID or not API_HASH or not SESSION_STRING or not BOT_TOKEN:
         print("Error: Missing Telegram API credentials.")
