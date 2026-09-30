@@ -83,6 +83,18 @@ class LiveSentinel:
         # Catch historical news (e.g. 13xx or 1400-1404)
         if re.search(r'(۱۳\d{2}|۱۴۰[۰-۴]|13\d{2}|140[0-4])', text): return True
         
+        # Approximate mapping from Gregorian to Jalali month (Oct is Mehr/7th)
+        import datetime
+        now = datetime.datetime.now()
+        month_map = {1: 10, 2: 11, 3: 12, 4: 1, 5: 2, 6: 3, 7: 4, 8: 5, 9: 6, 10: 7, 11: 8, 12: 9}
+        current_month_idx = month_map.get(now.month, 7) - 1
+        
+        months_fa = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"]
+        for i, month in enumerate(months_fa):
+            # Use lookbehind/lookahead to match whole words and prevent substrings like "دیجیتال" matching "دی"
+            if re.search(r'(?<![\u0600-\u06FF])' + month + r'(?![\u0600-\u06FF])', text) and i < current_month_idx: 
+                return True
+        
         # Filter out formal journalistic/recap language and news channel forwards
         news_stopwords = [
             "vahidheadline", "vahidoonline", "به گزارش", "خبرگزاری", "ایسنا", "فارس", 
@@ -161,10 +173,6 @@ class LiveSentinel:
         found_economy = [e for e in economy if self.match_pattern(text, e)]
         found_locations = [l for l in locations if self.match_pattern(text, l)]
         found_status = [s for s in status if self.match_pattern(text, s)]
-        
-        # Negative filter for economy to ignore government rates
-        if any(neg in text for neg in ["مرکز مبادله", "بانک مرکزی", "نیمایی", "دلار توافقی", "دولت"]):
-            found_economy = []
         
         # 1. Semantic Resolution for Incidents
         resolved_incidents = set()
@@ -279,14 +287,15 @@ class LiveSentinel:
             
             text = text.replace('ي', 'ی').replace('ك', 'ک')
             
-            if self.is_old_news(text, node): return
-            
             is_citizen_report = any(ind in text for ind in [
                 "پیام دریافتی", "دریافتی:", "پیام‌های دریافتی", "پیامهای دریافتی", 
                 "ارسالی:", "پیام:", "از پیام‌ها:", "از پیامها:"
             ])
             
             patterns_in_msg = self.get_message_patterns(text, is_citizen=is_citizen_report)
+            has_economy = any("||ECONOMY||" in p for p in patterns_in_msg)
+            
+            if not has_economy and self.is_old_news(text, node): return
             
             # --- VIP CHANNELS EXCLUSIVE PROTESTS LOGIC ---
             vip_map = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen'}
