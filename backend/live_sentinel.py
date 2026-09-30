@@ -11,7 +11,7 @@ from collections import deque
 # --- Config ---
 CONFIG_FILE = 'backend/sentinel_config.json'
 BASELINE_FILE = 'backend/trend_baselines.json'
-MAX_RUNTIME_SEC = 5 * 3600 + 40 * 60  # 5 hours 40 minutes (safe margin before 350m GitHub timeout)
+MAX_RUNTIME_SEC = 40 * 60  # 40 minutes (Rotate before the 45-minute hard crash)
 
 API_ID = os.environ.get("TELEGRAM_API_ID")
 API_HASH = os.environ.get("TELEGRAM_API_HASH")
@@ -739,6 +739,11 @@ async def main():
         print("🛑 Task cancelled. Shutting down...")
     except KeyboardInterrupt:
         print("🛑 KeyboardInterrupt received. Shutting down...")
+    except Exception as e:
+        import traceback
+        print("❌ UNHANDLED FATAL ERROR:")
+        traceback.print_exc()
+        sentinel.last_msg_text = f"FATAL ERROR: {str(e)}"
     finally:
         poller_task.cancel()
         print("🔌 Disconnecting Telegram sessions...")
