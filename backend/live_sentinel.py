@@ -606,6 +606,9 @@ class LiveSentinel:
             except Exception as e:
                 print(f"⚠️ Failed to append AI summary: {e}")
                 return
+import signal
+import sys
+
 async def main():
     if not API_ID or not API_HASH or not SESSION_STRING or not BOT_TOKEN:
         print("Error: Missing Telegram API credentials.")
@@ -617,6 +620,14 @@ async def main():
     client = TelegramClient(StringSession(SESSION_STRING), int(API_ID), API_HASH)
     
     sentinel = LiveSentinel(bot)
+    
+    # Setup graceful shutdown on SIGTERM
+    def handle_sigterm(sig, frame):
+        print(f"🛑 Received signal {sig}. Raising KeyboardInterrupt...")
+        raise KeyboardInterrupt()
+        
+    signal.signal(signal.SIGTERM, handle_sigterm)
+    signal.signal(signal.SIGINT, handle_sigterm)
     
     @bot.on(events.NewMessage(pattern='/start'))
     async def bot_start_handler(event):
@@ -719,23 +730,32 @@ async def main():
     
     poller_task = asyncio.create_task(active_poller())
     
-    # Run until time limit
-    await asyncio.sleep(MAX_RUNTIME_SEC)
-    
-    print("⏰ Max runtime reached. Exiting gracefully to allow restart.")
-    poller_task.cancel()
-    
-    # Generate and push session report
-    uptime_mins = int((time.time() - sentinel.start_time) / 60)
-    report_content = (
-        f"# Sentinel Session Report\n\n"
-        f"- **Uptime:** {uptime_mins} minutes\n"
-        f"- **Messages Processed:** {sentinel.total_msgs_processed}\n"
-        f"- **Last Message Text:** {sentinel.last_msg_text}\n"
-        f"- **Last Message Time:** {sentinel.last_msg_time}\n"
-    )
-    with open('session_report.md', 'w', encoding='utf-8') as f:
-        f.write(report_content)
+    try:
+        # Run until time limit
+        await asyncio.sleep(MAX_RUNTIME_SEC)
+        
+        print("⏰ Max runtime reached. Exiting gracefully to allow restart.")
+    except asyncio.CancelledError:
+        print("🛑 Task cancelled. Shutting down...")
+    except KeyboardInterrupt:
+        print("🛑 KeyboardInterrupt received. Shutting down...")
+    finally:
+        poller_task.cancel()
+        print("🔌 Disconnecting Telegram sessions...")
+        await client.disconnect()
+        await bot.disconnect()
+        
+        # Generate and push session report
+        uptime_mins = int((time.time() - sentinel.start_time) / 60)
+        report_content = (
+            f"# Sentinel Session Report\n\n"
+            f"- **Uptime:** {uptime_mins} minutes\n"
+            f"- **Messages Processed:** {sentinel.total_msgs_processed}\n"
+            f"- **Last Message Text:** {sentinel.last_msg_text}\n"
+            f"- **Last Message Time:** {sentinel.last_msg_time}\n"
+        )
+        with open('session_report.md', 'w', encoding='utf-8') as f:
+            f.write(report_content)
     os.system('git config --global user.email "bot@sentinel.local"')
     os.system('git config --global user.name "Sentinel Bot"')
     os.system('git add session_report.md')
