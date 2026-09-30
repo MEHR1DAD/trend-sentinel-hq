@@ -49,5 +49,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Triggering the next run immediately..."
+          echo "Cooling down for 60 seconds before triggering the next run..."
+          sleep 60
           gh workflow run watch.yml --ref main || true
