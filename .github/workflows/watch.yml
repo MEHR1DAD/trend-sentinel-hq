@@ -42,7 +42,7 @@ jobs:
         run: |
           echo "Waiting 15 seconds to ensure any previous overlapping sessions are fully disconnected..."
           sleep 15
-          python backend/live_sentinel.py
+          python -u backend/live_sentinel.py
 
       - name: Auto-Restart on Exit
         if: success() || failure()
