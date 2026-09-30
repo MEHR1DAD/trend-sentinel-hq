@@ -703,11 +703,19 @@ async def main():
                 await asyncio.sleep(1.5)
             await asyncio.sleep(15)
         
-    await bot.start(bot_token=BOT_TOKEN)
-    print("🤖 Bot listener started.")
-    
-    await client.start()
-    print("✅ Live listening started on", len(sentinel.nodes), "nodes (Active Polling).")
+    try:
+        await bot.start(bot_token=BOT_TOKEN)
+        print("🤖 Bot listener started.")
+        await client.start()
+        print("✅ Live listening started on", len(sentinel.nodes), "nodes (Active Polling).")
+    except Exception as e:
+        if hasattr(e, 'seconds'):
+            print(f"⚠️ FloodWaitError! Sleeping for {e.seconds} seconds before retrying...")
+            await asyncio.sleep(e.seconds + 5)
+            await bot.start(bot_token=BOT_TOKEN)
+            await client.start()
+        else:
+            raise
     
     poller_task = asyncio.create_task(active_poller())
     
