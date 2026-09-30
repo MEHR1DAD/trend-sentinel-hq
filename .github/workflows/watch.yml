@@ -39,7 +39,10 @@ jobs:
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           TELEGRAM_SESSION_GENERAL: ${{ secrets.TELEGRAM_SESSION_GENERAL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python backend/live_sentinel.py
+        run: |
+          echo "Waiting 15 seconds to ensure any previous overlapping sessions are fully disconnected..."
+          sleep 15
+          python backend/live_sentinel.py
 
       - name: Auto-Restart on Exit
         if: success() || failure()
