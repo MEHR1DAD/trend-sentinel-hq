@@ -1,9 +1,9 @@
 # Sentinel Session Report
 
 - **Uptime:** 3 minutes
-- **Messages Processed:** 25
-- **Last Message Text:** ♦️تصاویری از درگیری سپاه با تروریست‌ها در زاهدان
+- **Messages Processed:** 1
+- **Last Message Text:** صدمه به یک درخت تنومند در جنگل هیرکانی
+ManotoTV
 
-#اخبار_سیستان_و_بلوچستان در فضای مجازی👇
-@Akhbar_so...
-- **Last Message Time:** 2026-10-01 07:13:36
+🤖 @VahidOOnLine
+- **Last Message Time:** 2026-10-01 07:15:20
