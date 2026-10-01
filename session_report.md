@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 3 minutes
-- **Messages Processed:** 36
-- **Last Message Text:** بنیامین نتانیاهو، نخست‌وزیر اسرائیل، روز چهارشنبه هشتم مهر ماه گفت هنوز برای تعیین عامل پشت تلاش برا...
-- **Last Message Time:** 2026-10-01 08:13:27
+- **Messages Processed:** 3
+- **Last Message Text:** ⭕️ارتش اسرائیل از حمله به بیش از ۵۰۰ هدف در لبنان و غزه طی یک ماه خبر داد
+
+♦️ارتش اسرائیل روز پنجشنب...
+- **Last Message Time:** 2026-10-01 08:16:19
