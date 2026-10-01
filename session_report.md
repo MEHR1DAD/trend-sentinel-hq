@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 157
-- **Last Message Text:** ♦️سه نفتکش در تنگه هرمز هدف حمله قرار گرفتند
+- **Messages Processed:** 240
+- **Last Message Text:** ⬇️احضار سفیر انگلیس به وزارت امور خارجه
 
-🔹به گزارش شرکت اطلاعات کشتیرانی مارسک، سه نفتکش با پرچ...
-- **Last Message Time:** 2026-10-01 13:41:52
+🔷به دنبال اتهام‌زنی نخست‌وزیر ‌وزیر انگلیس علیه ایران، هوگو...
+- **Last Message Time:** 2026-10-01 14:13:31
