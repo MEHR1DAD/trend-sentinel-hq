@@ -1,10 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 3 minutes
-- **Messages Processed:** 34
-- **Last Message Text:** 🔹هشدار بانک مرکزی درباره کلاهبرداری با عنوان خرید و فروش وام
+- **Messages Processed:** 20
+- **Last Message Text:** گزارش رژیم صهیونیستی از بمباران و حملات به لبنان و غزه/ ماشین کشتار و جنگ افروزی نتانیاهو
 
-بانک مرکزی:
-
-🔹هرگونه واگذاری یا خرید و...
-- **Last Message Time:** 2026-10-01 09:13:16
+🔹 ارتش رژ...
+- **Last Message Time:** 2026-10-01 09:17:52
