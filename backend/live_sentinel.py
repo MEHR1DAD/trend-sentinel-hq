@@ -11,7 +11,7 @@ from collections import deque
 # --- Config ---
 CONFIG_FILE = 'backend/sentinel_config.json'
 BASELINE_FILE = 'backend/trend_baselines.json'
-MAX_RUNTIME_SEC = 3 * 60  # 3 minutes for testing
+MAX_RUNTIME_SEC = 30 * 60  # 30 minutes (Rotate before the 45-minute hard crash)
 
 API_ID = os.environ.get("TELEGRAM_API_ID")
 API_HASH = os.environ.get("TELEGRAM_API_HASH")
