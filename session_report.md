@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 3 minutes
-- **Messages Processed:** 3
-- **Last Message Text:** ⭕️ارتش اسرائیل از حمله به بیش از ۵۰۰ هدف در لبنان و غزه طی یک ماه خبر داد
+- **Messages Processed:** 23
+- **Last Message Text:** 🔻قیمت طلا و سکه امروز پنجشنبه ۹ مهر ۱۴۰۵ | کاهش قیمت طلا و سکه امامی
 
-♦️ارتش اسرائیل روز پنجشنب...
-- **Last Message Time:** 2026-10-01 08:16:19
+🔹قیمت هر گرم طلا ۱۸ عیار امروز...
+- **Last Message Time:** 2026-10-01 08:22:40
