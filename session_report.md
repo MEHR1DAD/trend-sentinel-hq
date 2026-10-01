@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 19 minutes
-- **Messages Processed:** 10
-- **Last Message Text:** ⭕️ مسئول آمریکایی به "اکسیوس": 
-مارکو روبیو، از نمایندگان ایرانی خواست که خاک آمریکا را ترک کنند، ای...
-- **Last Message Time:** 2026-10-01 05:45:11
+- **Uptime:** 3 minutes
+- **Messages Processed:** 1
+- **Last Message Text:** در پی تایید شرکت‌های ردیابی نفتکش‌ها از احیای صادرات نفت کشورهای عرب منطقه، قیمت نفت شاخص برنت به ۹۶...
+- **Last Message Time:** 2026-10-01 05:49:01
