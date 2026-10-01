@@ -1,10 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 15 minutes
-- **Messages Processed:** 30
-- **Last Message Text:** 📸 آیین اختتامیه جشنواره سراسری موسیقی موغام در تبریز
-
-#گزارش_تصویری را اینجا ببینید.
-
-@isnamediaa
-- **Last Message Time:** 2026-10-01 06:45:12
+- **Uptime:** 3 minutes
+- **Messages Processed:** 4
+- **Last Message Text:** محمد موحد، نایب‌رییس کمیسیون اصل نود مجلس، در واکنش به اظهارات اسکات بسنت، وزیر خزانه‌داری آمریکا، د...
+- **Last Message Time:** 2026-10-01 06:47:10
