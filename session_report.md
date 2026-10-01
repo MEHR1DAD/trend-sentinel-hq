@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 3 minutes
-- **Messages Processed:** 35
-- **Last Message Text:** 🎥حجت الاسلام قرائتی: تبلیغ چهره‌به‌چهره را فراموش کرده‌ایم؛ نباید منتظر بمانیم تا مردم برای شنیدن حر...
-- **Last Message Time:** 2026-10-01 07:54:43
+- **Messages Processed:** 25
+- **Last Message Text:** جنگنده‌های پاکستان بامداد پنج‌شنبه حملات هوایی هدفمندی در ولایت‌های کُنَر و هِلمَند افغانستان انجام ...
+- **Last Message Time:** 2026-10-01 07:59:17
