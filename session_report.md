@@ -1,9 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 3 minutes
-- **Messages Processed:** 20
-- **Last Message Text:** 🎥پایان ست چهارم والیبال ایران و کره‌جنوبی در مرحله یک چهارم نهایی بازی‌های آسیایی ناگویا
+- **Messages Processed:** 2
+- **Last Message Text:** 🎥 رزمایش جان‌فدایان با حضور پرشور مردم زنجان آغاز شد
 
-
-🇮🇷 ۲۵|۱۸|...
-- **Last Message Time:** 2026-10-01 06:13:30
+@Farsna - Link
+- **Last Message Time:** 2026-10-01 06:17:42
