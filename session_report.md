@@ -1,8 +1,9 @@
 # Sentinel Session Report
 
 - **Uptime:** 3 minutes
-- **Messages Processed:** 28
-- **Last Message Text:** سپاه: اخراج آمریکایی‌ها از عراق، طلیعه آزادی غرب آسیا از یوغ سلطه شیطان بزرگ است
+- **Messages Processed:** 25
+- **Last Message Text:** ♦️تصاویری از درگیری سپاه با تروریست‌ها در زاهدان
 
-🔹بیانیهٔ سپاه به‌م...
-- **Last Message Time:** 2026-10-01 07:08:55
+#اخبار_سیستان_و_بلوچستان در فضای مجازی👇
+@Akhbar_so...
+- **Last Message Time:** 2026-10-01 07:13:36
