@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 220
-- **Last Message Text:** 🔶درگیری چندساعته در زاهدان؛ سپاه می‌گوید شش فرد مسلح کشته شدند
-
-منابع محلی در سیستان و بلوچستان از و...
-- **Last Message Time:** 2026-10-01 12:38:22
+- **Messages Processed:** 217
+- **Last Message Text:** 🔵 آغاز جشنواره «باشگاه ویژه سرمایه‌های ماندگار» بانک صادرات ایران/ اهدای ماهانه ۷۵ جایزه نقدی به باز...
+- **Last Message Time:** 2026-10-01 13:10:08
