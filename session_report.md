@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 3 minutes
-- **Messages Processed:** 25
-- **Last Message Text:** جنگنده‌های پاکستان بامداد پنج‌شنبه حملات هوایی هدفمندی در ولایت‌های کُنَر و هِلمَند افغانستان انجام ...
-- **Last Message Time:** 2026-10-01 07:59:17
+- **Messages Processed:** 2
+- **Last Message Text:** نیروی انتظامی جمهوری اسلامی از کشته شدن یک مامور خود در یک «حمله مسلحانه» به یکی از ایستگاه‌های خود ...
+- **Last Message Time:** 2026-10-01 08:03:14
