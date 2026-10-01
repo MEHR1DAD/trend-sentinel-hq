@@ -1,6 +1,9 @@
 # Sentinel Session Report
 
 - **Uptime:** 3 minutes
-- **Messages Processed:** 2
-- **Last Message Text:** نیروی انتظامی جمهوری اسلامی از کشته شدن یک مامور خود در یک «حمله مسلحانه» به یکی از ایستگاه‌های خود ...
-- **Last Message Time:** 2026-10-01 08:03:14
+- **Messages Processed:** 3
+- **Last Message Text:** بخشودگی دیرکرد جرایم رانندگی به مناسبت هفته فراجا
+
+سخنگوی فراجا: 
+🔹با آغاز هفته انتظامی طرح بخشودگی ...
+- **Last Message Time:** 2026-10-01 08:05:57
