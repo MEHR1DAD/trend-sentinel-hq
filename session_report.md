@@ -1,8 +1,7 @@
 # Sentinel Session Report
 
 - **Uptime:** 3 minutes
-- **Messages Processed:** 23
-- **Last Message Text:** 🔻قیمت طلا و سکه امروز پنجشنبه ۹ مهر ۱۴۰۵ | کاهش قیمت طلا و سکه امامی
-
-🔹قیمت هر گرم طلا ۱۸ عیار امروز...
-- **Last Message Time:** 2026-10-01 08:22:40
+- **Messages Processed:** 15
+- **Last Message Text:** 🎥 نتانیاهو: 
+فکر می‌کنم هنوز خیلی زود است که بگوییم آیا ایران در این ماجرا [هواپیمای فلای‌دبی] کرده ...
+- **Last Message Time:** 2026-10-01 08:27:07
