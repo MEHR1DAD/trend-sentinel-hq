@@ -11,7 +11,7 @@ from collections import deque
 # --- Config ---
 CONFIG_FILE = 'backend/sentinel_config.json'
 BASELINE_FILE = 'backend/trend_baselines.json'
-MAX_RUNTIME_SEC = 40 * 60  # 40 minutes (Rotate before the 45-minute hard crash)
+MAX_RUNTIME_SEC = 3 * 60  # 3 minutes for testing
 
 API_ID = os.environ.get("TELEGRAM_API_ID")
 API_HASH = os.environ.get("TELEGRAM_API_HASH")
@@ -756,8 +756,17 @@ async def main():
     finally:
         poller_task.cancel()
         print("🔌 Disconnecting Telegram sessions...")
-        await client.disconnect()
-        await bot.disconnect()
+        
+        async def safe_disconnect():
+            try:
+                await client.disconnect()
+                await bot.disconnect()
+            except: pass
+            
+        try:
+            await asyncio.wait_for(safe_disconnect(), timeout=10.0)
+        except asyncio.TimeoutError:
+            print("⚠️ Disconnect timed out, forcing exit.")
         
         # Generate and push session report
         uptime_mins = int((time.time() - sentinel.start_time) / 60)
@@ -775,9 +784,6 @@ async def main():
     os.system('git add session_report.md')
     os.system('git commit -m "[skip ci] save session report"')
     os.system('git push')
-    
-    await client.disconnect()
-    await bot.disconnect()
 
 if __name__ == "__main__":
     asyncio.run(main())
