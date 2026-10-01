@@ -322,51 +322,74 @@ class LiveSentinel:
                     
                     if is_edit and time_diff <= 900 and text != prev['text']:
                         self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0], 'text': text}
-                        for pat in patterns_in_msg:
-                            clean_pat = pat.replace("||FOREIGN||", "")
-                            baseline = self.baselines.get(clean_pat, 0.1)
-                            sent_msg, target_channel, alert_text = await self.send_alert(
-                                f"{clean_pat} (به‌روزرسانی خبر)", 
-                                "VIP_UPDATE", 
-                                baseline, 
-                                [f"- [{canonical_node}]({link}) (VIP Update)"], 
-                                is_silent=True
-                            )
-                            if sent_msg:
-                                asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
+                        clean_pats = [p.replace("||FOREIGN||", "") for p in patterns_in_msg]
+                        combined_pat = "، ".join(dict.fromkeys(clean_pats)) # remove duplicates
+                        
+                        # Use the first pattern's metadata for routing/baseline
+                        base_pat = patterns_in_msg[0]
+                        baseline = self.baselines.get(base_pat.replace("||FOREIGN||", ""), 0.1)
+                        
+                        # Preserve prefixes for send_alert logic
+                        prefix = ""
+                        if "||ECONOMY||" in base_pat: prefix = "||ECONOMY||"
+                        elif "||FOREIGN||" in base_pat: prefix = "||FOREIGN||"
+                        
+                        display_pat = prefix + combined_pat
+                        
+                        sent_msg, target_channel, alert_text = await self.send_alert(
+                            f"{display_pat} (به‌روزرسانی خبر)", 
+                            "VIP_UPDATE", 
+                            baseline, 
+                            [f"- [{canonical_node}]({link}) (VIP Update)"], 
+                            is_silent=True
+                        )
+                        if sent_msg:
+                            asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
                 else:
                     self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0], 'text': text}
                     if msg_key not in self.alerted_msg_patterns:
                         self.alerted_msg_patterns[msg_key] = set()
                         
-                    for pat in patterns_in_msg:
-                        is_foreign = "||FOREIGN||" in pat
-                        clean_pat = pat.replace("||FOREIGN||", "")
+                    # Filter to only patterns we haven't alerted for this exact message
+                    new_pats = [p for p in patterns_in_msg if p.replace("||FOREIGN||", "") not in self.alerted_msg_patterns[msg_key]]
+                    
+                    if new_pats:
+                        clean_pats = [p.replace("||FOREIGN||", "") for p in new_pats]
+                        combined_pat = "، ".join(dict.fromkeys(clean_pats))
                         
-                        if clean_pat not in self.alerted_msg_patterns[msg_key]:
-                            self.alerted_msg_patterns[msg_key].add(clean_pat)
-                            # Immediate VIP Alert!
-                            baseline = self.baselines.get(clean_pat, 0.1)
+                        for p in clean_pats:
+                            self.alerted_msg_patterns[msg_key].add(p)
                             
-                            is_silent = True
-                            if not is_edit and not is_foreign:
-                                if is_citizen_report or canonical_node == 'VahidOnline':
-                                    is_silent = False
-                                else:
-                                    for inc, sev in self.incident_severities.items():
-                                        if inc in clean_pat and sev == "URGENT":
-                                            is_silent = False
-                                            break
+                        base_pat = new_pats[0]
+                        is_foreign = "||FOREIGN||" in base_pat
+                        baseline = self.baselines.get(base_pat.replace("||FOREIGN||", ""), 0.1)
+                        
+                        # Preserve prefixes
+                        prefix = ""
+                        if "||ECONOMY||" in base_pat: prefix = "||ECONOMY||"
+                        elif "||FOREIGN||" in base_pat: prefix = "||FOREIGN||"
+                        
+                        display_pat = prefix + combined_pat
+                        
+                        is_silent = True
+                        if not is_edit and not is_foreign:
+                            if is_citizen_report or canonical_node == 'VahidOnline':
+                                is_silent = False
+                            else:
+                                for inc, sev in self.incident_severities.items():
+                                    if inc in clean_pats[0] and sev == "URGENT":
+                                        is_silent = False
+                                        break
                                         
-                            sent_msg, target_channel, alert_text = await self.send_alert(
-                                clean_pat, 
-                                "VIP_IMMEDIATE", 
-                                baseline, 
-                                [f"- [{canonical_node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], 
-                                is_silent=is_silent
-                            )
-                            if sent_msg:
-                                asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
+                        sent_msg, target_channel, alert_text = await self.send_alert(
+                            display_pat, 
+                            "VIP_IMMEDIATE", 
+                            baseline, 
+                            [f"- [{canonical_node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], 
+                            is_silent=is_silent
+                        )
+                        if sent_msg:
+                            asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
 
             # Fuzzy Deduplication against messages in the last 3 minutes
             is_syndicated = False
