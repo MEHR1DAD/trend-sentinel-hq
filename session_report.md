@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 3 minutes
-- **Messages Processed:** 21
-- **Last Message Text:** 🔸ترامپ: "یا توافق می‌کنیم یا شاید منفجرشان کنیم"
+- **Messages Processed:** 10
+- **Last Message Text:** اولیانوف: دبیرکل ناتو هیچ اطلاعی از برنامه هسته‌ای ایران ندارد
 
-دونالد ترامپ، رئیس‌جمهور آمریکا، روز چهارشنبه ۳۰ س...
-- **Last Message Time:** 2026-10-01 05:54:31
+نماینده روسیه نزد سازمان‌های بین‌الم...
+- **Last Message Time:** 2026-10-01 05:59:15
