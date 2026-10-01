@@ -1,9 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 257
-- **Last Message Text:** بازگشت به صمیمیت‌های قدیمی؛ وقتی خانه بوی اصالت می‌دهد
-نوشین مطلبی خواه_خبرنگار ایرنا
+- **Messages Processed:** 220
+- **Last Message Text:** 🔶درگیری چندساعته در زاهدان؛ سپاه می‌گوید شش فرد مسلح کشته شدند
 
-🔹 در میان هیا...
-- **Last Message Time:** 2026-10-01 12:06:10
+منابع محلی در سیستان و بلوچستان از و...
+- **Last Message Time:** 2026-10-01 12:38:22
