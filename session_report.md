@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 115
-- **Last Message Text:** ⬇️شنیده شدن صدای انفجارهای شدید در ریاض پایتخت عربستان
-
-🔷 منابع خبری از شنیده شدن صدای انفجار‌های شد...
-- **Last Message Time:** 2026-10-02 05:30:29
+- **Messages Processed:** 141
+- **Last Message Text:** 🔸دونالد ترامپ در دو اظهارنظر تازه دربارهٔ ایران هشدار داد اگر مشخص شود تهران در حادثهٔ پرواز فلای‌دب...
+- **Last Message Time:** 2026-10-02 06:01:47
