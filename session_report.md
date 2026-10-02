@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 77
-- **Last Message Text:** فرزین ندیمی، پژوهشگر ارشد امور دفاعی و امنیتی، گفت تقویت آرایش نظامی آمریکا در منطقه، از جمله اعزام ...
-- **Last Message Time:** 2026-10-02 22:07:19
+- **Messages Processed:** 74
+- **Last Message Text:** عبور جمعیت زندانیان فرانسه از مرز ۹۰ هزار نفر برای نخستین بار
+
+🔹 آمارهای وزارت دادگستری فرانسه حاکی ...
+- **Last Message Time:** 2026-10-02 22:38:17
