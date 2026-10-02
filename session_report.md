@@ -1,10 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 243
-- **Last Message Text:** 🔻قاآنی خطاب به عربستان: به نفع شماست که جنگ را تمام کنید
+- **Messages Processed:** 196
+- **Last Message Text:** ♦️ بارش باران در تهران از بعد از ظهر امروز
 
-سردار اسماعیل قاآنی:
-
-🔹شما یمنی‌ها را خوب ...
-- **Last Message Time:** 2026-10-02 12:11:22
+🔹 اداره‌کل هواشناسی استان تهران اعلام کرد: از بعد از ظهر...
+- **Last Message Time:** 2026-10-02 12:43:02
