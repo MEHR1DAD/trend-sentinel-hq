@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 145
-- **Last Message Text:** نیویورک‌تایمز به نقل از یک مقام امنیتی غربی:
+- **Messages Processed:** 115
+- **Last Message Text:** ⬇️شنیده شدن صدای انفجارهای شدید در ریاض پایتخت عربستان
 
-🔹 از ابتدای ماه اوت، ایران هر هفته ۳۰ حمله پهپادی و ۱۰...
-- **Last Message Time:** 2026-10-02 04:49:02
+🔷 منابع خبری از شنیده شدن صدای انفجار‌های شد...
+- **Last Message Time:** 2026-10-02 05:30:29
