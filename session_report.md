@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 107
-- **Last Message Text:** تجاوز رژیم سعودی به دو استان صعده و عمران یمن 
+- **Messages Processed:** 87
+- **Last Message Text:** منابع خبری از توقف پروازها در فرودگاه شهر ریاض عربستان سعودی خبر می‌دهند.
 
-🔹 رژيم سعودی در تداوم تجاوز به خاک یمن، دو استان صعد...
-- **Last Message Time:** 2026-10-03 21:44:15
+@Farsna
+- **Last Message Time:** 2026-10-03 22:12:43
