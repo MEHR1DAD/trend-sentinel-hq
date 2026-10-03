@@ -1,8 +1,10 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 238
-- **Last Message Text:** 🔺کاهش «۱۴ درصدی» عرضه گاز ایران؛ انتظار زمستان سخت‌تر
+- **Messages Processed:** 223
+- **Last Message Text:** ♦️ وزارت اطلاعات:
 
-▪️مدیرعامل شرکت ملی گاز ایران از کاهش ۱۴ درصد...
-- **Last Message Time:** 2026-10-03 10:37:52
+🔹 انهدام ۴ شبکه خرابکاری خیابانی و بازداشت ۳۱ عامل مرتبط با دشمن در کرمان
+
+🔹 وزار...
+- **Last Message Time:** 2026-10-03 11:09:37
