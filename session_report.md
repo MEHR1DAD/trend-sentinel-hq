@@ -1,8 +1,9 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 236
-- **Last Message Text:** 🔺️🔻سخنگوی نیروهای مسلح یمن: با موشک بالستیک و پهپاد تاسیسات شرکت آرامکو در ریاض را هدف قرار دادیم
+- **Messages Processed:** 278
+- **Last Message Text:** مدودف: ملت ایران را در دفاع از استقلال خود بسیار متحد و مصمم دیدم
 
-🔹...
-- **Last Message Time:** 2026-10-03 18:59:15
+معاون شورای امنیت ملی روسیه:
+🔹️در...
+- **Last Message Time:** 2026-10-03 19:37:27
