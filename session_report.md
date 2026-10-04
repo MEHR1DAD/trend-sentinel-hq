@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 201
-- **Last Message Text:** مجلس اصلاح اساسی وضعیت معیشت پرسنل فراجا و دیگر نیروهای مسلح را یک اولویت قطعی می‌داند
-
-رئیس مجلس در...
-- **Last Message Time:** 2026-10-04 06:16:52
+- **Messages Processed:** 296
+- **Last Message Text:** 🎥 عراقچی: حضور هیئت جمهوری اسلامی ایران در نیویورک امسال یک حضور بسیار قوی و بسیار موثر بود
+‌
+🔹وزیر ...
+- **Last Message Time:** 2026-10-04 06:48:54
