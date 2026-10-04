@@ -1,9 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 105
-- **Last Message Text:** ♦️ادعای ترامپ درباره برنامه هسته‌ای صلح‌آمیز ایران
+- **Messages Processed:** 179
+- **Last Message Text:** تشدید حملات به صنعا و مواضع حوثی‌ها در یمن بعد از حمله به تاسیسات آرامکو
 
-ترامپ:
-🔹ایران از بسیاری از برنامه‌های تسلیحات هس...
-- **Last Message Time:** 2026-10-04 04:34:31
+نیروهای دولتی یمن روز یکشن...
+- **Last Message Time:** 2026-10-04 05:05:34
