@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 143
-- **Last Message Text:** علی فدوی، رییس گروه مشاوران فرمانده کل سپاه پاسداران، شامگاه یک‌شنبه ۱۲ مهر مدعی شد برای نخستین‌بار ...
-- **Last Message Time:** 2026-10-04 20:53:52
+- **Messages Processed:** 75
+- **Last Message Text:** 🔻در ایران، زندان رجایی‌شهر کرج تخریب شد. این زندان حدود سه سال پیش تخلیه و تعطیل شد و زندانیانش به ق...
+- **Last Message Time:** 2026-10-04 21:27:49
