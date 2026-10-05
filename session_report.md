@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 26
-- **Last Message Text:** اثر شرایط کاری و احساس تبعیض در ترک شغل توسط پرستاران در ایران؛ گفت‌وگو با نگین آرامش
-@FarsiVOA
-- **Last Message Time:** 2026-10-05 02:34:52
+- **Messages Processed:** 96
+- **Last Message Text:** ♦️همزمان با ورود سامانه بارشی به مناطق شمالی کشور، قله دماوند با بارش نخستین برف پاییزی سفیدپوش شد. ...
+- **Last Message Time:** 2026-10-05 03:39:53
