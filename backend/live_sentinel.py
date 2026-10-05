@@ -140,6 +140,13 @@ class LiveSentinel:
             clean_text = clean_text.replace('\u200c', ' ')
             clean_pattern = clean_pattern.replace('\u200c', ' ')
             
+            # Prevent false positives for medical conditions (e.g. حمله قلبی)
+            if clean_pattern == 'حمله':
+                if re.search(r'حمله\s+(قلبی|عصبی|تنفسی|پانیک)', clean_text):
+                    non_medical = re.sub(r'حمله\s+(قلبی|عصبی|تنفسی|پانیک)', '', clean_text)
+                    if not re.search(r'(?<![آ-یa-zA-Z0-9_])حمله(?![آ-یa-zA-Z0-9_])', non_medical):
+                        return False
+
             # Using negative lookbehind/lookahead for Persian letters
             # to prevent matching substrings inside words (like شنبه in پنج‌شنبه)
             esc_pattern = re.escape(clean_pattern)
@@ -302,8 +309,8 @@ class LiveSentinel:
             node_key = (node or '').lower()
             
             if node_key not in vip_map:
-                # If not VIP, drop any protest/strike patterns
-                patterns_in_msg = [p for p in patterns_in_msg if "اعتراض" not in p and "اعتصاب" not in p]
+                # If not VIP, drop any protest/strike/rights patterns
+                patterns_in_msg = [p for p in patterns_in_msg if "اعتراض" not in p and "اعتصاب" not in p and "اعدام" not in p]
                 
             link = f"https://t.me/{node}/{msg_id}"
             
@@ -321,7 +328,8 @@ class LiveSentinel:
                     time_diff = now - prev['time']
                     
                     if is_edit and time_diff <= 900 and text != prev['text']:
-                        self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0], 'text': text}
+                        target_ch = prev.get('target_channel')
+                        self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0], 'text': text, 'target_channel': target_ch}
                         clean_pats = [p.replace("||FOREIGN||", "") for p in patterns_in_msg]
                         combined_pat = "، ".join(dict.fromkeys(clean_pats)) # remove duplicates
                         
@@ -341,7 +349,8 @@ class LiveSentinel:
                             "VIP_UPDATE", 
                             baseline, 
                             [f"- [{canonical_node}]({link}) (VIP Update)"], 
-                            is_silent=True
+                            is_silent=True,
+                            target_channel=target_ch
                         )
                         if sent_msg:
                             asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
@@ -355,41 +364,88 @@ class LiveSentinel:
                     
                     if new_pats:
                         clean_pats = [p.replace("||FOREIGN||", "") for p in new_pats]
-                        combined_pat = "، ".join(dict.fromkeys(clean_pats))
-                        
                         for p in clean_pats:
                             self.alerted_msg_patterns[msg_key].add(p)
                             
-                        base_pat = new_pats[0]
-                        is_foreign = "||FOREIGN||" in base_pat
-                        baseline = self.baselines.get(base_pat.replace("||FOREIGN||", ""), 0.1)
-                        
-                        # Preserve prefixes
-                        prefix = ""
-                        if "||ECONOMY||" in base_pat: prefix = "||ECONOMY||"
-                        elif "||FOREIGN||" in base_pat: prefix = "||FOREIGN||"
-                        
-                        display_pat = prefix + combined_pat
-                        
-                        is_silent = True
-                        if not is_edit and not is_foreign:
-                            if is_citizen_report or canonical_node == 'VahidOnline':
-                                is_silent = False
+                        # 1. Try VIP AI Classifier first
+                        ai_class = await self.classify_vip_message(text)
+                        if ai_class:
+                            category = ai_class.get('category')
+                            topic_title = ai_class.get('topic_title', '').strip()
+                            
+                            if category == 'OTHER':
+                                print(f"ℹ️ VIP AI Classifier filtered out message as OTHER: '{topic_title}' (Msg {msg_id})")
+                                return
+                                
+                            if category == 'ECONOMY':
+                                target_channel = "@DidehbanEghtesad"
+                                alert_title = f"گزارش اقتصادی: {topic_title}"
+                                custom_icon = "📈"
+                            elif category == 'PROTEST_RIGHTS':
+                                target_channel = "@DidebanEterazat"
+                                is_rights = any(w in text for w in ["اعدام", "حکم", "طناب دار", "زندان", "دادگاه", "بازداشت", "محبوس", "قوه قضائیه"])
+                                alert_title = f"گزارش حقوق بشری: {topic_title}" if is_rights else f"گزارش مردمی: {topic_title}"
+                                custom_icon = "⚖️" if any(w in text for w in ["اعدام", "حکم", "طناب دار", "دادگاه"]) else "📢"
+                            elif category == 'WAR':
+                                target_channel = "@DidebanJang"
+                                alert_title = f"هشدار فوری: {topic_title}"
+                                custom_icon = "🚨"
                             else:
-                                for inc, sev in self.incident_severities.items():
-                                    if inc in clean_pats[0] and sev == "URGENT":
-                                        is_silent = False
-                                        break
-                                        
-                        sent_msg, target_channel, alert_text = await self.send_alert(
-                            display_pat, 
-                            "VIP_IMMEDIATE", 
-                            baseline, 
-                            [f"- [{canonical_node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], 
-                            is_silent=is_silent
-                        )
-                        if sent_msg:
-                            asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
+                                target_channel = None
+                                alert_title = None
+                                custom_icon = None
+                                
+                            self.vip_alert_history[msg_key]['target_channel'] = target_channel
+                            
+                            is_silent = False if (canonical_node in ['VahidOnline', 'iliaen'] and not is_edit) else True
+                            baseline = self.baselines.get(clean_pats[0], 0.1) if clean_pats else 0.1
+                            
+                            sent_msg, target_channel, alert_text = await self.send_alert(
+                                topic_title, 
+                                "VIP_IMMEDIATE", 
+                                baseline, 
+                                [f"- [{canonical_node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], 
+                                is_silent=is_silent,
+                                target_channel=target_channel,
+                                alert_title=alert_title,
+                                custom_icon=custom_icon
+                            )
+                            if sent_msg:
+                                asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
+                        else:
+                            # 2. Fallback to keyword-based logic if AI is unreachable
+                            combined_pat = "، ".join(dict.fromkeys(clean_pats))
+                            base_pat = new_pats[0]
+                            is_foreign = "||FOREIGN||" in base_pat
+                            baseline = self.baselines.get(base_pat.replace("||FOREIGN||", ""), 0.1)
+                            
+                            # Preserve prefixes
+                            prefix = ""
+                            if "||ECONOMY||" in base_pat: prefix = "||ECONOMY||"
+                            elif "||FOREIGN||" in base_pat: prefix = "||FOREIGN||"
+                            
+                            display_pat = prefix + combined_pat
+                            
+                            is_silent = True
+                            if not is_edit and not is_foreign:
+                                if is_citizen_report or canonical_node == 'VahidOnline':
+                                    is_silent = False
+                                else:
+                                    for inc, sev in self.incident_severities.items():
+                                        if inc in clean_pats[0] and sev == "URGENT":
+                                            is_silent = False
+                                            break
+                                            
+                            sent_msg, target_channel, alert_text = await self.send_alert(
+                                display_pat, 
+                                "VIP_IMMEDIATE", 
+                                baseline, 
+                                [f"- [{canonical_node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], 
+                                is_silent=is_silent
+                            )
+                            if sent_msg:
+                                self.vip_alert_history[msg_key]['target_channel'] = target_channel
+                                asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
 
             # Fuzzy Deduplication against messages in the last 3 minutes
             is_syndicated = False
@@ -476,30 +532,39 @@ class LiveSentinel:
             if sent_msg:
                 asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, raw_texts[:3]))
 
-    async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False):
+    async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False, target_channel=None, alert_title=None, custom_icon=None):
         if not BOT_TOKEN: return
         
-        is_economy = "||ECONOMY||" in pattern
+        is_economy = "||ECONOMY||" in pattern or target_channel == "@DidehbanEghtesad"
         pattern = pattern.replace("||ECONOMY||", "")
         
-        is_protest = "اعتراض" in pattern or "اعتصاب" in pattern
+        is_protest = ("اعتراض" in pattern or "اعتصاب" in pattern or "اعدام" in pattern or "حقوق بشری" in pattern) or target_channel == "@DidebanEterazat"
         
         # Determine icon and channel
-        if is_silent:
+        if custom_icon:
+            icon = custom_icon
+        elif is_silent:
             icon = "🔕"
         elif is_economy:
             icon = "📈"
         elif is_protest:
-            icon = "🛑" if "اعتصاب" in pattern else "📢"
+            if "اعدام" in pattern or "حقوق بشری" in pattern:
+                icon = "⚖️"
+            else:
+                icon = "🛑" if "اعتصاب" in pattern else "📢"
         else:
             icon = "🚨"
             
-        if is_economy:
-            alert_title = f"گزارش اقتصادی: {pattern}"
-        elif is_protest:
-            alert_title = f"گزارش مردمی: {pattern}"
-        else:
-            alert_title = f"هشدار فوری: {pattern}"
+        if not alert_title:
+            if is_economy:
+                alert_title = f"گزارش اقتصادی: {pattern}"
+            elif is_protest:
+                if "اعدام" in pattern or "حقوق بشری" in pattern:
+                    alert_title = f"گزارش حقوق بشری: {pattern}"
+                else:
+                    alert_title = f"گزارش مردمی: {pattern}"
+            else:
+                alert_title = f"هشدار فوری: {pattern}"
             
         alert_text = (
             f"{icon} **{alert_title}**\n\n"
@@ -509,14 +574,19 @@ class LiveSentinel:
         )
         
         # Add tags and channel signature
-        if is_economy:
-            target_channel = "@DidehbanEghtesad"
+        if not target_channel:
+            if is_economy:
+                target_channel = "@DidehbanEghtesad"
+            elif is_protest:
+                target_channel = "@DidebanEterazat"
+            else:
+                target_channel = "@DidebanJang"
+                
+        if target_channel == "@DidehbanEghtesad":
             alert_text += f"#دیده‌بان_اقتصاد\n\n{target_channel}"
-        elif is_protest:
-            target_channel = "@DidebanEterazat"
+        elif target_channel == "@DidebanEterazat":
             alert_text += f"#دیده‌بان_اعتراضات\n\n{target_channel}"
         else:
-            target_channel = "@DidebanJang"
             alert_text += f"#دیده‌بان_جنگ\n\n{target_channel}"
             
         # Send only to the public channel (as requested by user)
@@ -531,6 +601,82 @@ class LiveSentinel:
                 print(f"Failed to send alert to {sub}: {e}")
                 
         return sent_msg, target_channel, alert_text
+
+    async def classify_vip_message(self, text):
+        if not GEMINI_API_KEY:
+            return None
+            
+        if not hasattr(self, 'current_gemini_model'):
+            self.current_gemini_model = "gemini-flash-lite-latest"
+            
+        prompt = (
+            "تو یک تحلیلگر و دروازه‌بان هوشمند خبر برای یک سیستم دیده‌بان و مانیتورینگ تلگرام هستی.\n"
+            "یک خبر از یک کانال معتبر دریافت شده است. موضوع این خبر را تحلیل کن و مشخص کن آیا این خبر باید در یکی از ۳ کانال تخصصی زیر منتشر شود:\n\n"
+            "دسته‌بندی‌های مجاز:\n"
+            "1. WAR: اخبار جنگ، تنش‌های نظامی، حملات هوایی/موشکی/پهپادی، بمباران، پدافند هوایی، درگیری‌های مسلحانه، آژیر خطر، انفجارهای نظامی.\n"
+            "2. ECONOMY: اخبار مهم اقتصادی، نوسانات شدید نرخ ارز (دلار، تتر، یورو)، طلا و سکه، بازار بورس، سقوط ریال، تصمیمات کلیدی ارزی و شوک‌های معیشتی.\n"
+            "3. PROTEST_RIGHTS: اخبار اعتراضات مردمی، اعتصابات، تجمعات خیابانی، سرکوب معترضان، بازداشت‌ها، احکام دادگاه‌ها و پرونده‌های معترضان و فعالان، اجرای احکام اعدام، وضعیت زندانیان سیاسی.\n"
+            "4. OTHER: اخبار متفرقه که در هیچ‌کدام از ۳ دسته بالا قرار نمی‌گیرد (مانند اخبار پزشکی، حمله قلبی، حوادث روزمره، اخبار فرهنگی/ورزشی، روابط دیپلماتیک عادی بدون جنگ، هواشناسی).\n\n"
+            f"متن خبر:\n{text}\n\n"
+            "پاسخ را دقیقاً و فقط در قالب یک شیء JSON با این دو فیلد بنویس و هیچ کلمه یا توضیح دیگری قبل یا بعد از آن ننویس:\n"
+            "{\n"
+            '  "category": "WAR" | "ECONOMY" | "PROTEST_RIGHTS" | "OTHER",\n'
+            '  "topic_title": "یک عنوان کوتاه و دقیق فارسی (حداکثر ۵ تا ۶ کلمه) متناسب با واقعه"\n'
+            "}"
+        )
+        
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 100,
+                "temperature": 0.1
+            }
+        }
+        
+        max_retries = 2
+        for attempt in range(max_retries):
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
+            try:
+                import urllib.request
+                import urllib.error
+                import json
+                
+                req = urllib.request.Request(
+                    url, 
+                    data=json.dumps(payload).encode('utf-8'),
+                    headers={'Content-Type': 'application/json'},
+                    method='POST'
+                )
+                
+                loop = asyncio.get_running_loop()
+                def make_req():
+                    with urllib.request.urlopen(req, timeout=10) as response:
+                        return json.loads(response.read().decode('utf-8'))
+                        
+                data = await loop.run_in_executor(None, make_req)
+                raw_text = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
+                
+                match = re.search(r'\{.*\}', raw_text, re.DOTALL)
+                if match:
+                    res = json.loads(match.group(0))
+                    category = str(res.get("category", "")).upper().strip()
+                    topic_title = str(res.get("topic_title", "")).strip()
+                    if category in ["WAR", "ECONOMY", "PROTEST_RIGHTS", "OTHER"]:
+                        print(f"🎯 VIP AI Classification: category={category}, topic='{topic_title}' (Model: {self.current_gemini_model})")
+                        return {"category": category, "topic_title": topic_title}
+                break
+            except urllib.error.HTTPError as e:
+                if e.code == 404 and attempt < max_retries - 1:
+                    print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
+                    self.current_gemini_model = await self.get_fallback_gemini_model()
+                else:
+                    print(f"⚠️ VIP AI Classifier HTTP Error: {e.code} - {e.reason}")
+                    break
+            except Exception as e:
+                print(f"⚠️ VIP AI Classifier failed: {e}")
+                break
+                
+        return None
 
     async def get_fallback_gemini_model(self):
         import urllib.request
