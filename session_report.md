@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 263
-- **Last Message Text:** ناترازی‌های انرژی در جلسه کمیسیون زیربنایی مجمع تشخیص مصلحت بررسی شد
+- **Messages Processed:** 266
+- **Last Message Text:** میزان: جان باختن ۲ فرد محبوس شده در معدن فاریاب
 
-🔹در جلسه فوق العاده کمیسیون زی...
-- **Last Message Time:** 2026-10-05 13:44:06
+🔹فرماندار فاریاب در جنوب استان کرمان از جان‌باختن ۲...
+- **Last Message Time:** 2026-10-05 14:15:40
