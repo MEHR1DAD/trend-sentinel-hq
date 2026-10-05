@@ -1,5 +1,4 @@
 import os
-import json
 import asyncio
 from datetime import datetime, timedelta, timezone
 from telethon import TelegramClient
@@ -21,51 +20,34 @@ async def main():
     now = datetime.now(timezone.utc)
     yesterday = now - timedelta(days=1)
     
-    total_alerts = 0
-    channel_counts = {}
-    
     for channel in CHANNELS:
         count = 0
         try:
-            # We fetch messages from the last 24 hours
-            async for msg in client.iter_messages(channel, offset_date=now):
+            # Fetch messages from the last 24 hours
+            async for msg in client.iter_messages(channel):
                 if msg.date < yesterday:
                     break
                 if msg.text and ("هشدار فوری" in msg.text or "گزارش مردمی" in msg.text or "گزارش اقتصادی" in msg.text):
                     count += 1
                     
-            channel_counts[channel] = count
-            total_alerts += count
-        except Exception as e:
-            print(f"Error fetching {channel}: {e}")
+            print(f"Channel {channel} had {count} alerts today.")
             
-    # Formulate report
-    if total_alerts == 0:
-        report = (
-            "🌙 **گزارش شبانه رادار دیده‌بان**\n\n"
-            "وضعیت: 🟢 آرامش نسبی\n\n"
-            "در ۲۴ ساعت گذشته هیچ‌گونه فعالیت غیرعادی یا هشدار مهمی در رادارهای دیده‌بان ثبت نشده است. "
-            "سیستم به صورت ۲۴ ساعته در حال پایش لحظه‌ای منابع می‌باشد.\n\n"
-            "🤖 *Powered by Sentinel AI*"
-        )
-    else:
-        report = (
-            "📊 **گزارش شبانه رادار دیده‌بان**\n\n"
-            f"مجموع هشدارهای ۲۴ ساعت گذشته: **{total_alerts} حادثه**\n\n"
-            f"🔴 دیده‌بان جنگ: {channel_counts.get('@DidebanJang', 0)} هشدار\n"
-            f"🟠 دیده‌بان اعتراضات: {channel_counts.get('@DidebanEterazat', 0)} هشدار\n"
-            f"📈 دیده‌بان اقتصاد: {channel_counts.get('@DidehbanEghtesad', 0)} هشدار\n\n"
-            "سیستم به صورت ۲۴ ساعته در حال پایش لحظه‌ای منابع می‌باشد.\n\n"
-            "🤖 *Powered by Sentinel AI*"
-        )
-        
-    # Broadcast report silently to both channels
-    for channel in CHANNELS:
-        try:
-            await client.send_message(channel, report, silent=True)
-            print(f"Sent daily report to {channel}")
+            # Post heartbeat ONLY if the channel was completely quiet
+            if count == 0:
+                report = (
+                    "🌙 **گزارش شبانه رادار دیده‌بان**\n\n"
+                    "وضعیت: 🟢 آرامش نسبی\n\n"
+                    "در ۲۴ ساعت گذشته هیچ‌گونه فعالیت غیرعادی یا هشدار مهمی در این رادار ثبت نشده است. "
+                    "سیستم به صورت ۲۴ ساعته در حال پایش لحظه‌ای منابع می‌باشد.\n\n"
+                    "🤖 *Powered by Sentinel AI*"
+                )
+                await client.send_message(channel, report, silent=True)
+                print(f"Sent 'all quiet' report to {channel}")
+            else:
+                print(f"Skipping daily report for {channel} since it had {count} alerts.")
+                
         except Exception as e:
-            print(f"Failed to send to {channel}: {e}")
+            print(f"Error processing {channel}: {e}")
             
     await client.disconnect()
 
