@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 236
-- **Last Message Text:** ♦️نمای جلویی متفاوت مونوریل توکیو؛ تصویری متفاوت از کابین قطارهای شهری ژاپن
-🇮🇷 ✊ @AkhbareFori
-- **Last Message Time:** 2026-10-05 18:02:03
+- **Messages Processed:** 278
+- **Last Message Text:** ویدیوی رسیده به ایران‌اینترنشنال نشان می‌دهد گروهی از دختران دانش‌آموز در یکی از مدارس اصفهان، با سر...
+- **Last Message Time:** 2026-10-05 18:33:49
