@@ -1,7 +1,7 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 41
-- **Last Message Text:** تصاویر جدید از حملات موشکی یمن به پالایشگاه آرامکو عربستان در شهر جده
-@JahanTasnim
-- **Last Message Time:** 2026-10-05 22:33:37
+- **Messages Processed:** 55
+- **Last Message Text:** بابک تقوایی: جمهوری اسلامی بارها در محاسبات نظامی خود دچار خطا شده است
+@FarsiVOA
+- **Last Message Time:** 2026-10-05 23:05:42
