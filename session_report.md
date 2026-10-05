@@ -1,8 +1,7 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 42
-- **Last Message Text:** 🖊هدر جاسپر, نویسنده و عکاس
-
-کشف شهری در دامنه‌های بیابانی پرو که ۳۸۰۰ سال قدمت دارد، می‌تواند درک ما...
-- **Last Message Time:** 2026-10-05 02:04:46
+- **Messages Processed:** 26
+- **Last Message Text:** اثر شرایط کاری و احساس تبعیض در ترک شغل توسط پرستاران در ایران؛ گفت‌وگو با نگین آرامش
+@FarsiVOA
+- **Last Message Time:** 2026-10-05 02:34:52
