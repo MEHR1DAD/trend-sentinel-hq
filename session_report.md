@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 213
-- **Last Message Text:** 🎥 لبنانی‌هایی که خودشان گرفتارند اما از حال مردم ایران می‌پرسند
+- **Messages Processed:** 279
+- **Last Message Text:** پزشکیان: مذاکره با دشمنی که هر روز ترور و تحریم می‌کند، معنا ندارد
 
-@Farsna
-- **Last Message Time:** 2026-10-05 19:05:28
+رئیس جمهور ایران گفته است «با دش...
+- **Last Message Time:** 2026-10-05 19:37:23
