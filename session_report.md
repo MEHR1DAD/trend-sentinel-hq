@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 278
-- **Last Message Text:** ویدیوی رسیده به ایران‌اینترنشنال نشان می‌دهد گروهی از دختران دانش‌آموز در یکی از مدارس اصفهان، با سر...
-- **Last Message Time:** 2026-10-05 18:33:49
+- **Messages Processed:** 213
+- **Last Message Text:** 🎥 لبنانی‌هایی که خودشان گرفتارند اما از حال مردم ایران می‌پرسند
+
+@Farsna
+- **Last Message Time:** 2026-10-05 19:05:28
