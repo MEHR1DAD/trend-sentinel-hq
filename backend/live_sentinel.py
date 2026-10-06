@@ -934,10 +934,24 @@ class LiveSentinel:
             
         link = f"https://t.me/VahidOnline/{msg_id}"
         
+        # Detect media type from raw_msg
+        media_icon = ""
+        link_action = "مشاهده پست اصلی در کانال وحیدآنلاین"
+        if raw_msg:
+            if getattr(raw_msg, 'video', None):
+                media_icon = " 📹"
+                link_action = "مشاهده ویدیو در کانال وحیدآنلاین"
+            elif getattr(raw_msg, 'photo', None):
+                media_icon = " 📸"
+                link_action = "مشاهده تصویر در کانال وحیدآنلاین"
+            elif getattr(raw_msg, 'voice', None) or getattr(raw_msg, 'audio', None):
+                media_icon = " 🎙"
+                link_action = "شنیدن فایل صوتی در کانال وحیدآنلاین"
+        
         post_content = (
-            f"⚡️ **{title}**\n\n"
+            f"⚡️ **{title}**{media_icon}\n\n"
             f"{summary}\n\n"
-            f"🔗 [مشاهده پست اصلی در کانال وحیدآنلاین]({link})\n"
+            f"🔗 [{link_action}]({link})\n"
             f"📡 {target_channel}"
         )
         
