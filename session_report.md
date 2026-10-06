@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 84
-- **Last Message Text:** 🎥 تصاویری از آتش‌سوزی در فرودگاه بین‌المللی «ریاض» بعد از هدف قرار گرفتن توسط موشک بالستیک یمن
-
-@isn...
-- **Last Message Time:** 2026-10-06 03:18:29
+- **Messages Processed:** 97
+- **Last Message Text:** 🔻وام ودیعه ۳۶۵ میلیونی چند درصد هزینه رهن مسکن را در تهران پوشش می‌دهد؟ | فاصله 2 میلیادری شمال و جن...
+- **Last Message Time:** 2026-10-06 04:18:05
