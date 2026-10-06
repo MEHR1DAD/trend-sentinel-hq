@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 176
-- **Last Message Text:** صدور دو حکم اعدام دیگر برای بازداشت‌شدگان اعتراضات دی‌ ۱۴۰۴؛ زندانیان ۶۶ زندان علیه اعدام اعتصاب غذا...
-- **Last Message Time:** 2026-10-06 16:35:53
+- **Messages Processed:** 243
+- **Last Message Text:** 🎥 آرژانتینی‌ها برای خداحافظی با مسی به خیابان‌ها آمدند
+
+🔹در آستانه آخرین بازی لیونل مسی با پیراهن آر...
+- **Last Message Time:** 2026-10-06 17:07:42
