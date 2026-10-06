@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 41
-- **Last Message Text:** ائتلاف حمایت از دولت قانونی یمن: یک موشک بالستیک حوثی پرتاب شده به سوی خمیس مشیط در جنوب سعودی، رهگی...
-- **Last Message Time:** 2026-10-06 21:50:20
+- **Messages Processed:** 47
+- **Last Message Text:** هشدار آمریکا درباره سفر به روسیه
+
+🔹 سفارت آمریکا در مسکو با اشاره به گزارش‌هایی درباره احتمال انتشار...
+- **Last Message Time:** 2026-10-06 22:22:28
