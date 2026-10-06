@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 67
-- **Last Message Text:** اداره امر به معروف رژیم طالبان در هرات اعلام کرد کاغذپران‌/بادبادک بازی ممنوع است و هیچ کس اجازه ندا...
-- **Last Message Time:** 2026-10-06 22:54:28
+- **Messages Processed:** 50
+- **Last Message Text:** انتقاد سناتور آمریکایی از سوءاستفاده‌های مالی ترامپ
+
+🔹چاک شومر رهبر اقلیت دموکرات سنای آمریکا در اظه...
+- **Last Message Time:** 2026-10-06 23:26:03
