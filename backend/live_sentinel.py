@@ -40,6 +40,7 @@ class LiveSentinel:
         self.alerted_msg_patterns = {} # "node_msgid" -> set of patterns
         self.vip_alert_history = {} # "node_msgid" -> dict(time, pattern, text)
         self.recent_alert_sources = deque() # (timestamp, set_of_sources)
+        self.vahid_ai_posted = {} # msg_id -> posted_msg_id in @VahidOnlineAI
         
         # Metrics
         self.start_time = time.time()
@@ -276,7 +277,7 @@ class LiveSentinel:
             
         return list(set(patterns))
 
-    async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None):
+    async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None):
         async with self.lock:
             # Ignore messages older than 3 minutes to prevent spam on bot restart (catch-up)
             if msg_date:
@@ -285,6 +286,11 @@ class LiveSentinel:
                     return
                     
             self.purge_old_messages()
+            
+            # --- @VahidOnlineAI Channel Pipeline ---
+            node_key = (node or '').lower()
+            if node_key == 'vahidonline':
+                asyncio.create_task(self.handle_vahid_online_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
             
             if not text: return
             
@@ -830,6 +836,131 @@ class LiveSentinel:
             except Exception as e:
                 print(f"⚠️ Failed to append AI summary: {e}")
                 return
+
+    async def summarize_vahid_post(self, text):
+        if not GEMINI_API_KEY:
+            return text[:250] + "..." if len(text) > 250 else text
+            
+        if not hasattr(self, 'current_gemini_model'):
+            self.current_gemini_model = "gemini-flash-lite-latest"
+            
+        # If text is already very brief (under 60 chars), keep it as is
+        if len(text.strip()) < 60:
+            return text.strip()
+            
+        prompt = (
+            "تو دستیار هوشمند و خلاصه‌ساز خبر برای کانال تلگرام 'وحیدآنلاین هوشمند' (VahidOnlineAI) هستی.\n"
+            "پست زیر از کانال تلگرام وحیدآنلاین منتشر شده است. "
+            "لطفاً پیام اصلی، مهم‌ترین اتفاق و نکات کلیدی این متن را در ۲ الی ۴ خط بسیار روان، دقیق، رسا و بدون قضاوت خلاصه کن.\n"
+            "دستورالعمل‌های الزامی:\n"
+            "- هیچ مقدمه، سلام، توضیح اضافی یا عباراتی مثل 'خلاصه:' یا 'این خبر درباره...' ننویس.\n"
+            "- هیچ هشتگی اضافه نکن.\n"
+            "- فقط و فقط خودِ متن چکیده را بنویس.\n\n"
+            f"متن پست:\n{text}"
+        )
+        
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 200,
+                "temperature": 0.2
+            }
+        }
+        
+        max_retries = 2
+        for attempt in range(max_retries):
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
+            try:
+                import urllib.request
+                import urllib.error
+                import json
+                
+                req = urllib.request.Request(
+                    url, 
+                    data=json.dumps(payload).encode('utf-8'),
+                    headers={'Content-Type': 'application/json'},
+                    method='POST'
+                )
+                
+                loop = asyncio.get_running_loop()
+                def make_req():
+                    with urllib.request.urlopen(req, timeout=12) as response:
+                        return json.loads(response.read().decode('utf-8'))
+                        
+                data = await loop.run_in_executor(None, make_req)
+                summary = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
+                if summary:
+                    return summary
+                break
+            except urllib.error.HTTPError as e:
+                if e.code == 404 and attempt < max_retries - 1:
+                    print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
+                    self.current_gemini_model = await self.get_fallback_gemini_model()
+                else:
+                    print(f"⚠️ Gemini summarize HTTP Error: {e.code} - {e.reason}")
+                    break
+            except Exception as e:
+                print(f"⚠️ Gemini summarize failed: {e}")
+                break
+                
+        return text[:250] + "..." if len(text) > 250 else text
+
+    async def handle_vahid_online_ai(self, text, msg_id, raw_msg=None, is_edit=False):
+        target_channel = "@VahidOnlineAI"
+        if not text and not (raw_msg and getattr(raw_msg, 'media', None)):
+            return
+            
+        clean_text = (text or "").strip()
+        if not clean_text:
+            summary = "📷 [رسانه بدون متن منتشر شده در کانال وحیدآنلاین]"
+        else:
+            summary = await self.summarize_vahid_post(clean_text)
+            
+        link = f"https://t.me/VahidOnline/{msg_id}"
+        
+        post_content = (
+            f"⚡️ **چکیده پست وحیدآنلاین:**\n\n"
+            f"{summary}\n\n"
+            f"🔗 [مشاهده پست اصلی در کانال وحیدآنلاین]({link})\n"
+            f"📡 {target_channel}"
+        )
+        
+        try:
+            if is_edit and msg_id in self.vahid_ai_posted:
+                posted_id = self.vahid_ai_posted[msg_id]
+                await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
+                print(f"✏️ Edited post {posted_id} in {target_channel} for VahidOnline msg {msg_id}")
+            elif not is_edit and msg_id not in self.vahid_ai_posted:
+                sent = None
+                has_media = raw_msg and getattr(raw_msg, 'media', None)
+                if has_media:
+                    try:
+                        sent = await self.bot.send_message(
+                            target_channel, 
+                            post_content, 
+                            file=raw_msg.media, 
+                            link_preview=False
+                        )
+                    except Exception as media_err:
+                        print(f"⚠️ Could not send media to {target_channel} ({media_err}). Sending text with link.")
+                        sent = await self.bot.send_message(
+                            target_channel, 
+                            post_content, 
+                            link_preview=False
+                        )
+                else:
+                    sent = await self.bot.send_message(
+                        target_channel, 
+                        post_content, 
+                        link_preview=False
+                    )
+                    
+                if sent:
+                    self.vahid_ai_posted[msg_id] = sent.id
+                    print(f"🚀 Published AI summary to {target_channel} for VahidOnline msg {msg_id}")
+        except Exception as e:
+            print(f"❌ Error publishing to {target_channel} for msg {msg_id}: {e}")
+
 import signal
 import sys
 
@@ -910,7 +1041,7 @@ async def main():
         msg_id = event.message.id
         msg_date = event.message.date
         
-        await sentinel.process_message(text, node_username, msg_id, msg_date=msg_date)
+        await sentinel.process_message(text, node_username, msg_id, msg_date=msg_date, raw_msg=event.message)
 
     @client.on(events.MessageEdited(chats=sentinel.nodes))
     async def edit_handler(event):
@@ -920,7 +1051,7 @@ async def main():
         msg_id = event.message.id
         msg_date = getattr(event.message, 'edit_date', None) or event.message.date
         
-        await sentinel.process_message(text, node_username, msg_id, is_edit=True, msg_date=msg_date)
+        await sentinel.process_message(text, node_username, msg_id, is_edit=True, msg_date=msg_date, raw_msg=event.message)
 
     async def active_poller():
         last_ids = {}
@@ -932,7 +1063,7 @@ async def main():
                         msg = messages[0]
                         if node not in last_ids or msg.id > last_ids[node]:
                             last_ids[node] = msg.id
-                            await sentinel.process_message(msg.message, node, msg.id, msg_date=msg.date)
+                            await sentinel.process_message(msg.message, node, msg.id, msg_date=msg.date, raw_msg=msg)
                 except Exception as e:
                     pass
                 await asyncio.sleep(1.5)
