@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 162
-- **Last Message Text:** طوفان گردوخاک در استان الانبار عراق
+- **Messages Processed:** 237
+- **Last Message Text:** نیروهای مسلح یمن پیشروی مزدوران سعودی را در الوازعیه ناکام گذاشتند
 
-🔹به‌دلیل وقوع طوفان گردوخاک، حرکت خودروها در جاده ترانزیتی استا...
-- **Last Message Time:** 2026-10-06 15:31:34
+یحیی سریع، سخنگوی نیروهای مسلح ی...
+- **Last Message Time:** 2026-10-06 16:04:05
