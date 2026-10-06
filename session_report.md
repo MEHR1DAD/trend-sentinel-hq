@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 243
-- **Last Message Text:** 🎥 آرژانتینی‌ها برای خداحافظی با مسی به خیابان‌ها آمدند
+- **Messages Processed:** 165
+- **Last Message Text:** 🔻ایرنا: شنیده شدن صدای انفجار در جزیره قشم
 
-🔹در آستانه آخرین بازی لیونل مسی با پیراهن آر...
-- **Last Message Time:** 2026-10-06 17:07:42
+🔹️دقایقی پیش صدای انفجار در جزیره قشم از سمت دریا به گوش...
+- **Last Message Time:** 2026-10-06 17:39:08
