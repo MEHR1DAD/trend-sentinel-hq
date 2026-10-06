@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 304
-- **Last Message Text:** رایتل به مزایده گذاشته شد؛ قیمت پایه: ۱۳۰ هزار میلیارد تومان
+- **Messages Processed:** 197
+- **Last Message Text:** دیپلمات‌های فرانسوی در تهران چرا بازداشت شدند؟
 
-شستا آگهی مزایده عمومی دومرحله‌ای فروش...
-- **Last Message Time:** 2026-10-06 08:48:44
+🔹 طرح براندزای نرم فرانسوی‌ها در ایران با بازداشت ای...
+- **Last Message Time:** 2026-10-06 09:20:27
