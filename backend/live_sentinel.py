@@ -527,10 +527,54 @@ class LiveSentinel:
                         break
                     
             raw_texts = [msg['text'] for msg in self.recent_messages if msg['node'] in channels and msg['link'] == channels[msg['node']]]
+            combined_text = "\n---\n".join(raw_texts[:3])
             
-            sent_msg, target_channel, alert_text = await self.send_alert(clean_pat, distinct_channel_count, normal_rate, source_links[:3], is_silent=is_silent)
-            if sent_msg:
-                asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, raw_texts[:3]))
+            # Use AI Classifier for Anomaly Alert to verify, clean title, and route to correct channel
+            ai_class = await self.classify_message(combined_text)
+            if ai_class:
+                category = ai_class.get('category')
+                topic_title = ai_class.get('topic_title', '').strip()
+                
+                if category == 'OTHER':
+                    print(f"ℹ️ Anomaly AI Classifier rejected alert as OTHER: '{topic_title}' ({clean_pat})")
+                    continue
+                    
+                if category == 'ECONOMY':
+                    target_ch = "@DidehbanEghtesad"
+                    title = f"گزارش اقتصادی: {topic_title}"
+                    icon = "📈"
+                    is_silent = False
+                elif category == 'PROTEST_RIGHTS':
+                    target_ch = "@DidebanEterazat"
+                    is_rights = any(w in combined_text for w in ["اعدام", "حکم", "طناب دار", "زندان", "دادگاه", "بازداشت", "محبوس", "قوه قضائیه"])
+                    title = f"گزارش حقوق بشری: {topic_title}" if is_rights else f"گزارش مردمی: {topic_title}"
+                    icon = "⚖️" if any(w in combined_text for w in ["اعدام", "حکم", "طناب دار", "دادگاه"]) else "📢"
+                    is_silent = False
+                elif category == 'WAR':
+                    target_ch = "@DidebanJang"
+                    title = f"هشدار فوری: {topic_title}"
+                    icon = "🚨"
+                else:
+                    target_ch = None
+                    title = None
+                    icon = None
+                    
+                sent_msg, target_channel, alert_text = await self.send_alert(
+                    topic_title, 
+                    distinct_channel_count, 
+                    normal_rate, 
+                    source_links[:3], 
+                    is_silent=is_silent,
+                    target_channel=target_ch,
+                    alert_title=title,
+                    custom_icon=icon
+                )
+                if sent_msg:
+                    asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, raw_texts[:3]))
+            else:
+                sent_msg, target_channel, alert_text = await self.send_alert(clean_pat, distinct_channel_count, normal_rate, source_links[:3], is_silent=is_silent)
+                if sent_msg:
+                    asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, raw_texts[:3]))
 
     async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False, target_channel=None, alert_title=None, custom_icon=None):
         if not BOT_TOKEN: return
@@ -602,7 +646,7 @@ class LiveSentinel:
                 
         return sent_msg, target_channel, alert_text
 
-    async def classify_vip_message(self, text):
+    async def classify_message(self, text):
         if not GEMINI_API_KEY:
             return None
             
@@ -611,7 +655,7 @@ class LiveSentinel:
             
         prompt = (
             "تو یک تحلیلگر و دروازه‌بان هوشمند خبر برای یک سیستم دیده‌بان و مانیتورینگ تلگرام هستی.\n"
-            "یک خبر از یک کانال معتبر دریافت شده است. موضوع این خبر را تحلیل کن و مشخص کن آیا این خبر باید در یکی از ۳ کانال تخصصی زیر منتشر شود:\n\n"
+            "یک رویداد خبری مهم دریافت شده است. موضوع این خبر را تحلیل کن و مشخص کن آیا این خبر باید در یکی از ۳ کانال تخصصی زیر منتشر شود:\n\n"
             "دسته‌بندی‌های مجاز:\n"
             "1. WAR: اخبار جنگ، تنش‌های نظامی، حملات هوایی/موشکی/پهپادی، بمباران، پدافند هوایی، درگیری‌های مسلحانه، آژیر خطر، انفجارهای نظامی.\n"
             "2. ECONOMY: اخبار مهم اقتصادی، نوسانات شدید نرخ ارز (دلار، تتر، یورو)، طلا و سکه، بازار بورس، سقوط ریال، تصمیمات کلیدی ارزی و شوک‌های معیشتی.\n"
@@ -677,6 +721,8 @@ class LiveSentinel:
                 break
                 
         return None
+
+    classify_vip_message = classify_message
 
     async def get_fallback_gemini_model(self):
         import urllib.request
