@@ -1,9 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 40
-- **Last Message Text:** سناتور آمریکایی: ترامپ برای جنگ با ایران آمادگی نداشت
+- **Messages Processed:** 84
+- **Last Message Text:** 🎥 تصاویری از آتش‌سوزی در فرودگاه بین‌المللی «ریاض» بعد از هدف قرار گرفتن توسط موشک بالستیک یمن
 
-کریس مورفی:
-🔹️امروز شخصا خسارات واردشده به سف...
-- **Last Message Time:** 2026-10-06 02:47:21
+@isn...
+- **Last Message Time:** 2026-10-06 03:18:29
