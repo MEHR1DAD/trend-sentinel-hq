@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 290
-- **Last Message Text:** لاوروف: تبعات اقتصادی جنگ علیه ایران جهانی است
+- **Messages Processed:** 229
+- **Last Message Text:** شیخ نعیم‌ قاسم: استقامت ملت و مرجعیت عراق اشغالگران آمریکایی را به خروج وادار کرد
 
-🔹وزیر امور خارجه روسیه هشدار داد که تبعات اقتصادی جن...
-- **Last Message Time:** 2026-10-06 14:17:01
+ دبیرکل حزب‌الله ...
+- **Last Message Time:** 2026-10-06 14:48:10
