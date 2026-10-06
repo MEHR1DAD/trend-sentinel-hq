@@ -839,30 +839,31 @@ class LiveSentinel:
 
     async def summarize_vahid_post(self, text):
         if not GEMINI_API_KEY:
-            return text[:250] + "..." if len(text) > 250 else text
+            return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
             
         if not hasattr(self, 'current_gemini_model'):
             self.current_gemini_model = "gemini-flash-lite-latest"
             
-        # If text is already very brief (under 60 chars), keep it as is
-        if len(text.strip()) < 60:
-            return text.strip()
-            
         prompt = (
             "تو دستیار هوشمند و خلاصه‌ساز خبر برای کانال تلگرام 'وحیدآنلاین هوشمند' (VahidOnlineAI) هستی.\n"
             "پست زیر از کانال تلگرام وحیدآنلاین منتشر شده است. "
-            "لطفاً پیام اصلی، مهم‌ترین اتفاق و نکات کلیدی این متن را در ۲ الی ۴ خط بسیار روان، دقیق، رسا و بدون قضاوت خلاصه کن.\n"
+            "وظیفه تو این است که دو مورد تولید کنی:\n"
+            "۱. title: یک عنوان و تیتر خبری بسیار جذاب، دقیق و کوتاه (حداکثر ۶ الی ۷ کلمه) که اصل رویداد را بگوید.\n"
+            "۲. summary: یک چکیده روان، دقیق، رسا و بدون قضاوت در ۲ الی ۳ خط.\n\n"
             "دستورالعمل‌های الزامی:\n"
-            "- هیچ مقدمه، سلام، توضیح اضافی یا عباراتی مثل 'خلاصه:' یا 'این خبر درباره...' ننویس.\n"
-            "- هیچ هشتگی اضافه نکن.\n"
-            "- فقط و فقط خودِ متن چکیده را بنویس.\n\n"
+            "- هیچ مقدمه، سلام، توضیح اضافی یا هشتگ ننویس.\n"
+            "- پاسخ را دقیقاً و فقط در قالب یک شیء JSON با دو کلید 'title' و 'summary' بنویس:\n"
+            "{\n"
+            '  "title": "تیتر کوتاه و دقیق",\n'
+            '  "summary": "متن چکیده ۲ الی ۳ خطی"\n'
+            "}\n\n"
             f"متن پست:\n{text}"
         )
         
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 200,
+                "maxOutputTokens": 250,
                 "temperature": 0.2
             }
         }
@@ -888,9 +889,21 @@ class LiveSentinel:
                         return json.loads(response.read().decode('utf-8'))
                         
                 data = await loop.run_in_executor(None, make_req)
-                summary = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
-                if summary:
-                    return summary
+                raw_out = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
+                
+                match = re.search(r'\{.*\}', raw_out, re.DOTALL)
+                if match:
+                    res = json.loads(match.group(0))
+                    title = res.get("title", "").strip()
+                    summary = res.get("summary", "").strip()
+                    if title and summary:
+                        return {"title": title, "summary": summary}
+                        
+                if raw_out:
+                    lines = [l.strip() for l in raw_out.split('\n') if l.strip()]
+                    if len(lines) >= 2:
+                        return {"title": lines[0].replace('#', '').strip(), "summary": "\n".join(lines[1:])}
+                    return {"title": "خلاصه خبر", "summary": raw_out}
                 break
             except urllib.error.HTTPError as e:
                 if e.code == 404 and attempt < max_retries - 1:
@@ -903,7 +916,7 @@ class LiveSentinel:
                 print(f"⚠️ Gemini summarize failed: {e}")
                 break
                 
-        return text[:250] + "..." if len(text) > 250 else text
+        return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
 
     async def handle_vahid_online_ai(self, text, msg_id, raw_msg=None, is_edit=False):
         target_channel = "@VahidOnlineAI"
@@ -912,14 +925,17 @@ class LiveSentinel:
             
         clean_text = (text or "").strip()
         if not clean_text:
+            title = "پست تصویری"
             summary = "📷 [رسانه بدون متن منتشر شده در کانال وحیدآنلاین]"
         else:
-            summary = await self.summarize_vahid_post(clean_text)
+            res = await self.summarize_vahid_post(clean_text)
+            title = res.get('title', 'چکیده خبر').strip()
+            summary = res.get('summary', clean_text).strip()
             
         link = f"https://t.me/VahidOnline/{msg_id}"
         
         post_content = (
-            f"⚡️ **چکیده پست وحیدآنلاین:**\n\n"
+            f"⚡️ **{title}**\n\n"
             f"{summary}\n\n"
             f"🔗 [مشاهده پست اصلی در کانال وحیدآنلاین]({link})\n"
             f"📡 {target_channel}"
