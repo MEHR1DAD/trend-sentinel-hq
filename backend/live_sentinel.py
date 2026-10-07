@@ -41,6 +41,7 @@ class LiveSentinel:
         self.vip_alert_history = {} # "node_msgid" -> dict(time, pattern, text)
         self.recent_alert_sources = deque() # (timestamp, set_of_sources)
         self.vahid_ai_posted = {} # msg_id -> posted_msg_id in @VahidOnlineAI
+        self.vahid_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
         
         # Metrics
         self.start_time = time.time()
@@ -920,18 +921,26 @@ class LiveSentinel:
 
     async def handle_vahid_online_ai(self, text, msg_id, raw_msg=None, is_edit=False):
         target_channel = "@VahidOnlineAI"
-        if not text and not (raw_msg and getattr(raw_msg, 'media', None)):
+        
+        # 1. Deduplication for Album / Media Groups (grouped_id)
+        grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
+        if grouped_id and grouped_id in self.vahid_grouped_posted and not is_edit:
             return
             
         clean_text = (text or "").strip()
-        if not clean_text:
-            title = "پست تصویری"
-            summary = "📷 [رسانه بدون متن منتشر شده در کانال وحیدآنلاین]"
-        else:
-            res = await self.summarize_vahid_post(clean_text)
-            title = res.get('title', 'چکیده خبر').strip()
-            summary = res.get('summary', clean_text).strip()
+        # 2. Strict Filter: Never post media with empty or meaningless text
+        # If Vahid posts a photo/video without a caption, DO NOT post to @VahidOnlineAI
+        if not clean_text or len(clean_text) < 5:
+            return
             
+        # If this is part of an album and has text, register the grouped_id
+        if grouped_id:
+            self.vahid_grouped_posted.add(grouped_id)
+            
+        res = await self.summarize_vahid_post(clean_text)
+        title = res.get('title', 'چکیده خبر').strip()
+        summary = res.get('summary', clean_text).strip()
+        
         link = f"https://t.me/VahidOnline/{msg_id}"
         
         # Detect media type from raw_msg
@@ -956,11 +965,11 @@ class LiveSentinel:
         )
         
         try:
-            if is_edit and msg_id in self.vahid_ai_posted:
+            if msg_id in self.vahid_ai_posted:
                 posted_id = self.vahid_ai_posted[msg_id]
                 await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
                 print(f"✏️ Edited post {posted_id} in {target_channel} for VahidOnline msg {msg_id}")
-            elif not is_edit and msg_id not in self.vahid_ai_posted:
+            else:
                 sent = None
                 has_media = raw_msg and getattr(raw_msg, 'media', None)
                 if has_media:
