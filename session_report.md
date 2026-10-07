@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 245
-- **Last Message Text:** پلمب تالار متخلف در قم به‌خاطر هنجارشکنی همسر علی دایی
+- **Messages Processed:** 214
+- **Last Message Text:** راهیابی امنیت سایبری به آموزش مدارس
 
-🔹پس‌از حضور علی دایی پیشکوست فوتبال و همسر و...
-- **Last Message Time:** 2026-10-07 08:59:25
+🔹 با تفاهم مرکز مدیریت راهبردی افتا و معاونت آموزش وزارت آموزش ...
+- **Last Message Time:** 2026-10-07 09:31:10
