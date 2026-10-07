@@ -1,7 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 49
-- **Last Message Text:** بابک خطی: سازمان های نظارتی خود در دزدی ارزهای مرتبط با دارو دست دارند
-@FarsiVOA
-- **Last Message Time:** 2026-10-07 01:45:52
+- **Messages Processed:** 41
+- **Last Message Text:** شنیده شدن صدای چند انفجار در پایتخت عربستان
+
+🔹منابع خبری از شنیده شدن صدای چند انفجار در شهر ریاض پا...
+- **Last Message Time:** 2026-10-07 02:17:22
