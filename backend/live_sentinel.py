@@ -43,9 +43,11 @@ class LiveSentinel:
         self.vahid_ai_posted = {} # msg_id -> posted_msg_id in @VahidOnlineAI
         self.vahid_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
         self.vahid_msg_locks = {} # msg_id -> asyncio.Lock() for sequential edit ordering
+        self.vahid_needs_refresh = set() # set of (vahid_id, posted_id) needing AI re-summary
         self.ilia_ai_posted = {} # msg_id -> posted_msg_id in @iliaenAI
         self.ilia_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
         self.ilia_msg_locks = {} # msg_id -> asyncio.Lock() for sequential edit ordering
+        self.ilia_needs_refresh = set() # set of (ilia_id, posted_id) needing AI re-summary
         
         # Metrics
         self.start_time = time.time()
@@ -878,7 +880,7 @@ class LiveSentinel:
             }
         }
         
-        max_retries = 2
+        max_retries = 3
         for attempt in range(max_retries):
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
             try:
@@ -919,6 +921,9 @@ class LiveSentinel:
                 if e.code == 404 and attempt < max_retries - 1:
                     print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
                     self.current_gemini_model = await self.get_fallback_gemini_model()
+                elif e.code == 429 and attempt < max_retries - 1:
+                    print(f"⚠️ Rate limited (429). Sleeping 5s before retry (attempt {attempt+1}/{max_retries})...")
+                    await asyncio.sleep(5)
                 else:
                     print(f"⚠️ Gemini summarize HTTP Error: {e.code} - {e.reason}")
                     break
@@ -948,6 +953,8 @@ class LiveSentinel:
                         if vahid_id not in self.vahid_ai_posted:
                             self.vahid_ai_posted[vahid_id] = msg.id
                             count += 1
+                        if "خلاصه خبر" in text and "⚡️" in text:
+                            self.vahid_needs_refresh.add((vahid_id, msg.id))
             if count > 0:
                 print(f"🔄 Preloaded {count} historical posts for @VahidOnlineAI edit tracking.")
         except Exception as e:
@@ -957,8 +964,11 @@ class LiveSentinel:
         if not reader_client:
             return
         try:
+            now_utc = datetime.now(timezone.utc)
             recent_vahid = []
             async for msg in reader_client.iter_messages("VahidOnline", limit=20):
+                if msg.date and (now_utc - msg.date).total_seconds() > 86400:
+                    continue
                 recent_vahid.append(msg)
             recent_vahid.reverse()
             
@@ -968,7 +978,22 @@ class LiveSentinel:
                     if clean_text and len(clean_text) >= 5:
                         print(f"⚡ Catching up missed VahidOnline post {msg.id}...")
                         await self.handle_vahid_online_ai(clean_text, msg.id, raw_msg=msg, is_edit=False)
-                        await asyncio.sleep(2)
+                        await asyncio.sleep(4)
+
+            # Re-summarize any posts that previously fell back to generic "خلاصه خبر"
+            for vahid_id, posted_id in list(self.vahid_needs_refresh):
+                try:
+                    orig_msgs = await reader_client.get_messages("VahidOnline", ids=[vahid_id])
+                    if orig_msgs and orig_msgs[0]:
+                        orig_m = orig_msgs[0]
+                        clean_text = (orig_m.message or orig_m.text or "").strip()
+                        if clean_text:
+                            print(f"🔄 Upgrading fallback post {vahid_id} (msg {posted_id}) with full AI summary...")
+                            await self.handle_vahid_online_ai(clean_text, vahid_id, raw_msg=orig_m, is_edit=True)
+                            await asyncio.sleep(4)
+                except Exception as ref_err:
+                    print(f"⚠️ Failed to upgrade fallback post {vahid_id}: {ref_err}")
+            self.vahid_needs_refresh.clear()
         except Exception as e:
             print(f"⚠️ Catchup for VahidOnline failed: {e}")
 
@@ -1089,6 +1114,8 @@ class LiveSentinel:
                         if ilia_id not in self.ilia_ai_posted:
                             self.ilia_ai_posted[ilia_id] = msg.id
                             count += 1
+                        if "خلاصه خبر" in text and "⚡️" in text:
+                            self.ilia_needs_refresh.add((ilia_id, msg.id))
             if count > 0:
                 print(f"🔄 Preloaded {count} historical posts for @iliaenAI edit tracking.")
         except Exception as e:
@@ -1098,8 +1125,11 @@ class LiveSentinel:
         if not reader_client:
             return
         try:
+            now_utc = datetime.now(timezone.utc)
             recent_ilia = []
             async for msg in reader_client.iter_messages("iliaen", limit=20):
+                if msg.date and (now_utc - msg.date).total_seconds() > 86400:
+                    continue
                 recent_ilia.append(msg)
             recent_ilia.reverse()
             
@@ -1109,7 +1139,22 @@ class LiveSentinel:
                     if clean_text and len(clean_text) >= 5:
                         print(f"⚡ Catching up missed iliaen post {msg.id}...")
                         await self.handle_ilia_ai(clean_text, msg.id, raw_msg=msg, is_edit=False)
-                        await asyncio.sleep(2)
+                        await asyncio.sleep(4)
+
+            # Re-summarize any fallback posts
+            for ilia_id, posted_id in list(self.ilia_needs_refresh):
+                try:
+                    orig_msgs = await reader_client.get_messages("iliaen", ids=[ilia_id])
+                    if orig_msgs and orig_msgs[0]:
+                        orig_m = orig_msgs[0]
+                        clean_text = (orig_m.message or orig_m.text or "").strip()
+                        if clean_text:
+                            print(f"🔄 Upgrading fallback post {ilia_id} (msg {posted_id}) with full AI summary...")
+                            await self.handle_ilia_ai(clean_text, ilia_id, raw_msg=orig_m, is_edit=True)
+                            await asyncio.sleep(4)
+                except Exception as ref_err:
+                    print(f"⚠️ Failed to upgrade fallback post {ilia_id}: {ref_err}")
+            self.ilia_needs_refresh.clear()
         except Exception as e:
             print(f"⚠️ Catchup for iliaen failed: {e}")
 
