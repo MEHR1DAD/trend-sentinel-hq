@@ -1,8 +1,9 @@
 # Sentinel Session Report
 
-- **Uptime:** 30 minutes
-- **Messages Processed:** 232
-- **Last Message Text:** الحوثی: «طوفان‌الاقصی» بزرگ‌ترین حماسه جهادی ملت فلسطین و ضربه‌ای بی‌سابقه به اسرائیل بود
+- **Uptime:** 31 minutes
+- **Messages Processed:** 294
+- **Last Message Text:** مقابله نیروهای مسلح یمن با پیشروی نیروهای وابسته به عربستان در الجوف
+#ایرنا_جهان 
 
-🔹 سید عبد...
-- **Last Message Time:** 2026-10-07 14:11:25
+https://irna.ir/x...
+- **Last Message Time:** 2026-10-07 15:21:21
