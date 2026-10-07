@@ -11,7 +11,8 @@ from collections import deque
 # --- Config ---
 CONFIG_FILE = 'backend/sentinel_config.json'
 BASELINE_FILE = 'backend/trend_baselines.json'
-MAX_RUNTIME_SEC = 30 * 60  # 30 minutes (Rotate before the 45-minute hard crash)
+STATE_FILE = 'backend/sentinel_state.json'
+MAX_RUNTIME_SEC = 35 * 60  # 35 minutes graceful rotation
 
 API_ID = os.environ.get("TELEGRAM_API_ID")
 API_HASH = os.environ.get("TELEGRAM_API_HASH")
@@ -27,6 +28,8 @@ class LiveSentinel:
         self.bot = bot
         self.config = self.load_json(CONFIG_FILE)
         self.nodes = self.config.get('nodes', [])
+        self.state_file = STATE_FILE
+        self.current_gemini_model = "gemini-1.5-flash"
         
         # Load severities
         self.incident_severities = self.config.get('patterns', {}).get('incident_severities', {})
@@ -54,6 +57,56 @@ class LiveSentinel:
         self.total_msgs_processed = 0
         self.last_msg_text = "No messages yet"
         self.last_msg_time = "N/A"
+        
+        # Load persistent state from disk
+        self.load_persisted_state()
+        
+    def load_persisted_state(self):
+        try:
+            if os.path.exists(self.state_file):
+                with open(self.state_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                
+                now = time.time()
+                # 1. Alerted message patterns: key -> set
+                raw_patterns = data.get('alerted_msg_patterns', {})
+                for k, v in raw_patterns.items():
+                    if isinstance(v, list):
+                        self.alerted_msg_patterns[k] = set(v)
+                
+                # 2. VIP Alert History (keep entries from last 24h)
+                raw_vip = data.get('vip_alert_history', {})
+                for k, v in raw_vip.items():
+                    if isinstance(v, dict) and (now - v.get('time', 0)) <= 86400:
+                        self.vip_alert_history[k] = v
+                
+                # 3. Last alert time (keep entries from last 24h)
+                raw_last = data.get('last_alert_time', {})
+                for k, v in raw_last.items():
+                    if isinstance(v, (int, float)) and (now - v) <= 86400:
+                        self.last_alert_time[k] = v
+                
+                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts.")
+        except Exception as e:
+            print(f"⚠️ Error loading persisted state: {e}")
+
+    def save_persisted_state(self):
+        try:
+            now = time.time()
+            clean_vip = {k: v for k, v in self.vip_alert_history.items() if isinstance(v, dict) and (now - v.get('time', 0)) <= 86400}
+            clean_last = {k: v for k, v in self.last_alert_time.items() if isinstance(v, (int, float)) and (now - v) <= 86400}
+            serializable_patterns = {k: list(v) for k, v in self.alerted_msg_patterns.items()}
+            
+            data = {
+                "alerted_msg_patterns": serializable_patterns,
+                "vip_alert_history": clean_vip,
+                "last_alert_time": clean_last,
+                "last_saved": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
+            }
+            with open(self.state_file, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"⚠️ Error saving persisted state: {e}")
         
     def fetch_remote_baselines(self):
         remote_url = "https://mehr1dad.github.io/python-utils-collection/data/trend_history.json"
@@ -99,14 +152,14 @@ class LiveSentinel:
         
         months_fa = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"]
         for i, month in enumerate(months_fa):
-            # Use lookbehind/lookahead to match whole words and prevent substrings like "دیجیتال" matching "دی"
-            if re.search(r'(?<![\u0600-\u06FF])' + month + r'(?![\u0600-\u06FF])', text) and i < current_month_idx: 
+            # Only match if preceded by numbers/ordinals (e.g. "۱۵ شهریور") or explicit "ماه گذشته"
+            if (re.search(r'(?:\d{1,2}|یکم|دوم|سوم|چهارم|پنجم|سی‌ام)\s+' + month, text) or f"{month}‌ماه گذشته" in text or f"{month} گذشته" in text) and i < current_month_idx: 
                 return True
         
         # Filter out formal journalistic/recap language and news channel forwards
         news_stopwords = [
-            "vahidheadline", "vahidoonline", "به گزارش", "خبرگزاری", "ایسنا", "فارس", 
-            "تسنیم", "مهر", "ایرنا", "ایلنا", "همشهری", "شرق", "رویترز", "روز گذشته", "صبح امروز", 
+            "vahidheadline", "vahidoonline", "به گزارش", "خبرگزاری مهر", "خبرگزاری فارس", 
+            "خبرگزاری تسنیم", "خبرگزاری ایسنا", "خبرگزاری ایرنا", "خبرگزاری ایلنا", "روزنامه همشهری", "روزنامه شرق", "رویترز", "روز گذشته", "صبح امروز", 
             "در پاسخ به", "در گفت‌وگو", "در گفتوگو", "مجری", "مصاحبه", "تلویزیون",
             "ترجمه ماشین", "ترجمه ماشینی", "به نقل از", 
             "یادبود", "سالگرد", "خاطره",
@@ -123,7 +176,7 @@ class LiveSentinel:
             "وزیر خارجه", "وزیر امور خارجه", "وزیر دفاع", "سخنگوی", "نماینده مجلس",
             "رئیس‌جمهور", "رییس‌جمهور", "رئیس جمهور", "رییس جمهور", 
             "نخست‌وزیر", "نخست وزیر", "پادشاه", "رئیس مجلس", "رییس مجلس", "رهبر انقلاب",
-            "سرلشکر", "سردار", "امیر", "دریادار", "سرتیپ", "فرمانده کل"
+            "سرلشکر", "سردار", "امیر", "دریادار", "سرتیپ"
         ]
         
         text_lower = text.lower()
@@ -294,11 +347,11 @@ class LiveSentinel:
             elif node_key == 'iliaen':
                 asyncio.create_task(self.handle_ilia_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
 
-            # Ignore messages older than 3 minutes to prevent spam on bot restart (catch-up)
-            # This applies ONLY to breaking news radar alerts (War / Economy / Protest)
+            # Accept messages up to 15 minutes old (900s) to catch news during runner restarts & handovers
+            # This applies to breaking news radar alerts (War / Economy / Protest)
             if msg_date:
                 now_utc = datetime.now(timezone.utc)
-                if (now_utc - msg_date).total_seconds() > 180:
+                if (now_utc - msg_date).total_seconds() > 900:
                     return
                     
             self.purge_old_messages()
@@ -657,10 +710,12 @@ class LiveSentinel:
         for sub in subs:
             try:
                 sent_msg = await self.bot.send_message(sub, alert_text, link_preview=False, silent=is_silent)
-                print(f"{icon} SENT ALERT for {pattern} to {sub}")
             except Exception as e:
                 print(f"Failed to send alert to {sub}: {e}")
                 
+        if sent_msg:
+            self.save_persisted_state()
+            
         return sent_msg, target_channel, alert_text
 
     async def classify_message(self, text):
@@ -668,7 +723,7 @@ class LiveSentinel:
             return None
             
         if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = "gemini-flash-lite-latest"
+            self.current_gemini_model = "gemini-1.5-flash"
             
         prompt = (
             "تو یک تحلیلگر و دروازه‌بان هوشمند خبر برای یک سیستم دیده‌بان و مانیتورینگ تلگرام هستی.\n"
@@ -781,7 +836,7 @@ class LiveSentinel:
             return
             
         if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = "gemini-flash-lite-latest"
+            self.current_gemini_model = "gemini-1.5-flash"
         
         print(f"🤖 Starting AI summary injection using model: {self.current_gemini_model}")
             
@@ -853,7 +908,7 @@ class LiveSentinel:
             return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
             
         if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = "gemini-flash-lite-latest"
+            self.current_gemini_model = "gemini-1.5-flash"
             
         prompt = (
             f"تو دستیار هوشمند و خلاصه‌ساز خبر برای کانال تلگرام '{bot_name}' هستی.\n"
@@ -1363,6 +1418,12 @@ async def main():
                         latest_id = messages[0].id
                         if node not in last_ids:
                             last_ids[node] = latest_id
+                            # Startup Catch-up for messages from last 15 minutes during runner restart transitions
+                            now_utc = datetime.now(timezone.utc)
+                            recent = [m for m in messages if m.date and (now_utc - m.date).total_seconds() <= 900]
+                            recent.reverse()
+                            for m in recent:
+                                await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m)
                         else:
                             new_msgs = [m for m in messages if m.id > last_ids[node]]
                             new_msgs.reverse()
@@ -1371,14 +1432,32 @@ async def main():
                             last_ids[node] = max(last_ids[node], latest_id)
                 except Exception as e:
                     pass
-                await asyncio.sleep(1.5)
-            await asyncio.sleep(15)
+                await asyncio.sleep(2.0)
+            await asyncio.sleep(20)
+
+    async def heartbeat_monitor():
+        while True:
+            await asyncio.sleep(60)
+            try:
+                uptime_mins = int((time.time() - sentinel.start_time) / 60)
+                now_str = datetime.now(timezone.utc).strftime("%H:%M:%S UTC")
+                print(f"💓 [HEARTBEAT] Uptime: {uptime_mins}m | Processed: {sentinel.total_msgs_processed} msgs | Active Nodes: {len(sentinel.nodes)} | Time: {now_str}")
+                
+                # Proactive connection health check
+                if client and not client.is_connected():
+                    print("⚠️ Telethon client disconnected detected in heartbeat! Reconnecting...")
+                    await client.connect()
+                if bot and not bot.is_connected():
+                    print("⚠️ Telethon bot disconnected detected in heartbeat! Reconnecting...")
+                    await bot.connect()
+            except Exception as e:
+                print(f"⚠️ Heartbeat monitor error: {e}")
         
     try:
         await bot.start(bot_token=BOT_TOKEN)
         print("🤖 Bot listener started.")
         await client.start()
-        print("✅ Live listening started on", len(sentinel.nodes), "nodes (Active Polling).")
+        print("✅ Live listening started on", len(sentinel.nodes), "nodes (Active Polling & Push Events).")
         await sentinel.preload_vahid_ai_history(reader_client=client)
         await sentinel.catchup_unposted_vahid(reader_client=client)
         await sentinel.preload_ilia_ai_history(reader_client=client)
@@ -1397,6 +1476,7 @@ async def main():
             raise
     
     poller_task = asyncio.create_task(active_poller())
+    heartbeat_task = asyncio.create_task(heartbeat_monitor())
     
     try:
         # Run until time limit
@@ -1414,6 +1494,7 @@ async def main():
         sentinel.last_msg_text = f"FATAL ERROR: {str(e)}"
     finally:
         poller_task.cancel()
+        heartbeat_task.cancel()
         print("🔌 Disconnecting Telegram sessions...")
         
         async def safe_disconnect():
@@ -1427,7 +1508,8 @@ async def main():
         except asyncio.TimeoutError:
             print("⚠️ Disconnect timed out, forcing exit.")
         
-        # Generate and push session report
+        # Save persistent state and generate session report
+        sentinel.save_persisted_state()
         uptime_mins = int((time.time() - sentinel.start_time) / 60)
         report_content = (
             f"# Sentinel Session Report\n\n"
@@ -1438,11 +1520,11 @@ async def main():
         )
         with open('session_report.md', 'w', encoding='utf-8') as f:
             f.write(report_content)
+            
     os.system('git config --global user.email "bot@sentinel.local"')
     os.system('git config --global user.name "Sentinel Bot"')
-    os.system('git add session_report.md')
-    os.system('git commit -m "[skip ci] save session report"')
-    os.system('git push')
+    os.system('git add session_report.md backend/sentinel_state.json')
+    os.system('git diff --staged --quiet || (git commit -m "[skip ci] save session report and state" && git pull --rebase origin main && git push || true)')
 
 if __name__ == "__main__":
     asyncio.run(main())

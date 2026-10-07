@@ -2,7 +2,7 @@ name: Sentinel Watch (Live API)
 
 on:
   schedule:
-    - cron: '0 */4 * * *' # Every 4 hours (Guarantees overlap or restart)
+    - cron: '*/30 * * * *' # Every 30 minutes (Reliable cron rotation & safety net)
   workflow_dispatch:
   push:
     branches: [ "main" ]
@@ -13,12 +13,12 @@ permissions:
 
 concurrency:
   group: sentinel-live
-  cancel-in-progress: true # If a new cron triggers, kill the old one (prevent overlaps)
+  cancel-in-progress: true # Seamless handover to the new runner
 
 jobs:
   live_watch:
     runs-on: ubuntu-latest
-    timeout-minutes: 350 # ~5.8 hours
+    timeout-minutes: 50
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,15 +40,17 @@ jobs:
           TELEGRAM_SESSION_GENERAL: ${{ secrets.TELEGRAM_SESSION_GENERAL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          echo "Waiting 15 seconds to ensure any previous overlapping sessions are fully disconnected..."
-          sleep 15
+          echo "Starting Live Sentinel with 3-second safety margin..."
+          sleep 3
           python -u backend/live_sentinel.py
 
       - name: Auto-Restart on Exit
-        if: success() || failure()
+        if: always()
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
-          echo "Cooling down for 60 seconds before triggering the next run..."
-          sleep 60
-          gh workflow run watch.yml --ref main || true
+          echo "Triggering next live sentinel runner..."
+          for i in 1 2 3; do
+            echo "Attempt $i: Dispatching watch.yml on main..."
+            gh workflow run watch.yml --ref main && break || sleep 5
+          done || true
