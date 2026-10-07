@@ -1,9 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 31 minutes
-- **Messages Processed:** 294
-- **Last Message Text:** مقابله نیروهای مسلح یمن با پیشروی نیروهای وابسته به عربستان در الجوف
-#ایرنا_جهان 
-
-https://irna.ir/x...
-- **Last Message Time:** 2026-10-07 15:21:21
+- **Uptime:** 30 minutes
+- **Messages Processed:** 161
+- **Last Message Text:** ♦️ سخنگوی وزارت امور خارجه فرانسه مدعی شد: ما سفیر ایران را به دلیل کمپین انتشار اطلاعات نادرست در ر...
+- **Last Message Time:** 2026-10-07 15:54:52
