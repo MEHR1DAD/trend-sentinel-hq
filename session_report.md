@@ -1,8 +1,7 @@
 # Sentinel Session Report
 
 - **Uptime:** 30 minutes
-- **Messages Processed:** 214
-- **Last Message Text:** راهیابی امنیت سایبری به آموزش مدارس
-
-🔹 با تفاهم مرکز مدیریت راهبردی افتا و معاونت آموزش وزارت آموزش ...
-- **Last Message Time:** 2026-10-07 09:31:10
+- **Messages Processed:** 278
+- **Last Message Text:** ♦️برخورد پلیس با شهردار سن‌دنی فرانسه در میان اعتراضات دانشجوها و دانش‌آموزان 
+📲🇮🇷 ✊ @AkhbareFori | ...
+- **Last Message Time:** 2026-10-07 10:02:49
