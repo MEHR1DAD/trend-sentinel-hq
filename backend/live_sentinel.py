@@ -284,20 +284,22 @@ class LiveSentinel:
 
     async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None):
         async with self.lock:
+            # --- @VahidOnlineAI & @iliaenAI Channel Pipelines ---
+            # Dedicated mirror summary channels must NEVER be dropped by radar age filters
+            node_key = (node or '').lower()
+            if node_key == 'vahidonline':
+                asyncio.create_task(self.handle_vahid_online_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+            elif node_key == 'iliaen':
+                asyncio.create_task(self.handle_ilia_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+
             # Ignore messages older than 3 minutes to prevent spam on bot restart (catch-up)
+            # This applies ONLY to breaking news radar alerts (War / Economy / Protest)
             if msg_date:
                 now_utc = datetime.now(timezone.utc)
                 if (now_utc - msg_date).total_seconds() > 180:
                     return
                     
             self.purge_old_messages()
-            
-            # --- @VahidOnlineAI & @iliaenAI Channel Pipelines ---
-            node_key = (node or '').lower()
-            if node_key == 'vahidonline':
-                asyncio.create_task(self.handle_vahid_online_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
-            elif node_key == 'iliaen':
-                asyncio.create_task(self.handle_ilia_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
             
             if not text: return
             
@@ -951,6 +953,25 @@ class LiveSentinel:
         except Exception as e:
             print(f"⚠️ Could not preload @VahidOnlineAI history: {e}")
 
+    async def catchup_unposted_vahid(self, reader_client=None):
+        if not reader_client:
+            return
+        try:
+            recent_vahid = []
+            async for msg in reader_client.iter_messages("VahidOnline", limit=20):
+                recent_vahid.append(msg)
+            recent_vahid.reverse()
+            
+            for msg in recent_vahid:
+                if msg.id not in self.vahid_ai_posted:
+                    clean_text = (msg.message or msg.text or "").strip()
+                    if clean_text and len(clean_text) >= 5:
+                        print(f"⚡ Catching up missed VahidOnline post {msg.id}...")
+                        await self.handle_vahid_online_ai(clean_text, msg.id, raw_msg=msg, is_edit=False)
+                        await asyncio.sleep(2)
+        except Exception as e:
+            print(f"⚠️ Catchup for VahidOnline failed: {e}")
+
     async def handle_vahid_online_ai(self, text, msg_id, raw_msg=None, is_edit=False):
         target_channel = "@VahidOnlineAI"
         
@@ -1072,6 +1093,25 @@ class LiveSentinel:
                 print(f"🔄 Preloaded {count} historical posts for @iliaenAI edit tracking.")
         except Exception as e:
             print(f"⚠️ Could not preload @iliaenAI history: {e}")
+
+    async def catchup_unposted_ilia(self, reader_client=None):
+        if not reader_client:
+            return
+        try:
+            recent_ilia = []
+            async for msg in reader_client.iter_messages("iliaen", limit=20):
+                recent_ilia.append(msg)
+            recent_ilia.reverse()
+            
+            for msg in recent_ilia:
+                if msg.id not in self.ilia_ai_posted:
+                    clean_text = (msg.message or msg.text or "").strip()
+                    if clean_text and len(clean_text) >= 5:
+                        print(f"⚡ Catching up missed iliaen post {msg.id}...")
+                        await self.handle_ilia_ai(clean_text, msg.id, raw_msg=msg, is_edit=False)
+                        await asyncio.sleep(2)
+        except Exception as e:
+            print(f"⚠️ Catchup for iliaen failed: {e}")
 
     async def handle_ilia_ai(self, text, msg_id, raw_msg=None, is_edit=False):
         target_channel = "@iliaenAI"
@@ -1273,12 +1313,17 @@ async def main():
         while True:
             for node in sentinel.nodes:
                 try:
-                    messages = await client.get_messages(node, limit=1)
+                    messages = await client.get_messages(node, limit=5)
                     if messages:
-                        msg = messages[0]
-                        if node not in last_ids or msg.id > last_ids[node]:
-                            last_ids[node] = msg.id
-                            await sentinel.process_message(msg.message, node, msg.id, msg_date=msg.date, raw_msg=msg)
+                        latest_id = messages[0].id
+                        if node not in last_ids:
+                            last_ids[node] = latest_id
+                        else:
+                            new_msgs = [m for m in messages if m.id > last_ids[node]]
+                            new_msgs.reverse()
+                            for m in new_msgs:
+                                await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m)
+                            last_ids[node] = max(last_ids[node], latest_id)
                 except Exception as e:
                     pass
                 await asyncio.sleep(1.5)
@@ -1290,7 +1335,9 @@ async def main():
         await client.start()
         print("✅ Live listening started on", len(sentinel.nodes), "nodes (Active Polling).")
         await sentinel.preload_vahid_ai_history(reader_client=client)
+        await sentinel.catchup_unposted_vahid(reader_client=client)
         await sentinel.preload_ilia_ai_history(reader_client=client)
+        await sentinel.catchup_unposted_ilia(reader_client=client)
     except Exception as e:
         if hasattr(e, 'seconds'):
             print(f"⚠️ FloodWaitError! Sleeping for {e.seconds} seconds before retrying...")
@@ -1298,7 +1345,9 @@ async def main():
             await bot.start(bot_token=BOT_TOKEN)
             await client.start()
             await sentinel.preload_vahid_ai_history(reader_client=client)
+            await sentinel.catchup_unposted_vahid(reader_client=client)
             await sentinel.preload_ilia_ai_history(reader_client=client)
+            await sentinel.catchup_unposted_ilia(reader_client=client)
         else:
             raise
     
