@@ -42,6 +42,7 @@ class LiveSentinel:
         self.recent_alert_sources = deque() # (timestamp, set_of_sources)
         self.vahid_ai_posted = {} # msg_id -> posted_msg_id in @VahidOnlineAI
         self.vahid_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
+        self.vahid_msg_locks = {} # msg_id -> asyncio.Lock() for sequential edit ordering
         
         # Metrics
         self.start_time = time.time()
@@ -853,6 +854,7 @@ class LiveSentinel:
             "۲. summary: یک چکیده روان، دقیق، رسا و بدون قضاوت در ۲ الی ۳ خط.\n\n"
             "دستورالعمل‌های الزامی:\n"
             "- هیچ مقدمه، سلام، توضیح اضافی یا هشتگ ننویس.\n"
+            "- اگر پست شامل بخش‌های «تکمیلی»، «آپدیت» یا گزارش‌های پی‌درپی است، اولویت را به جدیدترین اطلاعات اضافه‌شده بده و وضعیت نهایی و به‌روز شده رویداد را در تیتر و خلاصه بازتاب بده.\n"
             "- پاسخ را دقیقاً و فقط در قالب یک شیء JSON با دو کلید 'title' و 'summary' بنویس:\n"
             "{\n"
             '  "title": "تیتر کوتاه و دقیق",\n'
@@ -919,6 +921,25 @@ class LiveSentinel:
                 
         return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
 
+    async def preload_vahid_ai_history(self, reader_client=None):
+        target_channel = "@VahidOnlineAI"
+        client_to_use = reader_client or self.bot
+        try:
+            count = 0
+            async for msg in client_to_use.iter_messages(target_channel, limit=100):
+                text = msg.text or msg.message or ""
+                if text:
+                    match = re.search(r'https://t\.me/Vahid(?:Online|Headline|OOnLine)/(\d+)', text)
+                    if match:
+                        vahid_id = int(match.group(1))
+                        if vahid_id not in self.vahid_ai_posted:
+                            self.vahid_ai_posted[vahid_id] = msg.id
+                            count += 1
+            if count > 0:
+                print(f"🔄 Preloaded {count} historical posts for @VahidOnlineAI edit tracking.")
+        except Exception as e:
+            print(f"⚠️ Could not preload @VahidOnlineAI history: {e}")
+
     async def handle_vahid_online_ai(self, text, msg_id, raw_msg=None, is_edit=False):
         target_channel = "@VahidOnlineAI"
         
@@ -937,68 +958,90 @@ class LiveSentinel:
         if grouped_id:
             self.vahid_grouped_posted.add(grouped_id)
             
-        res = await self.summarize_vahid_post(clean_text)
-        title = res.get('title', 'چکیده خبر').strip()
-        summary = res.get('summary', clean_text).strip()
-        
-        link = f"https://t.me/VahidOnline/{msg_id}"
-        
-        # Detect media type from raw_msg
-        media_icon = ""
-        link_action = "مشاهده پست اصلی در کانال وحیدآنلاین"
-        if raw_msg:
-            if getattr(raw_msg, 'video', None):
-                media_icon = " 📹"
-                link_action = "مشاهده ویدیو در کانال وحیدآنلاین"
-            elif getattr(raw_msg, 'photo', None):
-                media_icon = " 📸"
-                link_action = "مشاهده تصویر در کانال وحیدآنلاین"
-            elif getattr(raw_msg, 'voice', None) or getattr(raw_msg, 'audio', None):
-                media_icon = " 🎙"
-                link_action = "شنیدن فایل صوتی در کانال وحیدآنلاین"
-        
-        post_content = (
-            f"⚡️ **{title}**{media_icon}\n\n"
-            f"{summary}\n\n"
-            f"🔗 [{link_action}]({link})\n"
-            f"📡 {target_channel}"
-        )
-        
-        try:
-            if msg_id in self.vahid_ai_posted:
-                posted_id = self.vahid_ai_posted[msg_id]
-                await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
-                print(f"✏️ Edited post {posted_id} in {target_channel} for VahidOnline msg {msg_id}")
-            else:
-                sent = None
-                has_media = raw_msg and getattr(raw_msg, 'media', None)
-                if has_media:
+        # Ensure sequential processing per msg_id to avoid race conditions on rapid edits
+        if msg_id not in self.vahid_msg_locks:
+            if len(self.vahid_msg_locks) > 200:
+                self.vahid_msg_locks.clear()
+            self.vahid_msg_locks[msg_id] = asyncio.Lock()
+            
+        async with self.vahid_msg_locks[msg_id]:
+            # Safeguard: if this is an edit of an ancient post (>2h old) not in history, ignore it
+            if is_edit and msg_id not in self.vahid_ai_posted:
+                orig_date = getattr(raw_msg, 'date', None)
+                if orig_date:
+                    now_utc = datetime.now(timezone.utc)
+                    if (now_utc - orig_date).total_seconds() > 7200:
+                        print(f"⏩ Skipped editing ancient post {msg_id} (>2h old and not tracked)")
+                        return
+
+            res = await self.summarize_vahid_post(clean_text)
+            title = res.get('title', 'چکیده خبر').strip()
+            summary = res.get('summary', clean_text).strip()
+            
+            link = f"https://t.me/VahidOnline/{msg_id}"
+            
+            # Detect media type from raw_msg
+            media_icon = ""
+            link_action = "مشاهده پست اصلی در کانال وحیدآنلاین"
+            if raw_msg:
+                if getattr(raw_msg, 'video', None):
+                    media_icon = " 📹"
+                    link_action = "مشاهده ویدیو در کانال وحیدآنلاین"
+                elif getattr(raw_msg, 'photo', None):
+                    media_icon = " 📸"
+                    link_action = "مشاهده تصویر در کانال وحیدآنلاین"
+                elif getattr(raw_msg, 'voice', None) or getattr(raw_msg, 'audio', None):
+                    media_icon = " 🎙"
+                    link_action = "شنیدن فایل صوتی در کانال وحیدآنلاین"
+            
+            post_content = (
+                f"⚡️ **{title}**{media_icon}\n\n"
+                f"{summary}\n\n"
+                f"🔗 [{link_action}]({link})\n"
+                f"📡 {target_channel}"
+            )
+            
+            try:
+                if msg_id in self.vahid_ai_posted:
+                    posted_id = self.vahid_ai_posted[msg_id]
                     try:
-                        sent = await self.bot.send_message(
-                            target_channel, 
-                            post_content, 
-                            file=raw_msg.media, 
-                            link_preview=False
-                        )
-                    except Exception as media_err:
-                        print(f"⚠️ Could not send media to {target_channel} ({media_err}). Sending text with link.")
-                        sent = await self.bot.send_message(
-                            target_channel, 
-                            post_content, 
-                            link_preview=False
-                        )
+                        await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
+                        print(f"✏️ Edited post {posted_id} in {target_channel} for VahidOnline msg {msg_id}")
+                    except Exception as edit_err:
+                        if "not modified" in str(edit_err).lower():
+                            print(f"ℹ️ Post {posted_id} in {target_channel} is already up to date (no content change).")
+                        else:
+                            raise edit_err
                 else:
-                    sent = await self.bot.send_message(
-                        target_channel, 
-                        post_content, 
-                        link_preview=False
-                    )
-                    
-                if sent:
-                    self.vahid_ai_posted[msg_id] = sent.id
-                    print(f"🚀 Published AI summary to {target_channel} for VahidOnline msg {msg_id}")
-        except Exception as e:
-            print(f"❌ Error publishing to {target_channel} for msg {msg_id}: {e}")
+                    sent = None
+                    has_media = raw_msg and getattr(raw_msg, 'media', None)
+                    if has_media:
+                        try:
+                            sent = await self.bot.send_message(
+                                target_channel, 
+                                post_content, 
+                                file=raw_msg.media, 
+                                link_preview=False
+                            )
+                        except Exception as media_err:
+                            print(f"⚠️ Could not send media to {target_channel} ({media_err}). Sending text with link.")
+                            sent = await self.bot.send_message(
+                                target_channel, 
+                                post_content, 
+                                link_preview=False
+                            )
+                    else:
+                        sent = await self.bot.send_message(
+                            target_channel, 
+                            post_content, 
+                            link_preview=False
+                        )
+                        
+                    if sent:
+                        self.vahid_ai_posted[msg_id] = sent.id
+                        print(f"🚀 Published AI summary to {target_channel} for VahidOnline msg {msg_id}")
+            except Exception as e:
+                print(f"❌ Error publishing to {target_channel} for msg {msg_id}: {e}")
 
 import signal
 import sys
@@ -1113,12 +1156,14 @@ async def main():
         print("🤖 Bot listener started.")
         await client.start()
         print("✅ Live listening started on", len(sentinel.nodes), "nodes (Active Polling).")
+        await sentinel.preload_vahid_ai_history(reader_client=client)
     except Exception as e:
         if hasattr(e, 'seconds'):
             print(f"⚠️ FloodWaitError! Sleeping for {e.seconds} seconds before retrying...")
             await asyncio.sleep(e.seconds + 5)
             await bot.start(bot_token=BOT_TOKEN)
             await client.start()
+            await sentinel.preload_vahid_ai_history(reader_client=client)
         else:
             raise
     
