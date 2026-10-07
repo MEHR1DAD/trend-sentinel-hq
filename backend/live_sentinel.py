@@ -43,6 +43,9 @@ class LiveSentinel:
         self.vahid_ai_posted = {} # msg_id -> posted_msg_id in @VahidOnlineAI
         self.vahid_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
         self.vahid_msg_locks = {} # msg_id -> asyncio.Lock() for sequential edit ordering
+        self.ilia_ai_posted = {} # msg_id -> posted_msg_id in @iliaenAI
+        self.ilia_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
+        self.ilia_msg_locks = {} # msg_id -> asyncio.Lock() for sequential edit ordering
         
         # Metrics
         self.start_time = time.time()
@@ -289,10 +292,12 @@ class LiveSentinel:
                     
             self.purge_old_messages()
             
-            # --- @VahidOnlineAI Channel Pipeline ---
+            # --- @VahidOnlineAI & @iliaenAI Channel Pipelines ---
             node_key = (node or '').lower()
             if node_key == 'vahidonline':
                 asyncio.create_task(self.handle_vahid_online_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+            elif node_key == 'iliaen':
+                asyncio.create_task(self.handle_ilia_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
             
             if not text: return
             
@@ -839,7 +844,7 @@ class LiveSentinel:
                 print(f"⚠️ Failed to append AI summary: {e}")
                 return
 
-    async def summarize_vahid_post(self, text):
+    async def summarize_channel_post(self, text, channel_name="وحیدآنلاین", bot_name="وحیدآنلاین هوشمند (VahidOnlineAI)"):
         if not GEMINI_API_KEY:
             return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
             
@@ -847,8 +852,8 @@ class LiveSentinel:
             self.current_gemini_model = "gemini-flash-lite-latest"
             
         prompt = (
-            "تو دستیار هوشمند و خلاصه‌ساز خبر برای کانال تلگرام 'وحیدآنلاین هوشمند' (VahidOnlineAI) هستی.\n"
-            "پست زیر از کانال تلگرام وحیدآنلاین منتشر شده است. "
+            f"تو دستیار هوشمند و خلاصه‌ساز خبر برای کانال تلگرام '{bot_name}' هستی.\n"
+            f"پست زیر از کانال تلگرام {channel_name} منتشر شده است. "
             "وظیفه تو این است که دو مورد تولید کنی:\n"
             "۱. title: یک عنوان و تیتر خبری بسیار جذاب، دقیق و کوتاه (حداکثر ۶ الی ۷ کلمه) که اصل رویداد را بگوید.\n"
             "۲. summary: یک چکیده روان، دقیق، رسا و بدون قضاوت در ۲ الی ۳ خط.\n\n"
@@ -920,6 +925,12 @@ class LiveSentinel:
                 break
                 
         return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
+
+    async def summarize_vahid_post(self, text):
+        return await self.summarize_channel_post(text, channel_name="وحیدآنلاین", bot_name="وحیدآنلاین هوشمند (VahidOnlineAI)")
+
+    async def summarize_ilia_post(self, text):
+        return await self.summarize_channel_post(text, channel_name="ایلیا (iliaen)", bot_name="ایلیا هوشمند (iliaenAI)")
 
     async def preload_vahid_ai_history(self, reader_client=None):
         target_channel = "@VahidOnlineAI"
@@ -1043,6 +1054,128 @@ class LiveSentinel:
             except Exception as e:
                 print(f"❌ Error publishing to {target_channel} for msg {msg_id}: {e}")
 
+    async def preload_ilia_ai_history(self, reader_client=None):
+        target_channel = "@iliaenAI"
+        client_to_use = reader_client or self.bot
+        try:
+            count = 0
+            async for msg in client_to_use.iter_messages(target_channel, limit=100):
+                text = msg.text or msg.message or ""
+                if text:
+                    match = re.search(r'https://t\.me/iliaen/(\d+)', text)
+                    if match:
+                        ilia_id = int(match.group(1))
+                        if ilia_id not in self.ilia_ai_posted:
+                            self.ilia_ai_posted[ilia_id] = msg.id
+                            count += 1
+            if count > 0:
+                print(f"🔄 Preloaded {count} historical posts for @iliaenAI edit tracking.")
+        except Exception as e:
+            print(f"⚠️ Could not preload @iliaenAI history: {e}")
+
+    async def handle_ilia_ai(self, text, msg_id, raw_msg=None, is_edit=False):
+        target_channel = "@iliaenAI"
+        
+        # 1. Deduplication for Album / Media Groups (grouped_id)
+        grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
+        if grouped_id and grouped_id in self.ilia_grouped_posted and not is_edit:
+            return
+            
+        clean_text = (text or "").strip()
+        # 2. Strict Filter: Never post media with empty or meaningless text
+        # If Ilia posts a photo/video without a caption, DO NOT post to @iliaenAI
+        if not clean_text or len(clean_text) < 5:
+            return
+            
+        # If this is part of an album and has text, register the grouped_id
+        if grouped_id:
+            self.ilia_grouped_posted.add(grouped_id)
+            
+        # Ensure sequential processing per msg_id to avoid race conditions on rapid edits
+        if msg_id not in self.ilia_msg_locks:
+            if len(self.ilia_msg_locks) > 200:
+                self.ilia_msg_locks.clear()
+            self.ilia_msg_locks[msg_id] = asyncio.Lock()
+            
+        async with self.ilia_msg_locks[msg_id]:
+            # Safeguard: if this is an edit of an ancient post (>2h old) not in history, ignore it
+            if is_edit and msg_id not in self.ilia_ai_posted:
+                orig_date = getattr(raw_msg, 'date', None)
+                if orig_date:
+                    now_utc = datetime.now(timezone.utc)
+                    if (now_utc - orig_date).total_seconds() > 7200:
+                        print(f"⏩ Skipped editing ancient post {msg_id} in iliaen (>2h old and not tracked)")
+                        return
+
+            res = await self.summarize_ilia_post(clean_text)
+            title = res.get('title', 'چکیده خبر').strip()
+            summary = res.get('summary', clean_text).strip()
+            
+            link = f"https://t.me/iliaen/{msg_id}"
+            
+            # Detect media type from raw_msg
+            media_icon = ""
+            link_action = "مشاهده پست اصلی در کانال ایلیا"
+            if raw_msg:
+                if getattr(raw_msg, 'video', None):
+                    media_icon = " 📹"
+                    link_action = "مشاهده ویدیو در کانال ایلیا"
+                elif getattr(raw_msg, 'photo', None):
+                    media_icon = " 📸"
+                    link_action = "مشاهده تصویر در کانال ایلیا"
+                elif getattr(raw_msg, 'voice', None) or getattr(raw_msg, 'audio', None):
+                    media_icon = " 🎙"
+                    link_action = "شنیدن فایل صوتی در کانال ایلیا"
+            
+            post_content = (
+                f"⚡️ **{title}**{media_icon}\n\n"
+                f"{summary}\n\n"
+                f"🔗 [{link_action}]({link})\n"
+                f"📡 {target_channel}"
+            )
+            
+            try:
+                if msg_id in self.ilia_ai_posted:
+                    posted_id = self.ilia_ai_posted[msg_id]
+                    try:
+                        await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
+                        print(f"✏️ Edited post {posted_id} in {target_channel} for iliaen msg {msg_id}")
+                    except Exception as edit_err:
+                        if "not modified" in str(edit_err).lower():
+                            print(f"ℹ️ Post {posted_id} in {target_channel} is already up to date (no content change).")
+                        else:
+                            raise edit_err
+                else:
+                    sent = None
+                    has_media = raw_msg and getattr(raw_msg, 'media', None)
+                    if has_media:
+                        try:
+                            sent = await self.bot.send_message(
+                                target_channel, 
+                                post_content, 
+                                file=raw_msg.media, 
+                                link_preview=False
+                            )
+                        except Exception as media_err:
+                            print(f"⚠️ Could not send media to {target_channel} ({media_err}). Sending text with link.")
+                            sent = await self.bot.send_message(
+                                target_channel, 
+                                post_content, 
+                                link_preview=False
+                            )
+                    else:
+                        sent = await self.bot.send_message(
+                            target_channel, 
+                            post_content, 
+                            link_preview=False
+                        )
+                        
+                    if sent:
+                        self.ilia_ai_posted[msg_id] = sent.id
+                        print(f"🚀 Published AI summary to {target_channel} for iliaen msg {msg_id}")
+            except Exception as e:
+                print(f"❌ Error publishing to {target_channel} for msg {msg_id}: {e}")
+
 import signal
 import sys
 
@@ -1157,6 +1290,7 @@ async def main():
         await client.start()
         print("✅ Live listening started on", len(sentinel.nodes), "nodes (Active Polling).")
         await sentinel.preload_vahid_ai_history(reader_client=client)
+        await sentinel.preload_ilia_ai_history(reader_client=client)
     except Exception as e:
         if hasattr(e, 'seconds'):
             print(f"⚠️ FloodWaitError! Sleeping for {e.seconds} seconds before retrying...")
@@ -1164,6 +1298,7 @@ async def main():
             await bot.start(bot_token=BOT_TOKEN)
             await client.start()
             await sentinel.preload_vahid_ai_history(reader_client=client)
+            await sentinel.preload_ilia_ai_history(reader_client=client)
         else:
             raise
     
