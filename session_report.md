@@ -1,7 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 79
-- **Last Message Text:** فریدون رحمانی در برنامه تفسیر خبر: تاریخ خاورمیانه مملو از خشونت و کشتار است
-@FarsiVOA
-- **Last Message Time:** 2026-10-08 22:51:10
+- **Messages Processed:** 63
+- **Last Message Text:** افشاگری یک سناتور دربارهٔ میزان خسارات ایران به آمریکا
+
+🔹کریس مورفی عضو دموکرات مجلس سنای آمریکا گفت...
+- **Last Message Time:** 2026-10-08 23:28:07
