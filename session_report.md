@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 340
-- **Last Message Text:** حمل پول با فرغون؛ تصویری که روزهای ابرتورم در کشورهای دیگر را تداعی می‌کند. این بار در ایران، نمادی ...
-- **Last Message Time:** 2026-10-08 12:33:28
+- **Messages Processed:** 317
+- **Last Message Text:** تأکید ایران و اقلیم کردستان عراق بر کاهش هزینه‌ها و رفع موانع تجارت در مرز پرویزخان
+
+ 🔹فرماندار قصرش...
+- **Last Message Time:** 2026-10-08 13:09:01
