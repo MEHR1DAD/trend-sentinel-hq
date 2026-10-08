@@ -1,8 +1,10 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 337
-- **Last Message Text:** #گزارش_تصویری | دومین روز از سفر معاون اجرایی رئیس‌جمهور به اردبیل
+- **Messages Processed:** 279
+- **Last Message Text:** ♦️ پزشکیان:
 
-🔹«محمدجعفر قائم‌پناه»، معاون اجر...
-- **Last Message Time:** 2026-10-08 09:14:57
+🔹 جنگ اقتصادی قابل مشاهده نیست و به مراتب سخت‌تر و سنگین‌تر از جنگ نظامی است
+
+🔹 باید از...
+- **Last Message Time:** 2026-10-08 09:50:31
