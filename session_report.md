@@ -1,8 +1,7 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 328
-- **Last Message Text:** فارس: نفتکش‌های متخلف روی مین‌های تنگۀ هرمز منفجر شدند
-
-🔹 دقایقی پیش چند انفجار سنگین در معبر جنوبی ...
-- **Last Message Time:** 2026-10-08 20:15:51
+- **Messages Processed:** 217
+- **Last Message Text:** محمد قائدی در برنامه تفسیر خبر: سخنرانی مارکو روبیو در آتن توصیف سیاست خارجی دولت پرزیدنت ترامپ بود
+...
+- **Last Message Time:** 2026-10-08 20:51:20
