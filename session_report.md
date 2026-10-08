@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 392
-- **Last Message Text:** ادعای وزیر جنگ آمریکا درباره ترامپ: ترامپ رئیس‌جمهوری نیست که اهل بازی باشد. او رئیس‌جمهوری نیست که ...
-- **Last Message Time:** 2026-10-08 19:40:07
+- **Messages Processed:** 328
+- **Last Message Text:** فارس: نفتکش‌های متخلف روی مین‌های تنگۀ هرمز منفجر شدند
+
+🔹 دقایقی پیش چند انفجار سنگین در معبر جنوبی ...
+- **Last Message Time:** 2026-10-08 20:15:51
