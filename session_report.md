@@ -1,7 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 217
-- **Last Message Text:** محمد قائدی در برنامه تفسیر خبر: سخنرانی مارکو روبیو در آتن توصیف سیاست خارجی دولت پرزیدنت ترامپ بود
-...
-- **Last Message Time:** 2026-10-08 20:51:20
+- **Messages Processed:** 102
+- **Last Message Text:** حمله پهپادی به مقر گروهک تجزیه‌طلب در شمال عراق
+
+🔹منابع خبری از هدف قرار گرفتن یکی از مقرهای وابسته ...
+- **Last Message Time:** 2026-10-08 21:26:43
