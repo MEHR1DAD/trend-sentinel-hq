@@ -1348,7 +1348,10 @@ class LiveSentinel:
             "   - ECONOMY: رویدادهای اقتصادی فوری منطقه، هدف قرار گرفتن یا آسیب به تاسیسات نفتی/گازی و نوسانات شدید بازار نفت/انرژی ناشی از درگیری.\n"
             "   - PROTEST_RIGHTS: اعتراضات و تجمعات مردمی، اعتصابات گسترده و احکام قضایی معترضان در منطقه.\n"
             "   - OTHER: اخباری که در چارچوب بالا قرار نمی‌گیرد (مانند تحلیل‌ها و دیدگاه‌های شخصی، اخبار ورزشی/فرهنگی، احوال‌پرسی، شوخی/میم، اخبار عادی هواشناسی).\n\n"
-            "۲. قوانین تولید تیتر و چکیده:\n"
+            "۲. تشخیص ارتباط مستقیم با ایران (is_iran_related):\n"
+            "   - مقدار true: اگر خبر مستقیماً به ایران، خاک ایران، اهداف و پایگاه‌های نظامی ایران، نیروهای مسلح ایران (سپاه، ارتش، پدافند)، مقامات و رهبران ایران، یا درگیری مستقیم و پاسخ‌های موشکی/نظامی ایران مربوط است.\n"
+            "   - مقدار false: اگر رویداد بین سایر طرف‌ها و کشورهای منطقه است و به طور مستقیم به ایران مربوط نمی‌شود (مانند درگیری نیروهای یمن با عربستان یا آمریکا، درگیری‌های داخلی سوریه یا عراق، درگیری‌های اسرائیل در غزه بدون حمله مستقیم به ایران).\n\n"
+            "۳. قوانین تولید تیتر و چکیده:\n"
             "   - اگر category برابر OTHER است، فیلدهای title و summary خالی باشند.\n"
             "   - اگر category برابر WAR یا ECONOMY یا PROTEST_RIGHTS است، دو فیلد زیر را به زبان فارسی روان، شیوا و ژورنالیستی تولید کن:\n"
             "     * title: عنوان و تیتر بسیار جذاب، کوتاه و دقیق به زبان فارسی (حداکثر ۶ تا ۷ کلمه) که اصل اتفاق را بگوید.\n"
@@ -1357,6 +1360,7 @@ class LiveSentinel:
             "پاسخ را دقیقاً و فقط در قالب این شیء JSON ارسال کن و هیچ عبارت دیگری ننویس:\n"
             "{\n"
             '  "category": "WAR" | "ECONOMY" | "PROTEST_RIGHTS" | "OTHER",\n'
+            '  "is_iran_related": true | false,\n'
             '  "title": "عنوان کوتاه و دقیق فارسی",\n'
             '  "summary": "چکیده ۲ الی ۳ خطی به زبان فارسی"\n'
             "}"
@@ -1397,10 +1401,11 @@ class LiveSentinel:
                 if match:
                     res = json.loads(match.group(0))
                     cat = str(res.get("category", "")).upper().strip()
+                    is_iran = bool(res.get("is_iran_related", False))
                     title = str(res.get("title", "")).strip()
                     summary = str(res.get("summary", "")).strip()
                     if cat in ["WAR", "ECONOMY", "PROTEST_RIGHTS", "OTHER"]:
-                        return {"category": cat, "title": title, "summary": summary}
+                        return {"category": cat, "is_iran_related": is_iran, "title": title, "summary": summary}
                 break
             except urllib.error.HTTPError as e:
                 if e.code == 429:
@@ -1446,6 +1451,9 @@ class LiveSentinel:
             async for msg in reader_client.iter_messages("Alibk3", limit=10):
                 if msg.date and (now_utc - msg.date).total_seconds() > 7200:
                     continue
+                # Skip replies in catchup (they are supplementary follow-ups)
+                if getattr(msg, 'is_reply', False) or getattr(msg, 'reply_to_msg_id', None):
+                    continue
                 recent_alibk.append(msg)
             recent_alibk.reverse()
             
@@ -1460,7 +1468,13 @@ class LiveSentinel:
             print(f"⚠️ Catchup for Alibk3 failed: {e}")
 
     async def handle_alibk_regional(self, text, msg_id, raw_msg=None, is_edit=False):
-        # 1. Deduplication for Album / Media Groups (grouped_id)
+        # 1. Skip reply messages (supplementary follow-ups to an earlier main post)
+        if raw_msg and (getattr(raw_msg, 'is_reply', False) or getattr(raw_msg, 'reply_to_msg_id', None) or getattr(raw_msg, 'reply_to', None)):
+            reply_id = getattr(raw_msg, 'reply_to_msg_id', None)
+            print(f"⏩ Skipped Alibk3 reply/supplementary post {msg_id} (reply to msg {reply_id}).")
+            return
+
+        # 2. Deduplication for Album / Media Groups (grouped_id)
         grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
         if grouped_id and grouped_id in self.alibk_grouped_posted and not is_edit:
             return
@@ -1472,7 +1486,7 @@ class LiveSentinel:
         if grouped_id:
             self.alibk_grouped_posted.add(grouped_id)
             
-        # 2. Sequential lock per msg_id
+        # 3. Sequential lock per msg_id
         if msg_id not in self.alibk_msg_locks:
             if len(self.alibk_msg_locks) > 200:
                 self.alibk_msg_locks.clear()
@@ -1483,7 +1497,7 @@ class LiveSentinel:
             if is_already_posted and not is_edit:
                 return
                 
-            # 3. AI Classifier & Persian Title/Summary
+            # 4. AI Classifier & Persian Title/Summary
             ai_res = await self.classify_and_translate_alibk(clean_text)
             if not ai_res:
                 print(f"⚠️ Alibk3 AI processing skipped/failed for msg {msg_id}")
@@ -1499,19 +1513,26 @@ class LiveSentinel:
             if not title or not summary:
                 return
                 
-            # 4. Target channel routing
+            # 5. Check if Iran-related (Sound vs Silent alert)
+            iran_keywords = [
+                "ایران", "إيران", "طهران", "تهران", "الحرس الثوري", "الحرس_الثوري", 
+                "سپاه", "الجيش الإيراني", "خامنائي", "خامنه‌ای", "بزشكيان", "پزشکیان", 
+                "إيراني", "ایرانی", "إيرانية", "ایرانیة", "ایرانیه", "قاسم سليماني", "فيلق القدس"
+            ]
+            has_iran_kw = any(kw in clean_text or kw in title or kw in summary for kw in iran_keywords)
+            is_iran_related = bool(ai_res.get('is_iran_related', False) or has_iran_kw)
+            is_silent = not is_iran_related
+                
+            # 6. Target channel routing
             if category == 'WAR':
                 target_channel = "@DidebanJang"
                 tag = "#دیده‌بان_جنگ"
-                icon = "🚨"
             elif category == 'ECONOMY':
                 target_channel = "@DidehbanEghtesad"
                 tag = "#دیده‌بان_اقتصاد"
-                icon = "📈"
             elif category == 'PROTEST_RIGHTS':
                 target_channel = "@DidebanEterazat"
                 tag = "#دیده‌بان_اعتراضات"
-                icon = "📢"
             else:
                 return
                 
@@ -1523,7 +1544,12 @@ class LiveSentinel:
                 if getattr(raw_msg, 'video', None): media_icon = " 📹"
                 elif getattr(raw_msg, 'photo', None): media_icon = " 📸"
                 
-            alert_header = f"{icon} **هشدار فوری: {title}**{media_icon}" if category == 'WAR' else f"{icon} **گزارش فوری: {title}**{media_icon}"
+            if is_iran_related:
+                icon = "🚨"
+                alert_header = f"🚨 **هشدار فوری: {title}**{media_icon}"
+            else:
+                icon = "🔕"
+                alert_header = f"🔕 **هشدار منطقه‌ای: {title}**{media_icon}"
             
             alert_text = (
                 f"{alert_header}\n\n"
@@ -1546,11 +1572,12 @@ class LiveSentinel:
                         else:
                             raise edit_err
                 else:
-                    sent = await self.bot.send_message(target_channel, alert_text, link_preview=False, silent=False)
+                    sent = await self.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
                     if sent:
                         self.alibk_posted[msg_id] = {'channel': target_channel, 'msg_id': sent.id}
                         self.save_persisted_state()
-                        print(f"🚨 Published Persian Alibk3 alert to {target_channel} for msg {msg_id}: {title}")
+                        status_label = "Iran/Sound" if is_iran_related else "Regional/Silent"
+                        print(f"🚨 Published Persian Alibk3 alert ({status_label}) to {target_channel} for msg {msg_id}: {title}")
             except Exception as e:
                 print(f"❌ Error publishing Alibk3 alert to {target_channel} for msg {msg_id}: {e}")
 
