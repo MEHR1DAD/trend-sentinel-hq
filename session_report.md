@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 74
-- **Last Message Text:** 🔺آمریکا از اقدام پارلمان اروپا برای مقابله با «شبکه‌های تروریستی اخوان‌المسلمین» استقبال کرد
+- **Messages Processed:** 81
+- **Last Message Text:** آیا هوش مصنوعی واقعا می‌تواند بشر را از میان ببرد؟
 
-◾️وزار...
-- **Last Message Time:** 2026-10-09 23:10:48
+هشدارهای صریح پژوهشگران درباره خطر فزاینده خارج ...
+- **Last Message Time:** 2026-10-09 23:46:16
