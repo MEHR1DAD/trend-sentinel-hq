@@ -1,9 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 255
-- **Last Message Text:** 🔴پزشکیان: 
-هیچ کدام از کشورهای ساحلی نمی‌توانند به تنهایی دریای خزر را نجات دهند
+- **Messages Processed:** 319
+- **Last Message Text:** داریوش عیاری، فیلمبردار پیشکسوت سینما درگذشت
 
-🚨 @Khabari خبری پل...
-- **Last Message Time:** 2026-10-09 17:13:16
+داریوش عیاری، فیلمبردار برجسته و پیشکسوت سینما درگذشت....
+- **Last Message Time:** 2026-10-09 17:48:45
