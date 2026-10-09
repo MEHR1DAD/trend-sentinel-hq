@@ -51,6 +51,9 @@ class LiveSentinel:
         self.ilia_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
         self.ilia_msg_locks = {} # msg_id -> asyncio.Lock() for sequential edit ordering
         self.ilia_needs_refresh = set() # set of (ilia_id, posted_id) needing AI re-summary
+        self.alibk_posted = {} # msg_id -> {'channel': target_channel, 'msg_id': posted_msg_id}
+        self.alibk_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
+        self.alibk_msg_locks = {} # msg_id -> asyncio.Lock() for sequential edit ordering
         
         # Metrics
         self.start_time = time.time()
@@ -86,7 +89,16 @@ class LiveSentinel:
                     if isinstance(v, (int, float)) and (now - v) <= 86400:
                         self.last_alert_time[k] = v
                 
-                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts.")
+                # 4. Alibk Alert History (keep entries from last 48h)
+                raw_alibk = data.get('alibk_posted', {})
+                for k, v in raw_alibk.items():
+                    if isinstance(v, dict):
+                        try:
+                            self.alibk_posted[int(k)] = v
+                        except:
+                            self.alibk_posted[k] = v
+                
+                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.alibk_posted)} Alibk alerts.")
         except Exception as e:
             print(f"⚠️ Error loading persisted state: {e}")
 
@@ -101,6 +113,7 @@ class LiveSentinel:
                 "alerted_msg_patterns": serializable_patterns,
                 "vip_alert_history": clean_vip,
                 "last_alert_time": clean_last,
+                "alibk_posted": self.alibk_posted,
                 "last_saved": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
             }
             with open(self.state_file, 'w', encoding='utf-8') as f:
@@ -346,6 +359,9 @@ class LiveSentinel:
                 asyncio.create_task(self.handle_vahid_online_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
             elif node_key == 'iliaen':
                 asyncio.create_task(self.handle_ilia_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+            elif node_key == 'alibk3':
+                asyncio.create_task(self.handle_alibk_regional(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+                return
 
             # Accept messages up to 15 minutes old (900s) to catch news during runner restarts & handovers
             # This applies to breaking news radar alerts (War / Economy / Protest)
@@ -1316,6 +1332,228 @@ class LiveSentinel:
             except Exception as e:
                 print(f"❌ Error publishing to {target_channel} for msg {msg_id}: {e}")
 
+    async def classify_and_translate_alibk(self, arabic_text):
+        if not GEMINI_API_KEY:
+            return None
+            
+        if not hasattr(self, 'current_gemini_model'):
+            self.current_gemini_model = "gemini-1.5-flash"
+            
+        prompt = (
+            "تو یک تحلیلگر ارشد تحولات خاورمیانه و مترجم حرفه‌ای برای یک سامانه دیده‌بان و پایش فوری اخبار تلگرام هستی.\n"
+            "پست زیر به زبان عربی از کانال خبری 'Ali Bk' (پوشش‌دهنده رویدادهای نظامی و امنیتی منطقه مانند یمن، عربستان، خلیج فارس، دریای سرخ، اسرائیل، لبنان، عراق و سوریه) منتشر شده است.\n\n"
+            "وظیفه تو تحلیل رویداد و انطباق با سیاست‌های خبری ما است:\n\n"
+            "۱. دسته‌بندی و سیاست خبری (category):\n"
+            "   - WAR: اخبار جنگ، حملات موشکی، پهپادی یا راکتی، بمباران هوایی، شلیک پدافند، درگیری‌های مسلحانه، توقف پروازها یا ناوبری دریایی به دلیل حملات، هلاکت یا زخمی شدن فرماندهان و نظامیان، آژیر خطر، انفجارها و پیشروی‌های نظامی.\n"
+            "   - ECONOMY: رویدادهای اقتصادی فوری منطقه، هدف قرار گرفتن یا آسیب به تاسیسات نفتی/گازی و نوسانات شدید بازار نفت/انرژی ناشی از درگیری.\n"
+            "   - PROTEST_RIGHTS: اعتراضات و تجمعات مردمی، اعتصابات گسترده و احکام قضایی معترضان در منطقه.\n"
+            "   - OTHER: اخباری که در چارچوب بالا قرار نمی‌گیرد (مانند تحلیل‌ها و دیدگاه‌های شخصی، اخبار ورزشی/فرهنگی، احوال‌پرسی، شوخی/میم، اخبار عادی هواشناسی).\n\n"
+            "۲. قوانین تولید تیتر و چکیده:\n"
+            "   - اگر category برابر OTHER است، فیلدهای title و summary خالی باشند.\n"
+            "   - اگر category برابر WAR یا ECONOMY یا PROTEST_RIGHTS است، دو فیلد زیر را به زبان فارسی روان، شیوا و ژورنالیستی تولید کن:\n"
+            "     * title: عنوان و تیتر بسیار جذاب، کوتاه و دقیق به زبان فارسی (حداکثر ۶ تا ۷ کلمه) که اصل اتفاق را بگوید.\n"
+            "     * summary: چکیده روان، گویا و کاملاً فارسی در ۲ الی ۳ خط که ماجرا (کی، کجا، چه اقدامی و چه نتیجه‌ای) را بدون قضاوت منعکس کند.\n\n"
+            f"متن پیام به زبان عربی:\n{arabic_text}\n\n"
+            "پاسخ را دقیقاً و فقط در قالب این شیء JSON ارسال کن و هیچ عبارت دیگری ننویس:\n"
+            "{\n"
+            '  "category": "WAR" | "ECONOMY" | "PROTEST_RIGHTS" | "OTHER",\n'
+            '  "title": "عنوان کوتاه و دقیق فارسی",\n'
+            '  "summary": "چکیده ۲ الی ۳ خطی به زبان فارسی"\n'
+            "}"
+        )
+        
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 300,
+                "temperature": 0.2
+            }
+        }
+        
+        max_retries = 3
+        for attempt in range(max_retries):
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
+            try:
+                import urllib.request
+                import urllib.error
+                import json
+                
+                req = urllib.request.Request(
+                    url, 
+                    data=json.dumps(payload).encode('utf-8'),
+                    headers={'Content-Type': 'application/json'},
+                    method='POST'
+                )
+                
+                loop = asyncio.get_running_loop()
+                def make_req():
+                    with urllib.request.urlopen(req, timeout=12) as response:
+                        return json.loads(response.read().decode('utf-8'))
+                        
+                data = await loop.run_in_executor(None, make_req)
+                raw_out = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
+                
+                match = re.search(r'\{.*\}', raw_out, re.DOTALL)
+                if match:
+                    res = json.loads(match.group(0))
+                    cat = str(res.get("category", "")).upper().strip()
+                    title = str(res.get("title", "")).strip()
+                    summary = str(res.get("summary", "")).strip()
+                    if cat in ["WAR", "ECONOMY", "PROTEST_RIGHTS", "OTHER"]:
+                        return {"category": cat, "title": title, "summary": summary}
+                break
+            except urllib.error.HTTPError as e:
+                if e.code == 429:
+                    print(f"⚠️ Gemini API 429 Rate Limit in Alibk classifier! Sleeping {5 * (attempt + 1)}s...")
+                    await asyncio.sleep(5 * (attempt + 1))
+                elif e.code == 404 and attempt < max_retries - 1:
+                    print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
+                    self.current_gemini_model = await self.get_fallback_gemini_model()
+                else:
+                    print(f"⚠️ Gemini API HTTP Error {e.code} in Alibk classifier: {e.reason}")
+                    break
+            except Exception as e:
+                print(f"⚠️ Alibk classification failed: {e}")
+                break
+                
+        return None
+
+    async def preload_alibk_history(self, reader_client=None):
+        if not reader_client:
+            return
+        try:
+            count = 0
+            async for msg in reader_client.iter_messages("@DidebanJang", limit=30):
+                text = msg.text or msg.message or ""
+                if text:
+                    match = re.search(r'https://t\.me/Alibk3/(\d+)', text)
+                    if match:
+                        alibk_id = int(match.group(1))
+                        if alibk_id not in self.alibk_posted:
+                            self.alibk_posted[alibk_id] = {'channel': '@DidebanJang', 'msg_id': msg.id}
+                            count += 1
+            if count > 0:
+                print(f"🔄 Preloaded {count} historical Alibk3 alerts from @DidebanJang.")
+        except Exception as e:
+            print(f"⚠️ Could not preload @DidebanJang Alibk history: {e}")
+
+    async def catchup_unposted_alibk(self, reader_client=None):
+        if not reader_client:
+            return
+        try:
+            now_utc = datetime.now(timezone.utc)
+            recent_alibk = []
+            async for msg in reader_client.iter_messages("Alibk3", limit=10):
+                if msg.date and (now_utc - msg.date).total_seconds() > 7200:
+                    continue
+                recent_alibk.append(msg)
+            recent_alibk.reverse()
+            
+            for msg in recent_alibk:
+                if msg.id not in self.alibk_posted:
+                    clean_text = (msg.message or msg.text or "").strip()
+                    if clean_text and len(clean_text) >= 10:
+                        print(f"⚡ Catching up missed Alibk3 post {msg.id}...")
+                        await self.handle_alibk_regional(clean_text, msg.id, raw_msg=msg, is_edit=False)
+                        await asyncio.sleep(3)
+        except Exception as e:
+            print(f"⚠️ Catchup for Alibk3 failed: {e}")
+
+    async def handle_alibk_regional(self, text, msg_id, raw_msg=None, is_edit=False):
+        # 1. Deduplication for Album / Media Groups (grouped_id)
+        grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
+        if grouped_id and grouped_id in self.alibk_grouped_posted and not is_edit:
+            return
+            
+        clean_text = (text or "").strip()
+        if not clean_text or len(clean_text) < 10:
+            return
+            
+        if grouped_id:
+            self.alibk_grouped_posted.add(grouped_id)
+            
+        # 2. Sequential lock per msg_id
+        if msg_id not in self.alibk_msg_locks:
+            if len(self.alibk_msg_locks) > 200:
+                self.alibk_msg_locks.clear()
+            self.alibk_msg_locks[msg_id] = asyncio.Lock()
+            
+        async with self.alibk_msg_locks[msg_id]:
+            is_already_posted = msg_id in self.alibk_posted
+            if is_already_posted and not is_edit:
+                return
+                
+            # 3. AI Classifier & Persian Title/Summary
+            ai_res = await self.classify_and_translate_alibk(clean_text)
+            if not ai_res:
+                print(f"⚠️ Alibk3 AI processing skipped/failed for msg {msg_id}")
+                return
+                
+            category = ai_res.get('category', 'OTHER')
+            if category == 'OTHER':
+                print(f"ℹ️ Alibk3 post {msg_id} filtered out by news policy (OTHER).")
+                return
+                
+            title = ai_res.get('title', '').strip()
+            summary = ai_res.get('summary', '').strip()
+            if not title or not summary:
+                return
+                
+            # 4. Target channel routing
+            if category == 'WAR':
+                target_channel = "@DidebanJang"
+                tag = "#دیده‌بان_جنگ"
+                icon = "🚨"
+            elif category == 'ECONOMY':
+                target_channel = "@DidehbanEghtesad"
+                tag = "#دیده‌بان_اقتصاد"
+                icon = "📈"
+            elif category == 'PROTEST_RIGHTS':
+                target_channel = "@DidebanEterazat"
+                tag = "#دیده‌بان_اعتراضات"
+                icon = "📢"
+            else:
+                return
+                
+            link = f"https://t.me/Alibk3/{msg_id}"
+            
+            # Media icon
+            media_icon = ""
+            if raw_msg:
+                if getattr(raw_msg, 'video', None): media_icon = " 📹"
+                elif getattr(raw_msg, 'photo', None): media_icon = " 📸"
+                
+            alert_header = f"{icon} **هشدار فوری: {title}**{media_icon}" if category == 'WAR' else f"{icon} **گزارش فوری: {title}**{media_icon}"
+            
+            alert_text = (
+                f"{alert_header}\n\n"
+                f"📝 **چکیده رویداد:**\n{summary}\n\n"
+                f"🔗 **منبع خبر:**\n- [Ali Bk - اخبار منطقه]({link}) (پوشش تحولات منطقه)\n\n"
+                f"{tag}\n{target_channel}"
+            )
+            
+            try:
+                if is_already_posted:
+                    posted_info = self.alibk_posted[msg_id]
+                    posted_ch = posted_info.get('channel', target_channel)
+                    posted_mid = posted_info.get('msg_id')
+                    try:
+                        await self.bot.edit_message(posted_ch, posted_mid, alert_text, link_preview=False)
+                        print(f"✏️ Updated Alibk3 alert in {posted_ch} (Alibk msg {msg_id})")
+                    except Exception as edit_err:
+                        if "not modified" in str(edit_err).lower():
+                            print(f"ℹ️ Alibk3 alert {posted_mid} already up to date.")
+                        else:
+                            raise edit_err
+                else:
+                    sent = await self.bot.send_message(target_channel, alert_text, link_preview=False, silent=False)
+                    if sent:
+                        self.alibk_posted[msg_id] = {'channel': target_channel, 'msg_id': sent.id}
+                        self.save_persisted_state()
+                        print(f"🚨 Published Persian Alibk3 alert to {target_channel} for msg {msg_id}: {title}")
+            except Exception as e:
+                print(f"❌ Error publishing Alibk3 alert to {target_channel} for msg {msg_id}: {e}")
+
 import signal
 import sys
 
@@ -1462,6 +1700,8 @@ async def main():
         await sentinel.catchup_unposted_vahid(reader_client=client)
         await sentinel.preload_ilia_ai_history(reader_client=client)
         await sentinel.catchup_unposted_ilia(reader_client=client)
+        await sentinel.preload_alibk_history(reader_client=client)
+        await sentinel.catchup_unposted_alibk(reader_client=client)
     except Exception as e:
         if hasattr(e, 'seconds'):
             print(f"⚠️ FloodWaitError! Sleeping for {e.seconds} seconds before retrying...")
@@ -1472,6 +1712,8 @@ async def main():
             await sentinel.catchup_unposted_vahid(reader_client=client)
             await sentinel.preload_ilia_ai_history(reader_client=client)
             await sentinel.catchup_unposted_ilia(reader_client=client)
+            await sentinel.preload_alibk_history(reader_client=client)
+            await sentinel.catchup_unposted_alibk(reader_client=client)
         else:
             raise
     
