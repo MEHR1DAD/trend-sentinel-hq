@@ -4,5 +4,47 @@
   "last_alert_time": {
     "انفجار در زاهدان": 1791551898.7827744
   },
-  "last_saved": "2026-10-09 14:51:13 UTC"
+  "alibk_posted": {
+    "38474": {
+      "channel": "@DidebanJang",
+      "msg_id": 30
+    },
+    "38473": {
+      "channel": "@DidebanJang",
+      "msg_id": 29
+    },
+    "38472": {
+      "channel": "@DidebanJang",
+      "msg_id": 28
+    },
+    "38471": {
+      "channel": "@DidebanJang",
+      "msg_id": 27
+    },
+    "38470": {
+      "channel": "@DidebanJang",
+      "msg_id": 26
+    },
+    "38468": {
+      "channel": "@DidebanJang",
+      "msg_id": 25
+    },
+    "38465": {
+      "channel": "@DidebanJang",
+      "msg_id": 24
+    },
+    "38464": {
+      "channel": "@DidebanJang",
+      "msg_id": 23
+    },
+    "38475": {
+      "channel": "@DidebanJang",
+      "msg_id": 31
+    },
+    "38476": {
+      "channel": "@DidebanJang",
+      "msg_id": 32
+    }
+  },
+  "last_saved": "2026-10-09 16:02:06 UTC"
 }
