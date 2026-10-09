@@ -1,13 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 253
-- **Last Message Text:** گل اول پرسپولیس به صنعت نفت
+- **Messages Processed:** 317
+- **Last Message Text:** 🔺🔻واکنش سخنگوی وزارت خارجه به مواضع متناقض فرانسه درباره تسلیحات هسته‌ای
 
-⚽️ تیوی بیفوما در دقیقه ۴
-
-⚽️ پرسپولیس ۱ - ۰ صنعت نفت
-
-#فوتبال
-@TasnimN...
-- **Last Message Time:** 2026-10-09 13:40:00
+🔹امانوئل ماکرون رئیس‌جمهور...
+- **Last Message Time:** 2026-10-09 14:15:33
