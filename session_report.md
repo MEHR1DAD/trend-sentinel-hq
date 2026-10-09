@@ -1,10 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 154
-- **Last Message Text:** ♦️ ادعای نیویورک‌تایمز:
+- **Messages Processed:** 160
+- **Last Message Text:** 🎥 دیدار سران کشورهای ایران و ارمنستان
 
-🔹 محور اصلی طرح‌های حمله به ایران، عملیاتی ۳ روزه و شدید است 
-
-🔹 ترامپ در م...
-- **Last Message Time:** 2026-10-09 04:33:57
+@IRNA_1313
+- **Last Message Time:** 2026-10-09 05:09:14
