@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 263
-- **Last Message Text:** ♦️تضمین ورود موقت خودروی سواری نصف ارزش گمرکی تعیین شد
-
-🔹معاون امور گمرکی گمرک جمهوری اسلامی ایران د...
-- **Last Message Time:** 2026-10-09 08:06:37
+- **Messages Processed:** 276
+- **Last Message Text:** وزارت خارجه آمریکا در گزارش جدید خود درباره قاچاق انسان، جمهوری اسلامی را در رده سوم کشورهای جهان قر...
+- **Last Message Time:** 2026-10-09 08:51:25
