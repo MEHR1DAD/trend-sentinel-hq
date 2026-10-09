@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 40
-- **Last Message Text:** تصاویر ماهواره‌ای از اصابت موشک‌های یمنی به مخازن سوخت یک پالایشگاه در عربستان
-
-🔹 تصاویر ماهواره‌ای ...
-- **Last Message Time:** 2026-10-09 02:11:28
+- **Messages Processed:** 32
+- **Last Message Text:** 🔺️تصاویری از حمله پهپادی بامداد امروز نیروی زمینی سپاه به مقر گروهک های ضدانقلاب در منطقه رزکاری از ...
+- **Last Message Time:** 2026-10-09 02:47:08
