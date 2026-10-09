@@ -1,7 +1,9 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 323
-- **Last Message Text:** ترامپ: 
-🔹ایران احتمالاً دو شهر سان دیگو و لس آنجلس را به دلیل مسیر آسان موشک‌ها به سمت آن‌ها هدف قرا...
-- **Last Message Time:** 2026-10-09 16:37:36
+- **Messages Processed:** 255
+- **Last Message Text:** 🔴پزشکیان: 
+هیچ کدام از کشورهای ساحلی نمی‌توانند به تنهایی دریای خزر را نجات دهند
+
+🚨 @Khabari خبری پل...
+- **Last Message Time:** 2026-10-09 17:13:16
