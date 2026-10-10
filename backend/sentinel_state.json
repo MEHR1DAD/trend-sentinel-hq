@@ -21,7 +21,7 @@
     }
   },
   "last_alert_time": {
-    "انفجار در زاهدان": 1791551898.7827744
+    "انفجار در فرودگاه ریاض": 1791638501.2166183
   },
   "alibk_posted": {
     "38474": {
@@ -195,7 +195,31 @@
     "38560": {
       "channel": "@DidebanJang",
       "msg_id": 65
+    },
+    "38561": {
+      "channel": "@DidebanJang",
+      "msg_id": 66
+    },
+    "38564": {
+      "channel": "@DidebanJang",
+      "msg_id": 67
+    },
+    "38565": {
+      "channel": "@DidebanJang",
+      "msg_id": 68
+    },
+    "38566": {
+      "channel": "@DidebanJang",
+      "msg_id": 69
+    },
+    "38567": {
+      "channel": "@DidebanJang",
+      "msg_id": 70
+    },
+    "38568": {
+      "channel": "@DidebanJang",
+      "msg_id": 71
     }
   },
-  "last_saved": "2026-10-10 12:03:14 UTC"
+  "last_saved": "2026-10-10 13:24:23 UTC"
 }
