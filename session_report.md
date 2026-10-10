@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 317
-- **Last Message Text:** 🔺️🔻شکست سنگین کار دست خطیبی داد!
-
-🔹️با اعلام باشگاه فجرسپاسی، در پی کسب نتایج ضعیف و شکست پرگل برابر...
-- **Last Message Time:** 2026-10-10 11:27:21
+- **Messages Processed:** 327
+- **Last Message Text:** جواد ظریف، وزیر امور خارجه دولت روحانی، در بخش دیگر از سخنرانی خود از افرادی که همه چیز را تهدید می‌...
+- **Last Message Time:** 2026-10-10 12:03:08
