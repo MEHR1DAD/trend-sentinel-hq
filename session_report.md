@@ -1,8 +1,7 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 344
-- **Last Message Text:** 🎥پرسش و پاسخ‌هایی که رازهای پرونده فساد در حوزه وکالت را مقابل رئیس عدلیه افشا کرد 
-
- وکیل متهم شده:...
-- **Last Message Time:** 2026-10-10 07:54:37
+- **Messages Processed:** 318
+- **Last Message Text:** پاسخ سفارت ایران در بوسنی به اظهارات روبیو: آفتابه ایرانی ده برابر کشور تو عمر دارد!
+@TasnimNews
+- **Last Message Time:** 2026-10-10 08:30:18
