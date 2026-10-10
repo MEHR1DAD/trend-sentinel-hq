@@ -61,8 +61,78 @@ class LiveSentinel:
         self.last_msg_text = "No messages yet"
         self.last_msg_time = "N/A"
         
+        # Comprehensive list of foreign & regional countries, cities, and strategic targets (silent alert)
+        self.foreign_keywords = [
+            # Countries & territories
+            'اسرائیل', 'لبنان', 'غزه', 'فلسطین', 'سوریه', 'عراق', 'یمن', 'عربستان', 
+            'کویت', 'قطر', 'امارات', 'عمان', 'بحرین', 'ترکیه', 'پاکستان', 'افغانستان', 
+            'آمریکا', 'اردن', 'مصر', 'آذربایجان', 'ارمنستان', 'اوکراین', 'روسیه',
+            # Saudi Arabia
+            'ریاض', 'جده', 'دمام', 'ینبع', 'جازان', 'بقیق', 'خریص', 'راس تنوره', 'شدقم', 
+            'نجران', 'ابها', 'تبوک', 'ظهران', 'خمیس مشیط',
+            # Israel / Palestine
+            'تل آویو', 'حیفا', 'قدس', 'اورشلیم', 'ایلات', 'صفد', 'طبریا', 'عکا', 'دیمونا', 
+            'بئرشبع', 'عسقلان', 'اسدود', 'کریات شمونه', 'رمات گان', 'نتانیا', 'هرتزلیا', 
+            'غلاف غزه', 'خان یونس', 'رفح', 'جنین', 'نابلس', 'طولکرم', 'رام الله',
+            # Lebanon
+            'بیروت', 'ضاحیه', 'بقاع', 'صور', 'صیدا', 'بعلبک', 'نبطیه', 'الناقوره', 'خیام', 'مرجعیون',
+            # Syria
+            'دمشق', 'حلب', 'حمص', 'حماه', 'لاذقیه', 'طرطوس', 'دیرالزور', 'بوکمال', 'تدمر', 'قنیطره', 'سویداء',
+            # Iraq
+            'بغداد', 'اربیل', 'سلیمانیه', 'دهوک', 'بصره', 'نجف', 'کربلا', 'سامرا', 'کرکوک', 
+            'موصل', 'الانبار', 'عین الاسد', 'التاجی', 'بلد', 'جرف الصخر', 'القائم',
+            # Yemen
+            'صنعا', 'عدن', 'حدیده', 'صعده', 'مارب', 'تعز', 'حجه', 'شبوه', 'ابین',
+            # Gulf & Emirates
+            'دبی', 'ابوظبی', 'شارجه', 'فجیره', 'جبل علی', 'الرویس', 'عجمان', 'راس الخیمه',
+            'دوحه', 'راس لفان', 'منامه', 'مسقط', 'صلاله', 'دقم',
+            # Strategic & military facilities
+            'آرامکو', 'بن گوریون', 'فرودگاه بن گوریون', 'فرودگاه بیروت', 'فرودگاه ریاض', 
+            'فرودگاه دمشق', 'فرودگاه بغداد', 'پایگاه نواتیم', 'پایگاه هاتزریم', 'پایگاه رامات دیوید',
+            'پایگاه الحریر', 'پایگاه التنف', 'نیروگاه براکه', 'رآکتور دیمونا'
+        ]
+        
+        # Iran-specific keywords (loud siren alert)
+        self.iran_keywords = [
+            "ایران", "إيران", "طهران", "تهران", "اصفهان", "شیراز", "تبریز", "مشهد", "اهواز", "کرج", "قم", 
+            "کرمانشاه", "ارومیه", "رشت", "زاهدان", "همدان", "کرمان", "یزد", "اردبیل", 
+            "بندرعباس", "اراک", "زنجان", "سنندج", "قزوین", "خرم‌آباد", "گرگان", "ساری", 
+            "بوشهر", "بیرجند", "ایلام", "شهرکرد", "یاسوج", "سمنان", "کیش", "قشم", "چابهار", 
+            "نطنز", "فردو", "پارس جنوبی", "عسلویه", "خارگ", "خارک", "لاوان", "سیری", 
+            "تنگه هرمز", "خلیج فارس", "دریای عمان",
+            "سپاه", "الحرس الثوري", "الحرس_الثوري", "ارتش ایران", "الجيش الإيراني", 
+            "پدافند هوایی ایران", "نیروهای مسلح ایران", "خامنه‌ای", "خامنائي", "پزشکیان", "بزشكيان", 
+            "قاسم سلیمانی", "قاسم سليماني", "فیلق القدس", "فيلق القدس", "نیروی قدس",
+            "إيراني", "ایرانی", "إيرانية", "ایرانیة", "ایرانیه"
+        ]
+        
         # Load persistent state from disk
         self.load_persisted_state()
+        
+    def determine_iran_related(self, ai_res, text, title=""):
+        clean_text = (text or "") + " " + (title or "")
+        ai_iran = ai_res.get('is_iran_related') if ai_res else None
+        
+        has_foreign_kw = any(fk in clean_text for fk in self.foreign_keywords)
+        has_iran_kw = any(ik in clean_text for ik in self.iran_keywords)
+        
+        # 1. Clear foreign / regional news without Iran context -> silent
+        if has_foreign_kw and not has_iran_kw:
+            return False
+            
+        # 2. Clear domestic Iran news without foreign location -> loud
+        if has_iran_kw and not has_foreign_kw:
+            return True
+            
+        # 3. Complex / overlapping cases -> rely on AI classifier
+        if ai_iran is not None:
+            return bool(ai_iran)
+            
+        # 4. Fallback: if foreign location mentioned, prefer silent
+        if has_foreign_kw:
+            return False
+            
+        return True
         
     def load_persisted_state(self):
         try:
@@ -282,8 +352,7 @@ class LiveSentinel:
         specific_cities = [l for l in found_locations if l not in generic_locations]
         generic_locs = [l for l in found_locations if l in generic_locations]
         
-        foreign_keywords = ['اسرائیل', 'لبنان', 'غزه', 'فلسطین', 'سوریه', 'عراق', 'اربیل', 'یمن', 'عربستان', 'کویت', 'قطر', 'امارات', 'عمان', 'ترکیه', 'پاکستان', 'افغانستان', 'تل آویو', 'حیفا', 'آمریکا']
-        has_foreign = any(fk in text for fk in foreign_keywords)
+        has_foreign = any(fk in text for fk in self.foreign_keywords)
         
         if specific_cities:
             merged_cities = "، ".join(specific_cities)
@@ -319,12 +388,12 @@ class LiveSentinel:
                     inc_title = f"{sorted_incidents[0]}، {sorted_incidents[1]} و {sorted_incidents[2]}"
                     
                 pat = f"{inc_title} در {final_loc_str}"
-                if has_foreign or any(fk in final_loc_str for fk in foreign_keywords):
+                if has_foreign or any(fk in final_loc_str for fk in self.foreign_keywords):
                     pat += "||FOREIGN||"
                 patterns.append(pat)
             elif is_citizen:
                 pat = f"گزارش شهروندی در {final_loc_str}"
-                if has_foreign or any(fk in final_loc_str for fk in foreign_keywords):
+                if has_foreign or any(fk in final_loc_str for fk in self.foreign_keywords):
                     pat += "||FOREIGN||"
                 patterns.append(pat)
         elif is_citizen:
@@ -467,23 +536,31 @@ class LiveSentinel:
                                 target_channel = "@DidehbanEghtesad"
                                 alert_title = f"گزارش اقتصادی: {topic_title}"
                                 custom_icon = "📈"
+                                is_silent = False if (canonical_node in ['VahidOnline', 'iliaen'] and not is_edit) else True
                             elif category == 'PROTEST_RIGHTS':
                                 target_channel = "@DidebanEterazat"
                                 is_rights = any(w in text for w in ["اعدام", "حکم", "طناب دار", "زندان", "دادگاه", "بازداشت", "محبوس", "قوه قضائیه"])
                                 alert_title = f"گزارش حقوق بشری: {topic_title}" if is_rights else f"گزارش مردمی: {topic_title}"
                                 custom_icon = "⚖️" if any(w in text for w in ["اعدام", "حکم", "طناب دار", "دادگاه"]) else "📢"
+                                is_silent = False if (canonical_node in ['VahidOnline', 'iliaen'] and not is_edit) else True
                             elif category == 'WAR':
                                 target_channel = "@DidebanJang"
-                                alert_title = f"هشدار فوری: {topic_title}"
-                                custom_icon = "🚨"
+                                is_iran = self.determine_iran_related(ai_class, text, topic_title)
+                                if is_iran:
+                                    alert_title = f"هشدار فوری: {topic_title}"
+                                    custom_icon = "🚨"
+                                    is_silent = False if (canonical_node in ['VahidOnline', 'iliaen'] and not is_edit) else True
+                                else:
+                                    alert_title = f"هشدار منطقه‌ای: {topic_title}"
+                                    custom_icon = "🔕"
+                                    is_silent = True
                             else:
                                 target_channel = None
                                 alert_title = None
                                 custom_icon = None
+                                return
                                 
                             self.vip_alert_history[msg_key]['target_channel'] = target_channel
-                            
-                            is_silent = False if (canonical_node in ['VahidOnline', 'iliaen'] and not is_edit) else True
                             baseline = self.baselines.get(clean_pats[0], 0.1) if clean_pats else 0.1
                             
                             sent_msg, target_channel, alert_text = await self.send_alert(
@@ -638,12 +715,20 @@ class LiveSentinel:
                     is_silent = False
                 elif category == 'WAR':
                     target_ch = "@DidebanJang"
-                    title = f"هشدار فوری: {topic_title}"
-                    icon = "🚨"
+                    is_iran = self.determine_iran_related(ai_class, combined_text, topic_title)
+                    if is_iran:
+                        title = f"هشدار فوری: {topic_title}"
+                        icon = "🚨"
+                        is_silent = False
+                    else:
+                        title = f"هشدار منطقه‌ای: {topic_title}"
+                        icon = "🔕"
+                        is_silent = True
                 else:
                     target_ch = None
                     title = None
                     icon = None
+                    continue
                     
                 sent_msg, target_channel, alert_text = await self.send_alert(
                     topic_title, 
@@ -694,7 +779,10 @@ class LiveSentinel:
                 else:
                     alert_title = f"گزارش مردمی: {pattern}"
             else:
-                alert_title = f"هشدار فوری: {pattern}"
+                if is_silent:
+                    alert_title = f"هشدار منطقه‌ای: {pattern}"
+                else:
+                    alert_title = f"هشدار فوری: {pattern}"
             
         alert_text = (
             f"{icon} **{alert_title}**\n\n"
@@ -744,15 +832,19 @@ class LiveSentinel:
         prompt = (
             "تو یک تحلیلگر و دروازه‌بان هوشمند خبر برای یک سیستم دیده‌بان و مانیتورینگ تلگرام هستی.\n"
             "یک رویداد خبری مهم دریافت شده است. موضوع این خبر را تحلیل کن و مشخص کن آیا این خبر باید در یکی از ۳ کانال تخصصی زیر منتشر شود:\n\n"
-            "دسته‌بندی‌های مجاز:\n"
-            "1. WAR: اخبار جنگ، تنش‌های نظامی، حملات هوایی/موشکی/پهپادی، بمباران، پدافند هوایی، درگیری‌های مسلحانه، آژیر خطر، انفجارهای نظامی.\n"
+            "دسته‌بندی‌های مجاز (category):\n"
+            "1. WAR: اخبار جنگ، تنش‌های نظامی، حملات هوایی/موشکی/پهپادی، بمباران، پدافند هوایی، درگیری‌های مسلحانه، آژیر خطر، انفجارهای نظامی، حوادث و آسیب به تاسیسات نفتی/گازی و پالایشگاهی ناشی از جنگ در منطقه.\n"
             "2. ECONOMY: اخبار مهم اقتصادی، نوسانات شدید نرخ ارز (دلار، تتر، یورو)، طلا و سکه، بازار بورس، سقوط ریال، تصمیمات کلیدی ارزی و شوک‌های معیشتی.\n"
             "3. PROTEST_RIGHTS: اخبار اعتراضات مردمی، اعتصابات، تجمعات خیابانی، سرکوب معترضان، بازداشت‌ها، احکام دادگاه‌ها و پرونده‌های معترضان و فعالان، اجرای احکام اعدام، وضعیت زندانیان سیاسی.\n"
             "4. OTHER: اخبار متفرقه که در هیچ‌کدام از ۳ دسته بالا قرار نمی‌گیرد (مانند اخبار پزشکی، حمله قلبی، حوادث روزمره، اخبار فرهنگی/ورزشی، روابط دیپلماتیک عادی بدون جنگ، هواشناسی).\n\n"
+            "تشخیص ارتباط مستقیم با ایران (is_iran_related):\n"
+            "- مقدار true: اگر خبر مستقیماً به خاک ایران، اهداف و پایگاه‌های نظامی ایران، نیروهای مسلح ایران (سپاه، ارتش)، مقامات و رهبران ایران، یا حمله مستقیم و پاسخ‌های نظامی ایران مربوط است.\n"
+            "- مقدار false: اگر رویداد بین سایر طرف‌ها و کشورهای منطقه است و به طور مستقیم به خاک یا پایگاه‌های ایران مربوط نمی‌شود (مانند انفجار یا حملات در ریاض/عربستان، درگیری اسرائیل و حزب‌الله/لبنان، حملات در غزه یا سوریه، بمباران‌های یمن، درگیری در عراق بدون هدف قرار گرفتن خاک ایران).\n\n"
             f"متن خبر:\n{text}\n\n"
-            "پاسخ را دقیقاً و فقط در قالب یک شیء JSON با این دو فیلد بنویس و هیچ کلمه یا توضیح دیگری قبل یا بعد از آن ننویس:\n"
+            "پاسخ را دقیقاً و فقط در قالب یک شیء JSON با این فیلدها بنویس و هیچ کلمه یا توضیح دیگری قبل یا بعد از آن ننویس:\n"
             "{\n"
             '  "category": "WAR" | "ECONOMY" | "PROTEST_RIGHTS" | "OTHER",\n'
+            '  "is_iran_related": true | false,\n'
             '  "topic_title": "یک عنوان کوتاه و دقیق فارسی (حداکثر ۵ تا ۶ کلمه) متناسب با واقعه"\n'
             "}"
         )
@@ -760,7 +852,7 @@ class LiveSentinel:
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 100,
+                "maxOutputTokens": 150,
                 "temperature": 0.1
             }
         }
@@ -793,9 +885,10 @@ class LiveSentinel:
                     res = json.loads(match.group(0))
                     category = str(res.get("category", "")).upper().strip()
                     topic_title = str(res.get("topic_title", "")).strip()
+                    is_iran_related = bool(res.get("is_iran_related", False))
                     if category in ["WAR", "ECONOMY", "PROTEST_RIGHTS", "OTHER"]:
-                        print(f"🎯 VIP AI Classification: category={category}, topic='{topic_title}' (Model: {self.current_gemini_model})")
-                        return {"category": category, "topic_title": topic_title}
+                        print(f"🎯 VIP/Anomaly AI Classification: category={category}, is_iran={is_iran_related}, topic='{topic_title}' (Model: {self.current_gemini_model})")
+                        return {"category": category, "is_iran_related": is_iran_related, "topic_title": topic_title}
                 break
             except urllib.error.HTTPError as e:
                 if e.code == 404 and attempt < max_retries - 1:
@@ -1512,13 +1605,7 @@ class LiveSentinel:
                 return
                 
             # 5. Check if Iran-related (Sound vs Silent alert)
-            iran_keywords = [
-                "ایران", "إيران", "طهران", "تهران", "الحرس الثوري", "الحرس_الثوري", 
-                "سپاه", "الجيش الإيراني", "خامنائي", "خامنه‌ای", "بزشكيان", "پزشکیان", 
-                "إيراني", "ایرانی", "إيرانية", "ایرانیة", "ایرانیه", "قاسم سليماني", "فيلق القدس"
-            ]
-            has_iran_kw = any(kw in clean_text or kw in title or kw in summary for kw in iran_keywords)
-            is_iran_related = bool(ai_res.get('is_iran_related', False) or has_iran_kw)
+            is_iran_related = self.determine_iran_related(ai_res, clean_text, title)
             is_silent = not is_iran_related
                 
             # 6. Target channel routing (Alibk3 is exclusively military/war -> @DidebanJang)
