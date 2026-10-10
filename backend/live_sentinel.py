@@ -54,6 +54,7 @@ class LiveSentinel:
         self.alibk_posted = {} # msg_id -> {'channel': target_channel, 'msg_id': posted_msg_id}
         self.alibk_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
         self.alibk_msg_locks = {} # msg_id -> asyncio.Lock() for sequential edit ordering
+        self.node_id_map = {} # chat_id -> clean node username
         
         # Metrics
         self.start_time = time.time()
@@ -134,6 +135,20 @@ class LiveSentinel:
             
         return True
         
+    async def preload_node_entities(self, reader_client):
+        try:
+            from telethon.utils import get_peer_id
+            for n in self.nodes:
+                try:
+                    ent = await reader_client.get_entity(n)
+                    self.node_id_map[ent.id] = n
+                    self.node_id_map[get_peer_id(ent)] = n
+                except Exception:
+                    pass
+            print(f"📡 Preloaded {len(self.node_id_map)} node entity mappings.")
+        except Exception as e:
+            print(f"⚠️ Could not preload node entities: {e}")
+            
     def load_persisted_state(self):
         try:
             if os.path.exists(self.state_file):
@@ -503,7 +518,7 @@ class LiveSentinel:
                             f"{display_pat} (به‌روزرسانی خبر)", 
                             "VIP_UPDATE", 
                             baseline, 
-                            [f"- [{canonical_node}]({link}) (VIP Update)"], 
+                            [f"- [{canonical_node}]({link})"], 
                             is_silent=True,
                             target_channel=target_ch
                         )
@@ -567,7 +582,7 @@ class LiveSentinel:
                                 topic_title, 
                                 "VIP_IMMEDIATE", 
                                 baseline, 
-                                [f"- [{canonical_node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], 
+                                [f"- [{canonical_node}]({link})"], 
                                 is_silent=is_silent,
                                 target_channel=target_channel,
                                 alert_title=alert_title,
@@ -603,7 +618,7 @@ class LiveSentinel:
                                 display_pat, 
                                 "VIP_IMMEDIATE", 
                                 baseline, 
-                                [f"- [{canonical_node}]({link}) (VIP Alert{' - Edited' if is_edit else ''})"], 
+                                [f"- [{canonical_node}]({link})"], 
                                 is_silent=is_silent
                             )
                             if sent_msg:
@@ -666,7 +681,7 @@ class LiveSentinel:
                 continue
                 
             # 2. Source Overlap Deduplication (check against alerts in last 15 minutes)
-            source_links = [f"- [{node}]({link})" for node, link in channels.items()]
+            source_links = [f"- [{node}]({link})" for node, link in channels.items() if node and node != 'unknown' and re.match(r'^[A-Za-z0-9_]+$', str(node))]
             current_sources = set(channels.values())
             is_duplicate_story = False
             for prev_time, prev_sources in self.recent_alert_sources:
@@ -784,11 +799,18 @@ class LiveSentinel:
                 else:
                     alert_title = f"هشدار فوری: {pattern}"
             
+        source_header = "🔗 **منبع خبر:**" if len(context_msgs) == 1 else "🔗 **منابع خبر:**"
+        clean_context = [
+            m.replace(' (VIP Alert - Edited)', '').replace(' (VIP Alert)', '').replace(' (VIP Update)', '')
+             .replace(' (هشدار ویژه)', '').replace(' (به‌روزرسانی ویژه)', '').strip()
+            for m in context_msgs
+        ]
+        
         alert_text = (
             f"{icon} **{alert_title}**\n\n"
             f"⚡️ سرعت انتشار: {count if isinstance(count, str) else str(count) + ' گزارش'} (در ۳ دقیقه گذشته)\n"
             f"📊 وضعیت عادی: {normal_rate:.2f} گزارش در ساعت\n\n"
-            f"🔗 **منابع خبر:**\n" + "\n".join(context_msgs).replace('VIP Alert', 'هشدار ویژه').replace('VIP Update', 'به‌روزرسانی ویژه').replace('Edited', 'ویرایش شده') + "\n\n"
+            f"{source_header}\n" + "\n".join(clean_context) + "\n\n"
         )
         
         # Add tags and channel signature
@@ -992,9 +1014,10 @@ class LiveSentinel:
                     summary = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
                     
                     if summary:
-                        parts = original_text.split("🔗 **منابع خبر:**")
+                        delimiter = "🔗 **منابع خبر:**" if "🔗 **منابع خبر:**" in original_text else "🔗 **منبع خبر:**"
+                        parts = original_text.split(delimiter)
                         if len(parts) == 2:
-                            new_text = f"{parts[0]}🤖 **چکیده هوشمند:**\n{summary}\n\n🔗 **منابع خبر:**{parts[1]}"
+                            new_text = f"{parts[0]}🤖 **چکیده هوشمند:**\n{summary}\n\n{delimiter}{parts[1]}"
                             await self.bot.edit_message(target_channel, message_id, new_text, link_preview=False)
                             print(f"✅ AI Summary added to message {message_id} in {target_channel} (Model: {self.current_gemini_model})")
                             return # Success, exit function
@@ -1634,7 +1657,7 @@ class LiveSentinel:
             alert_text = (
                 f"{alert_header}\n\n"
                 f"📝 **چکیده رویداد:**\n{summary}\n\n"
-                f"🔗 **منبع خبر:**\n- [Ali Bk - اخبار منطقه]({link}) (پوشش تحولات منطقه)\n\n"
+                f"🔗 **منبع خبر:**\n- [Alibk3]({link})\n\n"
                 f"{tag}\n{target_channel}"
             )
             
@@ -1727,10 +1750,28 @@ async def main():
 
     def resolve_node_username(chat_obj):
         if not chat_obj: return 'unknown'
+        chat_id = getattr(chat_obj, 'id', None)
+        if chat_id and chat_id in sentinel.node_id_map:
+            return sentinel.node_id_map[chat_id]
+        try:
+            from telethon.utils import get_peer_id
+            peer_id = get_peer_id(chat_obj)
+            if peer_id in sentinel.node_id_map:
+                return sentinel.node_id_map[peer_id]
+        except Exception:
+            pass
+            
         u = getattr(chat_obj, 'username', None)
-        if u: return u
-        title = getattr(chat_obj, 'title', None)
-        if title: return title
+        if u and re.match(r'^[A-Za-z0-9_]+$', str(u)):
+            return str(u)
+            
+        usernames = getattr(chat_obj, 'usernames', None)
+        if usernames:
+            for un in usernames:
+                uname = getattr(un, 'username', None)
+                if uname and re.match(r'^[A-Za-z0-9_]+$', str(uname)):
+                    return str(uname)
+                    
         return 'unknown'
 
     @client.on(events.NewMessage(chats=sentinel.nodes))
@@ -1803,6 +1844,7 @@ async def main():
         print("🤖 Bot listener started.")
         await client.start()
         print("✅ Live listening started on", len(sentinel.nodes), "nodes (Active Polling & Push Events).")
+        await sentinel.preload_node_entities(reader_client=client)
         await sentinel.preload_vahid_ai_history(reader_client=client)
         await sentinel.catchup_unposted_vahid(reader_client=client)
         await sentinel.preload_ilia_ai_history(reader_client=client)
@@ -1815,6 +1857,7 @@ async def main():
             await asyncio.sleep(e.seconds + 5)
             await bot.start(bot_token=BOT_TOKEN)
             await client.start()
+            await sentinel.preload_node_entities(reader_client=client)
             await sentinel.preload_vahid_ai_history(reader_client=client)
             await sentinel.catchup_unposted_vahid(reader_client=client)
             await sentinel.preload_ilia_ai_history(reader_client=client)
