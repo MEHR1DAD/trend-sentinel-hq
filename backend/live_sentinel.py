@@ -23,7 +23,9 @@ SESSION_STRING = os.environ.get("TELEGRAM_SESSION_GENERAL")
 BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
-GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
+GEMINI_API_KEY_RAW = os.environ.get('GEMINI_API_KEY', '')
+GEMINI_API_KEYS = [k.strip() for k in GEMINI_API_KEY_RAW.split(',') if k.strip()]
+GEMINI_API_KEY = GEMINI_API_KEYS[0] if GEMINI_API_KEYS else None
 DEFAULT_GEMINI_MODEL = "gemini-3.5-flash-lite"
 GEMINI_MODELS_PRIORITY = [
     "gemini-3.5-flash-lite",
@@ -97,6 +99,8 @@ class LiveSentinel:
         self.config = self.load_json(CONFIG_FILE)
         self.nodes = self.config.get('nodes', [])
         self.state_file = STATE_FILE
+        self.gemini_api_keys = GEMINI_API_KEYS
+        self.current_key_idx = 0
         self.latest_flash_lite_model = DEFAULT_GEMINI_MODEL
         self.current_gemini_model = DEFAULT_GEMINI_MODEL
         
@@ -188,6 +192,18 @@ class LiveSentinel:
         # Load persistent state from disk
         self.load_persisted_state()
         
+    def get_gemini_api_key(self):
+        if not self.gemini_api_keys:
+            return None
+        return self.gemini_api_keys[self.current_key_idx % len(self.gemini_api_keys)]
+
+    def rotate_gemini_api_key(self):
+        if len(self.gemini_api_keys) > 1:
+            self.current_key_idx = (self.current_key_idx + 1) % len(self.gemini_api_keys)
+            print(f"🔄 Rotated to backup Gemini API Key #{self.current_key_idx + 1}/{len(self.gemini_api_keys)}")
+            return self.get_gemini_api_key()
+        return None
+
     def determine_iran_related(self, ai_res, text, title=""):
         clean_text = (text or "") + " " + (title or "")
         
@@ -2454,10 +2470,11 @@ class LiveSentinel:
           Priority 2: Latest flash (newest version first)
           Priority 3: Latest pro (newest version first)
         """
-        if not GEMINI_API_KEY:
+        active_key = self.get_gemini_api_key()
+        if not active_key:
             return []
             
-        url = f"https://generativelanguage.googleapis.com/v1beta/models?key={GEMINI_API_KEY}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models?key={active_key}"
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         loop = asyncio.get_running_loop()
         
@@ -2598,7 +2615,8 @@ class LiveSentinel:
           Priority 3: latest pro
         - Keeps the latest working flash-lite in memory for future requests.
         """
-        if not GEMINI_API_KEY:
+        active_key = self.get_gemini_api_key()
+        if not active_key:
             return None
 
         if not hasattr(self, 'gemini_lock'):
@@ -2628,7 +2646,8 @@ class LiveSentinel:
             elif attempt == 5:
                 model = "gemini-1.5-pro"
                 
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
+            cur_key = self.get_gemini_api_key()
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={cur_key}"
             try:
                 import urllib.request
                 import urllib.error
@@ -2678,6 +2697,8 @@ class LiveSentinel:
                 except Exception:
                     pass
                 print(f"⚠️ Gemini API HTTP Error {e.code} ({e.reason}) on model {model} (Attempt {attempt+1}/{max_retries}): {err_body[:200]}")
+                if e.code == 429 and "quota" in err_body.lower():
+                    self.rotate_gemini_api_key()
                 if attempt < max_retries - 1:
                     model = await self.rotate_gemini_model_dynamic(failed_model=model)
                     if e.code in (429, 503):
@@ -2735,9 +2756,40 @@ class LiveSentinel:
                 except Exception as edit_err:
                     print(f"⚠️ Failed to edit AI summary message: {edit_err}")
 
+    def generate_heuristic_summary(self, text, channel_name=""):
+        clean = (text or "").strip()
+        # 1. Advisory: Avoiding military / nuclear / defense facilities
+        is_military_nuclear = any(k in clean for k in ['مراکز نظامی', 'تاسیسات هسته‌ای', 'پایگاه‌های نظامی', 'پایگاه هوایی', 'سایت موشکی', 'پایگاه موشکی', 'اهداف نظامی'])
+        is_avoidance = any(k in clean for k in ['اجتناب بفرمایید', 'اجتناب کنید', 'دوری کنید', 'پرهیز کنید', 'نزدیک نشوید', 'فاصله بگیرید'])
+        is_shelter = any(k in clean for k in ['پناهگاه', 'پناه بگیرید', 'تخلیه', 'محل امن'])
+        
+        if is_avoidance and is_military_nuclear:
+            return {
+                "title": "⚠️ توصیه امنیتی و هشدار دوری از مراکز حساس نظامی و هسته‌ای",
+                "summary": "با توجه به تشدید تنش‌های منطقه‌ای و احتمال وقوع حملات هوایی و موشکی به اهداف راهبردی در روزهای پیش‌رو، این توصیه حفاظتی به منظور پیشگیری از تلفات غیرنظامی و در امان ماندن شهروندان از خطرات مستقیم و ترکش در مجاورت مراکز نظامی و تاسیسات اتمی مطرح شده است.",
+                "is_ai": False
+            }
+        elif is_shelter:
+            return {
+                "title": "⚠️ هشدار اضطراری و توصیه به استقرار در نقاط امن",
+                "summary": "با توجه به وضعیت بحرانی و احتمال درگیری‌های هوایی یا موشکی، هشدارهای حفاظتی لازم جهت حفظ جان شهروندان و استقرار در پناهگاه‌ها یا نقاط امن صادر شده است.",
+                "is_ai": False
+            }
+            
+        lines = [l.strip() for l in clean.split('\n') if l.strip()]
+        first_line = lines[0] if lines else clean
+        title = first_line[:50] + "..." if len(first_line) > 50 else first_line
+        title = re.sub(r'^[⚡️🚨⚠️🔴📌]+', '', title).strip()
+        
+        return {
+            "title": title or "چکیده رویداد",
+            "summary": clean[:300] + "..." if len(clean) > 300 else clean,
+            "is_ai": False
+        }
+
     async def summarize_channel_post(self, text, channel_name="وحیدآنلاین", bot_name="وحیدآنلاین هوشمند (VahidOnlineAI)"):
-        if not GEMINI_API_KEY:
-            return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
+        if not self.get_gemini_api_key():
+            return self.generate_heuristic_summary(text, channel_name)
             
         prompt = (
             f"تو دستیار، تحلیلگر و خلاصه‌ساز هوشمند خبر برای کانال تلگرام '{bot_name}' هستی.\n"
@@ -2772,18 +2824,21 @@ class LiveSentinel:
         if raw_out:
             match = re.search(r'\{.*\}', raw_out, re.DOTALL)
             if match:
-                res = json.loads(match.group(0))
-                title = res.get("title", "").strip()
-                summary = res.get("summary", "").strip()
-                if title and summary:
-                    return {"title": title, "summary": summary}
+                try:
+                    res = json.loads(match.group(0))
+                    title = res.get("title", "").strip()
+                    summary = res.get("summary", "").strip()
+                    if title and summary:
+                        return {"title": title, "summary": summary, "is_ai": True}
+                except Exception:
+                    pass
                     
             lines = [l.strip() for l in raw_out.split('\n') if l.strip()]
             if len(lines) >= 2:
-                return {"title": lines[0].replace('#', '').strip(), "summary": "\n".join(lines[1:])}
-            return {"title": "تحلیل خبر", "summary": raw_out}
+                return {"title": lines[0].replace('#', '').strip(), "summary": "\n".join(lines[1:]), "is_ai": True}
+            return {"title": "تحلیل خبر", "summary": raw_out, "is_ai": True}
             
-        return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
+        return self.generate_heuristic_summary(text, channel_name)
 
 
     async def summarize_vahid_post(self, text):
@@ -2857,15 +2912,16 @@ class LiveSentinel:
                         clean_text = (orig_m.message or orig_m.text or "").strip()
                         if clean_text:
                             print(f"🔄 Upgrading fallback post {vahid_id} (msg {posted_id}) with full AI summary...")
-                            await self.handle_vahid_online_ai(clean_text, vahid_id, raw_msg=orig_m, is_edit=True)
+                            upgraded_ok = await self.handle_vahid_online_ai(clean_text, vahid_id, raw_msg=orig_m, is_edit=False, is_upgrade=True)
+                            if upgraded_ok:
+                                self.vahid_needs_refresh.discard((vahid_id, posted_id))
                             await asyncio.sleep(4)
                 except Exception as ref_err:
                     print(f"⚠️ Failed to upgrade fallback post {vahid_id}: {ref_err}")
-            self.vahid_needs_refresh.clear()
         except Exception as e:
             print(f"⚠️ Catchup for VahidOnline failed: {e}")
 
-    async def handle_vahid_online_ai(self, text, msg_id, raw_msg=None, is_edit=False):
+    async def handle_vahid_online_ai(self, text, msg_id, raw_msg=None, is_edit=False, is_upgrade=False):
         target_channel = "@VahidOnlineAI"
         
         # 1. Deduplication for Album / Media Groups (grouped_id)
@@ -2891,17 +2947,23 @@ class LiveSentinel:
             
         async with self.vahid_msg_locks[msg_id]:
             # Safeguard: if this is an edit of an ancient post (>2h old) not in history, ignore it
-            if is_edit and msg_id not in self.vahid_ai_posted:
+            if is_edit and not is_upgrade and msg_id not in self.vahid_ai_posted:
                 orig_date = getattr(raw_msg, 'date', None)
                 if orig_date:
                     now_utc = datetime.now(timezone.utc)
                     if (now_utc - orig_date).total_seconds() > 7200:
                         print(f"⏩ Skipped editing ancient post {msg_id} (>2h old and not tracked)")
-                        return
+                        return False
 
             res = await self.summarize_vahid_post(clean_text)
             title = res.get('title', 'چکیده خبر').strip()
             summary = res.get('summary', clean_text).strip()
+            is_ai = res.get('is_ai', False)
+            
+            # If upgrading and we got no AI improvement, defer
+            if is_upgrade and not is_ai and (title == "خلاصه خبر" or summary == clean_text):
+                print(f"⏩ Upgrade deferred for VahidOnline msg {msg_id}: no AI summary available.")
+                return False
             
             link = f"https://t.me/VahidOnline/{msg_id}"
             
@@ -2919,7 +2981,7 @@ class LiveSentinel:
                     media_icon = " 🎙"
                     link_action = "شنیدن فایل صوتی در کانال وحیدآنلاین"
             
-            if is_edit:
+            if is_edit and not is_upgrade:
                 time_fa = self.get_tehran_time_fa()
                 post_content = (
                     f"⚡️ **{title}**{media_icon}\n\n"
@@ -2941,10 +3003,12 @@ class LiveSentinel:
                     posted_id = self.vahid_ai_posted[msg_id]
                     try:
                         await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
-                        print(f"✏️ Edited post {posted_id} in {target_channel} for VahidOnline msg {msg_id} with in-place status line.")
+                        print(f"✏️ Edited post {posted_id} in {target_channel} for VahidOnline msg {msg_id}.")
+                        return is_ai
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
                             print(f"ℹ️ Post {posted_id} in {target_channel} is already up to date (no content change).")
+                            return is_ai
                         else:
                             raise edit_err
                 else:
@@ -3046,15 +3110,16 @@ class LiveSentinel:
                         clean_text = (orig_m.message or orig_m.text or "").strip()
                         if clean_text:
                             print(f"🔄 Upgrading fallback post {ilia_id} (msg {posted_id}) with full AI summary...")
-                            await self.handle_ilia_ai(clean_text, ilia_id, raw_msg=orig_m, is_edit=True)
+                            upgraded_ok = await self.handle_ilia_ai(clean_text, ilia_id, raw_msg=orig_m, is_edit=False, is_upgrade=True)
+                            if upgraded_ok:
+                                self.ilia_needs_refresh.discard((ilia_id, posted_id))
                             await asyncio.sleep(4)
                 except Exception as ref_err:
                     print(f"⚠️ Failed to upgrade fallback post {ilia_id}: {ref_err}")
-            self.ilia_needs_refresh.clear()
         except Exception as e:
             print(f"⚠️ Catchup for iliaen failed: {e}")
 
-    async def handle_ilia_ai(self, text, msg_id, raw_msg=None, is_edit=False):
+    async def handle_ilia_ai(self, text, msg_id, raw_msg=None, is_edit=False, is_upgrade=False):
         target_channel = "@iliaenAI"
         
         # 1. Deduplication for Album / Media Groups (grouped_id)
@@ -3080,17 +3145,23 @@ class LiveSentinel:
             
         async with self.ilia_msg_locks[msg_id]:
             # Safeguard: if this is an edit of an ancient post (>2h old) not in history, ignore it
-            if is_edit and msg_id not in self.ilia_ai_posted:
+            if is_edit and not is_upgrade and msg_id not in self.ilia_ai_posted:
                 orig_date = getattr(raw_msg, 'date', None)
                 if orig_date:
                     now_utc = datetime.now(timezone.utc)
                     if (now_utc - orig_date).total_seconds() > 7200:
                         print(f"⏩ Skipped editing ancient post {msg_id} in iliaen (>2h old and not tracked)")
-                        return
+                        return False
 
             res = await self.summarize_ilia_post(clean_text)
             title = res.get('title', 'چکیده خبر').strip()
             summary = res.get('summary', clean_text).strip()
+            is_ai = res.get('is_ai', False)
+            
+            # If upgrading and we got no AI improvement, defer
+            if is_upgrade and not is_ai and (title == "خلاصه خبر" or summary == clean_text):
+                print(f"⏩ Upgrade deferred for iliaen msg {msg_id}: no AI summary available.")
+                return False
             
             link = f"https://t.me/iliaen/{msg_id}"
             
@@ -3108,7 +3179,7 @@ class LiveSentinel:
                     media_icon = " 🎙"
                     link_action = "شنیدن فایل صوتی در کانال ایلیا"
             
-            if is_edit:
+            if is_edit and not is_upgrade:
                 time_fa = self.get_tehran_time_fa()
                 post_content = (
                     f"⚡️ **{title}**{media_icon}\n\n"
@@ -3130,10 +3201,12 @@ class LiveSentinel:
                     posted_id = self.ilia_ai_posted[msg_id]
                     try:
                         await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
-                        print(f"✏️ Edited post {posted_id} in {target_channel} for iliaen msg {msg_id} with in-place status line.")
+                        print(f"✏️ Edited post {posted_id} in {target_channel} for iliaen msg {msg_id}.")
+                        return is_ai
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
                             print(f"ℹ️ Post {posted_id} in {target_channel} is already up to date (no content change).")
+                            return is_ai
                         else:
                             raise edit_err
                 else:
