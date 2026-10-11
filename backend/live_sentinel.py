@@ -2618,11 +2618,13 @@ class LiveSentinel:
         model = getattr(self, 'latest_flash_lite_model', None) or getattr(self, 'current_gemini_model', DEFAULT_GEMINI_MODEL)
         
         for attempt in range(max_retries):
-            # Special escalation for attempts 3, 4, 5: fall back directly to high-quota production workhorses
-            if attempt == 3:
+            # Special escalation: on attempt 2, immediately use high-quota rock-solid production model
+            if attempt == 2:
                 model = "gemini-1.5-flash"
-            elif attempt == 4:
+            elif attempt == 3:
                 model = "gemini-1.5-flash-8b"
+            elif attempt == 4:
+                model = "gemini-2.5-flash"
             elif attempt == 5:
                 model = "gemini-1.5-pro"
                 
@@ -2766,7 +2768,7 @@ class LiveSentinel:
             }
         }
         
-        raw_out = await self.call_gemini_content(payload, timeout=12, max_retries=3)
+        raw_out = await self.call_gemini_content(payload, timeout=8, max_retries=6)
         if raw_out:
             match = re.search(r'\{.*\}', raw_out, re.DOTALL)
             if match:
