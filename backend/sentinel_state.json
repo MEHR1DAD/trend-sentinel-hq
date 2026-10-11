@@ -25,11 +25,27 @@
       "pattern": "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
       "text": "UKMTO:\nسازمان عملیات تجارت دریایی بریتانیا گزارشی از وقوع یک حادثه در تنگه هرمز دریافت کرده است.\nناخدای یک نفتکش که در حال خروج از تنگه هرمز بوده، گزارش داده است که یک پرتابه ناشناس به سمت چپ کشتی برخورد کرده و باعث آتش‌سوزی در آن شده است.\nبر اساس گزارش‌ها، خدمه کشتی در سلامت هستند. در زمان انتشار این گزارش، میزان خسارات و پیامدهای زیست‌محیطی حادثه مشخص نیست.\nUK_MTO\n\n📡 @VahidOnline",
       "target_channel": "@DidebanJang"
+    },
+    "Alibk3_38711": {
+      "sent_msg_id": 134,
+      "target_channel": "@DidebanJang",
+      "time": 1791732935.4443595,
+      "thread_key": "Alibk3_38698"
+    },
+    "Alibk3_38712": {
+      "sent_msg_id": 125,
+      "target_channel": "@DidebanJang",
+      "time": 1791734254.6578388,
+      "thread_key": "Alibk3_38709"
+    },
+    "Alibk3_38713": {
+      "sent_msg_id": 125,
+      "target_channel": "@DidebanJang",
+      "time": 1791734425.5938425,
+      "thread_key": "Alibk3_38712"
     }
   },
   "last_alert_time": {
-    "انفجار در فرودگاه ریاض": 1791638501.2166183,
-    "آتش‌سوزی در آمریکا": 1791640891.6073945,
     "آتش‌سوزی در تنگه هرمز، هرمز، نفتکش": 1791653863.6781137,
     "حملات نظامی در ایران، اسرائیل، آمریکا": 1791659358.263079
   },
@@ -104,11 +120,13 @@
     },
     "38496": {
       "channel": "@DidehbanEghtesad",
-      "msg_id": 12
+      "msg_id": 12,
+      "timestamp": 1791574746.0
     },
     "38497": {
       "channel": "@DidehbanEghtesad",
-      "msg_id": 13
+      "msg_id": 13,
+      "timestamp": 1791576591.0
     },
     "38498": {
       "channel": "@DidebanJang",
@@ -128,280 +146,2689 @@
     },
     "38504": {
       "channel": "@DidebanJang",
-      "msg_id": 47
+      "msg_id": 47,
+      "timestamp": 1791580116.0
     },
     "38507": {
       "channel": "@DidebanJang",
-      "msg_id": 48
+      "msg_id": 48,
+      "timestamp": 1791581651.0
     },
     "38508": {
       "channel": "@DidebanJang",
-      "msg_id": 49
+      "msg_id": 49,
+      "timestamp": 1791581702.0
     },
     "38509": {
       "channel": "@DidebanJang",
-      "msg_id": 50
+      "msg_id": 50,
+      "timestamp": 1791581728.0
     },
     "38512": {
       "channel": "@DidebanJang",
-      "msg_id": 51
+      "msg_id": 51,
+      "timestamp": 1791583582.0
     },
     "38513": {
       "channel": "@DidehbanEghtesad",
-      "msg_id": 14
+      "msg_id": 14,
+      "timestamp": 1791584325.0
     },
     "38518": {
       "channel": "@DidebanJang",
-      "msg_id": 52
+      "msg_id": 52,
+      "timestamp": 1791586255.0
     },
     "38520": {
       "channel": "@DidebanJang",
-      "msg_id": 53
+      "msg_id": 53,
+      "timestamp": 1791586542.0
     },
     "38523": {
       "channel": "@DidebanJang",
-      "msg_id": 54
+      "msg_id": 54,
+      "timestamp": 1791588462.0
     },
     "38524": {
       "channel": "@DidebanJang",
-      "msg_id": 55
+      "msg_id": 55,
+      "timestamp": 1791593169.0
     },
     "38529": {
       "channel": "@DidebanJang",
-      "msg_id": 56
+      "msg_id": 56,
+      "timestamp": 1791615086.0
     },
     "38530": {
       "channel": "@DidebanJang",
-      "msg_id": 57
+      "msg_id": 57,
+      "timestamp": 1791615956.0
     },
     "38533": {
       "channel": "@DidebanJang",
-      "msg_id": 58
+      "msg_id": 58,
+      "timestamp": 1791617058.0
     },
     "38535": {
       "channel": "@DidebanJang",
-      "msg_id": 59
+      "msg_id": 59,
+      "timestamp": 1791617281.0
     },
     "38537": {
       "channel": "@DidebanJang",
-      "msg_id": 60
+      "msg_id": 60,
+      "timestamp": 1791619939.0
     },
     "38542": {
       "channel": "@DidebanJang",
-      "msg_id": 61
+      "msg_id": 61,
+      "timestamp": 1791623337.0
     },
     "38551": {
       "channel": "@DidebanJang",
-      "msg_id": 62
+      "msg_id": 62,
+      "timestamp": 1791628700.0
     },
     "38552": {
       "channel": "@DidebanJang",
-      "msg_id": 63
+      "msg_id": 63,
+      "timestamp": 1791629468.0
     },
     "38559": {
       "channel": "@DidebanJang",
-      "msg_id": 64
+      "msg_id": 64,
+      "timestamp": 1791631897.0
     },
     "38560": {
       "channel": "@DidebanJang",
-      "msg_id": 65
+      "msg_id": 65,
+      "timestamp": 1791631980.0
     },
     "38561": {
       "channel": "@DidebanJang",
-      "msg_id": 66
+      "msg_id": 66,
+      "timestamp": 1791635250.0
     },
     "38564": {
       "channel": "@DidebanJang",
-      "msg_id": 67
+      "msg_id": 67,
+      "timestamp": 1791637223.0
     },
     "38565": {
       "channel": "@DidebanJang",
-      "msg_id": 68
+      "msg_id": 68,
+      "timestamp": 1791637408.0
     },
     "38566": {
       "channel": "@DidebanJang",
-      "msg_id": 69
+      "msg_id": 69,
+      "timestamp": 1791637891.0
     },
     "38567": {
       "channel": "@DidebanJang",
-      "msg_id": 70
+      "msg_id": 70,
+      "timestamp": 1791637891.0
     },
     "38568": {
       "channel": "@DidebanJang",
-      "msg_id": 71
+      "msg_id": 71,
+      "timestamp": 1791638492.0
     },
     "38581": {
       "channel": "@DidebanJang",
-      "msg_id": 73
+      "msg_id": 73,
+      "timestamp": 1791642627.0
     },
     "38582": {
       "channel": "@DidebanJang",
-      "msg_id": 74
+      "msg_id": 74,
+      "timestamp": 1791642735.0
     },
     "38584": {
       "channel": "@DidebanJang",
-      "msg_id": 75
+      "msg_id": 75,
+      "timestamp": 1791643099.0
     },
     "38585": {
       "channel": "@DidebanJang",
-      "msg_id": 76
+      "msg_id": 76,
+      "timestamp": 1791643353.0
     },
     "38588": {
       "channel": "@DidebanJang",
-      "msg_id": 77
+      "msg_id": 77,
+      "timestamp": 1791644005.0
     },
     "38600": {
       "channel": "@DidebanJang",
-      "msg_id": 78
+      "msg_id": 78,
+      "timestamp": 1791647398.0
     },
     "38604": {
       "channel": "@DidebanJang",
-      "msg_id": 79
+      "msg_id": 79,
+      "timestamp": 1791648029.0
     },
     "38617": {
       "channel": "@DidebanJang",
-      "msg_id": 80
+      "msg_id": 80,
+      "timestamp": 1791649592.0
     },
     "38618": {
       "channel": "@DidebanJang",
-      "msg_id": 81
+      "msg_id": 81,
+      "timestamp": 1791649637.0
     },
     "38620": {
       "channel": "@DidebanJang",
-      "msg_id": 82
+      "msg_id": 82,
+      "timestamp": 1791649782.0
     },
     "38623": {
       "channel": "@DidebanJang",
-      "msg_id": 83
+      "msg_id": 83,
+      "timestamp": 1791650068.0
     },
     "38627": {
       "channel": "@DidebanJang",
-      "msg_id": 84
+      "msg_id": 84,
+      "timestamp": 1791651188.0
     },
     "38634": {
       "channel": "@DidebanJang",
-      "msg_id": 89
+      "msg_id": 89,
+      "timestamp": 1791652869.0
     },
     "38633": {
       "channel": "@DidebanJang",
-      "msg_id": 88
+      "msg_id": 88,
+      "timestamp": 1791652651.0
     },
     "38632": {
       "channel": "@DidebanJang",
-      "msg_id": 87
+      "msg_id": 87,
+      "timestamp": 1791652316.0
     },
     "38631": {
       "channel": "@DidebanJang",
-      "msg_id": 86
+      "msg_id": 86,
+      "timestamp": 1791652171.0
     },
     "38630": {
       "channel": "@DidebanJang",
-      "msg_id": 85
+      "msg_id": 85,
+      "timestamp": 1791651688.0
     },
     "38638": {
       "channel": "@DidebanJang",
-      "msg_id": 91
+      "msg_id": 91,
+      "timestamp": 1791654084.0
     },
     "38639": {
       "channel": "@DidebanJang",
-      "msg_id": 92
+      "msg_id": 92,
+      "timestamp": 1791656895.0
     },
     "38643": {
       "channel": "@DidebanJang",
-      "msg_id": 94
+      "msg_id": 94,
+      "timestamp": 1791661964.0
     },
     "38645": {
       "channel": "@DidebanJang",
-      "msg_id": 95
+      "msg_id": 95,
+      "timestamp": 1791663542.0
     },
     "38646": {
       "channel": "@DidebanJang",
-      "msg_id": 96
+      "msg_id": 96,
+      "timestamp": 1791663595.0
     },
     "38648": {
       "channel": "@DidebanJang",
-      "msg_id": 98
+      "msg_id": 98,
+      "timestamp": 1791665578.0
     },
     "38651": {
       "channel": "@DidebanJang",
-      "msg_id": 99
+      "msg_id": 99,
+      "timestamp": 1791666085.0
     },
     "38652": {
       "channel": "@DidebanJang",
-      "msg_id": 100
+      "msg_id": 100,
+      "timestamp": 1791667014.0
     },
     "38654": {
       "channel": "@DidebanJang",
-      "msg_id": 101
+      "msg_id": 101,
+      "timestamp": 1791668035.0
     },
     "38655": {
       "channel": "@DidebanJang",
-      "msg_id": 102
+      "msg_id": 102,
+      "timestamp": 1791668082.0
     },
     "38656": {
       "channel": "@DidebanJang",
-      "msg_id": 103
+      "msg_id": 103,
+      "timestamp": 1791668369.0
     },
     "38663": {
       "channel": "@DidebanJang",
-      "msg_id": 104
+      "msg_id": 104,
+      "timestamp": 1791670113.0
     },
     "38667": {
       "channel": "@DidebanJang",
-      "msg_id": 107
+      "msg_id": 107,
+      "timestamp": 1791677296.0
     },
     "38666": {
       "channel": "@DidebanJang",
-      "msg_id": 106
+      "msg_id": 106,
+      "timestamp": 1791677129.0
     },
     "38670": {
       "channel": "@DidebanJang",
-      "msg_id": 108
+      "msg_id": 108,
+      "timestamp": 1791699430.0
     },
     "38671": {
       "channel": "@DidebanJang",
-      "msg_id": 109
+      "msg_id": 109,
+      "timestamp": 1791699582.0
     },
     "38673": {
       "channel": "@DidebanJang",
-      "msg_id": 110
+      "msg_id": 110,
+      "timestamp": 1791701190.0
     },
     "38674": {
       "channel": "@DidebanJang",
-      "msg_id": 111
+      "msg_id": 111,
+      "timestamp": 1791704447.0
     },
     "38675": {
       "channel": "@DidebanJang",
-      "msg_id": 112
+      "msg_id": 112,
+      "timestamp": 1791705117.0
     },
     "38676": {
       "channel": "@DidebanJang",
-      "msg_id": 113
+      "msg_id": 113,
+      "timestamp": 1791707769.0
     },
     "38678": {
       "channel": "@DidebanJang",
-      "msg_id": 114
+      "msg_id": 114,
+      "timestamp": 1791709580.0
     },
     "38680": {
       "channel": "@DidebanJang",
-      "msg_id": 115
+      "msg_id": 115,
+      "timestamp": 1791716898.0
     },
     "38685": {
       "channel": "@DidebanJang",
-      "msg_id": 116
+      "msg_id": 116,
+      "timestamp": 1791719369.0
     },
     "38686": {
       "channel": "@DidebanJang",
-      "msg_id": 117
+      "msg_id": 117,
+      "timestamp": 1791719395.0
     },
     "38687": {
       "channel": "@DidebanJang",
-      "msg_id": 118
+      "msg_id": 118,
+      "timestamp": 1791719951.0
     },
     "38688": {
       "channel": "@DidebanJang",
-      "msg_id": 119
+      "msg_id": 119,
+      "timestamp": 1791720207.0
+    },
+    "38702": {
+      "channel": "@DidebanJang",
+      "msg_id": 147,
+      "timestamp": 1791727638.0
+    },
+    "38698": {
+      "channel": "@DidebanJang",
+      "msg_id": 134,
+      "timestamp": 1791724678.0
+    },
+    "38697": {
+      "channel": "@DidebanJang",
+      "msg_id": 130,
+      "timestamp": 1791723803.0
+    },
+    "38709": {
+      "channel": "@DidebanJang",
+      "msg_id": 125,
+      "timestamp": 1791722340.0
+    },
+    "38690": {
+      "channel": "@DidebanJang",
+      "msg_id": 120,
+      "timestamp": 1791721841.0
+    },
+    "38691": {
+      "channel": "@DidebanJang",
+      "msg_id": 120,
+      "timestamp": 1791721841.0
+    },
+    "38694": {
+      "channel": "@DidebanJang",
+      "msg_id": 120,
+      "timestamp": 1791721841.0
+    },
+    "38695": {
+      "channel": "@DidebanJang",
+      "msg_id": 120,
+      "timestamp": 1791721841.0
+    },
+    "38706": {
+      "channel": "@DidebanJang",
+      "msg_id": 118,
+      "timestamp": 1791719951.0
+    },
+    "38700": {
+      "channel": "@DidebanJang",
+      "msg_id": 118,
+      "timestamp": 1791719951.0
+    },
+    "38703": {
+      "channel": "@DidebanJang",
+      "msg_id": 118,
+      "timestamp": 1791719951.0
+    },
+    "38705": {
+      "channel": "@DidebanJang",
+      "msg_id": 118,
+      "timestamp": 1791719951.0
+    },
+    "38710": {
+      "channel": "@DidebanJang",
+      "msg_id": 118,
+      "timestamp": 1791719951.0
+    },
+    "38682": {
+      "channel": "@DidebanJang",
+      "msg_id": 115,
+      "timestamp": 1791716898.0
+    },
+    "38684": {
+      "channel": "@DidebanJang",
+      "msg_id": 115,
+      "timestamp": 1791716898.0
+    },
+    "38696": {
+      "channel": "@DidebanJang",
+      "msg_id": 103,
+      "timestamp": 1791668369.0
+    },
+    "38707": {
+      "channel": "@DidebanJang",
+      "msg_id": 103,
+      "timestamp": 1791668369.0
+    },
+    "38711": {
+      "channel": "@DidebanJang",
+      "msg_id": 134,
+      "timestamp": 1791732935.4443622
+    },
+    "38712": {
+      "channel": "@DidebanJang",
+      "msg_id": 125,
+      "timestamp": 1791734254.6578417
+    },
+    "38713": {
+      "channel": "@DidebanJang",
+      "msg_id": 125,
+      "timestamp": 1791734425.5938456
     }
   },
-  "last_saved": "2026-10-11 12:21:23 UTC"
+  "thread_alerts": {
+    "Alibk3_38702": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 147,
+      "node": "Alibk3",
+      "root_id": 38702,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791727638.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "افشاگری ایران درباره قاچاق نفت با حمایت آمریکا",
+      "summary": "دبیر شورای عالی امنیت ملی ایران اعلام کرد که ترامپ و ارتش آمریکا با همکاری امارات و استفاده از قایق‌های تندرو در آب‌های عمان به قاچاق نفت دست می‌زنند. وی افزود که ایران شبانه این قاچاقچیان را هدف قرار می‌دهد.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38702,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38702",
+          "timestamp": 1791727638.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38698": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 134,
+      "node": "Alibk3",
+      "root_id": 38698,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791724678.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "دفع پیشروی ائتلاف سعودی در تعز و لحج",
+      "summary": "جنگنده‌های ائتلاف سعودی مواضعی را در استان تعز هدف حملات هوایی قرار دادند. همزمان، نیروهای یمنی موفق شدند تحرکات و تلاش‌های دشمن سعودی برای پیشروی از لحج به سمت مرتفعات الوازعية را دفع کرده و وادی شریره و ارتفاعات اطراف آن را پاکسازی کنند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38698,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38698",
+          "timestamp": 1791724678.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38711,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38711",
+          "timestamp": 1791732935.2151477
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ",
+      "updated_at": 1791732935.2151546,
+      "update_reason": "افزودن منابع میدانی"
+    },
+    "Alibk3_38697": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 130,
+      "node": "Alibk3",
+      "root_id": 38697,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791723803.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "هدف قرار گرفتن یک کشتی در تنگه هرمز",
+      "summary": "نیروی دریایی بریتانیا از وقوع انفجار و هدف قرار گرفتن یک فروند کشتی در آب‌های تنگه هرمز خبر داد. این رویداد امنیتی جدید در یکی از مهم‌ترین آبراه‌های راهبردی منطقه رخ داده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38697,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38697",
+          "timestamp": 1791723803.0
+        },
+        {
+          "node": "VahidOnline",
+          "msg_id": 78692,
+          "media_type": "photo",
+          "link": "https://t.me/VahidOnline/78692",
+          "timestamp": 1791723803.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38709": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 125,
+      "node": "Alibk3",
+      "root_id": 38709,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791722340.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تداوم انسداد پروازی ریاض همزمان با شنیده شدن صدای انفجار",
+      "summary": "فرودگاه ریاض برای حدود ۲۸ ساعت متوالی با توقف کامل در پذیرش پروازهای ورودی مواجه است. همزمان با این اختلالات گسترده در ناوبری هوایی، گزارش‌هایی از شنیده شدن صدای دو انفجار جدید در پایتخت عربستان منتشر شده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38709,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38709",
+          "timestamp": 1791722340.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38712,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38712",
+          "timestamp": 1791734254.479401
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ",
+      "updated_at": 1791734254.4794078,
+      "update_reason": "افزودن منابع میدانی"
+    },
+    "Alibk3_38690": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 120,
+      "node": "Alibk3",
+      "root_id": 38690,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791721841.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "وقوع پنج انفجار مهیب در تنگه هرمز",
+      "summary": "گزارش‌های میدانی حاکی از وقوع پنج انفجار پی در پی و شدید در آب‌های راهبردی تنگه هرمز است. این رویداد امنیتی، وضعیت تردد در این منطقه حیاتی را تحت تأثیر قرار داده و جزئیات بیشتری درباره عامل یا خسارت‌های احتمالی آن هنوز منتشر نشده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38690,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38690",
+          "timestamp": 1791721841.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38691,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38691",
+          "timestamp": 1791721841.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38694,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38694",
+          "timestamp": 1791721841.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38695,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38695",
+          "timestamp": 1791721841.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38688": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 119,
+      "node": "Alibk3",
+      "root_id": 38688,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791720207.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "بلند شدن دود از الدمام عربستان",
+      "summary": "تصاویری از بلند شدن ستون‌های دود در شهر الدمام واقع در منطقه شرقی عربستان سعودی منتشر شده است. این منطقه پیش‌تر نیز هدف حملات پهپادی و موشکی قرار گرفته بود و جزئیات بیشتر درباره علت این حادثه هنوز اعلام نشده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38688,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38688",
+          "timestamp": 1791720207.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38687": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 118,
+      "node": "Alibk3",
+      "root_id": 38687,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791719951.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "اصابت موشک به فرودگاه ملک خالد ریاض",
+      "summary": "ائتلاف سعودی از اصابت یک فروند موشک به سالن مسافران شماره ۴ در فرودگاه بین‌المللی ملک خالد ریاض و وقوع آتش‌سوزی خبر داد. تصاویر منتشر شده از منطقه، حاکی از برخاستن دود غلیظی از پایتخت عربستان پس از این حمله یمنی است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38687,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38687",
+          "timestamp": 1791719951.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38706,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38706",
+          "timestamp": 1791719951.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38700,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38700",
+          "timestamp": 1791719951.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38703,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38703",
+          "timestamp": 1791719951.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38705,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38705",
+          "timestamp": 1791719951.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38710,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38710",
+          "timestamp": 1791719951.0
+        }
+      ],
+      "replies": [
+        {
+          "msg_id": 38705,
+          "text": "التحالف السعودي يعلن سقوط صاروخ على صالة المسافرين رقم 4 بمطار الملك خالد في الرياض واندلاع حريق.",
+          "media_type": "photo",
+          "timestamp": 1791732597.768611
+        },
+        {
+          "msg_id": 38706,
+          "text": "مشاهد جديدة للهجوم في مطار الرياض",
+          "media_type": "video",
+          "timestamp": 1791732599.7776098
+        },
+        {
+          "msg_id": 38710,
+          "text": "مشاهد لتصاعد الدخان في الرياض بعد هجوم يمني قبل ساعة.",
+          "media_type": "video",
+          "timestamp": 1791732608.1944587
+        }
+      ],
+      "tag": "#دیده‌بان_جنگ",
+      "updated_at": 1791734711.1335304,
+      "update_reason": "دریافت اطلاعات تکمیلی"
+    },
+    "Alibk3_38686": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 117,
+      "node": "Alibk3",
+      "root_id": 38686,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791719395.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "آتش‌سوزی گسترده در یک فروند کشتی در تنگه هرمز",
+      "summary": "گزارش‌ها حاکی از وقوع یک آتش‌سوزی گسترده در یک فروند کشتی عبوری در آب‌های تنگه هرمز است. هنوز جزئیات بیشتری درباره هویت این کشتی، علت حادثه و خسارات احتمالی آن منتشر نشده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38686,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38686",
+          "timestamp": 1791719395.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38685": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 116,
+      "node": "Alibk3",
+      "root_id": 38685,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791719369.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تمدید تعلیق پروازهای فلای‌دبی به تل‌آویو",
+      "summary": "شرکت هواپیمایی فلای‌دبی امارات اعلام کرد که لغو پروازهای خود به مقصد و مبدأ تل‌آویو را به دلیل شرایط امنیتی تا پایان ماه جاری میلادی تمدید کرده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38685,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38685",
+          "timestamp": 1791719369.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38680": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 115,
+      "node": "Alibk3",
+      "root_id": 38680,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791716898.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تصاویر ماهواره‌ای از آتش‌سوزی یک کشتی نزدیک عمان",
+      "summary": "تصاویر ماهواره‌ای وقوع آتش‌سوزی در یک فروند کشتی در آب‌های ساحلی عمان را ثبت کرده‌اند. این حادثه در پی حمله به این شناور رخ داده و بررسی‌ها درباره ابعاد و جزئیات آن ادامه دارد.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38680,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38680",
+          "timestamp": 1791716898.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38682,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38682",
+          "timestamp": 1791716898.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38684,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38684",
+          "timestamp": 1791716898.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38678": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 114,
+      "node": "Alibk3",
+      "root_id": 38678,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791709580.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "آزمایش موشکی جدید در ایران",
+      "summary": "منابع خبری از رصد و پایش شلیک چند فروند موشک از خاک ایران با هدف انجام آزمایش‌های فنی و تسلیحاتی خبر دادند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38678,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38678",
+          "timestamp": 1791709580.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38676": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 113,
+      "node": "Alibk3",
+      "root_id": 38676,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791707769.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "حملات هوایی ائتلاف سعودی به صنعا",
+      "summary": "جنگنده‌های ائتلاف سعودی در دو نوبت منطقه نهم در استان صنعا، پایتخت یمن را هدف حملات هوایی خود قرار دادند. این حملات در چارچوب تشدید تنش‌های نظامی در این کشور صورت گرفته است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38676,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38676",
+          "timestamp": 1791707769.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38675": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 112,
+      "node": "Alibk3",
+      "root_id": 38675,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791705117.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "حملات هوایی عربستان به صنعا",
+      "summary": "جنگنده‌های ائتلاف سعودی در چندین نوبت پایتخت یمن (صنعا) را هدف حملات هوایی قرار دادند. جزئیات بیشتری درباره خسارات یا تلفات احتمالی این حملات هنوز منتشر نشده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38675,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38675",
+          "timestamp": 1791705117.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38674": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 111,
+      "node": "Alibk3",
+      "root_id": 38674,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791704447.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "هشدار یمن درباره ناامنی آسمان عربستان",
+      "summary": "نیروهای مسلح یمن به شرکت‌های هواپیمایی، مسافران و کارکنان هشدار دادند که به دلیل تبدیل شدن فرودگاه‌های عربستان به مسرح عملیات، از تردد در آسمان این کشور خودداری کنند. در این بیانیه تنها فرودگاه‌های مکه و مدینه مستثنی شده‌اند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38674,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38674",
+          "timestamp": 1791704447.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38673": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 110,
+      "node": "Alibk3",
+      "root_id": 38673,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791701190.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "لغو ده‌ها پرواز در فرودگاه الدمام",
+      "summary": "از صبح امروز ۴۹ پرواز شامل ۲۵ پرواز ورودی و ۲۴ پرواز خروجی در فرودگاه بین‌المللی ملک فهد در شهر الدمام عربستان سعودی لغو شد.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38673,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38673",
+          "timestamp": 1791701190.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38671": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 109,
+      "node": "Alibk3",
+      "root_id": 38671,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791699582.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "حملات هوایی جنگنده‌های سعودی به تعز",
+      "summary": "جنگنده‌های ائتلاف سعودی مواضعی را در جبل حبشي واقع در استان تعز یمن بمباران کردند. این حملات پس از آن صورت گرفت که نیروهای مسلح یمن کنترل این منطقه را به دست گرفته بودند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38671,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38671",
+          "timestamp": 1791699582.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38670": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 108,
+      "node": "Alibk3",
+      "root_id": 38670,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791699430.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "درخواست آمریکا از اسرائیل برای حمله به ایران",
+      "summary": "روزنامه عبری‌زبان معاریو گزارش داد که ایالات متحده در تماس‌های دو هفته گذشته از اسرائیل خواسته بدون مشارکت مستقیم آمریکا، دست به حمله نظامی علیه ایران بزند. به گفته یک مقام آگاه، مقامات آمریکایی دچار سردرگمی هستند و مواضع آن‌ها روزانه تغییر می‌کند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38670,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38670",
+          "timestamp": 1791699430.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38667": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 107,
+      "node": "Alibk3",
+      "root_id": 38667,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791677296.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "هدف قرار گرفتن کشتی مرتبط با ایران",
+      "summary": "فرماندهی مرکزی ایالات متحده (سنتکام) از هدف قرار دادن یک فروند کشتی که تلاش داشت حصار دریایی اعمال‌شده علیه ایران را بشکند، خبر داد.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38667,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38667",
+          "timestamp": 1791677296.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38666": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 106,
+      "node": "Alibk3",
+      "root_id": 38666,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791677129.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "لغو گسترده پروازهای فرودگاه ریاض",
+      "summary": "بیش از ۷۰ درصد از پروازهای برنامه‌ریزی‌شده ورودی و خروجی از فرودگاه بین‌المللی ملک خالد در ریاض لغو شد. این رویداد در پی شرایط بحرانی و امنیتی حاکم بر منطقه رخ داده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38666,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38666",
+          "timestamp": 1791677129.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "VahidOnline_78687": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 105,
+      "node": "VahidOnline",
+      "root_id": 78687,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791670720.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "اصابت پرتابه به نفتکش در تنگه هرمز",
+      "summary": "برخورد یک پرتابه ناشناس به نفتکش در حال خروج از تنگه هرمز باعث آتش‌سوزی در این کشتی شد، اما به خدمه آسیبی نرسید.",
+      "sources": [
+        {
+          "node": "VahidOnline",
+          "msg_id": 78687,
+          "media_type": "text",
+          "link": "https://t.me/VahidOnline/78687",
+          "timestamp": 1791670720.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38663": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 104,
+      "node": "Alibk3",
+      "root_id": 38663,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791670113.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "هدف قرار گرفتن یک کشتی در تنگه هرمز",
+      "summary": "منابع خبری از هدف قرار گرفتن یک فروند کشتی متخلف در آب‌های تنگه هرمز خبر دادند. این حادثه در ادامه تحولات امنیتی و نظامی مرتبط با تردد دریایی در منطقه به وقوع پیوسته است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38663,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38663",
+          "timestamp": 1791670113.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38656": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 103,
+      "node": "Alibk3",
+      "root_id": 38656,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791668369.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "پیشروی گسترده نیروهای یمنی در المسراخ",
+      "summary": "ن نیروهای یمنی پس از تسلط بر تقاطع «نجد القسیم» و منطقه «الکلائبة»، نیروهای وابسته به عربستان را در «المسراخ» به محاصره درآورده و از چند محور هماهنگ به این منطقه حمله کردند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38656,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38656",
+          "timestamp": 1791668369.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38696,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38696",
+          "timestamp": 1791668369.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38707,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38707",
+          "timestamp": 1791668369.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38714,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38714",
+          "timestamp": 1791734674.9424016
+        }
+      ],
+      "replies": [
+        {
+          "msg_id": 38707,
+          "text": "القوات اليمنية تسيطر على مفرق نجد القسيم، وتتقدم نحو المسراخ من محورين، بعد فرض الحصار على القوات الموالية للسعودية داخلها.",
+          "media_type": "photo",
+          "timestamp": 1791732601.7838657
+        },
+        {
+          "msg_id": 38714,
+          "text": "القوات اليمنية بعد سيطرتها على نجد القسيم تسيطر على الكلائبة وتلتحم مع القوات القادمة من البيرين وتشن هجومًا من عدة محاور نحو المسراخ.",
+          "media_type": "photo",
+          "timestamp": 1791734674.9423969
+        }
+      ],
+      "tag": "#دیده‌بان_جنگ",
+      "updated_at": 1791734715.0939133,
+      "update_reason": "دریافت اطلاعات تکمیلی"
+    },
+    "Alibk3_38655": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 102,
+      "node": "Alibk3",
+      "root_id": 38655,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791668082.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "حملات هوایی عربستان به استان تعز یمن",
+      "summary": "منابع خبری از انجام حملات هوایی توسط جنگنده‌های ائتلاف به رهبری عربستان سعودی علیه مواضعی در استان تعز در کشور یمن خبر دادند. این تحولات در چارچوب تنش‌های مستمر نظامی در این منطقه به وقوع پیوسته است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38655,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38655",
+          "timestamp": 1791668082.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38654": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 101,
+      "node": "Alibk3",
+      "root_id": 38654,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791668035.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "پرواز گسترده جنگنده‌ها بر فراز اردن و فلسطین",
+      "summary": "گزارش‌ها حاکی از پرواز فشرده و گسترده جنگنده‌های نظامی بر فراز آسمان اردن و اراضی اشغالی فلسطین است. این اقدام همزمان با آماده‌باش پدافندی و تنش‌های جاری در منطقه صورت گرفته است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38654,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38654",
+          "timestamp": 1791668035.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38652": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 100,
+      "node": "Alibk3",
+      "root_id": 38652,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791667014.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "توقف ناگهانی پروازهای فرودگاه جده",
+      "summary": "گزارش‌ها حاکی از توقف کامل پروازها در فرودگاه جده است. این رویداد در پی تحولات امنیتی و نظامی اخیر در منطقه رخ داده و جزئیات بیشتر درباره علت آن هنوز منتشر نشده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38652,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38652",
+          "timestamp": 1791667014.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38651": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 99,
+      "node": "Alibk3",
+      "root_id": 38651,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791666085.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "رصد ۸۹ پرنده نظامی در آسمان منطقه",
+      "summary": "ط طی ۲۴ ساعت گذشته، ۸۹ فروند هواپیمای نظامی شامل جنگنده‌ها، هواپیماهای سوخت‌رسان، جاسوسی و ترابری در منطقه رصد شدند که بخشی از آن‌ها از خارج از منطقه وارد شده‌اند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38651,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38651",
+          "timestamp": 1791666085.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38648": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 98,
+      "node": "Alibk3",
+      "root_id": 38648,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791665578.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "حمله به فرودگاه ریاض با تلفات سنگین",
+      "summary": "روزنامه نیویورک تایمز از مرگ دست‌کم ۱۲ نفر و زخمی شدن ۵۰ تن دیگر در جریان بمباران فرودگاه بین‌المللی ریاض در پایتخت عربستان سعودی خبر داد.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38648,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38648",
+          "timestamp": 1791665578.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "iliaen_4743": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 97,
+      "node": "iliaen",
+      "root_id": 4743,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791663674.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "درگیری و شلیک موشک سپاه در تنگه هرمز",
+      "summary": "گزارش‌ها از وقوع درگیری در تنگه هرمز و شلیک موشک توسط سپاه پاسداران به محل عبور یک کشتی در ساعت ۲۳:۴۷ روز شنبه حکایت دارند.",
+      "sources": [
+        {
+          "node": "iliaen",
+          "msg_id": 4743,
+          "media_type": "text",
+          "link": "https://t.me/iliaen/4743",
+          "timestamp": 1791663674.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38646": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 96,
+      "node": "Alibk3",
+      "root_id": 38646,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791663595.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "توقف پروازها در فرودگاه تبوک عربستان",
+      "summary": "گزارش‌های خبری از توقف فعالیت‌ها و پروازهای فرودگاه تبوک در عربستان سعودی حکایت دارند. این وضعیت امنیتی و پروازی از بیش از یک ساعت و نیم گذشته تاکنون ادامه داشته است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38646,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38646",
+          "timestamp": 1791663595.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38645": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 95,
+      "node": "Alibk3",
+      "root_id": 38645,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791663542.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "توقف مجدد پروازهای فرودگاه الدمام عربستان",
+      "summary": "فرودگاه الدمام واقع در منطقه شرقی عربستان سعودی بار دیگر شاهد توقف پروازها و فعالیت‌های خود بود. این رویداد در سایه تنش‌های امنیتی و نظامی جاری در منطقه رخ داده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38645,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38645",
+          "timestamp": 1791663542.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38643": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 94,
+      "node": "Alibk3",
+      "root_id": 38643,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791661964.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "پیشروی نیروهای یمنی در تعز",
+      "summary": "ن نیروهای یمنی با پیشروی در کوه صبر مشرف بر شهر تعز، توانستند کنترل بخش‌های وسیعی از کوه راهبردی هان، به عنوان دروازه غربی این شهر را به دست گیرند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38643,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38643",
+          "timestamp": 1791661964.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "entekhab_ir_383002": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 93,
+      "node": "entekhab_ir",
+      "root_id": 383002,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791659359.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "مواضع آمریکا درباره زمان حمله به ایران",
+      "summary": "به گفته مقامات آمریکایی و اسرائیلی، ایالات متحده از اسرائیل نخواسته است که پیش از انتخابات علیه ایران دست به حمله بزند.",
+      "sources": [
+        {
+          "node": "entekhab_ir",
+          "msg_id": 383002,
+          "media_type": "text",
+          "link": "https://t.me/entekhab_ir/383002",
+          "timestamp": 1791659359.0
+        },
+        {
+          "node": "Khabar_Fouri",
+          "msg_id": 551111,
+          "media_type": "text",
+          "link": "https://t.me/Khabar_Fouri/551111",
+          "timestamp": 1791659359.0
+        },
+        {
+          "node": "akhbarefori",
+          "msg_id": 697312,
+          "media_type": "text",
+          "link": "https://t.me/akhbarefori/697312",
+          "timestamp": 1791659359.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38639": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 92,
+      "node": "Alibk3",
+      "root_id": 38639,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791656895.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "هشدار دریایی سپاه به شمول شناورها در خلیج فارس",
+      "summary": "نیروی دریایی سپاه پاسداران به شش فروند کشتی راسی در شمال غربی رأس‌الخيمة امارات هشدار داد که فوراً لنگر کشیده و منطقه را به مقصد دبی ترک کنند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38639,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38639",
+          "timestamp": 1791656895.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38638": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 91,
+      "node": "Alibk3",
+      "root_id": 38638,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791654084.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "انفجار مهیب در تنگه هرمز",
+      "summary": "گزارش‌های میدانی از شنیده شدن صدای یک انفجار شدید و مهیب در آب‌های تنگه هرمز حکایت دارد. جزئیات بیشتری درباره منشاء و تلفات احتمالی این حادثه هنوز منتشر نشده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38638,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38638",
+          "timestamp": 1791654084.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Tasnimnews_450360": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 90,
+      "node": "Tasnimnews",
+      "root_id": 450360,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791653864.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "انفجار نفتکش در تنگه هرمز",
+      "summary": "نیروی دریایی سپاه پاسداران اعلام کرد یک سوپرنفتکش به‌دلیل تردد غیرمجاز و خاموش بودن سامانه‌های ناوبری، در تنگه هرمز با مین دریایی برخورد کرده و دچار آتش‌سوزی شده است. این نهاد هشدار داد آتش‌سوزی مهیب، عاقبت نفتکش‌های متخلف در این منطقه است.",
+      "sources": [
+        {
+          "node": "Tasnimnews",
+          "msg_id": 450360,
+          "media_type": "text",
+          "link": "https://t.me/Tasnimnews/450360",
+          "timestamp": 1791653864.0
+        },
+        {
+          "node": "isna94",
+          "msg_id": 408202,
+          "media_type": "text",
+          "link": "https://t.me/isna94/408202",
+          "timestamp": 1791653864.0
+        },
+        {
+          "node": "Farsi_Iranwire",
+          "msg_id": 94550,
+          "media_type": "text",
+          "link": "https://t.me/Farsi_Iranwire/94550",
+          "timestamp": 1791653864.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38634": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 89,
+      "node": "Alibk3",
+      "root_id": 38634,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791652869.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "رایزنی نتنياهو و ترامپ پیرامون حمله به ایران",
+      "summary": "رسانه عبری کانال ۱۳ به نقل از یک مقام امنیتی گزارش داد که گفتگوهایی میان بنیامین نتانیاهو و دونالد ترامپ درباره احتمال حمله به ایران صورت گرفته، اما هنوز تصمیم نهایی در این زمینه اتخاذ نشده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38634,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38634",
+          "timestamp": 1791652869.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38633": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 88,
+      "node": "Alibk3",
+      "root_id": 38633,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791652651.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "توقف پروازها در فرودگاه جده عربستان",
+      "summary": "گزارش‌های خبری حاکی از آن است که فعالیت فرودگاه بین‌المللی جده در عربستان سعودی از حدود یک ساعت و نیم پیش به حالت توقف درآمده است. جزئیات بیشتری درباره علت این تعطیلی ناگهانی منتشر نشده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38633,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38633",
+          "timestamp": 1791652651.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38632": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 87,
+      "node": "Alibk3",
+      "root_id": 38632,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791652316.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تسلیم شدن نیروهای وابسته به عربستان در یمن",
+      "summary": "تصاویری از لحظه تسلیم شدن تجمعات نظامیان وابسته به ائتلاف سعودی در برابر نیروهای مسلح یمن منتشر شد. این رویداد در راستای اجرای تصمیم عفو عمومی و طی عملیات پاکسازی بخش‌هایی از استان تعز به ثبت رسیده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38632,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38632",
+          "timestamp": 1791652316.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38631": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 86,
+      "node": "Alibk3",
+      "root_id": 38631,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791652171.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "انتشار تصاویر سوختن نفتکش متخلف توسط سپاه",
+      "summary": "سپاه پاسداران انقلاب اسلامی تصاویری از لحظه سوختن یک فروند نفتکش متخلف در آب‌های منطقه را منتشر کرد. این اقدام در چارچوب برخورد با تخلفات دریایی صورت گرفته است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38631,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38631",
+          "timestamp": 1791652171.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38630": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 85,
+      "node": "Alibk3",
+      "root_id": 38630,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791651688.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "انفجار مین دریایی در تنگه هرمز",
+      "summary": "سپاه پاسداران اعلام کرد یک فروند نفتکش بزرگ حامل نفت خام که قصد داشت از مسیری غیرمجاز از تنگه هرمز عبور کند، بر اثر برخورد با یک مین دریایی دچار انفجاری شدید شد.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38630,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38630",
+          "timestamp": 1791651688.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38627": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 84,
+      "node": "Alibk3",
+      "root_id": 38627,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791651188.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "انتشار تصاویر خسارت در فرودگاه ریاض",
+      "summary": "تصاویری در فضای مجازی از خسارات وارده به فرودگاه ریاض منتشر شده است. این ویدیوها ابعاد و آثار ناشی از رویداد امنیتی اخیر در پایتخت عربستان را به نمایش می‌گذارند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38627,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38627",
+          "timestamp": 1791651188.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38623": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 83,
+      "node": "Alibk3",
+      "root_id": 38623,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791650068.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تعلیق پروازها و اصابت به فرودگاه ریاض",
+      "summary": "سازمان هواپیمایی کشوری عربستان از تعلیق موقت عملیات در فرودگاه ریاض خبر داد. حملات به فرودگاه بین‌المللی ملک خالد در ریاض همچنین به وقوع تعدادی زخمی منجر شده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38623,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38623",
+          "timestamp": 1791650068.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38620": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 82,
+      "node": "Alibk3",
+      "root_id": 38620,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791649782.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تغییر مسیر ۱۱ هواپیما در فرودگاه جده",
+      "summary": "گزارش‌ها حاکی از آن است که ۱۱ فروند هواپیما به دلایل امنیتی و نظامی از فرودگاه جده در عربستان سعودی دور شده و از فرود در آن خودداری کرده‌اند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38620,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38620",
+          "timestamp": 1791649782.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38618": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 81,
+      "node": "Alibk3",
+      "root_id": 38618,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791649637.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "هدف‌گیری فرمانده امنیت ملی یمن وابسته به عربستان",
+      "summary": "فرمانده موسوم به امنیت ملی در نیروهای وابسته به عربستان، پس از یک تلاش نافرجام برای پیشروی به سمت منطقه راهبردی باب‌المندب، هدف حمله قرار گرفته و زخمی شد.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38618,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38618",
+          "timestamp": 1791649637.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38617": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 80,
+      "node": "Alibk3",
+      "root_id": 38617,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791649592.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "پرواز جنگنده‌های هشدار سعودی بر فراز ریاض",
+      "summary": "به دنبال ترس از حملات جدید پهپادی و موشکی یمن، جنگنده‌های هشدار زودهنگام عربستان سعودی بر فراز پایتخت این کشور به پرواز درآمدند تا آمادگی دفاعی خود را افزایش دهند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38617,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38617",
+          "timestamp": 1791649592.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38604": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 79,
+      "node": "Alibk3",
+      "root_id": 38604,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791648029.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "توقف مجدد پروازهای فرودگاه جده",
+      "summary": "فرودگاه بین‌المللی جده در عربستان سعودی بار دیگر و در پی تحولات امنیتی و نظامی جاری در منطقه، فعالیت‌های خود و پروازها را متوقف کرد. جزئیات بیشتری درباره علت دقیق این توقف هنوز منتشر نشده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38604,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38604",
+          "timestamp": 1791648029.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38600": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 78,
+      "node": "Alibk3",
+      "root_id": 38600,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791647398.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تداوم توقف پروازهای فرودگاه ریاض",
+      "summary": "فرودگاه بین‌المللی ریاض، پایتخت عربستان سعودی، برای پنجمین ساعت متوالی با اختلال و توقف کامل در فعالیت‌ها و پروازهای خود مواجه است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38600,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38600",
+          "timestamp": 1791647398.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38588": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 77,
+      "node": "Alibk3",
+      "root_id": 38588,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791644005.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تعطیلی فرودگاه ریاض و لغو پروازها",
+      "summary": "فرودگاه ریاض پایتخت عربستان سعودی از حدود ۴ ساعت پیش دچار توقف کامل فعالیت شده است. در پی این اختلال امنیتی، ۵۹ فروند هواپیمای مسافربری برنامه‌ریزی شده برای ورود به این فرودگاه لغو شدند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38588,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38588",
+          "timestamp": 1791644005.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38585": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 76,
+      "node": "Alibk3",
+      "root_id": 38585,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791643353.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "انهدام و تخریب گسترده در فرودگاه ریاض",
+      "summary": "گزارش‌ها حاکی از تخریب گسترده در فرودگاه ریاض است و بلافاصله پس از این حادثه، خودروهای امدادی و آمبولانس‌ها به سوی محل اعزام شدند تا وضعیت را بررسی و مصدومان احتمالی را منتقل کنند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38585,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38585",
+          "timestamp": 1791643353.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38584": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 75,
+      "node": "Alibk3",
+      "root_id": 38584,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791643099.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "توقف فوری پروازهای فرودگاه جده",
+      "summary": "گزارش‌ها از توقف ناگهانی و فوری پروازها در فرودگاه جده عربستان سعودی حکایت دارند. این رویداد در سایه تحولات امنیتی و نظامی منطقه رخ داده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38584,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38584",
+          "timestamp": 1791643099.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38582": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 74,
+      "node": "Alibk3",
+      "root_id": 38582,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791642735.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "رصد آتش و حرارت نزدیک سواحل امارات",
+      "summary": "تصاویر ماهواره‌ای از افزایش حرارت و وقوع آتش‌سوزی در نزدیکی سواحل امارات حکایت دارد. گزارش‌های اولیه حاکی از احتمال هدف قرار گرفتن یک فروند شناور وابسته به سپاه پاسداران است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38582,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38582",
+          "timestamp": 1791642735.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38581": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 73,
+      "node": "Alibk3",
+      "root_id": 38581,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791642627.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تغییر مسیر هواپیماها در فرودگاه القریات عربستان",
+      "summary": "به دنبال تحولات امنیتی اخیر، پروازها به سمت فرودگاه القریات در شمال عربستان سعودی و در نزدیکی مرز اردن با احتیاط و تغییرات مسیر مواجه شده و هواپیماها از فرود در این فرودگاه خودداری می‌کنند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38581,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38581",
+          "timestamp": 1791642627.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "farsna_467494": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 72,
+      "node": "farsna",
+      "root_id": 467494,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791638501.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "گزارش انفجار در فرودگاه ریاض",
+      "summary": "برخی منابع از وقوع چند انفجار در فرودگاه ریاض خبر داده‌اند.",
+      "sources": [
+        {
+          "node": "farsna",
+          "msg_id": 467494,
+          "media_type": "text",
+          "link": "https://t.me/farsna/467494",
+          "timestamp": 1791638501.0
+        },
+        {
+          "node": "khabarfouri",
+          "msg_id": 568857,
+          "media_type": "text",
+          "link": "https://t.me/khabarfouri/568857",
+          "timestamp": 1791638501.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38568": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 71,
+      "node": "Alibk3",
+      "root_id": 38568,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791638492.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تعطیلی فرودگاه ریاض و لغو پروازها",
+      "summary": "فرودگاه ریاض به مدت ۱۱۵ دقیقه دچار توقف فعالیت شد. از مجموع ۱۸ پرواز برنامه‌ریزی شده برای ورود، ۷ پرواز لغو شده و بقیه در وضعیت انتظار قرار گرفتند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38568,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38568",
+          "timestamp": 1791638492.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38567": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 70,
+      "node": "Alibk3",
+      "root_id": 38567,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791637891.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "آتش‌سوزی در حقل عین‌دار نفت عربستان",
+      "summary": "تصاویر ماهواره‌ای از وقوع آتش‌سوزی در حقل عین‌دار نفت در غرب شهر بقیق عربستان سعودی خبر می‌دهند. با این حال، منابع رسمی تاکنون هدف قرار گرفتن این تأسیسات را تأیید نکرده‌اند و علت حادثه نامشخص است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38567,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38567",
+          "timestamp": 1791637891.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38566": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 69,
+      "node": "Alibk3",
+      "root_id": 38566,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791637891.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "آتش‌سوزی در میدان نفتی عین‌دار عربستان",
+      "summary": "تصاویر ماهواره‌ای از وقوع آتش‌سوزی در میدان نفتی عین‌دار، واقع در غرب شهر بقیق در عربستان سعودی حکایت دارند. این رویداد پس از گزارش‌های امنیتی مرتبط با تأسیسات انرژی منطقه منتشر شده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38566,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38566",
+          "timestamp": 1791637891.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38565": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 68,
+      "node": "Alibk3",
+      "root_id": 38565,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791637408.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "حمله پهپادی یمن به مواضع حامی عربستان",
+      "summary": "نیروهای مسلح یمن تصاویری از حمله پهپادهای انقضاضی «شواظ» به تجمع نیروهای متمایل به عربستان در مناطق کهبوب و الوازعیه را منتشر کردند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38565,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38565",
+          "timestamp": 1791637408.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38564": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 67,
+      "node": "Alibk3",
+      "root_id": 38564,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791637223.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "آتش‌سوزی نفتکش در تنگه هرمز",
+      "summary": "تصاویری از سوی صیادان ایرانی در تنگه هرمز ثبت شده که یک فروند نفتکش در حال سوختن را نشان می‌دهد. در نزدیکی این نفتکش آسیب‌دیده، یک فروند بالگرد نظامی ایالات متحده در حال پرواز است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38564,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38564",
+          "timestamp": 1791637223.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38561": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 66,
+      "node": "Alibk3",
+      "root_id": 38561,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791635250.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تعطیلی کامل فرودگاه‌های جازان و نجران عربستان",
+      "summary": "فرودگاه‌های جازان و نجران در خاک عربستان سعودی به دلیل تداوم محاصره نظامی توسط یمن، بیش از ۴ روز است که با توقف کامل پروازها مواجه شده‌اند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38561,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38561",
+          "timestamp": 1791635250.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38560": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 65,
+      "node": "Alibk3",
+      "root_id": 38560,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791631980.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "کاهش چشمگیر تردد نفت‌کش‌ها در تنگه هرمز",
+      "summary": "به دنبال حملات اخیر به نفت‌کش‌های متخلف در تنگه هرمز، آمار شناورهای در حال تردد از سوی آب‌های عمان به شدت کاهش یافته و تنها دو فروند کشتی در حال عبور از منطقه مشاهده شده‌اند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38560,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38560",
+          "timestamp": 1791631980.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38559": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 64,
+      "node": "Alibk3",
+      "root_id": 38559,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791631897.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "کاهش تردد نفت‌کش‌ها در تنگه هرمز",
+      "summary": "به دنبال حملات اخیر به نفت‌کش‌های متخلف در تنگه هرمز، تعداد کشتی‌های در حال عبور از سوی عمان به‌شدت کاهش یافته و تنها دو فروند کشتی در این منطقه مشاهده می‌شود.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38559,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38559",
+          "timestamp": 1791631897.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38552": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 63,
+      "node": "Alibk3",
+      "root_id": 38552,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791629468.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "توقف متزامن پروازها در فرودگاه‌های عربستان",
+      "summary": "حرکت ناوبری هوایی در فرودگاه‌های جده، ریاض و دمام در عربستان سعودی به شکل همزمان متوقف شد. این رویداد امنیتی-نظامی بر فعالیت‌های هوانوردی این کشور تأثیر گذاشته است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38552,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38552",
+          "timestamp": 1791629468.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38551": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 62,
+      "node": "Alibk3",
+      "root_id": 38551,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791628700.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "انتشار تصاویر انهدام مواضع سعودی در یمن",
+      "summary": "رسانه جنگی یمن از انتشار تصاویر مربوط به حمله پهپادهای انتحاری «شواظ» به تجمع نیروهای ائتلاف سعودی در مناطق کهبوب و الوازعیه در ساعت چهار عصر خبر داد.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38551,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38551",
+          "timestamp": 1791628700.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38542": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 61,
+      "node": "Alibk3",
+      "root_id": 38542,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791623337.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تحرکات نیروهای یمنی در باب‌المندب",
+      "summary": "گزارش‌ها حاکی از تحرکات نیروهای مسلح یمن در منطقه راهبردی باب‌المندب است. این رویداد در راستای تحولات امنیتی و نظامی جاری در آبراهه‌های منطقه رخ داده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38542,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38542",
+          "timestamp": 1791623337.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38537": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 60,
+      "node": "Alibk3",
+      "root_id": 38537,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791619939.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "دود و آتش در تاسیسات گازی حویا",
+      "summary": "تصاویر ماهواره‌ای از بلند شدن دود از معمل گاز الحویه در میدان الغوار سعودی حکایت دارد. هم‌زمان، گزارش‌هایی از وقوع آتش‌سوزی در معمل گاز شدقم و میدان الشیبه نیز منتشر شده است که وضعیت استهداف آن‌ها همچنان در دست بررسی قرار دارد.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38537,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38537",
+          "timestamp": 1791619939.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38535": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 59,
+      "node": "Alibk3",
+      "root_id": 38535,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791617281.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "آتش‌سوزی در تأسیسات نفتی عربستان",
+      "summary": "گزارش‌ها حاکی از وقوع آتش‌سوزی بزرگ در کارخانه گاز شدقم و بلند شدن دود غلیظ از میدان نفتی الشيبة در عربستان سعودی است؛ این حوادث همزمان با احتمال حملات پهپادی یا موشکی از سوی یمن رخ داده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38535,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38535",
+          "timestamp": 1791617281.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38533": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 58,
+      "node": "Alibk3",
+      "root_id": 38533,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791617058.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تصاعد دود غلیظ از میدان نفتی شیبه",
+      "summary": "گزارش‌ها حاکی از آن است که صبح امروز دودی غلیظ از میدان نفتی و گازی استراتژیک «الشیبه» در صحراء الربع الخالی عربستان سعودی، واقع در نزدیکی مرز امارات، شروع به تصاعد کرده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38533,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38533",
+          "timestamp": 1791617058.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38530": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 57,
+      "node": "Alibk3",
+      "root_id": 38530,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791615956.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "ورود هواپیمای سوخت‌رسان آمریکایی به آسمان عراق",
+      "summary": "با وجود خروج نیروهای آمریکایی از خاک عراق، یک فروند هواپیمای سوخت‌رسان متعلق به ارتش ایالات متحده در آسمان این کشور رصد و شناسایی شد.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38530,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38530",
+          "timestamp": 1791615956.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38529": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 56,
+      "node": "Alibk3",
+      "root_id": 38529,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791615086.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "توقف ناوبری هوایی در فرودگاه ریاض",
+      "summary": "منابع خبری از توقف کامل ناوبری و پروازهای هوایی در فرودگاه ریاض، پایتخت عربستان سعودی، خبر دادند؛ رویدادی که بار دیگر نگرانی‌ها پیرامون امنیت تاسیسات حیاتی این کشور را افزایش داده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38529,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38529",
+          "timestamp": 1791615086.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38524": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 55,
+      "node": "Alibk3",
+      "root_id": 38524,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791593169.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "انهدام مدرعۀ سعودی در باب المندب",
+      "summary": "نیروهای یمنی موفق شدند یک دستگاه مدرعه متعلق به نیروهای وابسته به عربستان را در منطقه باب المندب منهدم کنند. این حمله به هلاکت دو نظامی و زخمی شدن سه تن دیگر از خدمه آن منجر شد.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38524,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38524",
+          "timestamp": 1791593169.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38523": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 54,
+      "node": "Alibk3",
+      "root_id": 38523,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791588462.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تلفات سنگین نیروهای یمنی وابسته به عربستان",
+      "summary": "در پی حملات ناموفق نیروهای جنوب یمن وابسته به عربستان به منطقه باب‌المندب، ۱۵۰ تن از این نیروها کشته و زخمی شدند که آمار تلفات به تفکیک شهرهای مختلف منتشر شده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38523,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38523",
+          "timestamp": 1791588462.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38520": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 53,
+      "node": "Alibk3",
+      "root_id": 38520,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791586542.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "شنیده شدن صدای انفجار در صنعا",
+      "summary": "منابع خبری از شنیده شدن صدای مهیب انفجار در شهر صنعا، پایتخت یمن خبر دادند. جزئیات بیشتری درباره علت این صدا هنوز منتشر نشده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38520,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38520",
+          "timestamp": 1791586542.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38518": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 52,
+      "node": "Alibk3",
+      "root_id": 38518,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791586255.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "افزایش تلفات نظامیان آمریکا در نبرد با ایران",
+      "summary": "وزارت دفاع آمریکا آمار تلفات نظامیان خود در درگیری با ایران را به صورت سکوت‌خبری به‌روزرسانی کرد. بر اساس داده‌های جدید، شمار کشته‌ها به ۲۱ تن و تعداد زخمی‌ها به ۸۶۵ نفر افزایش یافته است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38518,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38518",
+          "timestamp": 1791586255.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38512": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 51,
+      "node": "Alibk3",
+      "root_id": 38512,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791583582.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "پرواز بالگردهای اسرائیلی در جنوب سوریه",
+      "summary": "بالگردهای ارتش اسرائیل حریم هوایی منطقه جنوبی سوریه را نقض کردند. این اقدام در راستای تداوم فعالیت‌های نظامی و شناسایی رژیم صهیونیستی در مناطق مرزی انجام شده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38512,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38512",
+          "timestamp": 1791583582.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38509": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 50,
+      "node": "Alibk3",
+      "root_id": 38509,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791581728.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "شلیک موشک‌های یمنی به سوی اهداف دشمن",
+      "summary": "منابع خبری از شلیک دسته‌ای موشک‌های بالستیک یا کروز از یمن به سمت اهداف دشمن در اراضی اشغالی یا مناطق پیرامونی خبر دادند. این حملات در راستای حمایت از مردم فلسطین و لبنان انجام گرفته است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38509,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38509",
+          "timestamp": 1791581728.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38508": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 49,
+      "node": "Alibk3",
+      "root_id": 38508,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791581702.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "پیشروی نیروهای یمنی در جنوب غربی تعز",
+      "summary": "ن نیروهای یمنی با تسلط بر روستاهای تتر، الجرین و عساب، در حال پیشروی به سمت منطقه الکدمة، وادی علی و حومه وادی الضباب به عنوان دروازه جنوبی غربی شهر تعز هستند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38508,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38508",
+          "timestamp": 1791581702.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38507": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 48,
+      "node": "Alibk3",
+      "root_id": 38507,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791581651.0,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "شلیک موشک به سمت تنگه هرمز",
+      "summary": "منابع خبری از شلیک موشک به سمت تنگه هرمز خبر دادند. این منطقه راهبردی شاهد تحولات امنیتی و نظامی فوری است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38507,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38507",
+          "timestamp": 1791581651.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38504": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 47,
+      "node": "Alibk3",
+      "root_id": 38504,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791580116.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "تعطیلی طولانی‌مدت فرودگاه‌های نجران و جازان عربستان",
+      "summary": "فرودگاه‌های نجران و جازان در عربستان سعودی بیش از ۸۳ ساعت است که به حالت تعلیق درآمده و فعالیت آن‌ها متوقف شده است. این رویداد در پی شرایط امنیتی و تنش‌های نظامی اخیر در منطقه رخ داده است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38504,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38504",
+          "timestamp": 1791580116.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38513": {
+      "channel": "@DidehbanEghtesad",
+      "alert_msg_id": 14,
+      "node": "Alibk3",
+      "root_id": 38513,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791584325.0,
+      "category": "ECONOMY",
+      "is_iran_related": false,
+      "title": "ثبت حرارت غیرعادی در تاسیسات گازی عربستان",
+      "summary": "سامانه‌های پایش حرارتی از ثبت گرمای بی‌سابقه معادل ۶۱۶ مگاوات در کارخانه گاز شدقم در منطقه شرقی عربستان خبر دادند؛ میزانی که حدود ۹ برابر بالاتر از میانگین طبیعی آن است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38513,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38513",
+          "timestamp": 1791584325.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_اقتصاد"
+    },
+    "Alibk3_38497": {
+      "channel": "@DidehbanEghtesad",
+      "alert_msg_id": 13,
+      "node": "Alibk3",
+      "root_id": 38497,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791576591.0,
+      "category": "ECONOMY",
+      "is_iran_related": false,
+      "title": "آسيب شدید و آتش‌سوزی در مصفای نفت عدن",
+      "summary": "تصاویر ماهواره‌ای نشان می‌دهند که دو مخزن ذخیره‌سازی نفت در مصفای عدن دچار آتش‌سوزی شده و بخش‌هایی از واحدهای پردازش این تأسیسات نیز متحمل خسارات ساختاری واضحی شده‌اند.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38497,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38497",
+          "timestamp": 1791576591.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_اقتصاد"
+    },
+    "Alibk3_38496": {
+      "channel": "@DidehbanEghtesad",
+      "alert_msg_id": 12,
+      "node": "Alibk3",
+      "root_id": 38496,
+      "root_text": "",
+      "root_media_type": "text",
+      "timestamp": 1791574746.0,
+      "category": "ECONOMY",
+      "is_iran_related": false,
+      "title": "تصاعد دود غلیظ از تأسیسات آرامکو در جده",
+      "summary": "تصاویر جدیدی از بلند شدن ستون‌های غلیظ دود از تأسیسات شرکت نفتی آرامکو در شهر جده عربستان سعودی منتشر شده است که نشان‌دهنده وقوع حادثه یا حمله در این منطقه است.",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38496,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38496",
+          "timestamp": 1791574746.0
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_اقتصاد"
+    },
+    "Alibk3_38711": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 134,
+      "node": "Alibk3",
+      "root_id": 38711,
+      "root_text": "الإعلام الحربي اليمني:\n\nترقبوا الـ8:00 م... مشاهد طرد تحشيدات العدو السعودي التي تحاول التقدم من لحج نحو مرتفعات الوازعية، وتطهير وادي شريرة والجبال المحيطة به باتجاه الشمايتين",
+      "root_media_type": "text",
+      "timestamp": 1791732935.4443622,
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ",
+      "title": "تصاویر شکست تحرکات سعودی در لحج",
+      "summary": "رسانه جنگی یمن از انتشار ویدیویی مربوط به دفع تحرکات و دفع پیشروی نیروهای وابسته به عربستان سعودی در محور لحج به سمت مرتفعات الوازعیه و پاکسازی منطقه وادی شریره خبر داد.",
+      "is_iran_related": false,
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38711,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38711",
+          "timestamp": 1791732935.4443622
+        }
+      ],
+      "updated_at": 1791734717.685431,
+      "update_reason": "دریافت اطلاعات تکمیلی"
+    },
+    "Alibk3_38712": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 125,
+      "node": "Alibk3",
+      "root_id": 38712,
+      "root_text": "سماع دوي انفجارين جديدين في الرياض.",
+      "root_media_type": "text",
+      "timestamp": 1791734254.6578417,
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38712,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38712",
+          "timestamp": 1791734254.6578417
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38713,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38713",
+          "timestamp": 1791734425.41386
+        }
+      ],
+      "title": "شنیده شدن صدای دو انفجار در ریاض",
+      "summary": "گزارش‌ها حاکی از آن است که صدای دو انفجار جدید در پایتخت عربستان سعودی، ریاض، شنیده شده است. جزئیات بیشتری درباره علت این انفجارها و خسارت‌های احتمالی تاکنون منتشر نشده است.",
+      "is_iran_related": false,
+      "updated_at": 1791734718.773221,
+      "update_reason": "دریافت اطلاعات تکمیلی"
+    },
+    "Alibk3_38713": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 125,
+      "node": "Alibk3",
+      "root_id": 38713,
+      "root_text": "بيان القوات المسلحة اليمنية بشأن تنفيذ أربع عمليات عسكرية نوعية استهدفت مطار الملك خالد بالرياض ومحطة شقدم الغازية التابعة لشركة أرامكو ومعمل أرامكو تناجيب النفطي بالمنطقة الشرقية، ومطار الملك فهد بالدمام، وعمليات أخرى.",
+      "root_media_type": "video",
+      "timestamp": 1791734425.5938456,
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ",
+      "title": "حملات پهپادی یمن به تاسیسات سعودی",
+      "summary": "نیروهای مسلح یمن از اجرای چهار عملیات نظامی علیه اهدافی حیاتی در عربستان سعودی از جمله فرودگاه‌های ریاض، دمام و تاسیسات نفتی آرامکو در شقدم و تناجیب خبر دادند.",
+      "is_iran_related": false,
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38713,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38713",
+          "timestamp": 1791734425.5938456
+        }
+      ],
+      "updated_at": 1791734720.219629,
+      "update_reason": "دریافت اطلاعات تکمیلی"
+    }
+  },
+  "reply_to_root_map": {
+    "Alibk3_38691": 38690,
+    "Alibk3_38694": 38690,
+    "Alibk3_38695": 38690,
+    "Alibk3_38706": 38687,
+    "Alibk3_38700": 38687,
+    "Alibk3_38703": 38687,
+    "Alibk3_38705": 38687,
+    "Alibk3_38710": 38687,
+    "Alibk3_38682": 38680,
+    "Alibk3_38684": 38680,
+    "Alibk3_38696": 38656,
+    "Alibk3_38707": 38656,
+    "Alibk3_38687": 38687,
+    "Alibk3_38714": 38656
+  },
+  "channel_last_alert_id": {
+    "@DidebanJang": 147,
+    "@DidehbanEghtesad": 14,
+    "@DidebanEterazat": 7,
+    "@VahidOnlineAI": 61,
+    "@iliaenAI": 7
+  },
+  "vahid_post_time": {},
+  "ilia_post_time": {},
+  "last_saved": "2026-10-11 16:05:20 UTC"
 }
