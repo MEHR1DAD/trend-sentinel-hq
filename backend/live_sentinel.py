@@ -3,6 +3,7 @@ import json
 import time
 import asyncio
 import re
+import sqlite3
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone, timedelta
@@ -14,6 +15,7 @@ from collections import deque
 CONFIG_FILE = 'backend/sentinel_config.json'
 BASELINE_FILE = 'backend/trend_baselines.json'
 STATE_FILE = 'backend/sentinel_state.json'
+POSTED_DB_FILE = 'backend/posted_registry.db'
 MAX_RUNTIME_SEC = 35 * 60  # 35 minutes graceful rotation
 
 API_ID = os.environ.get("TELEGRAM_API_ID")
@@ -192,6 +194,10 @@ class LiveSentinel:
         # Load persistent state from disk
         self.load_persisted_state()
         
+        # Persistent SQLite Database for posted source messages
+        self.db_file = POSTED_DB_FILE
+        self.init_posted_db()
+        
     def get_gemini_api_key(self):
         if not self.gemini_api_keys:
             return None
@@ -216,6 +222,81 @@ class LiveSentinel:
             if u:
                 urls.append(u)
         return urls
+
+    def init_posted_db(self):
+        try:
+            con = sqlite3.connect(self.db_file)
+            cur = con.cursor()
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS posted_sources (
+                    target_channel TEXT,
+                    source_node TEXT,
+                    source_msg_id INTEGER,
+                    posted_msg_id INTEGER,
+                    created_at REAL,
+                    PRIMARY KEY (target_channel, source_node, source_msg_id)
+                )
+            """)
+            con.commit()
+            
+            cur.execute("SELECT target_channel, source_node, source_msg_id, posted_msg_id FROM posted_sources")
+            rows = cur.fetchall()
+            for ch, node, src_id, dst_id in rows:
+                if (node and node.lower() == 'vahidonline') or ch == '@VahidOnlineAI':
+                    self.vahid_ai_posted[src_id] = dst_id
+                elif (node and node.lower() == 'iliaen') or ch == '@iliaenAI':
+                    self.ilia_ai_posted[src_id] = dst_id
+            con.close()
+            print(f"🗄️ Initialized SQLite registry: loaded {len(rows)} posted records.")
+        except Exception as e:
+            print(f"⚠️ Error initializing SQLite DB: {e}")
+
+    def is_source_posted(self, target_channel, source_node, source_msg_id):
+        try:
+            src_int = int(source_msg_id) if str(source_msg_id).isdigit() else source_msg_id
+            if target_channel == '@VahidOnlineAI' and src_int in self.vahid_ai_posted:
+                return True
+            if target_channel == '@iliaenAI' and src_int in self.ilia_ai_posted:
+                return True
+                
+            con = sqlite3.connect(self.db_file)
+            cur = con.cursor()
+            cur.execute(
+                "SELECT posted_msg_id FROM posted_sources WHERE target_channel = ? AND source_msg_id = ?",
+                (target_channel, src_int)
+            )
+            row = cur.fetchone()
+            con.close()
+            if row:
+                if target_channel == '@VahidOnlineAI':
+                    self.vahid_ai_posted[src_int] = row[0]
+                elif target_channel == '@iliaenAI':
+                    self.ilia_ai_posted[src_int] = row[0]
+                return True
+        except Exception:
+            pass
+        return False
+
+    def record_posted_message(self, target_channel, source_node, source_msg_id, posted_msg_id):
+        try:
+            src_int = int(source_msg_id) if str(source_msg_id).isdigit() else source_msg_id
+            dst_int = int(posted_msg_id) if str(posted_msg_id).isdigit() else posted_msg_id
+            
+            if target_channel == '@VahidOnlineAI':
+                self.vahid_ai_posted[src_int] = dst_int
+            elif target_channel == '@iliaenAI':
+                self.ilia_ai_posted[src_int] = dst_int
+                
+            con = sqlite3.connect(self.db_file)
+            cur = con.cursor()
+            cur.execute("""
+                INSERT OR REPLACE INTO posted_sources (target_channel, source_node, source_msg_id, posted_msg_id, created_at)
+                VALUES (?, ?, ?, ?, ?)
+            """, (target_channel, source_node, src_int, dst_int, time.time()))
+            con.commit()
+            con.close()
+        except Exception as e:
+            print(f"⚠️ Error recording to SQLite DB: {e}")
 
     def determine_iran_related(self, ai_res, text, title=""):
         clean_text = (text or "") + " " + (title or "")
@@ -1819,18 +1900,19 @@ class LiveSentinel:
             
         return list(set(patterns))
 
-    async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None):
+    async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None, skip_mirror_channels=False):
         async with self.lock:
             # --- @VahidOnlineAI & @iliaenAI Channel Pipelines ---
             # Dedicated mirror summary channels must NEVER be dropped by radar age filters
             node_key = (node or '').lower()
-            if node_key == 'vahidonline':
-                asyncio.create_task(self.handle_vahid_online_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
-            elif node_key == 'iliaen':
-                asyncio.create_task(self.handle_ilia_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
-            elif node_key == 'alibk3':
-                asyncio.create_task(self.handle_alibk_regional(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
-                return
+            if not skip_mirror_channels:
+                if node_key == 'vahidonline':
+                    asyncio.create_task(self.handle_vahid_online_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+                elif node_key == 'iliaen':
+                    asyncio.create_task(self.handle_ilia_ai(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+                elif node_key == 'alibk3':
+                    asyncio.create_task(self.handle_alibk_regional(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+                    return
 
             # Accept messages up to 15 minutes old (900s) to catch news during runner restarts & handovers
             # This applies to breaking news radar alerts (War / Economy / Protest)
@@ -2899,6 +2981,7 @@ class LiveSentinel:
                         if vahid_id not in self.vahid_ai_posted:
                             self.vahid_ai_posted[vahid_id] = msg.id
                             count += 1
+                        self.record_posted_message(target_channel, "VahidOnline", vahid_id, msg.id)
                         if "خلاصه خبر" in txt and "⚡️" in txt:
                             self.vahid_needs_refresh.add((vahid_id, msg.id))
                         break
@@ -2922,6 +3005,7 @@ class LiveSentinel:
                             if match:
                                 src_id = int(match.group(1))
                                 self.vahid_ai_posted[src_id] = m.id
+                                self.record_posted_message("@VahidOnlineAI", "VahidOnline", src_id, m.id)
                                 self.vahid_needs_refresh.add((src_id, m.id))
                                 break
             except Exception as scan_err:
@@ -2929,8 +3013,8 @@ class LiveSentinel:
 
             now_utc = datetime.now(timezone.utc)
             recent_vahid = []
-            async for msg in reader_client.iter_messages("VahidOnline", limit=20):
-                if msg.date and (now_utc - msg.date).total_seconds() > 86400:
+            async for msg in reader_client.iter_messages("VahidOnline", limit=5):
+                if msg.date and (now_utc - msg.date).total_seconds() > 300:
                     continue
                 recent_vahid.append(msg)
             recent_vahid.reverse()
@@ -2938,12 +3022,12 @@ class LiveSentinel:
             for msg in recent_vahid:
                 clean_text = (msg.message or msg.text or "").strip()
                 if clean_text and len(clean_text) >= 5:
-                    if msg.id not in self.vahid_ai_posted:
+                    if msg.id not in self.vahid_ai_posted and not self.is_source_posted("@VahidOnlineAI", "VahidOnline", msg.id):
                         print(f"⚡ Catching up missed VahidOnline post {msg.id}...")
                         await self.handle_vahid_online_ai(clean_text, msg.id, raw_msg=msg, is_edit=False)
                         await asyncio.sleep(2)
-                    # Feed into process_message to ensure VIP radar and cross-channel semantic merging evaluates it
-                    await self.process_message(clean_text, "VahidOnline", msg.id, msg_date=msg.date, raw_msg=msg)
+                    # Feed into process_message with skip_mirror_channels=True so it doesn't trigger handle_vahid_online_ai again
+                    await self.process_message(clean_text, "VahidOnline", msg.id, msg_date=msg.date, raw_msg=msg, skip_mirror_channels=True)
 
             # Re-summarize any posts that previously fell back to generic "خلاصه خبر"
             for vahid_id, posted_id in list(self.vahid_needs_refresh):
@@ -2966,6 +3050,11 @@ class LiveSentinel:
     async def handle_vahid_online_ai(self, text, msg_id, raw_msg=None, is_edit=False, is_upgrade=False):
         target_channel = "@VahidOnlineAI"
         
+        # Check persistent dedup guard before doing any work
+        if not is_edit and not is_upgrade and self.is_source_posted(target_channel, "VahidOnline", msg_id):
+            print(f"🛑 [DEDUP GUARD] VahidOnline msg {msg_id} already posted to {target_channel}. Aborting send.")
+            return
+
         # 1. Deduplication for Album / Media Groups (grouped_id)
         grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
         if grouped_id and grouped_id in self.vahid_grouped_posted and not is_edit:
@@ -3082,6 +3171,7 @@ class LiveSentinel:
                         self.vahid_ai_posted[msg_id] = sent.id
                         self.vahid_post_time[msg_id] = time.time()
                         self.channel_last_alert_id[target_channel] = sent.id
+                        self.record_posted_message(target_channel, "VahidOnline", msg_id, sent.id)
                         self.save_persisted_state()
                         print(f"🚀 Published AI summary to {target_channel} for VahidOnline msg {msg_id}")
             except Exception as e:
@@ -3102,6 +3192,7 @@ class LiveSentinel:
                         if ilia_id not in self.ilia_ai_posted:
                             self.ilia_ai_posted[ilia_id] = msg.id
                             count += 1
+                        self.record_posted_message(target_channel, "iliaen", ilia_id, msg.id)
                         if "خلاصه خبر" in txt and "⚡️" in txt:
                             self.ilia_needs_refresh.add((ilia_id, msg.id))
                         break
@@ -3125,6 +3216,7 @@ class LiveSentinel:
                             if match:
                                 src_id = int(match.group(1))
                                 self.ilia_ai_posted[src_id] = m.id
+                                self.record_posted_message("@iliaenAI", "iliaen", src_id, m.id)
                                 self.ilia_needs_refresh.add((src_id, m.id))
                                 break
             except Exception as scan_err:
@@ -3132,8 +3224,8 @@ class LiveSentinel:
 
             now_utc = datetime.now(timezone.utc)
             recent_ilia = []
-            async for msg in reader_client.iter_messages("iliaen", limit=20):
-                if msg.date and (now_utc - msg.date).total_seconds() > 86400:
+            async for msg in reader_client.iter_messages("iliaen", limit=5):
+                if msg.date and (now_utc - msg.date).total_seconds() > 300:
                     continue
                 recent_ilia.append(msg)
             recent_ilia.reverse()
@@ -3141,12 +3233,12 @@ class LiveSentinel:
             for msg in recent_ilia:
                 clean_text = (msg.message or msg.text or "").strip()
                 if clean_text and len(clean_text) >= 5:
-                    if msg.id not in self.ilia_ai_posted:
+                    if msg.id not in self.ilia_ai_posted and not self.is_source_posted("@iliaenAI", "iliaen", msg.id):
                         print(f"⚡ Catching up missed iliaen post {msg.id}...")
                         await self.handle_ilia_ai(clean_text, msg.id, raw_msg=msg, is_edit=False)
                         await asyncio.sleep(2)
-                    # Feed into process_message to ensure VIP radar and cross-channel semantic merging evaluates it
-                    await self.process_message(clean_text, "iliaen", msg.id, msg_date=msg.date, raw_msg=msg)
+                    # Feed into process_message with skip_mirror_channels=True so it doesn't trigger handle_ilia_ai again
+                    await self.process_message(clean_text, "iliaen", msg.id, msg_date=msg.date, raw_msg=msg, skip_mirror_channels=True)
 
             # Re-summarize any fallback posts
             for ilia_id, posted_id in list(self.ilia_needs_refresh):
@@ -3169,6 +3261,11 @@ class LiveSentinel:
     async def handle_ilia_ai(self, text, msg_id, raw_msg=None, is_edit=False, is_upgrade=False):
         target_channel = "@iliaenAI"
         
+        # Check persistent dedup guard before doing any work
+        if not is_edit and not is_upgrade and self.is_source_posted(target_channel, "iliaen", msg_id):
+            print(f"🛑 [DEDUP GUARD] iliaen msg {msg_id} already posted to {target_channel}. Aborting send.")
+            return
+
         # 1. Deduplication for Album / Media Groups (grouped_id)
         grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
         if grouped_id and grouped_id in self.ilia_grouped_posted and not is_edit:
@@ -3285,6 +3382,7 @@ class LiveSentinel:
                         self.ilia_ai_posted[msg_id] = sent.id
                         self.ilia_post_time[msg_id] = time.time()
                         self.channel_last_alert_id[target_channel] = sent.id
+                        self.record_posted_message(target_channel, "iliaen", msg_id, sent.id)
                         self.save_persisted_state()
                         print(f"🚀 Published AI summary to {target_channel} for iliaen msg {msg_id}")
             except Exception as e:
@@ -3443,6 +3541,7 @@ class LiveSentinel:
                                     }
                                     if mid_int != root_id:
                                         self.reply_to_root_map[f"Alibk3_{mid_int}"] = root_id
+                                self.record_posted_message(target_ch, s_node, mid_int, msg.id)
 
                             # Filter out dummy/radar nodes
                             sources_list = [s for s in sources_list if str(s.get('node')).lower() not in ('radar', 'unknown', 'sentinel')]
@@ -3741,6 +3840,7 @@ class LiveSentinel:
                     if sent:
                         self.channel_last_alert_id[target_channel] = sent.id
                         self.alibk_posted[msg_id] = {'channel': target_channel, 'msg_id': sent.id, 'timestamp': time.time()}
+                        self.record_posted_message(target_channel, "Alibk3", msg_id, sent.id)
                         self.thread_alerts[f"Alibk3_{msg_id}"] = {
                             'channel': target_channel,
                             'alert_msg_id': sent.id,
@@ -3928,7 +4028,7 @@ async def main():
                             recent = [m for m in messages if m.date and (now_utc - m.date).total_seconds() <= 900]
                             recent.reverse()
                             for m in recent:
-                                await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m)
+                                await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m, skip_mirror_channels=True)
                         else:
                             new_msgs = [m for m in messages if m.id > last_ids[node]]
                             new_msgs.reverse()
@@ -3976,8 +4076,17 @@ async def main():
             print(f"⚠️ Startup model query timed out or failed: {gm_err}")
         await sentinel.init_channel_last_alert_ids(reader_client=client)
         
-        # 3. Immediately catch up missed posts: Iliaen first (VIP priority), then Vahid & Alibk
-        print("⚡ Executing VIP catch-up: iliaen first, then VahidOnline and Alibk3...")
+        # 3. Synchronously preload historical posts from destination channels into DB and memory before catch-up
+        print("📚 Preloading recent post history from target channels...")
+        await asyncio.gather(
+            sentinel.preload_vahid_ai_history(reader_client=client),
+            sentinel.preload_ilia_ai_history(reader_client=client),
+            sentinel.preload_alibk_history(reader_client=client),
+            return_exceptions=True
+        )
+        
+        # 4. Safely catch up missed posts from the last 5m transition window
+        print("⚡ Executing transition catch-up: iliaen first, then VahidOnline and Alibk3...")
         try:
             await sentinel.catchup_unposted_ilia(reader_client=client)
         except Exception as e:
@@ -3990,11 +4099,6 @@ async def main():
             await sentinel.catchup_unposted_alibk(reader_client=client)
         except Exception as e:
             print(f"⚠️ Alibk catchup error: {e}")
-        
-        # 4. Offload heavy historical preloads to non-blocking background tasks
-        asyncio.create_task(sentinel.preload_vahid_ai_history(reader_client=client))
-        asyncio.create_task(sentinel.preload_ilia_ai_history(reader_client=client))
-        asyncio.create_task(sentinel.preload_alibk_history(reader_client=client))
     except Exception as e:
         if hasattr(e, 'seconds'):
             print(f"⚠️ FloodWaitError! Sleeping for {e.seconds} seconds before retrying...")
@@ -4005,6 +4109,12 @@ async def main():
             heartbeat_task = asyncio.create_task(heartbeat_monitor())
             await sentinel.preload_node_entities(reader_client=client)
             await sentinel.init_channel_last_alert_ids(reader_client=client)
+            await asyncio.gather(
+                sentinel.preload_vahid_ai_history(reader_client=client),
+                sentinel.preload_ilia_ai_history(reader_client=client),
+                sentinel.preload_alibk_history(reader_client=client),
+                return_exceptions=True
+            )
             await asyncio.gather(
                 sentinel.catchup_unposted_ilia(reader_client=client),
                 sentinel.catchup_unposted_vahid(reader_client=client),
@@ -4064,7 +4174,7 @@ async def main():
             
     os.system('git config --global user.email "bot@sentinel.local"')
     os.system('git config --global user.name "Sentinel Bot"')
-    os.system('git add session_report.md backend/sentinel_state.json')
+    os.system('git add session_report.md backend/sentinel_state.json backend/posted_registry.db')
     os.system('git diff --staged --quiet || (git commit -m "[skip ci] save session report and state" && git pull --rebase origin main && git push || true)')
 
 if __name__ == "__main__":
