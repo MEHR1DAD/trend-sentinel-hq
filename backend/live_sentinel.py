@@ -3,7 +3,7 @@ import json
 import time
 import asyncio
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from collections import deque
@@ -257,6 +257,14 @@ class LiveSentinel:
         fa_digits = "۰۱۲۳۴۵۶۷۸۹"
         return "".join(fa_digits[int(d)] if d.isdigit() else d for d in str(n))
 
+    @staticmethod
+    def get_tehran_time_fa(ts=None):
+        tz = timezone(timedelta(hours=3, minutes=30))
+        dt = datetime.fromtimestamp(ts if ts else time.time(), tz=tz)
+        fa_digits = "۰۱۲۳۴۵۶۷۸۹"
+        time_str = dt.strftime("%H:%M")
+        return "".join(fa_digits[int(d)] if d.isdigit() else d for d in time_str)
+
     def detect_msg_media_type(self, msg):
         if not msg:
             return 'text'
@@ -435,9 +443,21 @@ class LiveSentinel:
             f"📝 **چکیده رویداد:**\n{summary}",
             "",
             sources_block,
+        ]
+
+        update_time = thread_data.get('updated_at')
+        if update_time:
+            time_fa = self.get_tehran_time_fa(update_time)
+            reason = thread_data.get('update_reason', 'افزودن منابع میدانی')
+            parts.extend([
+                "",
+                f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | {reason}**"
+            ])
+
+        parts.extend([
             "",
             f"{tag}\n{target_channel}"
-        ]
+        ])
         return "\n".join(parts)
 
     def extract_message_anchors(self, text, title=""):
@@ -692,26 +712,13 @@ class LiveSentinel:
                     thread_data['summary'] = candidate_summary
                     
                 alert_msg_id = thread_data.get('alert_msg_id')
+                thread_data['updated_at'] = time.time()
+                thread_data['update_reason'] = 'افزودن منابع میدانی'
                 updated_alert_text = self.build_alert_post_content(thread_data)
                 
                 try:
                     await self.bot.edit_message(target_channel, alert_msg_id, updated_alert_text, link_preview=False)
-                    print(f"🔀 Successfully merged msg {node}_{msg_id} into alert {alert_msg_id} in {target_channel} ({len(sources)} sources).")
-                    
-                    orig_time = thread_data.get('timestamp', time.time())
-                    last_notified = thread_data.get('last_notified_msg_id')
-                    if await self.should_send_update_notification(target_channel, alert_msg_id, orig_time, last_notified):
-                        notify_msg = await self.bot.send_message(
-                            target_channel,
-                            "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
-                            reply_to=alert_msg_id,
-                            silent=True
-                        )
-                        if notify_msg:
-                            thread_data['last_notified_msg_id'] = notify_msg.id
-                        print(f"🔔 Sent silent update notification to {target_channel} for merged alert {alert_msg_id}.")
-                    else:
-                        print(f"ℹ️ Silent update notification skipped for {alert_msg_id} (still latest post and < 30m).")
+                    print(f"🔀 Successfully merged msg {node}_{msg_id} into alert {alert_msg_id} in {target_channel} ({len(sources)} sources). Status line updated in-place.")
                 except Exception as edit_err:
                     if "not modified" in str(edit_err).lower():
                         print(f"ℹ️ Merged alert {alert_msg_id} in {target_channel} content unchanged.")
@@ -813,26 +820,13 @@ class LiveSentinel:
             
             target_channel = thread_data.get('channel', '@DidebanJang')
             alert_msg_id = thread_data.get('alert_msg_id')
+            thread_data['updated_at'] = time.time()
+            thread_data['update_reason'] = 'دریافت اطلاعات تکمیلی'
             updated_alert_text = self.build_alert_post_content(thread_data)
             
             try:
                 await self.bot.edit_message(target_channel, alert_msg_id, updated_alert_text, link_preview=False)
-                print(f"✏️ Successfully updated alert {alert_msg_id} in {target_channel} ({len(replies)} replies attached).")
-                
-                orig_timestamp = thread_data.get('timestamp', time.time())
-                last_notified = thread_data.get('last_notified_msg_id')
-                if await self.should_send_update_notification(target_channel, alert_msg_id, orig_timestamp, last_notified):
-                    notify_msg = await self.bot.send_message(
-                        target_channel,
-                        "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
-                        reply_to=alert_msg_id,
-                        silent=True
-                    )
-                    if notify_msg:
-                        thread_data['last_notified_msg_id'] = notify_msg.id
-                    print(f"🔔 Sent silent update notification to {target_channel} replying to msg {alert_msg_id}.")
-                else:
-                    print(f"ℹ️ Update notification skipped for {alert_msg_id} in {target_channel} (still latest post and < 30m).")
+                print(f"✏️ Successfully updated alert {alert_msg_id} in {target_channel} ({len(replies)} replies attached). Status line updated in-place.")
             except Exception as e:
                 if "not modified" in str(e).lower():
                     print(f"ℹ️ Alert {alert_msg_id} in {target_channel} content unchanged.")
@@ -855,100 +849,42 @@ class LiveSentinel:
 
     async def should_send_update_notification(self, target_channel, alert_msg_id, original_post_timestamp, last_notified_msg_id=None):
         """
-        Determines whether the silent notification message:
-        "🔄 این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد."
-        should be sent to target_channel.
-        
-        Rules:
-        1. If alert_msg_id is STILL the latest news post in target_channel:
-           - If < 30 minutes (1800s) have passed since original post:
-             -> Return FALSE (silently edit in-place, NEVER send notification).
-           - If >= 30 minutes have passed:
-             -> If a notification was ALREADY sent (last_notified_msg_id exists):
-                Return FALSE (do NOT send duplicate/consecutive notifications!).
-             -> Otherwise:
-                Return TRUE (send exactly ONE silent notification).
-        
-        2. If another actual news post (NOT a reply or update notification) was published in target_channel
-           after alert_msg_id (i.e. alert_msg_id is NO LONGER the latest news post):
-           - If a notification was already sent AFTER that newer news post:
-             -> Return FALSE (no repetitive notifications).
-           - Otherwise:
-             -> Return TRUE (send notification to bring it back to user attention).
+        Notifications via new reply messages are disabled in favor of in-place clean edits.
         """
-        now = time.time()
-        
-        # Query recent channel messages to accurately determine if any subsequent news post exists
-        messages = []
-        try:
-            messages = await self.bot.get_messages(target_channel, limit=15)
-        except Exception as e:
-            print(f"⚠️ Error querying messages in {target_channel}: {e}")
-            
-        newer_news_posts = []
-        if messages:
-            for m in messages:
-                if m.id > alert_msg_id:
-                    text = m.text or m.message or ""
-                    # Ignore update notification messages (🔄)
-                    if "🔄" in text or "به‌روزرسانی شد" in text:
-                        continue
-                    # Ignore replies to alert_msg_id
-                    rep_to = getattr(m, 'reply_to_msg_id', None)
-                    if not rep_to and getattr(m, 'reply_to', None):
-                        rep_to = getattr(m.reply_to, 'reply_to_msg_id', None)
-                    if rep_to == alert_msg_id:
-                        continue
-                    # Standalone news post
-                    if len(text.strip()) > 10:
-                        newer_news_posts.append(m.id)
-                        
-        is_still_latest_news = (len(newer_news_posts) == 0)
-        
-        if is_still_latest_news:
-            # Alert is still the latest news in the channel!
-            # If < 30m elapsed: NEVER send notification (silently edit in-place)
-            if (now - original_post_timestamp) < 1800:
-                print(f"ℹ️ Notification skipped for {alert_msg_id} in {target_channel}: still latest post and < 30m ({int(now - original_post_timestamp)}s).")
-                return False
-                
-            # If >= 30m elapsed:
-            # Has a notification already been sent?
-            if last_notified_msg_id:
-                print(f"ℹ️ Notification skipped for {alert_msg_id} in {target_channel}: already notified with msg {last_notified_msg_id} and still latest post.")
-                return False
-                
-            # First time reaching >= 30m while still latest: send ONE notification
-            return True
-        else:
-            # A subsequent news post was published in the channel after alert_msg_id!
-            latest_newer_news_id = max(newer_news_posts)
-            # If we already sent a notification AFTER that newer news post, don't spam again
-            if last_notified_msg_id and last_notified_msg_id > latest_newer_news_id:
-                print(f"ℹ️ Notification skipped for {alert_msg_id} in {target_channel}: already notified at {last_notified_msg_id} after subsequent news {latest_newer_news_id}.")
-                return False
-                
-            return True
+        return False
 
     async def init_channel_last_alert_ids(self):
         target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat', '@VahidOnlineAI', '@iliaenAI']
         
-        # Clean up reported spurious/duplicate notification messages in @DidebanJang
-        for dup_id in [143, 142]:
+        # Comprehensive cleanup of all previous update notification messages across all channels
+        for ch in target_channels:
             try:
-                await self.bot.delete_messages('@DidebanJang', [dup_id])
-                print(f"🗑️ Cleaned up spurious/duplicate notification {dup_id} in @DidebanJang")
-            except Exception:
-                pass
+                messages = await self.bot.get_messages(ch, limit=150)
+                if messages:
+                    to_delete = []
+                    for m in messages:
+                        text = m.text or m.message or ""
+                        if ("به‌روزرسانی شد" in text or "اطلاعات تکمیلی" in text) and len(text.strip()) < 150 and "چکیده" not in text:
+                            to_delete.append(m.id)
+                    if to_delete:
+                        print(f"🗑️ Found {len(to_delete)} previous update notification bubbles in {ch}: {to_delete}")
+                        for i in range(0, len(to_delete), 50):
+                            batch = to_delete[i:i+50]
+                            try:
+                                await self.bot.delete_messages(ch, batch)
+                                print(f"🗑️ Cleaned up batch of {len(batch)} notification messages in {ch}.")
+                            except Exception as del_err:
+                                print(f"⚠️ Error deleting batch in {ch}: {del_err}")
+            except Exception as e:
+                print(f"⚠️ Error cleaning up notification messages in {ch}: {e}")
 
+        # Initialize latest standalone news IDs for each channel
         for ch in target_channels:
             try:
                 messages = await self.bot.get_messages(ch, limit=10)
                 if messages:
                     for m in messages:
                         text = m.text or m.message or ""
-                        if "🔄" in text or "به‌روزرسانی شد" in text:
-                            continue
                         rep_to = getattr(m, 'reply_to_msg_id', None)
                         if not rep_to and getattr(m, 'reply_to', None):
                             rep_to = getattr(m.reply_to, 'reply_to_msg_id', None)
@@ -1536,30 +1472,19 @@ class LiveSentinel:
                             
                             tag = "#دیده‌بان_جنگ" if target_ch == "@DidebanJang" else ("#دیده‌بان_اقتصاد" if target_ch == "@DidehbanEghtesad" else "#دیده‌بان_اعتراضات")
                             
+                            time_fa = self.get_tehran_time_fa()
                             updated_alert = (
                                 f"{icon} **{alert_title}**\n\n"
                                 f"⚡️ سرعت انتشار: VIP_UPDATE (در ۳ دقیقه گذشته)\n"
                                 f"📊 وضعیت عادی: 0.10 گزارش در ساعت\n\n"
                                 f"🔗 **منبع خبر:**\n- [{canonical_node}]({link}) {root_icon}\n\n"
+                                f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | دریافت اطلاعات تکمیلی**\n\n"
                                 f"{tag}\n\n{target_ch}"
                             )
                             try:
                                 await self.bot.edit_message(target_ch, orig_sent_id, updated_alert, link_preview=False)
                                 asyncio.create_task(self.append_ai_summary(target_ch, orig_sent_id, updated_alert, [text]))
-                                orig_time = prev.get('time', time.time())
-                                last_notified = prev.get('last_notified_msg_id')
-                                if await self.should_send_update_notification(target_ch, orig_sent_id, orig_time, last_notified):
-                                    notify_msg = await self.bot.send_message(
-                                        target_ch,
-                                        "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
-                                        reply_to=orig_sent_id,
-                                        silent=True
-                                    )
-                                    if notify_msg:
-                                        prev['last_notified_msg_id'] = notify_msg.id
-                                    print(f"🔔 Updated VIP alert {orig_sent_id} in {target_ch} and sent silent notification.")
-                                else:
-                                    print(f"ℹ️ Update notification skipped for VIP alert {orig_sent_id} in {target_ch} (still latest post and < 30m).")
+                                print(f"✏️ Updated VIP alert {orig_sent_id} in {target_ch} with in-place status line.")
                             except Exception as edit_err:
                                 print(f"⚠️ Failed to edit VIP alert {orig_sent_id} in {target_ch}: {edit_err}")
                 else:
@@ -2376,37 +2301,29 @@ class LiveSentinel:
                     media_icon = " 🎙"
                     link_action = "شنیدن فایل صوتی در کانال وحیدآنلاین"
             
-            post_content = (
-                f"⚡️ **{title}**{media_icon}\n\n"
-                f"{summary}\n\n"
-                f"🔗 [{link_action}]({link})\n"
-                f"📡 {target_channel}"
-            )
+            if is_edit:
+                time_fa = self.get_tehran_time_fa()
+                post_content = (
+                    f"⚡️ **{title}**{media_icon}\n\n"
+                    f"{summary}\n\n"
+                    f"🔗 [{link_action}]({link})\n\n"
+                    f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | ویرایش و تکمیل متن خبر**\n\n"
+                    f"📡 {target_channel}"
+                )
+            else:
+                post_content = (
+                    f"⚡️ **{title}**{media_icon}\n\n"
+                    f"{summary}\n\n"
+                    f"🔗 [{link_action}]({link})\n\n"
+                    f"📡 {target_channel}"
+                )
             
             try:
                 if msg_id in self.vahid_ai_posted:
                     posted_id = self.vahid_ai_posted[msg_id]
                     try:
                         await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
-                        print(f"✏️ Edited post {posted_id} in {target_channel} for VahidOnline msg {msg_id}")
-                        if is_edit:
-                            orig_time = self.vahid_post_time.get(msg_id, time.time())
-                            last_notified = self.vahid_post_time.get(f"notif_{msg_id}")
-                            if await self.should_send_update_notification(target_channel, posted_id, orig_time, last_notified):
-                                try:
-                                    notify_msg = await self.bot.send_message(
-                                        target_channel,
-                                        "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
-                                        reply_to=posted_id,
-                                        silent=True
-                                    )
-                                    if notify_msg:
-                                        self.vahid_post_time[f"notif_{msg_id}"] = notify_msg.id
-                                    print(f"🔔 Sent silent update notification to {target_channel} replying to msg {posted_id}.")
-                                except Exception as notify_err:
-                                    print(f"⚠️ Failed to send silent update notification to {target_channel}: {notify_err}")
-                            else:
-                                print(f"ℹ️ Update notification skipped for VahidOnline post {posted_id} (still latest post and < 30m).")
+                        print(f"✏️ Edited post {posted_id} in {target_channel} for VahidOnline msg {msg_id} with in-place status line.")
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
                             print(f"ℹ️ Post {posted_id} in {target_channel} is already up to date (no content change).")
@@ -2558,37 +2475,29 @@ class LiveSentinel:
                     media_icon = " 🎙"
                     link_action = "شنیدن فایل صوتی در کانال ایلیا"
             
-            post_content = (
-                f"⚡️ **{title}**{media_icon}\n\n"
-                f"{summary}\n\n"
-                f"🔗 [{link_action}]({link})\n"
-                f"📡 {target_channel}"
-            )
+            if is_edit:
+                time_fa = self.get_tehran_time_fa()
+                post_content = (
+                    f"⚡️ **{title}**{media_icon}\n\n"
+                    f"{summary}\n\n"
+                    f"🔗 [{link_action}]({link})\n\n"
+                    f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | ویرایش و تکمیل متن خبر**\n\n"
+                    f"📡 {target_channel}"
+                )
+            else:
+                post_content = (
+                    f"⚡️ **{title}**{media_icon}\n\n"
+                    f"{summary}\n\n"
+                    f"🔗 [{link_action}]({link})\n\n"
+                    f"📡 {target_channel}"
+                )
             
             try:
                 if msg_id in self.ilia_ai_posted:
                     posted_id = self.ilia_ai_posted[msg_id]
                     try:
                         await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
-                        print(f"✏️ Edited post {posted_id} in {target_channel} for iliaen msg {msg_id}")
-                        if is_edit:
-                            orig_time = self.ilia_post_time.get(msg_id, time.time())
-                            last_notified = self.ilia_post_time.get(f"notif_{msg_id}")
-                            if await self.should_send_update_notification(target_channel, posted_id, orig_time, last_notified):
-                                try:
-                                    notify_msg = await self.bot.send_message(
-                                        target_channel,
-                                        "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
-                                        reply_to=posted_id,
-                                        silent=True
-                                    )
-                                    if notify_msg:
-                                        self.ilia_post_time[f"notif_{msg_id}"] = notify_msg.id
-                                    print(f"🔔 Sent silent update notification to {target_channel} replying to msg {posted_id}.")
-                                except Exception as notify_err:
-                                    print(f"⚠️ Failed to send silent update notification to {target_channel}: {notify_err}")
-                            else:
-                                print(f"ℹ️ Update notification skipped for iliaen post {posted_id} (still latest post and < 30m).")
+                        print(f"✏️ Edited post {posted_id} in {target_channel} for iliaen msg {msg_id} with in-place status line.")
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
                             print(f"ℹ️ Post {posted_id} in {target_channel} is already up to date (no content change).")
@@ -2814,19 +2723,7 @@ class LiveSentinel:
             for target_ch, default_tag, default_cat in channels_to_preload:
                 try:
                     count = 0
-                    recent_notifs = {}
-                    msgs = []
                     async for msg in reader_client.iter_messages(target_ch, limit=30):
-                        msgs.append(msg)
-                        text = msg.text or msg.message or ""
-                        if "🔄" in text or "به‌روزرسانی شد" in text:
-                            rep_to = getattr(msg, 'reply_to_msg_id', None)
-                            if not rep_to and getattr(msg, 'reply_to', None):
-                                rep_to = getattr(msg.reply_to, 'reply_to_msg_id', None)
-                            if rep_to:
-                                recent_notifs[rep_to] = max(recent_notifs.get(rep_to, 0), msg.id)
-
-                    for msg in msgs:
                         text = msg.text or msg.message or ""
                         if not text:
                             continue
@@ -2861,8 +2758,7 @@ class LiveSentinel:
                                     self.alibk_posted[mid_int] = {
                                         'channel': target_ch,
                                         'msg_id': msg.id,
-                                        'timestamp': msg.date.timestamp() if msg.date else time.time(),
-                                        'last_notified_msg_id': recent_notifs.get(msg.id)
+                                        'timestamp': msg.date.timestamp() if msg.date else time.time()
                                     }
                                     if mid_int != root_id:
                                         self.reply_to_root_map[f"Alibk3_{mid_int}"] = root_id
@@ -2896,8 +2792,7 @@ class LiveSentinel:
                                     'summary': summary,
                                     'sources': sources_list,
                                     'replies': [],
-                                    'tag': default_tag,
-                                    'last_notified_msg_id': recent_notifs.get(msg.id)
+                                    'tag': default_tag
                                 }
                                 count += 1
                     if count > 0:
@@ -3119,24 +3014,28 @@ class LiveSentinel:
                     posted_info = self.alibk_posted[msg_id]
                     posted_ch = posted_info.get('channel', target_channel)
                     posted_mid = posted_info.get('msg_id')
+                    
+                    thread_key = f"Alibk3_{msg_id}"
+                    if thread_key in self.thread_alerts:
+                        thread_data = self.thread_alerts[thread_key]
+                        thread_data['title'] = title
+                        thread_data['summary'] = summary
+                        thread_data['updated_at'] = time.time()
+                        thread_data['update_reason'] = 'ویرایش و اطلاعات تکمیلی'
+                        alert_text = self.build_alert_post_content(thread_data)
+                    else:
+                        time_fa = self.get_tehran_time_fa()
+                        alert_text = (
+                            f"{alert_header}\n\n"
+                            f"📝 **چکیده رویداد:**\n{summary}\n\n"
+                            f"{sources_text}\n\n"
+                            f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | ویرایش و اطلاعات تکمیلی**\n\n"
+                            f"{tag}\n{posted_ch}"
+                        )
+                        
                     try:
                         await self.bot.edit_message(posted_ch, posted_mid, alert_text, link_preview=False)
-                        print(f"✏️ Updated Alibk3 alert in {posted_ch} (Alibk msg {msg_id})")
-                        if is_edit:
-                            orig_time = posted_info.get('timestamp', time.time())
-                            last_notified = posted_info.get('last_notified_msg_id')
-                            if await self.should_send_update_notification(posted_ch, posted_mid, orig_time, last_notified):
-                                notify_msg = await self.bot.send_message(
-                                    posted_ch,
-                                    "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
-                                    reply_to=posted_mid,
-                                    silent=True
-                                )
-                                if notify_msg:
-                                    posted_info['last_notified_msg_id'] = notify_msg.id
-                                print(f"🔔 Sent silent update notification to {posted_ch} replying to msg {posted_mid}.")
-                            else:
-                                print(f"ℹ️ Update notification skipped for {posted_mid} in {posted_ch} (still latest post and < 30m).")
+                        print(f"✏️ Updated Alibk3 alert in {posted_ch} (Alibk msg {msg_id}) with in-place status line.")
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
                             print(f"ℹ️ Alibk3 alert {posted_mid} already up to date.")
