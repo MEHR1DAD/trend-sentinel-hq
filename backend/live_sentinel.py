@@ -24,8 +24,9 @@ CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
 
 class LiveSentinel:
-    def __init__(self, bot):
+    def __init__(self, bot, client=None):
         self.bot = bot
+        self.client = client
         self.config = self.load_json(CONFIG_FILE)
         self.nodes = self.config.get('nodes', [])
         self.state_file = STATE_FILE
@@ -41,7 +42,7 @@ class LiveSentinel:
         self.recent_messages = deque()
         self.last_alert_time = {} # pat -> timestamp
         self.alerted_msg_patterns = {} # "node_msgid" -> set of patterns
-        self.vip_alert_history = {} # "node_msgid" -> dict(time, pattern, text)
+        self.vip_alert_history = {} # "node_msgid" -> dict(time, pattern, text, sent_msg_id, target_channel)
         self.recent_alert_sources = deque() # (timestamp, set_of_sources)
         self.vahid_ai_posted = {} # msg_id -> posted_msg_id in @VahidOnlineAI
         self.vahid_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
@@ -55,6 +56,12 @@ class LiveSentinel:
         self.alibk_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
         self.alibk_msg_locks = {} # msg_id -> asyncio.Lock() for sequential edit ordering
         self.node_id_map = {} # chat_id -> clean node username
+        
+        # Unified Thread and Supplementary Updates Tracking (72-hour window)
+        self.thread_alerts = {} # "node_rootid" -> dict(channel, alert_msg_id, node, root_id, root_text, root_media_type, timestamp, title, summary, is_iran_related, replies)
+        self.reply_to_root_map = {} # "node_replyid" -> root_id
+        self.debounce_tasks = {} # "node_rootid" -> asyncio.Task
+        self.thread_locks = {} # "node_rootid" -> asyncio.Lock
         
         # Metrics
         self.start_time = time.time()
@@ -162,10 +169,10 @@ class LiveSentinel:
                     if isinstance(v, list):
                         self.alerted_msg_patterns[k] = set(v)
                 
-                # 2. VIP Alert History (keep entries from last 24h)
+                # 2. VIP Alert History (keep entries from last 72h)
                 raw_vip = data.get('vip_alert_history', {})
                 for k, v in raw_vip.items():
-                    if isinstance(v, dict) and (now - v.get('time', 0)) <= 86400:
+                    if isinstance(v, dict) and (now - v.get('time', 0)) <= 259200:
                         self.vip_alert_history[k] = v
                 
                 # 3. Last alert time (keep entries from last 24h)
@@ -174,7 +181,7 @@ class LiveSentinel:
                     if isinstance(v, (int, float)) and (now - v) <= 86400:
                         self.last_alert_time[k] = v
                 
-                # 4. Alibk Alert History (keep entries from last 48h)
+                # 4. Alibk Alert History (keep entries from last 72h)
                 raw_alibk = data.get('alibk_posted', {})
                 for k, v in raw_alibk.items():
                     if isinstance(v, dict):
@@ -182,16 +189,31 @@ class LiveSentinel:
                             self.alibk_posted[int(k)] = v
                         except:
                             self.alibk_posted[k] = v
+
+                # 5. Thread Alerts (keep entries from last 72h = 259200s)
+                raw_threads = data.get('thread_alerts', {})
+                for k, v in raw_threads.items():
+                    if isinstance(v, dict) and (now - v.get('timestamp', 0)) <= 259200:
+                        self.thread_alerts[k] = v
+
+                # 6. Reply to root map
+                raw_reply_map = data.get('reply_to_root_map', {})
+                for k, v in raw_reply_map.items():
+                    if isinstance(v, (int, str)):
+                        self.reply_to_root_map[k] = int(v) if str(v).isdigit() else v
                 
-                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.alibk_posted)} Alibk alerts.")
+                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.alibk_posted)} Alibk alerts, {len(self.thread_alerts)} thread alerts.")
         except Exception as e:
             print(f"⚠️ Error loading persisted state: {e}")
 
     def save_persisted_state(self):
         try:
             now = time.time()
-            clean_vip = {k: v for k, v in self.vip_alert_history.items() if isinstance(v, dict) and (now - v.get('time', 0)) <= 86400}
+            clean_vip = {k: v for k, v in self.vip_alert_history.items() if isinstance(v, dict) and (now - v.get('time', 0)) <= 259200}
             clean_last = {k: v for k, v in self.last_alert_time.items() if isinstance(v, (int, float)) and (now - v) <= 86400}
+            clean_threads = {k: v for k, v in self.thread_alerts.items() if isinstance(v, dict) and (now - v.get('timestamp', 0)) <= 259200}
+            active_roots = {v.get('root_id') for v in clean_threads.values()}
+            clean_reply_map = {k: v for k, v in self.reply_to_root_map.items() if v in active_roots}
             serializable_patterns = {k: list(v) for k, v in self.alerted_msg_patterns.items()}
             
             data = {
@@ -199,13 +221,260 @@ class LiveSentinel:
                 "vip_alert_history": clean_vip,
                 "last_alert_time": clean_last,
                 "alibk_posted": self.alibk_posted,
+                "thread_alerts": clean_threads,
+                "reply_to_root_map": clean_reply_map,
                 "last_saved": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
             }
             with open(self.state_file, 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
         except Exception as e:
             print(f"⚠️ Error saving persisted state: {e}")
+
+    @staticmethod
+    def to_fa_num(n):
+        fa_digits = "۰۱۲۳۴۵۶۷۸۹"
+        return "".join(fa_digits[int(d)] if d.isdigit() else d for d in str(n))
+
+    def detect_msg_media_type(self, msg):
+        if not msg:
+            return 'text'
+        if getattr(msg, 'video', None) or getattr(msg, 'video_note', None):
+            return 'video'
+        if getattr(msg, 'photo', None):
+            return 'photo'
+        if getattr(msg, 'voice', None) or getattr(msg, 'audio', None):
+            return 'voice'
+        if getattr(msg, 'document', None):
+            mime = getattr(msg.file, 'mime_type', '') if getattr(msg, 'file', None) else ''
+            if 'video' in mime: return 'video'
+            if 'image' in mime: return 'photo'
+            if 'audio' in mime: return 'voice'
+            return 'file'
+        return 'text'
+
+    def get_media_icon_from_type(self, media_type):
+        m = (media_type or 'text').lower()
+        if m == 'video': return "📹"
+        if m == 'photo': return "📸"
+        if m == 'voice': return "🎙"
+        if m == 'file': return "📄"
+        return "📝"
+
+    async def find_root_message(self, node, raw_msg, max_depth=5):
+        if not raw_msg:
+            return None, []
+            
+        reply_to_id = getattr(raw_msg, 'reply_to_msg_id', None)
+        if not reply_to_id and getattr(raw_msg, 'reply_to', None):
+            reply_to_id = getattr(raw_msg.reply_to, 'reply_to_msg_id', None)
+            
+        if not reply_to_id:
+            return raw_msg.id, [raw_msg.id]
+            
+        cache_key = f"{node}_{reply_to_id}"
+        if cache_key in self.reply_to_root_map:
+            return self.reply_to_root_map[cache_key], [raw_msg.id]
+
+        thread_key = f"{node}_{reply_to_id}"
+        if thread_key in self.thread_alerts or (node == 'Alibk3' and reply_to_id in self.alibk_posted):
+            return reply_to_id, [reply_to_id, raw_msg.id]
+
+        curr_id = reply_to_id
+        chain = [raw_msg.id]
+        depth = 0
+        while curr_id and depth < max_depth:
+            chain.insert(0, curr_id)
+            ck = f"{node}_{curr_id}"
+            if ck in self.reply_to_root_map:
+                return self.reply_to_root_map[ck], chain
+            if ck in self.thread_alerts or (node == 'Alibk3' and curr_id in self.alibk_posted):
+                return curr_id, chain
+                
+            if not self.client:
+                break
+                
+            try:
+                parent_msgs = await self.client.get_messages(node, ids=[curr_id])
+                if not parent_msgs or not parent_msgs[0]:
+                    break
+                parent = parent_msgs[0]
+                next_reply_id = getattr(parent, 'reply_to_msg_id', None)
+                if not next_reply_id:
+                    return curr_id, chain
+                curr_id = next_reply_id
+                depth += 1
+            except Exception as e:
+                print(f"⚠️ Error tracing parent for {node}_{curr_id}: {e}")
+                break
+                
+        return curr_id, chain
+
+    def schedule_thread_debounce(self, thread_key):
+        if thread_key not in self.debounce_tasks or self.debounce_tasks[thread_key].done():
+            self.debounce_tasks[thread_key] = asyncio.create_task(self.flush_thread_debounce(thread_key, delay=300))
+            print(f"⏳ Scheduled 5-minute debounce update for thread {thread_key}.")
+
+    async def flush_thread_debounce(self, thread_key, delay=300):
+        if delay > 0:
+            await asyncio.sleep(delay)
+            
+        thread_data = self.thread_alerts.get(thread_key)
+        if not thread_data:
+            return
+            
+        lock = self.thread_locks.setdefault(thread_key, asyncio.Lock())
+        async with lock:
+            node = thread_data['node']
+            root_id = thread_data['root_id']
+            root_text = thread_data.get('root_text', '')
+            replies = thread_data.get('replies', [])
+            
+            combined_sections = [f"[خبر اصلی]:\n{root_text}"]
+            for idx, rep in enumerate(replies, 1):
+                rep_text = rep.get('text', '').strip()
+                if rep_text:
+                    combined_sections.append(f"[گزارش تکمیلی {self.to_fa_num(idx)}]:\n{rep_text}")
+                    
+            full_text_for_ai = "\n\n".join(combined_sections)
+            
+            if node == 'Alibk3':
+                ai_res = await self.classify_and_translate_alibk_thread(full_text_for_ai)
+            else:
+                ai_res = await self.summarize_thread_post(full_text_for_ai)
+                
+            if not ai_res:
+                print(f"⚠️ Failed to re-summarize thread {thread_key}")
+                return
+                
+            new_title = ai_res.get('title', '').strip() or thread_data.get('title', '')
+            new_summary = ai_res.get('summary', '').strip() or thread_data.get('summary', '')
+            is_iran_related = ai_res.get('is_iran_related', thread_data.get('is_iran_related', False))
+            
+            thread_data['title'] = new_title
+            thread_data['summary'] = new_summary
+            thread_data['is_iran_related'] = is_iran_related
+            
+            all_media_types = [thread_data.get('root_media_type', 'text')] + [r.get('media_type', 'text') for r in replies]
+            header_media_icon = ""
+            if 'video' in all_media_types:
+                header_media_icon = " 📹"
+            elif 'photo' in all_media_types:
+                header_media_icon = " 📸"
+            elif 'voice' in all_media_types:
+                header_media_icon = " 🎙"
+                
+            if is_iran_related:
+                alert_header = f"🚨 **هشدار فوری: {new_title}**{header_media_icon}"
+            else:
+                alert_header = f"🔕 **هشدار منطقه‌ای: {new_title}**{header_media_icon}"
+                
+            root_link = f"https://t.me/{node}/{root_id}"
+            root_icon = self.get_media_icon_from_type(thread_data.get('root_media_type'))
+            
+            if replies:
+                source_header = "🔗 **منابع خبر:**"
+                sources_lines = [f"- [{node}]({root_link}) (خبر اصلی) {root_icon}"]
+                for idx, rep in enumerate(replies, 1):
+                    rep_id = rep['msg_id']
+                    rep_link = f"https://t.me/{node}/{rep_id}"
+                    rep_icon = self.get_media_icon_from_type(rep.get('media_type'))
+                    sources_lines.append(f"- [{node}]({rep_link}) (تکمیلی {self.to_fa_num(idx)}) {rep_icon}")
+            else:
+                source_header = "🔗 **منبع خبر:**"
+                sources_lines = [f"- [{node}]({root_link}) {root_icon}"]
+                
+            target_channel = thread_data.get('channel', '@DidebanJang')
+            tag = thread_data.get('tag', '#دیده‌بان_جنگ')
+            alert_msg_id = thread_data.get('alert_msg_id')
+            
+            updated_alert_text = (
+                f"{alert_header}\n\n"
+                f"📝 **چکیده رویداد:**\n{new_summary}\n\n"
+                f"{source_header}\n" + "\n".join(sources_lines) + "\n\n"
+                f"{tag}\n{target_channel}"
+            )
+            
+            try:
+                await self.bot.edit_message(target_channel, alert_msg_id, updated_alert_text, link_preview=False)
+                print(f"✏️ Successfully updated alert {alert_msg_id} in {target_channel} ({len(replies)} replies attached).")
+                
+                await self.bot.send_message(
+                    target_channel,
+                    "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
+                    reply_to=alert_msg_id,
+                    silent=True
+                )
+                print(f"🔔 Sent silent update notification to {target_channel} replying to msg {alert_msg_id}.")
+            except Exception as e:
+                if "not modified" in str(e).lower():
+                    print(f"ℹ️ Alert {alert_msg_id} in {target_channel} content unchanged.")
+                else:
+                    print(f"❌ Error editing thread alert {alert_msg_id} in {target_channel}: {e}")
+                    
+            self.save_persisted_state()
+
+    async def flush_all_pending_debounces(self):
+        print("⏳ Flushing all pending debounced updates before exit...")
+        active_keys = list(self.debounce_tasks.keys())
+        for k in active_keys:
+            task = self.debounce_tasks.pop(k, None)
+            if task and not task.done():
+                task.cancel()
+            try:
+                await self.flush_thread_debounce(k, delay=0)
+            except Exception as e:
+                print(f"⚠️ Error flushing thread {k}: {e}")
+
+    async def summarize_thread_post(self, thread_text):
+        if not GEMINI_API_KEY:
+            return None
+        if not hasattr(self, 'current_gemini_model'):
+            self.current_gemini_model = "gemini-1.5-flash"
+            
+        prompt = (
+            "تو یک تحلیلگر و ویراستار ارشد اخبار در سیستم مانیتورینگ هوشمند هستی.\n"
+            "در زیر یک خبر اصلی و گزارش‌های تکمیلی یا ویرایش‌های انجام‌شده قرار دارد که سیر یک رویداد خبری را نشان می‌دهند.\n\n"
+            "وظایف الزامی:\n"
+            "۱. تمام متن‌ها را با هم تلفیق کن و وضعیت نهایی و به‌روز شده رویداد را استخراج کن.\n"
+            "۲. title: یک تیتر کوتاه، جذاب و دقیق به زبان فارسی (حداکثر ۵ تا ۶ کلمه) بنویس.\n"
+            "۳. summary: یک چکیده روان، گویا و کاملاً فارسی در ۲ الی ۳ خط بنویس که وضعیت نهایی را منسجم منعکس کند.\n\n"
+            f"متن رویداد و پیوست‌ها:\n{thread_text}\n\n"
+            "پاسخ را دقیقاً و فقط در قالب شیء JSON با دو کلید 'title' و 'summary' بنویس:\n"
+            "{\n"
+            '  "title": "تیتر کوتاه و دقیق",\n'
+            '  "summary": "متن چکیده ۲ الی ۳ خطی"\n'
+            "}"
+        )
         
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"maxOutputTokens": 250, "temperature": 0.2}
+        }
+        
+        for attempt in range(3):
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
+            try:
+                import urllib.request, urllib.error, json
+                req = urllib.request.Request(url, data=json.dumps(payload).encode('utf-8'), headers={'Content-Type': 'application/json'}, method='POST')
+                loop = asyncio.get_running_loop()
+                def make_req():
+                    with urllib.request.urlopen(req, timeout=12) as response:
+                        return json.loads(response.read().decode('utf-8'))
+                data = await loop.run_in_executor(None, make_req)
+                raw_out = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
+                match = re.search(r'\{.*\}', raw_out, re.DOTALL)
+                if match:
+                    res = json.loads(match.group(0))
+                    title = res.get("title", "").strip()
+                    summary = res.get("summary", "").strip()
+                    if title and summary:
+                        return {"title": title, "summary": summary}
+                break
+            except Exception as e:
+                print(f"⚠️ summarize_thread_post error: {e}")
+                break
+        return None
+
     def fetch_remote_baselines(self):
         remote_url = "https://mehr1dad.github.io/python-utils-collection/data/trend_history.json"
         try:
@@ -497,33 +766,51 @@ class LiveSentinel:
                     prev = self.vip_alert_history[msg_key]
                     time_diff = now - prev['time']
                     
-                    if is_edit and time_diff <= 900 and text != prev['text']:
+                    if is_edit and time_diff <= 259200 and text != prev['text']:
                         target_ch = prev.get('target_channel')
-                        self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0], 'text': text, 'target_channel': target_ch}
-                        clean_pats = [p.replace("||FOREIGN||", "") for p in patterns_in_msg]
-                        combined_pat = "، ".join(dict.fromkeys(clean_pats)) # remove duplicates
+                        orig_sent_id = prev.get('sent_msg_id')
+                        self.vip_alert_history[msg_key]['time'] = now
+                        self.vip_alert_history[msg_key]['text'] = text
                         
-                        # Use the first pattern's metadata for routing/baseline
-                        base_pat = patterns_in_msg[0]
-                        baseline = self.baselines.get(base_pat.replace("||FOREIGN||", ""), 0.1)
-                        
-                        # Preserve prefixes for send_alert logic
-                        prefix = ""
-                        if "||ECONOMY||" in base_pat: prefix = "||ECONOMY||"
-                        elif "||FOREIGN||" in base_pat: prefix = "||FOREIGN||"
-                        
-                        display_pat = prefix + combined_pat
-                        
-                        sent_msg, target_channel, alert_text = await self.send_alert(
-                            f"{display_pat} (به‌روزرسانی خبر)", 
-                            "VIP_UPDATE", 
-                            baseline, 
-                            [f"- [{canonical_node}]({link})"], 
-                            is_silent=True,
-                            target_channel=target_ch
-                        )
-                        if sent_msg:
-                            asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
+                        ai_class = await self.classify_vip_message(text)
+                        if ai_class and orig_sent_id and target_ch:
+                            topic_title = ai_class.get('topic_title', '').strip()
+                            category = ai_class.get('category')
+                            is_iran = self.determine_iran_related(ai_class, text, topic_title)
+                            
+                            icon = "🚨" if is_iran else "🔕"
+                            alert_title = f"هشدار فوری: {topic_title}" if is_iran else f"هشدار منطقه‌ای: {topic_title}"
+                            if category == 'ECONOMY':
+                                alert_title = f"گزارش اقتصادی: {topic_title}"
+                                icon = "📈"
+                            elif category == 'PROTEST_RIGHTS':
+                                alert_title = f"گزارش حقوق بشری: {topic_title}"
+                                icon = "⚖️"
+                                
+                            root_media = self.detect_msg_media_type(raw_msg)
+                            root_icon = self.get_media_icon_from_type(root_media)
+                            
+                            tag = "#دیده‌بان_جنگ" if target_ch == "@DidebanJang" else ("#دیده‌بان_اقتصاد" if target_ch == "@DidehbanEghtesad" else "#دیده‌بان_اعتراضات")
+                            
+                            updated_alert = (
+                                f"{icon} **{alert_title}**\n\n"
+                                f"⚡️ سرعت انتشار: VIP_UPDATE (در ۳ دقیقه گذشته)\n"
+                                f"📊 وضعیت عادی: 0.10 گزارش در ساعت\n\n"
+                                f"🔗 **منبع خبر:**\n- [{canonical_node}]({link}) {root_icon}\n\n"
+                                f"{tag}\n\n{target_ch}"
+                            )
+                            try:
+                                await self.bot.edit_message(target_ch, orig_sent_id, updated_alert, link_preview=False)
+                                asyncio.create_task(self.append_ai_summary(target_ch, orig_sent_id, updated_alert, [text]))
+                                await self.bot.send_message(
+                                    target_ch,
+                                    "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
+                                    reply_to=orig_sent_id,
+                                    silent=True
+                                )
+                                print(f"🔔 Updated VIP alert {orig_sent_id} in {target_ch} and sent silent notification.")
+                            except Exception as edit_err:
+                                print(f"⚠️ Failed to edit VIP alert {orig_sent_id} in {target_ch}: {edit_err}")
                 else:
                     self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0], 'text': text}
                     if msg_key not in self.alerted_msg_patterns:
@@ -589,6 +876,7 @@ class LiveSentinel:
                                 custom_icon=custom_icon
                             )
                             if sent_msg:
+                                self.vip_alert_history[msg_key]['sent_msg_id'] = sent_msg.id
                                 asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
                         else:
                             # 2. Fallback to keyword-based logic if AI is unreachable
@@ -623,6 +911,7 @@ class LiveSentinel:
                             )
                             if sent_msg:
                                 self.vip_alert_history[msg_key]['target_channel'] = target_channel
+                                self.vip_alert_history[msg_key]['sent_msg_id'] = sent_msg.id
                                 asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
 
             # Fuzzy Deduplication against messages in the last 3 minutes
@@ -1251,6 +1540,17 @@ class LiveSentinel:
                     try:
                         await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
                         print(f"✏️ Edited post {posted_id} in {target_channel} for VahidOnline msg {msg_id}")
+                        if is_edit:
+                            try:
+                                await self.bot.send_message(
+                                    target_channel,
+                                    "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
+                                    reply_to=posted_id,
+                                    silent=True
+                                )
+                                print(f"🔔 Sent silent update notification to {target_channel} replying to msg {posted_id}.")
+                            except Exception as notify_err:
+                                print(f"⚠️ Failed to send silent update notification to {target_channel}: {notify_err}")
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
                             print(f"ℹ️ Post {posted_id} in {target_channel} is already up to date (no content change).")
@@ -1412,6 +1712,17 @@ class LiveSentinel:
                     try:
                         await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
                         print(f"✏️ Edited post {posted_id} in {target_channel} for iliaen msg {msg_id}")
+                        if is_edit:
+                            try:
+                                await self.bot.send_message(
+                                    target_channel,
+                                    "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
+                                    reply_to=posted_id,
+                                    silent=True
+                                )
+                                print(f"🔔 Sent silent update notification to {target_channel} replying to msg {posted_id}.")
+                            except Exception as notify_err:
+                                print(f"⚠️ Failed to send silent update notification to {target_channel}: {notify_err}")
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
                             print(f"ℹ️ Post {posted_id} in {target_channel} is already up to date (no content change).")
@@ -1537,22 +1848,129 @@ class LiveSentinel:
                 
         return None
 
+    async def classify_and_translate_alibk_thread(self, thread_text):
+        if not GEMINI_API_KEY:
+            return None
+            
+        if not hasattr(self, 'current_gemini_model'):
+            self.current_gemini_model = "gemini-1.5-flash"
+            
+        prompt = (
+            "تو یک تحلیلگر ارشد تحولات نظامی و امنیتی خاورمیانه و مترجم حرفه‌ای برای سامانه دیده‌بان جنگ هستی.\n"
+            "در زیر یک خبر اصلی و یک یا چند گزارش تکمیلی پیوست‌شده که به آن ریپلای یا ویرایش شده‌اند قرار دارد.\n"
+            "این پیام‌ها سیر تحولات یک رویداد خبری مشترک را نشان می‌دهند.\n\n"
+            "وظایف الزامی تو:\n"
+            "۱. تمام متن‌ها را به دقت تحلیل کن و با تلفیق خبر اصلی و گزارش‌های تکمیلی، آخرین وضعیت و جمع‌بندی کامل رویداد را استخراج کن.\n"
+            "۲. category: دسته‌بندی را مشخص کن (تنها دسته‌های مجاز: WAR یا OTHER):\n"
+            "   - WAR: اخبار جنگ، حملات موشکی/پهپادی، بمباران هوایی، شلیک پدافند، درگیری‌های مسلحانه، توقف پروازها یا ناوبری، تلفات و خسارات، آتش‌سوزی یا آسیب به تاسیسات نفتی/گازی و بندری/فرودگاهی و آرامکو.\n"
+            "   - OTHER: نظرات شخصی، میم/شوخی، تحلیل‌های بدون رویداد نظامی جدید، اخبار آب‌وهوا.\n"
+            "۳. is_iran_related: اگر رویداد مستقیماً به ایران، خاک ایران، سپاه یا ارتش ایران مربوط است true وگرنه false.\n"
+            "۴. title: یک تیتر بسیار جذاب، کوتاه و دقیق به زبان فارسی (حداکثر ۶ تا ۷ کلمه) که جدیدترین و نهایی‌ترین وضعیت واقعه را بعد از گزارش‌های تکمیلی بازتاب دهد.\n"
+            "۵. summary: یک چکیده روان، منسجم، گویا، دقیق و کاملاً فارسی در ۲ الی ۳ خط که ماجرا و نکات جدید اضافه شده را به شکل یکپارچه و بدون قضاوت منعکس کند.\n\n"
+            f"متن رویداد و گزارش‌های تکمیلی:\n{thread_text}\n\n"
+            "پاسخ را دقیقاً و فقط در قالب این شیء JSON ارسال کن و هیچ عبارت دیگری ننویس:\n"
+            "{\n"
+            '  "category": "WAR" | "OTHER",\n'
+            '  "is_iran_related": true | false,\n'
+            '  "title": "عنوان کوتاه و دقیق فارسی",\n'
+            '  "summary": "چکیده ۲ الی ۳ خطی به زبان فارسی"\n'
+            "}"
+        )
+        
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 350,
+                "temperature": 0.2
+            }
+        }
+        
+        max_retries = 3
+        for attempt in range(max_retries):
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
+            try:
+                import urllib.request
+                import urllib.error
+                import json
+                
+                req = urllib.request.Request(
+                    url, 
+                    data=json.dumps(payload).encode('utf-8'),
+                    headers={'Content-Type': 'application/json'},
+                    method='POST'
+                )
+                
+                loop = asyncio.get_running_loop()
+                def make_req():
+                    with urllib.request.urlopen(req, timeout=14) as response:
+                        return json.loads(response.read().decode('utf-8'))
+                        
+                data = await loop.run_in_executor(None, make_req)
+                raw_out = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
+                
+                match = re.search(r'\{.*\}', raw_out, re.DOTALL)
+                if match:
+                    res = json.loads(match.group(0))
+                    cat = str(res.get("category", "")).upper().strip()
+                    is_iran = bool(res.get("is_iran_related", False))
+                    title = str(res.get("title", "")).strip()
+                    summary = str(res.get("summary", "")).strip()
+                    if cat in ["WAR", "OTHER"]:
+                        return {"category": cat, "is_iran_related": is_iran, "title": title, "summary": summary}
+                break
+            except urllib.error.HTTPError as e:
+                if e.code == 429:
+                    print(f"⚠️ Gemini API 429 in Alibk thread classifier! Sleeping {5 * (attempt + 1)}s...")
+                    await asyncio.sleep(5 * (attempt + 1))
+                elif e.code == 404 and attempt < max_retries - 1:
+                    self.current_gemini_model = await self.get_fallback_gemini_model()
+                else:
+                    break
+            except Exception as e:
+                print(f"⚠️ Alibk thread classification failed: {e}")
+                break
+                
+        return None
+
     async def preload_alibk_history(self, reader_client=None):
         if not reader_client:
             return
         try:
             count = 0
-            async for msg in reader_client.iter_messages("@DidebanJang", limit=30):
+            async for msg in reader_client.iter_messages("@DidebanJang", limit=40):
                 text = msg.text or msg.message or ""
                 if text:
-                    match = re.search(r'https://t\.me/Alibk3/(\d+)', text)
-                    if match:
-                        alibk_id = int(match.group(1))
-                        if alibk_id not in self.alibk_posted:
-                            self.alibk_posted[alibk_id] = {'channel': '@DidebanJang', 'msg_id': msg.id}
+                    links = re.findall(r'https://t\.me/Alibk3/(\d+)', text)
+                    if links:
+                        root_id = int(links[0])
+                        thread_key = f"Alibk3_{root_id}"
+                        if root_id not in self.alibk_posted:
+                            self.alibk_posted[root_id] = {'channel': '@DidebanJang', 'msg_id': msg.id}
                             count += 1
+                        if thread_key not in self.thread_alerts:
+                            self.thread_alerts[thread_key] = {
+                                'channel': '@DidebanJang',
+                                'alert_msg_id': msg.id,
+                                'node': 'Alibk3',
+                                'root_id': root_id,
+                                'root_text': '',
+                                'root_media_type': 'text',
+                                'timestamp': msg.date.timestamp() if msg.date else time.time(),
+                                'replies': [],
+                                'tag': '#دیده‌بان_جنگ'
+                            }
+                        for rep_str in links[1:]:
+                            rep_id = int(rep_str)
+                            self.reply_to_root_map[f"Alibk3_{rep_id}"] = root_id
+                            if not any(r.get('msg_id') == rep_id for r in self.thread_alerts[thread_key]['replies']):
+                                self.thread_alerts[thread_key]['replies'].append({
+                                    'msg_id': rep_id,
+                                    'text': '',
+                                    'media_type': 'text',
+                                    'timestamp': msg.date.timestamp() if msg.date else time.time()
+                                })
             if count > 0:
-                print(f"🔄 Preloaded {count} historical Alibk3 alerts from @DidebanJang.")
+                print(f"🔄 Preloaded {count} historical Alibk3 alerts and thread trees from @DidebanJang.")
         except Exception as e:
             print(f"⚠️ Could not preload @DidebanJang Alibk history: {e}")
 
@@ -1562,105 +1980,168 @@ class LiveSentinel:
         try:
             now_utc = datetime.now(timezone.utc)
             recent_alibk = []
-            async for msg in reader_client.iter_messages("Alibk3", limit=10):
+            async for msg in reader_client.iter_messages("Alibk3", limit=20):
                 if msg.date and (now_utc - msg.date).total_seconds() > 7200:
-                    continue
-                # Skip replies in catchup (they are supplementary follow-ups)
-                if getattr(msg, 'is_reply', False) or getattr(msg, 'reply_to_msg_id', None):
                     continue
                 recent_alibk.append(msg)
             recent_alibk.reverse()
             
             for msg in recent_alibk:
-                if msg.id not in self.alibk_posted:
-                    clean_text = (msg.message or msg.text or "").strip()
-                    if clean_text and len(clean_text) >= 10:
-                        print(f"⚡ Catching up missed Alibk3 post {msg.id}...")
-                        await self.handle_alibk_regional(clean_text, msg.id, raw_msg=msg, is_edit=False)
-                        await asyncio.sleep(3)
+                clean_text = (msg.message or msg.text or "").strip()
+                if clean_text and len(clean_text) >= 10:
+                    await self.handle_alibk_regional(clean_text, msg.id, raw_msg=msg, is_edit=False)
+                    await asyncio.sleep(2)
         except Exception as e:
             print(f"⚠️ Catchup for Alibk3 failed: {e}")
 
     async def handle_alibk_regional(self, text, msg_id, raw_msg=None, is_edit=False):
-        # 1. Skip reply messages (supplementary follow-ups to an earlier main post)
-        if raw_msg and (getattr(raw_msg, 'is_reply', False) or getattr(raw_msg, 'reply_to_msg_id', None) or getattr(raw_msg, 'reply_to', None)):
-            reply_id = getattr(raw_msg, 'reply_to_msg_id', None)
-            print(f"⏩ Skipped Alibk3 reply/supplementary post {msg_id} (reply to msg {reply_id}).")
-            return
-
-        # 2. Deduplication for Album / Media Groups (grouped_id)
-        grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
-        if grouped_id and grouped_id in self.alibk_grouped_posted and not is_edit:
-            return
-            
         clean_text = (text or "").strip()
         if not clean_text or len(clean_text) < 10:
             return
-            
+
+        # 1. Deduplication for Album / Media Groups (grouped_id)
+        grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
+        if grouped_id and grouped_id in self.alibk_grouped_posted and not is_edit:
+            return
         if grouped_id:
             self.alibk_grouped_posted.add(grouped_id)
-            
-        # 3. Sequential lock per msg_id
+
+        # 2. Check if this is a reply (supplementary follow-up to an earlier root post)
+        is_reply = bool(raw_msg and (getattr(raw_msg, 'is_reply', False) or getattr(raw_msg, 'reply_to_msg_id', None) or getattr(raw_msg, 'reply_to', None)))
+
+        if is_reply:
+            root_id, chain = await self.find_root_message("Alibk3", raw_msg)
+            thread_key = f"Alibk3_{root_id}" if root_id else None
+
+            # If root message was alerted in @DidebanJang (within 72h window)
+            if thread_key and (thread_key in self.thread_alerts or root_id in self.alibk_posted):
+                if thread_key not in self.thread_alerts and root_id in self.alibk_posted:
+                    posted_info = self.alibk_posted[root_id]
+                    self.thread_alerts[thread_key] = {
+                        'channel': posted_info.get('channel', '@DidebanJang'),
+                        'alert_msg_id': posted_info.get('msg_id'),
+                        'node': 'Alibk3',
+                        'root_id': root_id,
+                        'root_text': '',
+                        'root_media_type': 'text',
+                        'timestamp': time.time(),
+                        'replies': [],
+                        'tag': '#دیده‌بان_جنگ'
+                    }
+
+                thread_data = self.thread_alerts[thread_key]
+                media_type = self.detect_msg_media_type(raw_msg)
+
+                existing_rep = next((r for r in thread_data.get('replies', []) if r.get('msg_id') == msg_id), None)
+                if existing_rep:
+                    existing_rep['text'] = clean_text
+                    existing_rep['media_type'] = media_type
+                else:
+                    thread_data.setdefault('replies', []).append({
+                        'msg_id': msg_id,
+                        'text': clean_text,
+                        'media_type': media_type,
+                        'timestamp': time.time()
+                    })
+
+                self.reply_to_root_map[f"Alibk3_{msg_id}"] = root_id
+                for cid in chain:
+                    self.reply_to_root_map[f"Alibk3_{cid}"] = root_id
+
+                print(f"🔗 Attached reply {msg_id} (media: {media_type}) to Alibk3 root post {root_id}. Scheduled 5m debounce...")
+                self.schedule_thread_debounce(thread_key)
+                self.save_persisted_state()
+                return
+            else:
+                print(f"⏩ Alibk3 reply {msg_id} refers to root {root_id} which was not alerted. Skipping.")
+                return
+
+        # 3. Check if this is an edit of an existing root or reply
+        thread_key = f"Alibk3_{msg_id}"
+        if is_edit and thread_key in self.thread_alerts:
+            thread_data = self.thread_alerts[thread_key]
+            thread_data['root_text'] = clean_text
+            thread_data['root_media_type'] = self.detect_msg_media_type(raw_msg)
+            print(f"✏️ Alibk3 root post {msg_id} was edited. Scheduling 5m debounce...")
+            self.schedule_thread_debounce(thread_key)
+            self.save_persisted_state()
+            return
+
+        if is_edit and f"Alibk3_{msg_id}" in self.reply_to_root_map:
+            root_id = self.reply_to_root_map[f"Alibk3_{msg_id}"]
+            rk = f"Alibk3_{root_id}"
+            if rk in self.thread_alerts:
+                thread_data = self.thread_alerts[rk]
+                existing_rep = next((r for r in thread_data.get('replies', []) if r.get('msg_id') == msg_id), None)
+                if existing_rep:
+                    existing_rep['text'] = clean_text
+                    existing_rep['media_type'] = self.detect_msg_media_type(raw_msg)
+                print(f"✏️ Alibk3 reply {msg_id} was edited. Scheduling 5m debounce for root {root_id}...")
+                self.schedule_thread_debounce(rk)
+                self.save_persisted_state()
+                return
+
+        # 4. Sequential lock per msg_id for standalone root processing
         if msg_id not in self.alibk_msg_locks:
             if len(self.alibk_msg_locks) > 200:
                 self.alibk_msg_locks.clear()
             self.alibk_msg_locks[msg_id] = asyncio.Lock()
-            
+
         async with self.alibk_msg_locks[msg_id]:
             is_already_posted = msg_id in self.alibk_posted
             if is_already_posted and not is_edit:
                 return
-                
-            # 4. AI Classifier & Persian Title/Summary
+
+            # AI Classifier & Persian Title/Summary
             ai_res = await self.classify_and_translate_alibk(clean_text)
             if not ai_res:
                 print(f"⚠️ Alibk3 AI processing skipped/failed for msg {msg_id}")
                 return
-                
+
             category = ai_res.get('category', 'OTHER')
             if category == 'OTHER':
                 print(f"ℹ️ Alibk3 post {msg_id} filtered out by news policy (OTHER).")
                 return
-                
+
             title = ai_res.get('title', '').strip()
             summary = ai_res.get('summary', '').strip()
             if not title or not summary:
                 return
-                
-            # 5. Check if Iran-related (Sound vs Silent alert)
+
+            # Check if Iran-related (Sound vs Silent alert)
             is_iran_related = self.determine_iran_related(ai_res, clean_text, title)
             is_silent = not is_iran_related
-                
-            # 6. Target channel routing (Alibk3 is exclusively military/war -> @DidebanJang)
+
+            # Target channel routing (Alibk3 is exclusively military/war -> @DidebanJang)
             if category != 'WAR':
                 print(f"ℹ️ Alibk3 post {msg_id} filtered out by news policy (category={category}).")
                 return
-                
+
             target_channel = "@DidebanJang"
             tag = "#دیده‌بان_جنگ"
-                
             link = f"https://t.me/Alibk3/{msg_id}"
-            
-            # Media icon
-            media_icon = ""
-            if raw_msg:
-                if getattr(raw_msg, 'video', None): media_icon = " 📹"
-                elif getattr(raw_msg, 'photo', None): media_icon = " 📸"
-                
+
+            root_media_type = self.detect_msg_media_type(raw_msg)
+            root_icon = self.get_media_icon_from_type(root_media_type)
+
+            icon_header = ""
+            if root_media_type == 'video': icon_header = " 📹"
+            elif root_media_type == 'photo': icon_header = " 📸"
+            elif root_media_type == 'voice': icon_header = " 🎙"
+
             if is_iran_related:
-                icon = "🚨"
-                alert_header = f"🚨 **هشدار فوری: {title}**{media_icon}"
+                alert_header = f"🚨 **هشدار فوری: {title}**{icon_header}"
             else:
-                icon = "🔕"
-                alert_header = f"🔕 **هشدار منطقه‌ای: {title}**{media_icon}"
-            
+                alert_header = f"🔕 **هشدار منطقه‌ای: {title}**{icon_header}"
+
+            sources_text = f"🔗 **منبع خبر:**\n- [Alibk3]({link}) {root_icon}"
             alert_text = (
                 f"{alert_header}\n\n"
                 f"📝 **چکیده رویداد:**\n{summary}\n\n"
-                f"🔗 **منبع خبر:**\n- [Alibk3]({link})\n\n"
+                f"{sources_text}\n\n"
                 f"{tag}\n{target_channel}"
             )
-            
+
             try:
                 if is_already_posted:
                     posted_info = self.alibk_posted[msg_id]
@@ -1669,6 +2150,13 @@ class LiveSentinel:
                     try:
                         await self.bot.edit_message(posted_ch, posted_mid, alert_text, link_preview=False)
                         print(f"✏️ Updated Alibk3 alert in {posted_ch} (Alibk msg {msg_id})")
+                        if is_edit:
+                            await self.bot.send_message(
+                                posted_ch,
+                                "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
+                                reply_to=posted_mid,
+                                silent=True
+                            )
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
                             print(f"ℹ️ Alibk3 alert {posted_mid} already up to date.")
@@ -1678,6 +2166,21 @@ class LiveSentinel:
                     sent = await self.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
                     if sent:
                         self.alibk_posted[msg_id] = {'channel': target_channel, 'msg_id': sent.id}
+                        self.thread_alerts[f"Alibk3_{msg_id}"] = {
+                            'channel': target_channel,
+                            'alert_msg_id': sent.id,
+                            'node': 'Alibk3',
+                            'root_id': msg_id,
+                            'root_text': clean_text,
+                            'root_media_type': root_media_type,
+                            'timestamp': time.time(),
+                            'category': category,
+                            'is_iran_related': is_iran_related,
+                            'title': title,
+                            'summary': summary,
+                            'replies': [],
+                            'tag': tag
+                        }
                         self.save_persisted_state()
                         status_label = "Iran/Sound" if is_iran_related else "Regional/Silent"
                         print(f"🚨 Published Persian Alibk3 alert ({status_label}) to {target_channel} for msg {msg_id}: {title}")
@@ -1697,7 +2200,7 @@ async def main():
     bot = TelegramClient(StringSession(), int(API_ID), API_HASH)
     client = TelegramClient(StringSession(SESSION_STRING), int(API_ID), API_HASH)
     
-    sentinel = LiveSentinel(bot)
+    sentinel = LiveSentinel(bot, client=client)
     
     # Setup graceful shutdown on SIGTERM
     def handle_sigterm(sig, frame):
@@ -1887,6 +2390,11 @@ async def main():
     finally:
         poller_task.cancel()
         heartbeat_task.cancel()
+        print("⏳ Flushing any pending debounce updates before exit...")
+        try:
+            await sentinel.flush_all_pending_debounces()
+        except Exception as e:
+            print(f"⚠️ Error flushing debounces: {e}")
         print("🔌 Disconnecting Telegram sessions...")
         
         async def safe_disconnect():
