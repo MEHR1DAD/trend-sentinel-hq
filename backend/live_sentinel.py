@@ -2534,26 +2534,36 @@ class LiveSentinel:
         flash_lite = [m for m in candidates if 'flash-lite' in m or 'flash_lite' in m]
         flash = [m for m in candidates if ('flash' in m) and ('flash-lite' not in m and 'flash_lite' not in m)]
         pro = [m for m in candidates if 'pro' in m and 'flash' not in m]
+        stable_flash = [m for m in flash if any(v in m for v in ['2.5', '1.5'])]
 
         next_model = None
         # Strict cross-tier escalation on failure:
         if curr in flash_lite:
-            # Tier 1 failed (e.g. 429 quota) -> Escalate immediately to Tier 2 (Flash)
+            # Tier 1 failed (e.g. 429 quota) -> Escalate to Tier 2 (Top Flash)
             if flash:
                 next_model = flash[0]
             elif pro:
                 next_model = pro[0]
+        elif curr == (flash[0] if flash else None):
+            # Top flash preview failed (503/timeout) -> Try rock-solid stable workhorse flash
+            if stable_flash and stable_flash[0] != curr:
+                next_model = stable_flash[0]
+            elif len(flash) > 1:
+                next_model = flash[1]
+            elif pro:
+                next_model = pro[0]
         elif curr in flash:
-            # Tier 2 failed -> Escalate immediately to Tier 3 (Pro)
+            # Flash failed -> Escalate to Tier 3 (Pro)
             if pro:
                 next_model = pro[0]
-            elif len(flash) > 1 and flash[0] == curr:
-                next_model = flash[1]
+            elif stable_flash and stable_flash[0] != curr:
+                next_model = stable_flash[0]
         elif curr in pro:
-            # Tier 3 failed -> Fallback to next stable Flash
-            fallback_flash = [m for m in flash if any(v in m for v in ['2.5', '1.5', '2.0'])]
-            if fallback_flash:
-                next_model = fallback_flash[0]
+            # Tier 3 failed -> Fallback to rock-solid stable Flash
+            if stable_flash:
+                next_model = stable_flash[0]
+            elif flash:
+                next_model = flash[-1]
                 
         if not next_model:
             if curr in candidates:
@@ -2576,7 +2586,7 @@ class LiveSentinel:
     async def get_fallback_gemini_model(self):
         return await self.rotate_gemini_model_dynamic()
 
-    async def call_gemini_content(self, payload, timeout=12, max_retries=4):
+    async def call_gemini_content(self, payload, timeout=7, max_retries=5):
         """
         Central resilient caller for Google Gemini with Dynamic Model Rotation:
         - Defaults to latest flash-lite in memory for every new request.
