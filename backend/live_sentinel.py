@@ -1025,22 +1025,75 @@ class LiveSentinel:
         # Comprehensive cleanup of all previous update notification messages across all channels
         await self.cleanup_update_notification_bubbles(reader_client=fetch_client)
 
-        # Initialize latest standalone news IDs for each channel
+        vip_map = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen', 'withyashar': 'withyashar', 'alibk3': 'Alibk3'}
+        # Initialize latest standalone news IDs for each channel and recover alerted source history
         for ch in target_channels:
             try:
-                async for m in fetch_client.iter_messages(ch, limit=15):
-                    text = m.text or m.message or ""
+                async for m in fetch_client.iter_messages(ch, limit=35):
+                    if not m or not m.text:
+                        continue
                     rep_to = getattr(m, 'reply_to_msg_id', None)
                     if not rep_to and getattr(m, 'reply_to', None):
                         rep_to = getattr(m.reply_to, 'reply_to_msg_id', None)
                     if rep_to:
                         continue
-                    if len(text.strip()) > 10:
+                    if len(m.text.strip()) > 10 and ch not in self.channel_last_alert_id:
                         self.channel_last_alert_id[ch] = m.id
-                        break
+                        
+                    # Reconstruct source links (e.g. t.me/withyashar/25451 or t.me/Alibk3/38702)
+                    found_sources = re.findall(r't\.me/([A-Za-z0-9_]+)/(\d+)', m.text)
+                    for src_node, src_id_str in found_sources:
+                        src_id = int(src_id_str)
+                        canon = vip_map.get(src_node.lower(), src_node)
+                        mk = f"{canon}_{src_id}"
+                        if mk not in self.vip_alert_history:
+                            self.vip_alert_history[mk] = {
+                                'time': m.date.timestamp() if m.date else time.time(),
+                                'pattern': 'recovered_source',
+                                'text': m.text,
+                                'sent_msg_id': m.id,
+                                'target_channel': ch
+                            }
+                        self.alerted_msg_patterns.setdefault(mk, set()).add('recovered_source')
+                        if canon == 'Alibk3':
+                            self.alibk_posted.setdefault(src_id, {'channel': ch, 'msg_id': m.id, 'timestamp': m.date.timestamp() if m.date else time.time()})
+                        elif canon == 'VahidOnline':
+                            self.vahid_ai_posted.setdefault(src_id, m.id)
+                        elif canon == 'iliaen':
+                            self.ilia_ai_posted.setdefault(src_id, m.id)
+                            
+                        # Reconstruct thread alerts entry for semantic cross-channel merging
+                        if mk not in self.thread_alerts and ch in ('@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat'):
+                            title_m = re.search(r'^(?:🚨|🔕|📈|⚖️|📢)\s*\*\*(?:هشدار فوری|هشدار منطقه‌ای|گزارش اقتصادی|گزارش حقوق بشری|گزارش مردمی):\s*([^\*\n]+)\*\*', m.text)
+                            title_text = title_m.group(1).strip() if title_m else ""
+                            summary_m = re.search(r'📝\s*\*\*چکیده رویداد:\*\*\s*\n([^\n]+(?:\n[^\n]+)?)', m.text)
+                            summary_text = summary_m.group(1).strip() if summary_m else ""
+                            self.thread_alerts[mk] = {
+                                'channel': ch,
+                                'alert_msg_id': m.id,
+                                'node': canon,
+                                'root_id': src_id,
+                                'root_text': m.text,
+                                'root_media_type': 'text',
+                                'timestamp': m.date.timestamp() if m.date else time.time(),
+                                'category': 'WAR' if ch == '@DidebanJang' else ('ECONOMY' if ch == '@DidehbanEghtesad' else 'PROTEST_RIGHTS'),
+                                'is_iran_related': '🚨' in m.text,
+                                'title': title_text,
+                                'summary': summary_text,
+                                'tag': '#دیده‌بان_جنگ' if ch == '@DidebanJang' else ('#دیده‌بان_اقتصاد' if ch == '@DidehbanEghtesad' else '#دیده‌بان_اعتراضات'),
+                                'sources': [{
+                                    'node': canon,
+                                    'msg_id': src_id,
+                                    'media_type': 'text',
+                                    'link': f"https://t.me/{canon}/{src_id}",
+                                    'timestamp': m.date.timestamp() if m.date else time.time()
+                                }],
+                                'replies': []
+                            }
             except Exception as e:
-                print(f"⚠️ Error initializing latest alert ID for {ch}: {e}")
+                print(f"⚠️ Error initializing latest alert ID and recovering sources for {ch}: {e}")
         print(f"📊 Initialized channel latest news IDs: {self.channel_last_alert_id}")
+        print(f"🔄 Recovered {len(self.vip_alert_history)} VIP alerts and {len(self.thread_alerts)} thread alerts directly from Telegram channels.")
 
         # Retroactive merge: Ensure post 130 in @DidebanJang includes VahidOnline 78692 if missing
         try:
@@ -1168,6 +1221,59 @@ class LiveSentinel:
                 self.save_persisted_state()
         except Exception as e154:
             print(f"⚠️ Error cleaning up post 154: {e154}")
+
+        # Retroactive cleanup: Delete duplicate post 156 in @DidebanJang (withyashar 25451)
+        try:
+            m156 = await self.bot.get_messages('@DidebanJang', ids=156)
+            if m156 and not getattr(m156, 'empty', False):
+                deleted = False
+                try:
+                    await self.bot.delete_messages('@DidebanJang', [156])
+                    deleted = True
+                except Exception:
+                    pass
+                if not deleted and fetch_client and fetch_client != self.bot:
+                    try:
+                        await fetch_client.delete_messages('@DidebanJang', [156])
+                        deleted = True
+                    except Exception:
+                        pass
+                if deleted:
+                    print("🗑️ Successfully deleted duplicate post 156 from @DidebanJang!")
+                if self.channel_last_alert_id.get('@DidebanJang') == 156:
+                    self.channel_last_alert_id['@DidebanJang'] = 155
+                    
+            # Ensure withyashar_25451 is cleanly registered to post 155
+            self.vip_alert_history['withyashar_25451'] = {
+                'sent_msg_id': 155,
+                'target_channel': '@DidebanJang',
+                'time': time.time(),
+                'text': 'فیلم لحظه برخورد موشک بالستیک گروه تروریست حوثی‌ها به ترمینال ۳'
+            }
+            if 'withyashar_25451' not in self.alerted_msg_patterns:
+                self.alerted_msg_patterns['withyashar_25451'] = {'withyashar_report'}
+            self.save_persisted_state()
+        except Exception as e156:
+            print(f"⚠️ Error cleaning up duplicate post 156: {e156}")
+
+        # Retroactive polish: Ensure post 155 in @DidebanJang is cleanly formatted
+        try:
+            m155 = await self.bot.get_messages('@DidebanJang', ids=155)
+            if m155 and m155.text and not getattr(m155, 'empty', False):
+                if 'withyashar/25451' in m155.text and '📝 **چکیده رویداد:**' not in m155.text:
+                    clean_title = "🔕 **هشدار منطقه‌ای: برخورد موشک بالستیک حوثی‌ها به ترمینال ۳ فرودگاه** 📹"
+                    summary_text = (
+                        "📝 **چکیده رویداد:**\n"
+                        "انتشار تصاویر و ویدیوهای میدانی از اصابت موشک بالستیک شلیک‌شده توسط نیروهای حوثی به پایانه شماره ۳ فرودگاه و وقوع خسارات در محل برخورد."
+                    )
+                    t155 = m155.text
+                    t155 = re.sub(r'^(?:🚨|🔕)\s*\*\*هشدار [^\n]+', clean_title, t155)
+                    if '🔗 **منبع خبر:**' in t155:
+                        t155 = t155.replace('🔗 **منبع خبر:**', f"{summary_text}\n\n🔗 **منبع خبر:**")
+                    await self.bot.edit_message('@DidebanJang', 155, t155, link_preview=False)
+                    print("✅ Successfully polished post 155 in @DidebanJang!")
+        except Exception as e155:
+            print(f"⚠️ Error polishing post 155: {e155}")
 
     async def handle_message_deleted(self, node_username, deleted_ids):
         """
@@ -1708,19 +1814,19 @@ class LiveSentinel:
                 msg_key = f"{canonical_node}_{msg_id}"
                 now = time.time()
                 
-                # Check if this message was previously alerted and is now updated within 15 minutes (900s)
+                # Check if this message was previously alerted
                 if msg_key in self.vip_alert_history:
                     prev = self.vip_alert_history[msg_key]
-                    time_diff = now - prev['time']
+                    time_diff = now - prev.get('time', now)
+                    target_ch = prev.get('target_channel')
+                    orig_sent_id = prev.get('sent_msg_id')
                     
-                    if is_edit and time_diff <= 259200 and text != prev['text']:
-                        target_ch = prev.get('target_channel')
-                        orig_sent_id = prev.get('sent_msg_id')
+                    if time_diff <= 259200 and text != prev.get('text') and orig_sent_id and target_ch:
                         self.vip_alert_history[msg_key]['time'] = now
                         self.vip_alert_history[msg_key]['text'] = text
                         
                         ai_class = await self.classify_vip_message(text)
-                        if ai_class and orig_sent_id and target_ch:
+                        if ai_class:
                             topic_title = ai_class.get('topic_title', '').strip()
                             category = ai_class.get('category')
                             is_iran = self.determine_iran_related(ai_class, text, topic_title)
@@ -1752,6 +1858,24 @@ class LiveSentinel:
                                 print(f"✏️ Updated VIP alert {orig_sent_id} in {target_ch} with in-place status line.")
                             except Exception as edit_err:
                                 print(f"⚠️ Failed to edit VIP alert {orig_sent_id} in {target_ch}: {edit_err}")
+                        else:
+                            time_fa = self.get_tehran_time_fa()
+                            try:
+                                curr_msg = await self.bot.get_messages(target_ch, ids=orig_sent_id)
+                                if curr_msg and curr_msg.text:
+                                    status_line = f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | دریافت اطلاعات تکمیلی**"
+                                    if '🔄 **به‌روزرسانی شده' in curr_msg.text:
+                                        new_t = re.sub(r'🔄\s*\*\*به‌روزرسانی شده[^\n]+', status_line, curr_msg.text)
+                                    else:
+                                        tag = "#دیده‌بان_جنگ" if target_ch == "@DidebanJang" else ("#دیده‌بان_اقتصاد" if target_ch == "@DidehbanEghtesad" else "#دیده‌بان_اعتراضات")
+                                        new_t = curr_msg.text.replace(tag, f"{status_line}\n\n{tag}")
+                                    await self.bot.edit_message(target_ch, orig_sent_id, new_t, link_preview=False)
+                                    print(f"✏️ Fallback updated VIP alert {orig_sent_id} in {target_ch}.")
+                            except Exception as fb_err:
+                                print(f"⚠️ Failed to fallback edit VIP alert {orig_sent_id} in {target_ch}: {fb_err}")
+                        self.save_persisted_state()
+                    # In ALL cases where msg_key is already in vip_alert_history, return immediately to guarantee no duplicate alert!
+                    return
                 else:
                     self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0] if patterns_in_msg else "withyashar_report", 'text': text}
                     if msg_key not in self.alerted_msg_patterns:
@@ -1862,6 +1986,7 @@ class LiveSentinel:
                                 }
                                 self.save_persisted_state()
                                 asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
+                            return
                         else:
                             # 2. Intelligent Humanized Fallback for VIP Channels if AI API is temporarily unreachable
                             first_line = text.split('\n')[0].strip()
@@ -1921,6 +2046,21 @@ class LiveSentinel:
                                     custom_icon = "🔕"
                                     is_silent = True
                                     
+                            # Check semantic deduplication even for fallback
+                            merged = await self.check_and_merge_with_active_alert(
+                                text=text,
+                                node=canonical_node,
+                                msg_id=msg_id,
+                                target_channel=target_channel,
+                                candidate_title=clean_headline,
+                                candidate_summary="",
+                                raw_msg=raw_msg,
+                                category=category,
+                                is_iran_related=is_iran
+                            )
+                            if merged:
+                                return
+
                             baseline = self.baselines.get(clean_pats[0], 0.1) if clean_pats else 0.1
                             sent_msg, target_channel, alert_text = await self.send_alert(
                                 clean_headline, 
@@ -1960,6 +2100,7 @@ class LiveSentinel:
                                 }
                                 self.save_persisted_state()
                                 asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
+                            return
 
             # Fuzzy Deduplication against messages in the last 3 minutes
             is_syndicated = False
