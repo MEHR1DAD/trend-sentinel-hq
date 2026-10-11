@@ -24,12 +24,12 @@ BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
-DEFAULT_GEMINI_MODEL = "gemini-2.5-flash-lite"
+DEFAULT_GEMINI_MODEL = "gemini-3.5-flash-lite"
 GEMINI_MODELS_PRIORITY = [
-    "gemini-2.5-flash-lite",
-    "gemini-1.5-flash-8b",
+    "gemini-3.5-flash-lite",
+    "gemini-3.8-flash",
+    "gemini-3.7-flash",
     "gemini-2.5-flash",
-    "gemini-2.0-flash",
     "gemini-1.5-flash"
 ]
 
@@ -2463,10 +2463,12 @@ class LiveSentinel:
             data = await loop.run_in_executor(None, make_req)
             models = data.get('models', [])
             
+            # Exclude non-text/specialized modalities (TTS audio, image, custom tools, deep-research)
             valid = [
                 m['name'].replace('models/', '').strip() 
                 for m in models 
                 if "generateContent" in m.get("supportedGenerationMethods", [])
+                and not any(bad in m['name'].lower() for bad in ['tts', 'image', 'audio', 'embed', 'customtools', 'deep-research', 'realtime', 'live'])
             ]
             
             flash_lite = [m for m in valid if 'flash-lite' in m or 'flash_lite' in m]
@@ -2494,11 +2496,12 @@ class LiveSentinel:
             print(f"⚠️ Failed to query latest Google models: {e}")
             
         fallback_candidates = [
-            "gemini-2.5-flash-lite", 
-            "gemini-1.5-flash-8b", 
+            "gemini-3.5-flash-lite",
+            "gemini-3.8-flash",
+            "gemini-3.7-flash",
             "gemini-2.5-flash", 
-            "gemini-2.0-flash", 
             "gemini-1.5-flash", 
+            "gemini-3.1-pro-preview",
             "gemini-2.5-pro", 
             "gemini-1.5-pro"
         ]
@@ -2506,35 +2509,60 @@ class LiveSentinel:
 
     async def rotate_gemini_model_dynamic(self, failed_model=None):
         """
-        Dynamically queries Google API for the newest models and picks the next best model:
+        Dynamically queries Google API for the newest models and escalates across tiers:
         Priority 1: Latest flash-lite
-        Priority 2: Latest flash
-        Priority 3: Latest pro
+        Priority 2: Latest flash (if flash-lite fails/429)
+        Priority 3: Latest pro (if flash fails/429)
+        Fallback: Stable flash
         """
         candidates = await self.fetch_latest_google_models()
         if not candidates:
             candidates = [
-                "gemini-2.5-flash-lite", 
-                "gemini-1.5-flash-8b", 
+                "gemini-3.5-flash-lite", 
+                "gemini-3.8-flash", 
+                "gemini-3.7-flash", 
                 "gemini-2.5-flash", 
-                "gemini-2.0-flash", 
                 "gemini-1.5-flash"
             ]
             
         curr = failed_model or getattr(self, 'current_gemini_model', None) or getattr(self, 'latest_flash_lite_model', candidates[0])
         
+        flash_lite = [m for m in candidates if 'flash-lite' in m or 'flash_lite' in m]
+        flash = [m for m in candidates if ('flash' in m) and ('flash-lite' not in m and 'flash_lite' not in m)]
+        pro = [m for m in candidates if 'pro' in m and 'flash' not in m]
+
         next_model = None
-        if curr in candidates:
-            idx = candidates.index(curr)
-            for offset in range(1, len(candidates)):
-                cand = candidates[(idx + offset) % len(candidates)]
-                if cand != curr:
-                    next_model = cand
-                    break
+        # Strict cross-tier escalation on failure:
+        if curr in flash_lite:
+            # Tier 1 failed (e.g. 429 quota) -> Escalate immediately to Tier 2 (Flash)
+            if flash:
+                next_model = flash[0]
+            elif pro:
+                next_model = pro[0]
+        elif curr in flash:
+            # Tier 2 failed -> Escalate immediately to Tier 3 (Pro)
+            if pro:
+                next_model = pro[0]
+            elif len(flash) > 1 and flash[0] == curr:
+                next_model = flash[1]
+        elif curr in pro:
+            # Tier 3 failed -> Fallback to next stable Flash
+            fallback_flash = [m for m in flash if any(v in m for v in ['2.5', '1.5', '2.0'])]
+            if fallback_flash:
+                next_model = fallback_flash[0]
+                
+        if not next_model:
+            if curr in candidates:
+                idx = candidates.index(curr)
+                for offset in range(1, len(candidates)):
+                    cand = candidates[(idx + offset) % len(candidates)]
+                    if cand != curr:
+                        next_model = cand
+                        break
         if not next_model:
             next_model = [c for c in candidates if c != curr][0] if len(candidates) > 1 else candidates[0]
             
-        print(f"🔄 Dynamic Model Rotation: {curr} ➡️ {next_model}")
+        print(f"🔄 Dynamic Model Rotation (Cross-Tier Escalation): {curr} ➡️ {next_model}")
         self.current_gemini_model = next_model
         return next_model
 
@@ -2544,7 +2572,7 @@ class LiveSentinel:
     async def get_fallback_gemini_model(self):
         return await self.rotate_gemini_model_dynamic()
 
-    async def call_gemini_content(self, payload, timeout=10, max_retries=3):
+    async def call_gemini_content(self, payload, timeout=12, max_retries=4):
         """
         Central resilient caller for Google Gemini with Dynamic Model Rotation:
         - Defaults to latest flash-lite in memory for every new request.
@@ -2610,7 +2638,7 @@ class LiveSentinel:
                 if attempt < max_retries - 1:
                     model = await self.rotate_gemini_model_dynamic(failed_model=model)
                     if e.code in (429, 503):
-                        await asyncio.sleep(1)
+                        await asyncio.sleep(1.5)
                 else:
                     break
             except Exception as e:
