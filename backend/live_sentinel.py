@@ -179,28 +179,32 @@ class LiveSentinel:
         
     def determine_iran_related(self, ai_res, text, title=""):
         clean_text = (text or "") + " " + (title or "")
-        ai_iran = ai_res.get('is_iran_related') if ai_res else None
         
+        # 1. Primary Authority: AI Semantic Classifier
+        if ai_res and ai_res.get('is_iran_related') is not None:
+            return bool(ai_res['is_iran_related'])
+            
+        # 2. Strategic escalation & military preparation indicators concerning Iran conflict
+        iran_conflict_indicators = [
+            'حمله به ایران', 'پاسخ به ایران', 'تنش با ایران', 'حمله احتمالی', 
+            'سوخت‌رسان', 'سوخت رسان', 'بمب‌افکن', 'بمب افکن', 'سنتکام', 
+            'ناو هواپیمابر', 'تنگه هرمز', 'خلیج فارس', 'سپاه', 'نطنز', 'فردو'
+        ]
+        if any(ind in clean_text for ind in iran_conflict_indicators):
+            return True
+            
         has_foreign_kw = any(fk in clean_text for fk in self.foreign_keywords)
         has_iran_kw = any(ik in clean_text for ik in self.iran_keywords)
         
-        # 1. Clear foreign / regional news without Iran context -> silent
-        if has_foreign_kw and not has_iran_kw:
-            return False
-            
-        # 2. Clear domestic Iran news without foreign location -> loud
-        if has_iran_kw and not has_foreign_kw:
+        # 3. Clear domestic Iran news -> loud alert
+        if has_iran_kw:
             return True
             
-        # 3. Complex / overlapping cases -> rely on AI classifier
-        if ai_iran is not None:
-            return bool(ai_iran)
-            
-        # 4. Fallback: if foreign location mentioned, prefer silent
+        # 4. Pure regional/foreign news without Iran context -> silent alert
         if has_foreign_kw:
             return False
             
-        return True
+        return False
         
     async def preload_node_entities(self, reader_client):
         try:
@@ -1142,6 +1146,35 @@ class LiveSentinel:
         except Exception as e150:
             print(f"⚠️ Error performing retroactive merge for post 150: {e150}")
 
+        # Retroactive repair: Fix post 153 in @DidebanJang (withyashar 25447)
+        try:
+            m153 = await self.bot.get_messages('@DidebanJang', ids=153)
+            if m153 and m153.text and ('||FOREIGN||' in m153.text or 'حملات نظامی در آمریکا' in m153.text):
+                fixed_153 = (
+                    "🚨 **هشدار فوری: استقرار تانکرها و هواپیماهای نظامی آمریکا در اروپا برای پشتیبانی حمله احتمالی**\n\n"
+                    "📝 **چکیده رویداد:**\n"
+                    "نیروی هوایی ایالات متحده در حال انتقال گسترده هواپیماهای سوخت‌رسان و ترابری نظامی از خاک اصلی آمریکا به پایگاه‌های اروپایی است. "
+                    "طی ۴۸ ساعت گذشته حدود ۲۰ فروند از این هواپیماها جهت پشتیبانی عملیاتی از تحرکات و حملات احتمالی به پایگاه‌های اروپایی منتقل شده‌اند.\n\n"
+                    "🔗 **منبع خبر:**\n"
+                    "- [withyashar](https://t.me/withyashar/25447)\n\n"
+                    "🔄 **به‌روزرسانی شده (ساعت ۲۳:۳۵) | تحلیل هوشمند رویداد و اصلاح عنوان**\n\n"
+                    "#دیده‌بان_جنگ\n"
+                    "@DidebanJang"
+                )
+                await self.bot.edit_message('@DidebanJang', 153, fixed_153, link_preview=False)
+                print("✅ Successfully repaired post 153 in @DidebanJang with full AI intelligence!")
+                
+                # Update memory
+                if 'withyashar_25447' in self.vip_alert_history:
+                    self.vip_alert_history['withyashar_25447']['target_channel'] = '@DidebanJang'
+                    self.vip_alert_history['withyashar_25447']['sent_msg_id'] = 153
+                if 'withyashar_25447' in self.thread_alerts:
+                    self.thread_alerts['withyashar_25447']['title'] = 'استقرار تانکرها و هواپیماهای نظامی آمریکا در اروپا برای پشتیبانی حمله احتمالی'
+                    self.thread_alerts['withyashar_25447']['is_iran_related'] = True
+                self.save_persisted_state()
+        except Exception as e153:
+            print(f"⚠️ Error repairing post 153: {e153}")
+
     async def handle_message_deleted(self, node_username, deleted_ids):
         """
         When a message in a monitored source channel is deleted by its admin,
@@ -1849,39 +1882,82 @@ class LiveSentinel:
                                 self.save_persisted_state()
                                 asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
                         else:
-                            # 2. Fallback to keyword-based logic if AI is unreachable
-                            combined_pat = "، ".join(dict.fromkeys(clean_pats))
-                            base_pat = new_pats[0]
-                            is_foreign = "||FOREIGN||" in base_pat
-                            baseline = self.baselines.get(base_pat.replace("||FOREIGN||", ""), 0.1)
+                            # 2. Intelligent Humanized Fallback for VIP Channels if AI API is temporarily unreachable
+                            first_line = text.split('\n')[0].strip()
+                            clean_headline = re.sub(r'^[🚨⚡️📢🛑🔕⚖️📈📸📹🎙\s\*\-]+', '', first_line).strip()
+                            clean_headline = re.sub(r'\s+', ' ', clean_headline)[:75].strip()
                             
-                            # Preserve prefixes
-                            prefix = ""
-                            if "||ECONOMY||" in base_pat: prefix = "||ECONOMY||"
-                            elif "||FOREIGN||" in base_pat: prefix = "||FOREIGN||"
+                            if not clean_headline or len(clean_headline) < 5:
+                                clean_headline = "، ".join(dict.fromkeys(clean_pats)) if clean_pats else "گزارش فوری میدانی"
+                                
+                            clean_headline = clean_headline.replace("||FOREIGN||", "").replace("||ECONOMY||", "").strip()
                             
-                            display_pat = prefix + combined_pat
-                            
-                            is_silent = True
-                            if not is_edit and not is_foreign:
-                                if is_citizen_report or canonical_node == 'VahidOnline':
+                            is_iran = self.determine_iran_related(None, text, clean_headline)
+                            category = 'WAR'
+                            if any(w in text for w in ['دلار', 'تتر', 'ارز', 'طلا', 'سکه', 'بورس', 'تورم']):
+                                category = 'ECONOMY'
+                            elif any(w in text for w in ['اعتراض', 'اعتصاب', 'اعدام', 'تجمع', 'زندان', 'دادگاه']):
+                                category = 'PROTEST_RIGHTS'
+                                
+                            if category == 'ECONOMY':
+                                target_channel = "@DidehbanEghtesad"
+                                alert_title = f"گزارش اقتصادی: {clean_headline}"
+                                custom_icon = "📈"
+                                is_silent = False
+                            elif category == 'PROTEST_RIGHTS':
+                                target_channel = "@DidebanEterazat"
+                                alert_title = f"گزارش مردمی: {clean_headline}"
+                                custom_icon = "📢"
+                                is_silent = False
+                            else:
+                                target_channel = "@DidebanJang"
+                                if is_iran:
+                                    alert_title = f"هشدار فوری: {clean_headline}"
+                                    custom_icon = "🚨"
                                     is_silent = False
                                 else:
-                                    for inc, sev in self.incident_severities.items():
-                                        if inc in clean_pats[0] and sev == "URGENT":
-                                            is_silent = False
-                                            break
-                                            
+                                    alert_title = f"هشدار منطقه‌ای: {clean_headline}"
+                                    custom_icon = "🔕"
+                                    is_silent = True
+                                    
+                            baseline = self.baselines.get(clean_pats[0], 0.1) if clean_pats else 0.1
                             sent_msg, target_channel, alert_text = await self.send_alert(
-                                display_pat, 
+                                clean_headline, 
                                 "VIP_IMMEDIATE", 
                                 baseline, 
                                 [f"- [{canonical_node}]({link})"], 
-                                is_silent=is_silent
+                                is_silent=is_silent,
+                                target_channel=target_channel,
+                                alert_title=alert_title,
+                                custom_icon=custom_icon
                             )
                             if sent_msg:
                                 self.vip_alert_history[msg_key]['target_channel'] = target_channel
                                 self.vip_alert_history[msg_key]['sent_msg_id'] = sent_msg.id
+                                thread_key = f"{canonical_node}_{msg_id}"
+                                self.thread_alerts[thread_key] = {
+                                    'channel': target_channel,
+                                    'alert_msg_id': sent_msg.id,
+                                    'node': canonical_node,
+                                    'root_id': msg_id,
+                                    'root_text': text,
+                                    'root_media_type': self.detect_msg_media_type(raw_msg),
+                                    'timestamp': time.time(),
+                                    'category': category,
+                                    'is_iran_related': is_iran,
+                                    'title': clean_headline,
+                                    'summary': '',
+                                    'tag': '#دیده‌بان_اقتصاد' if target_channel == '@DidehbanEghtesad' else ('#دیده‌بان_اعتراضات' if target_channel == '@DidebanEterazat' else '#دیده‌بان_جنگ'),
+                                    'sources': [{
+                                        'node': canonical_node,
+                                        'msg_id': msg_id,
+                                        'media_type': self.detect_msg_media_type(raw_msg),
+                                        'link': link,
+                                        'timestamp': time.time()
+                                    }],
+                                    'replies': []
+                                }
+                                self.save_persisted_state()
                                 asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
 
             # Fuzzy Deduplication against messages in the last 3 minutes
@@ -2075,10 +2151,10 @@ class LiveSentinel:
     async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False, target_channel=None, alert_title=None, custom_icon=None):
         if not BOT_TOKEN: return
         
-        is_economy = "||ECONOMY||" in pattern or target_channel == "@DidehbanEghtesad"
-        pattern = pattern.replace("||ECONOMY||", "")
+        is_economy = "||ECONOMY||" in str(pattern) or target_channel == "@DidehbanEghtesad"
+        clean_pat_str = str(pattern).replace("||ECONOMY||", "").replace("||FOREIGN||", "").strip()
         
-        is_protest = ("اعتراض" in pattern or "اعتصاب" in pattern or "اعدام" in pattern or "حقوق بشری" in pattern) or target_channel == "@DidebanEterazat"
+        is_protest = ("اعتراض" in clean_pat_str or "اعتصاب" in clean_pat_str or "اعدام" in clean_pat_str or "حقوق بشری" in clean_pat_str) or target_channel == "@DidebanEterazat"
         
         # Determine icon and channel
         if custom_icon:
@@ -2088,26 +2164,28 @@ class LiveSentinel:
         elif is_economy:
             icon = "📈"
         elif is_protest:
-            if "اعدام" in pattern or "حقوق بشری" in pattern:
+            if "اعدام" in clean_pat_str or "حقوق بشری" in clean_pat_str:
                 icon = "⚖️"
             else:
-                icon = "🛑" if "اعتصاب" in pattern else "📢"
+                icon = "🛑" if "اعتصاب" in clean_pat_str else "📢"
         else:
             icon = "🚨"
             
-        if not alert_title:
+        if alert_title:
+            alert_title = str(alert_title).replace("||ECONOMY||", "").replace("||FOREIGN||", "").strip()
+        else:
             if is_economy:
-                alert_title = f"گزارش اقتصادی: {pattern}"
+                alert_title = f"گزارش اقتصادی: {clean_pat_str}"
             elif is_protest:
-                if "اعدام" in pattern or "حقوق بشری" in pattern:
-                    alert_title = f"گزارش حقوق بشری: {pattern}"
+                if "اعدام" in clean_pat_str or "حقوق بشری" in clean_pat_str:
+                    alert_title = f"گزارش حقوق بشری: {clean_pat_str}"
                 else:
-                    alert_title = f"گزارش مردمی: {pattern}"
+                    alert_title = f"گزارش مردمی: {clean_pat_str}"
             else:
                 if is_silent:
-                    alert_title = f"هشدار منطقه‌ای: {pattern}"
+                    alert_title = f"هشدار منطقه‌ای: {clean_pat_str}"
                 else:
-                    alert_title = f"هشدار فوری: {pattern}"
+                    alert_title = f"هشدار فوری: {clean_pat_str}"
             
         source_header = "🔗 **منبع خبر:**" if len(context_msgs) == 1 else "🔗 **منابع خبر:**"
         clean_context = [
@@ -2169,9 +2247,9 @@ class LiveSentinel:
             "2. ECONOMY: اخبار مهم اقتصادی، نوسانات شدید نرخ ارز (دلار، تتر، یورو)، طلا و سکه، بازار بورس، سقوط ریال، تصمیمات کلیدی ارزی و شوک‌های معیشتی.\n"
             "3. PROTEST_RIGHTS: اخبار اعتراضات مردمی، اعتصابات، تجمعات خیابانی، سرکوب معترضان، بازداشت‌ها، احکام دادگاه‌ها و پرونده‌های معترضان و فعالان، اجرای احکام اعدام، وضعیت زندانیان سیاسی.\n"
             "4. OTHER: اخبار متفرقه که در هیچ‌کدام از ۳ دسته بالا قرار نمی‌گیرد (مانند اخبار پزشکی، حمله قلبی، حوادث روزمره، اخبار فرهنگی/ورزشی، روابط دیپلماتیک عادی بدون جنگ، هواشناسی).\n\n"
-            "تشخیص ارتباط مستقیم با ایران (is_iran_related):\n"
-            "- مقدار true: اگر خبر مستقیماً به خاک ایران، اهداف و پایگاه‌های نظامی ایران، نیروهای مسلح ایران (سپاه، ارتش)، مقامات و رهبران ایران، یا حمله مستقیم و پاسخ‌های نظامی ایران مربوط است.\n"
-            "- مقدار false: اگر رویداد بین سایر طرف‌ها و کشورهای منطقه است و به طور مستقیم به خاک یا پایگاه‌های ایران مربوط نمی‌شود (مانند انفجار یا حملات در ریاض/عربستان، درگیری اسرائیل و حزب‌الله/لبنان، حملات در غزه یا سوریه، بمباران‌های یمن، درگیری در عراق بدون هدف قرار گرفتن خاک ایران).\n\n"
+            "تشخیص ارتباط با ایران و آمادگی‌های جنگی (is_iran_related):\n"
+            "- مقدار true: اگر رویداد مستقیماً به خاک ایران، اهداف نظامی یا پدافندی ایران، سپاه یا ارتش، مقامات ایران مربوط است، یا اگر خبر درباره «آمادگی‌ها، آرایش جنگی، جابجایی تانکرهای سوخت‌رسان، بمب‌افکن‌ها و تسلیحات توسط آمریکا یا اسرائیل برای پشتیبانی از حمله احتمالی به ایران یا رویارویی مستقیم با ایران» است.\n"
+            "- مقدار false: اگر صرفاً یک رویداد داخلی در کشوری دوردست (مثل اوکراین) یا درگیری بین سایر طرف‌های منطقه‌ای بدون هیچ ربطی به جبهه رویارویی با ایران است.\n\n"
             f"متن خبر:\n{text}\n\n"
             "پاسخ را دقیقاً و فقط در قالب یک شیء JSON با این فیلدها بنویس و هیچ کلمه یا توضیح دیگری قبل یا بعد از آن ننویس:\n"
             "{\n"
@@ -2189,7 +2267,7 @@ class LiveSentinel:
             }
         }
         
-        max_retries = 2
+        max_retries = 3
         for attempt in range(max_retries):
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
             try:
@@ -2206,7 +2284,7 @@ class LiveSentinel:
                 
                 loop = asyncio.get_running_loop()
                 def make_req():
-                    with urllib.request.urlopen(req, timeout=10) as response:
+                    with urllib.request.urlopen(req, timeout=15) as response:
                         return json.loads(response.read().decode('utf-8'))
                         
                 data = await loop.run_in_executor(None, make_req)
@@ -2223,7 +2301,10 @@ class LiveSentinel:
                         return {"category": category, "is_iran_related": is_iran_related, "topic_title": topic_title}
                 break
             except urllib.error.HTTPError as e:
-                if e.code == 404 and attempt < max_retries - 1:
+                if e.code == 429:
+                    print(f"⚠️ Gemini API 429 Rate Limit in classify_message. Sleeping {4 * (attempt + 1)}s...")
+                    await asyncio.sleep(4 * (attempt + 1))
+                elif e.code == 404 and attempt < max_retries - 1:
                     print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
                     self.current_gemini_model = await self.get_fallback_gemini_model()
                 else:
