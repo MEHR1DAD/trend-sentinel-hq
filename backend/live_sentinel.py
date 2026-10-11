@@ -3,6 +3,8 @@ import json
 import time
 import asyncio
 import re
+import urllib.request
+import urllib.error
 from datetime import datetime, timezone, timedelta
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
@@ -966,11 +968,11 @@ class LiveSentinel:
         target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat', '@VahidOnlineAI', '@iliaenAI']
         fetch_client = reader_client or self.client or self.bot
         
-        print("🧹 Starting comprehensive scan to delete all legacy update notification bubbles across channels...")
+        print("🧹 Starting quick scan to delete any legacy update notification bubbles across channels...")
         for ch in target_channels:
             try:
                 to_delete = []
-                async for m in fetch_client.iter_messages(ch, limit=500):
+                async for m in fetch_client.iter_messages(ch, limit=15):
                     text = m.text or m.message or ""
                     clean_m = text.replace('\u200c', '').replace(' ', '').replace('*', '')
                     
@@ -1057,9 +1059,9 @@ class LiveSentinel:
                         self.alerted_msg_patterns.setdefault(mk, set()).add('recovered_source')
                         if canon == 'Alibk3':
                             self.alibk_posted.setdefault(src_id, {'channel': ch, 'msg_id': m.id, 'timestamp': m.date.timestamp() if m.date else time.time()})
-                        elif canon == 'VahidOnline':
+                        elif canon == 'VahidOnline' and ch == '@VahidOnlineAI':
                             self.vahid_ai_posted.setdefault(src_id, m.id)
-                        elif canon == 'iliaen':
+                        elif canon == 'iliaen' and ch == '@iliaenAI':
                             self.ilia_ai_posted.setdefault(src_id, m.id)
                             
                         # Reconstruct thread alerts entry for semantic cross-channel merging
@@ -3710,33 +3712,46 @@ async def main():
         print("🤖 Bot listener started.")
         await client.start()
         print("✅ Live listening started on", len(sentinel.nodes), "nodes (Active Polling & Push Events).")
+        
+        # 1. Start active poller and heartbeat monitor immediately so no messages are ever delayed
+        poller_task = asyncio.create_task(active_poller())
+        heartbeat_task = asyncio.create_task(heartbeat_monitor())
+        
+        # 2. Fast critical initialization: Preload entities and latest channel alert IDs
         await sentinel.preload_node_entities(reader_client=client)
         await sentinel.init_channel_last_alert_ids(reader_client=client)
-        await sentinel.preload_vahid_ai_history(reader_client=client)
-        await sentinel.catchup_unposted_vahid(reader_client=client)
-        await sentinel.preload_ilia_ai_history(reader_client=client)
-        await sentinel.catchup_unposted_ilia(reader_client=client)
-        await sentinel.preload_alibk_history(reader_client=client)
-        await sentinel.catchup_unposted_alibk(reader_client=client)
+        
+        # 3. Immediately catch up missed posts for all VIP channels concurrently in parallel
+        print("⚡ Executing instant parallel catch-up for iliaen, VahidOnline, and Alibk3...")
+        await asyncio.gather(
+            sentinel.catchup_unposted_ilia(reader_client=client),
+            sentinel.catchup_unposted_vahid(reader_client=client),
+            sentinel.catchup_unposted_alibk(reader_client=client),
+            return_exceptions=True
+        )
+        
+        # 4. Offload heavy historical preloads to non-blocking background tasks
+        asyncio.create_task(sentinel.preload_vahid_ai_history(reader_client=client))
+        asyncio.create_task(sentinel.preload_ilia_ai_history(reader_client=client))
+        asyncio.create_task(sentinel.preload_alibk_history(reader_client=client))
     except Exception as e:
         if hasattr(e, 'seconds'):
             print(f"⚠️ FloodWaitError! Sleeping for {e.seconds} seconds before retrying...")
             await asyncio.sleep(e.seconds + 5)
             await bot.start(bot_token=BOT_TOKEN)
             await client.start()
+            poller_task = asyncio.create_task(active_poller())
+            heartbeat_task = asyncio.create_task(heartbeat_monitor())
             await sentinel.preload_node_entities(reader_client=client)
             await sentinel.init_channel_last_alert_ids(reader_client=client)
-            await sentinel.preload_vahid_ai_history(reader_client=client)
-            await sentinel.catchup_unposted_vahid(reader_client=client)
-            await sentinel.preload_ilia_ai_history(reader_client=client)
-            await sentinel.catchup_unposted_ilia(reader_client=client)
-            await sentinel.preload_alibk_history(reader_client=client)
-            await sentinel.catchup_unposted_alibk(reader_client=client)
+            await asyncio.gather(
+                sentinel.catchup_unposted_ilia(reader_client=client),
+                sentinel.catchup_unposted_vahid(reader_client=client),
+                sentinel.catchup_unposted_alibk(reader_client=client),
+                return_exceptions=True
+            )
         else:
             raise
-    
-    poller_task = asyncio.create_task(active_poller())
-    heartbeat_task = asyncio.create_task(heartbeat_monitor())
     
     try:
         # Run until time limit
