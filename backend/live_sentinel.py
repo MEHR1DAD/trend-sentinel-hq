@@ -204,6 +204,19 @@ class LiveSentinel:
             return self.get_gemini_api_key()
         return None
 
+    def extract_message_urls(self, msg):
+        urls = []
+        if not msg:
+            return urls
+        txt = getattr(msg, 'text', '') or getattr(msg, 'message', '') or ''
+        if txt:
+            urls.extend(re.findall(r'https?://[^\s\)\<\>\"\'\]]+', txt))
+        for ent in (getattr(msg, 'entities', []) or []):
+            u = getattr(ent, 'url', None)
+            if u:
+                urls.append(u)
+        return urls
+
     def determine_iran_related(self, ai_res, text, title=""):
         clean_text = (text or "") + " " + (title or "")
         
@@ -1059,8 +1072,13 @@ class LiveSentinel:
                     if len(m.text.strip()) > 10 and ch not in self.channel_last_alert_id:
                         self.channel_last_alert_id[ch] = m.id
                         
-                    # Reconstruct source links (e.g. t.me/withyashar/25451 or t.me/Alibk3/38702)
-                    found_sources = re.findall(r't\.me/([A-Za-z0-9_]+)/(\d+)', m.text)
+                    # Reconstruct source links (from plain text and entities)
+                    all_urls = self.extract_message_urls(m)
+                    found_sources = []
+                    for u in all_urls:
+                        sm = re.search(r't\.me/([A-Za-z0-9_]+)/(\d+)', u)
+                        if sm:
+                            found_sources.append((sm.group(1), sm.group(2)))
                     for src_node, src_id_str in found_sources:
                         src_id = int(src_id_str)
                         canon = vip_map.get(src_node.lower(), src_node)
@@ -1079,12 +1097,12 @@ class LiveSentinel:
                         elif canon == 'VahidOnline' and ch == '@VahidOnlineAI':
                             self.vahid_ai_posted.setdefault(src_id, m.id)
                             msg_age = (time.time() - m.date.timestamp()) if m.date else 0
-                            if msg_age <= 10800 and "خلاصه خبر" in (m.text or "") and "⚡️" in (m.text or ""):
+                            if msg_age <= 86400 and ("خلاصه خبر" in (m.text or "") or "⚡️" in (m.text or "")):
                                 self.vahid_needs_refresh.add((src_id, m.id))
                         elif canon == 'iliaen' and ch == '@iliaenAI':
                             self.ilia_ai_posted.setdefault(src_id, m.id)
                             msg_age = (time.time() - m.date.timestamp()) if m.date else 0
-                            if msg_age <= 10800 and "خلاصه خبر" in (m.text or "") and "⚡️" in (m.text or ""):
+                            if msg_age <= 86400 and ("خلاصه خبر" in (m.text or "") or "⚡️" in (m.text or "")):
                                 self.ilia_needs_refresh.add((src_id, m.id))
                             
                         # Reconstruct thread alerts entry for semantic cross-channel merging
@@ -2853,16 +2871,18 @@ class LiveSentinel:
         try:
             count = 0
             async for msg in client_to_use.iter_messages(target_channel, limit=100):
-                text = msg.text or msg.message or ""
-                if text:
-                    match = re.search(r'https://t\.me/Vahid(?:Online|Headline|OOnLine)/(\d+)', text)
+                txt = msg.text or msg.message or ""
+                urls = self.extract_message_urls(msg)
+                for u in urls:
+                    match = re.search(r'Vahid(?:Online|Headline|OOnLine)/(\d+)', u, re.IGNORECASE)
                     if match:
                         vahid_id = int(match.group(1))
                         if vahid_id not in self.vahid_ai_posted:
                             self.vahid_ai_posted[vahid_id] = msg.id
                             count += 1
-                        if "خلاصه خبر" in text and "⚡️" in text:
+                        if "خلاصه خبر" in txt and "⚡️" in txt:
                             self.vahid_needs_refresh.add((vahid_id, msg.id))
+                        break
             if count > 0:
                 print(f"🔄 Preloaded {count} historical posts for @VahidOnlineAI edit tracking.")
         except Exception as e:
@@ -2877,11 +2897,14 @@ class LiveSentinel:
                 async for m in reader_client.iter_messages("@VahidOnlineAI", limit=10):
                     txt = m.text or m.message or ""
                     if "خلاصه خبر" in txt and "⚡️" in txt:
-                        match = re.search(r'https://t\.me/Vahid(?:Online|Headline|OOnLine)/(\d+)', txt)
-                        if match:
-                            src_id = int(match.group(1))
-                            self.vahid_ai_posted[src_id] = m.id
-                            self.vahid_needs_refresh.add((src_id, m.id))
+                        urls = self.extract_message_urls(m)
+                        for u in urls:
+                            match = re.search(r'Vahid(?:Online|Headline|OOnLine)/(\d+)', u, re.IGNORECASE)
+                            if match:
+                                src_id = int(match.group(1))
+                                self.vahid_ai_posted[src_id] = m.id
+                                self.vahid_needs_refresh.add((src_id, m.id))
+                                break
             except Exception as scan_err:
                 print(f"⚠️ Quick scan @VahidOnlineAI failed: {scan_err}")
 
@@ -3051,16 +3074,18 @@ class LiveSentinel:
         try:
             count = 0
             async for msg in client_to_use.iter_messages(target_channel, limit=100):
-                text = msg.text or msg.message or ""
-                if text:
-                    match = re.search(r'https://t\.me/iliaen/(\d+)', text)
+                txt = msg.text or msg.message or ""
+                urls = self.extract_message_urls(msg)
+                for u in urls:
+                    match = re.search(r'iliaen/(\d+)', u, re.IGNORECASE)
                     if match:
                         ilia_id = int(match.group(1))
                         if ilia_id not in self.ilia_ai_posted:
                             self.ilia_ai_posted[ilia_id] = msg.id
                             count += 1
-                        if "خلاصه خبر" in text and "⚡️" in text:
+                        if "خلاصه خبر" in txt and "⚡️" in txt:
                             self.ilia_needs_refresh.add((ilia_id, msg.id))
+                        break
             if count > 0:
                 print(f"🔄 Preloaded {count} historical posts for @iliaenAI edit tracking.")
         except Exception as e:
@@ -3075,11 +3100,14 @@ class LiveSentinel:
                 async for m in reader_client.iter_messages("@iliaenAI", limit=10):
                     txt = m.text or m.message or ""
                     if "خلاصه خبر" in txt and "⚡️" in txt:
-                        match = re.search(r'https://t\.me/iliaen/(\d+)', txt)
-                        if match:
-                            src_id = int(match.group(1))
-                            self.ilia_ai_posted[src_id] = m.id
-                            self.ilia_needs_refresh.add((src_id, m.id))
+                        urls = self.extract_message_urls(m)
+                        for u in urls:
+                            match = re.search(r'iliaen/(\d+)', u, re.IGNORECASE)
+                            if match:
+                                src_id = int(match.group(1))
+                                self.ilia_ai_posted[src_id] = m.id
+                                self.ilia_needs_refresh.add((src_id, m.id))
+                                break
             except Exception as scan_err:
                 print(f"⚠️ Quick scan @iliaenAI failed: {scan_err}")
 
