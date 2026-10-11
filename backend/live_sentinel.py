@@ -331,6 +331,386 @@ class LiveSentinel:
                 
         return curr_id, chain
 
+    def build_alert_post_content(self, thread_data):
+        """
+        Constructs the unified Telegram alert post text for thread_data:
+        - Appropriate alert icon & title prefix (🚨 / 🔕 / 📈 / ⚖️ / 🛑 / 📢)
+        - Header media icon (📹, 📸, 🎙)
+        - Clean Persian summary under 📝 **چکیده رویداد:**
+        - Clean sources block under 🔗 **منبع خبر:** or 🔗 **منابع خبر:**
+          Formatted cleanly as - [Channel](link) [media_icon]
+          If multiple updates from the same channel: (خبر اصلی), (تکمیلی ۱), etc.
+        - Proper tag and channel signature.
+        """
+        category = thread_data.get('category', 'WAR')
+        is_iran_related = thread_data.get('is_iran_related', False)
+        title = thread_data.get('title', '').strip()
+        summary = thread_data.get('summary', '').strip()
+        target_channel = thread_data.get('channel', '@DidebanJang')
+        tag = thread_data.get('tag', '#دیده‌بان_جنگ')
+        
+        # Collect sources list
+        sources = list(thread_data.get('sources', []))
+        if not sources:
+            r_node = thread_data.get('node', 'Alibk3')
+            r_id = thread_data.get('root_id')
+            if r_id:
+                sources.append({
+                    'node': r_node,
+                    'msg_id': r_id,
+                    'media_type': thread_data.get('root_media_type', 'text'),
+                    'link': f"https://t.me/{r_node}/{r_id}",
+                    'timestamp': thread_data.get('timestamp', time.time())
+                })
+            for r in thread_data.get('replies', []):
+                sources.append({
+                    'node': r_node,
+                    'msg_id': r.get('msg_id'),
+                    'media_type': r.get('media_type', 'text'),
+                    'link': f"https://t.me/{r_node}/{r.get('msg_id')}",
+                    'timestamp': r.get('timestamp', time.time())
+                })
+
+        # Header media icon
+        all_media_types = [s.get('media_type', 'text') for s in sources]
+        header_media_icon = ""
+        if 'video' in all_media_types:
+            header_media_icon = " 📹"
+        elif 'photo' in all_media_types:
+            header_media_icon = " 📸"
+        elif 'voice' in all_media_types:
+            header_media_icon = " 🎙"
+
+        # Determine header
+        if category == 'ECONOMY':
+            alert_header = f"📈 **گزارش اقتصادی: {title}**{header_media_icon}"
+        elif category == 'PROTEST_RIGHTS':
+            if "اعدام" in title or "حقوق بشری" in title:
+                alert_header = f"⚖️ **گزارش حقوق بشری: {title}**{header_media_icon}"
+            elif "اعتصاب" in title:
+                alert_header = f"🛑 **گزارش مردمی: {title}**{header_media_icon}"
+            else:
+                alert_header = f"📢 **گزارش مردمی: {title}**{header_media_icon}"
+        else:
+            if is_iran_related:
+                alert_header = f"🚨 **هشدار فوری: {title}**{header_media_icon}"
+            else:
+                alert_header = f"🔕 **هشدار منطقه‌ای: {title}**{header_media_icon}"
+
+        # Format sources
+        node_counts = {}
+        for s in sources:
+            n = s.get('node', '')
+            node_counts[n] = node_counts.get(n, 0) + 1
+
+        node_seen = {}
+        sources_lines = []
+        for s in sources:
+            n = s.get('node', '')
+            link = s.get('link') or f"https://t.me/{n}/{s.get('msg_id')}"
+            m_icon = self.get_media_icon_from_type(s.get('media_type'))
+            if node_counts.get(n, 0) > 1:
+                idx = node_seen.get(n, 0) + 1
+                node_seen[n] = idx
+                if idx == 1:
+                    line = f"- [{n}]({link}) (خبر اصلی) {m_icon}".strip()
+                else:
+                    line = f"- [{n}]({link}) (تکمیلی {self.to_fa_num(idx - 1)}) {m_icon}".strip()
+            else:
+                line = f"- [{n}]({link}) {m_icon}".strip()
+            sources_lines.append(line)
+
+        source_header = "🔗 **منبع خبر:**" if len(sources) <= 1 else "🔗 **منابع خبر:**"
+        sources_block = f"{source_header}\n" + "\n".join(sources_lines)
+
+        parts = [
+            alert_header,
+            "",
+            f"📝 **چکیده رویداد:**\n{summary}",
+            "",
+            sources_block,
+            "",
+            f"{tag}\n{target_channel}"
+        ]
+        return "\n".join(parts)
+
+    def extract_message_anchors(self, text, title=""):
+        """
+        Extracts geographic locations, strategic targets, and event keywords
+        from text and title for zero-cost Layer 1 candidate filtering.
+        """
+        combined = f"{title} {text}".lower().replace('ي', 'ی').replace('ك', 'ک').replace('\u200c', ' ')
+        anchors = set()
+        
+        # 1. Geographic & regional locations
+        for kw in self.foreign_keywords:
+            kw_norm = kw.lower().replace('ي', 'ی').replace('ك', 'ک').replace('\u200c', ' ')
+            if kw_norm in combined:
+                anchors.add(kw)
+                
+        for kw in self.iran_keywords:
+            kw_norm = kw.lower().replace('ي', 'ی').replace('ك', 'ک').replace('\u200c', ' ')
+            if kw_norm in combined:
+                anchors.add(kw)
+                
+        # 2. Strategic targets & critical facilities
+        facilities = [
+            'فرودگاه', 'پایگاه', 'پالایشگاه', 'نیروگاه', 'بندر', 'اسکله', 'تنگه هرمز',
+            'باب المندب', 'دریای سرخ', 'کانال سوئز', 'آرامکو', 'دیمونا', 'نواتیم',
+            'عین الاسد', 'التاجی', 'التنف', 'هاتزریم', 'رامات دیوید', 'کرملین', 'پنتاگون'
+        ]
+        for fac in facilities:
+            if fac in combined:
+                anchors.add(fac)
+                
+        # 3. Incident types & critical domains
+        actions = [
+            'انفجار', 'موشک', 'پهپاد', 'بمباران', 'حمله', 'تیراندازی', 'پدافند',
+            'آژیر', 'آتش سوزی', 'آتش‌سوزی', 'سقوط', 'ترور', 'تعطیلی', 'لغو پرواز',
+            'توقیف', 'نفتکش', 'اعدام', 'اعتصاب', 'اعتراض', 'دلار', 'تتر', 'طلا', 'سکه', 'بورس'
+        ]
+        for act in actions:
+            if act in combined:
+                anchors.add(act)
+                
+        return anchors
+
+    async def evaluate_semantic_relation(self, existing_title, existing_summary, new_text):
+        """
+        Layer 2: Calls Gemini to evaluate whether new_text refers to SAME_EVENT as existing alert,
+        or is a NEW_EVENT (such as a separate wave of attacks or distinct incident).
+        If SAME_EVENT, synthesizes updated title & summary if new details exist.
+        """
+        if not GEMINI_API_KEY:
+            return None
+            
+        if not hasattr(self, 'current_gemini_model'):
+            self.current_gemini_model = "gemini-1.5-flash"
+            
+        prompt = (
+            "تو یک تحلیلگر ارشد خبر و ناظر هوشمند دیده‌بان هستی.\n"
+            "یک هشدار خبری فعال در کانال منتشر شده است و اکنون یک خبر جدید از منبع دیگری دریافت شده است.\n\n"
+            f"📌 [هشدار فعلی در کانال]:\n"
+            f"عنوان: {existing_title}\n"
+            f"چکیده: {existing_summary}\n\n"
+            f"📥 [خبر جدید دریافت شده]:\n"
+            f"{new_text}\n\n"
+            "وظیفه تو این است که با دقت مشخص کنی آیا این خبر جدید مربوط به «دقیقاً همان رویداد و حادثه قبلی» است یا یک «رویداد جدید / موج جدید حملات / واقعه مجزا»:\n\n"
+            "قوانین دسته‌بندی (relation):\n"
+            "1. SAME_EVENT: اگر خبر جدید همان واقعه قبلی را بازتاب می‌دهد، تایید می‌کند، یا جزئیات تکمیلی/عواقب آن را بیان می‌کند (مانند لغو پروازها، آمار اولیه تلفات، علل حادثه، بیانیه رسمی، واکنش طرف‌ها).\n"
+            "2. NEW_EVENT: اگر خبر جدید یک واقعه کاملاً مجزا است، یا «موج جدید حملات» (مثلاً شروع موج دوم پرتاب موشک‌ها پس از پایان موج اول)، یا حادثه‌ای در موقعیت و زمان دیگر است که نباید ادغام شود بلکه باید هشدار مستقل داشته باشد.\n\n"
+            "اگر SAME_EVENT است:\n"
+            "- has_update: آیا خبر جدید جزئیات یا فکت‌های جدیدی دارد که چکیده و عنوان فعلی را بهبود ببخشد؟ (true/false)\n"
+            "- updated_title: عنوان فارسی دقیق، رسمی و جذاب برای خبر (حداکثر ۵ تا ۶ کلمه). اگر عنوان فعلی مناسب است همان را بنویس.\n"
+            "- updated_summary: چکیده رویداد ۲ تا ۳ خطی فارسی، روان و بی‌طرف حاصل تلفیق اطلاعات قبلی و جزئیات جدید.\n"
+            "- is_iran_related: آیا این رویداد مستقیماً به ایران، خاک ایران یا نیروهای مسلح ایران مربوط است؟ (true/false)\n\n"
+            "پاسخ را دقیقاً و فقط در قالب شیء JSON زیر بدون هیچ توضیح دیگری ارسال کن:\n"
+            "{\n"
+            '  "relation": "SAME_EVENT" | "NEW_EVENT",\n'
+            '  "has_update": true | false,\n'
+            '  "updated_title": "عنوان فارسی",\n'
+            '  "updated_summary": "چکیده تلفیقی",\n'
+            '  "is_iran_related": true | false\n'
+            "}"
+        )
+        
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 350,
+                "temperature": 0.2
+            }
+        }
+        
+        max_retries = 3
+        for attempt in range(max_retries):
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
+            try:
+                import urllib.request
+                import urllib.error
+                import json
+                
+                req = urllib.request.Request(
+                    url, 
+                    data=json.dumps(payload).encode('utf-8'),
+                    headers={'Content-Type': 'application/json'},
+                    method='POST'
+                )
+                
+                loop = asyncio.get_running_loop()
+                def make_req():
+                    with urllib.request.urlopen(req, timeout=14) as response:
+                        return json.loads(response.read().decode('utf-8'))
+                        
+                data = await loop.run_in_executor(None, make_req)
+                raw_out = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
+                
+                match = re.search(r'\{.*\}', raw_out, re.DOTALL)
+                if match:
+                    parsed = json.loads(match.group(0))
+                    return parsed
+            except urllib.error.HTTPError as e:
+                if e.code == 404 and attempt < max_retries - 1:
+                    fallback_model = await self.get_fallback_gemini_model()
+                    if fallback_model:
+                        self.current_gemini_model = fallback_model
+                        continue
+                print(f"⚠️ Gemini HTTP error in evaluate_semantic_relation: {e}")
+            except Exception as e:
+                print(f"⚠️ Error evaluating semantic relation with Gemini: {e}")
+                
+        return None
+
+    async def check_and_merge_with_active_alert(self, text, node, msg_id, target_channel, candidate_title="", candidate_summary="", raw_msg=None, category='WAR', is_iran_related=False):
+        """
+        Cross-channel semantic deduplication and source merging.
+        Checks if candidate news matches an active alert in target_channel within 72 hours.
+        If matched, appends the source to the existing alert and updates in-place.
+        """
+        if target_channel not in ('@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat'):
+            return False
+            
+        candidate_anchors = self.extract_message_anchors(text, candidate_title)
+        if not candidate_anchors:
+            return False
+            
+        now = time.time()
+        candidate_threads = []
+        for tk, td in self.thread_alerts.items():
+            if not isinstance(td, dict):
+                continue
+            if td.get('channel') != target_channel:
+                continue
+            if (now - td.get('timestamp', 0)) > 259200: # 72 hours
+                continue
+            # Already has this source?
+            if any(s.get('node') == node and (s.get('msg_id') == msg_id or str(s.get('msg_id')) == str(msg_id)) for s in td.get('sources', [])):
+                return True
+            candidate_threads.append((tk, td))
+            
+        candidate_threads.sort(key=lambda item: item[1].get('timestamp', 0), reverse=True)
+        
+        for thread_key, thread_data in candidate_threads:
+            existing_text = f"{thread_data.get('title', '')} {thread_data.get('summary', '')} {thread_data.get('root_text', '')}"
+            existing_anchors = self.extract_message_anchors(existing_text, thread_data.get('title', ''))
+            
+            overlap = candidate_anchors.intersection(existing_anchors)
+            if not overlap:
+                continue
+                
+            # Overlap must contain a location or target entity or category-specific anchor
+            has_substantive = False
+            for anchor in overlap:
+                if (anchor in self.foreign_keywords or anchor in self.iran_keywords or 
+                    anchor in ['فرودگاه', 'پایگاه', 'پالایشگاه', 'نیروگاه', 'بندر', 'اسکله', 'تنگه هرمز', 
+                               'باب المندب', 'دریای سرخ', 'کانال سوئز', 'آرامکو', 'دیمونا', 'نواتیم', 
+                               'عین الاسد', 'التاجی', 'التنف', 'دلار', 'تتر', 'بورس', 'سکه', 'طلا', 'اعدام', 'اعتصاب']):
+                    has_substantive = True
+                    break
+                    
+            if not has_substantive:
+                continue
+                
+            existing_title = thread_data.get('title', '') or candidate_title
+            existing_summary = thread_data.get('summary', '') or thread_data.get('root_text', '')
+            
+            print(f"🧠 Checking semantic deduplication: new msg {node}_{msg_id} vs thread {thread_key} (anchors: {overlap})...")
+            ai_eval = await self.evaluate_semantic_relation(existing_title, existing_summary, text)
+            if not ai_eval:
+                continue
+                
+            relation = ai_eval.get('relation', 'NEW_EVENT')
+            if relation != 'SAME_EVENT':
+                print(f"ℹ️ News msg {node}_{msg_id} classified as {relation} relative to thread {thread_key}. Not merging.")
+                continue
+                
+            # Perform merge under thread lock
+            lock = self.thread_locks.setdefault(thread_key, asyncio.Lock())
+            async with lock:
+                media_type = self.detect_msg_media_type(raw_msg)
+                sources = thread_data.setdefault('sources', [])
+                if not sources:
+                    r_node = thread_data.get('node', 'Alibk3')
+                    r_id = thread_data.get('root_id')
+                    if r_id:
+                        sources.append({
+                            'node': r_node,
+                            'msg_id': r_id,
+                            'media_type': thread_data.get('root_media_type', 'text'),
+                            'link': f"https://t.me/{r_node}/{r_id}",
+                            'timestamp': thread_data.get('timestamp', time.time())
+                        })
+                    for r in thread_data.get('replies', []):
+                        sources.append({
+                            'node': r_node,
+                            'msg_id': r.get('msg_id'),
+                            'media_type': r.get('media_type', 'text'),
+                            'link': f"https://t.me/{r_node}/{r.get('msg_id')}",
+                            'timestamp': r.get('timestamp', time.time())
+                        })
+                        
+                if not any(s.get('node') == node and (s.get('msg_id') == msg_id or str(s.get('msg_id')) == str(msg_id)) for s in sources):
+                    sources.append({
+                        'node': node,
+                        'msg_id': msg_id,
+                        'media_type': media_type,
+                        'link': f"https://t.me/{node}/{msg_id}",
+                        'timestamp': time.time()
+                    })
+                    
+                if ai_eval.get('has_update', False):
+                    if ai_eval.get('updated_title'):
+                        thread_data['title'] = ai_eval['updated_title'].strip()
+                    if ai_eval.get('updated_summary'):
+                        thread_data['summary'] = ai_eval['updated_summary'].strip()
+                    if ai_eval.get('is_iran_related') is not None:
+                        thread_data['is_iran_related'] = ai_eval['is_iran_related']
+                elif not thread_data.get('title') and candidate_title:
+                    thread_data['title'] = candidate_title
+                if not thread_data.get('summary') and candidate_summary:
+                    thread_data['summary'] = candidate_summary
+                    
+                alert_msg_id = thread_data.get('alert_msg_id')
+                updated_alert_text = self.build_alert_post_content(thread_data)
+                
+                try:
+                    await self.bot.edit_message(target_channel, alert_msg_id, updated_alert_text, link_preview=False)
+                    print(f"🔀 Successfully merged msg {node}_{msg_id} into alert {alert_msg_id} in {target_channel} ({len(sources)} sources).")
+                    
+                    orig_time = thread_data.get('timestamp', time.time())
+                    if await self.should_send_update_notification(target_channel, alert_msg_id, orig_time):
+                        notify_msg = await self.bot.send_message(
+                            target_channel,
+                            "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
+                            reply_to=alert_msg_id,
+                            silent=True
+                        )
+                        if notify_msg:
+                            thread_data['last_notified_msg_id'] = notify_msg.id
+                        print(f"🔔 Sent silent update notification to {target_channel} for merged alert {alert_msg_id}.")
+                    else:
+                        print(f"ℹ️ Silent update notification skipped for {alert_msg_id} (still latest post and < 30m).")
+                except Exception as edit_err:
+                    if "not modified" in str(edit_err).lower():
+                        print(f"ℹ️ Merged alert {alert_msg_id} in {target_channel} content unchanged.")
+                    else:
+                        print(f"❌ Error editing merged alert {alert_msg_id}: {edit_err}")
+                        
+                msg_key = f"{node}_{msg_id}"
+                self.vip_alert_history[msg_key] = {
+                    'sent_msg_id': alert_msg_id,
+                    'target_channel': target_channel,
+                    'time': time.time(),
+                    'thread_key': thread_key
+                }
+                if node == 'Alibk3':
+                    self.alibk_posted[msg_id] = {'channel': target_channel, 'msg_id': alert_msg_id, 'timestamp': time.time()}
+                    
+                self.save_persisted_state()
+                return True
+                
+        return False
+
     def schedule_thread_debounce(self, thread_key):
         if thread_key not in self.debounce_tasks or self.debounce_tasks[thread_key].done():
             self.debounce_tasks[thread_key] = asyncio.create_task(self.flush_thread_debounce(thread_key, delay=300))
@@ -376,45 +756,42 @@ class LiveSentinel:
             thread_data['summary'] = new_summary
             thread_data['is_iran_related'] = is_iran_related
             
-            all_media_types = [thread_data.get('root_media_type', 'text')] + [r.get('media_type', 'text') for r in replies]
-            header_media_icon = ""
-            if 'video' in all_media_types:
-                header_media_icon = " 📹"
-            elif 'photo' in all_media_types:
-                header_media_icon = " 📸"
-            elif 'voice' in all_media_types:
-                header_media_icon = " 🎙"
-                
-            if is_iran_related:
-                alert_header = f"🚨 **هشدار فوری: {new_title}**{header_media_icon}"
+            # Sync sources
+            sources = thread_data.setdefault('sources', [])
+            if not sources:
+                sources.append({
+                    'node': node,
+                    'msg_id': root_id,
+                    'media_type': thread_data.get('root_media_type', 'text'),
+                    'link': f"https://t.me/{node}/{root_id}",
+                    'timestamp': thread_data.get('timestamp', time.time())
+                })
+                for r in replies:
+                    sources.append({
+                        'node': node,
+                        'msg_id': r.get('msg_id'),
+                        'media_type': r.get('media_type', 'text'),
+                        'link': f"https://t.me/{node}/{r.get('msg_id')}",
+                        'timestamp': r.get('timestamp', time.time())
+                    })
             else:
-                alert_header = f"🔕 **هشدار منطقه‌ای: {new_title}**{header_media_icon}"
-                
-            root_link = f"https://t.me/{node}/{root_id}"
-            root_icon = self.get_media_icon_from_type(thread_data.get('root_media_type'))
+                for r in replies:
+                    r_mid = r.get('msg_id')
+                    existing_s = next((s for s in sources if s.get('node') == node and s.get('msg_id') == r_mid), None)
+                    if existing_s:
+                        existing_s['media_type'] = r.get('media_type', 'text')
+                    else:
+                        sources.append({
+                            'node': node,
+                            'msg_id': r_mid,
+                            'media_type': r.get('media_type', 'text'),
+                            'link': f"https://t.me/{node}/{r_mid}",
+                            'timestamp': r.get('timestamp', time.time())
+                        })
             
-            if replies:
-                source_header = "🔗 **منابع خبر:**"
-                sources_lines = [f"- [{node}]({root_link}) (خبر اصلی) {root_icon}"]
-                for idx, rep in enumerate(replies, 1):
-                    rep_id = rep['msg_id']
-                    rep_link = f"https://t.me/{node}/{rep_id}"
-                    rep_icon = self.get_media_icon_from_type(rep.get('media_type'))
-                    sources_lines.append(f"- [{node}]({rep_link}) (تکمیلی {self.to_fa_num(idx)}) {rep_icon}")
-            else:
-                source_header = "🔗 **منبع خبر:**"
-                sources_lines = [f"- [{node}]({root_link}) {root_icon}"]
-                
             target_channel = thread_data.get('channel', '@DidebanJang')
-            tag = thread_data.get('tag', '#دیده‌بان_جنگ')
             alert_msg_id = thread_data.get('alert_msg_id')
-            
-            updated_alert_text = (
-                f"{alert_header}\n\n"
-                f"📝 **چکیده رویداد:**\n{new_summary}\n\n"
-                f"{source_header}\n" + "\n".join(sources_lines) + "\n\n"
-                f"{tag}\n{target_channel}"
-            )
+            updated_alert_text = self.build_alert_post_content(thread_data)
             
             try:
                 await self.bot.edit_message(target_channel, alert_msg_id, updated_alert_text, link_preview=False)
@@ -517,6 +894,46 @@ class LiveSentinel:
         for del_id in deleted_ids:
             del_int = int(del_id) if str(del_id).isdigit() else del_id
             del_str = str(del_id)
+            
+            # 0. Check multi-source thread alerts across all aggregate channels
+            for tk, thread_data in list(self.thread_alerts.items()):
+                if not isinstance(thread_data, dict):
+                    continue
+                sources = thread_data.get('sources', [])
+                matching = [
+                    s for s in sources 
+                    if (s.get('msg_id') in (del_int, del_str) or str(s.get('msg_id')) == del_str)
+                    and (not node_username or node_username in ('unknown', None) or s.get('node') == node_username)
+                ]
+                if matching:
+                    target_ch = thread_data.get('channel', '@DidebanJang')
+                    alert_mid = thread_data.get('alert_msg_id')
+                    thread_data['sources'] = [s for s in sources if s not in matching]
+                    if 'replies' in thread_data:
+                        thread_data['replies'] = [r for r in thread_data['replies'] if r.get('msg_id') not in (del_int, del_str) and str(r.get('msg_id')) != del_str]
+                    
+                    if not thread_data['sources']:
+                        self.thread_alerts.pop(tk, None)
+                        task = self.debounce_tasks.pop(tk, None)
+                        if task and not task.done():
+                            task.cancel()
+                        if alert_mid:
+                            to_delete = [alert_mid]
+                            if thread_data.get('last_notified_msg_id'):
+                                to_delete.append(thread_data['last_notified_msg_id'])
+                            try:
+                                await self.bot.delete_messages(target_ch, to_delete)
+                                print(f"🗑️ Successfully deleted alert {alert_mid} in {target_ch} (all source posts deleted by admin).")
+                            except Exception as e:
+                                print(f"⚠️ Error deleting alert {alert_mid} in {target_ch}: {e}")
+                    else:
+                        updated_text = self.build_alert_post_content(thread_data)
+                        try:
+                            await self.bot.edit_message(target_ch, alert_mid, updated_text, link_preview=False)
+                            print(f"✏️ Refreshed alert {alert_mid} in {target_ch} after removing deleted source {del_id} ({len(thread_data['sources'])} sources remain).")
+                        except Exception as e:
+                            print(f"⚠️ Error editing alert after source deletion: {e}")
+                    self.save_persisted_state()
             
             # 1. Alibk3 root or reply
             if node_username in ('Alibk3', None, 'unknown'):
@@ -1114,6 +1531,22 @@ class LiveSentinel:
                                 custom_icon = None
                                 return
                                 
+                            # Check cross-channel semantic deduplication / merging
+                            is_iran = self.determine_iran_related(ai_class, text, topic_title) if category == 'WAR' else False
+                            merged = await self.check_and_merge_with_active_alert(
+                                text=text,
+                                node=canonical_node,
+                                msg_id=msg_id,
+                                target_channel=target_channel,
+                                candidate_title=topic_title,
+                                candidate_summary="",
+                                raw_msg=raw_msg,
+                                category=category,
+                                is_iran_related=is_iran
+                            )
+                            if merged:
+                                return
+
                             self.vip_alert_history[msg_key]['target_channel'] = target_channel
                             baseline = self.baselines.get(clean_pats[0], 0.1) if clean_pats else 0.1
                             
@@ -1129,6 +1562,30 @@ class LiveSentinel:
                             )
                             if sent_msg:
                                 self.vip_alert_history[msg_key]['sent_msg_id'] = sent_msg.id
+                                thread_key = f"{canonical_node}_{msg_id}"
+                                self.thread_alerts[thread_key] = {
+                                    'channel': target_channel,
+                                    'alert_msg_id': sent_msg.id,
+                                    'node': canonical_node,
+                                    'root_id': msg_id,
+                                    'root_text': text,
+                                    'root_media_type': self.detect_msg_media_type(raw_msg),
+                                    'timestamp': time.time(),
+                                    'category': category,
+                                    'is_iran_related': is_iran,
+                                    'title': topic_title,
+                                    'summary': '',
+                                    'tag': '#دیده‌بان_اقتصاد' if target_channel == '@DidehbanEghtesad' else ('#دیده‌بان_اعتراضات' if target_channel == '@DidebanEterazat' else '#دیده‌بان_جنگ'),
+                                    'sources': [{
+                                        'node': canonical_node,
+                                        'msg_id': msg_id,
+                                        'media_type': self.detect_msg_media_type(raw_msg),
+                                        'link': link,
+                                        'timestamp': time.time()
+                                    }],
+                                    'replies': []
+                                }
+                                self.save_persisted_state()
                                 asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
                         else:
                             # 2. Fallback to keyword-based logic if AI is unreachable
@@ -1286,6 +1743,21 @@ class LiveSentinel:
                     icon = None
                     continue
                     
+                is_iran = self.determine_iran_related(ai_class, combined_text, topic_title) if category == 'WAR' else False
+                merged = await self.check_and_merge_with_active_alert(
+                    text=combined_text,
+                    node="radar",
+                    msg_id=f"anomaly_{int(time.time())}",
+                    target_channel=target_ch,
+                    candidate_title=topic_title,
+                    candidate_summary="",
+                    raw_msg=None,
+                    category=category,
+                    is_iran_related=is_iran
+                )
+                if merged:
+                    continue
+
                 sent_msg, target_channel, alert_text = await self.send_alert(
                     topic_title, 
                     distinct_channel_count, 
@@ -1297,6 +1769,35 @@ class LiveSentinel:
                     custom_icon=icon
                 )
                 if sent_msg:
+                    parsed_sources = []
+                    for sl in source_links[:3]:
+                        m_sl = re.search(r'- \[([^\]]+)\]\(https://t\.me/([^/]+)/(\d+)\)', sl)
+                        if m_sl:
+                            parsed_sources.append({
+                                'node': m_sl.group(2),
+                                'msg_id': int(m_sl.group(3)),
+                                'media_type': 'text',
+                                'link': f"https://t.me/{m_sl.group(2)}/{m_sl.group(3)}",
+                                'timestamp': time.time()
+                            })
+                    thread_key = f"radar_{sent_msg.id}"
+                    self.thread_alerts[thread_key] = {
+                        'channel': target_channel,
+                        'alert_msg_id': sent_msg.id,
+                        'node': parsed_sources[0]['node'] if parsed_sources else 'radar',
+                        'root_id': parsed_sources[0]['msg_id'] if parsed_sources else sent_msg.id,
+                        'root_text': combined_text,
+                        'root_media_type': 'text',
+                        'timestamp': time.time(),
+                        'category': category,
+                        'is_iran_related': is_iran,
+                        'title': topic_title,
+                        'summary': '',
+                        'tag': '#دیده‌بان_اقتصاد' if target_channel == '@DidehbanEghtesad' else ('#دیده‌بان_اعتراضات' if target_channel == '@DidebanEterazat' else '#دیده‌بان_جنگ'),
+                        'sources': parsed_sources,
+                        'replies': []
+                    }
+                    self.save_persisted_state()
                     asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, raw_texts[:3]))
             else:
                 sent_msg, target_channel, alert_text = await self.send_alert(clean_pat, distinct_channel_count, normal_rate, source_links[:3], is_silent=is_silent)
@@ -1562,6 +2063,11 @@ class LiveSentinel:
                         if len(parts) == 2:
                             new_text = f"{parts[0]}🤖 **چکیده هوشمند:**\n{summary}\n\n{delimiter}{parts[1]}"
                             await self.bot.edit_message(target_channel, message_id, new_text, link_preview=False)
+                            for tk, td in self.thread_alerts.items():
+                                if td.get('alert_msg_id') == message_id and td.get('channel') == target_channel:
+                                    td['summary'] = summary
+                                    break
+                            self.save_persisted_state()
                             print(f"✅ AI Summary added to message {message_id} in {target_channel} (Model: {self.current_gemini_model})")
                             return # Success, exit function
                             
@@ -2203,44 +2709,80 @@ class LiveSentinel:
     async def preload_alibk_history(self, reader_client=None):
         if not reader_client:
             return
+        channels_to_preload = [
+            ('@DidebanJang', '#دیده‌بان_جنگ', 'WAR'),
+            ('@DidehbanEghtesad', '#دیده‌بان_اقتصاد', 'ECONOMY'),
+            ('@DidebanEterazat', '#دیده‌بان_اعتراضات', 'PROTEST_RIGHTS')
+        ]
         try:
-            count = 0
-            async for msg in reader_client.iter_messages("@DidebanJang", limit=40):
-                text = msg.text or msg.message or ""
-                if text:
-                    links = re.findall(r'https://t\.me/Alibk3/(\d+)', text)
-                    if links:
-                        root_id = int(links[0])
-                        thread_key = f"Alibk3_{root_id}"
-                        if root_id not in self.alibk_posted:
-                            self.alibk_posted[root_id] = {'channel': '@DidebanJang', 'msg_id': msg.id}
-                            count += 1
-                        if thread_key not in self.thread_alerts:
-                            self.thread_alerts[thread_key] = {
-                                'channel': '@DidebanJang',
-                                'alert_msg_id': msg.id,
-                                'node': 'Alibk3',
-                                'root_id': root_id,
-                                'root_text': '',
-                                'root_media_type': 'text',
-                                'timestamp': msg.date.timestamp() if msg.date else time.time(),
-                                'replies': [],
-                                'tag': '#دیده‌بان_جنگ'
-                            }
-                        for rep_str in links[1:]:
-                            rep_id = int(rep_str)
-                            self.reply_to_root_map[f"Alibk3_{rep_id}"] = root_id
-                            if not any(r.get('msg_id') == rep_id for r in self.thread_alerts[thread_key]['replies']):
-                                self.thread_alerts[thread_key]['replies'].append({
-                                    'msg_id': rep_id,
-                                    'text': '',
-                                    'media_type': 'text',
+            total_loaded = 0
+            for target_ch, default_tag, default_cat in channels_to_preload:
+                try:
+                    count = 0
+                    async for msg in reader_client.iter_messages(target_ch, limit=30):
+                        text = msg.text or msg.message or ""
+                        if not text:
+                            continue
+                            
+                        # Extract title
+                        m_title = re.search(r'\*\*(?:🚨|🔕|📈|⚖️|🛑|📢)?\s*(?:هشدار فوری|هشدار منطقه‌ای|گزارش اقتصادی|گزارش حقوق بشری|گزارش مردمی):\s*([^*📹📸🎙\n]+)', text)
+                        title = m_title.group(1).strip() if m_title else ""
+                        
+                        # Extract summary
+                        m_sum = re.search(r'(?:📝|🤖)?\s*\*\*(?:چکیده رویداد|چکیده هوشمند):\*\*\n([^\n]+(?:\n[^\n]+)?)', text)
+                        summary = m_sum.group(1).strip() if m_sum else ""
+                        
+                        # Extract sources: - [Channel](https://t.me/Channel/123)
+                        src_matches = re.findall(r'- \[([^\]]+)\]\(https://t\.me/([^/]+)/(\d+)\)', text)
+                        if src_matches:
+                            first_label, first_node, first_id_str = src_matches[0]
+                            root_id = int(first_id_str)
+                            thread_key = f"{first_node}_{root_id}"
+                            
+                            is_iran = "🚨" in text or "هشدار فوری" in text
+                            sources_list = []
+                            for s_label, s_node, s_mid in src_matches:
+                                mid_int = int(s_mid)
+                                sources_list.append({
+                                    'node': s_node,
+                                    'msg_id': mid_int,
+                                    'media_type': 'video' if '📹' in text else ('photo' if '📸' in text else 'text'),
+                                    'link': f"https://t.me/{s_node}/{s_mid}",
                                     'timestamp': msg.date.timestamp() if msg.date else time.time()
                                 })
-            if count > 0:
-                print(f"🔄 Preloaded {count} historical Alibk3 alerts and thread trees from @DidebanJang.")
+                                if s_node == 'Alibk3':
+                                    self.alibk_posted[mid_int] = {'channel': target_ch, 'msg_id': msg.id}
+                                    if mid_int != root_id:
+                                        self.reply_to_root_map[f"Alibk3_{mid_int}"] = root_id
+
+                            if thread_key not in self.thread_alerts:
+                                self.thread_alerts[thread_key] = {
+                                    'channel': target_ch,
+                                    'alert_msg_id': msg.id,
+                                    'node': first_node,
+                                    'root_id': root_id,
+                                    'root_text': '',
+                                    'root_media_type': 'text',
+                                    'timestamp': msg.date.timestamp() if msg.date else time.time(),
+                                    'category': default_cat,
+                                    'is_iran_related': is_iran,
+                                    'title': title,
+                                    'summary': summary,
+                                    'sources': sources_list,
+                                    'replies': [],
+                                    'tag': default_tag
+                                }
+                                count += 1
+                    if count > 0:
+                        total_loaded += count
+                        print(f"🔄 Preloaded {count} historical alerts and thread trees from {target_ch}.")
+                except Exception as ch_err:
+                    print(f"⚠️ Could not preload history from {target_ch}: {ch_err}")
+                    
+            if total_loaded > 0:
+                print(f"✅ Total historical alerts preloaded: {total_loaded}.")
         except Exception as e:
-            print(f"⚠️ Could not preload @DidebanJang Alibk history: {e}")
+            print(f"⚠️ Could not preload channel alert history: {e}")
 
     async def catchup_unposted_alibk(self, reader_client=None):
         if not reader_client:
@@ -2309,6 +2851,28 @@ class LiveSentinel:
                         'msg_id': msg_id,
                         'text': clean_text,
                         'media_type': media_type,
+                        'timestamp': time.time()
+                    })
+
+                # Also sync sources list
+                sources = thread_data.setdefault('sources', [])
+                if not sources:
+                    sources.append({
+                        'node': 'Alibk3',
+                        'msg_id': root_id,
+                        'media_type': thread_data.get('root_media_type', 'text'),
+                        'link': f"https://t.me/Alibk3/{root_id}",
+                        'timestamp': thread_data.get('timestamp', time.time())
+                    })
+                existing_src = next((s for s in sources if s.get('node') == 'Alibk3' and s.get('msg_id') == msg_id), None)
+                if existing_src:
+                    existing_src['media_type'] = media_type
+                else:
+                    sources.append({
+                        'node': 'Alibk3',
+                        'msg_id': msg_id,
+                        'media_type': media_type,
+                        'link': f"https://t.me/Alibk3/{msg_id}",
                         'timestamp': time.time()
                     })
 
@@ -2451,6 +3015,20 @@ class LiveSentinel:
                         else:
                             raise edit_err
                 else:
+                    merged = await self.check_and_merge_with_active_alert(
+                        text=clean_text,
+                        node="Alibk3",
+                        msg_id=msg_id,
+                        target_channel=target_channel,
+                        candidate_title=title,
+                        candidate_summary=summary,
+                        raw_msg=raw_msg,
+                        category=category,
+                        is_iran_related=is_iran_related
+                    )
+                    if merged:
+                        return
+
                     sent = await self.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
                     if sent:
                         self.channel_last_alert_id[target_channel] = sent.id
@@ -2467,6 +3045,13 @@ class LiveSentinel:
                             'is_iran_related': is_iran_related,
                             'title': title,
                             'summary': summary,
+                            'sources': [{
+                                'node': 'Alibk3',
+                                'msg_id': msg_id,
+                                'media_type': root_media_type,
+                                'link': link,
+                                'timestamp': time.time()
+                            }],
                             'replies': [],
                             'tag': tag
                         }
