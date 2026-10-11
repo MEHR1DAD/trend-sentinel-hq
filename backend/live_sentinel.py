@@ -56,6 +56,9 @@ class LiveSentinel:
         self.alibk_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
         self.alibk_msg_locks = {} # msg_id -> asyncio.Lock() for sequential edit ordering
         self.node_id_map = {} # chat_id -> clean node username
+        self.channel_last_alert_id = {} # channel_username -> last_alert_msg_id
+        self.vahid_post_time = {} # msg_id -> timestamp
+        self.ilia_post_time = {} # msg_id -> timestamp
         
         # Unified Thread and Supplementary Updates Tracking (72-hour window)
         self.thread_alerts = {} # "node_rootid" -> dict(channel, alert_msg_id, node, root_id, root_text, root_media_type, timestamp, title, summary, is_iran_related, replies)
@@ -201,6 +204,20 @@ class LiveSentinel:
                 for k, v in raw_reply_map.items():
                     if isinstance(v, (int, str)):
                         self.reply_to_root_map[k] = int(v) if str(v).isdigit() else v
+
+                # 7. Channel last alert ID
+                self.channel_last_alert_id = data.get('channel_last_alert_id', {})
+
+                # 8. Post timestamps for Vahid & Ilia
+                raw_vahid_time = data.get('vahid_post_time', {})
+                for k, v in raw_vahid_time.items():
+                    if isinstance(v, (int, float)) and (now - v) <= 259200:
+                        self.vahid_post_time[int(k) if str(k).isdigit() else k] = v
+
+                raw_ilia_time = data.get('ilia_post_time', {})
+                for k, v in raw_ilia_time.items():
+                    if isinstance(v, (int, float)) and (now - v) <= 259200:
+                        self.ilia_post_time[int(k) if str(k).isdigit() else k] = v
                 
                 print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.alibk_posted)} Alibk alerts, {len(self.thread_alerts)} thread alerts.")
         except Exception as e:
@@ -214,6 +231,8 @@ class LiveSentinel:
             clean_threads = {k: v for k, v in self.thread_alerts.items() if isinstance(v, dict) and (now - v.get('timestamp', 0)) <= 259200}
             active_roots = {v.get('root_id') for v in clean_threads.values()}
             clean_reply_map = {k: v for k, v in self.reply_to_root_map.items() if v in active_roots}
+            clean_vahid_time = {str(k): v for k, v in self.vahid_post_time.items() if (now - v) <= 259200}
+            clean_ilia_time = {str(k): v for k, v in self.ilia_post_time.items() if (now - v) <= 259200}
             serializable_patterns = {k: list(v) for k, v in self.alerted_msg_patterns.items()}
             
             data = {
@@ -223,6 +242,9 @@ class LiveSentinel:
                 "alibk_posted": self.alibk_posted,
                 "thread_alerts": clean_threads,
                 "reply_to_root_map": clean_reply_map,
+                "channel_last_alert_id": self.channel_last_alert_id,
+                "vahid_post_time": clean_vahid_time,
+                "ilia_post_time": clean_ilia_time,
                 "last_saved": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
             }
             with open(self.state_file, 'w', encoding='utf-8') as f:
@@ -398,13 +420,19 @@ class LiveSentinel:
                 await self.bot.edit_message(target_channel, alert_msg_id, updated_alert_text, link_preview=False)
                 print(f"✏️ Successfully updated alert {alert_msg_id} in {target_channel} ({len(replies)} replies attached).")
                 
-                await self.bot.send_message(
-                    target_channel,
-                    "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
-                    reply_to=alert_msg_id,
-                    silent=True
-                )
-                print(f"🔔 Sent silent update notification to {target_channel} replying to msg {alert_msg_id}.")
+                orig_timestamp = thread_data.get('timestamp', time.time())
+                if await self.should_send_update_notification(target_channel, alert_msg_id, orig_timestamp):
+                    notify_msg = await self.bot.send_message(
+                        target_channel,
+                        "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
+                        reply_to=alert_msg_id,
+                        silent=True
+                    )
+                    if notify_msg:
+                        thread_data['last_notified_msg_id'] = notify_msg.id
+                    print(f"🔔 Sent silent update notification to {target_channel} replying to msg {alert_msg_id}.")
+                else:
+                    print(f"ℹ️ Update notification skipped for {alert_msg_id} in {target_channel} (still latest post and < 30m).")
             except Exception as e:
                 if "not modified" in str(e).lower():
                     print(f"ℹ️ Alert {alert_msg_id} in {target_channel} content unchanged.")
@@ -424,6 +452,226 @@ class LiveSentinel:
                 await self.flush_thread_debounce(k, delay=0)
             except Exception as e:
                 print(f"⚠️ Error flushing thread {k}: {e}")
+
+    async def should_send_update_notification(self, target_channel, alert_msg_id, original_post_timestamp):
+        """
+        Determines whether the silent notification message:
+        "🔄 این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد."
+        should be sent to target_channel.
+        
+        Rules:
+        1. If a new/subsequent news alert was posted in target_channel after alert_msg_id
+           (i.e. alert_msg_id is NO LONGER the latest news post in the channel), return True.
+        2. OR, if it is STILL the latest alert in the channel, but >= 30 minutes (1800s)
+           have passed since its original publication, return True.
+        3. Otherwise (still the latest alert AND < 30 minutes elapsed), return False.
+        """
+        now = time.time()
+        
+        # Rule 2: If >= 30 minutes have elapsed since original post
+        if (now - original_post_timestamp) >= 1800:
+            return True
+            
+        # Rule 1: Check if a subsequent news alert was posted after alert_msg_id
+        last_known_id = self.channel_last_alert_id.get(target_channel, 0)
+        if last_known_id > alert_msg_id:
+            return True
+            
+        # Query Telegram channel to see if any message newer than alert_msg_id exists that is NOT a reply to alert_msg_id
+        try:
+            messages = await self.bot.get_messages(target_channel, limit=10)
+            if messages:
+                for m in messages:
+                    if m.id > alert_msg_id:
+                        rep_to = getattr(m, 'reply_to_msg_id', None)
+                        if not rep_to and getattr(m, 'reply_to', None):
+                            rep_to = getattr(m.reply_to, 'reply_to_msg_id', None)
+                        if rep_to != alert_msg_id:
+                            self.channel_last_alert_id[target_channel] = max(self.channel_last_alert_id.get(target_channel, 0), m.id)
+                            return True
+        except Exception as e:
+            print(f"⚠️ Error checking channel messages for update condition: {e}")
+            
+        return False
+
+    async def init_channel_last_alert_ids(self):
+        target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat', '@VahidOnlineAI', '@iliaenAI']
+        for ch in target_channels:
+            try:
+                latest = await self.bot.get_messages(ch, limit=1)
+                if latest:
+                    self.channel_last_alert_id[ch] = latest[0].id
+            except Exception:
+                pass
+        print(f"📊 Initialized channel latest message IDs: {self.channel_last_alert_id}")
+
+    async def handle_message_deleted(self, node_username, deleted_ids):
+        """
+        When a message in a monitored source channel is deleted by its admin,
+        instantly delete the corresponding alert (and its update notifications) from our channels!
+        """
+        if not deleted_ids:
+            return
+            
+        print(f"🗑️ Handling MessageDeleted event for node={node_username}: {deleted_ids}")
+        for del_id in deleted_ids:
+            del_int = int(del_id) if str(del_id).isdigit() else del_id
+            del_str = str(del_id)
+            
+            # 1. Alibk3 root or reply
+            if node_username in ('Alibk3', None, 'unknown'):
+                thread_key = f"Alibk3_{del_id}"
+                # 1.1 Root post deletion
+                if thread_key in self.thread_alerts or del_int in self.alibk_posted or del_str in self.alibk_posted:
+                    thread_data = self.thread_alerts.pop(thread_key, None)
+                    posted_info = self.alibk_posted.pop(del_int, None) or self.alibk_posted.pop(del_str, None)
+                    
+                    target_ch = (thread_data and thread_data.get('channel')) or (posted_info and posted_info.get('channel')) or '@DidebanJang'
+                    alert_mid = (thread_data and thread_data.get('alert_msg_id')) or (posted_info and posted_info.get('msg_id'))
+                    
+                    task = self.debounce_tasks.pop(thread_key, None)
+                    if task and not task.done():
+                        task.cancel()
+                        
+                    if alert_mid:
+                        to_delete = [alert_mid]
+                        if thread_data and thread_data.get('last_notified_msg_id'):
+                            to_delete.append(thread_data['last_notified_msg_id'])
+                        try:
+                            await self.bot.delete_messages(target_ch, to_delete)
+                            print(f"🗑️ Successfully deleted Alibk3 alert {alert_mid} in {target_ch} (source post {del_id} deleted by admin).")
+                        except Exception as e:
+                            print(f"⚠️ Error deleting Alibk3 alert {alert_mid} in {target_ch}: {e}")
+                            
+                    self.reply_to_root_map = {k: v for k, v in self.reply_to_root_map.items() if v not in (del_int, del_str)}
+                    self.save_persisted_state()
+                    
+                # 1.2 Reply deletion
+                rep_key = f"Alibk3_{del_id}"
+                if rep_key in self.reply_to_root_map:
+                    root_id = self.reply_to_root_map.pop(rep_key, None)
+                    rk = f"Alibk3_{root_id}"
+                    if rk in self.thread_alerts:
+                        thread_data = self.thread_alerts[rk]
+                        orig_len = len(thread_data.get('replies', []))
+                        thread_data['replies'] = [r for r in thread_data.get('replies', []) if r.get('msg_id') not in (del_int, del_str)]
+                        if len(thread_data['replies']) != orig_len:
+                            print(f"🗑️ Removed deleted reply {del_id} from Alibk3 root {root_id}. Scheduling debounce update...")
+                            self.schedule_thread_debounce(rk)
+                            self.save_persisted_state()
+
+            # 2. VahidOnline
+            if node_username in ('VahidOnline', None, 'unknown'):
+                if del_int in self.vahid_ai_posted or del_str in self.vahid_ai_posted:
+                    posted_id = self.vahid_ai_posted.pop(del_int, None) or self.vahid_ai_posted.pop(del_str, None)
+                    self.vahid_post_time.pop(del_int, None)
+                    self.vahid_post_time.pop(del_str, None)
+                    if posted_id:
+                        try:
+                            await self.bot.delete_messages('@VahidOnlineAI', [posted_id])
+                            print(f"🗑️ Successfully deleted VahidOnline alert {posted_id} in @VahidOnlineAI (source post {del_id} deleted by admin).")
+                        except Exception as e:
+                            print(f"⚠️ Error deleting VahidOnline post {posted_id} in @VahidOnlineAI: {e}")
+                    self.save_persisted_state()
+
+            # 3. iliaen
+            if node_username in ('iliaen', None, 'unknown'):
+                if del_int in self.ilia_ai_posted or del_str in self.ilia_ai_posted:
+                    posted_id = self.ilia_ai_posted.pop(del_int, None) or self.ilia_ai_posted.pop(del_str, None)
+                    self.ilia_post_time.pop(del_int, None)
+                    self.ilia_post_time.pop(del_str, None)
+                    if posted_id:
+                        try:
+                            await self.bot.delete_messages('@iliaenAI', [posted_id])
+                            print(f"🗑️ Successfully deleted iliaen alert {posted_id} in @iliaenAI (source post {del_id} deleted by admin).")
+                        except Exception as e:
+                            print(f"⚠️ Error deleting iliaen post {posted_id} in @iliaenAI: {e}")
+                    self.save_persisted_state()
+
+            # 4. VIP / Anomaly alerts across all nodes
+            for msg_key in list(self.vip_alert_history.keys()):
+                if msg_key.endswith(f"_{del_int}") or msg_key.endswith(f"_{del_str}"):
+                    if node_username and not msg_key.startswith(f"{node_username}_"):
+                        continue
+                    info = self.vip_alert_history.pop(msg_key, None)
+                    if info and info.get('sent_msg_id'):
+                        sent_mid = info['sent_msg_id']
+                        target_ch = info.get('target_channel', '@DidebanJang')
+                        try:
+                            await self.bot.delete_messages(target_ch, [sent_mid])
+                            print(f"🗑️ Successfully deleted VIP alert {sent_mid} in {target_ch} (source {msg_key} deleted by admin).")
+                        except Exception as e:
+                            print(f"⚠️ Error deleting VIP alert {sent_mid} in {target_ch}: {e}")
+                    self.save_persisted_state()
+
+    async def verify_recent_messages_existence(self):
+        """
+        Periodic poller fallback:
+        Verifies if any recently alerted source message was deleted by its admin on Telegram.
+        """
+        if not self.client or not self.client.is_connected():
+            return
+            
+        from telethon.tl.types import MessageEmpty
+        now = time.time()
+        
+        # 1. Alibk3
+        alibk_recent_ids = set()
+        for k, v in self.thread_alerts.items():
+            if k.startswith("Alibk3_") and (now - v.get('timestamp', 0)) <= 7200:
+                root_id = v.get('root_id')
+                if root_id:
+                    alibk_recent_ids.add(int(root_id) if str(root_id).isdigit() else root_id)
+                for r in v.get('replies', []):
+                    rep_id = r.get('msg_id')
+                    if rep_id:
+                        alibk_recent_ids.add(int(rep_id) if str(rep_id).isdigit() else rep_id)
+        
+        if alibk_recent_ids:
+            try:
+                check_ids = list(alibk_recent_ids)[:20]
+                msgs = await self.client.get_messages('Alibk3', ids=check_ids)
+                deleted_ids = []
+                for cid, m in zip(check_ids, msgs):
+                    if m is None or isinstance(m, MessageEmpty) or (not getattr(m, 'message', None) and not getattr(m, 'media', None)):
+                        deleted_ids.append(cid)
+                if deleted_ids:
+                    print(f"🔍 Poller fallback detected deleted messages in Alibk3: {deleted_ids}")
+                    await self.handle_message_deleted('Alibk3', deleted_ids)
+            except Exception as e:
+                pass
+
+        # 2. VahidOnline
+        vahid_recent_ids = [int(mid) for mid, t in self.vahid_post_time.items() if (now - t) <= 7200 and str(mid).isdigit()]
+        if vahid_recent_ids:
+            try:
+                check_ids = vahid_recent_ids[:20]
+                msgs = await self.client.get_messages('VahidOnline', ids=check_ids)
+                deleted_ids = []
+                for cid, m in zip(check_ids, msgs):
+                    if m is None or isinstance(m, MessageEmpty) or (not getattr(m, 'message', None) and not getattr(m, 'media', None)):
+                        deleted_ids.append(cid)
+                if deleted_ids:
+                    print(f"🔍 Poller fallback detected deleted messages in VahidOnline: {deleted_ids}")
+                    await self.handle_message_deleted('VahidOnline', deleted_ids)
+            except Exception as e:
+                pass
+
+        # 3. iliaen
+        ilia_recent_ids = [int(mid) for mid, t in self.ilia_post_time.items() if (now - t) <= 7200 and str(mid).isdigit()]
+        if ilia_recent_ids:
+            try:
+                check_ids = ilia_recent_ids[:20]
+                msgs = await self.client.get_messages('iliaen', ids=check_ids)
+                deleted_ids = []
+                for cid, m in zip(check_ids, msgs):
+                    if m is None or isinstance(m, MessageEmpty) or (not getattr(m, 'message', None) and not getattr(m, 'media', None)):
+                        deleted_ids.append(cid)
+                if deleted_ids:
+                    print(f"🔍 Poller fallback detected deleted messages in iliaen: {deleted_ids}")
+                    await self.handle_message_deleted('iliaen', deleted_ids)
+            except Exception as e:
+                pass
 
     async def summarize_thread_post(self, thread_text):
         if not GEMINI_API_KEY:
@@ -802,13 +1050,17 @@ class LiveSentinel:
                             try:
                                 await self.bot.edit_message(target_ch, orig_sent_id, updated_alert, link_preview=False)
                                 asyncio.create_task(self.append_ai_summary(target_ch, orig_sent_id, updated_alert, [text]))
-                                await self.bot.send_message(
-                                    target_ch,
-                                    "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
-                                    reply_to=orig_sent_id,
-                                    silent=True
-                                )
-                                print(f"🔔 Updated VIP alert {orig_sent_id} in {target_ch} and sent silent notification.")
+                                orig_time = prev.get('time', time.time())
+                                if await self.should_send_update_notification(target_ch, orig_sent_id, orig_time):
+                                    await self.bot.send_message(
+                                        target_ch,
+                                        "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
+                                        reply_to=orig_sent_id,
+                                        silent=True
+                                    )
+                                    print(f"🔔 Updated VIP alert {orig_sent_id} in {target_ch} and sent silent notification.")
+                                else:
+                                    print(f"ℹ️ Update notification skipped for VIP alert {orig_sent_id} in {target_ch} (still latest post and < 30m).")
                             except Exception as edit_err:
                                 print(f"⚠️ Failed to edit VIP alert {orig_sent_id} in {target_ch}: {edit_err}")
                 else:
@@ -1125,6 +1377,8 @@ class LiveSentinel:
         for sub in subs:
             try:
                 sent_msg = await self.bot.send_message(sub, alert_text, link_preview=False, silent=is_silent)
+                if sent_msg:
+                    self.channel_last_alert_id[sub] = sent_msg.id
             except Exception as e:
                 print(f"Failed to send alert to {sub}: {e}")
                 
@@ -1541,16 +1795,20 @@ class LiveSentinel:
                         await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
                         print(f"✏️ Edited post {posted_id} in {target_channel} for VahidOnline msg {msg_id}")
                         if is_edit:
-                            try:
-                                await self.bot.send_message(
-                                    target_channel,
-                                    "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
-                                    reply_to=posted_id,
-                                    silent=True
-                                )
-                                print(f"🔔 Sent silent update notification to {target_channel} replying to msg {posted_id}.")
-                            except Exception as notify_err:
-                                print(f"⚠️ Failed to send silent update notification to {target_channel}: {notify_err}")
+                            orig_time = self.vahid_post_time.get(msg_id, time.time())
+                            if await self.should_send_update_notification(target_channel, posted_id, orig_time):
+                                try:
+                                    await self.bot.send_message(
+                                        target_channel,
+                                        "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
+                                        reply_to=posted_id,
+                                        silent=True
+                                    )
+                                    print(f"🔔 Sent silent update notification to {target_channel} replying to msg {posted_id}.")
+                                except Exception as notify_err:
+                                    print(f"⚠️ Failed to send silent update notification to {target_channel}: {notify_err}")
+                            else:
+                                print(f"ℹ️ Update notification skipped for VahidOnline post {posted_id} (still latest post and < 30m).")
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
                             print(f"ℹ️ Post {posted_id} in {target_channel} is already up to date (no content change).")
@@ -1583,6 +1841,9 @@ class LiveSentinel:
                         
                     if sent:
                         self.vahid_ai_posted[msg_id] = sent.id
+                        self.vahid_post_time[msg_id] = time.time()
+                        self.channel_last_alert_id[target_channel] = sent.id
+                        self.save_persisted_state()
                         print(f"🚀 Published AI summary to {target_channel} for VahidOnline msg {msg_id}")
             except Exception as e:
                 print(f"❌ Error publishing to {target_channel} for msg {msg_id}: {e}")
@@ -1713,16 +1974,20 @@ class LiveSentinel:
                         await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
                         print(f"✏️ Edited post {posted_id} in {target_channel} for iliaen msg {msg_id}")
                         if is_edit:
-                            try:
-                                await self.bot.send_message(
-                                    target_channel,
-                                    "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
-                                    reply_to=posted_id,
-                                    silent=True
-                                )
-                                print(f"🔔 Sent silent update notification to {target_channel} replying to msg {posted_id}.")
-                            except Exception as notify_err:
-                                print(f"⚠️ Failed to send silent update notification to {target_channel}: {notify_err}")
+                            orig_time = self.ilia_post_time.get(msg_id, time.time())
+                            if await self.should_send_update_notification(target_channel, posted_id, orig_time):
+                                try:
+                                    await self.bot.send_message(
+                                        target_channel,
+                                        "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
+                                        reply_to=posted_id,
+                                        silent=True
+                                    )
+                                    print(f"🔔 Sent silent update notification to {target_channel} replying to msg {posted_id}.")
+                                except Exception as notify_err:
+                                    print(f"⚠️ Failed to send silent update notification to {target_channel}: {notify_err}")
+                            else:
+                                print(f"ℹ️ Update notification skipped for iliaen post {posted_id} (still latest post and < 30m).")
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
                             print(f"ℹ️ Post {posted_id} in {target_channel} is already up to date (no content change).")
@@ -1755,6 +2020,9 @@ class LiveSentinel:
                         
                     if sent:
                         self.ilia_ai_posted[msg_id] = sent.id
+                        self.ilia_post_time[msg_id] = time.time()
+                        self.channel_last_alert_id[target_channel] = sent.id
+                        self.save_persisted_state()
                         print(f"🚀 Published AI summary to {target_channel} for iliaen msg {msg_id}")
             except Exception as e:
                 print(f"❌ Error publishing to {target_channel} for msg {msg_id}: {e}")
@@ -2058,7 +2326,20 @@ class LiveSentinel:
 
         # 3. Check if this is an edit of an existing root or reply
         thread_key = f"Alibk3_{msg_id}"
-        if is_edit and thread_key in self.thread_alerts:
+        if is_edit and (thread_key in self.thread_alerts or msg_id in self.alibk_posted or str(msg_id) in self.alibk_posted):
+            if thread_key not in self.thread_alerts:
+                posted_info = self.alibk_posted.get(msg_id) or self.alibk_posted.get(str(msg_id), {})
+                self.thread_alerts[thread_key] = {
+                    'channel': posted_info.get('channel', '@DidebanJang'),
+                    'alert_msg_id': posted_info.get('msg_id'),
+                    'node': 'Alibk3',
+                    'root_id': msg_id,
+                    'root_text': clean_text,
+                    'root_media_type': self.detect_msg_media_type(raw_msg),
+                    'timestamp': posted_info.get('timestamp', time.time()),
+                    'replies': [],
+                    'tag': '#دیده‌بان_جنگ'
+                }
             thread_data = self.thread_alerts[thread_key]
             thread_data['root_text'] = clean_text
             thread_data['root_media_type'] = self.detect_msg_media_type(raw_msg)
@@ -2151,12 +2432,19 @@ class LiveSentinel:
                         await self.bot.edit_message(posted_ch, posted_mid, alert_text, link_preview=False)
                         print(f"✏️ Updated Alibk3 alert in {posted_ch} (Alibk msg {msg_id})")
                         if is_edit:
-                            await self.bot.send_message(
-                                posted_ch,
-                                "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
-                                reply_to=posted_mid,
-                                silent=True
-                            )
+                            orig_time = posted_info.get('timestamp', time.time())
+                            if await self.should_send_update_notification(posted_ch, posted_mid, orig_time):
+                                notify_msg = await self.bot.send_message(
+                                    posted_ch,
+                                    "🔄 **این گزارش با دریافت اطلاعات تکمیلی به‌روزرسانی شد.**",
+                                    reply_to=posted_mid,
+                                    silent=True
+                                )
+                                if notify_msg:
+                                    posted_info['last_notified_msg_id'] = notify_msg.id
+                                print(f"🔔 Sent silent update notification to {posted_ch} replying to msg {posted_mid}.")
+                            else:
+                                print(f"ℹ️ Update notification skipped for {posted_mid} in {posted_ch} (still latest post and < 30m).")
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
                             print(f"ℹ️ Alibk3 alert {posted_mid} already up to date.")
@@ -2165,7 +2453,8 @@ class LiveSentinel:
                 else:
                     sent = await self.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
                     if sent:
-                        self.alibk_posted[msg_id] = {'channel': target_channel, 'msg_id': sent.id}
+                        self.channel_last_alert_id[target_channel] = sent.id
+                        self.alibk_posted[msg_id] = {'channel': target_channel, 'msg_id': sent.id, 'timestamp': time.time()}
                         self.thread_alerts[f"Alibk3_{msg_id}"] = {
                             'channel': target_channel,
                             'alert_msg_id': sent.id,
@@ -2297,9 +2586,43 @@ async def main():
         
         await sentinel.process_message(text, node_username, msg_id, is_edit=True, msg_date=msg_date, raw_msg=event.message)
 
+    @client.on(events.MessageDeleted())
+    async def delete_handler(event):
+        try:
+            chat_id = event.chat_id
+            node_username = sentinel.node_id_map.get(chat_id)
+            if not node_username and hasattr(event, 'channel_id') and event.channel_id:
+                node_username = sentinel.node_id_map.get(event.channel_id)
+                if not node_username:
+                    from telethon.utils import get_peer_id
+                    from telethon.tl.types import PeerChannel
+                    node_username = sentinel.node_id_map.get(get_peer_id(PeerChannel(event.channel_id)))
+
+            if not node_username:
+                try:
+                    chat = await event.get_chat()
+                    node_username = resolve_node_username(chat)
+                except Exception:
+                    node_username = None
+
+            deleted_ids = getattr(event, 'deleted_ids', [])
+            if deleted_ids:
+                await sentinel.handle_message_deleted(node_username, deleted_ids)
+        except Exception as e:
+            print(f"⚠️ Error handling deleted message event: {e}")
+
     async def active_poller():
         last_ids = {}
+        last_deletion_check = time.time()
         while True:
+            # Periodic fallback check for deleted messages (every 90s)
+            if time.time() - last_deletion_check >= 90:
+                last_deletion_check = time.time()
+                try:
+                    await sentinel.verify_recent_messages_existence()
+                except Exception:
+                    pass
+
             for node in sentinel.nodes:
                 try:
                     messages = await client.get_messages(node, limit=5)
@@ -2348,6 +2671,7 @@ async def main():
         await client.start()
         print("✅ Live listening started on", len(sentinel.nodes), "nodes (Active Polling & Push Events).")
         await sentinel.preload_node_entities(reader_client=client)
+        await sentinel.init_channel_last_alert_ids()
         await sentinel.preload_vahid_ai_history(reader_client=client)
         await sentinel.catchup_unposted_vahid(reader_client=client)
         await sentinel.preload_ilia_ai_history(reader_client=client)
@@ -2361,6 +2685,7 @@ async def main():
             await bot.start(bot_token=BOT_TOKEN)
             await client.start()
             await sentinel.preload_node_entities(reader_client=client)
+            await sentinel.init_channel_last_alert_ids()
             await sentinel.preload_vahid_ai_history(reader_client=client)
             await sentinel.catchup_unposted_vahid(reader_client=client)
             await sentinel.preload_ilia_ai_history(reader_client=client)
