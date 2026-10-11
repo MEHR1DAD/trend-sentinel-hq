@@ -853,46 +853,73 @@ class LiveSentinel:
         """
         return False
 
-    async def init_channel_last_alert_ids(self):
+    async def cleanup_update_notification_bubbles(self, reader_client=None):
         target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat', '@VahidOnlineAI', '@iliaenAI']
+        fetch_client = reader_client or self.client or self.bot
         
-        # Comprehensive cleanup of all previous update notification messages across all channels
+        print("🧹 Starting comprehensive scan to delete all legacy update notification bubbles across channels...")
         for ch in target_channels:
             try:
-                messages = await self.bot.get_messages(ch, limit=150)
-                if messages:
-                    to_delete = []
-                    for m in messages:
-                        text = m.text or m.message or ""
-                        if ("به‌روزرسانی شد" in text or "اطلاعات تکمیلی" in text) and len(text.strip()) < 150 and "چکیده" not in text:
-                            to_delete.append(m.id)
-                    if to_delete:
-                        print(f"🗑️ Found {len(to_delete)} previous update notification bubbles in {ch}: {to_delete}")
-                        for i in range(0, len(to_delete), 50):
-                            batch = to_delete[i:i+50]
+                to_delete = []
+                async for m in fetch_client.iter_messages(ch, limit=500):
+                    text = m.text or m.message or ""
+                    clean_m = text.replace('\u200c', '').replace(' ', '').replace('*', '')
+                    
+                    is_update_bubble = False
+                    if "اینگزارشبادریافتاطلاعاتتکمیلی" in clean_m:
+                        is_update_bubble = True
+                    elif "اطلاعاتتکمیلیبهروزرسانیشد" in clean_m or "اطلاعاتتکمیلیبروزرسانیشد" in clean_m:
+                        is_update_bubble = True
+                    elif ("بهروزرسانیشد" in clean_m or "بروزرسانیشد" in clean_m or "اطلاعاتتکمیلی" in clean_m):
+                        if len(text.strip()) < 200 and not any(k in text for k in ["چکیده", "هشدار", "گزارش اقتصادی", "گزارش حقوق بشری", "گزارش مردمی"]):
+                            is_update_bubble = True
+                    
+                    if is_update_bubble:
+                        to_delete.append(m.id)
+
+                if to_delete:
+                    print(f"🗑️ Found {len(to_delete)} update notification bubbles in {ch}: {to_delete}")
+                    for i in range(0, len(to_delete), 50):
+                        batch = to_delete[i:i+50]
+                        # Delete via bot
+                        try:
+                            await self.bot.delete_messages(ch, batch)
+                            print(f"🗑️ Deleted {len(batch)} notification bubbles via bot in {ch}.")
+                        except Exception as del_err:
+                            print(f"⚠️ Bot failed to delete in {ch}: {del_err}")
+                            
+                        # Delete via client (user session) as well to guarantee deletion
+                        if fetch_client != self.bot:
                             try:
-                                await self.bot.delete_messages(ch, batch)
-                                print(f"🗑️ Cleaned up batch of {len(batch)} notification messages in {ch}.")
-                            except Exception as del_err:
-                                print(f"⚠️ Error deleting batch in {ch}: {del_err}")
+                                await fetch_client.delete_messages(ch, batch)
+                                print(f"🗑️ Deleted {len(batch)} notification bubbles via client in {ch}.")
+                            except Exception as c_err:
+                                print(f"⚠️ Client failed to delete in {ch}: {c_err}")
+                else:
+                    print(f"✨ No update notification bubbles found in {ch}.")
             except Exception as e:
-                print(f"⚠️ Error cleaning up notification messages in {ch}: {e}")
+                print(f"⚠️ Error cleaning up notification bubbles in {ch}: {e}")
+
+    async def init_channel_last_alert_ids(self, reader_client=None):
+        target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat', '@VahidOnlineAI', '@iliaenAI']
+        fetch_client = reader_client or self.client or self.bot
+        
+        # Comprehensive cleanup of all previous update notification messages across all channels
+        await self.cleanup_update_notification_bubbles(reader_client=fetch_client)
 
         # Initialize latest standalone news IDs for each channel
         for ch in target_channels:
             try:
-                messages = await self.bot.get_messages(ch, limit=10)
-                if messages:
-                    for m in messages:
-                        text = m.text or m.message or ""
-                        rep_to = getattr(m, 'reply_to_msg_id', None)
-                        if not rep_to and getattr(m, 'reply_to', None):
-                            rep_to = getattr(m.reply_to, 'reply_to_msg_id', None)
-                        if rep_to:
-                            continue
-                        if len(text.strip()) > 10:
-                            self.channel_last_alert_id[ch] = m.id
-                            break
+                async for m in fetch_client.iter_messages(ch, limit=15):
+                    text = m.text or m.message or ""
+                    rep_to = getattr(m, 'reply_to_msg_id', None)
+                    if not rep_to and getattr(m, 'reply_to', None):
+                        rep_to = getattr(m.reply_to, 'reply_to_msg_id', None)
+                    if rep_to:
+                        continue
+                    if len(text.strip()) > 10:
+                        self.channel_last_alert_id[ch] = m.id
+                        break
             except Exception as e:
                 print(f"⚠️ Error initializing latest alert ID for {ch}: {e}")
         print(f"📊 Initialized channel latest news IDs: {self.channel_last_alert_id}")
@@ -3313,7 +3340,7 @@ async def main():
         await client.start()
         print("✅ Live listening started on", len(sentinel.nodes), "nodes (Active Polling & Push Events).")
         await sentinel.preload_node_entities(reader_client=client)
-        await sentinel.init_channel_last_alert_ids()
+        await sentinel.init_channel_last_alert_ids(reader_client=client)
         await sentinel.preload_vahid_ai_history(reader_client=client)
         await sentinel.catchup_unposted_vahid(reader_client=client)
         await sentinel.preload_ilia_ai_history(reader_client=client)
@@ -3327,7 +3354,7 @@ async def main():
             await bot.start(bot_token=BOT_TOKEN)
             await client.start()
             await sentinel.preload_node_entities(reader_client=client)
-            await sentinel.init_channel_last_alert_ids()
+            await sentinel.init_channel_last_alert_ids(reader_client=client)
             await sentinel.preload_vahid_ai_history(reader_client=client)
             await sentinel.catchup_unposted_vahid(reader_client=client)
             await sentinel.preload_ilia_ai_history(reader_client=client)
