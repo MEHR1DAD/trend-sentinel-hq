@@ -897,6 +897,22 @@ class LiveSentinel:
                 print(f"⚠️ Error initializing latest alert ID for {ch}: {e}")
         print(f"📊 Initialized channel latest news IDs: {self.channel_last_alert_id}")
 
+        # Retroactive merge: Ensure post 130 in @DidebanJang includes VahidOnline 78692 if missing
+        try:
+            m130 = await self.bot.get_messages('@DidebanJang', ids=130)
+            if m130 and m130.text and 'VahidOnline' not in m130.text:
+                updated_text = m130.text.replace('🔗 **منبع خبر:**', '🔗 **منابع خبر:**')
+                vahid_line = "- [VahidOnline](https://t.me/VahidOnline/78692) 📝"
+                if vahid_line not in updated_text:
+                    updated_text = re.sub(r'(- (?:\[Alibk3\]\([^\)]+\)|Alibk3)[^\n]*)', r'\1\n' + vahid_line, updated_text)
+                status_line = "🔄 **به‌روزرسانی شده (ساعت ۱۸:۰۳) | افزودن منابع میدانی**"
+                if '🔄 **به‌روزرسانی شده' not in updated_text:
+                    updated_text = updated_text.replace('#دیده‌بان_جنگ', f"{status_line}\n\n#دیده‌بان_جنگ")
+                await self.bot.edit_message('@DidebanJang', 130, updated_text, link_preview=False)
+                print("✅ Successfully merged VahidOnline 78692 into @DidebanJang post 130!")
+        except Exception as e130:
+            print(f"⚠️ Error performing retroactive merge for post 130: {e130}")
+
     async def handle_message_deleted(self, node_username, deleted_ids):
         """
         When a message in a monitored source channel is deleted by its admin,
@@ -1180,6 +1196,15 @@ class LiveSentinel:
         return {}
 
     def is_old_news(self, text, node=None):
+        if not text:
+            return False
+            
+        # VIP channels (VahidOnline & iliaen) are primary monitored channels
+        # that frequently quote news agencies or tag their sub-channels (@VahidHeadline).
+        # They must NEVER be dropped by keyword stopwords.
+        if (node or '').lower() in ['vahidonline', 'iliaen']:
+            return False
+
         # Strong indicators of live citizen reports that override any news stopwords
         citizen_indicators = [
             "پیام دریافتی", "دریافتی:", "پیام‌های دریافتی", "پیامهای دریافتی", 
@@ -1421,7 +1446,8 @@ class LiveSentinel:
             patterns_in_msg = self.get_message_patterns(text, is_citizen=is_citizen_report)
             has_economy = any("||ECONOMY||" in p for p in patterns_in_msg)
             
-            if not has_economy and self.is_old_news(text, node): return
+            if (node or '').lower() not in ['vahidonline', 'iliaen'] and not has_economy and self.is_old_news(text, node):
+                return
             
             # --- VIP CHANNELS EXCLUSIVE PROTESTS LOGIC ---
             vip_map = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen'}
@@ -2223,12 +2249,14 @@ class LiveSentinel:
             recent_vahid.reverse()
             
             for msg in recent_vahid:
-                if msg.id not in self.vahid_ai_posted:
-                    clean_text = (msg.message or msg.text or "").strip()
-                    if clean_text and len(clean_text) >= 5:
+                clean_text = (msg.message or msg.text or "").strip()
+                if clean_text and len(clean_text) >= 5:
+                    if msg.id not in self.vahid_ai_posted:
                         print(f"⚡ Catching up missed VahidOnline post {msg.id}...")
                         await self.handle_vahid_online_ai(clean_text, msg.id, raw_msg=msg, is_edit=False)
-                        await asyncio.sleep(4)
+                        await asyncio.sleep(2)
+                    # Feed into process_message to ensure VIP radar and cross-channel semantic merging evaluates it
+                    await self.process_message(clean_text, "VahidOnline", msg.id, msg_date=msg.date, raw_msg=msg)
 
             # Re-summarize any posts that previously fell back to generic "خلاصه خبر"
             for vahid_id, posted_id in list(self.vahid_needs_refresh):
@@ -2397,12 +2425,14 @@ class LiveSentinel:
             recent_ilia.reverse()
             
             for msg in recent_ilia:
-                if msg.id not in self.ilia_ai_posted:
-                    clean_text = (msg.message or msg.text or "").strip()
-                    if clean_text and len(clean_text) >= 5:
+                clean_text = (msg.message or msg.text or "").strip()
+                if clean_text and len(clean_text) >= 5:
+                    if msg.id not in self.ilia_ai_posted:
                         print(f"⚡ Catching up missed iliaen post {msg.id}...")
                         await self.handle_ilia_ai(clean_text, msg.id, raw_msg=msg, is_edit=False)
-                        await asyncio.sleep(4)
+                        await asyncio.sleep(2)
+                    # Feed into process_message to ensure VIP radar and cross-channel semantic merging evaluates it
+                    await self.process_message(clean_text, "iliaen", msg.id, msg_date=msg.date, raw_msg=msg)
 
             # Re-summarize any fallback posts
             for ilia_id, posted_id in list(self.ilia_needs_refresh):
@@ -2723,7 +2753,7 @@ class LiveSentinel:
             for target_ch, default_tag, default_cat in channels_to_preload:
                 try:
                     count = 0
-                    async for msg in reader_client.iter_messages(target_ch, limit=30):
+                    async for msg in reader_client.iter_messages(target_ch, limit=80):
                         text = msg.text or msg.message or ""
                         if not text:
                             continue
