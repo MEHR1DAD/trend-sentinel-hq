@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 36 minutes
-- **Messages Processed:** 306
-- **Last Message Text:** 🔺️🔻زندگی دوباره کودکان سرطانی
+- **Uptime:** 35 minutes
+- **Messages Processed:** 305
+- **Last Message Text:** معاون وزیر صمت: شیراز اکسپو ظرفیت های خفته استان ها را فعال می‌کند
 
-🔹️گزارش خراسان از گام نوین پزشکی ایران با افتتاح نخستین مرکز فوق‌تخصص...
-- **Last Message Time:** 2026-10-11 18:52:13
+🔹معاون صنایع وزیر صنعت، معدن و ت...
+- **Last Message Time:** 2026-10-11 19:28:38
