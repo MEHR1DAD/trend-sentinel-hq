@@ -2588,7 +2588,7 @@ class LiveSentinel:
     async def get_fallback_gemini_model(self):
         return await self.rotate_gemini_model_dynamic()
 
-    async def call_gemini_content(self, payload, timeout=7, max_retries=5):
+    async def call_gemini_content(self, payload, timeout=7, max_retries=6):
         """
         Central resilient caller for Google Gemini with Dynamic Model Rotation:
         - Defaults to latest flash-lite in memory for every new request.
@@ -2606,25 +2606,26 @@ class LiveSentinel:
         if not hasattr(self, 'last_gemini_call_time'):
             self.last_gemini_call_time = 0.0
 
-        async with self.gemini_lock:
-            # Enforce at least 1.8s spacing between calls to eliminate 429 quota stampedes
-            gap = time.time() - self.last_gemini_call_time
-            if gap < 1.8:
-                await asyncio.sleep(1.8 - gap)
-            self.last_gemini_call_time = time.time()
+        # Ensure relaxed safety settings so defense/war/security/nuclear news is never blocked by filters
+        payload.setdefault("safetySettings", [
+            {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+            {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+            {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+            {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"}
+        ])
             
-            # Ensure relaxed safety settings so defense/war/security/nuclear news is never blocked by filters
-            payload.setdefault("safetySettings", [
-                {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
-                {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
-                {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
-                {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"}
-            ])
-                
-            # Every new request defaults to the latest flash-lite stored in memory
-            model = getattr(self, 'latest_flash_lite_model', None) or getattr(self, 'current_gemini_model', DEFAULT_GEMINI_MODEL)
+        # Every new request defaults to the latest flash-lite stored in memory
+        model = getattr(self, 'latest_flash_lite_model', None) or getattr(self, 'current_gemini_model', DEFAULT_GEMINI_MODEL)
         
         for attempt in range(max_retries):
+            # Special escalation for attempts 3, 4, 5: fall back directly to high-quota production workhorses
+            if attempt == 3:
+                model = "gemini-1.5-flash"
+            elif attempt == 4:
+                model = "gemini-1.5-flash-8b"
+            elif attempt == 5:
+                model = "gemini-1.5-pro"
+                
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
             try:
                 import urllib.request
@@ -2642,7 +2643,14 @@ class LiveSentinel:
                     with urllib.request.urlopen(req, timeout=timeout) as response:
                         return json.loads(response.read().decode('utf-8'))
                         
-                data = await loop.run_in_executor(None, make_req)
+                # Strictly serialize and rate-limit HTTP requests to Google API across all tasks
+                async with self.gemini_lock:
+                    gap = time.time() - self.last_gemini_call_time
+                    if gap < 2.0:
+                        await asyncio.sleep(2.0 - gap)
+                    self.last_gemini_call_time = time.time()
+                    data = await loop.run_in_executor(None, make_req)
+                    
                 candidates = data.get("candidates", [])
                 raw_text = ""
                 if candidates:
@@ -2662,7 +2670,12 @@ class LiveSentinel:
                 else:
                     break
             except urllib.error.HTTPError as e:
-                print(f"⚠️ Gemini API HTTP Error {e.code} ({e.reason}) on model {model} (Attempt {attempt+1}/{max_retries})")
+                err_body = ""
+                try:
+                    err_body = e.read().decode('utf-8', errors='ignore')
+                except Exception:
+                    pass
+                print(f"⚠️ Gemini API HTTP Error {e.code} ({e.reason}) on model {model} (Attempt {attempt+1}/{max_retries}): {err_body[:200]}")
                 if attempt < max_retries - 1:
                     model = await self.rotate_gemini_model_dynamic(failed_model=model)
                     if e.code in (429, 503):
