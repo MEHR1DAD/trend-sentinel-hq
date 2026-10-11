@@ -493,7 +493,7 @@ class LiveSentinel:
         actions = [
             'انفجار', 'موشک', 'پهپاد', 'بمباران', 'حمله', 'تیراندازی', 'پدافند',
             'آژیر', 'آتش سوزی', 'آتش‌سوزی', 'سقوط', 'ترور', 'تعطیلی', 'لغو پرواز',
-            'توقیف', 'نفتکش', 'اعدام', 'اعتصاب', 'اعتراض', 'دلار', 'تتر', 'طلا', 'سکه', 'بورس'
+            'توقیف', 'نفتکش', 'اعدام', 'اعتصاب', 'اعتراض', 'بازداشت', 'دادگاه', 'حکم', 'فساد', 'اختلاس', 'دلار', 'تتر', 'طلا', 'سکه', 'بورس'
         ]
         for act in actions:
             if act in combined:
@@ -630,7 +630,7 @@ class LiveSentinel:
                 if (anchor in self.foreign_keywords or anchor in self.iran_keywords or 
                     anchor in ['فرودگاه', 'پایگاه', 'پالایشگاه', 'نیروگاه', 'بندر', 'اسکله', 'تنگه هرمز', 
                                'باب المندب', 'دریای سرخ', 'کانال سوئز', 'آرامکو', 'دیمونا', 'نواتیم', 
-                               'عین الاسد', 'التاجی', 'التنف', 'دلار', 'تتر', 'بورس', 'سکه', 'طلا', 'اعدام', 'اعتصاب']):
+                               'عین الاسد', 'التاجی', 'التنف', 'دلار', 'تتر', 'بورس', 'سکه', 'طلا', 'اعدام', 'اعتصاب', 'بازداشت', 'دادگاه', 'حکم', 'فساد', 'اختلاس']):
                     has_substantive = True
                     break
                     
@@ -1226,10 +1226,10 @@ class LiveSentinel:
         if not text:
             return False
             
-        # VIP channels (VahidOnline & iliaen) are primary monitored channels
+        # VIP channels (VahidOnline, iliaen & withyashar) are primary monitored channels
         # that frequently quote news agencies or tag their sub-channels (@VahidHeadline).
         # They must NEVER be dropped by keyword stopwords.
-        if (node or '').lower() in ['vahidonline', 'iliaen']:
+        if (node or '').lower() in ['vahidonline', 'iliaen', 'withyashar']:
             return False
 
         # Strong indicators of live citizen reports that override any news stopwords
@@ -1473,11 +1473,11 @@ class LiveSentinel:
             patterns_in_msg = self.get_message_patterns(text, is_citizen=is_citizen_report)
             has_economy = any("||ECONOMY||" in p for p in patterns_in_msg)
             
-            if (node or '').lower() not in ['vahidonline', 'iliaen'] and not has_economy and self.is_old_news(text, node):
+            if (node or '').lower() not in ['vahidonline', 'iliaen', 'withyashar'] and not has_economy and self.is_old_news(text, node):
                 return
             
             # --- VIP CHANNELS EXCLUSIVE PROTESTS LOGIC ---
-            vip_map = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen'}
+            vip_map = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen', 'withyashar': 'withyashar'}
             node_key = (node or '').lower()
             
             if node_key not in vip_map:
@@ -1487,9 +1487,7 @@ class LiveSentinel:
             link = f"https://t.me/{node}/{msg_id}"
             
             # --- VIP CHANNELS LOGIC ---
-            vip_map = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen'}
-            node_key = (node or '').lower()
-            if node_key in vip_map and patterns_in_msg:
+            if node_key in vip_map and (patterns_in_msg or node_key == 'withyashar'):
                 canonical_node = vip_map[node_key]
                 msg_key = f"{canonical_node}_{msg_id}"
                 now = time.time()
@@ -1541,12 +1539,15 @@ class LiveSentinel:
                             except Exception as edit_err:
                                 print(f"⚠️ Failed to edit VIP alert {orig_sent_id} in {target_ch}: {edit_err}")
                 else:
-                    self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0], 'text': text}
+                    self.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0] if patterns_in_msg else "withyashar_report", 'text': text}
                     if msg_key not in self.alerted_msg_patterns:
                         self.alerted_msg_patterns[msg_key] = set()
                         
                     # Filter to only patterns we haven't alerted for this exact message
-                    new_pats = [p for p in patterns_in_msg if p.replace("||FOREIGN||", "") not in self.alerted_msg_patterns[msg_key]]
+                    if patterns_in_msg:
+                        new_pats = [p for p in patterns_in_msg if p.replace("||FOREIGN||", "") not in self.alerted_msg_patterns[msg_key]]
+                    else:
+                        new_pats = ["withyashar_report"] if "withyashar_report" not in self.alerted_msg_patterns[msg_key] else []
                     
                     if new_pats:
                         clean_pats = [p.replace("||FOREIGN||", "") for p in new_pats]
@@ -1567,20 +1568,20 @@ class LiveSentinel:
                                 target_channel = "@DidehbanEghtesad"
                                 alert_title = f"گزارش اقتصادی: {topic_title}"
                                 custom_icon = "📈"
-                                is_silent = False if (canonical_node in ['VahidOnline', 'iliaen'] and not is_edit) else True
+                                is_silent = False if (canonical_node in ['VahidOnline', 'iliaen', 'withyashar'] and not is_edit) else True
                             elif category == 'PROTEST_RIGHTS':
                                 target_channel = "@DidebanEterazat"
-                                is_rights = any(w in text for w in ["اعدام", "حکم", "طناب دار", "زندان", "دادگاه", "بازداشت", "محبوس", "قوه قضائیه"])
+                                is_rights = any(w in text for w in ["اعدام", "حکم", "طناب دار", "زندان", "دادگاه", "بازداشت", "محبوس", "قوه قضائیه", "فساد", "تخلف"])
                                 alert_title = f"گزارش حقوق بشری: {topic_title}" if is_rights else f"گزارش مردمی: {topic_title}"
-                                custom_icon = "⚖️" if any(w in text for w in ["اعدام", "حکم", "طناب دار", "دادگاه"]) else "📢"
-                                is_silent = False if (canonical_node in ['VahidOnline', 'iliaen'] and not is_edit) else True
+                                custom_icon = "⚖️" if any(w in text for w in ["اعدام", "حکم", "طناب دار", "دادگاه", "قوه قضائیه", "بازداشت"]) else "📢"
+                                is_silent = False if (canonical_node in ['VahidOnline', 'iliaen', 'withyashar'] and not is_edit) else True
                             elif category == 'WAR':
                                 target_channel = "@DidebanJang"
                                 is_iran = self.determine_iran_related(ai_class, text, topic_title)
                                 if is_iran:
                                     alert_title = f"هشدار فوری: {topic_title}"
                                     custom_icon = "🚨"
-                                    is_silent = False if (canonical_node in ['VahidOnline', 'iliaen'] and not is_edit) else True
+                                    is_silent = False if (canonical_node in ['VahidOnline', 'iliaen', 'withyashar'] and not is_edit) else True
                                 else:
                                     alert_title = f"هشدار منطقه‌ای: {topic_title}"
                                     custom_icon = "🔕"
