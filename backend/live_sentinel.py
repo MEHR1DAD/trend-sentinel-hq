@@ -1062,11 +1062,13 @@ class LiveSentinel:
                             self.alibk_posted.setdefault(src_id, {'channel': ch, 'msg_id': m.id, 'timestamp': m.date.timestamp() if m.date else time.time()})
                         elif canon == 'VahidOnline' and ch == '@VahidOnlineAI':
                             self.vahid_ai_posted.setdefault(src_id, m.id)
-                            if "خلاصه خبر" in (m.text or "") and "⚡️" in (m.text or ""):
+                            msg_age = (time.time() - m.date.timestamp()) if m.date else 0
+                            if msg_age <= 10800 and "خلاصه خبر" in (m.text or "") and "⚡️" in (m.text or ""):
                                 self.vahid_needs_refresh.add((src_id, m.id))
                         elif canon == 'iliaen' and ch == '@iliaenAI':
                             self.ilia_ai_posted.setdefault(src_id, m.id)
-                            if "خلاصه خبر" in (m.text or "") and "⚡️" in (m.text or ""):
+                            msg_age = (time.time() - m.date.timestamp()) if m.date else 0
+                            if msg_age <= 10800 and "خلاصه خبر" in (m.text or "") and "⚡️" in (m.text or ""):
                                 self.ilia_needs_refresh.add((src_id, m.id))
                             
                         # Reconstruct thread alerts entry for semantic cross-channel merging
@@ -2598,17 +2600,29 @@ class LiveSentinel:
         """
         if not GEMINI_API_KEY:
             return None
+
+        if not hasattr(self, 'gemini_lock'):
+            self.gemini_lock = asyncio.Lock()
+        if not hasattr(self, 'last_gemini_call_time'):
+            self.last_gemini_call_time = 0.0
+
+        async with self.gemini_lock:
+            # Enforce at least 1.8s spacing between calls to eliminate 429 quota stampedes
+            gap = time.time() - self.last_gemini_call_time
+            if gap < 1.8:
+                await asyncio.sleep(1.8 - gap)
+            self.last_gemini_call_time = time.time()
             
-        # Ensure relaxed safety settings so defense/war/security/nuclear news is never blocked by filters
-        payload.setdefault("safetySettings", [
-            {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
-            {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
-            {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
-            {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"}
-        ])
-            
-        # Every new request defaults to the latest flash-lite stored in memory
-        model = getattr(self, 'latest_flash_lite_model', None) or getattr(self, 'current_gemini_model', DEFAULT_GEMINI_MODEL)
+            # Ensure relaxed safety settings so defense/war/security/nuclear news is never blocked by filters
+            payload.setdefault("safetySettings", [
+                {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+                {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+                {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+                {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"}
+            ])
+                
+            # Every new request defaults to the latest flash-lite stored in memory
+            model = getattr(self, 'latest_flash_lite_model', None) or getattr(self, 'current_gemini_model', DEFAULT_GEMINI_MODEL)
         
         for attempt in range(max_retries):
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
@@ -3827,14 +3841,20 @@ async def main():
             print(f"⚠️ Startup model query timed out or failed: {gm_err}")
         await sentinel.init_channel_last_alert_ids(reader_client=client)
         
-        # 3. Immediately catch up missed posts for all VIP channels concurrently in parallel
-        print("⚡ Executing instant parallel catch-up for iliaen, VahidOnline, and Alibk3...")
-        await asyncio.gather(
-            sentinel.catchup_unposted_ilia(reader_client=client),
-            sentinel.catchup_unposted_vahid(reader_client=client),
-            sentinel.catchup_unposted_alibk(reader_client=client),
-            return_exceptions=True
-        )
+        # 3. Immediately catch up missed posts: Iliaen first (VIP priority), then Vahid & Alibk
+        print("⚡ Executing VIP catch-up: iliaen first, then VahidOnline and Alibk3...")
+        try:
+            await sentinel.catchup_unposted_ilia(reader_client=client)
+        except Exception as e:
+            print(f"⚠️ Ilia catchup error: {e}")
+        try:
+            await sentinel.catchup_unposted_vahid(reader_client=client)
+        except Exception as e:
+            print(f"⚠️ Vahid catchup error: {e}")
+        try:
+            await sentinel.catchup_unposted_alibk(reader_client=client)
+        except Exception as e:
+            print(f"⚠️ Alibk catchup error: {e}")
         
         # 4. Offload heavy historical preloads to non-blocking background tasks
         asyncio.create_task(sentinel.preload_vahid_ai_history(reader_client=client))
