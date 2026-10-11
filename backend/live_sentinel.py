@@ -319,8 +319,23 @@ class LiveSentinel:
                 for k, v in raw_ilia_time.items():
                     if isinstance(v, (int, float)) and (now - v) <= 259200:
                         self.ilia_post_time[int(k) if str(k).isdigit() else k] = v
+
+                # 9. Vahid & Ilia AI posted mapping
+                raw_vahid_ai = data.get('vahid_ai_posted', {})
+                for k, v in raw_vahid_ai.items():
+                    try:
+                        self.vahid_ai_posted[int(k)] = v
+                    except Exception:
+                        self.vahid_ai_posted[k] = v
+
+                raw_ilia_ai = data.get('ilia_ai_posted', {})
+                for k, v in raw_ilia_ai.items():
+                    try:
+                        self.ilia_ai_posted[int(k)] = v
+                    except Exception:
+                        self.ilia_ai_posted[k] = v
                 
-                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.alibk_posted)} Alibk alerts, {len(self.thread_alerts)} thread alerts.")
+                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.alibk_posted)} Alibk alerts, {len(self.vahid_ai_posted)} Vahid AI, {len(self.ilia_ai_posted)} Ilia AI.")
         except Exception as e:
             print(f"⚠️ Error loading persisted state: {e}")
 
@@ -334,6 +349,8 @@ class LiveSentinel:
             clean_reply_map = {k: v for k, v in self.reply_to_root_map.items() if v in active_roots}
             clean_vahid_time = {str(k): v for k, v in self.vahid_post_time.items() if (now - v) <= 259200}
             clean_ilia_time = {str(k): v for k, v in self.ilia_post_time.items() if (now - v) <= 259200}
+            clean_vahid_ai = {str(k): v for k, v in self.vahid_ai_posted.items()}
+            clean_ilia_ai = {str(k): v for k, v in self.ilia_ai_posted.items()}
             serializable_patterns = {k: list(v) for k, v in self.alerted_msg_patterns.items()}
             
             data = {
@@ -346,6 +363,8 @@ class LiveSentinel:
                 "channel_last_alert_id": self.channel_last_alert_id,
                 "vahid_post_time": clean_vahid_time,
                 "ilia_post_time": clean_ilia_time,
+                "vahid_ai_posted": clean_vahid_ai,
+                "ilia_ai_posted": clean_ilia_ai,
                 "last_saved": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
             }
             with open(self.state_file, 'w', encoding='utf-8') as f:
