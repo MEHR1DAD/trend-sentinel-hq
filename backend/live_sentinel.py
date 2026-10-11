@@ -94,6 +94,7 @@ class LiveSentinel:
         self.config = self.load_json(CONFIG_FILE)
         self.nodes = self.config.get('nodes', [])
         self.state_file = STATE_FILE
+        self.latest_flash_lite_model = DEFAULT_GEMINI_MODEL
         self.current_gemini_model = DEFAULT_GEMINI_MODEL
         
         # Load severities
@@ -648,48 +649,12 @@ class LiveSentinel:
             }
         }
         
-        max_retries = 3
-        for attempt in range(max_retries):
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
-            try:
-                import urllib.request
-                import urllib.error
-                import json
-                
-                req = urllib.request.Request(
-                    url, 
-                    data=json.dumps(payload).encode('utf-8'),
-                    headers={'Content-Type': 'application/json'},
-                    method='POST'
-                )
-                
-                loop = asyncio.get_running_loop()
-                def make_req():
-                    with urllib.request.urlopen(req, timeout=12) as response:
-                        return json.loads(response.read().decode('utf-8'))
-                        
-                data = await loop.run_in_executor(None, make_req)
-                raw_out = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
-                
-                match = re.search(r'\{.*\}', raw_out, re.DOTALL)
-                if match:
-                    parsed = json.loads(match.group(0))
-                    return parsed
-            except urllib.error.HTTPError as e:
-                if e.code in (429, 503) and attempt < max_retries - 1:
-                    print(f"⚠️ Gemini HTTP {e.code} in evaluate_semantic_relation for {self.current_gemini_model}. Rotating model...")
-                    await self.rotate_gemini_model()
-                    await asyncio.sleep(1)
-                elif e.code == 404 and attempt < max_retries - 1:
-                    fallback_model = await self.get_fallback_gemini_model()
-                    if fallback_model:
-                        self.current_gemini_model = fallback_model
-                else:
-                    print(f"⚠️ Gemini HTTP error in evaluate_semantic_relation: {e}")
-                    await self.rotate_gemini_model()
-            except Exception as e:
-                print(f"⚠️ Error evaluating semantic relation with Gemini: {e}")
-                await self.rotate_gemini_model()
+        raw_out = await self.call_gemini_content(payload, timeout=12, max_retries=3)
+        if raw_out:
+            match = re.search(r'\{.*\}', raw_out, re.DOTALL)
+            if match:
+                parsed = json.loads(match.group(0))
+                return parsed
                 
         return None
 
@@ -1438,39 +1403,15 @@ class LiveSentinel:
             "generationConfig": {"maxOutputTokens": 250, "temperature": 0.2}
         }
         
-        for attempt in range(3):
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
-            try:
-                import urllib.request, urllib.error, json
-                req = urllib.request.Request(url, data=json.dumps(payload).encode('utf-8'), headers={'Content-Type': 'application/json'}, method='POST')
-                loop = asyncio.get_running_loop()
-                def make_req():
-                    with urllib.request.urlopen(req, timeout=12) as response:
-                        return json.loads(response.read().decode('utf-8'))
-                data = await loop.run_in_executor(None, make_req)
-                raw_out = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
-                match = re.search(r'\{.*\}', raw_out, re.DOTALL)
-                if match:
-                    res = json.loads(match.group(0))
-                    title = res.get("title", "").strip()
-                    summary = res.get("summary", "").strip()
-                    if title and summary:
-                        return {"title": title, "summary": summary}
-                break
-            except urllib.error.HTTPError as e:
-                if e.code in (429, 503) and attempt < 2:
-                    print(f"⚠️ summarize_thread_post HTTP {e.code}. Rotating model...")
-                    await self.rotate_gemini_model()
-                    await asyncio.sleep(1)
-                elif e.code == 404 and attempt < 2:
-                    self.current_gemini_model = await self.get_fallback_gemini_model()
-                else:
-                    await self.rotate_gemini_model()
-                    break
-            except Exception as e:
-                print(f"⚠️ summarize_thread_post error: {e}")
-                await self.rotate_gemini_model()
-                break
+        raw_out = await self.call_gemini_content(payload, timeout=10, max_retries=3)
+        if raw_out:
+            match = re.search(r'\{.*\}', raw_out, re.DOTALL)
+            if match:
+                res = json.loads(match.group(0))
+                title = res.get("title", "").strip()
+                summary = res.get("summary", "").strip()
+                if title and summary:
+                    return {"title": title, "summary": summary}
         return None
 
     def fetch_remote_baselines(self):
@@ -2327,9 +2268,146 @@ class LiveSentinel:
             }
         }
         
-        max_retries = 3
+        raw_text = await self.call_gemini_content(payload, timeout=10, max_retries=3)
+        if raw_text:
+            match = re.search(r'\{.*\}', raw_text, re.DOTALL)
+            if match:
+                res = json.loads(match.group(0))
+                category = str(res.get("category", "")).upper().strip()
+                topic_title = str(res.get("topic_title", "")).strip()
+                is_iran_related = bool(res.get("is_iran_related", False))
+                if category in ["WAR", "ECONOMY", "PROTEST_RIGHTS", "OTHER"]:
+                    print(f"🎯 VIP/Anomaly AI Classification: category={category}, is_iran={is_iran_related}, topic='{topic_title}' (Model: {self.current_gemini_model})")
+                    return {"category": category, "is_iran_related": is_iran_related, "topic_title": topic_title}
+                    
+        return None
+
+    classify_vip_message = classify_message
+
+    def parse_model_version_score(self, model_name):
+        """
+        Calculates a sort score so the latest (highest version) models rank first.
+        e.g. gemini-2.5 > gemini-2.0 > gemini-1.5 > gemini-1.0
+        """
+        clean = model_name.lower().replace("models/", "").strip()
+        nums = re.findall(r'(\d+(?:\.\d+)?)', clean)
+        score = float(nums[0]) if nums else 0.0
+        has_date = 1 if re.search(r'\d{2}-\d{2}|\d{4}', clean) else 0
+        is_stable = 0 if ('preview' in clean or 'exp' in clean) else 1
+        return (score, is_stable, has_date, clean)
+
+    async def fetch_latest_google_models(self):
+        """
+        Live-queries Google API for available models supporting generateContent.
+        Categorizes and sorts into strict user-defined priority:
+          Priority 1: Latest flash-lite (newest version first)
+          Priority 2: Latest flash (newest version first)
+          Priority 3: Latest pro (newest version first)
+        """
+        if not GEMINI_API_KEY:
+            return []
+            
+        url = f"https://generativelanguage.googleapis.com/v1beta/models?key={GEMINI_API_KEY}"
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        loop = asyncio.get_running_loop()
+        
+        def make_req():
+            with urllib.request.urlopen(req, timeout=8) as response:
+                return json.loads(response.read().decode('utf-8'))
+                
+        try:
+            data = await loop.run_in_executor(None, make_req)
+            models = data.get('models', [])
+            
+            valid = [
+                m['name'].replace('models/', '').strip() 
+                for m in models 
+                if "generateContent" in m.get("supportedGenerationMethods", [])
+            ]
+            
+            flash_lite = [m for m in valid if 'flash-lite' in m or 'flash_lite' in m]
+            flash = [m for m in valid if ('flash' in m) and ('flash-lite' not in m and 'flash_lite' not in m)]
+            pro = [m for m in valid if 'pro' in m and 'flash' not in m]
+            
+            flash_lite.sort(key=self.parse_model_version_score, reverse=True)
+            flash.sort(key=self.parse_model_version_score, reverse=True)
+            pro.sort(key=self.parse_model_version_score, reverse=True)
+            
+            if flash_lite:
+                self.latest_flash_lite_model = flash_lite[0]
+                
+            sorted_candidates = flash_lite + flash + pro
+            print(f"📡 Dynamic Google Models Queried ({len(sorted_candidates)} candidates):")
+            print(f"   ⚡️ Tier 1 (Flash-Lite): {flash_lite[:3]}")
+            print(f"   ⚡️ Tier 2 (Flash): {flash[:3]}")
+            print(f"   ⚡️ Tier 3 (Pro): {pro[:3]}")
+            return sorted_candidates
+        except Exception as e:
+            print(f"⚠️ Failed to query latest Google models: {e}")
+            
+        fallback_candidates = [
+            "gemini-2.0-flash-lite", 
+            "gemini-1.5-flash-8b", 
+            "gemini-2.0-flash", 
+            "gemini-1.5-flash", 
+            "gemini-2.0-pro-exp-02-05", 
+            "gemini-1.5-pro", 
+            "gemini-pro"
+        ]
+        return fallback_candidates
+
+    async def rotate_gemini_model_dynamic(self, failed_model=None):
+        """
+        Dynamically queries Google API for the newest models and picks the next best model:
+        Priority 1: Latest flash-lite
+        Priority 2: Latest flash
+        Priority 3: Latest pro
+        """
+        candidates = await self.fetch_latest_google_models()
+        if not candidates:
+            candidates = ["gemini-2.0-flash-lite", "gemini-1.5-flash-8b", "gemini-2.0-flash", "gemini-1.5-flash"]
+            
+        curr = failed_model or getattr(self, 'current_gemini_model', None) or getattr(self, 'latest_flash_lite_model', candidates[0])
+        
+        next_model = None
+        if curr in candidates:
+            idx = candidates.index(curr)
+            for offset in range(1, len(candidates)):
+                cand = candidates[(idx + offset) % len(candidates)]
+                if cand != curr:
+                    next_model = cand
+                    break
+        if not next_model:
+            next_model = [c for c in candidates if c != curr][0] if len(candidates) > 1 else candidates[0]
+            
+        print(f"🔄 Dynamic Model Rotation: {curr} ➡️ {next_model}")
+        self.current_gemini_model = next_model
+        return next_model
+
+    async def rotate_gemini_model(self, failed_model=None):
+        return await self.rotate_gemini_model_dynamic(failed_model)
+
+    async def get_fallback_gemini_model(self):
+        return await self.rotate_gemini_model_dynamic()
+
+    async def call_gemini_content(self, payload, timeout=10, max_retries=3):
+        """
+        Central resilient caller for Google Gemini with Dynamic Model Rotation:
+        - Defaults to latest flash-lite in memory for every new request.
+        - If it fails, queries Google API live for the latest models:
+          Priority 1: latest flash-lite
+          Priority 2: latest flash
+          Priority 3: latest pro
+        - Keeps the latest working flash-lite in memory for future requests.
+        """
+        if not GEMINI_API_KEY:
+            return None
+            
+        # Every new request defaults to the latest flash-lite stored in memory
+        model = getattr(self, 'latest_flash_lite_model', None) or getattr(self, 'current_gemini_model', 'gemini-2.0-flash-lite')
+        
         for attempt in range(max_retries):
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
             try:
                 import urllib.request
                 import urllib.error
@@ -2341,103 +2419,41 @@ class LiveSentinel:
                     headers={'Content-Type': 'application/json'},
                     method='POST'
                 )
-                
                 loop = asyncio.get_running_loop()
                 def make_req():
-                    with urllib.request.urlopen(req, timeout=10) as response:
+                    with urllib.request.urlopen(req, timeout=timeout) as response:
                         return json.loads(response.read().decode('utf-8'))
                         
                 data = await loop.run_in_executor(None, make_req)
                 raw_text = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
-                
-                match = re.search(r'\{.*\}', raw_text, re.DOTALL)
-                if match:
-                    res = json.loads(match.group(0))
-                    category = str(res.get("category", "")).upper().strip()
-                    topic_title = str(res.get("topic_title", "")).strip()
-                    is_iran_related = bool(res.get("is_iran_related", False))
-                    if category in ["WAR", "ECONOMY", "PROTEST_RIGHTS", "OTHER"]:
-                        print(f"🎯 VIP/Anomaly AI Classification: category={category}, is_iran={is_iran_related}, topic='{topic_title}' (Model: {self.current_gemini_model})")
-                        return {"category": category, "is_iran_related": is_iran_related, "topic_title": topic_title}
+                if raw_text:
+                    self.current_gemini_model = model
+                    if "flash-lite" in model or "flash_lite" in model:
+                        self.latest_flash_lite_model = model
+                    return raw_text
                 break
             except urllib.error.HTTPError as e:
-                if e.code in (429, 503) and attempt < max_retries - 1:
-                    print(f"⚠️ Gemini API {e.code} Rate Limit/Busy in classify_message for model {self.current_gemini_model}. Rotating model...")
-                    await self.rotate_gemini_model()
-                    await asyncio.sleep(1)
-                elif e.code == 404 and attempt < max_retries - 1:
-                    print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
-                    self.current_gemini_model = await self.get_fallback_gemini_model()
+                print(f"⚠️ Gemini API HTTP Error {e.code} ({e.reason}) on model {model} (Attempt {attempt+1}/{max_retries})")
+                if attempt < max_retries - 1:
+                    model = await self.rotate_gemini_model_dynamic(failed_model=model)
+                    if e.code in (429, 503):
+                        await asyncio.sleep(1)
                 else:
-                    print(f"⚠️ VIP AI Classifier HTTP Error: {e.code} - {e.reason}")
-                    await self.rotate_gemini_model()
+                    break
             except Exception as e:
-                print(f"⚠️ VIP AI Classifier failed: {e}. Rotating model...")
-                await self.rotate_gemini_model()
-                
+                print(f"⚠️ Gemini API error on model {model}: {e} (Attempt {attempt+1}/{max_retries})")
+                if attempt < max_retries - 1:
+                    model = await self.rotate_gemini_model_dynamic(failed_model=model)
+                else:
+                    break
+                    
         return None
-
-    classify_vip_message = classify_message
-
-    async def rotate_gemini_model(self, failed_model=None):
-        curr = failed_model or getattr(self, 'current_gemini_model', DEFAULT_GEMINI_MODEL)
-        try:
-            idx = GEMINI_MODELS_PRIORITY.index(curr)
-            next_model = GEMINI_MODELS_PRIORITY[(idx + 1) % len(GEMINI_MODELS_PRIORITY)]
-        except ValueError:
-            next_model = GEMINI_MODELS_PRIORITY[0]
-            
-        print(f"🔄 Rotating Gemini model: {curr} ➡️ {next_model}")
-        self.current_gemini_model = next_model
-        return next_model
-
-    async def get_fallback_gemini_model(self):
-        import urllib.request
-        import json
-        
-        url = f"https://generativelanguage.googleapis.com/v1beta/models?key={GEMINI_API_KEY}"
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        
-        loop = asyncio.get_running_loop()
-        def make_req():
-            with urllib.request.urlopen(req, timeout=10) as response:
-                return json.loads(response.read().decode('utf-8'))
-                
-        try:
-            data = await loop.run_in_executor(None, make_req)
-            models = data.get('models', [])
-            
-            # Filter models that support generateContent
-            valid_models = [m for m in models if "generateContent" in m.get("supportedGenerationMethods", [])]
-            
-            # Priority: 1. flash-lite, 2. flash-8b, 3. flash, 4. pro
-            for priority in ["flash-lite", "flash-8b", "flash", "pro"]:
-                for m in valid_models:
-                    if priority in m['name'].lower():
-                        chosen = m['name'].split('models/')[1]
-                        print(f"✅ Discovered live Gemini fallback model: {chosen}")
-                        self.current_gemini_model = chosen
-                        return chosen
-            
-            # Ultimate fallback if nothing matches
-            if valid_models:
-                chosen = valid_models[0]['name'].split('models/')[1]
-                self.current_gemini_model = chosen
-                return chosen
-                
-        except Exception as e:
-            print(f"⚠️ Failed to list Gemini models: {e}")
-        
-        return await self.rotate_gemini_model()
 
     async def append_ai_summary(self, target_channel, message_id, original_text, raw_texts):
         if not GEMINI_API_KEY:
             return
             
-        if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = DEFAULT_GEMINI_MODEL
-        
-        print(f"🤖 Starting AI summary injection using model: {self.current_gemini_model}")
+        print(f"🤖 Starting AI summary injection (Default model: {getattr(self, 'latest_flash_lite_model', 'gemini-2.0-flash-lite')})")
             
         prompt = (
             "تو یک دستیار هوشمند و بی‌طرف برای یک ربات خبری (دیده‌بان) هستی. "
@@ -2455,73 +2471,29 @@ class LiveSentinel:
             }
         }
         
-        max_retries = 3
-        
-        for attempt in range(max_retries):
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
-            
-            try:
-                import urllib.request
-                import urllib.error
-                import json
-                
-                req = urllib.request.Request(
-                    url, 
-                    data=json.dumps(payload).encode('utf-8'),
-                    headers={'Content-Type': 'application/json'},
-                    method='POST'
-                )
-                
-                loop = asyncio.get_running_loop()
-                def make_req():
-                    with urllib.request.urlopen(req, timeout=10) as response:
-                        return json.loads(response.read().decode('utf-8'))
-                        
+        summary = await self.call_gemini_content(payload, timeout=10, max_retries=3)
+        if summary:
+            delimiter = "🔗 **منابع خبر:**" if "🔗 **منابع خبر:**" in original_text else "🔗 **منبع خبر:**"
+            parts = original_text.split(delimiter)
+            if len(parts) == 2:
+                clean_part0 = re.sub(r'⚡️\s*سرعت انتشار[^\n]*\n+', '', parts[0])
+                clean_part0 = re.sub(r'📊\s*وضعیت عادی[^\n]*\n+', '', clean_part0)
+                clean_part0 = clean_part0.rstrip() + "\n\n"
+                new_text = f"{clean_part0}📝 **چکیده رویداد:**\n{summary}\n\n{delimiter}{parts[1]}"
                 try:
-                    data = await loop.run_in_executor(None, make_req)
-                    summary = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
-                    
-                    if summary:
-                        delimiter = "🔗 **منابع خبر:**" if "🔗 **منابع خبر:**" in original_text else "🔗 **منبع خبر:**"
-                        parts = original_text.split(delimiter)
-                        if len(parts) == 2:
-                            clean_part0 = re.sub(r'⚡️\s*سرعت انتشار[^\n]*\n+', '', parts[0])
-                            clean_part0 = re.sub(r'📊\s*وضعیت عادی[^\n]*\n+', '', clean_part0)
-                            clean_part0 = clean_part0.rstrip() + "\n\n"
-                            new_text = f"{clean_part0}📝 **چکیده رویداد:**\n{summary}\n\n{delimiter}{parts[1]}"
-                            await self.bot.edit_message(target_channel, message_id, new_text, link_preview=False)
-                            for tk, td in self.thread_alerts.items():
-                                if td.get('alert_msg_id') == message_id and td.get('channel') == target_channel:
-                                    td['summary'] = summary
-                                    break
-                            self.save_persisted_state()
-                            print(f"✅ AI Summary added to message {message_id} in {target_channel} (Model: {self.current_gemini_model})")
-                            return # Success, exit function
-                            
-                except urllib.error.HTTPError as e:
-                    if e.code in (429, 503) and attempt < max_retries - 1:
-                        print(f"⚠️ Rate limited/busy ({e.code}) in append_ai_summary for {self.current_gemini_model}. Rotating model...")
-                        await self.rotate_gemini_model()
-                        await asyncio.sleep(1)
-                    elif e.code == 404 and attempt < max_retries - 1:
-                        print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
-                        self.current_gemini_model = await self.get_fallback_gemini_model()
-                        print(f"🔄 Retrying with model: {self.current_gemini_model}")
-                    else:
-                        print(f"⚠️ Gemini API HTTP Error: {e.code} - {e.reason}")
-                        await self.rotate_gemini_model()
-                        
-            except Exception as e:
-                print(f"⚠️ Failed to append AI summary: {e}")
-                await self.rotate_gemini_model()
-                return
+                    await self.bot.edit_message(target_channel, message_id, new_text, link_preview=False)
+                    for tk, td in self.thread_alerts.items():
+                        if td.get('alert_msg_id') == message_id and td.get('channel') == target_channel:
+                            td['summary'] = summary
+                            break
+                    self.save_persisted_state()
+                    print(f"✅ AI Summary added to message {message_id} in {target_channel} (Model: {self.current_gemini_model})")
+                except Exception as edit_err:
+                    print(f"⚠️ Failed to edit AI summary message: {edit_err}")
 
     async def summarize_channel_post(self, text, channel_name="وحیدآنلاین", bot_name="وحیدآنلاین هوشمند (VahidOnlineAI)"):
         if not GEMINI_API_KEY:
             return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
-            
-        if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = DEFAULT_GEMINI_MODEL
             
         prompt = (
             f"تو دستیار هوشمند و خلاصه‌ساز خبر برای کانال تلگرام '{bot_name}' هستی.\n"
@@ -2548,60 +2520,23 @@ class LiveSentinel:
             }
         }
         
-        max_retries = 3
-        for attempt in range(max_retries):
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
-            try:
-                import urllib.request
-                import urllib.error
-                import json
-                
-                req = urllib.request.Request(
-                    url, 
-                    data=json.dumps(payload).encode('utf-8'),
-                    headers={'Content-Type': 'application/json'},
-                    method='POST'
-                )
-                
-                loop = asyncio.get_running_loop()
-                def make_req():
-                    with urllib.request.urlopen(req, timeout=10) as response:
-                        return json.loads(response.read().decode('utf-8'))
-                        
-                data = await loop.run_in_executor(None, make_req)
-                raw_out = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
-                
-                match = re.search(r'\{.*\}', raw_out, re.DOTALL)
-                if match:
-                    res = json.loads(match.group(0))
-                    title = res.get("title", "").strip()
-                    summary = res.get("summary", "").strip()
-                    if title and summary:
-                        return {"title": title, "summary": summary}
-                        
-                if raw_out:
-                    lines = [l.strip() for l in raw_out.split('\n') if l.strip()]
-                    if len(lines) >= 2:
-                        return {"title": lines[0].replace('#', '').strip(), "summary": "\n".join(lines[1:])}
-                    return {"title": "خلاصه خبر", "summary": raw_out}
-                break
-            except urllib.error.HTTPError as e:
-                if e.code in (429, 503) and attempt < max_retries - 1:
-                    print(f"⚠️ Rate limited/busy ({e.code}) in summarize_channel_post. Rotating model...")
-                    await self.rotate_gemini_model()
-                    await asyncio.sleep(1)
-                elif e.code == 404 and attempt < max_retries - 1:
-                    print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
-                    self.current_gemini_model = await self.get_fallback_gemini_model()
-                else:
-                    print(f"⚠️ Gemini summarize HTTP Error: {e.code} - {e.reason}")
-                    await self.rotate_gemini_model()
-            except Exception as e:
-                print(f"⚠️ Gemini summarize failed: {e}")
-                await self.rotate_gemini_model()
-                break
-                
+        raw_out = await self.call_gemini_content(payload, timeout=10, max_retries=3)
+        if raw_out:
+            match = re.search(r'\{.*\}', raw_out, re.DOTALL)
+            if match:
+                res = json.loads(match.group(0))
+                title = res.get("title", "").strip()
+                summary = res.get("summary", "").strip()
+                if title and summary:
+                    return {"title": title, "summary": summary}
+                    
+            lines = [l.strip() for l in raw_out.split('\n') if l.strip()]
+            if len(lines) >= 2:
+                return {"title": lines[0].replace('#', '').strip(), "summary": "\n".join(lines[1:])}
+            return {"title": "خلاصه خبر", "summary": raw_out}
+            
         return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
+
 
     async def summarize_vahid_post(self, text):
         return await self.summarize_channel_post(text, channel_name="وحیدآنلاین", bot_name="وحیدآنلاین هوشمند (VahidOnlineAI)")
@@ -3001,62 +2936,22 @@ class LiveSentinel:
             }
         }
         
-        max_retries = 3
-        for attempt in range(max_retries):
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
-            try:
-                import urllib.request
-                import urllib.error
-                import json
-                
-                req = urllib.request.Request(
-                    url, 
-                    data=json.dumps(payload).encode('utf-8'),
-                    headers={'Content-Type': 'application/json'},
-                    method='POST'
-                )
-                
-                loop = asyncio.get_running_loop()
-                def make_req():
-                    with urllib.request.urlopen(req, timeout=10) as response:
-                        return json.loads(response.read().decode('utf-8'))
-                        
-                data = await loop.run_in_executor(None, make_req)
-                raw_out = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
-                
-                match = re.search(r'\{.*\}', raw_out, re.DOTALL)
-                if match:
-                    res = json.loads(match.group(0))
-                    cat = str(res.get("category", "")).upper().strip()
-                    is_iran = bool(res.get("is_iran_related", False))
-                    title = str(res.get("title", "")).strip()
-                    summary = str(res.get("summary", "")).strip()
-                    if cat in ["WAR", "OTHER"]:
-                        return {"category": cat, "is_iran_related": is_iran, "title": title, "summary": summary}
-                break
-            except urllib.error.HTTPError as e:
-                if e.code in (429, 503) and attempt < max_retries - 1:
-                    print(f"⚠️ Gemini API {e.code} in Alibk classifier! Rotating model...")
-                    await self.rotate_gemini_model()
-                    await asyncio.sleep(1)
-                elif e.code == 404 and attempt < max_retries - 1:
-                    print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
-                    self.current_gemini_model = await self.get_fallback_gemini_model()
-                else:
-                    print(f"⚠️ Gemini API HTTP Error {e.code} in Alibk classifier: {e.reason}")
-                    await self.rotate_gemini_model()
-            except Exception as e:
-                print(f"⚠️ Alibk classification failed: {e}. Rotating model...")
-                await self.rotate_gemini_model()
-                
+        raw_out = await self.call_gemini_content(payload, timeout=10, max_retries=3)
+        if raw_out:
+            match = re.search(r'\{.*\}', raw_out, re.DOTALL)
+            if match:
+                res = json.loads(match.group(0))
+                cat = str(res.get("category", "")).upper().strip()
+                is_iran = bool(res.get("is_iran_related", False))
+                title = str(res.get("title", "")).strip()
+                summary = str(res.get("summary", "")).strip()
+                if cat in ["WAR", "OTHER"]:
+                    return {"category": cat, "is_iran_related": is_iran, "title": title, "summary": summary}
         return None
 
     async def classify_and_translate_alibk_thread(self, thread_text):
         if not GEMINI_API_KEY:
             return None
-            
-        if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = DEFAULT_GEMINI_MODEL
             
         prompt = (
             "تو یک تحلیلگر ارشد تحولات نظامی و امنیتی خاورمیانه و مترجم حرفه‌ای برای سامانه دیده‌بان جنگ هستی.\n"
@@ -3088,55 +2983,19 @@ class LiveSentinel:
             }
         }
         
-        max_retries = 3
-        for attempt in range(max_retries):
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
-            try:
-                import urllib.request
-                import urllib.error
-                import json
-                
-                req = urllib.request.Request(
-                    url, 
-                    data=json.dumps(payload).encode('utf-8'),
-                    headers={'Content-Type': 'application/json'},
-                    method='POST'
-                )
-                
-                loop = asyncio.get_running_loop()
-                def make_req():
-                    with urllib.request.urlopen(req, timeout=10) as response:
-                        return json.loads(response.read().decode('utf-8'))
-                        
-                data = await loop.run_in_executor(None, make_req)
-                raw_out = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
-                
-                match = re.search(r'\{.*\}', raw_out, re.DOTALL)
-                if match:
-                    res = json.loads(match.group(0))
-                    cat = str(res.get("category", "")).upper().strip()
-                    is_iran = bool(res.get("is_iran_related", False))
-                    title = str(res.get("title", "")).strip()
-                    summary = str(res.get("summary", "")).strip()
-                    if cat in ["WAR", "OTHER"]:
-                        return {"category": cat, "is_iran_related": is_iran, "title": title, "summary": summary}
-                break
-            except urllib.error.HTTPError as e:
-                if e.code in (429, 503) and attempt < max_retries - 1:
-                    print(f"⚠️ Gemini API {e.code} in Alibk thread classifier! Rotating model...")
-                    await self.rotate_gemini_model()
-                    await asyncio.sleep(1)
-                elif e.code == 404 and attempt < max_retries - 1:
-                    self.current_gemini_model = await self.get_fallback_gemini_model()
-                else:
-                    await self.rotate_gemini_model()
-                    break
-            except Exception as e:
-                print(f"⚠️ Alibk thread classification failed: {e}. Rotating model...")
-                await self.rotate_gemini_model()
-                break
-                
+        raw_out = await self.call_gemini_content(payload, timeout=12, max_retries=3)
+        if raw_out:
+            match = re.search(r'\{.*\}', raw_out, re.DOTALL)
+            if match:
+                res = json.loads(match.group(0))
+                cat = str(res.get("category", "")).upper().strip()
+                is_iran = bool(res.get("is_iran_related", False))
+                title = str(res.get("title", "")).strip()
+                summary = str(res.get("summary", "")).strip()
+                if cat in ["WAR", "OTHER"]:
+                    return {"category": cat, "is_iran_related": is_iran, "title": title, "summary": summary}
         return None
+
 
     async def preload_alibk_history(self, reader_client=None):
         if not reader_client:
