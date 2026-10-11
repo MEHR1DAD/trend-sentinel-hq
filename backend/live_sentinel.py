@@ -349,13 +349,13 @@ class LiveSentinel:
         target_channel = thread_data.get('channel', '@DidebanJang')
         tag = thread_data.get('tag', '#دیده‌بان_جنگ')
         
-        # Collect sources list
-        sources = list(thread_data.get('sources', []))
-        if not sources:
+        # Collect sources list and strictly filter out internal artifacts
+        raw_sources = list(thread_data.get('sources', []))
+        if not raw_sources:
             r_node = thread_data.get('node', 'Alibk3')
             r_id = thread_data.get('root_id')
             if r_id:
-                sources.append({
+                raw_sources.append({
                     'node': r_node,
                     'msg_id': r_id,
                     'media_type': thread_data.get('root_media_type', 'text'),
@@ -363,13 +363,19 @@ class LiveSentinel:
                     'timestamp': thread_data.get('timestamp', time.time())
                 })
             for r in thread_data.get('replies', []):
-                sources.append({
+                raw_sources.append({
                     'node': r_node,
                     'msg_id': r.get('msg_id'),
                     'media_type': r.get('media_type', 'text'),
                     'link': f"https://t.me/{r_node}/{r.get('msg_id')}",
                     'timestamp': r.get('timestamp', time.time())
                 })
+
+        sources = [
+            s for s in raw_sources 
+            if s.get('node') and str(s.get('node')).lower() not in ('radar', 'unknown', 'sentinel')
+            and 't.me/radar/' not in str(s.get('link', '')).lower()
+        ]
 
         # Header media icon
         all_media_types = [s.get('media_type', 'text') for s in sources]
@@ -561,7 +567,7 @@ class LiveSentinel:
                 
         return None
 
-    async def check_and_merge_with_active_alert(self, text, node, msg_id, target_channel, candidate_title="", candidate_summary="", raw_msg=None, category='WAR', is_iran_related=False):
+    async def check_and_merge_with_active_alert(self, text, node, msg_id, target_channel, candidate_title="", candidate_summary="", raw_msg=None, category='WAR', is_iran_related=False, candidate_sources=None):
         """
         Cross-channel semantic deduplication and source merging.
         Checks if candidate news matches an active alert in target_channel within 72 hours.
@@ -649,14 +655,29 @@ class LiveSentinel:
                             'timestamp': r.get('timestamp', time.time())
                         })
                         
-                if not any(s.get('node') == node and (s.get('msg_id') == msg_id or str(s.get('msg_id')) == str(msg_id)) for s in sources):
-                    sources.append({
-                        'node': node,
-                        'msg_id': msg_id,
-                        'media_type': media_type,
-                        'link': f"https://t.me/{node}/{msg_id}",
-                        'timestamp': time.time()
-                    })
+                if candidate_sources:
+                    for cs in candidate_sources:
+                        cs_node = cs.get('node')
+                        cs_mid = cs.get('msg_id')
+                        if cs_node and str(cs_node).lower() not in ('radar', 'unknown', 'sentinel') and 't.me/radar/' not in str(cs.get('link', '')).lower():
+                            if not any(s.get('node') == cs_node and (s.get('msg_id') == cs_mid or str(s.get('msg_id')) == str(cs_mid)) for s in sources):
+                                sources.append(cs)
+                elif node and str(node).lower() not in ('radar', 'unknown', 'sentinel'):
+                    if not any(s.get('node') == node and (s.get('msg_id') == msg_id or str(s.get('msg_id')) == str(msg_id)) for s in sources):
+                        sources.append({
+                            'node': node,
+                            'msg_id': msg_id,
+                            'media_type': media_type,
+                            'link': f"https://t.me/{node}/{msg_id}",
+                            'timestamp': time.time()
+                        })
+
+                # Sanitize sources: strictly prune any dummy/radar entries
+                thread_data['sources'] = [
+                    s for s in sources 
+                    if s.get('node') and str(s.get('node')).lower() not in ('radar', 'unknown', 'sentinel')
+                    and 't.me/radar/' not in str(s.get('link', '')).lower()
+                ]
                     
                 if ai_eval.get('has_update', False):
                     if ai_eval.get('updated_title'):
@@ -1743,17 +1764,35 @@ class LiveSentinel:
                     icon = None
                     continue
                     
+                parsed_anomaly_sources = []
+                for ch_node, ch_link in channels.items():
+                    if not ch_node or str(ch_node).lower() in ('radar', 'unknown', 'sentinel'):
+                        continue
+                    m_sl = re.search(r'https://t\.me/([^/]+)/(\d+)', ch_link)
+                    if m_sl:
+                        parsed_anomaly_sources.append({
+                            'node': m_sl.group(1),
+                            'msg_id': int(m_sl.group(2)),
+                            'media_type': 'text',
+                            'link': ch_link,
+                            'timestamp': time.time()
+                        })
+
+                first_source_node = parsed_anomaly_sources[0]['node'] if parsed_anomaly_sources else 'Sentinel'
+                first_source_id = parsed_anomaly_sources[0]['msg_id'] if parsed_anomaly_sources else int(time.time())
+
                 is_iran = self.determine_iran_related(ai_class, combined_text, topic_title) if category == 'WAR' else False
                 merged = await self.check_and_merge_with_active_alert(
                     text=combined_text,
-                    node="radar",
-                    msg_id=f"anomaly_{int(time.time())}",
+                    node=first_source_node,
+                    msg_id=first_source_id,
                     target_channel=target_ch,
                     candidate_title=topic_title,
                     candidate_summary="",
                     raw_msg=None,
                     category=category,
-                    is_iran_related=is_iran
+                    is_iran_related=is_iran,
+                    candidate_sources=parsed_anomaly_sources
                 )
                 if merged:
                     continue
@@ -1769,23 +1808,12 @@ class LiveSentinel:
                     custom_icon=icon
                 )
                 if sent_msg:
-                    parsed_sources = []
-                    for sl in source_links[:3]:
-                        m_sl = re.search(r'- \[([^\]]+)\]\(https://t\.me/([^/]+)/(\d+)\)', sl)
-                        if m_sl:
-                            parsed_sources.append({
-                                'node': m_sl.group(2),
-                                'msg_id': int(m_sl.group(3)),
-                                'media_type': 'text',
-                                'link': f"https://t.me/{m_sl.group(2)}/{m_sl.group(3)}",
-                                'timestamp': time.time()
-                            })
-                    thread_key = f"radar_{sent_msg.id}"
+                    thread_key = f"{first_source_node}_{first_source_id}"
                     self.thread_alerts[thread_key] = {
                         'channel': target_channel,
                         'alert_msg_id': sent_msg.id,
-                        'node': parsed_sources[0]['node'] if parsed_sources else 'radar',
-                        'root_id': parsed_sources[0]['msg_id'] if parsed_sources else sent_msg.id,
+                        'node': first_source_node,
+                        'root_id': first_source_id,
                         'root_text': combined_text,
                         'root_media_type': 'text',
                         'timestamp': time.time(),
@@ -1794,7 +1822,7 @@ class LiveSentinel:
                         'title': topic_title,
                         'summary': '',
                         'tag': '#دیده‌بان_اقتصاد' if target_channel == '@DidehbanEghtesad' else ('#دیده‌بان_اعتراضات' if target_channel == '@DidebanEterazat' else '#دیده‌بان_جنگ'),
-                        'sources': parsed_sources,
+                        'sources': parsed_anomaly_sources,
                         'replies': []
                     }
                     self.save_persisted_state()
@@ -2754,6 +2782,20 @@ class LiveSentinel:
                                     self.alibk_posted[mid_int] = {'channel': target_ch, 'msg_id': msg.id}
                                     if mid_int != root_id:
                                         self.reply_to_root_map[f"Alibk3_{mid_int}"] = root_id
+
+                            # Filter out dummy/radar nodes
+                            sources_list = [s for s in sources_list if str(s.get('node')).lower() not in ('radar', 'unknown', 'sentinel')]
+                            
+                            # Auto-clean legacy [radar] line from channel message if present
+                            if '- [radar](' in text:
+                                clean_text_no_radar = re.sub(r'\n?- \[radar\]\([^\)]+\)\s*[^\n]*', '', text).strip()
+                                if len(sources_list) <= 1:
+                                    clean_text_no_radar = clean_text_no_radar.replace('🔗 **منابع خبر:**', '🔗 **منبع خبر:**')
+                                try:
+                                    await self.bot.edit_message(target_ch, msg.id, clean_text_no_radar, link_preview=False)
+                                    print(f"🧹 Auto-cleaned legacy 'radar' artifact in {target_ch} msg {msg.id}")
+                                except Exception as clean_err:
+                                    print(f"⚠️ Could not auto-clean radar artifact: {clean_err}")
 
                             if thread_key not in self.thread_alerts:
                                 self.thread_alerts[thread_key] = {
