@@ -22,6 +22,13 @@ BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
+DEFAULT_GEMINI_MODEL = "gemini-2.0-flash-lite"
+GEMINI_MODELS_PRIORITY = [
+    "gemini-2.0-flash-lite",
+    "gemini-1.5-flash-8b",
+    "gemini-2.0-flash",
+    "gemini-1.5-flash"
+]
 
 COUNTRY_THEATRES = {
     'عربستان': [
@@ -87,7 +94,7 @@ class LiveSentinel:
         self.config = self.load_json(CONFIG_FILE)
         self.nodes = self.config.get('nodes', [])
         self.state_file = STATE_FILE
-        self.current_gemini_model = "gemini-1.5-flash"
+        self.current_gemini_model = DEFAULT_GEMINI_MODEL
         
         # Load severities
         self.incident_severities = self.config.get('patterns', {}).get('incident_severities', {})
@@ -596,7 +603,7 @@ class LiveSentinel:
             return None
             
         if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = "gemini-1.5-flash"
+            self.current_gemini_model = DEFAULT_GEMINI_MODEL
             
         same_source_hint = "نکته بسیار مهم: این گزارش جدید از همان کانال منبع منتشرکننده هشدار قبلی ارسال شده است.\n" if is_same_source else ""
         theatre_hint = "نکته بسیار مهم: هر دو رویداد در یک کشور یا جبهه نبرد مشترک رخ داده‌اند.\n" if has_country_theatre else ""
@@ -658,7 +665,7 @@ class LiveSentinel:
                 
                 loop = asyncio.get_running_loop()
                 def make_req():
-                    with urllib.request.urlopen(req, timeout=14) as response:
+                    with urllib.request.urlopen(req, timeout=12) as response:
                         return json.loads(response.read().decode('utf-8'))
                         
                 data = await loop.run_in_executor(None, make_req)
@@ -669,14 +676,20 @@ class LiveSentinel:
                     parsed = json.loads(match.group(0))
                     return parsed
             except urllib.error.HTTPError as e:
-                if e.code == 404 and attempt < max_retries - 1:
+                if e.code in (429, 503) and attempt < max_retries - 1:
+                    print(f"⚠️ Gemini HTTP {e.code} in evaluate_semantic_relation for {self.current_gemini_model}. Rotating model...")
+                    await self.rotate_gemini_model()
+                    await asyncio.sleep(1)
+                elif e.code == 404 and attempt < max_retries - 1:
                     fallback_model = await self.get_fallback_gemini_model()
                     if fallback_model:
                         self.current_gemini_model = fallback_model
-                        continue
-                print(f"⚠️ Gemini HTTP error in evaluate_semantic_relation: {e}")
+                else:
+                    print(f"⚠️ Gemini HTTP error in evaluate_semantic_relation: {e}")
+                    await self.rotate_gemini_model()
             except Exception as e:
                 print(f"⚠️ Error evaluating semantic relation with Gemini: {e}")
+                await self.rotate_gemini_model()
                 
         return None
 
@@ -1175,6 +1188,22 @@ class LiveSentinel:
         except Exception as e153:
             print(f"⚠️ Error repairing post 153: {e153}")
 
+        # Retroactive cleanup: Delete off-topic / truncated post 154 in @DidebanJang (withyashar 25450)
+        try:
+            m154 = await self.bot.get_messages('@DidebanJang', ids=154)
+            if m154 and m154.text and ('زلنسک' in m154.text or 'withyashar/25450' in m154.text or 'اکسیوس' in m154.text):
+                await self.bot.delete_messages('@DidebanJang', [154])
+                print("🗑️ Successfully deleted off-topic & truncated post 154 from @DidebanJang!")
+                if self.channel_last_alert_id.get('@DidebanJang') == 154:
+                    self.channel_last_alert_id['@DidebanJang'] = 153
+                if 'withyashar_25450' in self.vip_alert_history:
+                    self.vip_alert_history.pop('withyashar_25450', None)
+                if 'withyashar_25450' in self.thread_alerts:
+                    self.thread_alerts.pop('withyashar_25450', None)
+                self.save_persisted_state()
+        except Exception as e154:
+            print(f"⚠️ Error cleaning up post 154: {e154}")
+
     async def handle_message_deleted(self, node_username, deleted_ids):
         """
         When a message in a monitored source channel is deleted by its admin,
@@ -1387,7 +1416,7 @@ class LiveSentinel:
         if not GEMINI_API_KEY:
             return None
         if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = "gemini-1.5-flash"
+            self.current_gemini_model = DEFAULT_GEMINI_MODEL
             
         prompt = (
             "تو یک تحلیلگر و ویراستار ارشد اخبار در سیستم مانیتورینگ هوشمند هستی.\n"
@@ -1428,8 +1457,19 @@ class LiveSentinel:
                     if title and summary:
                         return {"title": title, "summary": summary}
                 break
+            except urllib.error.HTTPError as e:
+                if e.code in (429, 503) and attempt < 2:
+                    print(f"⚠️ summarize_thread_post HTTP {e.code}. Rotating model...")
+                    await self.rotate_gemini_model()
+                    await asyncio.sleep(1)
+                elif e.code == 404 and attempt < 2:
+                    self.current_gemini_model = await self.get_fallback_gemini_model()
+                else:
+                    await self.rotate_gemini_model()
+                    break
             except Exception as e:
                 print(f"⚠️ summarize_thread_post error: {e}")
+                await self.rotate_gemini_model()
                 break
         return None
 
@@ -1885,32 +1925,52 @@ class LiveSentinel:
                             # 2. Intelligent Humanized Fallback for VIP Channels if AI API is temporarily unreachable
                             first_line = text.split('\n')[0].strip()
                             clean_headline = re.sub(r'^[🚨⚡️📢🛑🔕⚖️📈📸📹🎙\s\*\-]+', '', first_line).strip()
-                            clean_headline = re.sub(r'\s+', ' ', clean_headline)[:75].strip()
+                            
+                            # Truncate at word boundary to prevent cutting words in half
+                            if len(clean_headline) > 75:
+                                truncated = clean_headline[:75]
+                                last_space = truncated.rfind(' ')
+                                if last_space > 30:
+                                    clean_headline = truncated[:last_space].strip()
+                                else:
+                                    clean_headline = truncated.strip()
+                            clean_headline = re.sub(r'\s+', ' ', clean_headline).strip()
                             
                             if not clean_headline or len(clean_headline) < 5:
                                 clean_headline = "، ".join(dict.fromkeys(clean_pats)) if clean_pats else "گزارش فوری میدانی"
                                 
                             clean_headline = clean_headline.replace("||FOREIGN||", "").replace("||ECONOMY||", "").strip()
                             
-                            is_iran = self.determine_iran_related(None, text, clean_headline)
-                            category = 'WAR'
-                            if any(w in text for w in ['دلار', 'تتر', 'ارز', 'طلا', 'سکه', 'بورس', 'تورم']):
-                                category = 'ECONOMY'
-                            elif any(w in text for w in ['اعتراض', 'اعتصاب', 'اعدام', 'تجمع', 'زندان', 'دادگاه']):
-                                category = 'PROTEST_RIGHTS'
+                            # Heuristic category determination
+                            is_economy = any(w in text for w in ['دلار', 'تتر', 'ارز', 'طلا', 'سکه', 'بورس', 'تورم', 'قیمت'])
+                            is_protest = any(w in text for w in ['اعتراض', 'اعتصاب', 'اعدام', 'تجمع', 'زندان', 'دادگاه', 'بازداشت', 'حقوق بشری'])
+                            has_war_keyword = any(w in text for w in [
+                                'حمله', 'موشک', 'پهپاد', 'انفجار', 'بمباران', 'آژیر', 'پدافند', 'جنگنده', 
+                                'سپاه', 'ارتش', 'درگیری', 'نظامی', 'سقوط', 'کشته', 'مجروح', 'تلفات', 'تیراندازی', 'عملیات',
+                                'آرامکو', 'پایگاه', 'ناو', 'بمب‌افکن', 'سوخت‌رسان', 'رادار', 'سنتکام', 'جبهه', 'اصابت', 'شهید'
+                            ])
+                            
+                            # If from VIP and has NEITHER war patterns NOR war keywords, it is general/diplomatic commentary (like Trump/Zelensky) -> drop it from war channel
+                            if not patterns_in_msg and not has_war_keyword and not is_economy and not is_protest:
+                                print(f"ℹ️ VIP Fallback dropped off-topic non-war message (Msg {msg_id}): '{clean_headline}'")
+                                return
                                 
-                            if category == 'ECONOMY':
+                            if is_economy:
+                                category = 'ECONOMY'
                                 target_channel = "@DidehbanEghtesad"
                                 alert_title = f"گزارش اقتصادی: {clean_headline}"
                                 custom_icon = "📈"
                                 is_silent = False
-                            elif category == 'PROTEST_RIGHTS':
+                            elif is_protest:
+                                category = 'PROTEST_RIGHTS'
                                 target_channel = "@DidebanEterazat"
                                 alert_title = f"گزارش مردمی: {clean_headline}"
                                 custom_icon = "📢"
                                 is_silent = False
                             else:
+                                category = 'WAR'
                                 target_channel = "@DidebanJang"
+                                is_iran = self.determine_iran_related(None, text, clean_headline)
                                 if is_iran:
                                     alert_title = f"هشدار فوری: {clean_headline}"
                                     custom_icon = "🚨"
@@ -2237,7 +2297,7 @@ class LiveSentinel:
             return None
             
         if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = "gemini-1.5-flash"
+            self.current_gemini_model = DEFAULT_GEMINI_MODEL
             
         prompt = (
             "تو یک تحلیلگر و دروازه‌بان هوشمند خبر برای یک سیستم دیده‌بان و مانیتورینگ تلگرام هستی.\n"
@@ -2284,7 +2344,7 @@ class LiveSentinel:
                 
                 loop = asyncio.get_running_loop()
                 def make_req():
-                    with urllib.request.urlopen(req, timeout=15) as response:
+                    with urllib.request.urlopen(req, timeout=10) as response:
                         return json.loads(response.read().decode('utf-8'))
                         
                 data = await loop.run_in_executor(None, make_req)
@@ -2301,34 +2361,46 @@ class LiveSentinel:
                         return {"category": category, "is_iran_related": is_iran_related, "topic_title": topic_title}
                 break
             except urllib.error.HTTPError as e:
-                if e.code == 429:
-                    print(f"⚠️ Gemini API 429 Rate Limit in classify_message. Sleeping {4 * (attempt + 1)}s...")
-                    await asyncio.sleep(4 * (attempt + 1))
+                if e.code in (429, 503) and attempt < max_retries - 1:
+                    print(f"⚠️ Gemini API {e.code} Rate Limit/Busy in classify_message for model {self.current_gemini_model}. Rotating model...")
+                    await self.rotate_gemini_model()
+                    await asyncio.sleep(1)
                 elif e.code == 404 and attempt < max_retries - 1:
                     print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
                     self.current_gemini_model = await self.get_fallback_gemini_model()
                 else:
                     print(f"⚠️ VIP AI Classifier HTTP Error: {e.code} - {e.reason}")
-                    break
+                    await self.rotate_gemini_model()
             except Exception as e:
-                print(f"⚠️ VIP AI Classifier failed: {e}")
-                break
+                print(f"⚠️ VIP AI Classifier failed: {e}. Rotating model...")
+                await self.rotate_gemini_model()
                 
         return None
 
     classify_vip_message = classify_message
+
+    async def rotate_gemini_model(self, failed_model=None):
+        curr = failed_model or getattr(self, 'current_gemini_model', DEFAULT_GEMINI_MODEL)
+        try:
+            idx = GEMINI_MODELS_PRIORITY.index(curr)
+            next_model = GEMINI_MODELS_PRIORITY[(idx + 1) % len(GEMINI_MODELS_PRIORITY)]
+        except ValueError:
+            next_model = GEMINI_MODELS_PRIORITY[0]
+            
+        print(f"🔄 Rotating Gemini model: {curr} ➡️ {next_model}")
+        self.current_gemini_model = next_model
+        return next_model
 
     async def get_fallback_gemini_model(self):
         import urllib.request
         import json
         
         url = f"https://generativelanguage.googleapis.com/v1beta/models?key={GEMINI_API_KEY}"
-        print(f"DEBUG: get_fallback url length: {len(url)}")
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         
         loop = asyncio.get_running_loop()
         def make_req():
-            with urllib.request.urlopen(req, timeout=15) as response:
+            with urllib.request.urlopen(req, timeout=10) as response:
                 return json.loads(response.read().decode('utf-8'))
                 
         try:
@@ -2338,27 +2410,32 @@ class LiveSentinel:
             # Filter models that support generateContent
             valid_models = [m for m in models if "generateContent" in m.get("supportedGenerationMethods", [])]
             
-            # Priority: 1. flash-lite, 2. flash, 3. pro
-            for priority in ["flash-lite", "flash", "pro"]:
+            # Priority: 1. flash-lite, 2. flash-8b, 3. flash, 4. pro
+            for priority in ["flash-lite", "flash-8b", "flash", "pro"]:
                 for m in valid_models:
                     if priority in m['name'].lower():
-                        return m['name'].split('models/')[1]
+                        chosen = m['name'].split('models/')[1]
+                        print(f"✅ Discovered live Gemini fallback model: {chosen}")
+                        self.current_gemini_model = chosen
+                        return chosen
             
             # Ultimate fallback if nothing matches
             if valid_models:
-                return valid_models[0]['name'].split('models/')[1]
+                chosen = valid_models[0]['name'].split('models/')[1]
+                self.current_gemini_model = chosen
+                return chosen
                 
         except Exception as e:
             print(f"⚠️ Failed to list Gemini models: {e}")
         
-        return "gemini-pro" # safe fallback
+        return await self.rotate_gemini_model()
 
     async def append_ai_summary(self, target_channel, message_id, original_text, raw_texts):
         if not GEMINI_API_KEY:
             return
             
         if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = "gemini-1.5-flash"
+            self.current_gemini_model = DEFAULT_GEMINI_MODEL
         
         print(f"🤖 Starting AI summary injection using model: {self.current_gemini_model}")
             
@@ -2378,7 +2455,7 @@ class LiveSentinel:
             }
         }
         
-        max_retries = 2
+        max_retries = 3
         
         for attempt in range(max_retries):
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.current_gemini_model}:generateContent?key={GEMINI_API_KEY}"
@@ -2397,7 +2474,7 @@ class LiveSentinel:
                 
                 loop = asyncio.get_running_loop()
                 def make_req():
-                    with urllib.request.urlopen(req, timeout=15) as response:
+                    with urllib.request.urlopen(req, timeout=10) as response:
                         return json.loads(response.read().decode('utf-8'))
                         
                 try:
@@ -2422,16 +2499,21 @@ class LiveSentinel:
                             return # Success, exit function
                             
                 except urllib.error.HTTPError as e:
-                    if e.code == 404 and attempt < max_retries - 1:
+                    if e.code in (429, 503) and attempt < max_retries - 1:
+                        print(f"⚠️ Rate limited/busy ({e.code}) in append_ai_summary for {self.current_gemini_model}. Rotating model...")
+                        await self.rotate_gemini_model()
+                        await asyncio.sleep(1)
+                    elif e.code == 404 and attempt < max_retries - 1:
                         print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
                         self.current_gemini_model = await self.get_fallback_gemini_model()
                         print(f"🔄 Retrying with model: {self.current_gemini_model}")
                     else:
                         print(f"⚠️ Gemini API HTTP Error: {e.code} - {e.reason}")
-                        return
+                        await self.rotate_gemini_model()
                         
             except Exception as e:
                 print(f"⚠️ Failed to append AI summary: {e}")
+                await self.rotate_gemini_model()
                 return
 
     async def summarize_channel_post(self, text, channel_name="وحیدآنلاین", bot_name="وحیدآنلاین هوشمند (VahidOnlineAI)"):
@@ -2439,7 +2521,7 @@ class LiveSentinel:
             return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
             
         if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = "gemini-1.5-flash"
+            self.current_gemini_model = DEFAULT_GEMINI_MODEL
             
         prompt = (
             f"تو دستیار هوشمند و خلاصه‌ساز خبر برای کانال تلگرام '{bot_name}' هستی.\n"
@@ -2483,7 +2565,7 @@ class LiveSentinel:
                 
                 loop = asyncio.get_running_loop()
                 def make_req():
-                    with urllib.request.urlopen(req, timeout=12) as response:
+                    with urllib.request.urlopen(req, timeout=10) as response:
                         return json.loads(response.read().decode('utf-8'))
                         
                 data = await loop.run_in_executor(None, make_req)
@@ -2504,17 +2586,19 @@ class LiveSentinel:
                     return {"title": "خلاصه خبر", "summary": raw_out}
                 break
             except urllib.error.HTTPError as e:
-                if e.code == 404 and attempt < max_retries - 1:
+                if e.code in (429, 503) and attempt < max_retries - 1:
+                    print(f"⚠️ Rate limited/busy ({e.code}) in summarize_channel_post. Rotating model...")
+                    await self.rotate_gemini_model()
+                    await asyncio.sleep(1)
+                elif e.code == 404 and attempt < max_retries - 1:
                     print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
                     self.current_gemini_model = await self.get_fallback_gemini_model()
-                elif e.code == 429 and attempt < max_retries - 1:
-                    print(f"⚠️ Rate limited (429). Sleeping 5s before retry (attempt {attempt+1}/{max_retries})...")
-                    await asyncio.sleep(5)
                 else:
                     print(f"⚠️ Gemini summarize HTTP Error: {e.code} - {e.reason}")
-                    break
+                    await self.rotate_gemini_model()
             except Exception as e:
                 print(f"⚠️ Gemini summarize failed: {e}")
+                await self.rotate_gemini_model()
                 break
                 
         return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
@@ -2882,7 +2966,7 @@ class LiveSentinel:
             return None
             
         if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = "gemini-1.5-flash"
+            self.current_gemini_model = DEFAULT_GEMINI_MODEL
             
         prompt = (
             "تو یک تحلیلگر ارشد تحولات نظامی و امنیتی خاورمیانه و مترجم حرفه‌ای برای سامانه دیده‌بان جنگ (پایش فوری اخبار تلگرام) هستی.\n"
@@ -2934,7 +3018,7 @@ class LiveSentinel:
                 
                 loop = asyncio.get_running_loop()
                 def make_req():
-                    with urllib.request.urlopen(req, timeout=12) as response:
+                    with urllib.request.urlopen(req, timeout=10) as response:
                         return json.loads(response.read().decode('utf-8'))
                         
                 data = await loop.run_in_executor(None, make_req)
@@ -2951,18 +3035,19 @@ class LiveSentinel:
                         return {"category": cat, "is_iran_related": is_iran, "title": title, "summary": summary}
                 break
             except urllib.error.HTTPError as e:
-                if e.code == 429:
-                    print(f"⚠️ Gemini API 429 Rate Limit in Alibk classifier! Sleeping {5 * (attempt + 1)}s...")
-                    await asyncio.sleep(5 * (attempt + 1))
+                if e.code in (429, 503) and attempt < max_retries - 1:
+                    print(f"⚠️ Gemini API {e.code} in Alibk classifier! Rotating model...")
+                    await self.rotate_gemini_model()
+                    await asyncio.sleep(1)
                 elif e.code == 404 and attempt < max_retries - 1:
                     print(f"⚠️ Model {self.current_gemini_model} not found (404). Seeking fallback model...")
                     self.current_gemini_model = await self.get_fallback_gemini_model()
                 else:
                     print(f"⚠️ Gemini API HTTP Error {e.code} in Alibk classifier: {e.reason}")
-                    break
+                    await self.rotate_gemini_model()
             except Exception as e:
-                print(f"⚠️ Alibk classification failed: {e}")
-                break
+                print(f"⚠️ Alibk classification failed: {e}. Rotating model...")
+                await self.rotate_gemini_model()
                 
         return None
 
@@ -2971,7 +3056,7 @@ class LiveSentinel:
             return None
             
         if not hasattr(self, 'current_gemini_model'):
-            self.current_gemini_model = "gemini-1.5-flash"
+            self.current_gemini_model = DEFAULT_GEMINI_MODEL
             
         prompt = (
             "تو یک تحلیلگر ارشد تحولات نظامی و امنیتی خاورمیانه و مترجم حرفه‌ای برای سامانه دیده‌بان جنگ هستی.\n"
@@ -3020,7 +3105,7 @@ class LiveSentinel:
                 
                 loop = asyncio.get_running_loop()
                 def make_req():
-                    with urllib.request.urlopen(req, timeout=14) as response:
+                    with urllib.request.urlopen(req, timeout=10) as response:
                         return json.loads(response.read().decode('utf-8'))
                         
                 data = await loop.run_in_executor(None, make_req)
@@ -3037,15 +3122,18 @@ class LiveSentinel:
                         return {"category": cat, "is_iran_related": is_iran, "title": title, "summary": summary}
                 break
             except urllib.error.HTTPError as e:
-                if e.code == 429:
-                    print(f"⚠️ Gemini API 429 in Alibk thread classifier! Sleeping {5 * (attempt + 1)}s...")
-                    await asyncio.sleep(5 * (attempt + 1))
+                if e.code in (429, 503) and attempt < max_retries - 1:
+                    print(f"⚠️ Gemini API {e.code} in Alibk thread classifier! Rotating model...")
+                    await self.rotate_gemini_model()
+                    await asyncio.sleep(1)
                 elif e.code == 404 and attempt < max_retries - 1:
                     self.current_gemini_model = await self.get_fallback_gemini_model()
                 else:
+                    await self.rotate_gemini_model()
                     break
             except Exception as e:
-                print(f"⚠️ Alibk thread classification failed: {e}")
+                print(f"⚠️ Alibk thread classification failed: {e}. Rotating model...")
+                await self.rotate_gemini_model()
                 break
                 
         return None
