@@ -24,10 +24,11 @@ BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
-DEFAULT_GEMINI_MODEL = "gemini-2.0-flash-lite"
+DEFAULT_GEMINI_MODEL = "gemini-2.5-flash-lite"
 GEMINI_MODELS_PRIORITY = [
-    "gemini-2.0-flash-lite",
+    "gemini-2.5-flash-lite",
     "gemini-1.5-flash-8b",
+    "gemini-2.5-flash",
     "gemini-2.0-flash",
     "gemini-1.5-flash"
 ]
@@ -2478,24 +2479,28 @@ class LiveSentinel:
             
             if flash_lite:
                 self.latest_flash_lite_model = flash_lite[0]
+            elif flash:
+                self.latest_flash_lite_model = flash[0]
                 
             sorted_candidates = flash_lite + flash + pro
             print(f"📡 Dynamic Google Models Queried ({len(sorted_candidates)} candidates):")
             print(f"   ⚡️ Tier 1 (Flash-Lite): {flash_lite[:3]}")
             print(f"   ⚡️ Tier 2 (Flash): {flash[:3]}")
             print(f"   ⚡️ Tier 3 (Pro): {pro[:3]}")
-            return sorted_candidates
+            if sorted_candidates:
+                self.current_gemini_model = sorted_candidates[0]
+                return sorted_candidates
         except Exception as e:
             print(f"⚠️ Failed to query latest Google models: {e}")
             
         fallback_candidates = [
-            "gemini-2.0-flash-lite", 
+            "gemini-2.5-flash-lite", 
             "gemini-1.5-flash-8b", 
+            "gemini-2.5-flash", 
             "gemini-2.0-flash", 
             "gemini-1.5-flash", 
-            "gemini-2.0-pro-exp-02-05", 
-            "gemini-1.5-pro", 
-            "gemini-pro"
+            "gemini-2.5-pro", 
+            "gemini-1.5-pro"
         ]
         return fallback_candidates
 
@@ -2508,7 +2513,13 @@ class LiveSentinel:
         """
         candidates = await self.fetch_latest_google_models()
         if not candidates:
-            candidates = ["gemini-2.0-flash-lite", "gemini-1.5-flash-8b", "gemini-2.0-flash", "gemini-1.5-flash"]
+            candidates = [
+                "gemini-2.5-flash-lite", 
+                "gemini-1.5-flash-8b", 
+                "gemini-2.5-flash", 
+                "gemini-2.0-flash", 
+                "gemini-1.5-flash"
+            ]
             
         curr = failed_model or getattr(self, 'current_gemini_model', None) or getattr(self, 'latest_flash_lite_model', candidates[0])
         
@@ -2546,8 +2557,16 @@ class LiveSentinel:
         if not GEMINI_API_KEY:
             return None
             
+        # Ensure relaxed safety settings so defense/war/security/nuclear news is never blocked by filters
+        payload.setdefault("safetySettings", [
+            {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+            {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+            {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+            {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"}
+        ])
+            
         # Every new request defaults to the latest flash-lite stored in memory
-        model = getattr(self, 'latest_flash_lite_model', None) or getattr(self, 'current_gemini_model', 'gemini-2.0-flash-lite')
+        model = getattr(self, 'latest_flash_lite_model', None) or getattr(self, 'current_gemini_model', DEFAULT_GEMINI_MODEL)
         
         for attempt in range(max_retries):
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
@@ -2568,13 +2587,24 @@ class LiveSentinel:
                         return json.loads(response.read().decode('utf-8'))
                         
                 data = await loop.run_in_executor(None, make_req)
-                raw_text = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
+                candidates = data.get("candidates", [])
+                raw_text = ""
+                if candidates:
+                    parts = candidates[0].get("content", {}).get("parts", [])
+                    raw_text = "\n".join([p.get("text", "") for p in parts if p.get("text")]).strip()
+
                 if raw_text:
                     self.current_gemini_model = model
                     if "flash-lite" in model or "flash_lite" in model:
                         self.latest_flash_lite_model = model
                     return raw_text
-                break
+                
+                finish_reason = candidates[0].get("finishReason", "UNKNOWN") if candidates else "NO_CANDIDATES"
+                print(f"⚠️ Gemini empty/blocked response from model {model} (finishReason: {finish_reason}). Attempt {attempt+1}/{max_retries}")
+                if attempt < max_retries - 1:
+                    model = await self.rotate_gemini_model_dynamic(failed_model=model)
+                else:
+                    break
             except urllib.error.HTTPError as e:
                 print(f"⚠️ Gemini API HTTP Error {e.code} ({e.reason}) on model {model} (Attempt {attempt+1}/{max_retries})")
                 if attempt < max_retries - 1:
@@ -2639,18 +2669,22 @@ class LiveSentinel:
             return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
             
         prompt = (
-            f"تو دستیار هوشمند و خلاصه‌ساز خبر برای کانال تلگرام '{bot_name}' هستی.\n"
-            f"پست زیر از کانال تلگرام {channel_name} منتشر شده است. "
-            "وظیفه تو این است که دو مورد تولید کنی:\n"
-            "۱. title: یک عنوان و تیتر خبری بسیار جذاب، دقیق و کوتاه (حداکثر ۶ الی ۷ کلمه) که اصل رویداد را بگوید.\n"
-            "۲. summary: یک چکیده روان، دقیق، رسا و بدون قضاوت در ۲ الی ۳ خط.\n\n"
+            f"تو دستیار، تحلیلگر و خلاصه‌ساز هوشمند خبر برای کانال تلگرام '{bot_name}' هستی.\n"
+            f"پست زیر از کانال {channel_name} منتشر شده است.\n\n"
+            "وظیفه تو این است که دو فیلد هوشمندانه، دقیق، بدون قضاوت و با ارزش افزوده بالا برای مخاطب تولید کنی:\n"
+            "۱. title: یک عنوان خبری یا هشداری بسیار جذاب، برجسته، صریح و کوتاه (حداکثر ۷ کلمه) که اصل ماهیت رویداد یا هشدار را بیان کند.\n"
+            "۲. summary: \n"
+            "   - اگر متن پست یک هشدار، توصیه امنیتی یا پیام کوتاه/فوری است: هرگز متن پست را صرفاً کپی یا بازنویسی سطحی نکن! "
+            "بلکه مفهوم، ابعاد رویداد و دلیل اصلی این پیشنهاد یا هشدار را برای مخاطب به صورت هوشمندانه و تحلیلی شرح بده "
+            "(مانند اشاره به افزایش تنش‌های نظامی، خطرات بالقوه ناشی از هدف قرار گرفتن مراکز دفاعی و تاسیسات اتمی در روزهای آتی، و دلایل لزوم رعایت هشدارهای حفاظتی توسط شهروندان).\n"
+            "   - اگر متن پست یک گزارش خبری طولانی یا چندقسمتی است: یک چکیده دقیق، روان، رسا و منسجم در ۲ الی ۴ خط بنویس که جان کلام و آخرین وضعیت نهایی رویداد را منعکس کند.\n\n"
             "دستورالعمل‌های الزامی:\n"
-            "- هیچ مقدمه، سلام، توضیح اضافی یا هشتگ ننویس.\n"
-            "- اگر پست شامل بخش‌های «تکمیلی»، «آپدیت» یا گزارش‌های پی‌درپی است، اولویت را به جدیدترین اطلاعات اضافه‌شده بده و وضعیت نهایی و به‌روز شده رویداد را در تیتر و خلاصه بازتاب بده.\n"
-            "- پاسخ را دقیقاً و فقط در قالب یک شیء JSON با دو کلید 'title' و 'summary' بنویس:\n"
+            "- از تکرار سطحی و واژه به واژه متن اصلی اجتناب کن؛ وظیفه تو شرح و تبیین هوشمندانه است تا کاربر علت و اهمیت خبر را به وضوح درک کند.\n"
+            "- هیچ مقدمه، سلام، توضیح فنی، هشتگ یا ایموجی اضافی قبل یا بعد از JSON ننویس.\n"
+            "- پاسخ را دقیقاً و منحصراً در قالب یک شیء JSON با دو کلید 'title' و 'summary' بنویس:\n"
             "{\n"
             '  "title": "تیتر کوتاه و دقیق",\n'
-            '  "summary": "متن چکیده ۲ الی ۳ خطی"\n'
+            '  "summary": "شرح و چکیده هوشمندانه"\n'
             "}\n\n"
             f"متن پست:\n{text}"
         )
@@ -2658,12 +2692,12 @@ class LiveSentinel:
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 250,
+                "maxOutputTokens": 350,
                 "temperature": 0.2
             }
         }
         
-        raw_out = await self.call_gemini_content(payload, timeout=10, max_retries=3)
+        raw_out = await self.call_gemini_content(payload, timeout=12, max_retries=3)
         if raw_out:
             match = re.search(r'\{.*\}', raw_out, re.DOTALL)
             if match:
@@ -2676,7 +2710,7 @@ class LiveSentinel:
             lines = [l.strip() for l in raw_out.split('\n') if l.strip()]
             if len(lines) >= 2:
                 return {"title": lines[0].replace('#', '').strip(), "summary": "\n".join(lines[1:])}
-            return {"title": "خلاصه خبر", "summary": raw_out}
+            return {"title": "تحلیل خبر", "summary": raw_out}
             
         return {"title": "خلاصه خبر", "summary": text[:250] + "..." if len(text) > 250 else text}
 
@@ -2685,7 +2719,7 @@ class LiveSentinel:
         return await self.summarize_channel_post(text, channel_name="وحیدآنلاین", bot_name="وحیدآنلاین هوشمند (VahidOnlineAI)")
 
     async def summarize_ilia_post(self, text):
-        return await self.summarize_channel_post(text, channel_name="ایلیا (iliaen)", bot_name="ایلیا هوشمند (iliaenAI)")
+        return await self.summarize_channel_post(text, channel_name="ایلیا (کانال تحلیلی/امنیتی iliaen)", bot_name="ایلیا هوشمند (iliaenAI)")
 
     async def preload_vahid_ai_history(self, reader_client=None):
         target_channel = "@VahidOnlineAI"
@@ -2712,6 +2746,19 @@ class LiveSentinel:
         if not reader_client:
             return
         try:
+            # Fast scan of last 10 messages in @VahidOnlineAI to detect any fallback posts needing AI upgrade
+            try:
+                async for m in reader_client.iter_messages("@VahidOnlineAI", limit=10):
+                    txt = m.text or m.message or ""
+                    if "خلاصه خبر" in txt and "⚡️" in txt:
+                        match = re.search(r'https://t\.me/Vahid(?:Online|Headline|OOnLine)/(\d+)', txt)
+                        if match:
+                            src_id = int(match.group(1))
+                            self.vahid_ai_posted[src_id] = m.id
+                            self.vahid_needs_refresh.add((src_id, m.id))
+            except Exception as scan_err:
+                print(f"⚠️ Quick scan @VahidOnlineAI failed: {scan_err}")
+
             now_utc = datetime.now(timezone.utc)
             recent_vahid = []
             async for msg in reader_client.iter_messages("VahidOnline", limit=20):
@@ -2888,6 +2935,19 @@ class LiveSentinel:
         if not reader_client:
             return
         try:
+            # Fast scan of last 10 messages in @iliaenAI to detect any fallback posts needing AI upgrade
+            try:
+                async for m in reader_client.iter_messages("@iliaenAI", limit=10):
+                    txt = m.text or m.message or ""
+                    if "خلاصه خبر" in txt and "⚡️" in txt:
+                        match = re.search(r'https://t\.me/iliaen/(\d+)', txt)
+                        if match:
+                            src_id = int(match.group(1))
+                            self.ilia_ai_posted[src_id] = m.id
+                            self.ilia_needs_refresh.add((src_id, m.id))
+            except Exception as scan_err:
+                print(f"⚠️ Quick scan @iliaenAI failed: {scan_err}")
+
             now_utc = datetime.now(timezone.utc)
             recent_ilia = []
             async for msg in reader_client.iter_messages("iliaen", limit=20):
@@ -3717,8 +3777,12 @@ async def main():
         poller_task = asyncio.create_task(active_poller())
         heartbeat_task = asyncio.create_task(heartbeat_monitor())
         
-        # 2. Fast critical initialization: Preload entities and latest channel alert IDs
+        # 2. Fast critical initialization: Preload entities, live Google models and channel alert IDs
         await sentinel.preload_node_entities(reader_client=client)
+        try:
+            await asyncio.wait_for(sentinel.fetch_latest_google_models(), timeout=5.0)
+        except Exception as gm_err:
+            print(f"⚠️ Startup model query timed out or failed: {gm_err}")
         await sentinel.init_channel_last_alert_ids(reader_client=client)
         
         # 3. Immediately catch up missed posts for all VIP channels concurrently in parallel
