@@ -23,6 +23,63 @@ CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
 
+COUNTRY_THEATRES = {
+    'عربستان': [
+        'عربستان', 'السعودية', 'السعوديه', 'سعودی', 'سعودیه', 'سعودیة', 'ریاض', 'الرياض', 
+        'دمام', 'الدمام', 'جده', 'جدة', 'ینبع', 'جازان', 'جیزان', 'بقیق', 'خریص', 
+        'راس تنوره', 'رأس تنورة', 'شدقم', 'نجران', 'ابها', 'أبها', 'تبوک', 'ظهران', 
+        'الظهران', 'خمیس مشیط', 'خميس مشيط', 'آرامکو', 'ارامکو', 'ارامكو', 'آرامكو', 
+        'فرودگاه ملک خالد', 'قاعده ملک خالد', 'فرودگاه ریاض'
+    ],
+    'اسرائیل': [
+        'اسرائیل', 'إسرائيل', 'اسرائيل', 'صهیونیست', 'الصهيوني', 'تل آویو', 'تل ابیب', 'تل أبيب', 'حیفا', 'حيفا', 
+        'قدس', 'القدس', 'اورشلیم', 'أورشليم', 'ایلات', 'إيلات', 'صفد', 'طبریا', 'طبريا', 
+        'عکا', 'عكا', 'دیمونا', 'ديمونا', 'بئرشبع', 'بئر السبع', 'عسقلان', 'اسدود', 'أشدود', 
+        'کریات شمونه', 'كريات شمونة', 'رمات گان', 'رمات غان', 'نتانیا', 'نتانيا', 'هرتزلیا', 'هرتسليا', 
+        'غلاف غزه', 'غلاف غزة', 'نواتیم', 'نفاطيم', 'نواتيم', 'هاتزریم', 'رامات دیوید', 'بن گوریون', 'بن غوريون'
+    ],
+    'لبنان': [
+        'لبنان', 'بیروت', 'بيروت', 'ضاحیه', 'الضاحية', 'ضاحية', 'بقاع', 'البقاع', 
+        'صور', 'صیدا', 'صيدا', 'بعلبک', 'بعلبك', 'نبطیه', 'النبطية', 'نبطية', 
+        'الناقوره', 'الناقورة', 'خیام', 'الخيام', 'مرجعیون', 'حزب الله', 'حزب‌الله'
+    ],
+    'یمن': [
+        'یمن', 'اليمن', 'صنعا', 'صنعاء', 'عدن', 'حدیده', 'الحديدة', 'حديدة', 
+        'صعده', 'صعدة', 'مارب', 'مأرب', 'تعز', 'حجه', 'حجة', 'شبوه', 'شبوة', 
+        'ابین', 'أبين', 'انصارالله', 'انصار الله', 'حوثی', 'الحوثي', 'الحوثيين'
+    ],
+    'سوریه': [
+        'سوریه', 'سوريا', 'دمشق', 'حلب', 'حمص', 'حماه', 'حماة', 'لاذقیه', 'اللاذقية', 
+        'طرطوس', 'دیرالزور', 'دير الزور', 'بوکمال', 'البوكمال', 'تدمر', 'قنیطره', 'القنيطرة', 
+        'سویداء', 'السويداء', 'جولان', 'الجولان', 'التنف'
+    ],
+    'عراق': [
+        'عراق', 'العراق', 'بغداد', 'اربیل', 'أربيل', 'سلیمانیه', 'السليمانية', 
+        'دهوک', 'بصره', 'البصرة', 'نجف', 'النجف', 'کربلا', 'كربلاء', 'سامرا', 'سامراء', 
+        'کرکوک', 'كركوك', 'موصل', 'الموصل', 'الانبار', 'الأنبار', 'عین الاسد', 'عين الأسد', 
+        'التاجی', 'بلد', 'جرف الصخر', 'القائم', 'الحریر'
+    ],
+    'ایران': [
+        'ایران', 'إيران', 'تهران', 'طهران', 'اصفهان', 'شیراز', 'تبریز', 'مشهد', 
+        'اهواز', 'کرج', 'قم', 'کرمانشاه', 'ارومیه', 'رشت', 'زاهدان', 'همدان', 
+        'کرمان', 'یزد', 'اردبیل', 'بندرعباس', 'اراک', 'زنجان', 'سنندج', 'قزوین', 
+        'خرم‌آباد', 'گرگان', 'ساری', 'بوشهر', 'بیرجند', 'ایلام', 'شهرکرد', 'یاسوج', 
+        'سمنان', 'کیش', 'قشم', 'چابهار', 'نطنز', 'فردو', 'پارس جنوبی', 'عسلویه', 
+        'خارگ', 'خارک', 'سپاه', 'الحرس الثوري', 'ارتش', 'تنگه هرمز', 'خلیج فارس'
+    ],
+    'امارات': [
+        'امارات', 'الإمارات', 'دبی', 'دبي', 'ابوظبی', 'أبوظبي', 'شارجه', 'الشارقة', 
+        'فجیره', 'الفجيرة', 'جبل علی', 'الرویس', 'عجمان', 'راس الخیمه', 'رأس الخيمة'
+    ],
+    'اوکراین': [
+        'اوکراین', 'أوكرانيا', 'کی‌یف', 'کیف', 'كييف', 'خارکیف', 'خاركيف', 'اودسا', 'أوديسا', 
+        'زاپروژیا', 'دنیپرو', 'لویو', 'کریمه', 'دونباس'
+    ],
+    'روسیه': [
+        'روسیه', 'روسيا', 'مسکو', 'موسكو', 'کرملین', 'کورسک', 'بلگورود', 'روستوف'
+    ]
+}
+
 class LiveSentinel:
     def __init__(self, bot, client=None):
         self.bot = bot
@@ -460,24 +517,46 @@ class LiveSentinel:
         ])
         return "\n".join(parts)
 
+    @staticmethod
+    def normalize_text_for_anchors(text):
+        if not text:
+            return ""
+        t = str(text).lower()
+        t = re.sub(r'[\u064B-\u065F\u0670]', '', t)
+        t = t.replace('ي', 'ی').replace('ك', 'ک').replace('ة', 'ه')
+        t = t.replace('أ', 'ا').replace('إ', 'ا').replace('آ', 'ا').replace('ٱ', 'ا')
+        t = t.replace('ؤ', 'و').replace('ئ', 'ی')
+        t = t.replace('\u200c', ' ')
+        return re.sub(r'\s+', ' ', t).strip()
+
     def extract_message_anchors(self, text, title=""):
         """
         Extracts geographic locations, strategic targets, and event keywords
         from text and title for zero-cost Layer 1 candidate filtering.
+        Supports both Persian and Arabic scripts, normalizes variants,
+        and maps strategic cities/targets to their country theatre.
         """
-        combined = f"{title} {text}".lower().replace('ي', 'ی').replace('ك', 'ک').replace('\u200c', ' ')
+        norm_combined = self.normalize_text_for_anchors(f"{title} {text}")
         anchors = set()
         
-        # 1. Geographic & regional locations
+        # 1. Geographic & regional locations and Country Theatres
+        for country, aliases in COUNTRY_THEATRES.items():
+            norm_country = self.normalize_text_for_anchors(country)
+            for alias in aliases:
+                norm_alias = self.normalize_text_for_anchors(alias)
+                if norm_alias in norm_combined:
+                    anchors.add(norm_alias)
+                    anchors.add(norm_country)
+                    
         for kw in self.foreign_keywords:
-            kw_norm = kw.lower().replace('ي', 'ی').replace('ك', 'ک').replace('\u200c', ' ')
-            if kw_norm in combined:
-                anchors.add(kw)
+            norm_kw = self.normalize_text_for_anchors(kw)
+            if norm_kw in norm_combined:
+                anchors.add(norm_kw)
                 
         for kw in self.iran_keywords:
-            kw_norm = kw.lower().replace('ي', 'ی').replace('ك', 'ک').replace('\u200c', ' ')
-            if kw_norm in combined:
-                anchors.add(kw)
+            norm_kw = self.normalize_text_for_anchors(kw)
+            if norm_kw in norm_combined:
+                anchors.add(norm_kw)
                 
         # 2. Strategic targets & critical facilities
         facilities = [
@@ -486,8 +565,9 @@ class LiveSentinel:
             'عین الاسد', 'التاجی', 'التنف', 'هاتزریم', 'رامات دیوید', 'کرملین', 'پنتاگون'
         ]
         for fac in facilities:
-            if fac in combined:
-                anchors.add(fac)
+            norm_fac = self.normalize_text_for_anchors(fac)
+            if norm_fac in norm_combined:
+                anchors.add(norm_fac)
                 
         # 3. Incident types & critical domains
         actions = [
@@ -496,16 +576,17 @@ class LiveSentinel:
             'توقیف', 'نفتکش', 'اعدام', 'اعتصاب', 'اعتراض', 'بازداشت', 'دادگاه', 'حکم', 'فساد', 'اختلاس', 'دلار', 'تتر', 'طلا', 'سکه', 'بورس'
         ]
         for act in actions:
-            if act in combined:
-                anchors.add(act)
+            norm_act = self.normalize_text_for_anchors(act)
+            if norm_act in norm_combined:
+                anchors.add(norm_act)
                 
         return anchors
 
-    async def evaluate_semantic_relation(self, existing_title, existing_summary, new_text):
+    async def evaluate_semantic_relation(self, existing_title, existing_summary, new_text, is_same_source=False, has_country_theatre=False):
         """
-        Layer 2: Calls Gemini to evaluate whether new_text refers to SAME_EVENT as existing alert,
-        or is a NEW_EVENT (such as a separate wave of attacks or distinct incident).
-        If SAME_EVENT, synthesizes updated title & summary if new details exist.
+        Layer 2: Calls Gemini to evaluate whether new_text refers to SAME_EVENT or a coordinated wave
+        as the existing alert, or is a NEW_EVENT (such as a separate incident in a different theatre).
+        If SAME_EVENT, synthesizes updated title & summary combining all targets and new facts.
         """
         if not GEMINI_API_KEY:
             return None
@@ -513,29 +594,37 @@ class LiveSentinel:
         if not hasattr(self, 'current_gemini_model'):
             self.current_gemini_model = "gemini-1.5-flash"
             
+        same_source_hint = "نکته بسیار مهم: این گزارش جدید از همان کانال منبع منتشرکننده هشدار قبلی ارسال شده است.\n" if is_same_source else ""
+        theatre_hint = "نکته بسیار مهم: هر دو رویداد در یک کشور یا جبهه نبرد مشترک رخ داده‌اند.\n" if has_country_theatre else ""
+        
         prompt = (
             "تو یک تحلیلگر ارشد خبر و ناظر هوشمند دیده‌بان هستی.\n"
-            "یک هشدار خبری فعال در کانال منتشر شده است و اکنون یک خبر جدید از منبع دیگری دریافت شده است.\n\n"
-            f"📌 [هشدار فعلی در کانال]:\n"
+            "یک هشدار خبری فعال در کانال منتشر شده است و اکنون یک خبر/گزارش جدید دریافت شده است.\n\n"
+            f"📌 [هشدار فعال فعلی در کانال]:\n"
             f"عنوان: {existing_title}\n"
             f"چکیده: {existing_summary}\n\n"
             f"📥 [خبر جدید دریافت شده]:\n"
             f"{new_text}\n\n"
-            "وظیفه تو این است که با دقت مشخص کنی آیا این خبر جدید مربوط به «دقیقاً همان رویداد و حادثه قبلی» است یا یک «رویداد جدید / موج جدید حملات / واقعه مجزا»:\n\n"
-            "قوانین دسته‌بندی (relation):\n"
-            "1. SAME_EVENT: اگر خبر جدید همان واقعه قبلی را بازتاب می‌دهد، تایید می‌کند، یا جزئیات تکمیلی/عواقب آن را بیان می‌کند (مانند لغو پروازها، آمار اولیه تلفات، علل حادثه، بیانیه رسمی، واکنش طرف‌ها).\n"
-            "2. NEW_EVENT: اگر خبر جدید یک واقعه کاملاً مجزا است، یا «موج جدید حملات» (مثلاً شروع موج دوم پرتاب موشک‌ها پس از پایان موج اول)، یا حادثه‌ای در موقعیت و زمان دیگر است که نباید ادغام شود بلکه باید هشدار مستقل داشته باشد.\n\n"
+            f"{same_source_hint}{theatre_hint}"
+            "وظیفه تو این است که مشخص کنی آیا این خبر جدید باید با هشدار فعلی «ادغام» (SAME_EVENT) شود یا یک «رویداد کاملاً مستقل و بی‌ارتباط» (NEW_EVENT) است:\n\n"
+            "قوانین بسیار مهم ادغام هوشمند (SAME_EVENT):\n"
+            "۱. موج حملات هماهنگ و اهداف همزمان (Coordinated Wave / Multi-Target Attack): اگر خبر جدید درباره حملات موشکی، پهپادی یا انفجار در همان کشور/جبهه جنگ است (مثلاً حمله به فرودگاه ریاض و همزمان یا با فاصله کم اصابت یا دود در الدمام، یا حملات همزمان به تل‌آویو و حیفا، یا چند نقطه در بیروت/لبنان)، این یک موج عملیاتی واحد است و حتماً باید SAME_EVENT باشد!\n"
+            "۲. پیگیری، جزییات تکمیلی و بازتاب: اگر خبر جدید ابعاد جدید، تاییدیه، خسارات، لغو پروازها، بیانیه‌های طرفین، یا منبع دیگری از همان تحولات است، حتماً SAME_EVENT است.\n"
+            "۳. گزارش از همان منبع (Same-Source): اگر خبر جدید از همان کانال مبدا است و سیر تحولات یک ساعت اخیر را پوشش می‌دهد، نباید دو پست هشدار جداگانه ایجاد شود و باید ادغام شود.\n\n"
+            "تنها در صورتی NEW_EVENT است که:\n"
+            "- خبر جدید در یک کشور یا جبهه کاملاً بی‌ارتباط رخ داده باشد (مثلاً هشدار قبلی درباره عربستان بوده و این خبر درباره اوکراین یا ایران است).\n"
+            "- یا موضوع خبر کاملاً متفاوت باشد (مثلاً هشدار قبلی نظامی بوده و این خبر سقوط ارزش سهام یا یک رویداد ورزشی/پزشکی است).\n\n"
             "اگر SAME_EVENT است:\n"
-            "- has_update: آیا خبر جدید جزئیات یا فکت‌های جدیدی دارد که چکیده و عنوان فعلی را بهبود ببخشد؟ (true/false)\n"
-            "- updated_title: عنوان فارسی دقیق، رسمی و جذاب برای خبر (حداکثر ۵ تا ۶ کلمه). اگر عنوان فعلی مناسب است همان را بنویس.\n"
-            "- updated_summary: چکیده رویداد ۲ تا ۳ خطی فارسی، روان و بی‌طرف حاصل تلفیق اطلاعات قبلی و جزئیات جدید.\n"
-            "- is_iran_related: آیا این رویداد مستقیماً به ایران، خاک ایران یا نیروهای مسلح ایران مربوط است؟ (true/false)\n\n"
+            "- has_update: مقدار true\n"
+            "- updated_title: یک عنوان جامع، رسمی و جذاب فارسی (حداکثر ۶ تا ۷ کلمه) که تمام اهداف را در بر بگیرد (مثلاً اگر ریاض و دمام هر دو هدف قرار گرفتند: «حملات موشکی همزمان به فرودگاه ریاض و شهر الدمام»).\n"
+            "- updated_summary: چکیده رویداد ۲ تا ۳ خطی فارسی، روان، بی‌طرف و یکپارچه حاصل تجمیع تمام اهداف و اطلاعات قبلی و جدید.\n"
+            "- is_iran_related: آیا مستقیماً به خاک، نیروها یا منافع نظامی مستقیم ایران مربوط است؟ (true/false)\n\n"
             "پاسخ را دقیقاً و فقط در قالب شیء JSON زیر بدون هیچ توضیح دیگری ارسال کن:\n"
             "{\n"
             '  "relation": "SAME_EVENT" | "NEW_EVENT",\n'
-            '  "has_update": true | false,\n'
-            '  "updated_title": "عنوان فارسی",\n'
-            '  "updated_summary": "چکیده تلفیقی",\n'
+            '  "has_update": true,\n'
+            '  "updated_title": "عنوان جامع فارسی",\n'
+            '  "updated_summary": "چکیده تلفیقی کامل",\n'
             '  "is_iran_related": true | false\n'
             "}"
         )
@@ -617,35 +706,73 @@ class LiveSentinel:
         candidate_threads.sort(key=lambda item: item[1].get('timestamp', 0), reverse=True)
         
         for thread_key, thread_data in candidate_threads:
+            thread_time = thread_data.get('timestamp', 0)
+            time_diff = now - thread_time
+            
             existing_text = f"{thread_data.get('title', '')} {thread_data.get('summary', '')} {thread_data.get('root_text', '')}"
             existing_anchors = self.extract_message_anchors(existing_text, thread_data.get('title', ''))
             
             overlap = candidate_anchors.intersection(existing_anchors)
-            if not overlap:
-                continue
-                
-            # Overlap must contain a location or target entity or category-specific anchor
+            
+            # Check 1: Same Source Proximity Rule
+            # If the candidate news is from the EXACT SAME source channel within 45 minutes:
+            # We MUST prioritize merging to prevent duplicate alerts from the same source.
+            is_same_source = (
+                thread_data.get('node') == node or 
+                any(s.get('node') == node for s in thread_data.get('sources', []))
+            )
+            is_recent_same_source = is_same_source and (time_diff <= 2700) # 45 minutes
+            
+            # Check 2: Substantive Anchor or Theatre Overlap
             has_substantive = False
             for anchor in overlap:
-                if (anchor in self.foreign_keywords or anchor in self.iran_keywords or 
+                norm_a = self.normalize_text_for_anchors(anchor)
+                if (anchor in COUNTRY_THEATRES or norm_a in [self.normalize_text_for_anchors(c) for c in COUNTRY_THEATRES] or
+                    anchor in self.foreign_keywords or anchor in self.iran_keywords or 
                     anchor in ['فرودگاه', 'پایگاه', 'پالایشگاه', 'نیروگاه', 'بندر', 'اسکله', 'تنگه هرمز', 
                                'باب المندب', 'دریای سرخ', 'کانال سوئز', 'آرامکو', 'دیمونا', 'نواتیم', 
                                'عین الاسد', 'التاجی', 'التنف', 'دلار', 'تتر', 'بورس', 'سکه', 'طلا', 'اعدام', 'اعتصاب', 'بازداشت', 'دادگاه', 'حکم', 'فساد', 'اختلاس']):
                     has_substantive = True
                     break
                     
-            if not has_substantive:
+            if not has_substantive and not is_recent_same_source:
                 continue
+                
+            has_country_theatre = any(
+                c in overlap or self.normalize_text_for_anchors(c) in [self.normalize_text_for_anchors(o) for o in overlap]
+                for c in COUNTRY_THEATRES
+            )
                 
             existing_title = thread_data.get('title', '') or candidate_title
             existing_summary = thread_data.get('summary', '') or thread_data.get('root_text', '')
             
-            print(f"🧠 Checking semantic deduplication: new msg {node}_{msg_id} vs thread {thread_key} (anchors: {overlap})...")
-            ai_eval = await self.evaluate_semantic_relation(existing_title, existing_summary, text)
+            print(f"🧠 Checking semantic deduplication: new msg {node}_{msg_id} vs thread {thread_key} (anchors: {overlap}, same_source={is_same_source}, dt={int(time_diff)}s)...")
+            ai_eval = await self.evaluate_semantic_relation(
+                existing_title, 
+                existing_summary, 
+                text,
+                is_same_source=is_same_source,
+                has_country_theatre=has_country_theatre
+            )
             if not ai_eval:
                 continue
                 
             relation = ai_eval.get('relation', 'NEW_EVENT')
+            
+            # Fallback guardrail: If from SAME source within 45 minutes AND in the same country theatre,
+            # enforce SAME_EVENT even if LLM wavered, to honor the user's ironclad rule:
+            # "از یک خبر واحد یا یک منبع در یک بازه زمانی نباید بیش از یک عدد هشدار داشته باشیم"
+            if relation != 'SAME_EVENT' and is_recent_same_source and has_country_theatre:
+                print(f"🛡️ Guardrail triggered: Forcing SAME_EVENT merge for same source {node} in theatre within {int(time_diff)}s.")
+                relation = 'SAME_EVENT'
+                ai_eval['has_update'] = True
+                if not ai_eval.get('updated_title'):
+                    clean_cand = re.sub(r'^(?:🚨|🔕)?\s*(?:هشدار فوری|هشدار منطقه‌ای):\s*', '', candidate_title).strip()
+                    clean_exist = re.sub(r'^(?:🚨|🔕)?\s*(?:هشدار فوری|هشدار منطقه‌ای):\s*', '', existing_title).strip()
+                    ai_eval['updated_title'] = f"{clean_exist} و {clean_cand}" if clean_cand else clean_exist
+                if not ai_eval.get('updated_summary'):
+                    ai_eval['updated_summary'] = f"{existing_summary}\nهمچنین گزارش‌ها حاکی از دریافت اطلاعات تکمیلی و پوشش تحولات جدید در این زمینه است."
+            
             if relation != 'SAME_EVENT':
                 print(f"ℹ️ News msg {node}_{msg_id} classified as {relation} relative to thread {thread_key}. Not merging.")
                 continue
@@ -713,7 +840,7 @@ class LiveSentinel:
                     
                 alert_msg_id = thread_data.get('alert_msg_id')
                 thread_data['updated_at'] = time.time()
-                thread_data['update_reason'] = 'افزودن منابع میدانی'
+                thread_data['update_reason'] = 'دریافت اطلاعات تکمیلی و پوشش حملات' if (has_country_theatre or ai_eval.get('has_update')) else 'افزودن منابع میدانی'
                 updated_alert_text = self.build_alert_post_content(thread_data)
                 
                 try:
@@ -948,6 +1075,72 @@ class LiveSentinel:
                 print("✅ Successfully merged VahidOnline 78692 into @DidebanJang post 130!")
         except Exception as e130:
             print(f"⚠️ Error performing retroactive merge for post 130: {e130}")
+
+        # Retroactive merge: Delete duplicate post 151 from @DidebanJang and merge Dammam strike into post 150
+        try:
+            # 1. Delete post 151
+            m151 = await self.bot.get_messages('@DidebanJang', ids=151)
+            if m151 and not getattr(m151, 'empty', False):
+                try:
+                    await self.bot.delete_messages('@DidebanJang', [151])
+                except Exception:
+                    pass
+                try:
+                    if fetch_client and fetch_client != self.bot:
+                        await fetch_client.delete_messages('@DidebanJang', [151])
+                except Exception:
+                    pass
+                print("🗑️ Retroactive cleanup: Deleted duplicate alert 151 from @DidebanJang")
+        except Exception as e151:
+            print(f"⚠️ Error checking/deleting post 151: {e151}")
+
+        try:
+            # 2. Merge Dammam strike (38688) into post 150
+            m150 = await self.bot.get_messages('@DidebanJang', ids=150)
+            if m150 and m150.text and not getattr(m150, 'empty', False):
+                text150 = m150.text
+                needs_update = False
+                if '38688' not in text150 or 'الدمام' not in text150:
+                    needs_update = True
+                
+                if needs_update:
+                    # Update title to include both Riyadh and Dammam
+                    new_title_header = "🔕 **هشدار منطقه‌ای: حملات موشکی و پهپادی همزمان به فرودگاه ریاض و شهر الدمام عربستان** 📹"
+                    text150 = re.sub(r'^(?:🚨|🔕)\s*\*\*هشدار (?:فوری|منطقه‌ای):[^\n]+', new_title_header, text150)
+                    
+                    # Update summary
+                    new_summary = (
+                        "📝 **چکیده رویداد:**\n"
+                        "گزارش‌های میدانی حاکی از حملات موشکی و پهپادی همزمان به فرودگاه بین‌المللی ملک خالد در ریاض و همچنین مشاهده ستون‌های متراکم دود ناشی از اصابت در شهر الدمام عربستان است."
+                    )
+                    text150 = re.sub(r'📝\s*\*\*چکیده رویداد:\*\*\n[^\n]+(?:\n[^\n]+)?', new_summary, text150)
+                    
+                    # Add source 38688 if missing
+                    if '38688' not in text150:
+                        text150 = text150.replace('🔗 **منبع خبر:**', '🔗 **منابع خبر:**')
+                        dammam_source = "- [Alibk3](https://t.me/Alibk3/38688) 📹"
+                        text150 = re.sub(r'(- (?:\[Alibk3\]\([^\)]+\)|Alibk3)[^\n]*)', r'\1\n' + dammam_source, text150)
+                        
+                    # Add/update status line
+                    status_line = "🔄 **به‌روزرسانی شده (ساعت ۲۰:۴۳) | دریافت اطلاعات تکمیلی و پوشش حملات همزمان**"
+                    if '🔄 **به‌روزرسانی شده' in text150:
+                        text150 = re.sub(r'🔄\s*\*\*به‌روزرسانی شده[^\n]+', status_line, text150)
+                    else:
+                        text150 = text150.replace('#دیده‌بان_جنگ', f"{status_line}\n\n#دیده‌بان_جنگ")
+                        
+                    await self.bot.edit_message('@DidebanJang', 150, text150, link_preview=False)
+                    print("✅ Successfully merged post 151 (Dammam) into post 150 in @DidebanJang!")
+                    
+            # Update memory and persistence
+            self.alibk_posted[38688] = {'channel': '@DidebanJang', 'msg_id': 150, 'timestamp': time.time()}
+            self.reply_to_root_map["Alibk3_38688"] = 38687
+            if "Alibk3_38688" in self.thread_alerts:
+                self.thread_alerts.pop("Alibk3_38688", None)
+            if self.channel_last_alert_id.get('@DidebanJang') == 151:
+                self.channel_last_alert_id['@DidebanJang'] = 150
+            self.save_persisted_state()
+        except Exception as e150:
+            print(f"⚠️ Error performing retroactive merge for post 150: {e150}")
 
     async def handle_message_deleted(self, node_username, deleted_ids):
         """
