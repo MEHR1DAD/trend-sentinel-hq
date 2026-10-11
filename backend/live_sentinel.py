@@ -876,6 +876,15 @@ class LiveSentinel:
                     
                     if is_update_bubble:
                         to_delete.append(m.id)
+                    elif "سرعت انتشار" in text or "وضعیت عادی" in text:
+                        clean_text = re.sub(r'⚡️\s*سرعت انتشار[^\n]*\n+', '', text)
+                        clean_text = re.sub(r'📊\s*وضعیت عادی[^\n]*\n+', '', clean_text)
+                        clean_text = re.sub(r'\n{3,}', '\n\n', clean_text).strip()
+                        try:
+                            await self.bot.edit_message(ch, m.id, clean_text, link_preview=False)
+                            print(f"🧹 Cleaned velocity/baseline lines from {ch} msg {m.id}")
+                        except Exception:
+                            pass
 
                 if to_delete:
                     print(f"🗑️ Found {len(to_delete)} update notification bubbles in {ch}: {to_delete}")
@@ -1526,8 +1535,6 @@ class LiveSentinel:
                             time_fa = self.get_tehran_time_fa()
                             updated_alert = (
                                 f"{icon} **{alert_title}**\n\n"
-                                f"⚡️ سرعت انتشار: VIP_UPDATE (در ۳ دقیقه گذشته)\n"
-                                f"📊 وضعیت عادی: 0.10 گزارش در ساعت\n\n"
                                 f"🔗 **منبع خبر:**\n- [{canonical_node}]({link}) {root_icon}\n\n"
                                 f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | دریافت اطلاعات تکمیلی**\n\n"
                                 f"{tag}\n\n{target_ch}"
@@ -1918,8 +1925,6 @@ class LiveSentinel:
         
         alert_text = (
             f"{icon} **{alert_title}**\n\n"
-            f"⚡️ سرعت انتشار: {count if isinstance(count, str) else str(count) + ' گزارش'} (در ۳ دقیقه گذشته)\n"
-            f"📊 وضعیت عادی: {normal_rate:.2f} گزارش در ساعت\n\n"
             f"{source_header}\n" + "\n".join(clean_context) + "\n\n"
         )
         
@@ -2129,7 +2134,10 @@ class LiveSentinel:
                         delimiter = "🔗 **منابع خبر:**" if "🔗 **منابع خبر:**" in original_text else "🔗 **منبع خبر:**"
                         parts = original_text.split(delimiter)
                         if len(parts) == 2:
-                            new_text = f"{parts[0]}🤖 **چکیده هوشمند:**\n{summary}\n\n{delimiter}{parts[1]}"
+                            clean_part0 = re.sub(r'⚡️\s*سرعت انتشار[^\n]*\n+', '', parts[0])
+                            clean_part0 = re.sub(r'📊\s*وضعیت عادی[^\n]*\n+', '', clean_part0)
+                            clean_part0 = clean_part0.rstrip() + "\n\n"
+                            new_text = f"{clean_part0}📝 **چکیده رویداد:**\n{summary}\n\n{delimiter}{parts[1]}"
                             await self.bot.edit_message(target_channel, message_id, new_text, link_preview=False)
                             for tk, td in self.thread_alerts.items():
                                 if td.get('alert_msg_id') == message_id and td.get('channel') == target_channel:
