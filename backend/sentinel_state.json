@@ -86,6 +86,12 @@
     ],
     "withyashar_25444": [
       "withyashar_report"
+    ],
+    "withyashar_25451": [
+      "withyashar_report"
+    ],
+    "withyashar_25461": [
+      "withyashar_report"
     ]
   },
   "vip_alert_history": {
@@ -296,6 +302,17 @@
       "target_channel": "@DidebanJang",
       "time": 1791746852.8946283,
       "thread_key": "Alibk3_38732"
+    },
+    "withyashar_25451": {
+      "sent_msg_id": 155,
+      "target_channel": "@DidebanJang",
+      "time": 1791757912.6524649,
+      "text": "فیلم لحظه برخورد موشک بالستیک گروه تروریست حوثی‌ها به ترمینال ۳"
+    },
+    "withyashar_25461": {
+      "time": 1791758228.3579535,
+      "pattern": "withyashar_report",
+      "text": "با بازشدن مارکت ها قیمت نفت برنت به ۱۰۵ دلار افزایش یافت\n@WarRoom"
     }
   },
   "last_alert_time": {},
@@ -736,8 +753,8 @@
     },
     "38688": {
       "channel": "@DidebanJang",
-      "msg_id": 119,
-      "timestamp": 1791720207.0
+      "msg_id": 150,
+      "timestamp": 1791757912.2501662
     },
     "38702": {
       "channel": "@DidebanJang",
@@ -1717,6 +1734,13 @@
           "media_type": "text",
           "link": "https://t.me/Alibk3/38736",
           "timestamp": 1791742617.4732184
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38776,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38776",
+          "timestamp": 1791758818.0707452
         }
       ],
       "replies": [
@@ -1749,6 +1773,12 @@
           "text": "مصدر عسكري يمني: \n\nتم بعون الله وتوفيقه طرد تحشيدات العدو السعودي من مديرية المسراخ بمحافظة تعز",
           "media_type": "text",
           "timestamp": 1791742617.4732122
+        },
+        {
+          "msg_id": 38776,
+          "text": "القوات اليمنية باتفاق مع المشايخ، تسيطر على حصبان وصنمات وزنم ورأس النقل وذي البرح بجبل صبر (آخر مواقع القوات الموالية للسعودية مع مدينة تعز)، وتتقدم نحو الصراري وجبل العروس.",
+          "media_type": "photo",
+          "timestamp": 1791758818.070741
         }
       ],
       "tag": "#دیده‌بان_جنگ",
@@ -3745,30 +3775,6 @@
       "updated_at": 1791745076.8289413,
       "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
     },
-    "Alibk3_38688": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 119,
-      "node": "Alibk3",
-      "root_id": 38688,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791720207.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "بلند شدن دود از الدمام عربستان",
-      "summary": "تصاویری از بلند شدن ستون‌های دود در شهر الدمام واقع در منطقه شرقی عربستان سعودی منتشر شده است. این منطقه پیش‌تر نیز هدف حملات پهپادی و موشکی قرار گرفته بود و جزئیات بیشتر درباره علت این حادثه هنوز اعلام نشده است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38688,
-          "media_type": "video",
-          "link": "https://t.me/Alibk3/38688",
-          "timestamp": 1791720207.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
     "Alibk3_38754": {
       "channel": "@DidebanJang",
       "alert_msg_id": 152,
@@ -3820,7 +3826,7 @@
     "Alibk3_38733": 38732,
     "Alibk3_38732": 38732,
     "Alibk3_38734": 38656,
-    "Alibk3_38688": 38729,
+    "Alibk3_38688": 38687,
     "Alibk3_38738": 38697,
     "Alibk3_38737": 38732,
     "Alibk3_38736": 38656,
@@ -3833,7 +3839,9 @@
     "Alibk3_38752": 38729,
     "Alibk3_38753": 38715,
     "Alibk3_38744": 38715,
-    "Alibk3_38756": 38680
+    "Alibk3_38756": 38680,
+    "Alibk3_38776": 38656,
+    "Alibk3_38769": 38656
   },
   "channel_last_alert_id": {
     "@DidebanJang": 152,
@@ -3846,5 +3854,23 @@
     "78694": 1791735142.0123565
   },
   "ilia_post_time": {},
-  "last_saved": "2026-10-11 19:28:39 UTC"
+  "vahid_ai_posted": {
+    "78687": 79,
+    "78694": 85,
+    "78686": 76,
+    "78688": 80,
+    "78689": 81,
+    "78690": 82,
+    "78691": 83,
+    "78692": 84,
+    "78695": 86
+  },
+  "ilia_ai_posted": {
+    "4743": 7,
+    "4740": 1,
+    "4741": 5,
+    "4742": 6,
+    "4744": 8
+  },
+  "last_saved": "2026-10-11 23:06:57 UTC"
 }
