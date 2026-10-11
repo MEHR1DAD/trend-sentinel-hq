@@ -1062,8 +1062,12 @@ class LiveSentinel:
                             self.alibk_posted.setdefault(src_id, {'channel': ch, 'msg_id': m.id, 'timestamp': m.date.timestamp() if m.date else time.time()})
                         elif canon == 'VahidOnline' and ch == '@VahidOnlineAI':
                             self.vahid_ai_posted.setdefault(src_id, m.id)
+                            if "خلاصه خبر" in (m.text or "") and "⚡️" in (m.text or ""):
+                                self.vahid_needs_refresh.add((src_id, m.id))
                         elif canon == 'iliaen' and ch == '@iliaenAI':
                             self.ilia_ai_posted.setdefault(src_id, m.id)
+                            if "خلاصه خبر" in (m.text or "") and "⚡️" in (m.text or ""):
+                                self.ilia_needs_refresh.add((src_id, m.id))
                             
                         # Reconstruct thread alerts entry for semantic cross-channel merging
                         if mk not in self.thread_alerts and ch in ('@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat'):
