@@ -1,7 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 333
-- **Last Message Text:** ♦️نپال باز هم اسیر سیل شد
-🇮🇷 ✊ @AkhbareFori | Link
-- **Last Message Time:** 2026-10-11 09:39:23
+- **Messages Processed:** 288
+- **Last Message Text:** ♦️مردم کدام استان‌ها بیشتر وارد بازار کار شده‌اند؟
+
+🔹نرخ مشارکت اقتصادی نشان می‌دهد چه سهمی از جمعیت...
+- **Last Message Time:** 2026-10-11 10:14:48
