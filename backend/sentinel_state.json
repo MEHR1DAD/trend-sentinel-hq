@@ -16,8 +16,8 @@
       "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78694": [
-      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
     ],
     "withyashar_25419": [
       "recovered_source",
@@ -35,8 +35,8 @@
       "withyashar_report"
     ],
     "withyashar_25423": [
-      "recovered_source",
-      "حملات نظامی در ایران، بازار"
+      "حملات نظامی در ایران، بازار",
+      "recovered_source"
     ],
     "withyashar_25428": [
       "recovered_source",
@@ -50,8 +50,8 @@
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -117,8 +117,8 @@
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
@@ -595,10 +595,72 @@
       "recovered_source"
     ],
     "VahidOnline_78703": [
+      "recovered_source",
       "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78704": [
+      "recovered_source",
       "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان"
+    ],
+    "withyashar_25522": [
+      "recovered_source"
+    ],
+    "withyashar_25520": [
+      "recovered_source"
+    ],
+    "withyashar_25519": [
+      "recovered_source"
+    ],
+    "withyashar_25518": [
+      "recovered_source"
+    ],
+    "withyashar_25517": [
+      "recovered_source"
+    ],
+    "withyashar_25516": [
+      "recovered_source"
+    ],
+    "withyashar_25515": [
+      "recovered_source"
+    ],
+    "withyashar_25514": [
+      "recovered_source"
+    ],
+    "withyashar_25511": [
+      "recovered_source"
+    ],
+    "withyashar_25510": [
+      "recovered_source"
+    ],
+    "withyashar_25509": [
+      "recovered_source"
+    ],
+    "withyashar_25508": [
+      "recovered_source"
+    ],
+    "Alibk3_38869": [
+      "recovered_source"
+    ],
+    "withyashar_25507": [
+      "recovered_source"
+    ],
+    "Alibk3_38864": [
+      "recovered_source"
+    ],
+    "Alibk3_38865": [
+      "recovered_source"
+    ],
+    "Alibk3_38866": [
+      "recovered_source"
+    ],
+    "Alibk3_38868": [
+      "recovered_source"
+    ],
+    "Alibk3_38870": [
+      "recovered_source"
+    ],
+    "withyashar_25521": [
+      "recovered_source"
     ]
   },
   "vip_alert_history": {
@@ -1215,13 +1277,6 @@
       "text": "🔕 **هشدار منطقه‌ای: پرواز گسترده جنگنده‌ها بر فراز اردن و فلسطین**\n\n📝 **چکیده رویداد:**\nگزارش‌ها حاکی از پرواز فشرده و گسترده جنگنده‌های نظامی بر فراز آسمان اردن و اراضی اشغالی فلسطین است. این اقدام همزمان با آماده‌باش پدافندی و تنش‌های جاری در منطقه صورت گرفته است.\n\n🔗 **منبع خبر:**\n- [Alibk3](https://t.me/Alibk3/38654)\n\n#دیده‌بان_جنگ\n@DidebanJang",
       "sent_msg_id": 101,
       "target_channel": "@DidebanJang"
-    },
-    "Alibk3_38513": {
-      "time": 1791584325.0,
-      "pattern": "recovered_source",
-      "text": "🔕 **هشدار منطقه‌ای: ثبت حرارت غیرعادی در تاسیسات گازی عربستان** 📸\n\n📝 **چکیده رویداد:**\nسامانه‌های پایش حرارتی از ثبت گرمای بی‌سابقه معادل ۶۱۶ مگاوات در کارخانه گاز شدقم در منطقه شرقی عربستان خبر دادند؛ میزانی که حدود ۹ برابر بالاتر از میانگین طبیعی آن است.\n\n🔗 **منبع خبر:**\n- [Ali Bk - اخبار منطقه](https://t.me/Alibk3/38513) (پوشش تحولات منطقه)\n\n#دیده‌بان_اقتصاد\n@DidehbanEghtesad",
-      "sent_msg_id": 14,
-      "target_channel": "@DidehbanEghtesad"
     },
     "VahidOnline_78695": {
       "time": 1791757153.0,
@@ -2956,6 +3011,36 @@
       "channel": "@DidebanJang",
       "msg_id": 190,
       "timestamp": 1791826414.0
+    },
+    "38869": {
+      "channel": "@DidebanJang",
+      "msg_id": 194,
+      "timestamp": 1791829636.0
+    },
+    "38864": {
+      "channel": "@DidebanJang",
+      "msg_id": 192,
+      "timestamp": 1791829465.0
+    },
+    "38865": {
+      "channel": "@DidebanJang",
+      "msg_id": 192,
+      "timestamp": 1791829465.0
+    },
+    "38866": {
+      "channel": "@DidebanJang",
+      "msg_id": 192,
+      "timestamp": 1791829465.0
+    },
+    "38868": {
+      "channel": "@DidebanJang",
+      "msg_id": 192,
+      "timestamp": 1791829465.0
+    },
+    "38870": {
+      "channel": "@DidebanJang",
+      "msg_id": 192,
+      "timestamp": 1791829465.0
     }
   },
   "thread_alerts": {
@@ -5064,54 +5149,6 @@
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38512": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 51,
-      "node": "Alibk3",
-      "root_id": 38512,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791583582.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "پرواز بالگردهای اسرائیلی در جنوب سوریه",
-      "summary": "بالگردهای ارتش اسرائیل حریم هوایی منطقه جنوبی سوریه را نقض کردند. این اقدام در راستای تداوم فعالیت‌های نظامی و شناسایی رژیم صهیونیستی در مناطق مرزی انجام شده است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38512,
-          "media_type": "video",
-          "link": "https://t.me/Alibk3/38512",
-          "timestamp": 1791583582.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38513": {
-      "channel": "@DidehbanEghtesad",
-      "alert_msg_id": 14,
-      "node": "Alibk3",
-      "root_id": 38513,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791584325.0,
-      "category": "ECONOMY",
-      "is_iran_related": false,
-      "title": "ثبت حرارت غیرعادی در تاسیسات گازی عربستان",
-      "summary": "سامانه‌های پایش حرارتی از ثبت گرمای بی‌سابقه معادل ۶۱۶ مگاوات در کارخانه گاز شدقم در منطقه شرقی عربستان خبر دادند؛ میزانی که حدود ۹ برابر بالاتر از میانگین طبیعی آن است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38513,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38513",
-          "timestamp": 1791584325.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_اقتصاد"
     },
     "Alibk3_38711": {
       "channel": "@DidebanJang",
@@ -9373,6 +9410,144 @@
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38869": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 194,
+      "node": "Alibk3",
+      "root_id": 38869,
+      "root_text": "⚡️ **خبر فوری: تکرار حملات و تداوم ناامنی در تنگه هرمز؛ هدف قرار گرفتن دومین فروند کشتی در آب‌های راهبردی** 📸\n\n📝 **چکیده رویداد:**\nبه دنبال گزارش‌های قبلی درباره اصابت پرتابه ناشناس به یک نفتکش، منابع خبری از وقوع یک حمله دیگر و هدف قرار گرفتن یک فروند شناور دیگر در آب‌های راهبردی تنگه هرمز خبر دادند. این تحولات متوالی در این معبر حیاتی صادرات انرژی، نگرانی‌ها درباره افزایش ریسک‌های امنیتی و تأثیرات منفی آن بر بازار جهانی نفت را به شدت افزایش داده است و مقام‌های مسئول در حال بررسی ابعاد دقیق این موج از حملات هستند.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25508) 📝\n- [Alibk3](https://t.me/Alibk3/38869) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۲:۲۵) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "root_media_type": "text",
+      "timestamp": 1791829636.0,
+      "title": "تکرار حملات و تداوم ناامنی در تنگه هرمز؛ هدف قرار گرفتن دومین فروند کشتی در آب‌های راهبردی",
+      "summary": "به دنبال گزارش‌های قبلی درباره اصابت پرتابه ناشناس به یک نفتکش، منابع خبری از وقوع یک حمله دیگر و هدف قرار گرفتن یک فروند شناور دیگر در آب‌های راهبردی تنگه هرمز خبر دادند. این تحولات متوالی در این معبر حیاتی صادرات انرژی، نگرانی‌ها درباره افزایش ریسک‌های امنیتی و تأثیرات منفی آن بر بازار جهانی نفت را به شدت افزایش داده است و مقام‌های مسئول در حال بررسی ابعاد دقیق این موج از حملات هستند.",
+      "category": "WAR",
+      "is_iran_related": true,
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38869,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38869",
+          "timestamp": 1791829636.0
+        }
+      ],
+      "replies": []
+    },
+    "Alibk3_38864": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 192,
+      "node": "Alibk3",
+      "root_id": 38864,
+      "root_text": "⚡️ **خبر فوری: یک فروند کشتی دیگر در مضيق هرمز هدف حمله قرار گرفت** 📹\n\n📝 **چکیده رویداد:**\nگزارش‌ها حاکی از آن است که بار دیگر یک فروند کشتی در آب‌های استراتژیک مضيق هرمز مورد اصابت و استهداف قرار گرفته است. جزئیات بیشتری درباره هویت این شناور و میزان خسارات وارده هنوز منتشر نشده است.\n\n🔗 **منابع خبر:**\n- [Alibk3](https://t.me/Alibk3/38863) 📸\n- [Alibk3](https://t.me/Alibk3/38864) 📹\n- [Alibk3](https://t.me/Alibk3/38865) 📹\n- [Alibk3](https://t.me/Alibk3/38866) 📝\n- [Alibk3](https://t.me/Alibk3/38868) 📹\n- [Alibk3](https://t.me/Alibk3/38870) 📹\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۲:۳۱) | دریافت اطلاعات تکمیلی**\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "root_media_type": "text",
+      "timestamp": 1791829465.0,
+      "title": "یک فروند کشتی دیگر در مضيق هرمز هدف حمله قرار گرفت",
+      "summary": "گزارش‌ها حاکی از آن است که بار دیگر یک فروند کشتی در آب‌های استراتژیک مضيق هرمز مورد اصابت و استهداف قرار گرفته است. جزئیات بیشتری درباره هویت این شناور و میزان خسارات وارده هنوز منتشر نشده است.",
+      "category": "WAR",
+      "is_iran_related": true,
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38864,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38864",
+          "timestamp": 1791829465.0
+        }
+      ],
+      "replies": []
+    },
+    "Alibk3_38865": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 192,
+      "node": "Alibk3",
+      "root_id": 38865,
+      "root_text": "⚡️ **خبر فوری: یک فروند کشتی دیگر در مضيق هرمز هدف حمله قرار گرفت** 📹\n\n📝 **چکیده رویداد:**\nگزارش‌ها حاکی از آن است که بار دیگر یک فروند کشتی در آب‌های استراتژیک مضيق هرمز مورد اصابت و استهداف قرار گرفته است. جزئیات بیشتری درباره هویت این شناور و میزان خسارات وارده هنوز منتشر نشده است.\n\n🔗 **منابع خبر:**\n- [Alibk3](https://t.me/Alibk3/38863) 📸\n- [Alibk3](https://t.me/Alibk3/38864) 📹\n- [Alibk3](https://t.me/Alibk3/38865) 📹\n- [Alibk3](https://t.me/Alibk3/38866) 📝\n- [Alibk3](https://t.me/Alibk3/38868) 📹\n- [Alibk3](https://t.me/Alibk3/38870) 📹\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۲:۳۱) | دریافت اطلاعات تکمیلی**\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "root_media_type": "text",
+      "timestamp": 1791829465.0,
+      "title": "یک فروند کشتی دیگر در مضيق هرمز هدف حمله قرار گرفت",
+      "summary": "گزارش‌ها حاکی از آن است که بار دیگر یک فروند کشتی در آب‌های استراتژیک مضيق هرمز مورد اصابت و استهداف قرار گرفته است. جزئیات بیشتری درباره هویت این شناور و میزان خسارات وارده هنوز منتشر نشده است.",
+      "category": "WAR",
+      "is_iran_related": true,
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38865,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38865",
+          "timestamp": 1791829465.0
+        }
+      ],
+      "replies": []
+    },
+    "Alibk3_38866": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 192,
+      "node": "Alibk3",
+      "root_id": 38866,
+      "root_text": "⚡️ **خبر فوری: یک فروند کشتی دیگر در مضيق هرمز هدف حمله قرار گرفت** 📹\n\n📝 **چکیده رویداد:**\nگزارش‌ها حاکی از آن است که بار دیگر یک فروند کشتی در آب‌های استراتژیک مضيق هرمز مورد اصابت و استهداف قرار گرفته است. جزئیات بیشتری درباره هویت این شناور و میزان خسارات وارده هنوز منتشر نشده است.\n\n🔗 **منابع خبر:**\n- [Alibk3](https://t.me/Alibk3/38863) 📸\n- [Alibk3](https://t.me/Alibk3/38864) 📹\n- [Alibk3](https://t.me/Alibk3/38865) 📹\n- [Alibk3](https://t.me/Alibk3/38866) 📝\n- [Alibk3](https://t.me/Alibk3/38868) 📹\n- [Alibk3](https://t.me/Alibk3/38870) 📹\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۲:۳۱) | دریافت اطلاعات تکمیلی**\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "root_media_type": "text",
+      "timestamp": 1791829465.0,
+      "title": "یک فروند کشتی دیگر در مضيق هرمز هدف حمله قرار گرفت",
+      "summary": "گزارش‌ها حاکی از آن است که بار دیگر یک فروند کشتی در آب‌های استراتژیک مضيق هرمز مورد اصابت و استهداف قرار گرفته است. جزئیات بیشتری درباره هویت این شناور و میزان خسارات وارده هنوز منتشر نشده است.",
+      "category": "WAR",
+      "is_iran_related": true,
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38866,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38866",
+          "timestamp": 1791829465.0
+        }
+      ],
+      "replies": []
+    },
+    "Alibk3_38868": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 192,
+      "node": "Alibk3",
+      "root_id": 38868,
+      "root_text": "⚡️ **خبر فوری: یک فروند کشتی دیگر در مضيق هرمز هدف حمله قرار گرفت** 📹\n\n📝 **چکیده رویداد:**\nگزارش‌ها حاکی از آن است که بار دیگر یک فروند کشتی در آب‌های استراتژیک مضيق هرمز مورد اصابت و استهداف قرار گرفته است. جزئیات بیشتری درباره هویت این شناور و میزان خسارات وارده هنوز منتشر نشده است.\n\n🔗 **منابع خبر:**\n- [Alibk3](https://t.me/Alibk3/38863) 📸\n- [Alibk3](https://t.me/Alibk3/38864) 📹\n- [Alibk3](https://t.me/Alibk3/38865) 📹\n- [Alibk3](https://t.me/Alibk3/38866) 📝\n- [Alibk3](https://t.me/Alibk3/38868) 📹\n- [Alibk3](https://t.me/Alibk3/38870) 📹\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۲:۳۱) | دریافت اطلاعات تکمیلی**\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "root_media_type": "text",
+      "timestamp": 1791829465.0,
+      "title": "یک فروند کشتی دیگر در مضيق هرمز هدف حمله قرار گرفت",
+      "summary": "گزارش‌ها حاکی از آن است که بار دیگر یک فروند کشتی در آب‌های استراتژیک مضيق هرمز مورد اصابت و استهداف قرار گرفته است. جزئیات بیشتری درباره هویت این شناور و میزان خسارات وارده هنوز منتشر نشده است.",
+      "category": "WAR",
+      "is_iran_related": true,
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38868,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38868",
+          "timestamp": 1791829465.0
+        }
+      ],
+      "replies": []
+    },
+    "Alibk3_38870": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 192,
+      "node": "Alibk3",
+      "root_id": 38870,
+      "root_text": "⚡️ **خبر فوری: یک فروند کشتی دیگر در مضيق هرمز هدف حمله قرار گرفت** 📹\n\n📝 **چکیده رویداد:**\nگزارش‌ها حاکی از آن است که بار دیگر یک فروند کشتی در آب‌های استراتژیک مضيق هرمز مورد اصابت و استهداف قرار گرفته است. جزئیات بیشتری درباره هویت این شناور و میزان خسارات وارده هنوز منتشر نشده است.\n\n🔗 **منابع خبر:**\n- [Alibk3](https://t.me/Alibk3/38863) 📸\n- [Alibk3](https://t.me/Alibk3/38864) 📹\n- [Alibk3](https://t.me/Alibk3/38865) 📹\n- [Alibk3](https://t.me/Alibk3/38866) 📝\n- [Alibk3](https://t.me/Alibk3/38868) 📹\n- [Alibk3](https://t.me/Alibk3/38870) 📹\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۲:۳۱) | دریافت اطلاعات تکمیلی**\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "root_media_type": "text",
+      "timestamp": 1791829465.0,
+      "title": "یک فروند کشتی دیگر در مضيق هرمز هدف حمله قرار گرفت",
+      "summary": "گزارش‌ها حاکی از آن است که بار دیگر یک فروند کشتی در آب‌های استراتژیک مضيق هرمز مورد اصابت و استهداف قرار گرفته است. جزئیات بیشتری درباره هویت این شناور و میزان خسارات وارده هنوز منتشر نشده است.",
+      "category": "WAR",
+      "is_iran_related": true,
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38870,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38870",
+          "timestamp": 1791829465.0
+        }
+      ],
+      "replies": []
     }
   },
   "reply_to_root_map": {
@@ -9433,13 +9608,13 @@
   "channel_watermarks": {
     "Alibk3": 38903,
     "VahidHeadline": 326145,
-    "VahidOOnLine": 264833,
+    "VahidOOnLine": 264838,
     "RadioFarda": 162288,
-    "IranintlTV": 361986,
-    "Tasnimnews": 450971,
-    "Farsna": 468068,
-    "isna94": 408537,
-    "irna_1313": 461648,
+    "IranintlTV": 361993,
+    "Tasnimnews": 450975,
+    "Farsna": 468071,
+    "isna94": 408538,
+    "irna_1313": 461651,
     "akharinkhabar": 637979,
     "khabarfouri": 569250,
     "akhbarefori": 697898,
@@ -9448,18 +9623,18 @@
     "Khabar_Fouri": 551350,
     "khabari": 201168,
     "thezoomit": 103741,
-    "farsivoa": 233565,
+    "farsivoa": 233569,
     "myITiran": 18266,
     "Farsi_Iranwire": 94635,
     "bbcpersian": 293269,
-    "Alarabiya_far": 152084,
+    "Alarabiya_far": 152085,
     "thezoomon": 5246,
     "Mr_Economy": 63985,
-    "Eghtesadnews_com": 370709,
+    "Eghtesadnews_com": 370711,
     "Digiato": 114051,
-    "Indypersian": 180056,
+    "Indypersian": 180057,
     "withyashar": 25522,
-    "euronewspe": 90546,
+    "euronewspe": 90548,
     "Economic_News_Channel": 82713,
     "farsna": 468068,
     "persiannbloomberg": 68173,
@@ -9549,8 +9724,8 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 5,
-    "gemini-3.5-flash-lite": 317,
+    "gemini-3.5-flash-lite": 318,
     "gemini-2.5-flash": 18
   },
-  "last_saved": "2026-10-12 22:01:28 UTC"
+  "last_saved": "2026-10-12 22:37:03 UTC"
 }
