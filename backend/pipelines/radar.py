@@ -12,7 +12,8 @@ from backend.core.config import (
     get_tehran_time_fa,
     to_fa_num,
     detect_msg_media_type,
-    get_media_icon_from_type
+    get_media_icon_from_type,
+    classify_war_urgency
 )
 
 class RadarPipeline:
@@ -227,8 +228,8 @@ class RadarPipeline:
                 relation = 'SAME_EVENT'
                 ai_eval['has_update'] = True
                 if not ai_eval.get('updated_title'):
-                    clean_cand = re.sub(r'^(?:🚨|🔕)?\s*(?:هشدار فوری|هشدار منطقه‌ای):\s*', '', candidate_title).strip()
-                    clean_exist = re.sub(r'^(?:🚨|🔕)?\s*(?:هشدار فوری|هشدار منطقه‌ای):\s*', '', existing_title).strip()
+                    clean_cand = re.sub(r'^(?:🚨|🔕|⚡️)?\s*(?:هشدار فوری|خبر فوری|هشدار منطقه‌ای):\s*', '', candidate_title).strip()
+                    clean_exist = re.sub(r'^(?:🚨|🔕|⚡️)?\s*(?:هشدار فوری|خبر فوری|هشدار منطقه‌ای):\s*', '', existing_title).strip()
                     ai_eval['updated_title'] = f"{clean_exist} و {clean_cand}" if clean_cand else clean_exist
                 if not ai_eval.get('updated_summary'):
                     ai_eval['updated_summary'] = f"{existing_summary}\nهمچنین گزارش‌ها حاکی از دریافت اطلاعات تکمیلی و پوشش تحولات جدید در این زمینه است."
@@ -469,10 +470,14 @@ class RadarPipeline:
             else:
                 alert_header = f"📢 **گزارش مردمی: {title}**{header_media_icon}"
         else:
-            if is_iran_related:
-                alert_header = f"🚨 **هشدار فوری: {title}**{header_media_icon}"
-            else:
-                alert_header = f"🔕 **هشدار منطقه‌ای: {title}**{header_media_icon}"
+            ai_urgency = thread_data.get('urgency_level')
+            tier, icon, alert_type_name, _ = classify_war_urgency(
+                ai_urgency=ai_urgency,
+                text=thread_data.get('root_text', ''),
+                title=title,
+                is_iran_related=is_iran_related
+            )
+            alert_header = f"{icon} **{alert_type_name}: {title}**{header_media_icon}"
 
         node_counts = {}
         for s in sources:
@@ -875,11 +880,16 @@ class RadarPipeline:
             "تشخیص ارتباط با ایران و آمادگی‌های جنگی (is_iran_related):\n"
             "- مقدار true: اگر رویداد مستقیماً به خاک ایران، اهداف نظامی یا پدافندی ایران، سپاه یا ارتش، مقامات ایران مربوط است، یا اگر خبر درباره «آمادگی‌ها، آرایش جنگی، جابجایی تانکرهای سوخت‌رسان، بمب‌افکن‌ها و تسلیحات توسط آمریکا یا اسرائیل برای پشتیبانی از حمله احتمالی به ایران یا رویارویی مستقیم با ایران» است.\n"
             "- مقدار false: اگر صرفاً یک رویداد داخلی در کشوری دوردست (مثل اوکراین) یا درگیری بین سایر طرف‌های منطقه‌ای بدون هیچ ربطی به جبهه رویارویی با ایران است.\n\n"
+            "سطح فوریت خبر جنگی (urgency_level):\n"
+            "- 'EMERGENCY': رویدادهای اضطراری و میدانی فوری (بمباران، شلیک موشک و پهپاد، انفجار، آژیر قرمز، درگیری مسلحانه مستقیم).\n"
+            "- 'BREAKING': اخبار مهم و تحولات امنیتی/سیاسی/تسلیحاتی ایران که بمباران لحظه‌ای نیستند.\n"
+            "- 'REGIONAL': جنگ‌های منطقه‌ای بدون درگیری مستقیم ایران.\n\n"
             f"متن خبر:\n{text}\n\n"
             "پاسخ را دقیقاً و فقط در قالب یک شیء JSON با این فیلدها بنویس و هیچ کلمه یا توضیح دیگری قبل یا بعد از آن ننویس:\n"
             "{\n"
             '  "category": "WAR" | "ECONOMY" | "PROTEST_RIGHTS" | "OTHER",\n'
             '  "is_iran_related": true | false,\n'
+            '  "urgency_level": "EMERGENCY" | "BREAKING" | "REGIONAL",\n'
             '  "topic_title": "یک عنوان رسا، جذاب و صریح فارسی همراه با فعل کامل که اصل رویداد را بدون ابهام بیان کند",\n'
             '  "summary": "چکیده شفاف و شیوا از رویداد با اولویت ایجاز و کوتاه‌سازی در کنار ابهام‌زدایی و توضیحات تکمیلی لازم"\n'
             "}"
@@ -902,8 +912,9 @@ class RadarPipeline:
                 topic_title = str(res.get("topic_title", "")).strip()
                 summary = str(res.get("summary", "")).strip()
                 is_iran_related = bool(res.get("is_iran_related", False))
+                urgency_level = str(res.get("urgency_level", "BREAKING" if is_iran_related else "REGIONAL")).upper().strip()
                 if category in ["WAR", "ECONOMY", "PROTEST_RIGHTS", "OTHER"]:
-                    return {"category": category, "is_iran_related": is_iran_related, "topic_title": topic_title, "summary": summary}
+                    return {"category": category, "is_iran_related": is_iran_related, "urgency_level": urgency_level, "topic_title": topic_title, "summary": summary}
                     
         return None
 
@@ -1030,14 +1041,14 @@ class RadarPipeline:
                 elif category == 'WAR':
                     target_ch = "@DidebanJang"
                     is_iran = self.sentinel.determine_iran_related(ai_class, combined_text, topic_title)
-                    if is_iran:
-                        title = f"هشدار فوری: {topic_title}"
-                        icon = "🚨"
-                        is_silent = False
-                    else:
-                        title = f"هشدار منطقه‌ای: {topic_title}"
-                        icon = "🔕"
-                        is_silent = True
+                    ai_urgency = ai_class.get('urgency_level') if ai_class else None
+                    tier, icon, alert_type_name, is_silent = classify_war_urgency(
+                        ai_urgency=ai_urgency,
+                        text=combined_text,
+                        title=topic_title,
+                        is_iran_related=is_iran
+                    )
+                    title = f"{alert_type_name}: {topic_title}"
                 else:
                     continue
                     
@@ -1268,9 +1279,14 @@ class RadarPipeline:
                     topic_title = ai_class.get('topic_title', '').strip()
                     category = ai_class.get('category')
                     is_iran = self.sentinel.determine_iran_related(ai_class, text, topic_title)
-                    
-                    icon = "🚨" if is_iran else "🔕"
-                    alert_title = f"هشدار فوری: {topic_title}" if is_iran else f"هشدار منطقه‌ای: {topic_title}"
+                    ai_urgency = ai_class.get('urgency_level') if ai_class else None
+                    tier, icon, alert_type_name, _ = classify_war_urgency(
+                        ai_urgency=ai_urgency,
+                        text=text,
+                        title=topic_title,
+                        is_iran_related=is_iran
+                    )
+                    alert_title = f"{alert_type_name}: {topic_title}"
                     if category == 'ECONOMY':
                         alert_title = f"گزارش اقتصادی: {topic_title}"
                         icon = "📈"
@@ -1352,13 +1368,15 @@ class RadarPipeline:
             elif category == 'WAR':
                 target_channel = "@DidebanJang"
                 is_iran = self.sentinel.determine_iran_related(ai_class, text, topic_title)
-                if is_iran:
-                    alert_title = f"هشدار فوری: {topic_title}"
-                    custom_icon = "🚨"
-                    is_silent = False if not is_edit else True
-                else:
-                    alert_title = f"هشدار منطقه‌ای: {topic_title}"
-                    custom_icon = "🔕"
+                ai_urgency = ai_class.get('urgency_level') if ai_class else None
+                tier, custom_icon, alert_type_name, is_silent = classify_war_urgency(
+                    ai_urgency=ai_urgency,
+                    text=text,
+                    title=topic_title,
+                    is_iran_related=is_iran
+                )
+                alert_title = f"{alert_type_name}: {topic_title}"
+                if is_edit:
                     is_silent = True
             else:
                 return

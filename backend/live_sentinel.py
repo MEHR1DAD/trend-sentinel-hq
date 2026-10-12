@@ -459,9 +459,9 @@ class LiveSentinel:
                     if not m or not m.text:
                         continue
                     if ch == '@DidebanJang':
-                        if m.id == 165 and 'بازنویسی تحلیلی' not in m.text:
+                        if m.id == 165 and 'خبر فوری' not in m.text:
                             fixed_165 = (
-                                "🚨 **هشدار فوری: تاخیر در ورود ناو هواپیمابر «تئودور روزولت» آمریکا به ژاپن به دلیل شرایط طوفانی** 📝\n\n"
+                                "⚡️ **خبر فوری: تاخیر در ورود ناو هواپیمابر «تئودور روزولت» آمریکا به ژاپن به دلیل شرایط طوفانی** 📝\n\n"
                                 "📝 **چکیده رویداد:**\n"
                                 "روزنامه آساهی شیمبون ژاپن گزارش داد ورود ناو هواپیمابر هسته‌ای «تئودور روزولت» (CVN-71) و ناوگروه ضربت آن به پایگاه دریایی یوکوسوکا به دلیل وقوع طوفان‌های شدید دریایی به تعویق افتاده و این ناوگروه با چند روز تاخیر، بین ۱۵ تا ۲۰ اکتبر وارد منطقه خواهد شد.\n\n"
                                 "🔗 **منبع خبر:**\n"
@@ -470,9 +470,9 @@ class LiveSentinel:
                                 "#دیده‌بان_جنگ\n@DidebanJang"
                             )
                             await self.safe_edit_post('@DidebanJang', 165, fixed_165, msg_obj=m, reader_client=fetch_client)
-                        elif m.id == 166 and 'بازنویسی تحلیلی' not in m.text:
+                        elif m.id == 166 and 'خبر فوری' not in m.text:
                             fixed_166 = (
-                                "🚨 **هشدار فوری: تاکید سناتور لیندسی گراهام بر ادامه فشار نظامی علیه ایران و مخالفت با توقف درگیری‌ها** 📹\n\n"
+                                "⚡️ **خبر فوری: تاکید سناتور لیندسی گراهام بر ادامه فشار نظامی علیه ایران و مخالفت با توقف درگیری‌ها** 📹\n\n"
                                 "📝 **چکیده رویداد:**\n"
                                 "سناتور جمهوری‌خواه آمریکایی با ابراز مخالفت صریح نسبت به توقف جنگ، مدعی شد به دلیل در دسترس بودن پیروزی و خطرناک ماندن توانمندی‌های نظامی ایران، واشنگتن نباید در شرایط کنونی عملیات یا فشارهای خود را متوقف کند.\n\n"
                                 "🔗 **منبع خبر:**\n"
@@ -519,7 +519,7 @@ class LiveSentinel:
                             self.mirror_pipeline.posted_map['iliaen'].setdefault(src_id, m.id)
                             
                         if mk not in self.thread_alerts and ch in ('@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat'):
-                            title_m = re.search(r'^(?:🚨|🔕|📈|⚖️|📢)\s*\*\*(?:هشدار فوری|هشدار منطقه‌ای|گزارش اقتصادی|گزارش حقوق بشری|گزارش مردمی):\s*([^\*\n]+)\*\*', m.text)
+                            title_m = re.search(r'^(?:🚨|🔕|⚡️|📈|⚖️|📢)\s*\*\*(?:هشدار فوری|خبر فوری|هشدار منطقه‌ای|گزارش اقتصادی|گزارش حقوق بشری|گزارش مردمی):\s*([^\*\n]+)\*\*', m.text)
                             title_text = title_m.group(1).strip() if title_m else ""
                             summary_m = re.search(r'📝\s*\*\*چکیده رویداد:\*\*\s*\n([^\n]+(?:\n[^\n]+)?)', m.text)
                             summary_text = summary_m.group(1).strip() if summary_m else ""
@@ -534,7 +534,7 @@ class LiveSentinel:
                                 'title': title_text,
                                 'summary': summary_text,
                                 'category': 'ECONOMY' if ch == '@DidehbanEghtesad' else ('PROTEST_RIGHTS' if ch == '@DidebanEterazat' else 'WAR'),
-                                'is_iran_related': '🚨' in m.text,
+                                'is_iran_related': ('🚨' in m.text or '⚡️' in m.text),
                                 'sources': [{
                                     'node': canon,
                                     'msg_id': src_id,
@@ -550,9 +550,9 @@ class LiveSentinel:
         # Retroactive polish for Posts 165 and 166 in @DidebanJang (fix raw text copies & titles)
         try:
             m165 = await fetch_client.get_messages('@DidebanJang', ids=165)
-            if m165 and m165.text and 'روزنامه ژاپنی' in m165.text and 'بازنویسی تحلیلی' not in m165.text:
+            if m165 and m165.text and 'روزنامه ژاپنی' in m165.text and 'خبر فوری' not in m165.text:
                 fixed_165 = (
-                    "🚨 **هشدار فوری: تاخیر در ورود ناو هواپیمابر «تئودور روزولت» آمریکا به ژاپن به دلیل شرایط طوفانی** 📝\n\n"
+                    "⚡️ **خبر فوری: تاخیر در ورود ناو هواپیمابر «تئودور روزولت» آمریکا به ژاپن به دلیل شرایط طوفانی** 📝\n\n"
                     "📝 **چکیده رویداد:**\n"
                     "روزنامه آساهی شیمبون ژاپن گزارش داد ورود ناو هواپیمابر هسته‌ای «تئودور روزولت» (CVN-71) و ناوگروه ضربت آن به پایگاه دریایی یوکوسوکا به دلیل وقوع طوفان‌های شدید دریایی به تعویق افتاده و این ناوگروه با چند روز تاخیر، بین ۱۵ تا ۲۰ اکتبر وارد منطقه خواهد شد.\n\n"
                     "🔗 **منبع خبر:**\n"
@@ -567,9 +567,9 @@ class LiveSentinel:
 
         try:
             m166 = await fetch_client.get_messages('@DidebanJang', ids=166)
-            if m166 and m166.text and 'گراهام' in m166.text and 'بازنویسی تحلیلی' not in m166.text:
+            if m166 and m166.text and 'گراهام' in m166.text and 'خبر فوری' not in m166.text:
                 fixed_166 = (
-                    "🚨 **هشدار فوری: تاکید سناتور لیندسی گراهام بر ادامه فشار نظامی علیه ایران و مخالفت با توقف درگیری‌ها** 📹\n\n"
+                    "⚡️ **خبر فوری: تاکید سناتور لیندسی گراهام بر ادامه فشار نظامی علیه ایران و مخالفت با توقف درگیری‌ها** 📹\n\n"
                     "📝 **چکیده رویداد:**\n"
                     "سناتور جمهوری‌خواه آمریکایی با ابراز مخالفت صریح نسبت به توقف جنگ، مدعی شد به دلیل در دسترس بودن پیروزی و خطرناک ماندن توانمندی‌های نظامی ایران، واشنگتن نباید در شرایط کنونی عملیات یا فشارهای خود را متوقف کند.\n\n"
                     "🔗 **منبع خبر:**\n"

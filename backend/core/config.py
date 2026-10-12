@@ -168,3 +168,44 @@ def get_media_icon_from_type(media_type):
     if m == 'voice': return "🎙"
     if m == 'file': return "📄"
     return "📝"
+
+KINETIC_WAR_KEYWORDS = [
+    "بمباران", "بمباران هوایی", "حمله موشکی", "حملات موشکی", "شلیک موشک", "شلیک پهپاد", 
+    "حملات پهپادی", "حمله پهپادی", "صدای انفجار", "انفجارهای شدید", "انفجار مهیب",
+    "آژیر خطر", "آژیر قرمز", "وضعیت قرمز", "پدافند هوایی فعال", "شلیک پدافند", 
+    "حمله هوایی", "تجاوز هوایی", "جنگنده‌ها حمله کردند", "اصابت موشک", "موشک‌های بالستیک",
+    "حمله به خاک ایران", "حمله اسرائیل به ایران", "پاسخ موشکی ایران", "عملیات وعده صادق", 
+    "آغاز عملیات", "اعلام وضعیت جنگی", "بستن حریم هوایی"
+]
+
+def classify_war_urgency(ai_urgency=None, text="", title="", is_iran_related=False):
+    """
+    3-Tier Classification for @DidebanJang:
+    1. EMERGENCY (🚨 هشدار فوری): Kinetic active strikes/bombing/missiles/explosions involving Iran (Loud: is_silent=False).
+    2. BREAKING (⚡️ خبر فوری): Important military/political/fleet/intelligence news about Iran, non-kinetic (Silent: is_silent=True).
+    3. REGIONAL (🔕 هشدار منطقه‌ای): War news from other countries (Gaza, Lebanon, Yemen, Ukraine, etc.) not on Iran (Silent: is_silent=True).
+
+    Returns: (tier, icon, alert_type_name, is_silent)
+    """
+    clean_all = f"{text or ''} {title or ''}".strip()
+
+    # 1. If AI explicitly specified urgency_level
+    if ai_urgency:
+        u = str(ai_urgency).strip().upper()
+        if u in ('EMERGENCY', 'KINETIC', 'URGENT', 'ALERT'):
+            return ('EMERGENCY', '🚨', 'هشدار فوری', False)
+        elif u in ('BREAKING', 'IMPORTANT', 'NEWS'):
+            return ('BREAKING', '⚡️', 'خبر فوری', True)
+        elif u in ('REGIONAL', 'SILENT'):
+            return ('REGIONAL', '🔕', 'هشدار منطقه‌ای', True)
+
+    # 2. Check if related to Iran
+    if is_iran_related:
+        if any(kw in clean_all for kw in KINETIC_WAR_KEYWORDS):
+            return ('EMERGENCY', '🚨', 'هشدار فوری', False)
+        else:
+            return ('BREAKING', '⚡️', 'خبر فوری', True)
+
+    # 3. Non-Iran regional war news
+    return ('REGIONAL', '🔕', 'هشدار منطقه‌ای', True)
+

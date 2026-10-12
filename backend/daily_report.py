@@ -27,7 +27,7 @@ async def main():
             async for msg in client.iter_messages(channel):
                 if msg.date < yesterday:
                     break
-                if msg.text and ("هشدار فوری" in msg.text or "گزارش مردمی" in msg.text or "گزارش اقتصادی" in msg.text):
+                if msg.text and any(h in msg.text for h in ["هشدار فوری", "خبر فوری", "هشدار منطقه‌ای", "گزارش مردمی", "گزارش اقتصادی"]):
                     count += 1
                     
             print(f"Channel {channel} had {count} alerts today.")
