@@ -8,8 +8,8 @@
       "recovered_source"
     ],
     "iliaen_4743": [
-      "recovered_source",
-      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
+      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
+      "recovered_source"
     ],
     "VahidOnline_78687": [
       "recovered_source",
@@ -20,27 +20,27 @@
       "recovered_source"
     ],
     "withyashar_25419": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25420": [
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "recovered_source",
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
+      "recovered_source"
     ],
     "withyashar_25422": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25423": [
       "recovered_source",
       "حملات نظامی در ایران، بازار"
     ],
     "withyashar_25428": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25426": [
       "recovered_source",
@@ -50,8 +50,8 @@
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "recovered_source",
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
+      "recovered_source"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -78,8 +78,8 @@
       "withyashar_report"
     ],
     "withyashar_25438": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25439": [
       "withyashar_report"
@@ -95,23 +95,23 @@
       "recovered_source"
     ],
     "withyashar_25443": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25444": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25451": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25461": [
       "withyashar_report"
     ],
     "withyashar_25462": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25460": [
       "withyashar_report"
@@ -124,8 +124,8 @@
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
     ],
     "withyashar_25465": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "Alibk3_38780": [
       "recovered_source"
@@ -362,6 +362,9 @@
       "recovered_source"
     ],
     "iliaen_4740": [
+      "recovered_source"
+    ],
+    "withyashar_25450": [
       "recovered_source"
     ]
   },
@@ -1105,6 +1108,20 @@
       "text": "⚡️ **علت صدای شرق تهران اعلام شد**\n\nصدای شنیده شده در شرق تهران که حوالی ساعت ۲۰:۴۰ به گوش رسید، ارتباطی با فعالیت‌های پدافندی، انفجار یا حمله نداشته است.\n\n🔗 [مشاهده پست اصلی در کانال ایلیا](https://t.me/iliaen/4742)\n📡 @iliaenAI",
       "sent_msg_id": 6,
       "target_channel": "@iliaenAI"
+    },
+    "withyashar_25450": {
+      "time": 1791780852.0,
+      "pattern": "recovered_source",
+      "text": "🔕 **هشدار منطقه‌ای: خشم ترامپ از مواضع و ناسپاسی زلنسکی**\n\n📝 **چکیده رویداد:**\nیک مقام کاخ سفید از عصبانیت شدید دونالد ترامپ نسبت به ولودیمیر زلنسکی خبر داد. ترامپ معتقد است رئیس‌جمهور اوکراین حمایت‌های ایالات متحده را نادیده می‌گیرد و به دنبال این تنش‌ها، استیو ویتکاف و جرد کوشنر سفر برنامه‌ریزی‌شده خود به مسکو را به تعویق انداختند.\n\n🔗 **منبع خبر:**\n- [withyashar](https://t.me/withyashar/25450) 📝\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "sent_msg_id": 162,
+      "target_channel": "@DidebanJang"
+    },
+    "withyashar_25466": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 163,
+      "time": 1791783491.89408,
+      "text": "فاکس‌نیوز: ارتش آمریکا راهنمای شناسایی تصویری (تهدید را بشناس) را برای کمک به سربازان آمریکایی در شناسایی نیروهای ارتش ایران ، منتشر کرده است. این راهنما شامل تصاویر یونیفرم‌ها، علائم درجه و تجهیزات نظامی ایران، از جمله سلاح‌های کلاشینکف، تفنگ مصاف ۲ و نارنجک‌انداز آرپی‌جی ۷ و… است\n@WarRoom",
+      "pattern": "withyashar_report"
     }
   },
   "last_alert_time": {},
@@ -5746,6 +5763,54 @@
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25450": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 162,
+      "node": "withyashar",
+      "root_id": 25450,
+      "root_text": "🔕 **هشدار منطقه‌ای: خشم ترامپ از مواضع و ناسپاسی زلنسکی**\n\n📝 **چکیده رویداد:**\nیک مقام کاخ سفید از عصبانیت شدید دونالد ترامپ نسبت به ولودیمیر زلنسکی خبر داد. ترامپ معتقد است رئیس‌جمهور اوکراین حمایت‌های ایالات متحده را نادیده می‌گیرد و به دنبال این تنش‌ها، استیو ویتکاف و جرد کوشنر سفر برنامه‌ریزی‌شده خود به مسکو را به تعویق انداختند.\n\n🔗 **منبع خبر:**\n- [withyashar](https://t.me/withyashar/25450) 📝\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "root_media_type": "text",
+      "timestamp": 1791780852.0,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "خشم ترامپ از مواضع و ناسپاسی زلنسکی",
+      "summary": "یک مقام کاخ سفید از عصبانیت شدید دونالد ترامپ نسبت به ولودیمیر زلنسکی خبر داد. ترامپ معتقد است رئیس‌جمهور اوکراین حمایت‌های ایالات متحده را نادیده می‌گیرد و به دنبال این تنش‌ها، استیو ویتکاف و جرد کوشنر سفر برنامه‌ریزی‌شده خود به مسکو را به تعویق انداختند.",
+      "tag": "#دیده‌بان_جنگ",
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25450,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25450",
+          "timestamp": 1791780852.0
+        }
+      ],
+      "replies": []
+    },
+    "withyashar_25466": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 163,
+      "node": "withyashar",
+      "root_id": 25466,
+      "root_text": "فاکس‌نیوز: ارتش آمریکا راهنمای شناسایی تصویری (تهدید را بشناس) را برای کمک به سربازان آمریکایی در شناسایی نیروهای ارتش ایران ، منتشر کرده است. این راهنما شامل تصاویر یونیفرم‌ها، علائم درجه و تجهیزات نظامی ایران، از جمله سلاح‌های کلاشینکف، تفنگ مصاف ۲ و نارنجک‌انداز آرپی‌جی ۷ و… است\n@WarRoom",
+      "root_media_type": "photo",
+      "timestamp": 1791783491.8960319,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "فاکس‌نیوز: ارتش آمریکا راهنمای شناسایی تصویری (تهدید را بشناس) را برای کمک به سربازان آمریکایی در شناسایی نیروهای ارتش ایران",
+      "summary": "فاکس‌نیوز: ارتش آمریکا راهنمای شناسایی تصویری (تهدید را بشناس) را برای کمک به سربازان آمریکایی در شناسایی نیروهای ارتش ایران ، منتشر کرده است. این راهنما شامل تصاویر یونیفرم‌ها، علائم درجه و تجهیزات نظامی ایران، از جمله سلاح‌های کلاشینکف، تفنگ مصاف ۲ و نارنجک‌انداز آرپی‌جی ۷ و… است",
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25466,
+          "media_type": "photo",
+          "link": "https://t.me/withyashar/25466",
+          "timestamp": 1791783491.8960323
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
     }
   },
   "reply_to_root_map": {
@@ -5797,11 +5862,46 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 161,
+    "@DidebanJang": 163,
     "@DidehbanEghtesad": 15,
     "@DidebanEterazat": 7,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
+  },
+  "channel_watermarks": {
+    "Alibk3": 38786,
+    "withyashar": 25466,
+    "iliaen": 4744,
+    "VahidOnline": 78695,
+    "entekhab_ir": 383110,
+    "Khabar_Fouri": 551253,
+    "akhbarefori": 697634,
+    "Tasnimnews": 450720,
+    "isna94": 408401,
+    "Farsi_Iranwire": 94550,
+    "farsna": 467494,
+    "khabarfouri": 569125,
+    "VahidHeadline": 326004,
+    "bbcpersian": 293230,
+    "Farsna": 467874,
+    "irna_1313": 461276,
+    "IranintlTV": 361823,
+    "khabari": 201026,
+    "akharinkhabar": 637787,
+    "Mr_Economy": 63934,
+    "Eghtesadnews_com": 370632,
+    "Indypersian": 180001,
+    "VahidOOnLine": 264691,
+    "euronewspe": 90506,
+    "Digiato": 114010,
+    "farsivoa": 233479,
+    "Alarabiya_far": 151990,
+    "myITiran": 18258,
+    "thezoomit": 103693,
+    "thezoomon": 5226,
+    "dw_farsi": 131071,
+    "RadioFarda": 162262,
+    "Economic_News_Channel": 82669
   },
   "vahid_post_time": {
     "78694": 1791735142.0123565
@@ -5871,11 +5971,11 @@
     "78590": 3
   },
   "ilia_ai_posted": {
-    "4743": 97,
+    "4743": 7,
     "4740": 4,
     "4741": 5,
     "4742": 6,
     "4744": 8
   },
-  "last_saved": "2026-10-12 04:47:08 UTC"
+  "last_saved": "2026-10-12 05:45:14 UTC"
 }
