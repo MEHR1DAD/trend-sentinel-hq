@@ -8,7 +8,8 @@ from backend.core.config import (
     format_update_status_line,
     detect_msg_media_type,
     get_media_icon_from_type,
-    classify_war_urgency
+    classify_war_urgency,
+    calculate_source_latency
 )
 
 class YasharAutonomousPipeline:
@@ -178,11 +179,12 @@ class YasharAutonomousPipeline:
             editorial_reasoning = ai_eval.get('editorial_reasoning', '')
 
             ai_model = ai_eval.get('model', getattr(self.sentinel.gemini, 'last_used_model', 'unknown'))
+            latency_sec, latency_str = calculate_source_latency(raw_msg)
 
             # 2. Handle DROP Decision
             if decision == 'DROP':
                 drop_reason = ai_eval.get('drop_reason', 'فاقد ارزش خبری یا غیرمرتبط')
-                print(f"🛑 [YASHAR AI: DROPPED | Model: {ai_model}] Msg #{msg_id} was filtered out by AI Editor.")
+                print(f"🛑 [YASHAR AI: DROPPED | Model: {ai_model} | Latency: {latency_str}] Msg #{msg_id} was filtered out by AI Editor.")
                 print(f"   Reason: {drop_reason} | Reasoning: {editorial_reasoning}")
                 return
 
@@ -251,7 +253,7 @@ class YasharAutonomousPipeline:
                 )
                 try:
                     await self.sentinel.safe_edit_post(posted_ch, posted_mid, updated_text)
-                    print(f"✏️ [YASHAR AI: EDITED | Model: {ai_model}] Post {posted_mid} in {posted_ch} updated with in-place analysis.")
+                    print(f"✏️ [YASHAR AI: EDITED | Model: {ai_model} | Latency: {latency_str}] Post {posted_mid} in {posted_ch} updated with in-place analysis.")
                 except Exception as edit_err:
                     if "not modified" in str(edit_err).lower():
                         pass
@@ -273,7 +275,7 @@ class YasharAutonomousPipeline:
                     is_iran_related=is_iran_related
                 )
                 if merged:
-                    print(f"🔀 [YASHAR AI: MERGED | Model: {ai_model}] Successfully merged withyashar msg {msg_id} into active alert in {target_channel}.")
+                    print(f"🔀 [YASHAR AI: MERGED | Model: {ai_model} | Latency: {latency_str}] Successfully merged withyashar msg {msg_id} into active alert in {target_channel}.")
                     return
 
             # 6. Publish to Target Channel
@@ -287,7 +289,8 @@ class YasharAutonomousPipeline:
                         'time': time.time(),
                         'text': clean_text,
                         'pattern': 'withyashar_autonomous',
-                        'ai_model': ai_model
+                        'ai_model': ai_model,
+                        'latency_sec': round(latency_sec, 2) if latency_sec is not None else None
                     }
                     self.sentinel.db.record_posted_message(target_channel, "withyashar", msg_id, sent.id)
 
@@ -305,6 +308,7 @@ class YasharAutonomousPipeline:
                         'title': title,
                         'summary': summary,
                         'ai_model': ai_model,
+                        'latency_sec': round(latency_sec, 2) if latency_sec is not None else None,
                         'sources': [{
                             'node': 'withyashar',
                             'msg_id': msg_id,
@@ -318,7 +322,7 @@ class YasharAutonomousPipeline:
                     self.sentinel.save_persisted_state()
 
                     urg_label = "Alarm/Sound" if not is_silent else "Silent"
-                    print(f"✨ [YASHAR AI: PUBLISHED | Model: {ai_model}] Posted to {target_channel} ({urg_label}) for msg #{msg_id}:")
+                    print(f"✨ [YASHAR AI: PUBLISHED | Model: {ai_model} | Latency: {latency_str}] Posted to {target_channel} ({urg_label}) for msg #{msg_id}:")
                     print(f"   📌 Title: {title}")
                     print(f"   💡 Editorial Rationale: {editorial_reasoning}")
             except Exception as pub_err:

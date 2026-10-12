@@ -3,7 +3,7 @@ import time
 import json
 import asyncio
 from datetime import datetime, timezone
-from backend.core.config import get_tehran_time_fa, get_tehran_datetime_fa, format_update_status_line
+from backend.core.config import get_tehran_time_fa, get_tehran_datetime_fa, format_update_status_line, calculate_source_latency
 
 class MirrorPipeline:
     """
@@ -177,13 +177,16 @@ class MirrorPipeline:
                     f"📡 {target_channel}"
                 )
                 
-            model_tag = f" (Model: {getattr(self.sentinel.gemini, 'last_used_model', 'unknown')})" if is_ai else " (Heuristic)"
+            latency_sec, latency_str = calculate_source_latency(raw_msg)
+            model_name = getattr(self.sentinel.gemini, 'last_used_model', 'unknown') if is_ai else "Heuristic"
+            lat_tag = f" | Latency: {latency_str}" if latency_str != "N/A" else ""
+            log_meta = f" (Model: {model_name}{lat_tag})"
             try:
                 if msg_id in posted_dict:
                     posted_id = posted_dict[msg_id]
                     try:
                         await self.sentinel.safe_edit_post(target_channel, posted_id, post_content)
-                        print(f"✏️ Edited post {posted_id} in {target_channel} for {source_node} msg {msg_id}{model_tag}.")
+                        print(f"✏️ Edited post {posted_id} in {target_channel} for {source_node} msg {msg_id}{log_meta}.")
                         return is_ai
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
@@ -211,7 +214,7 @@ class MirrorPipeline:
                     if sent:
                         posted_dict[msg_id] = sent.id
                         self.sentinel.db.record_posted_message(target_channel, source_node, msg_id, sent.id)
-                        print(f"🚀 Sent mirror post {sent.id} to {target_channel} for {source_node} msg {msg_id}{model_tag}.")
+                        print(f"🚀 Sent mirror post {sent.id} to {target_channel} for {source_node} msg {msg_id}{log_meta}.")
                         return is_ai
             except Exception as e:
                 print(f"❌ Error in mirror pipeline for {source_node} msg {msg_id}: {e}")

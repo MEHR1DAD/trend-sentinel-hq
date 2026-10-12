@@ -264,3 +264,33 @@ def classify_war_urgency(ai_urgency=None, text="", title="", is_iran_related=Fal
     # 3. Non-Iran regional war news
     return ('REGIONAL', '🔕', 'هشدار منطقه‌ای', True)
 
+def calculate_source_latency(raw_msg):
+    """
+    Calculates the time elapsed between original post creation at source and current processing time.
+    Returns: (latency_seconds: float or None, formatted_latency_str: str)
+    """
+    if not raw_msg:
+        return None, "N/A"
+    msg_date = getattr(raw_msg, 'date', None)
+    if not msg_date:
+        return None, "N/A"
+    try:
+        if hasattr(msg_date, 'timestamp'):
+            src_ts = msg_date.timestamp()
+        else:
+            return None, "N/A"
+        latency_sec = max(0.0, time.time() - src_ts)
+        if latency_sec < 60:
+            formatted = f"{latency_sec:.1f}s"
+        elif latency_sec < 3600:
+            mins = int(latency_sec // 60)
+            secs = int(latency_sec % 60)
+            formatted = f"{mins}m {secs}s"
+        else:
+            hours = int(latency_sec // 3600)
+            mins = int((latency_sec % 3600) // 60)
+            formatted = f"{hours}h {mins}m"
+        return latency_sec, formatted
+    except Exception:
+        return None, "N/A"
+
