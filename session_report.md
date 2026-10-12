@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 35 minutes
-- **Messages Processed:** 36
-- **Last Message Text:** ♦️وقوع سیلاب ناگهانی در رودخانه بودی گانداکی در شمال مرکزی نپال، روز یکشنبه ۱۹ مهرماه، باعث تخریب پل...
-- **Last Message Time:** 2026-10-12 02:03:46
+- **Uptime:** 41 minutes
+- **Messages Processed:** 86
+- **Last Message Text:** ادامه روند افزایش قیمت نفت در بازارهای جهانی
+
+🔹در پی تشدید تنش‌ها در خاورمیانه، افزایش حملات به اهدا...
+- **Last Message Time:** 2026-10-12 02:45:36
