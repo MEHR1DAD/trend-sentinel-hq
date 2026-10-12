@@ -266,11 +266,12 @@ class MirrorPipeline:
             except Exception as scan_err:
                 print(f"⚠️ Quick scan {target_channel} failed: {scan_err}")
 
-            now_utc = datetime.now(timezone.utc)
+            watermark = self.sentinel.db.get_watermark(source_node)
+            kwargs = {'limit': 30}
+            if watermark > 0:
+                kwargs['min_id'] = watermark
             recent_msgs = []
-            async for msg in reader_client.iter_messages(source_node, limit=5):
-                if msg.date and (now_utc - msg.date).total_seconds() > 300:
-                    continue
+            async for msg in reader_client.iter_messages(source_node, **kwargs):
                 recent_msgs.append(msg)
             recent_msgs.reverse()
             
@@ -278,7 +279,7 @@ class MirrorPipeline:
                 clean_text = (msg.message or msg.text or "").strip()
                 if clean_text and len(clean_text) >= 5:
                     if msg.id not in posted_dict and not self.sentinel.db.is_source_posted(target_channel, source_node, msg.id):
-                        print(f"⚡ Catching up missed {source_node} post {msg.id}...")
+                        print(f"⚡ Catching up missed {source_node} post {msg.id} (watermark was {watermark})...")
                         await self.handle_message(source_node, target_channel, clean_text, msg.id, raw_msg=msg, is_edit=False)
                         await asyncio.sleep(2)
                     # Also feed into general process_message

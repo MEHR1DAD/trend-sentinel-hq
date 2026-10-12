@@ -233,11 +233,12 @@ class IntelligencePipeline:
         if not reader_client:
             return
         try:
-            now_utc = datetime.now(timezone.utc)
+            watermark = self.sentinel.db.get_watermark("withyashar")
+            kwargs = {'limit': 30}
+            if watermark > 0:
+                kwargs['min_id'] = watermark
             recent_yashar = []
-            async for msg in reader_client.iter_messages("withyashar", limit=20):
-                if msg.date and (now_utc - msg.date).total_seconds() > 7200:
-                    continue
+            async for msg in reader_client.iter_messages("withyashar", **kwargs):
                 recent_yashar.append(msg)
             recent_yashar.reverse()
             for msg in recent_yashar:
@@ -541,18 +542,19 @@ class IntelligencePipeline:
         if not reader_client:
             return
         try:
-            now_utc = datetime.now(timezone.utc)
+            watermark = self.sentinel.db.get_watermark("Alibk3")
+            kwargs = {'limit': 50}
+            if watermark > 0:
+                kwargs['min_id'] = watermark
             recent_alibk = []
-            async for msg in reader_client.iter_messages("Alibk3", limit=20):
-                if msg.date and (now_utc - msg.date).total_seconds() > 7200:
-                    continue
+            async for msg in reader_client.iter_messages("Alibk3", **kwargs):
                 recent_alibk.append(msg)
             recent_alibk.reverse()
             for msg in recent_alibk:
                 clean_text = (msg.message or msg.text or "").strip()
                 if clean_text and len(clean_text) >= 5:
                     if msg.id not in self.alibk_posted and not self.sentinel.db.is_source_posted("@DidebanJang", "Alibk3", msg.id):
-                        print(f"⚡ Catching up missed Alibk3 post {msg.id}...")
+                        print(f"⚡ Catching up missed Alibk3 post {msg.id} (watermark was {watermark})...")
                         await self.handle_alibk(clean_text, msg.id, raw_msg=msg, is_edit=False)
                         await asyncio.sleep(2)
         except Exception as e:

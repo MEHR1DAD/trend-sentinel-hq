@@ -806,12 +806,13 @@ async def main():
                     if messages:
                         latest_id = messages[0].id
                         if node not in last_ids:
-                            last_ids[node] = latest_id
-                            now_utc = datetime.now(timezone.utc)
-                            recent = [m for m in messages if m.date and (now_utc - m.date).total_seconds() <= 900]
-                            recent.reverse()
-                            for m in recent:
+                            wm = sentinel.db.get_watermark(node)
+                            last_ids[node] = wm if wm > 0 else latest_id
+                            new_msgs = [m for m in messages if m.id > last_ids[node]]
+                            new_msgs.reverse()
+                            for m in new_msgs:
                                 await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m, skip_mirror_channels=True)
+                            last_ids[node] = max(last_ids[node], latest_id)
                         else:
                             new_msgs = [m for m in messages if m.id > last_ids[node]]
                             new_msgs.reverse()
