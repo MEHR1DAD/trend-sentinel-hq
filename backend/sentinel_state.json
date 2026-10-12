@@ -4,54 +4,54 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "recovered_source",
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
+      "recovered_source"
     ],
     "iliaen_4743": [
       "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
       "recovered_source"
     ],
     "VahidOnline_78687": [
-      "recovered_source",
-      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
+      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
+      "recovered_source"
     ],
     "VahidOnline_78694": [
-      "recovered_source",
-      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
+      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
+      "recovered_source"
     ],
     "withyashar_25419": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25420": [
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "recovered_source",
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
+      "recovered_source"
     ],
     "withyashar_25422": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25423": [
       "حملات نظامی در ایران، بازار",
       "recovered_source"
     ],
     "withyashar_25428": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25426": [
-      "recovered_source",
-      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان"
+      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
+      "recovered_source"
     ],
     "withyashar_25427": [
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "recovered_source",
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
+      "recovered_source"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -78,8 +78,8 @@
       "withyashar_report"
     ],
     "withyashar_25438": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25439": [
       "withyashar_report"
@@ -91,41 +91,41 @@
       "withyashar_report"
     ],
     "withyashar_25442": [
-      "recovered_source",
-      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
+      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا",
+      "recovered_source"
     ],
     "withyashar_25443": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25444": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25451": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25461": [
       "withyashar_report"
     ],
     "withyashar_25462": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25460": [
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "recovered_source",
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
+      "recovered_source"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
     ],
     "withyashar_25465": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "Alibk3_38780": [
       "recovered_source"
@@ -435,7 +435,8 @@
     ],
     "VahidOnline_78697": [
       "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
-    ]
+    ],
+    "VahidOnline_78700": []
   },
   "vip_alert_history": {
     "iliaen_4743": {
@@ -1472,6 +1473,34 @@
       "pattern": "withyashar_autonomous",
       "ai_model": "gemini-3.5-flash-lite",
       "latency_sec": 23.54
+    },
+    "VahidOnline_78700": {
+      "sent_msg_id": 182,
+      "target_channel": "@DidebanJang",
+      "time": 1791818861.4211698,
+      "thread_key": "withyashar_25497",
+      "text": "اندی برنهام، نخست‌وزیر بریتانیا، درباره حادثه پایگاه هوایی فرفورد، دوشنبه ۲۰ مهر گفت که به احتمال زیاد این اقدام در ایران هماهنگ شده و به دستور سپاه پاسداران انجام شده است.\n\nنخست‌وزیر بریتانیا در واکنش به این حادثه اعلام کرد که دولت این کشور تحریم‌های بیشتری علیه جمهوری اسلامی اعمال خواهد کرد.\n\nبریتانیا در تازه‌ترین بسته تحریمی علیه جمهوری اسلامی، دو شهروند ایرانی را به اتهام دست داشتن در فعالیت‌های خصمانه، از جمله جاسوسی و مشارکت در تهدید یا طراحی حملات علیه افراد در خارج از ایران، تحریم کرد.\nدولت بریتانیا روح‌الله بازقندی و شهرام علیرضا تمرزاده جکی را به فهرست تحریم‌های خود اضافه کرد.\n@VahidOOnLine\n\n📡 @VahidOnline"
+    },
+    "Alibk3_38836": {
+      "sent_msg_id": 181,
+      "target_channel": "@DidebanJang",
+      "time": 1791818995.4665534,
+      "thread_key": "withyashar_25496"
+    },
+    "withyashar_25498": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 183,
+      "time": 1791819353.8073013,
+      "text": "بیانیه ۲۹ کشور از جمله انگلیس و آمریکا: ما یافته‌ های بریتانیا را درباره دست داشتن ایران در حادثه پایگاه فیرفورد تأیید می‌کنیم. حملات ایران، حملات سایبری و فعالیت‌ های ترکیبی آن را محکوم می‌کنیم. واقعه فیرفورد آمادگی سپاه پاسداران را برای انجام حملات فرامرزی نشان می‌دهد. \n@WarRoom 🚨🚨🚨🚨",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 14.61
+    },
+    "Alibk3_38838": {
+      "sent_msg_id": 183,
+      "target_channel": "@DidebanJang",
+      "time": 1791820182.5982077,
+      "thread_key": "withyashar_25498"
     }
   },
   "last_alert_time": {
@@ -7158,8 +7187,8 @@
       "timestamp": 1791817138.4044588,
       "category": "WAR",
       "is_iran_related": false,
-      "title": "حملات هوایی به صنعا یک کشته و ۱۲ زخمی بر جای گذاشت",
-      "summary": "منابع وابسته به حوثی‌ها در یمن اعلام کردند که حملات هوایی منتسب به ائتلاف به رهبری عربستان سعودی، دو منطقه مسکونی و یک کارخانه نمک در پایتخت این کشور (صنعا) را هدف قرار داده است. این حملات دست‌کم یک کشته و ۱۲ زخمی برجای گذاشته است. این در حالی است که با وجود روند مذاکرات صلح میان انصارالله یمن و ریاض، تنش‌های مق مقطعی و اتهامات متقابل همچنان ثبات شکننده در این کشور جنگ‌زده را تهدید می‌کند.",
+      "title": "حملات هوایی به صنعا و اخلال در پروازهای جده در سایه تنش‌های شکننده در یمن",
+      "summary": "در پی حملات هوایی منتسب به ائتلاف به رهبری عربستان به مناطق مسکونی و یک کارخانه نمک در صنعا که دست‌کم یک کشته و ۱۲ زخمی بر جای گذاشت، گزارش‌ها حاکی از توقف فعالیت فرودگاه جده و معلق ماندن چندین هواپیما در آسمان است؛ تحولاتی که ثبات شکننده ناشی از روند شکننده مذاکرات صلح میان انصارالله و ریاض را بیش از پیش تهدید می‌کند.",
       "ai_model": "gemini-3.5-flash-lite",
       "latency_sec": 27.17,
       "sources": [
@@ -7169,10 +7198,19 @@
           "media_type": "text",
           "link": "https://t.me/withyashar/25496",
           "timestamp": 1791817138.404463
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38836,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38836",
+          "timestamp": 1791818995.2928658
         }
       ],
       "replies": [],
-      "tag": "#دیده‌بان_جنگ"
+      "tag": "#دیده‌بان_جنگ",
+      "updated_at": 1791818995.2928717,
+      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
     },
     "withyashar_25497": {
       "channel": "@DidebanJang",
@@ -7184,8 +7222,8 @@
       "timestamp": 1791818033.7154799,
       "category": "WAR",
       "is_iran_related": true,
-      "title": "بریتانیا دو شهروند ایرانی را تحریم و سفیر ایران را احضار کرد",
-      "summary": "دولت بریتانیا در واکنش به آنچه «فعالیت‌های خصمانه و تلاش برای تضعیف امنیت ملی» از سوی شبکه‌های وابسته به ایران خوانده، دو شهروند ایرانی را در فهرست تحریم‌های خود قرار داد. لندن همچنین در اقدامی دیپلماتیک، سفیر جمهوری اسلامی را در اعتراض به این اقدامات احضار کرد تا پیام صریح دولت بریتانیا را مبنی بر عدم مدارا با تهدیدات امنیتی در خاک این کشور دریافت کند.",
+      "title": "تشدید تنش‌ها؛ بریتانیا سفیر ایران را احضار، دو مقام سپاه را تحریم و تهران را به دست داشتن در حادثه پایگاه فرفورد متهم کرد",
+      "summary": "اندی برنهام، نخست‌وزیر بریتانیا، حادثه پایگاه هوایی فرفورد در روز دوشنبه ۲۰ مهر را به احتمال زیاد اقدام هماهنگ‌شده از سوی ایران و به دستور سپاه پاسداران دانست. در واکنش به این رویداد، دولت بریتانیا از اعمال تحریم‌های بیشتر خبر داد و در تازه‌ترین اقدام، روح‌الله بازقندی و شهرام علیرضا تمرزاده جکی، دو شهروند ایرانی را به اتهام فعالیت‌های خصمانه، جاسوسی و طراحی حملات در خارج از کشور، در فهرست تحریم‌های خود قرار داد.",
       "ai_model": "gemini-3.5-flash-lite",
       "latency_sec": 23.54,
       "sources": [
@@ -7195,10 +7233,54 @@
           "media_type": "text",
           "link": "https://t.me/withyashar/25497",
           "timestamp": 1791818033.715484
+        },
+        {
+          "node": "VahidOnline",
+          "msg_id": 78700,
+          "media_type": "photo",
+          "link": "https://t.me/VahidOnline/78700",
+          "timestamp": 1791818695.2206855
         }
       ],
       "replies": [],
-      "tag": "#دیده‌بان_جنگ"
+      "tag": "#دیده‌بان_جنگ",
+      "updated_at": 1791818695.2206922,
+      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
+    },
+    "withyashar_25498": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 183,
+      "node": "withyashar",
+      "root_id": 25498,
+      "root_text": "بیانیه ۲۹ کشور از جمله انگلیس و آمریکا: ما یافته‌ های بریتانیا را درباره دست داشتن ایران در حادثه پایگاه فیرفورد تأیید می‌کنیم. حملات ایران، حملات سایبری و فعالیت‌ های ترکیبی آن را محکوم می‌کنیم. واقعه فیرفورد آمادگی سپاه پاسداران را برای انجام حملات فرامرزی نشان می‌دهد. \n@WarRoom 🚨🚨🚨🚨",
+      "root_media_type": "text",
+      "timestamp": 1791819353.8091645,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "تشدید تنش‌های ژئوپلیتیک؛ از بیانیه ۲۹ کشور علیه سپاه پاسداران تا گزارش هدف قرار گرفتن نفتکش در مضيق هرمز",
+      "summary": "به دنبال انتشار بیانیه مشترک ۲۹ کشور از جمله آمریکا و بریتانیا در تایید مسئولیت سپاه پاسداران در حمله به پایگاه هوایی فیرفورد و محکومیت فعالیت‌های منطقه‌ای و سایبری ایران، گزارش‌های جدیدی از هدف قرار گرفتن یک فروند نفتکش در تنگه هرمز منتشر شده است. این تحولات متوالی، فشار امنیتی و ژئوپلیتیک بر ساختار نظامی ایران و آبراه حیاتی منطقه را وارد فاز تازه‌ای کرده است.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 14.61,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25498,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25498",
+          "timestamp": 1791819353.8091707
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38838,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38838",
+          "timestamp": 1791820182.386273
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ",
+      "updated_at": 1791820182.3862813,
+      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
     }
   },
   "reply_to_root_map": {
@@ -7250,46 +7332,46 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 182,
+    "@DidebanJang": 183,
     "@DidehbanEghtesad": 15,
     "@DidebanEterazat": 9,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38835,
-    "VahidHeadline": 326098,
-    "VahidOOnLine": 264781,
+    "Alibk3": 38838,
+    "VahidHeadline": 326100,
+    "VahidOOnLine": 264786,
     "RadioFarda": 162277,
-    "IranintlTV": 361914,
-    "Tasnimnews": 450857,
-    "Farsna": 467989,
-    "isna94": 408485,
-    "irna_1313": 461566,
-    "akharinkhabar": 637908,
-    "khabarfouri": 569204,
-    "akhbarefori": 697785,
-    "dw_farsi": 131104,
-    "entekhab_ir": 383177,
-    "Khabar_Fouri": 551318,
-    "khabari": 201108,
+    "IranintlTV": 361921,
+    "Tasnimnews": 450862,
+    "Farsna": 467999,
+    "isna94": 408486,
+    "irna_1313": 461576,
+    "akharinkhabar": 637921,
+    "khabarfouri": 569206,
+    "akhbarefori": 697792,
+    "dw_farsi": 131106,
+    "entekhab_ir": 383179,
+    "Khabar_Fouri": 551325,
+    "khabari": 201111,
     "thezoomit": 103737,
-    "farsivoa": 233529,
+    "farsivoa": 233531,
     "myITiran": 18266,
-    "Farsi_Iranwire": 94624,
+    "Farsi_Iranwire": 94625,
     "bbcpersian": 293250,
-    "Alarabiya_far": 152053,
-    "thezoomon": 5239,
-    "Mr_Economy": 63961,
-    "Eghtesadnews_com": 370677,
-    "Digiato": 114047,
-    "Indypersian": 180036,
-    "withyashar": 25497,
-    "euronewspe": 90532,
-    "Economic_News_Channel": 82704,
-    "farsna": 467989,
+    "Alarabiya_far": 152054,
+    "thezoomon": 5240,
+    "Mr_Economy": 63965,
+    "Eghtesadnews_com": 370680,
+    "Digiato": 114048,
+    "Indypersian": 180038,
+    "withyashar": 25498,
+    "euronewspe": 90533,
+    "Economic_News_Channel": 82705,
+    "farsna": 468000,
     "persiannbloomberg": 68133,
-    "VahidOnline": 78699,
+    "VahidOnline": 78700,
     "iliaen": 4744
   },
   "vahid_post_time": {
@@ -7359,7 +7441,8 @@
     "78611": 8,
     "78590": 3,
     "78697": 87,
-    "78699": 88
+    "78699": 88,
+    "78700": 89
   },
   "ilia_ai_posted": {
     "4743": 7,
@@ -7370,8 +7453,8 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 3,
-    "gemini-3.5-flash-lite": 104,
+    "gemini-3.5-flash-lite": 118,
     "gemini-2.5-flash": 1
   },
-  "last_saved": "2026-10-12 15:15:35 UTC"
+  "last_saved": "2026-10-12 15:51:07 UTC"
 }
