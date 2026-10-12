@@ -413,6 +413,40 @@ class LiveSentinel:
             except Exception as e:
                 print(f"⚠️ Error cleaning up notification bubbles in {ch}: {e}")
 
+    async def safe_edit_post(self, channel, msg_id, new_text, msg_obj=None, reader_client=None):
+        """
+        Robust message editor trying all available credentials:
+        1. Message object directly (msg_obj.edit)
+        2. Bot client (self.bot.edit_message)
+        3. User client (reader_client.edit_message or self.client.edit_message)
+        """
+        if msg_obj:
+            try:
+                await msg_obj.edit(new_text, link_preview=False)
+                print(f"✅ Successfully edited {channel} msg {msg_id} via Message object.")
+                return True
+            except Exception as e_obj:
+                print(f"⚠️ Message object edit failed for {channel}/{msg_id}: {e_obj}")
+
+        if self.bot:
+            try:
+                await self.bot.edit_message(channel, msg_id, new_text, link_preview=False)
+                print(f"✅ Successfully edited {channel} msg {msg_id} via Bot client.")
+                return True
+            except Exception as e_bot:
+                print(f"⚠️ Bot edit failed for {channel}/{msg_id}: {e_bot}")
+
+        u_client = reader_client or self.client
+        if u_client:
+            try:
+                await u_client.edit_message(channel, msg_id, new_text, link_preview=False)
+                print(f"✅ Successfully edited {channel} msg {msg_id} via User client.")
+                return True
+            except Exception as e_user:
+                print(f"⚠️ User client edit failed for {channel}/{msg_id}: {e_user}")
+
+        return False
+
     async def init_channel_last_alert_ids(self, reader_client=None):
         target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat', '@VahidOnlineAI', '@iliaenAI']
         fetch_client = reader_client or self.client or self.bot
@@ -424,6 +458,30 @@ class LiveSentinel:
                 async for m in fetch_client.iter_messages(ch, limit=35):
                     if not m or not m.text:
                         continue
+                    if ch == '@DidebanJang':
+                        if m.id == 165 and 'بازنویسی تحلیلی' not in m.text:
+                            fixed_165 = (
+                                "🚨 **هشدار فوری: تاخیر در ورود ناو هواپیمابر «تئودور روزولت» آمریکا به ژاپن به دلیل شرایط طوفانی** 📝\n\n"
+                                "📝 **چکیده رویداد:**\n"
+                                "روزنامه آساهی شیمبون ژاپن گزارش داد ورود ناو هواپیمابر هسته‌ای «تئودور روزولت» (CVN-71) و ناوگروه ضربت آن به پایگاه دریایی یوکوسوکا به دلیل وقوع طوفان‌های شدید دریایی به تعویق افتاده و این ناوگروه با چند روز تاخیر، بین ۱۵ تا ۲۰ اکتبر وارد منطقه خواهد شد.\n\n"
+                                "🔗 **منبع خبر:**\n"
+                                "- [withyashar](https://t.me/withyashar/25470) 📝\n\n"
+                                "🔄 **به‌روزرسانی شده (ساعت ۰۹:۳۹) | ویرایش و بازنویسی تحلیلی**\n\n"
+                                "#دیده‌بان_جنگ\n@DidebanJang"
+                            )
+                            await self.safe_edit_post('@DidebanJang', 165, fixed_165, msg_obj=m, reader_client=fetch_client)
+                        elif m.id == 166 and 'بازنویسی تحلیلی' not in m.text:
+                            fixed_166 = (
+                                "🚨 **هشدار فوری: تاکید سناتور لیندسی گراهام بر ادامه فشار نظامی علیه ایران و مخالفت با توقف درگیری‌ها** 📹\n\n"
+                                "📝 **چکیده رویداد:**\n"
+                                "سناتور جمهوری‌خواه آمریکایی با ابراز مخالفت صریح نسبت به توقف جنگ، مدعی شد به دلیل در دسترس بودن پیروزی و خطرناک ماندن توانمندی‌های نظامی ایران، واشنگتن نباید در شرایط کنونی عملیات یا فشارهای خود را متوقف کند.\n\n"
+                                "🔗 **منبع خبر:**\n"
+                                "- [withyashar](https://t.me/withyashar/25469) 📹\n\n"
+                                "🔄 **به‌روزرسانی شده (ساعت ۰۹:۴۹) | ویرایش و بازنویسی تحلیلی**\n\n"
+                                "#دیده‌بان_جنگ\n@DidebanJang"
+                            )
+                            await self.safe_edit_post('@DidebanJang', 166, fixed_166, msg_obj=m, reader_client=fetch_client)
+
                     rep_to = getattr(m, 'reply_to_msg_id', None)
                     if not rep_to and getattr(m, 'reply_to', None):
                         rep_to = getattr(m.reply_to, 'reply_to_msg_id', None)
@@ -502,7 +560,7 @@ class LiveSentinel:
                     "🔄 **به‌روزرسانی شده (ساعت ۰۹:۳۹) | ویرایش و بازنویسی تحلیلی**\n\n"
                     "#دیده‌بان_جنگ\n@DidebanJang"
                 )
-                await self.bot.edit_message('@DidebanJang', 165, fixed_165, link_preview=False)
+                await self.safe_edit_post('@DidebanJang', 165, fixed_165, msg_obj=m165, reader_client=fetch_client)
                 print("✅ Successfully polished post 165 in @DidebanJang!")
         except Exception as e165:
             print(f"⚠️ Error polishing post 165 in @DidebanJang: {e165}")
@@ -519,7 +577,7 @@ class LiveSentinel:
                     "🔄 **به‌روزرسانی شده (ساعت ۰۹:۴۹) | ویرایش و بازنویسی تحلیلی**\n\n"
                     "#دیده‌بان_جنگ\n@DidebanJang"
                 )
-                await self.bot.edit_message('@DidebanJang', 166, fixed_166, link_preview=False)
+                await self.safe_edit_post('@DidebanJang', 166, fixed_166, msg_obj=m166, reader_client=fetch_client)
                 print("✅ Successfully polished post 166 in @DidebanJang!")
         except Exception as e166:
             print(f"⚠️ Error polishing post 166 in @DidebanJang: {e166}")

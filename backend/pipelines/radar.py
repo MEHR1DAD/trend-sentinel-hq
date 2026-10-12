@@ -270,7 +270,7 @@ class RadarPipeline:
                 updated_alert_text = self.build_alert_post_content(thread_data)
                 
                 try:
-                    await self.sentinel.bot.edit_message(target_channel, alert_msg_id, updated_alert_text, link_preview=False)
+                    await self.sentinel.safe_edit_post(target_channel, alert_msg_id, updated_alert_text)
                     print(f"🔀 Successfully merged msg {node}_{msg_id} into alert {alert_msg_id} in {target_channel} ({len(sources)} sources). Status line updated in-place.")
                 except Exception as edit_err:
                     if "not modified" in str(edit_err).lower():
@@ -358,7 +358,7 @@ class RadarPipeline:
             updated_alert_text = self.build_alert_post_content(thread_data)
             
             try:
-                await self.sentinel.bot.edit_message(target_channel, alert_msg_id, updated_alert_text, link_preview=False)
+                await self.sentinel.safe_edit_post(target_channel, alert_msg_id, updated_alert_text)
                 print(f"✏️ Successfully updated alert {alert_msg_id} in {target_channel} ({len(replies)} replies attached). Status line updated in-place.")
             except Exception as e:
                 if "not modified" in str(e).lower():
@@ -617,7 +617,7 @@ class RadarPipeline:
                     else:
                         updated_text = self.build_alert_post_content(thread_data)
                         try:
-                            await self.sentinel.bot.edit_message(target_ch, alert_mid, updated_text, link_preview=False)
+                            await self.sentinel.safe_edit_post(target_ch, alert_mid, updated_text)
                             print(f"✏️ Refreshed alert {alert_mid} in {target_ch} after removing deleted source {del_id}.")
                         except Exception as e:
                             print(f"⚠️ Error editing alert after source deletion: {e}")
@@ -938,7 +938,7 @@ class RadarPipeline:
                 clean_part0 = clean_part0.rstrip() + "\n\n"
                 new_text = f"{clean_part0}📝 **چکیده رویداد:**\n{summary}\n\n{delimiter}{parts[1]}"
                 try:
-                    await self.sentinel.bot.edit_message(target_channel, message_id, new_text, link_preview=False)
+                    await self.sentinel.safe_edit_post(target_channel, message_id, new_text)
                     for tk, td in self.sentinel.thread_alerts.items():
                         if td.get('alert_msg_id') == message_id and td.get('channel') == target_channel:
                             td['summary'] = summary
@@ -1289,7 +1289,7 @@ class RadarPipeline:
                         f"{tag}\n\n{target_ch}"
                     )
                     try:
-                        await self.sentinel.bot.edit_message(target_ch, orig_sent_id, updated_alert, link_preview=False)
+                        await self.sentinel.safe_edit_post(target_ch, orig_sent_id, updated_alert)
                         asyncio.create_task(self.append_ai_summary(target_ch, orig_sent_id, updated_alert, [text]))
                         print(f"✏️ Updated VIP alert {orig_sent_id} in {target_ch} with in-place status line.")
                     except Exception as edit_err:
@@ -1305,7 +1305,7 @@ class RadarPipeline:
                             else:
                                 tag = "#دیده‌بان_جنگ" if target_ch == "@DidebanJang" else ("#دیده‌بان_اقتصاد" if target_ch == "@DidehbanEghtesad" else "#دیده‌بان_اعتراضات")
                                 new_t = curr_msg.text.replace(tag, f"{status_line}\n\n{tag}")
-                            await self.sentinel.bot.edit_message(target_ch, orig_sent_id, new_t, link_preview=False)
+                            await self.sentinel.safe_edit_post(target_ch, orig_sent_id, new_t)
                             print(f"✏️ Fallback updated VIP alert {orig_sent_id} in {target_ch}.")
                     except Exception as fb_err:
                         print(f"⚠️ Failed to fallback edit VIP alert {orig_sent_id} in {target_ch}: {fb_err}")

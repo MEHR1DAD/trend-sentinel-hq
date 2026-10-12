@@ -181,7 +181,7 @@ class MirrorPipeline:
                 if msg_id in posted_dict:
                     posted_id = posted_dict[msg_id]
                     try:
-                        await self.sentinel.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
+                        await self.sentinel.safe_edit_post(target_channel, posted_id, post_content)
                         print(f"✏️ Edited post {posted_id} in {target_channel} for {source_node} msg {msg_id}.")
                         return is_ai
                     except Exception as edit_err:

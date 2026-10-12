@@ -201,7 +201,7 @@ class IntelligencePipeline:
                         f"{tag}\n{target_channel}"
                     )
 
-                    await self.sentinel.bot.edit_message(target_channel, posted_id, updated_text, link_preview=False)
+                    await self.sentinel.safe_edit_post(target_channel, posted_id, updated_text)
                     print(f"✨ [AI UPGRADE SUCCESS] Successfully auto-upgraded post {posted_id} in {target_channel}: {upgraded_title}")
 
                     thread_key = f"withyashar_{src_msg_id}"
@@ -325,7 +325,7 @@ class IntelligencePipeline:
                         f"{tag}\n{posted_ch}"
                     )
                     try:
-                        await self.sentinel.bot.edit_message(posted_ch, posted_mid, updated_text, link_preview=False)
+                        await self.sentinel.safe_edit_post(posted_ch, posted_mid, updated_text)
                         print(f"✏️ Edited withyashar post {posted_mid} in {posted_ch}.")
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
@@ -654,7 +654,7 @@ class IntelligencePipeline:
                         )
                         
                     try:
-                        await self.sentinel.bot.edit_message(posted_ch, posted_mid, alert_text, link_preview=False)
+                        await self.sentinel.safe_edit_post(posted_ch, posted_mid, alert_text)
                         print(f"✏️ Updated Alibk3 alert in {posted_ch} (Alibk msg {msg_id}) with in-place status line.")
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
