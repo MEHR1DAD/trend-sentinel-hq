@@ -340,6 +340,7 @@ class IntelligencePipeline:
                         self.sentinel.channel_last_alert_id[target_channel] = sent.id
                         self.alibk_posted[msg_id] = {'channel': target_channel, 'msg_id': sent.id, 'timestamp': time.time()}
                         self.sentinel.db.record_posted_message(target_channel, "Alibk3", msg_id, sent.id)
+                        ai_model = getattr(self.sentinel.gemini, 'last_used_model', 'unknown')
                         self.sentinel.thread_alerts[f"Alibk3_{msg_id}"] = {
                             'channel': target_channel,
                             'alert_msg_id': sent.id,
@@ -352,6 +353,7 @@ class IntelligencePipeline:
                             'is_iran_related': is_iran_related,
                             'title': title,
                             'summary': summary,
+                            'ai_model': ai_model,
                             'sources': [{
                                 'node': 'Alibk3',
                                 'msg_id': msg_id,
@@ -364,6 +366,6 @@ class IntelligencePipeline:
                         }
                         self.sentinel.save_persisted_state()
                         status_label = "Iran/Sound" if is_iran_related else "Regional/Silent"
-                        print(f"🚨 Published Persian Alibk3 alert ({status_label}) to {target_channel} for msg {msg_id}: {title}")
+                        print(f"🚨 Published Persian Alibk3 alert ({status_label} | Model: {ai_model}) to {target_channel} for msg {msg_id}: {title}")
             except Exception as e:
                 print(f"❌ Error publishing Alibk3 alert to {target_channel} for msg {msg_id}: {e}")

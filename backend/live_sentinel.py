@@ -347,6 +347,10 @@ class LiveSentinel:
                     if isinstance(v, (int, float)):
                         self.db.channel_watermarks[k] = int(v)
                 
+                raw_stats = data.get('gemini_model_stats', {})
+                if isinstance(raw_stats, dict):
+                    self.gemini.model_usage_stats.update(raw_stats)
+                
                 print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.intelligence_pipeline.alibk_posted)} Alibk alerts, {len(self.mirror_pipeline.posted_map['VahidOnline'])} Vahid AI, {len(self.mirror_pipeline.posted_map['iliaen'])} Ilia AI, {len(self.db.channel_watermarks)} watermarks.")
         except Exception as e:
             print(f"⚠️ Error loading persisted state: {e}")
@@ -378,6 +382,7 @@ class LiveSentinel:
                 "ilia_post_time": clean_ilia_time,
                 "vahid_ai_posted": clean_vahid_ai,
                 "ilia_ai_posted": clean_ilia_ai,
+                "gemini_model_stats": self.gemini.model_usage_stats,
                 "last_saved": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
             }
             with open(self.state_file, 'w', encoding='utf-8') as f:

@@ -16,6 +16,8 @@ class GeminiClient:
         self.current_key_idx = 0
         self.current_gemini_model = DEFAULT_GEMINI_MODEL
         self.latest_flash_lite_model = DEFAULT_GEMINI_MODEL
+        self.last_used_model = DEFAULT_GEMINI_MODEL
+        self.model_usage_stats = {}
         self.gemini_lock = asyncio.Lock()
         self.last_gemini_call_time = 0.0
 
@@ -141,10 +143,10 @@ class GeminiClient:
         self.current_gemini_model = next_model
         return next_model
 
-    async def call_gemini_content(self, payload, timeout=14, max_retries=6):
+    async def call_gemini_content(self, payload, timeout=14, max_retries=6, return_model=False):
         active_key = self.get_api_key()
         if not active_key:
-            return None
+            return (None, None) if return_model else None
 
         payload.setdefault("safetySettings", [
             {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
@@ -194,8 +196,12 @@ class GeminiClient:
 
                 if raw_text:
                     self.current_gemini_model = model
+                    self.last_used_model = model
+                    self.model_usage_stats[model] = self.model_usage_stats.get(model, 0) + 1
                     if "flash-lite" in model or "flash_lite" in model:
                         self.latest_flash_lite_model = model
+                    if return_model:
+                        return raw_text, model
                     return raw_text
                 
                 finish_reason = candidates[0].get("finishReason", "UNKNOWN") if candidates else "NO_CANDIDATES"
@@ -226,4 +232,4 @@ class GeminiClient:
                 else:
                     break
                     
-        return None
+        return (None, None) if return_model else None

@@ -83,7 +83,8 @@ class YasharAutonomousPipeline:
             }
         }
 
-        raw_text = await self.sentinel.gemini.call_gemini_content(payload, timeout=20, max_retries=6)
+        raw_text, used_model = await self.sentinel.gemini.call_gemini_content(payload, timeout=20, max_retries=6, return_model=True)
+        model_name = used_model or getattr(self.sentinel.gemini, 'last_used_model', 'unknown')
         if raw_text:
             match = re.search(r'\{.*\}', raw_text, re.DOTALL)
             if match:
@@ -109,6 +110,7 @@ class YasharAutonomousPipeline:
                         "title": title,
                         "summary": summary,
                         "editorial_reasoning": editorial_reasoning,
+                        "model": model_name,
                         "is_ai": True
                     }
                 except Exception as parse_err:
@@ -139,6 +141,7 @@ class YasharAutonomousPipeline:
             "title": clean_title,
             "summary": clean,
             "editorial_reasoning": "Emergency fallback triggered due to AI connectivity issue.",
+            "model": "heuristic_fallback",
             "is_ai": False
         }
 
@@ -174,10 +177,12 @@ class YasharAutonomousPipeline:
             summary = ai_eval.get('summary', '').strip()
             editorial_reasoning = ai_eval.get('editorial_reasoning', '')
 
+            ai_model = ai_eval.get('model', getattr(self.sentinel.gemini, 'last_used_model', 'unknown'))
+
             # 2. Handle DROP Decision
             if decision == 'DROP':
                 drop_reason = ai_eval.get('drop_reason', 'فاقد ارزش خبری یا غیرمرتبط')
-                print(f"🛑 [YASHAR AI: DROPPED] Msg #{msg_id} was filtered out by AI Editor.")
+                print(f"🛑 [YASHAR AI: DROPPED | Model: {ai_model}] Msg #{msg_id} was filtered out by AI Editor.")
                 print(f"   Reason: {drop_reason} | Reasoning: {editorial_reasoning}")
                 return
 
@@ -246,7 +251,7 @@ class YasharAutonomousPipeline:
                 )
                 try:
                     await self.sentinel.safe_edit_post(posted_ch, posted_mid, updated_text)
-                    print(f"✏️ [YASHAR AI: EDITED] Post {posted_mid} in {posted_ch} updated with in-place analysis.")
+                    print(f"✏️ [YASHAR AI: EDITED | Model: {ai_model}] Post {posted_mid} in {posted_ch} updated with in-place analysis.")
                 except Exception as edit_err:
                     if "not modified" in str(edit_err).lower():
                         pass
@@ -268,7 +273,7 @@ class YasharAutonomousPipeline:
                     is_iran_related=is_iran_related
                 )
                 if merged:
-                    print(f"🔀 [YASHAR AI: MERGED] Successfully merged withyashar msg {msg_id} into active alert in {target_channel}.")
+                    print(f"🔀 [YASHAR AI: MERGED | Model: {ai_model}] Successfully merged withyashar msg {msg_id} into active alert in {target_channel}.")
                     return
 
             # 6. Publish to Target Channel
@@ -281,7 +286,8 @@ class YasharAutonomousPipeline:
                         'sent_msg_id': sent.id,
                         'time': time.time(),
                         'text': clean_text,
-                        'pattern': 'withyashar_autonomous'
+                        'pattern': 'withyashar_autonomous',
+                        'ai_model': ai_model
                     }
                     self.sentinel.db.record_posted_message(target_channel, "withyashar", msg_id, sent.id)
 
@@ -298,6 +304,7 @@ class YasharAutonomousPipeline:
                         'is_iran_related': is_iran_related,
                         'title': title,
                         'summary': summary,
+                        'ai_model': ai_model,
                         'sources': [{
                             'node': 'withyashar',
                             'msg_id': msg_id,
@@ -311,7 +318,7 @@ class YasharAutonomousPipeline:
                     self.sentinel.save_persisted_state()
 
                     urg_label = "Alarm/Sound" if not is_silent else "Silent"
-                    print(f"✨ [YASHAR AI: PUBLISHED] Posted to {target_channel} ({urg_label}) for msg #{msg_id}:")
+                    print(f"✨ [YASHAR AI: PUBLISHED | Model: {ai_model}] Posted to {target_channel} ({urg_label}) for msg #{msg_id}:")
                     print(f"   📌 Title: {title}")
                     print(f"   💡 Editorial Rationale: {editorial_reasoning}")
             except Exception as pub_err:

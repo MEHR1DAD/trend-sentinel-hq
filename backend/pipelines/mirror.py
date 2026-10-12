@@ -177,12 +177,13 @@ class MirrorPipeline:
                     f"📡 {target_channel}"
                 )
                 
+            model_tag = f" (Model: {getattr(self.sentinel.gemini, 'last_used_model', 'unknown')})" if is_ai else " (Heuristic)"
             try:
                 if msg_id in posted_dict:
                     posted_id = posted_dict[msg_id]
                     try:
                         await self.sentinel.safe_edit_post(target_channel, posted_id, post_content)
-                        print(f"✏️ Edited post {posted_id} in {target_channel} for {source_node} msg {msg_id}.")
+                        print(f"✏️ Edited post {posted_id} in {target_channel} for {source_node} msg {msg_id}{model_tag}.")
                         return is_ai
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
@@ -210,7 +211,7 @@ class MirrorPipeline:
                     if sent:
                         posted_dict[msg_id] = sent.id
                         self.sentinel.db.record_posted_message(target_channel, source_node, msg_id, sent.id)
-                        print(f"🚀 Sent mirror post {sent.id} to {target_channel} for {source_node} msg {msg_id}.")
+                        print(f"🚀 Sent mirror post {sent.id} to {target_channel} for {source_node} msg {msg_id}{model_tag}.")
                         return is_ai
             except Exception as e:
                 print(f"❌ Error in mirror pipeline for {source_node} msg {msg_id}: {e}")
