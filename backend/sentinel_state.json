@@ -43,8 +43,8 @@
       "withyashar_report"
     ],
     "withyashar_25426": [
-      "recovered_source",
-      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان"
+      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
+      "recovered_source"
     ],
     "withyashar_25427": [
       "فعالیت هوایی و جنگنده در آمریکا"
@@ -1799,10 +1799,59 @@
       "time": 1791827084.224086,
       "thread_key": "withyashar_25504",
       "text": "وزیران خارجه ایالات متحده، بریتانیا، استرالیا، کانادا و ۲۳ کشور دیگر با انتشار بیانیه‌ای مشترک، فعالیت‌های خصمانه جمهوری اسلامی ایران در خارج از مرزها را به شدت محکوم کردند.\n\nاین بیانیه روز دوشنبه ۲۰ مهر، پس از آن صادر شد که اندی برنهام، نخست‌وزیر بریتانیا، اعلام کرد حادثه امنیتی اخیر در پایگاه هوایی فیرفورد در انگلستان «تقریبا به طور قطع» توسط سپاه پاسداران انقلاب اسلامی هدایت شده است.\n\nکشورهای امضاکننده این بیانیه با اشاره به ماجرای پایگاه فیرفورد و سایر حملات اخیر علیه جوامع یهودی، روزنامه‌نگاران ایرانی و منافع ایالات متحده در اروپا، تاکید کردند که استفاده جمهوری اسلامی ایران از حملات خشونت‌آمیز، توطئه‌های مرگبار، آتش‌سوزی عمدی، خرابکاری و عملیات سایبری غیرقابل قبول است. آن‌ها هشدار دادند که هرگونه تلاش برای تهدید، ارعاب یا آسیب رساندن به افراد در خاک این کشورها با اقدام قاطع قانونی مواجه خواهد شد.\n@VahidOOnLine\n\n📡 @VahidOnline"
+    },
+    "Alibk3_38856": {
+      "sent_msg_id": 190,
+      "target_channel": "@DidebanJang",
+      "time": 1791827765.5171034,
+      "thread_key": "withyashar_25504"
+    },
+    "Alibk3_38857": {
+      "sent_msg_id": 190,
+      "target_channel": "@DidebanJang",
+      "time": 1791828059.5813832,
+      "thread_key": "withyashar_25504"
+    },
+    "Alibk3_38858": {
+      "sent_msg_id": 190,
+      "target_channel": "@DidebanJang",
+      "time": 1791828105.40387,
+      "thread_key": "withyashar_25504"
+    },
+    "akhbarefori_697828": {
+      "sent_msg_id": 190,
+      "target_channel": "@DidebanJang",
+      "time": 1791828336.6522193,
+      "thread_key": "withyashar_25504"
+    },
+    "Alibk3_38859": {
+      "sent_msg_id": 190,
+      "target_channel": "@DidebanJang",
+      "time": 1791828612.458695,
+      "thread_key": "withyashar_25504"
+    },
+    "Alibk3_38860": {
+      "sent_msg_id": 190,
+      "target_channel": "@DidebanJang",
+      "time": 1791828871.1972775,
+      "thread_key": "withyashar_25504"
+    },
+    "Alibk3_38861": {
+      "sent_msg_id": 190,
+      "target_channel": "@DidebanJang",
+      "time": 1791828884.267827,
+      "thread_key": "withyashar_25504"
+    },
+    "Alibk3_38862": {
+      "sent_msg_id": 191,
+      "target_channel": "@DidebanJang",
+      "time": 1791829195.5589883,
+      "thread_key": "withyashar_25505"
     }
   },
   "last_alert_time": {
-    "حملات نظامی در ایران": 1791817146.7101414
+    "حملات نظامی در ایران": 1791817146.7101414,
+    "انفجار در ریاض": 1791828333.4131253
   },
   "alibk_posted": {
     "38474": {
@@ -2618,6 +2667,11 @@
       "channel": "@DidebanJang",
       "msg_id": 171,
       "timestamp": 1791807023.0
+    },
+    "38863": {
+      "channel": "@DidebanJang",
+      "msg_id": 192,
+      "timestamp": 1791829465.2871275
     }
   },
   "thread_alerts": {
@@ -8289,9 +8343,9 @@
       "root_media_type": "text",
       "timestamp": 1791826414.4375381,
       "category": "WAR",
-      "is_iran_related": true,
-      "title": "تشدید تنش‌ها میان ایران و غرب؛ از واکنش سپاه به ائتلاف تنگه هرمز تا بیانیه مشترک ۲۷ کشور علیه فعالیت‌های منطقه‌ای و امنیتی تهران",
-      "summary": "وزیران خارجه ایالات متحده، بریتانیا، استرالیا، کانادا و ۲۳ کشور دیگر با انتشار بیانیه‌ای مشترک، فعالیت‌های خصمانه جمهوری اسلامی در خارج از مرزها را محکوم کردند. این بیانیه پس از آن صادر شد که نخست‌وزیر بریتانیا اعلام کرد حادثه امنیتی اخیر در پایگاه هوایی فیرفورد «تقریباً به‌طور قطع» توسط سپاه پاسداران هدایت شده است. امضاکنندگان با اشاره به این رویداد، حملات علیه جوامع یهودی، روزنامه‌نگاران ایرانی و منافع آمریکا در اروپا، شامل توطئه‌های مرگبار، آتش‌سوزی عمدی، خرابکاری و عملیات سایبری را غیرقابل قبول خوانده و هشدار دادند که تهدید یا آسیب رساندن به افراد در خاک این کشورها با اقدام قاطع قانونی مواجه خواهد شد.",
+      "is_iran_related": false,
+      "title": "تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز",
+      "summary": "به دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.",
       "ai_model": "gemini-3.5-flash-lite",
       "latency_sec": 3.16,
       "sources": [
@@ -8315,11 +8369,74 @@
           "media_type": "photo",
           "link": "https://t.me/VahidOnline/78702",
           "timestamp": 1791827058.502488
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38856,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38856",
+          "timestamp": 1791827765.1619518
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38857,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38857",
+          "timestamp": 1791828059.405423
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38858,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38858",
+          "timestamp": 1791828105.2233815
+        },
+        {
+          "node": "akhbarefori",
+          "msg_id": 697828,
+          "media_type": "text",
+          "link": "https://t.me/akhbarefori/697828",
+          "timestamp": 1791828334.321474
+        },
+        {
+          "node": "Tasnimnews",
+          "msg_id": 450908,
+          "media_type": "text",
+          "link": "https://t.me/Tasnimnews/450908",
+          "timestamp": 1791828334.3214777
+        },
+        {
+          "node": "akharinkhabar",
+          "msg_id": 637942,
+          "media_type": "text",
+          "link": "https://t.me/akharinkhabar/637942",
+          "timestamp": 1791828334.3214793
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38859,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38859",
+          "timestamp": 1791828612.2069402
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38860,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38860",
+          "timestamp": 1791828870.9038203
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38861,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38861",
+          "timestamp": 1791828884.0937357
         }
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ",
-      "updated_at": 1791827058.5024972,
+      "updated_at": 1791828884.093753,
       "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
     },
     "withyashar_25505": {
@@ -8332,8 +8449,8 @@
       "timestamp": 1791826671.555749,
       "category": "WAR",
       "is_iran_related": true,
-      "title": "صداوسیما تصاویر رزمایش شلیک موشک‌های کروز و عملیات مین‌ریزی در تنگه هرمز را منتشر کرد",
-      "summary": "رسانه ملی ویدیوهایی از توانمندی‌های دریایی و تاکتیک‌های رزمی، از جمله شلیک موشک‌های کروز و عملیات مین‌ریزی در آب‌های استراتژیک تنگه هرمز را پخش کرد. انتشار این تصاویر در مقطع کنونی بازتاب‌دهنده پیام‌های بازدارندگی و آمادگی عملیاتی یگان‌های ساحلی و دریایی در یکی از حساس‌ترین گذرگاه‌های انرژی جهان است.",
+      "title": "گزارش‌ها از وقوع حمله به یک فروند کشتی در تنگه هرمز همزمان با رزمایش اقتدار دریایی ایران",
+      "summary": "به دنبال انتشار تصاویر رزمایش شلیک موشک‌های کروز و عملیات مین‌ریزی توسط رسانه ملی در تنگه هرمز، گزارش‌های جدید حاکی از هدف قرار گرفتن یک فروند کشتی در این آبراه استراتژیک است که ابعاد امنیتی و بازدارنده تحولات منطقه را وارد مرحله تازه‌ای می‌کند.",
       "ai_model": "gemini-3.5-flash-lite",
       "latency_sec": 3.32,
       "sources": [
@@ -8343,6 +8460,41 @@
           "media_type": "video",
           "link": "https://t.me/withyashar/25505",
           "timestamp": 1791826671.555754
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38862,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38862",
+          "timestamp": 1791829195.376751
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ",
+      "updated_at": 1791829195.3767567,
+      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
+    },
+    "Alibk3_38863": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 192,
+      "node": "Alibk3",
+      "root_id": 38863,
+      "root_text": "مجددا، استهداف سفينة أخرى في مضيق هرمز.",
+      "root_media_type": "photo",
+      "timestamp": 1791829465.2890804,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "هدف قرار گرفتن یک فروند کشتی دیگر در مضيق هرمز",
+      "summary": "منابع خبری از هدف قرار گرفتن یک فروند کشتی تجاری دیگر در آب‌های استراتژیک تنگه هرمز خبر دادند.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 37.29,
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38863,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38863",
+          "timestamp": 1791829465.2890878
         }
       ],
       "replies": [],
@@ -8398,45 +8550,45 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 191,
+    "@DidebanJang": 192,
     "@DidehbanEghtesad": 15,
     "@DidebanEterazat": 9,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38853,
-    "VahidHeadline": 326116,
-    "VahidOOnLine": 264806,
-    "RadioFarda": 162281,
-    "IranintlTV": 361939,
-    "Tasnimnews": 450905,
-    "Farsna": 468014,
-    "isna94": 408505,
-    "irna_1313": 461614,
-    "akharinkhabar": 637937,
-    "khabarfouri": 569217,
-    "akhbarefori": 697821,
+    "Alibk3": 38863,
+    "VahidHeadline": 326122,
+    "VahidOOnLine": 264813,
+    "RadioFarda": 162283,
+    "IranintlTV": 361947,
+    "Tasnimnews": 450914,
+    "Farsna": 468024,
+    "isna94": 408508,
+    "irna_1313": 461621,
+    "akharinkhabar": 637944,
+    "khabarfouri": 569221,
+    "akhbarefori": 697839,
     "dw_farsi": 131109,
-    "entekhab_ir": 383194,
-    "Khabar_Fouri": 551335,
-    "khabari": 201126,
+    "entekhab_ir": 383197,
+    "Khabar_Fouri": 551340,
+    "khabari": 201130,
     "thezoomit": 103740,
-    "farsivoa": 233548,
+    "farsivoa": 233552,
     "myITiran": 18266,
-    "Farsi_Iranwire": 94628,
+    "Farsi_Iranwire": 94630,
     "bbcpersian": 293253,
-    "Alarabiya_far": 152061,
-    "thezoomon": 5242,
-    "Mr_Economy": 63969,
-    "Eghtesadnews_com": 370693,
+    "Alarabiya_far": 152066,
+    "thezoomon": 5243,
+    "Mr_Economy": 63970,
+    "Eghtesadnews_com": 370695,
     "Digiato": 114049,
-    "Indypersian": 180044,
-    "withyashar": 25505,
-    "euronewspe": 90538,
+    "Indypersian": 180045,
+    "withyashar": 25506,
+    "euronewspe": 90540,
     "Economic_News_Channel": 82705,
     "farsna": 468004,
-    "persiannbloomberg": 68144,
+    "persiannbloomberg": 68151,
     "VahidOnline": 78702,
     "iliaen": 4744
   },
@@ -8521,8 +8673,8 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 3,
-    "gemini-3.5-flash-lite": 217,
+    "gemini-3.5-flash-lite": 259,
     "gemini-2.5-flash": 1
   },
-  "last_saved": "2026-10-12 17:48:44 UTC"
+  "last_saved": "2026-10-12 18:25:01 UTC"
 }
