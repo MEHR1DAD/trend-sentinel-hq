@@ -4,20 +4,20 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4743": [
       "recovered_source",
       "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
     ],
     "VahidOnline_78687": [
-      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78694": [
-      "recovered_source",
-      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
+      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
+      "recovered_source"
     ],
     "withyashar_25419": [
       "recovered_source",
@@ -35,8 +35,8 @@
       "withyashar_report"
     ],
     "withyashar_25423": [
-      "حملات نظامی در ایران، بازار",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در ایران، بازار"
     ],
     "withyashar_25428": [
       "recovered_source",
@@ -434,8 +434,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
-      "recovered_source"
+      "recovered_source",
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
     ],
     "VahidOnline_78700": [
       "recovered_source"
@@ -2073,6 +2073,24 @@
       "pattern": "withyashar_autonomous",
       "ai_model": "heuristic_fallback",
       "latency_sec": 18.59
+    },
+    "withyashar_25521": {
+      "target_channel": "@DidehbanEghtesad",
+      "sent_msg_id": 17,
+      "time": 1791841052.9375455,
+      "text": "ترامپ: قیمت‌ها در حال کاهش است و به‌محض پایان جنگ با ایران، که خیلی زود اتفاق خواهد افتاد، قیمت نفت به‌شدت سقوط خواهد کرد. این جنگ خیلی زود تمام می‌شود.\nخبرنگار: با توجه به اینکه متحدان ناتو، ایران را به بریتانیا مرتبط دانسته‌اند، آیا اقدامی علیه ایران انجام خواهد شد؟\nدونالد ترامپ: خواهیم دید ! اقدامات زیادی در پیش خواهد بود.\nخبرنگار: منظورتان چه اقداماتی علیه ایران است؟\nدونالد ترامپ: اقدام علیه‌شان ؟! آن‌ها نیروی دریایی ندارند، نیروی هوایی ندارند و نرخ تورمشان اکنون به ۳۰۱ درصد رسیده است.\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 12.63
+    },
+    "withyashar_25522": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 205,
+      "time": 1791841687.1987495,
+      "text": "هم اکنون پرتاب آبگرمکن گازوئیلی از «حاجی آباد» هرمزگان به سمت تنگه.\n@WarRoom 🚨🚨🚨",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 26.89
     }
   },
   "last_alert_time": {
@@ -5066,78 +5084,6 @@
           "media_type": "video",
           "link": "https://t.me/Alibk3/38512",
           "timestamp": 1791583582.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38509": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 50,
-      "node": "Alibk3",
-      "root_id": 38509,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791581728.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "شلیک موشک‌های یمنی به سوی اهداف دشمن",
-      "summary": "منابع خبری از شلیک دسته‌ای موشک‌های بالستیک یا کروز از یمن به سمت اهداف دشمن در اراضی اشغالی یا مناطق پیرامونی خبر دادند. این حملات در راستای حمایت از مردم فلسطین و لبنان انجام گرفته است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38509,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38509",
-          "timestamp": 1791581728.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38508": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 49,
-      "node": "Alibk3",
-      "root_id": 38508,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791581702.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "پیشروی نیروهای یمنی در جنوب غربی تعز",
-      "summary": "ن نیروهای یمنی با تسلط بر روستاهای تتر، الجرین و عساب، در حال پیشروی به سمت منطقه الکدمة، وادی علی و حومه وادی الضباب به عنوان دروازه جنوبی غربی شهر تعز هستند.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38508,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38508",
-          "timestamp": 1791581702.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38507": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 48,
-      "node": "Alibk3",
-      "root_id": 38507,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791581651.0,
-      "category": "WAR",
-      "is_iran_related": true,
-      "title": "شلیک موشک به سمت تنگه هرمز",
-      "summary": "منابع خبری از شلیک موشک به سمت تنگه هرمز خبر دادند. این منطقه راهبردی شاهد تحولات امنیتی و نظامی فوری است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38507,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38507",
-          "timestamp": 1791581651.0
         }
       ],
       "replies": [],
@@ -9375,6 +9321,58 @@
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25521": {
+      "channel": "@DidehbanEghtesad",
+      "alert_msg_id": 17,
+      "node": "withyashar",
+      "root_id": 25521,
+      "root_text": "ترامپ: قیمت‌ها در حال کاهش است و به‌محض پایان جنگ با ایران، که خیلی زود اتفاق خواهد افتاد، قیمت نفت به‌شدت سقوط خواهد کرد. این جنگ خیلی زود تمام می‌شود.\nخبرنگار: با توجه به اینکه متحدان ناتو، ایران را به بریتانیا مرتبط دانسته‌اند، آیا اقدامی علیه ایران انجام خواهد شد؟\nدونالد ترامپ: خواهیم دید ! اقدامات زیادی در پیش خواهد بود.\nخبرنگار: منظورتان چه اقداماتی علیه ایران است؟\nدونالد ترامپ: اقدام علیه‌شان ؟! آن‌ها نیروی دریایی ندارند، نیروی هوایی ندارند و نرخ تورمشان اکنون به ۳۰۱ درصد رسیده است.\n@WarRoom",
+      "root_media_type": "video",
+      "timestamp": 1791841052.9388156,
+      "category": "ECONOMY",
+      "is_iran_related": true,
+      "title": "ترامپ: قیمت‌ها در حال کاهش است و به‌محض پایان جنگ با ایران، که خیلی زود اتفاق خواهد افت...",
+      "summary": "ترامپ: قیمت‌ها در حال کاهش است و به‌محض پایان جنگ با ایران، که خیلی زود اتفاق خواهد افتاد، قیمت نفت به‌شدت سقوط خواهد کرد. این جنگ خیلی زود تمام می‌شود.\nخبرنگار: با توجه به اینکه متحدان ناتو، ایران را به بریتانیا مرتبط دانسته‌اند، آیا اقدامی علیه ایران انجام خواهد شد؟\nدونالد ترامپ: خواهیم دید ! اقدامات زیادی در پیش خواهد بود.\nخبرنگار: منظورتان چه اقداماتی علیه ایران است؟\nدونالد ترامپ: اقدام علیه‌شان ؟! آن‌ها نیروی دریایی ندارند، نیروی هوایی ندارند و نرخ تورمشان اکنون به ۳۰۱ درصد رسیده است.",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 12.63,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25521,
+          "media_type": "video",
+          "link": "https://t.me/withyashar/25521",
+          "timestamp": 1791841052.9388201
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_اقتصاد"
+    },
+    "withyashar_25522": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 205,
+      "node": "withyashar",
+      "root_id": 25522,
+      "root_text": "هم اکنون پرتاب آبگرمکن گازوئیلی از «حاجی آباد» هرمزگان به سمت تنگه.\n@WarRoom 🚨🚨🚨",
+      "root_media_type": "photo",
+      "timestamp": 1791841687.2096329,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "هم اکنون پرتاب آبگرمکن گازوئیلی از «حاجی آباد» هرمزگان به سمت تنگه.",
+      "summary": "هم اکنون پرتاب آبگرمکن گازوئیلی از «حاجی آباد» هرمزگان به سمت تنگه.\n@WarRoom 🚨🚨🚨",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 26.89,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25522,
+          "media_type": "photo",
+          "link": "https://t.me/withyashar/25522",
+          "timestamp": 1791841687.2096612
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
     }
   },
   "reply_to_root_map": {
@@ -9426,24 +9424,24 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 204,
-    "@DidehbanEghtesad": 15,
+    "@DidebanJang": 205,
+    "@DidehbanEghtesad": 17,
     "@DidebanEterazat": 9,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
     "Alibk3": 38903,
-    "VahidHeadline": 326144,
-    "VahidOOnLine": 264829,
+    "VahidHeadline": 326145,
+    "VahidOOnLine": 264833,
     "RadioFarda": 162288,
-    "IranintlTV": 361976,
-    "Tasnimnews": 450969,
-    "Farsna": 468065,
-    "isna94": 408535,
-    "irna_1313": 461645,
+    "IranintlTV": 361986,
+    "Tasnimnews": 450971,
+    "Farsna": 468068,
+    "isna94": 408537,
+    "irna_1313": 461648,
     "akharinkhabar": 637979,
-    "khabarfouri": 569249,
+    "khabarfouri": 569250,
     "akhbarefori": 697898,
     "dw_farsi": 131111,
     "entekhab_ir": 383212,
@@ -9452,19 +9450,19 @@
     "thezoomit": 103741,
     "farsivoa": 233565,
     "myITiran": 18266,
-    "Farsi_Iranwire": 94634,
-    "bbcpersian": 293268,
-    "Alarabiya_far": 152083,
+    "Farsi_Iranwire": 94635,
+    "bbcpersian": 293269,
+    "Alarabiya_far": 152084,
     "thezoomon": 5246,
-    "Mr_Economy": 63983,
-    "Eghtesadnews_com": 370708,
+    "Mr_Economy": 63985,
+    "Eghtesadnews_com": 370709,
     "Digiato": 114051,
-    "Indypersian": 180055,
-    "withyashar": 25520,
-    "euronewspe": 90545,
+    "Indypersian": 180056,
+    "withyashar": 25522,
+    "euronewspe": 90546,
     "Economic_News_Channel": 82713,
-    "farsna": 468065,
-    "persiannbloomberg": 68170,
+    "farsna": 468068,
+    "persiannbloomberg": 68173,
     "VahidOnline": 78704,
     "iliaen": 4744
   },
@@ -9554,5 +9552,5 @@
     "gemini-3.5-flash-lite": 317,
     "gemini-2.5-flash": 18
   },
-  "last_saved": "2026-10-12 21:25:52 UTC"
+  "last_saved": "2026-10-12 22:01:28 UTC"
 }
