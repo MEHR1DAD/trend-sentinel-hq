@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Telegram sessions & sensitive files
+*.session
+*.session-journal
+generate_session.py
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scratch & test scripts
+test_pattern*.py
+append_ai.py
