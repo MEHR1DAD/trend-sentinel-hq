@@ -17,8 +17,9 @@ class IntelligencePipeline:
     - Alibk / Alibk3 (regional military/security reporting in Arabic)
     Features AI editorial freedom, complete verbs, contextual explanation, and debounced thread tracking.
     """
-    def __init__(self, sentinel):
+    def __init__(self, sentinel, threads=None):
         self.sentinel = sentinel
+        self.threads = threads or getattr(sentinel, 'threads', None)
         self.withyashar_msg_locks = {}
         self.alibk_msg_locks = {}
         self.alibk_posted = {}

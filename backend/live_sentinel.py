@@ -41,6 +41,7 @@ from backend.core.config import (
 )
 from backend.core.db import DatabaseManager
 from backend.core.gemini import GeminiClient
+from backend.core.thread_manager import ThreadAlertManager
 
 # --- Pipelines ---
 from backend.pipelines.mirror import MirrorPipeline
@@ -55,6 +56,7 @@ class LiveSentinel:
     - MirrorPipeline: @VahidOnlineAI, @iliaenAI
     - IntelligencePipeline: withyashar, Alibk / Alibk3
     - RadarPipeline: 3-channel consensus, anomaly detection, semantic cross-channel merging
+    - ThreadAlertManager: thread merging, debounce updates, and live alert in-place sync
     """
     def __init__(self, bot, client=None):
         self.bot = bot
@@ -69,24 +71,27 @@ class LiveSentinel:
         # Core Engines
         self.db = DatabaseManager(POSTED_DB_FILE)
         self.gemini = GeminiClient(GEMINI_API_KEYS)
+        self.threads = ThreadAlertManager(
+            bot=self.bot,
+            gemini=self.gemini,
+            db=self.db,
+            safe_edit_func=self.safe_edit_post,
+            save_state_func=self.save_persisted_state
+        )
 
         # Specialized Pipelines
         self.mirror_pipeline = MirrorPipeline(self)
-        self.intelligence_pipeline = IntelligencePipeline(self)
-        self.radar_pipeline = RadarPipeline(self)
+        self.intelligence_pipeline = IntelligencePipeline(self, threads=self.threads)
+        self.radar_pipeline = RadarPipeline(self, threads=self.threads)
 
         # In-Memory Buffers & Fast Caches
         self.recent_messages = deque()
         self.last_alert_time = {}
         self.alerted_msg_patterns = {}
-        self.vip_alert_history = {}
+        self.vip_alert_history = self.threads.vip_alert_history
         self.recent_alert_sources = deque()
         self.node_id_map = {}
         self.channel_last_alert_id = {}
-        self.thread_alerts = {}
-        self.reply_to_root_map = {}
-        self.debounce_tasks = {}
-        self.thread_locks = {}
         self.vahid_post_time = {}
         self.ilia_post_time = {}
 
@@ -104,6 +109,22 @@ class LiveSentinel:
         self.load_persisted_state()
 
     # --- Backward-Compatible Properties ---
+    @property
+    def thread_alerts(self):
+        return self.threads.thread_alerts
+
+    @property
+    def reply_to_root_map(self):
+        return self.threads.reply_to_root_map
+
+    @property
+    def debounce_tasks(self):
+        return self.threads.debounce_tasks
+
+    @property
+    def thread_locks(self):
+        return self.threads.thread_locks
+
     @property
     def channel_watermarks(self):
         return self.db.channel_watermarks
@@ -607,7 +628,7 @@ class LiveSentinel:
         return await self.intelligence_pipeline.catchup_unposted_withyashar(reader_client)
 
     async def flush_all_pending_debounces(self):
-        return await self.radar_pipeline.flush_all_pending_debounces()
+        return await self.threads.flush_all_pending_debounces()
 
     async def handle_message_deleted(self, node_username, deleted_ids):
         return await self.radar_pipeline.handle_message_deleted(node_username, deleted_ids)
@@ -616,7 +637,7 @@ class LiveSentinel:
         return await self.radar_pipeline.verify_recent_messages_existence()
 
     async def check_and_merge_with_active_alert(self, text, node, msg_id, target_channel, candidate_title="", candidate_summary="", raw_msg=None, category='WAR', is_iran_related=False, candidate_sources=None):
-        return await self.radar_pipeline.check_and_merge_with_active_alert(
+        return await self.threads.check_and_merge_with_active_alert(
             text, node, msg_id, target_channel,
             candidate_title=candidate_title, candidate_summary=candidate_summary,
             raw_msg=raw_msg, category=category, is_iran_related=is_iran_related,
@@ -624,10 +645,10 @@ class LiveSentinel:
         )
 
     def build_alert_post_content(self, thread_data):
-        return self.radar_pipeline.build_alert_post_content(thread_data)
+        return self.threads.build_alert_post_content(thread_data)
 
     def schedule_thread_debounce(self, thread_key):
-        return self.radar_pipeline.schedule_thread_debounce(thread_key)
+        return self.threads.schedule_thread_debounce(thread_key)
 
     # --- Central Event Router ---
     async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None, skip_mirror_channels=False):
