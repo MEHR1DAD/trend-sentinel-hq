@@ -4,12 +4,12 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4743": [
-      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
     ],
     "VahidOnline_78687": [
       "recovered_source",
@@ -20,8 +20,8 @@
       "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
     ],
     "withyashar_25419": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25420": [
       "withyashar_report"
@@ -31,27 +31,27 @@
       "recovered_source"
     ],
     "withyashar_25422": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25423": [
-      "حملات نظامی در ایران، بازار",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در ایران، بازار"
     ],
     "withyashar_25428": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25426": [
-      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان"
     ],
     "withyashar_25427": [
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -78,8 +78,8 @@
       "withyashar_report"
     ],
     "withyashar_25438": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25439": [
       "withyashar_report"
@@ -91,41 +91,41 @@
       "withyashar_report"
     ],
     "withyashar_25442": [
-      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
     ],
     "withyashar_25443": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25444": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25451": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25461": [
       "withyashar_report"
     ],
     "withyashar_25462": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25460": [
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
     ],
     "withyashar_25465": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "Alibk3_38780": [
       "recovered_source"
@@ -577,7 +577,7 @@
     "withyashar_25451": {
       "sent_msg_id": 155,
       "target_channel": "@DidebanJang",
-      "time": 1791770686.667189,
+      "time": 1791773214.5881848,
       "text": "فیلم لحظه برخورد موشک بالستیک گروه تروریست حوثی‌ها به ترمینال ۳"
     },
     "withyashar_25461": {
@@ -1545,8 +1545,8 @@
     },
     "38688": {
       "channel": "@DidebanJang",
-      "msg_id": 119,
-      "timestamp": 1791720207.0
+      "msg_id": 150,
+      "timestamp": 1791773214.230946
     },
     "38702": {
       "channel": "@DidebanJang",
@@ -5722,30 +5722,6 @@
         }
       ],
       "replies": []
-    },
-    "Alibk3_38688": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 119,
-      "node": "Alibk3",
-      "root_id": 38688,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791720207.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "بلند شدن دود از الدمام عربستان",
-      "summary": "تصاویری از بلند شدن ستون‌های دود در شهر الدمام واقع در منطقه شرقی عربستان سعودی منتشر شده است. این منطقه پیش‌تر نیز هدف حملات پهپادی و موشکی قرار گرفته بود و جزئیات بیشتر درباره علت این حادثه هنوز اعلام نشده است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38688,
-          "media_type": "video",
-          "link": "https://t.me/Alibk3/38688",
-          "timestamp": 1791720207.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
     }
   },
   "reply_to_root_map": {
@@ -5773,7 +5749,7 @@
     "Alibk3_38733": 38732,
     "Alibk3_38732": 38732,
     "Alibk3_38734": 38656,
-    "Alibk3_38688": 38729,
+    "Alibk3_38688": 38687,
     "Alibk3_38738": 38697,
     "Alibk3_38737": 38732,
     "Alibk3_38736": 38656,
@@ -5865,14 +5841,17 @@
     "78638": 6,
     "78637": 5,
     "78636": 4,
-    "78635": 3
+    "78635": 3,
+    "78622": 10,
+    "78611": 8,
+    "78590": 3
   },
   "ilia_ai_posted": {
-    "4743": 7,
+    "4743": 97,
     "4740": 4,
     "4741": 5,
     "4742": 6,
     "4744": 8
   },
-  "last_saved": "2026-10-12 02:46:24 UTC"
+  "last_saved": "2026-10-12 03:21:54 UTC"
 }

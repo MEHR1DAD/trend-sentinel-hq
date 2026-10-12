@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 41 minutes
-- **Messages Processed:** 86
-- **Last Message Text:** ادامه روند افزایش قیمت نفت در بازارهای جهانی
-
-🔹در پی تشدید تنش‌ها در خاورمیانه، افزایش حملات به اهدا...
-- **Last Message Time:** 2026-10-12 02:45:36
+- **Uptime:** 35 minutes
+- **Messages Processed:** 88
+- **Last Message Text:** 🔻در پی تشدید حملات ایران به نفتکش های متخلف در تنگهٔ هرمز، قیمت نفت خام برنت افزایش یافت و از مرز ۱۰...
+- **Last Message Time:** 2026-10-12 03:19:09
