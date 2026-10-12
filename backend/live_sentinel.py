@@ -792,14 +792,14 @@ class LiveSentinel:
             "- یا موضوع خبر کاملاً متفاوت باشد (مثلاً هشدار قبلی نظامی بوده و این خبر سقوط ارزش سهام یا یک رویداد ورزشی/پزشکی است).\n\n"
             "اگر SAME_EVENT است:\n"
             "- has_update: مقدار true\n"
-            "- updated_title: یک عنوان جامع، رسمی و جذاب فارسی (حداکثر ۶ تا ۷ کلمه) که تمام اهداف را در بر بگیرد (مثلاً اگر ریاض و دمام هر دو هدف قرار گرفتند: «حملات موشکی همزمان به فرودگاه ریاض و شهر الدمام»).\n"
-            "- updated_summary: چکیده رویداد ۲ تا ۳ خطی فارسی، روان، بی‌طرف و یکپارچه حاصل تجمیع تمام اهداف و اطلاعات قبلی و جدید.\n"
+            "- updated_title: یک عنوان جامع، رسا و خوش‌خوان فارسی همراه با فعل یا گزاره کامل که تمام ابعاد و اهداف رویداد را منعکس کند (مثلاً: «حملات موشکی همزمان به فرودگاه ریاض و شهر الدمام»).\n"
+            "- updated_summary: چکیده تلفیقی منسجم و شیوا حاصل تجمیع اطلاعات قبلی و جدید با اولویت ایجاز و شفاف‌سازی ابعاد ماجرا.\n"
             "- is_iran_related: آیا مستقیماً به خاک، نیروها یا منافع نظامی مستقیم ایران مربوط است؟ (true/false)\n\n"
             "پاسخ را دقیقاً و فقط در قالب شیء JSON زیر بدون هیچ توضیح دیگری ارسال کن:\n"
             "{\n"
             '  "relation": "SAME_EVENT" | "NEW_EVENT",\n'
             '  "has_update": true,\n'
-            '  "updated_title": "عنوان جامع فارسی",\n'
+            '  "updated_title": "عنوان جامع و کامل فارسی",\n'
             '  "updated_summary": "چکیده تلفیقی کامل",\n'
             '  "is_iran_related": true | false\n'
             "}"
@@ -808,12 +808,12 @@ class LiveSentinel:
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 350,
+                "maxOutputTokens": 450,
                 "temperature": 0.2
             }
         }
         
-        raw_out = await self.call_gemini_content(payload, timeout=12, max_retries=3)
+        raw_out = await self.call_gemini_content(payload, timeout=14, max_retries=5)
         if raw_out:
             match = re.search(r'\{.*\}', raw_out, re.DOTALL)
             if match:
@@ -1505,22 +1505,22 @@ class LiveSentinel:
             "در زیر یک خبر اصلی و گزارش‌های تکمیلی یا ویرایش‌های انجام‌شده قرار دارد که سیر یک رویداد خبری را نشان می‌دهند.\n\n"
             "وظایف الزامی:\n"
             "۱. تمام متن‌ها را با هم تلفیق کن و وضعیت نهایی و به‌روز شده رویداد را استخراج کن.\n"
-            "۲. title: یک تیتر کوتاه، جذاب و دقیق به زبان فارسی (حداکثر ۵ تا ۶ کلمه) بنویس.\n"
-            "۳. summary: یک چکیده روان، گویا و کاملاً فارسی در ۲ الی ۳ خط بنویس که وضعیت نهایی را منسجم منعکس کند.\n\n"
+            "۲. title: یک تیتر رسا، جذاب و صریح به زبان فارسی همراه با فعل کامل که وضعیت نهایی را بدون ابهام بیان کند.\n"
+            "۳. summary: یک چکیده روان، گویا و منسجم به زبان فارسی با اولویت ایجاز و کوتاه‌سازی در کنار پوشش کامل وضعیت نهایی رویداد.\n\n"
             f"متن رویداد و پیوست‌ها:\n{thread_text}\n\n"
             "پاسخ را دقیقاً و فقط در قالب شیء JSON با دو کلید 'title' و 'summary' بنویس:\n"
             "{\n"
-            '  "title": "تیتر کوتاه و دقیق",\n'
-            '  "summary": "متن چکیده ۲ الی ۳ خطی"\n'
+            '  "title": "تیتر رسا و کامل فارسی",\n'
+            '  "summary": "متن چکیده منسجم و شیوا"\n'
             "}"
         )
         
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": 250, "temperature": 0.2}
+            "generationConfig": {"maxOutputTokens": 400, "temperature": 0.2}
         }
         
-        raw_out = await self.call_gemini_content(payload, timeout=10, max_retries=3)
+        raw_out = await self.call_gemini_content(payload, timeout=14, max_retries=5)
         if raw_out:
             match = re.search(r'\{.*\}', raw_out, re.DOTALL)
             if match:
@@ -2425,20 +2425,20 @@ class LiveSentinel:
             "{\n"
             '  "category": "WAR" | "ECONOMY" | "PROTEST_RIGHTS" | "OTHER",\n'
             '  "is_iran_related": true | false,\n'
-            '  "topic_title": "یک عنوان کوتاه، جذاب و دقیق فارسی (بین ۵ تا ۸ کلمه) متناسب با واقعه بدون قطع شدن در وسط جمله",\n'
-            '  "summary": "یک چکیده ۲ الی ۳ خطی شفاف، شیوا و کامل از رویداد"\n'
+            '  "topic_title": "یک عنوان رسا، جذاب و صریح فارسی همراه با فعل کامل که اصل رویداد را بدون ابهام بیان کند",\n'
+            '  "summary": "چکیده شفاف و شیوا از رویداد با اولویت ایجاز و کوتاه‌سازی در کنار ابهام‌زدایی و توضیحات تکمیلی لازم"\n'
             "}"
         )
         
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 300,
+                "maxOutputTokens": 400,
                 "temperature": 0.2
             }
         }
         
-        raw_text = await self.call_gemini_content(payload, timeout=10, max_retries=3)
+        raw_text = await self.call_gemini_content(payload, timeout=14, max_retries=5)
         if raw_text:
             match = re.search(r'\{.*\}', raw_text, re.DOTALL)
             if match:
@@ -2725,22 +2725,23 @@ class LiveSentinel:
         print(f"🤖 Starting AI summary injection (Default model: {getattr(self, 'latest_flash_lite_model', 'gemini-2.0-flash-lite')})")
             
         prompt = (
-            "تو یک دستیار هوشمند و بی‌طرف برای یک ربات خبری (دیده‌بان) هستی. "
-            "متن خبرهای زیر از چند منبع مختلف (یا یک منبع طولانی) جمع‌آوری شده است. "
-            "لطفاً یک چکیده دقیق، بی‌طرفانه، بدون قضاوت و بسیار کوتاه (حداکثر ۲ خط) از مهم‌ترین اتفاق این اخبار بنویس. "
-            "هیچگونه تیتر، مقدمه، سلام، هشتگ یا توضیحات اضافه‌ای ننویس و فقط خودِ چکیده را ارائه بده.\n\nاخبار:\n"
+            "تو دستیار ارشد و همکار هوشمند تحریریه دیده‌بان هستی. "
+            "متن خبرهای زیر از منابع مختلف جمع‌آوری شده است. "
+            "لطفاً یک چکیده شفاف، دقیق، بی‌طرفانه و شیوا از رویداد بنویس. "
+            "اولویت اصلی ایجاز و خلاصه‌سازی در کنار بیان تمام نکات مهم و در صورت لزوم ابهام‌زدایی از رویداد است. "
+            "هیچگونه تیتر، مقدمه، سلام، هشتگ یا توضیحات اضافه‌ای ننویس و منحصراً خودِ متن چکیده را ارائه بده.\n\nاخبار:\n"
             + "\n---\n".join(raw_texts)
         )
         
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 150,
-                "temperature": 0.3
+                "maxOutputTokens": 300,
+                "temperature": 0.25
             }
         }
         
-        summary = await self.call_gemini_content(payload, timeout=10, max_retries=3)
+        summary = await self.call_gemini_content(payload, timeout=14, max_retries=5)
         if summary:
             delimiter = "🔗 **منابع خبر:**" if "🔗 **منابع خبر:**" in original_text else "🔗 **منبع خبر:**"
             parts = original_text.split(delimiter)
@@ -3177,28 +3178,28 @@ class LiveSentinel:
             "   - مقدار false: اگر رویداد بین سایر طرف‌ها و کشورهای منطقه است و به طور مستقیم به ایران مربوط نمی‌شود (مانند درگیری نیروهای یمن با عربستان یا آمریکا، حملات به آرامکو، درگیری‌های داخلی سوریه یا عراق، درگیری‌های اسرائیل در غزه و لبنان بدون حمله مستقیم به ایران).\n\n"
             "۳. قوانین تولید تیتر و چکیده:\n"
             "   - اگر category برابر OTHER است، فیلدهای title و summary خالی باشند.\n"
-            "   - اگر category برابر WAR است، دو فیلد زیر را به زبان فارسی روان، شیوا و ژورنالیستی تولید کن:\n"
-            "     * title: عنوان و تیتر بسیار جذاب، کوتاه و دقیق به زبان فارسی (حداکثر ۶ تا ۷ کلمه) که اصل اتفاق را بگوید.\n"
-            "     * summary: چکیده روان، گویا و کاملاً فارسی در ۲ الی ۳ خط که ماجرا (کی، کجا، چه اقدامی و چه نتیجه‌ای) را بدون قضاوت منعکس کند.\n\n"
+            "   - اگر category برابر WAR است، با تکیه بر دانش ژورنالیستی و زبانی خودت دو فیلد زیر را به زبان فارسی تولید کن:\n"
+            "     * title: عنوان و تیتر رسا، جذاب و صریح به زبان فارسی همراه با فعل کامل که اصل اتفاق را بگوید.\n"
+            "     * summary: چکیده روان، گویا و منسجم به زبان فارسی با اولویت ایجاز و کوتاه‌سازی در کنار پوشش ابعاد کلیدی رویداد؛ در صورت وجود ابهام، نکات تکمیلی را شفاف کن.\n\n"
             f"متن پیام به زبان عربی:\n{arabic_text}\n\n"
             "پاسخ را دقیقاً و فقط در قالب این شیء JSON ارسال کن و هیچ عبارت دیگری ننویس:\n"
             "{\n"
             '  "category": "WAR" | "OTHER",\n'
             '  "is_iran_related": true | false,\n'
-            '  "title": "عنوان کوتاه و دقیق فارسی",\n'
-            '  "summary": "چکیده ۲ الی ۳ خطی به زبان فارسی"\n'
+            '  "title": "عنوان رسا و کامل فارسی",\n'
+            '  "summary": "چکیده شیوا و ابهام‌زدایی‌شده به زبان فارسی"\n'
             "}"
         )
         
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 300,
+                "maxOutputTokens": 400,
                 "temperature": 0.2
             }
         }
         
-        raw_out = await self.call_gemini_content(payload, timeout=10, max_retries=3)
+        raw_out = await self.call_gemini_content(payload, timeout=14, max_retries=5)
         if raw_out:
             match = re.search(r'\{.*\}', raw_out, re.DOTALL)
             if match:
@@ -3225,27 +3226,27 @@ class LiveSentinel:
             "   - WAR: اخبار جنگ، حملات موشکی/پهپادی، بمباران هوایی، شلیک پدافند، درگیری‌های مسلحانه، توقف پروازها یا ناوبری، تلفات و خسارات، آتش‌سوزی یا آسیب به تاسیسات نفتی/گازی و بندری/فرودگاهی و آرامکو.\n"
             "   - OTHER: نظرات شخصی، میم/شوخی، تحلیل‌های بدون رویداد نظامی جدید، اخبار آب‌وهوا.\n"
             "۳. is_iran_related: اگر رویداد مستقیماً به ایران، خاک ایران، سپاه یا ارتش ایران مربوط است true وگرنه false.\n"
-            "۴. title: یک تیتر بسیار جذاب، کوتاه و دقیق به زبان فارسی (حداکثر ۶ تا ۷ کلمه) که جدیدترین و نهایی‌ترین وضعیت واقعه را بعد از گزارش‌های تکمیلی بازتاب دهد.\n"
-            "۵. summary: یک چکیده روان، منسجم، گویا، دقیق و کاملاً فارسی در ۲ الی ۳ خط که ماجرا و نکات جدید اضافه شده را به شکل یکپارچه و بدون قضاوت منعکس کند.\n\n"
+            "۴. title: یک تیتر رسا، جذاب و صریح به زبان فارسی همراه با فعل کامل که جدیدترین وضعیت نهایی رویداد را بازتاب دهد.\n"
+            "۵. summary: یک چکیده روان، منسجم و گویا به زبان فارسی با اولویت ایجاز و خلاصه‌سازی در کنار پوشش کامل نکات جدید اضافه شده؛ در صورت نیاز به توضیح تکمیلی یا رفع ابهام، با دانش خودت آن را شفاف کن.\n\n"
             f"متن رویداد و گزارش‌های تکمیلی:\n{thread_text}\n\n"
             "پاسخ را دقیقاً و فقط در قالب این شیء JSON ارسال کن و هیچ عبارت دیگری ننویس:\n"
             "{\n"
             '  "category": "WAR" | "OTHER",\n'
             '  "is_iran_related": true | false,\n'
-            '  "title": "عنوان کوتاه و دقیق فارسی",\n'
-            '  "summary": "چکیده ۲ الی ۳ خطی به زبان فارسی"\n'
+            '  "title": "عنوان رسا و دقیق فارسی",\n'
+            '  "summary": "چکیده منسجم به زبان فارسی"\n'
             "}"
         )
         
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 350,
+                "maxOutputTokens": 450,
                 "temperature": 0.2
             }
         }
         
-        raw_out = await self.call_gemini_content(payload, timeout=12, max_retries=3)
+        raw_out = await self.call_gemini_content(payload, timeout=14, max_retries=5)
         if raw_out:
             match = re.search(r'\{.*\}', raw_out, re.DOTALL)
             if match:
@@ -3646,33 +3647,32 @@ class LiveSentinel:
         clean_prompt_text = re.sub(r'@\w+\s*$', '', clean).strip()
 
         prompt = (
-            "تو تحلیلگر ارشد خبر برای کانال‌های دیده‌بان تلگرام (دیده‌بان جنگ، اقتصاد، اعتراضات) هستی.\n"
+            "تو سردبیر ارشد و همکار هوشمند تحریریه دیده‌بان (دیده‌بان جنگ، اقتصاد، اعتراضات) هستی.\n"
             "پست زیر از کانال خبری و تحلیلی 'withyashar' منتشر شده است:\n\n"
             f"{clean_prompt_text}\n\n"
-            "وظیفه تو این است که موضوع خبر را تحلیل کنی و ساختار کامل زیر را در قالب JSON استخراج کنی:\n"
-            "۱. category: یکی از مقادیر 'WAR' یا 'ECONOMY' یا 'PROTEST_RIGHTS' یا 'OTHER'. "
-            "(اخبار جنگ و نظامی و منطقه -> WAR، اخبار نوسان ارز/طلا/معیشت -> ECONOMY، اخبار اعتراضات/اعدام/زندان -> PROTEST_RIGHTS، سایر اخبار متفرقه -> OTHER)\n"
-            "۲. is_iran_related: مقدار true اگر خبر مستقیماً یا غیرمستقیم با ایران، خاک ایران، سپاه یا ارتش، یا رویارویی آمریکا/اسرائیل با ایران در ارتباط است، در غیر این صورت false.\n"
-            "۳. title: یک تیتر بسیار شیوا، صریح، گویا و کامل به زبان فارسی (بین ۵ تا ۸ کلمه) همراه با فعل مناسب که هرگز در وسط جمله قطع نشود و کل پیام اصلی رویداد را برساند (مثال: 'انتشار راهنمای تصویری ارتش آمریکا برای شناسایی نیروهای ایران').\n"
-            "۴. summary: یک چکیده شیوا، شفاف و ۲ الی ۳ خطی (بین ۲۵ تا ۵۰ کلمه) که ابعاد و جزئیات مهم رویداد را شرح دهد. هرگز تیتر را تکرار نکن.\n\n"
-            "پاسخ را منحصراً در قالب JSON بنویس:\n"
+            "با اتکا به دانش ژورنالیستی و درک زبانی خودت، این خبر را برای مخاطب فارسی‌زبان بازنویسی و تنظیم کن:\n"
+            "۱. title: یک تیتر رسا، جذاب، گویا و مستقل همراه با فعل کامل بنویس که اصل واقعه را شفاف بیان کند.\n"
+            "۲. summary: چکیده‌ای شفاف و شیوا بنویس. اولویت اصلی با ایجاز و خلاصه‌سازی در کنار رساندن تمام ابعاد و ماهیت اصلی رویداد است. اگر خبر دارای ابهام است، گمراه‌کننده به نظر می‌رسد، یا نیاز به توضیح تکمیلی و پیش‌زمینه دارد، با دانش خودت آن را برای مخاطب شفاف کن.\n"
+            "۳. category: تعیین دقیق حوزه خبر بین 'WAR' (جنگ و تحرکات نظامی منطقه‌ای)، 'ECONOMY' (ارز، طلا، معیشت، بازار)، 'PROTEST_RIGHTS' (اعتراضات، حقوق بشر، دادگاه، زندان) یا 'OTHER' (سایر موضوعات متفرقه و بی‌ارتباط).\n"
+            "۴. is_iran_related: اگر خبر مستقیم یا غیرمستقیم به ایران، خاک ایران، مردم و مواضع یا رویارویی‌های ایران مربوط است مقدار true، در غیر این صورت false.\n\n"
+            "پاسخ را منحصراً در قالب این شیء JSON ارسال کن:\n"
             "{\n"
             '  "category": "WAR" | "ECONOMY" | "PROTEST_RIGHTS" | "OTHER",\n'
             '  "is_iran_related": true | false,\n'
-            '  "title": "...",\n'
-            '  "summary": "..."\n'
+            '  "title": "تیتر رسا و حرفه‌ای فارسی",\n'
+            '  "summary": "چکیده شیوا و ابهام‌زدایی‌شده"\n'
             "}"
         )
 
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 300,
+                "maxOutputTokens": 450,
                 "temperature": 0.2
             }
         }
 
-        raw_text = await self.call_gemini_content(payload, timeout=14, max_retries=5)
+        raw_text = await self.call_gemini_content(payload, timeout=15, max_retries=6)
         if raw_text:
             match = re.search(r'\{.*\}', raw_text, re.DOTALL)
             if match:
