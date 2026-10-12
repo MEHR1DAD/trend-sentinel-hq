@@ -46,6 +46,7 @@ from backend.core.thread_manager import ThreadAlertManager
 # --- Pipelines ---
 from backend.pipelines.mirror import MirrorPipeline
 from backend.pipelines.intelligence import IntelligencePipeline
+from backend.pipelines.yashar import YasharAutonomousPipeline
 from backend.pipelines.radar import RadarPipeline
 
 
@@ -54,7 +55,8 @@ class LiveSentinel:
     Master Orchestrator for Sentinel Eye (Live API Mode).
     Delegates channel processing to modular pipelines:
     - MirrorPipeline: @VahidOnlineAI, @iliaenAI
-    - IntelligencePipeline: withyashar, Alibk / Alibk3
+    - YasharAutonomousPipeline: 100% Autonomous AI Editor for withyashar
+    - IntelligencePipeline: Alibk / Alibk3
     - RadarPipeline: 3-channel consensus, anomaly detection, semantic cross-channel merging
     - ThreadAlertManager: thread merging, debounce updates, and live alert in-place sync
     """
@@ -82,6 +84,7 @@ class LiveSentinel:
         # Specialized Pipelines
         self.mirror_pipeline = MirrorPipeline(self)
         self.intelligence_pipeline = IntelligencePipeline(self, threads=self.threads)
+        self.yashar_pipeline = YasharAutonomousPipeline(self, threads=self.threads)
         self.radar_pipeline = RadarPipeline(self, threads=self.threads)
 
         # In-Memory Buffers & Fast Caches
@@ -625,7 +628,7 @@ class LiveSentinel:
         return await self.intelligence_pipeline.catchup_unposted_alibk(reader_client)
 
     async def catchup_unposted_withyashar(self, reader_client=None):
-        return await self.intelligence_pipeline.catchup_unposted_withyashar(reader_client)
+        return await self.yashar_pipeline.catchup_unposted(reader_client)
 
     async def flush_all_pending_debounces(self):
         return await self.threads.flush_all_pending_debounces()
@@ -669,12 +672,13 @@ class LiveSentinel:
                     asyncio.create_task(self.mirror_pipeline.handle_message('iliaen', '@iliaenAI', text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
                     asyncio.create_task(self.radar_pipeline.process_vip_channel(text, 'iliaen', msg_id, raw_msg=raw_msg, is_edit=is_edit))
                     return
-                # 2. Intelligence / VIP Analytical Pipelines (Alibk, withyashar)
+                # 2. Yashar Autonomous Pipeline (@withyashar) - 100% Dedicated AI Editor
+                elif canon == 'withyashar':
+                    asyncio.create_task(self.yashar_pipeline.handle_message(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+                    return
+                # 3. Intelligence Pipeline (@Alibk3)
                 elif canon == 'alibk3':
                     asyncio.create_task(self.intelligence_pipeline.handle_alibk(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
-                    return
-                elif canon == 'withyashar':
-                    asyncio.create_task(self.intelligence_pipeline.handle_withyashar(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
                     return
 
             # 3. Consensus Radar Pipeline (General monitored nodes)
