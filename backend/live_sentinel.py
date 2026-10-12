@@ -135,6 +135,8 @@ class LiveSentinel:
         self.vip_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
         self.node_id_map = {} # chat_id -> clean node username
         self.channel_last_alert_id = {} # channel_username -> last_alert_msg_id
+        self.channel_watermarks = {} # canonical_node -> highest processed msg_id
+        self.recent_posted_map = {} # (target_channel, canonical_node, source_msg_id) -> posted_msg_id
         self.vahid_post_time = {} # msg_id -> timestamp
         self.ilia_post_time = {} # msg_id -> timestamp
         
@@ -246,23 +248,31 @@ class LiveSentinel:
             cur.execute("SELECT target_channel, source_node, source_msg_id, posted_msg_id FROM posted_sources")
             rows = cur.fetchall()
             for ch, node, src_id, dst_id in rows:
+                canon = node or 'unknown'
+                self.recent_posted_map[(ch, canon, src_id)] = dst_id
+                self.channel_watermarks[canon] = max(self.channel_watermarks.get(canon, 0), src_id)
                 if (node and node.lower() == 'vahidonline') or ch == '@VahidOnlineAI':
                     self.vahid_ai_posted[src_id] = dst_id
                 elif (node and node.lower() == 'iliaen') or ch == '@iliaenAI':
                     self.ilia_ai_posted[src_id] = dst_id
             con.close()
-            print(f"🗄️ Initialized SQLite registry: loaded {len(rows)} posted records.")
+            print(f"🗄️ Initialized SQLite registry: loaded {len(rows)} posted records into in-memory fast map.")
         except Exception as e:
             print(f"⚠️ Error initializing SQLite DB: {e}")
 
     def is_source_posted(self, target_channel, source_node, source_msg_id):
         try:
             src_int = int(source_msg_id) if str(source_msg_id).isdigit() else source_msg_id
+            canon = source_node or 'unknown'
+            # 1. Ultra-fast in-memory lookup (O(1))
+            if (target_channel, canon, src_int) in self.recent_posted_map:
+                return True
             if target_channel == '@VahidOnlineAI' and src_int in self.vahid_ai_posted:
                 return True
             if target_channel == '@iliaenAI' and src_int in self.ilia_ai_posted:
                 return True
                 
+            # 2. Durable SQLite fallback
             con = sqlite3.connect(self.db_file)
             cur = con.cursor()
             cur.execute(
@@ -272,6 +282,7 @@ class LiveSentinel:
             row = cur.fetchone()
             con.close()
             if row:
+                self.recent_posted_map[(target_channel, canon, src_int)] = row[0]
                 if target_channel == '@VahidOnlineAI':
                     self.vahid_ai_posted[src_int] = row[0]
                 elif target_channel == '@iliaenAI':
@@ -285,6 +296,16 @@ class LiveSentinel:
         try:
             src_int = int(source_msg_id) if str(source_msg_id).isdigit() else source_msg_id
             dst_int = int(posted_msg_id) if str(posted_msg_id).isdigit() else posted_msg_id
+            canon = source_node or 'unknown'
+            
+            # 1. Update fast in-memory map & watermark (bounded to 1000 items)
+            self.recent_posted_map[(target_channel, canon, src_int)] = dst_int
+            if len(self.recent_posted_map) > 1000:
+                oldest_keys = list(self.recent_posted_map.keys())[:200]
+                for ok in oldest_keys:
+                    self.recent_posted_map.pop(ok, None)
+                    
+            self.channel_watermarks[canon] = max(self.channel_watermarks.get(canon, 0), src_int)
             
             if target_channel == '@VahidOnlineAI':
                 self.vahid_ai_posted[src_int] = dst_int
@@ -420,7 +441,13 @@ class LiveSentinel:
                     except Exception:
                         self.ilia_ai_posted[k] = v
                 
-                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.alibk_posted)} Alibk alerts, {len(self.vahid_ai_posted)} Vahid AI, {len(self.ilia_ai_posted)} Ilia AI.")
+                # 10. Channel high-water marks
+                raw_watermarks = data.get('channel_watermarks', {})
+                for k, v in raw_watermarks.items():
+                    if isinstance(v, (int, float)):
+                        self.channel_watermarks[k] = int(v)
+                
+                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.alibk_posted)} Alibk alerts, {len(self.vahid_ai_posted)} Vahid AI, {len(self.ilia_ai_posted)} Ilia AI, {len(self.channel_watermarks)} watermarks.")
         except Exception as e:
             print(f"⚠️ Error loading persisted state: {e}")
 
@@ -446,6 +473,7 @@ class LiveSentinel:
                 "thread_alerts": clean_threads,
                 "reply_to_root_map": clean_reply_map,
                 "channel_last_alert_id": self.channel_last_alert_id,
+                "channel_watermarks": self.channel_watermarks,
                 "vahid_post_time": clean_vahid_time,
                 "ilia_post_time": clean_ilia_time,
                 "vahid_ai_posted": clean_vahid_ai,
@@ -1186,6 +1214,8 @@ class LiveSentinel:
                     for src_node, src_id_str in found_sources:
                         src_id = int(src_id_str)
                         canon = vip_map.get(src_node.lower(), src_node)
+                        self.channel_watermarks[canon] = max(self.channel_watermarks.get(canon, 0), src_id)
+                        self.recent_posted_map[(ch, canon, src_id)] = m.id
                         mk = f"{canon}_{src_id}"
                         if mk not in self.vip_alert_history:
                             self.vip_alert_history[mk] = {
@@ -1728,6 +1758,12 @@ class LiveSentinel:
 
     async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None, skip_mirror_channels=False):
         async with self.lock:
+            # Advance high-water mark for monitored channels
+            vip_map_fast = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen', 'withyashar': 'withyashar', 'alibk3': 'Alibk3'}
+            canon_node = vip_map_fast.get((node or '').lower(), node or 'unknown')
+            if not is_edit:
+                self.channel_watermarks[canon_node] = max(self.channel_watermarks.get(canon_node, 0), msg_id)
+
             # --- @VahidOnlineAI & @iliaenAI Channel Pipelines ---
             # Dedicated mirror summary channels must NEVER be dropped by radar age filters
             node_key = (node or '').lower()
@@ -2884,71 +2920,80 @@ class LiveSentinel:
         except Exception as e:
             print(f"⚠️ Catchup for VahidOnline failed: {e}")
 
-    async def handle_vahid_online_ai(self, text, msg_id, raw_msg=None, is_edit=False, is_upgrade=False):
-        target_channel = "@VahidOnlineAI"
-        
-        # Check persistent dedup guard before doing any work
-        if not is_edit and not is_upgrade and self.is_source_posted(target_channel, "VahidOnline", msg_id):
-            print(f"🛑 [DEDUP GUARD] VahidOnline msg {msg_id} already posted to {target_channel}. Aborting send.")
+    async def handle_mirror_channel(self, source_node, target_channel, text, msg_id, raw_msg=None, is_edit=False, is_upgrade=False):
+        # 1. Update high-water mark
+        if not is_edit:
+            self.channel_watermarks[source_node] = max(self.channel_watermarks.get(source_node, 0), msg_id)
+
+        # 2. Check persistent dedup guard before doing heavy AI work
+        if not is_edit and not is_upgrade and self.is_source_posted(target_channel, source_node, msg_id):
+            print(f"🛑 [DEDUP GUARD] {source_node} msg {msg_id} already posted to {target_channel}. Aborting send.")
             return
 
-        # 1. Deduplication for Album / Media Groups (grouped_id)
+        # 3. Deduplication for Album / Media Groups (grouped_id)
+        grouped_set = self.vahid_grouped_posted if source_node == 'VahidOnline' else self.ilia_grouped_posted
         grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
-        if grouped_id and grouped_id in self.vahid_grouped_posted and not is_edit:
+        if grouped_id and grouped_id in grouped_set and not is_edit:
             return
             
         clean_text = (text or "").strip()
-        # 2. Strict Filter: Never post media with empty or meaningless text
-        # If Vahid posts a photo/video without a caption, DO NOT post to @VahidOnlineAI
+        # 4. Strict Filter: Never post media with empty or meaningless text
         if not clean_text or len(clean_text) < 5:
             return
             
-        # If this is part of an album and has text, register the grouped_id
         if grouped_id:
-            self.vahid_grouped_posted.add(grouped_id)
+            grouped_set.add(grouped_id)
             
-        # Ensure sequential processing per msg_id to avoid race conditions on rapid edits
-        if msg_id not in self.vahid_msg_locks:
-            if len(self.vahid_msg_locks) > 200:
-                self.vahid_msg_locks.clear()
-            self.vahid_msg_locks[msg_id] = asyncio.Lock()
+        # 5. Sequential processing per msg_id
+        msg_locks = self.vahid_msg_locks if source_node == 'VahidOnline' else self.ilia_msg_locks
+        if msg_id not in msg_locks:
+            if len(msg_locks) > 200:
+                msg_locks.clear()
+            msg_locks[msg_id] = asyncio.Lock()
             
-        async with self.vahid_msg_locks[msg_id]:
-            # Safeguard: if this is an edit of an ancient post (>2h old) not in history, ignore it
-            if is_edit and not is_upgrade and msg_id not in self.vahid_ai_posted:
+        posted_dict = self.vahid_ai_posted if source_node == 'VahidOnline' else self.ilia_ai_posted
+        post_time = self.vahid_post_time if source_node == 'VahidOnline' else self.ilia_post_time
+        channel_fa_name = "وحیدآنلاین" if source_node == 'VahidOnline' else "ایلیا"
+        
+        async with msg_locks[msg_id]:
+            # Safeguard: if edit of ancient post (>2h old) not tracked, ignore
+            if is_edit and not is_upgrade and msg_id not in posted_dict:
                 orig_date = getattr(raw_msg, 'date', None)
                 if orig_date:
                     now_utc = datetime.now(timezone.utc)
                     if (now_utc - orig_date).total_seconds() > 7200:
-                        print(f"⏩ Skipped editing ancient post {msg_id} (>2h old and not tracked)")
+                        print(f"⏩ Skipped editing ancient post {msg_id} in {source_node} (>2h old and not tracked)")
                         return False
 
-            res = await self.summarize_vahid_post(clean_text)
+            if source_node == 'VahidOnline':
+                res = await self.summarize_vahid_post(clean_text)
+            else:
+                res = await self.summarize_ilia_post(clean_text)
+                
             title = res.get('title', 'چکیده خبر').strip()
             summary = res.get('summary', clean_text).strip()
             is_ai = res.get('is_ai', False)
             
-            # If upgrading and we got no AI improvement, defer
             if is_upgrade and not is_ai and (title == "خلاصه خبر" or summary == clean_text):
-                print(f"⏩ Upgrade deferred for VahidOnline msg {msg_id}: no AI summary available.")
+                print(f"⏩ Upgrade deferred for {source_node} msg {msg_id}: no AI summary available.")
                 return False
-            
-            link = f"https://t.me/VahidOnline/{msg_id}"
+                
+            link = f"https://t.me/{source_node}/{msg_id}"
             
             # Detect media type from raw_msg
             media_icon = ""
-            link_action = "مشاهده پست اصلی در کانال وحیدآنلاین"
+            link_action = f"مشاهده پست اصلی در کانال {channel_fa_name}"
             if raw_msg:
                 if getattr(raw_msg, 'video', None):
                     media_icon = " 📹"
-                    link_action = "مشاهده ویدیو در کانال وحیدآنلاین"
+                    link_action = f"مشاهده ویدیو در کانال {channel_fa_name}"
                 elif getattr(raw_msg, 'photo', None):
                     media_icon = " 📸"
-                    link_action = "مشاهده تصویر در کانال وحیدآنلاین"
+                    link_action = f"مشاهده تصویر در کانال {channel_fa_name}"
                 elif getattr(raw_msg, 'voice', None) or getattr(raw_msg, 'audio', None):
                     media_icon = " 🎙"
-                    link_action = "شنیدن فایل صوتی در کانال وحیدآنلاین"
-            
+                    link_action = f"شنیدن فایل صوتی در کانال {channel_fa_name}"
+                    
             if is_edit and not is_upgrade:
                 time_fa = self.get_tehran_time_fa()
                 post_content = (
@@ -2965,13 +3010,13 @@ class LiveSentinel:
                     f"🔗 [{link_action}]({link})\n\n"
                     f"📡 {target_channel}"
                 )
-            
+                
             try:
-                if msg_id in self.vahid_ai_posted:
-                    posted_id = self.vahid_ai_posted[msg_id]
+                if msg_id in posted_dict:
+                    posted_id = posted_dict[msg_id]
                     try:
                         await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
-                        print(f"✏️ Edited post {posted_id} in {target_channel} for VahidOnline msg {msg_id}.")
+                        print(f"✏️ Edited post {posted_id} in {target_channel} for {source_node} msg {msg_id}.")
                         return is_ai
                     except Exception as edit_err:
                         if "not modified" in str(edit_err).lower():
@@ -3005,14 +3050,17 @@ class LiveSentinel:
                         )
                         
                     if sent:
-                        self.vahid_ai_posted[msg_id] = sent.id
-                        self.vahid_post_time[msg_id] = time.time()
+                        posted_dict[msg_id] = sent.id
+                        post_time[msg_id] = time.time()
                         self.channel_last_alert_id[target_channel] = sent.id
-                        self.record_posted_message(target_channel, "VahidOnline", msg_id, sent.id)
+                        self.record_posted_message(target_channel, source_node, msg_id, sent.id)
                         self.save_persisted_state()
-                        print(f"🚀 Published AI summary to {target_channel} for VahidOnline msg {msg_id}")
+                        print(f"🚀 Published AI summary to {target_channel} for {source_node} msg {msg_id}")
             except Exception as e:
-                print(f"❌ Error publishing to {target_channel} for msg {msg_id}: {e}")
+                print(f"❌ Error publishing to {target_channel} for {source_node} msg {msg_id}: {e}")
+
+    async def handle_vahid_online_ai(self, text, msg_id, raw_msg=None, is_edit=False, is_upgrade=False):
+        return await self.handle_mirror_channel("VahidOnline", "@VahidOnlineAI", text, msg_id, raw_msg=raw_msg, is_edit=is_edit, is_upgrade=is_upgrade)
 
     async def preload_ilia_ai_history(self, reader_client=None):
         target_channel = "@iliaenAI"
@@ -3096,134 +3144,7 @@ class LiveSentinel:
             print(f"⚠️ Catchup for iliaen failed: {e}")
 
     async def handle_ilia_ai(self, text, msg_id, raw_msg=None, is_edit=False, is_upgrade=False):
-        target_channel = "@iliaenAI"
-        
-        # Check persistent dedup guard before doing any work
-        if not is_edit and not is_upgrade and self.is_source_posted(target_channel, "iliaen", msg_id):
-            print(f"🛑 [DEDUP GUARD] iliaen msg {msg_id} already posted to {target_channel}. Aborting send.")
-            return
-
-        # 1. Deduplication for Album / Media Groups (grouped_id)
-        grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
-        if grouped_id and grouped_id in self.ilia_grouped_posted and not is_edit:
-            return
-            
-        clean_text = (text or "").strip()
-        # 2. Strict Filter: Never post media with empty or meaningless text
-        # If Ilia posts a photo/video without a caption, DO NOT post to @iliaenAI
-        if not clean_text or len(clean_text) < 5:
-            return
-            
-        # If this is part of an album and has text, register the grouped_id
-        if grouped_id:
-            self.ilia_grouped_posted.add(grouped_id)
-            
-        # Ensure sequential processing per msg_id to avoid race conditions on rapid edits
-        if msg_id not in self.ilia_msg_locks:
-            if len(self.ilia_msg_locks) > 200:
-                self.ilia_msg_locks.clear()
-            self.ilia_msg_locks[msg_id] = asyncio.Lock()
-            
-        async with self.ilia_msg_locks[msg_id]:
-            # Safeguard: if this is an edit of an ancient post (>2h old) not in history, ignore it
-            if is_edit and not is_upgrade and msg_id not in self.ilia_ai_posted:
-                orig_date = getattr(raw_msg, 'date', None)
-                if orig_date:
-                    now_utc = datetime.now(timezone.utc)
-                    if (now_utc - orig_date).total_seconds() > 7200:
-                        print(f"⏩ Skipped editing ancient post {msg_id} in iliaen (>2h old and not tracked)")
-                        return False
-
-            res = await self.summarize_ilia_post(clean_text)
-            title = res.get('title', 'چکیده خبر').strip()
-            summary = res.get('summary', clean_text).strip()
-            is_ai = res.get('is_ai', False)
-            
-            # If upgrading and we got no AI improvement, defer
-            if is_upgrade and not is_ai and (title == "خلاصه خبر" or summary == clean_text):
-                print(f"⏩ Upgrade deferred for iliaen msg {msg_id}: no AI summary available.")
-                return False
-            
-            link = f"https://t.me/iliaen/{msg_id}"
-            
-            # Detect media type from raw_msg
-            media_icon = ""
-            link_action = "مشاهده پست اصلی در کانال ایلیا"
-            if raw_msg:
-                if getattr(raw_msg, 'video', None):
-                    media_icon = " 📹"
-                    link_action = "مشاهده ویدیو در کانال ایلیا"
-                elif getattr(raw_msg, 'photo', None):
-                    media_icon = " 📸"
-                    link_action = "مشاهده تصویر در کانال ایلیا"
-                elif getattr(raw_msg, 'voice', None) or getattr(raw_msg, 'audio', None):
-                    media_icon = " 🎙"
-                    link_action = "شنیدن فایل صوتی در کانال ایلیا"
-            
-            if is_edit and not is_upgrade:
-                time_fa = self.get_tehran_time_fa()
-                post_content = (
-                    f"⚡️ **{title}**{media_icon}\n\n"
-                    f"{summary}\n\n"
-                    f"🔗 [{link_action}]({link})\n\n"
-                    f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | ویرایش و تکمیل متن خبر**\n\n"
-                    f"📡 {target_channel}"
-                )
-            else:
-                post_content = (
-                    f"⚡️ **{title}**{media_icon}\n\n"
-                    f"{summary}\n\n"
-                    f"🔗 [{link_action}]({link})\n\n"
-                    f"📡 {target_channel}"
-                )
-            
-            try:
-                if msg_id in self.ilia_ai_posted:
-                    posted_id = self.ilia_ai_posted[msg_id]
-                    try:
-                        await self.bot.edit_message(target_channel, posted_id, post_content, link_preview=False)
-                        print(f"✏️ Edited post {posted_id} in {target_channel} for iliaen msg {msg_id}.")
-                        return is_ai
-                    except Exception as edit_err:
-                        if "not modified" in str(edit_err).lower():
-                            print(f"ℹ️ Post {posted_id} in {target_channel} is already up to date (no content change).")
-                            return is_ai
-                        else:
-                            raise edit_err
-                else:
-                    sent = None
-                    has_media = raw_msg and getattr(raw_msg, 'media', None)
-                    if has_media:
-                        try:
-                            sent = await self.bot.send_message(
-                                target_channel, 
-                                post_content, 
-                                file=raw_msg.media, 
-                                link_preview=False
-                            )
-                        except Exception as media_err:
-                            print(f"⚠️ Could not send media to {target_channel} ({media_err}). Sending text with link.")
-                            sent = await self.bot.send_message(
-                                target_channel, 
-                                post_content, 
-                                link_preview=False
-                            )
-                    else:
-                        sent = await self.bot.send_message(
-                            target_channel, 
-                            post_content, 
-                            link_preview=False
-                        )
-                        
-                    if sent:
-                        self.ilia_ai_posted[msg_id] = sent.id
-                        self.ilia_post_time[msg_id] = time.time()
-                        self.channel_last_alert_id[target_channel] = sent.id
-                        self.record_posted_message(target_channel, "iliaen", msg_id, sent.id)
-                        self.save_persisted_state()
-                        print(f"🚀 Published AI summary to {target_channel} for iliaen msg {msg_id}")
-            except Exception as e:
-                print(f"❌ Error publishing to {target_channel} for msg {msg_id}: {e}")
+        return await self.handle_mirror_channel("iliaen", "@iliaenAI", text, msg_id, raw_msg=raw_msg, is_edit=is_edit, is_upgrade=is_upgrade)
 
     async def classify_and_translate_alibk(self, arabic_text):
         if not GEMINI_API_KEY:
@@ -3444,6 +3365,8 @@ class LiveSentinel:
             print(f"⚠️ Catchup for Alibk3 failed: {e}")
 
     async def handle_alibk_regional(self, text, msg_id, raw_msg=None, is_edit=False):
+        if not is_edit:
+            self.channel_watermarks["Alibk3"] = max(self.channel_watermarks.get("Alibk3", 0), msg_id)
         clean_text = (text or "").strip()
         if not clean_text or len(clean_text) < 10:
             return
@@ -3813,6 +3736,8 @@ class LiveSentinel:
             print(f"⚠️ Catchup for withyashar failed: {e}")
 
     async def handle_withyashar_intelligence(self, text, msg_id, raw_msg=None, is_edit=False):
+        if not is_edit:
+            self.channel_watermarks["withyashar"] = max(self.channel_watermarks.get("withyashar", 0), msg_id)
         clean_text = (text or "").strip()
         if not clean_text or len(clean_text) < 10:
             return
