@@ -4,12 +4,12 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4743": [
-      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
     ],
     "VahidOnline_78687": [
       "recovered_source",
@@ -50,8 +50,8 @@
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -1122,6 +1122,24 @@
       "time": 1791783491.89408,
       "text": "فاکس‌نیوز: ارتش آمریکا راهنمای شناسایی تصویری (تهدید را بشناس) را برای کمک به سربازان آمریکایی در شناسایی نیروهای ارتش ایران ، منتشر کرده است. این راهنما شامل تصاویر یونیفرم‌ها، علائم درجه و تجهیزات نظامی ایران، از جمله سلاح‌های کلاشینکف، تفنگ مصاف ۲ و نارنجک‌انداز آرپی‌جی ۷ و… است\n@WarRoom",
       "pattern": "withyashar_report"
+    },
+    "withyashar_25473": {
+      "sent_msg_id": 163,
+      "target_channel": "@DidebanJang",
+      "time": 1791793610.0907855,
+      "thread_key": "withyashar_25466"
+    },
+    "withyashar_25474": {
+      "sent_msg_id": 160,
+      "target_channel": "@DidebanJang",
+      "time": 1791794171.745331,
+      "thread_key": "Alibk3_38780"
+    },
+    "withyashar_25475": {
+      "sent_msg_id": 163,
+      "target_channel": "@DidebanJang",
+      "time": 1791794286.0232222,
+      "thread_key": "withyashar_25466"
     }
   },
   "last_alert_time": {},
@@ -4718,8 +4736,8 @@
       "timestamp": 1791764079.6951103,
       "category": "WAR",
       "is_iran_related": false,
-      "title": "هشدار هوانوردی آمریکا درباره پرواز بر فراز عربستان",
-      "summary": "اداره هوانوردی فدرال آمریکا به شرکت‌های هواپیمایی این کشور هشدار داد به دلیل خطرات ناشی از فعالیت‌های نظامی و تشویق سامانه‌های ناوبری، هنگام عبور از آسمان عربستان احتیاط کامل را رعایت کنند.",
+      "title": "هشدار هوانوردی آمریکا درباره پرواز بر فراز عربستان همزمان با حملات هوایی به صنعا",
+      "summary": "اداره هوانوردی فدرال آمریکا به شرکت‌های هواپیمایی درباره خطرات ناشی از فعالیت‌های نظامی در آسمان عربستان هشدار داد. همزمان، حوثی‌های یمن از حملات هوایی به صنعا خبر داده و ریاض را مسئول دانسته‌اند که این تحولات، تشدید تنش‌ها و خطرات امنیتی در منطقه را نشان می‌دهد.",
       "sources": [
         {
           "node": "Alibk3",
@@ -4727,10 +4745,19 @@
           "media_type": "photo",
           "link": "https://t.me/Alibk3/38780",
           "timestamp": 1791764079.6951108
+        },
+        {
+          "node": "withyashar",
+          "msg_id": 25474,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25474",
+          "timestamp": 1791794171.5734215
         }
       ],
       "replies": [],
-      "tag": "#دیده‌بان_جنگ"
+      "tag": "#دیده‌بان_جنگ",
+      "updated_at": 1791794171.5734274,
+      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
     },
     "withyashar_25465": {
       "channel": "@DidebanJang",
@@ -5798,8 +5825,8 @@
       "timestamp": 1791783491.8960319,
       "category": "WAR",
       "is_iran_related": true,
-      "title": "فاکس‌نیوز: ارتش آمریکا راهنمای شناسایی تصویری (تهدید را بشناس) را برای کمک به سربازان آمریکایی در شناسایی نیروهای ارتش ایران",
-      "summary": "فاکس‌نیوز: ارتش آمریکا راهنمای شناسایی تصویری (تهدید را بشناس) را برای کمک به سربازان آمریکایی در شناسایی نیروهای ارتش ایران ، منتشر کرده است. این راهنما شامل تصاویر یونیفرم‌ها، علائم درجه و تجهیزات نظامی ایران، از جمله سلاح‌های کلاشینکف، تفنگ مصاف ۲ و نارنجک‌انداز آرپی‌جی ۷ و… است",
+      "title": "تشدید تنش‌ها و آماده‌سازی‌های نظامی آمریکا همزمان با حمله پهپادی به نفتکش‌ها در تنگه هرمز",
+      "summary": "در ادامه تنش‌های فزاینده میان ایالات متحده و ایران و انتشار راهنمای شناسایی نظامی ارتش آمریکا، وزارت خارجه هند از مفقود شدن دو ملوان پس از اصابت پهپاد به نفتکش «MT Petro Dolphin» در تنگه هرمز خبر داد. همزمان، نفتکش دیگری به نام «MT Valthera» نیز هدف پرتابه‌ای ناشناس قرار گرفت و دچار آتش‌سوزی شد، که این رویدادها ابعاد جدیدی از بحران امنیتی و نظامی در منطقه را به نمایش می‌گذارد.",
       "sources": [
         {
           "node": "withyashar",
@@ -5807,10 +5834,26 @@
           "media_type": "photo",
           "link": "https://t.me/withyashar/25466",
           "timestamp": 1791783491.8960323
+        },
+        {
+          "node": "withyashar",
+          "msg_id": 25473,
+          "media_type": "video",
+          "link": "https://t.me/withyashar/25473",
+          "timestamp": 1791793609.684148
+        },
+        {
+          "node": "withyashar",
+          "msg_id": 25475,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25475",
+          "timestamp": 1791794285.574124
         }
       ],
       "replies": [],
-      "tag": "#دیده‌بان_جنگ"
+      "tag": "#دیده‌بان_جنگ",
+      "updated_at": 1791794285.5741313,
+      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
     }
   },
   "reply_to_root_map": {
@@ -5869,39 +5912,40 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38786,
-    "withyashar": 25466,
+    "Alibk3": 38792,
+    "withyashar": 25475,
     "iliaen": 4744,
-    "VahidOnline": 78695,
-    "entekhab_ir": 383110,
-    "Khabar_Fouri": 551253,
-    "akhbarefori": 697634,
-    "Tasnimnews": 450720,
-    "isna94": 408401,
-    "Farsi_Iranwire": 94550,
-    "farsna": 467494,
-    "khabarfouri": 569125,
-    "VahidHeadline": 326004,
-    "bbcpersian": 293230,
-    "Farsna": 467874,
-    "irna_1313": 461276,
-    "IranintlTV": 361823,
-    "khabari": 201026,
-    "akharinkhabar": 637787,
-    "Mr_Economy": 63934,
-    "Eghtesadnews_com": 370632,
-    "Indypersian": 180001,
-    "VahidOOnLine": 264691,
-    "euronewspe": 90506,
-    "Digiato": 114010,
-    "farsivoa": 233479,
-    "Alarabiya_far": 151990,
-    "myITiran": 18258,
-    "thezoomit": 103693,
-    "thezoomon": 5226,
-    "dw_farsi": 131071,
-    "RadioFarda": 162262,
-    "Economic_News_Channel": 82669
+    "VahidOnline": 78696,
+    "entekhab_ir": 383141,
+    "Khabar_Fouri": 551281,
+    "akhbarefori": 697671,
+    "Tasnimnews": 450781,
+    "isna94": 408437,
+    "Farsi_Iranwire": 94603,
+    "farsna": 467911,
+    "khabarfouri": 569149,
+    "VahidHeadline": 326029,
+    "bbcpersian": 293234,
+    "Farsna": 467911,
+    "irna_1313": 461366,
+    "IranintlTV": 361848,
+    "khabari": 201056,
+    "akharinkhabar": 637830,
+    "Mr_Economy": 63944,
+    "Eghtesadnews_com": 370647,
+    "Indypersian": 180009,
+    "VahidOOnLine": 264710,
+    "euronewspe": 90514,
+    "Digiato": 114022,
+    "farsivoa": 233488,
+    "Alarabiya_far": 152012,
+    "myITiran": 18259,
+    "thezoomit": 103710,
+    "thezoomon": 5229,
+    "dw_farsi": 131076,
+    "RadioFarda": 162266,
+    "Economic_News_Channel": 82678,
+    "persiannbloomberg": 68108
   },
   "vahid_post_time": {
     "78694": 1791735142.0123565
@@ -5977,5 +6021,5 @@
     "4742": 6,
     "4744": 8
   },
-  "last_saved": "2026-10-12 05:45:14 UTC"
+  "last_saved": "2026-10-12 08:45:45 UTC"
 }
