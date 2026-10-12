@@ -235,8 +235,8 @@ class IntelligencePipeline:
         try:
             now_utc = datetime.now(timezone.utc)
             recent_yashar = []
-            async for msg in reader_client.iter_messages("withyashar", limit=5):
-                if msg.date and (now_utc - msg.date).total_seconds() > 300:
+            async for msg in reader_client.iter_messages("withyashar", limit=20):
+                if msg.date and (now_utc - msg.date).total_seconds() > 7200:
                     continue
                 recent_yashar.append(msg)
             recent_yashar.reverse()
@@ -543,8 +543,8 @@ class IntelligencePipeline:
         try:
             now_utc = datetime.now(timezone.utc)
             recent_alibk = []
-            async for msg in reader_client.iter_messages("Alibk3", limit=5):
-                if msg.date and (now_utc - msg.date).total_seconds() > 300:
+            async for msg in reader_client.iter_messages("Alibk3", limit=20):
+                if msg.date and (now_utc - msg.date).total_seconds() > 7200:
                     continue
                 recent_alibk.append(msg)
             recent_alibk.reverse()
