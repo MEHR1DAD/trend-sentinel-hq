@@ -28,13 +28,15 @@ CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 GEMINI_API_KEY_RAW = os.environ.get('GEMINI_API_KEY', '')
 GEMINI_API_KEYS = [k.strip() for k in GEMINI_API_KEY_RAW.split(',') if k.strip()]
 GEMINI_API_KEY = GEMINI_API_KEYS[0] if GEMINI_API_KEYS else None
-DEFAULT_GEMINI_MODEL = "gemini-3.5-flash-lite"
+DEFAULT_GEMINI_MODEL = "gemini-2.0-flash-lite"
 GEMINI_MODELS_PRIORITY = [
-    "gemini-3.5-flash-lite",
-    "gemini-3.8-flash",
-    "gemini-3.7-flash",
+    "gemini-2.0-flash-lite",
+    "gemini-2.0-flash",
     "gemini-2.5-flash",
-    "gemini-1.5-flash"
+    "gemini-1.5-flash",
+    "gemini-1.5-flash-8b",
+    "gemini-2.0-pro-exp-02-05",
+    "gemini-1.5-pro"
 ]
 
 COUNTRY_THEATRES = {
@@ -129,6 +131,8 @@ class LiveSentinel:
         self.alibk_posted = {} # msg_id -> {'channel': target_channel, 'msg_id': posted_msg_id}
         self.alibk_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
         self.alibk_msg_locks = {} # msg_id -> asyncio.Lock() for sequential edit ordering
+        self.withyashar_msg_locks = {} # msg_id -> asyncio.Lock() for sequential edit ordering
+        self.vip_grouped_posted = set() # set of grouped_id to prevent multi-media album duplicates
         self.node_id_map = {} # chat_id -> clean node username
         self.channel_last_alert_id = {} # channel_username -> last_alert_msg_id
         self.vahid_post_time = {} # msg_id -> timestamp
@@ -1418,6 +1422,50 @@ class LiveSentinel:
         except Exception as e155:
             print(f"⚠️ Error polishing post 155: {e155}")
 
+        # Retroactive polish: Fix truncated withyashar posts 157, 158, 159, 161 in @DidebanJang
+        repairs_dideban = [
+            (
+                157,
+                'withyashar/25459',
+                "🚨 **هشدار فوری: پرواز تمرینی جنگنده F-15 آمریکا بر فراز عراق برای حمله احتمالی به ایران**",
+                "📝 **چکیده رویداد:**\nیک فروند جنگنده چندمنظوره F-15 متعلق به نیروی هوایی ایالات متحده (USAF) در حال انجام پرواز تمرینی و شبیه‌سازی حمله به اهداف در ایران، در آسمان عراق رصد و ثبت شد."
+            ),
+            (
+                158,
+                'withyashar/25462',
+                "🚨 **هشدار فوری: حمله سپاه به نفتکش با پرچم هند در تنگه هرمز**",
+                "📝 **چکیده رویداد:**\nبر اساس گزارش‌های موثق، یک فروند نفتکش با پرچم هند در مسیر جنوبی تنگه هرمز هدف حمله نیروهای سپاه قرار گرفته است؛ دو تن از خدمه مفقود و ۹ نفر دیگر نجات یافته‌اند."
+            ),
+            (
+                159,
+                'withyashar/25463',
+                "🔕 **هشدار منطقه‌ای: تاکید دارلین گراهام بر حمایت قاطع از اسرائیل در برابر جمهوری اسلامی**",
+                "📝 **چکیده رویداد:**\nدارلین گراهام با تأکید بر اینکه اسرائیل متحد حیاتی آمریکاست، هشدار داد دستیابی جمهوری اسلامی به سلاح هسته‌ای خطری مستقیم برای آمریکا و اسرائیل است و باید مهار شود."
+            ),
+            (
+                161,
+                'withyashar/25465',
+                "🚨 **هشدار فوری: گفت‌وگوهای فوری ترامپ و نتانیاهو درباره بازسازی کارخانه‌های موشکی ایران**",
+                "📝 **چکیده رویداد:**\nشبکه ۱۳ اسرائیل گزارش داد دونالد ترامپ و بنیامین نتانیاهو در پی گزارش‌های اطلاعاتی درباره روند بازسازی کارخانه‌های موشکی و پهپادی ایران، گفت‌وگوهای فوری انجام داده‌اند."
+            ),
+        ]
+        for pid, src_kw, fixed_title, fixed_sum in repairs_dideban:
+            try:
+                msg = await self.bot.get_messages('@DidebanJang', ids=pid)
+                if msg and msg.text and not getattr(msg, 'empty', False):
+                    if src_kw in msg.text and '📝 **چکیده رویداد:**' not in msg.text:
+                        txt = msg.text
+                        txt = re.sub(r'^(?:🚨|🔕)\s*\*\*هشدار [^\n]+', fixed_title, txt)
+                        txt = re.sub(r'^(?:🚨|🔕)\s*هشدار [^\n]+', fixed_title, txt)
+                        if '🔗 **منبع خبر:**' in txt:
+                            txt = txt.replace('🔗 **منبع خبر:**', f"{fixed_sum}\n\n🔗 **منبع خبر:**")
+                        elif '🔗 **منابع خبر:**' in txt:
+                            txt = txt.replace('🔗 **منابع خبر:**', f"{fixed_sum}\n\n🔗 **منابع خبر:**")
+                        await self.bot.edit_message('@DidebanJang', pid, txt, link_preview=False)
+                        print(f"✅ Successfully polished post {pid} in @DidebanJang!")
+            except Exception as r_err:
+                print(f"⚠️ Error repairing post {pid}: {r_err}")
+
     async def handle_message_deleted(self, node_username, deleted_ids):
         """
         When a message in a monitored source channel is deleted by its admin,
@@ -1913,6 +1961,9 @@ class LiveSentinel:
                 elif node_key == 'alibk3':
                     asyncio.create_task(self.handle_alibk_regional(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
                     return
+                elif node_key == 'withyashar':
+                    asyncio.create_task(self.handle_withyashar_intelligence(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+                    return
 
             # Accept messages up to 15 minutes old (900s) to catch news during runner restarts & handovers
             # This applies to breaking news radar alerts (War / Economy / Protest)
@@ -2093,6 +2144,7 @@ class LiveSentinel:
                             self.vip_alert_history[msg_key]['target_channel'] = target_channel
                             baseline = self.baselines.get(clean_pats[0], 0.1) if clean_pats else 0.1
                             
+                            topic_summary = ai_class.get('summary', '')
                             sent_msg, target_channel, alert_text = await self.send_alert(
                                 topic_title, 
                                 "VIP_IMMEDIATE", 
@@ -2101,7 +2153,8 @@ class LiveSentinel:
                                 is_silent=is_silent,
                                 target_channel=target_channel,
                                 alert_title=alert_title,
-                                custom_icon=custom_icon
+                                custom_icon=custom_icon,
+                                summary=topic_summary
                             )
                             if sent_msg:
                                 self.vip_alert_history[msg_key]['sent_msg_id'] = sent_msg.id
@@ -2117,7 +2170,7 @@ class LiveSentinel:
                                     'category': category,
                                     'is_iran_related': is_iran,
                                     'title': topic_title,
-                                    'summary': '',
+                                    'summary': topic_summary,
                                     'tag': '#دیده‌بان_اقتصاد' if target_channel == '@DidehbanEghtesad' else ('#دیده‌بان_اعتراضات' if target_channel == '@DidebanEterazat' else '#دیده‌بان_جنگ'),
                                     'sources': [{
                                         'node': canonical_node,
@@ -2129,21 +2182,18 @@ class LiveSentinel:
                                     'replies': []
                                 }
                                 self.save_persisted_state()
-                                asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
+                                if not topic_summary:
+                                    asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
                             return
                         else:
                             # 2. Intelligent Humanized Fallback for VIP Channels if AI API is temporarily unreachable
                             first_line = text.split('\n')[0].strip()
                             clean_headline = re.sub(r'^[🚨⚡️📢🛑🔕⚖️📈📸📹🎙\s\*\-]+', '', first_line).strip()
-                            
-                            # Truncate at word boundary to prevent cutting words in half
-                            if len(clean_headline) > 75:
-                                truncated = clean_headline[:75]
-                                last_space = truncated.rfind(' ')
-                                if last_space > 30:
-                                    clean_headline = truncated[:last_space].strip()
-                                else:
-                                    clean_headline = truncated.strip()
+                            parts = re.split(r'[.؛:\n]', clean_headline)
+                            candidate_title = parts[0].strip() if parts else clean_headline
+                            if len(candidate_title) < 15 and len(parts) > 1:
+                                candidate_title = (parts[0] + ": " + parts[1]).strip()
+                            clean_headline = candidate_title if candidate_title else clean_headline[:80]
                             clean_headline = re.sub(r'\s+', ' ', clean_headline).strip()
                             
                             if not clean_headline or len(clean_headline) < 5:
@@ -2214,7 +2264,8 @@ class LiveSentinel:
                                 is_silent=is_silent,
                                 target_channel=target_channel,
                                 alert_title=alert_title,
-                                custom_icon=custom_icon
+                                custom_icon=custom_icon,
+                                summary=text.strip()
                             )
                             if sent_msg:
                                 self.vip_alert_history[msg_key]['target_channel'] = target_channel
@@ -2231,7 +2282,7 @@ class LiveSentinel:
                                     'category': category,
                                     'is_iran_related': is_iran,
                                     'title': clean_headline,
-                                    'summary': '',
+                                    'summary': text.strip(),
                                     'tag': '#دیده‌بان_اقتصاد' if target_channel == '@DidehbanEghtesad' else ('#دیده‌بان_اعتراضات' if target_channel == '@DidebanEterazat' else '#دیده‌بان_جنگ'),
                                     'sources': [{
                                         'node': canonical_node,
@@ -2434,7 +2485,7 @@ class LiveSentinel:
                 if sent_msg:
                     asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, raw_texts[:3]))
 
-    async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False, target_channel=None, alert_title=None, custom_icon=None):
+    async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False, target_channel=None, alert_title=None, custom_icon=None, summary=None):
         if not BOT_TOKEN: return
         
         is_economy = "||ECONOMY||" in str(pattern) or target_channel == "@DidehbanEghtesad"
@@ -2480,10 +2531,17 @@ class LiveSentinel:
             for m in context_msgs
         ]
         
-        alert_text = (
-            f"{icon} **{alert_title}**\n\n"
-            f"{source_header}\n" + "\n".join(clean_context) + "\n\n"
-        )
+        if summary:
+            alert_text = (
+                f"{icon} **{alert_title}**\n\n"
+                f"📝 **چکیده رویداد:**\n{summary}\n\n"
+                f"{source_header}\n" + "\n".join(clean_context) + "\n\n"
+            )
+        else:
+            alert_text = (
+                f"{icon} **{alert_title}**\n\n"
+                f"{source_header}\n" + "\n".join(clean_context) + "\n\n"
+            )
         
         # Add tags and channel signature
         if not target_channel:
@@ -2541,15 +2599,16 @@ class LiveSentinel:
             "{\n"
             '  "category": "WAR" | "ECONOMY" | "PROTEST_RIGHTS" | "OTHER",\n'
             '  "is_iran_related": true | false,\n'
-            '  "topic_title": "یک عنوان کوتاه و دقیق فارسی (حداکثر ۵ تا ۶ کلمه) متناسب با واقعه"\n'
+            '  "topic_title": "یک عنوان کوتاه، جذاب و دقیق فارسی (بین ۵ تا ۸ کلمه) متناسب با واقعه بدون قطع شدن در وسط جمله",\n'
+            '  "summary": "یک چکیده ۲ الی ۳ خطی شفاف، شیوا و کامل از رویداد"\n'
             "}"
         )
         
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 150,
-                "temperature": 0.1
+                "maxOutputTokens": 300,
+                "temperature": 0.2
             }
         }
         
@@ -2560,10 +2619,11 @@ class LiveSentinel:
                 res = json.loads(match.group(0))
                 category = str(res.get("category", "")).upper().strip()
                 topic_title = str(res.get("topic_title", "")).strip()
+                summary = str(res.get("summary", "")).strip()
                 is_iran_related = bool(res.get("is_iran_related", False))
                 if category in ["WAR", "ECONOMY", "PROTEST_RIGHTS", "OTHER"]:
                     print(f"🎯 VIP/Anomaly AI Classification: category={category}, is_iran={is_iran_related}, topic='{topic_title}' (Model: {self.current_gemini_model})")
-                    return {"category": category, "is_iran_related": is_iran_related, "topic_title": topic_title}
+                    return {"category": category, "is_iran_related": is_iran_related, "topic_title": topic_title, "summary": summary}
                     
         return None
 
@@ -2638,13 +2698,12 @@ class LiveSentinel:
             print(f"⚠️ Failed to query latest Google models: {e}")
             
         fallback_candidates = [
-            "gemini-3.5-flash-lite",
-            "gemini-3.8-flash",
-            "gemini-3.7-flash",
-            "gemini-2.5-flash", 
+            "gemini-2.0-flash-lite",
+            "gemini-2.0-flash",
+            "gemini-2.5-flash",
             "gemini-1.5-flash", 
-            "gemini-3.1-pro-preview",
-            "gemini-2.5-pro", 
+            "gemini-1.5-flash-8b",
+            "gemini-2.0-pro-exp-02-05",
             "gemini-1.5-pro"
         ]
         return fallback_candidates
@@ -2660,11 +2719,11 @@ class LiveSentinel:
         candidates = await self.fetch_latest_google_models()
         if not candidates:
             candidates = [
-                "gemini-3.5-flash-lite", 
-                "gemini-3.8-flash", 
-                "gemini-3.7-flash", 
+                "gemini-2.0-flash-lite", 
+                "gemini-2.0-flash", 
                 "gemini-2.5-flash", 
-                "gemini-1.5-flash"
+                "gemini-1.5-flash", 
+                "gemini-1.5-flash-8b"
             ]
             
         curr = failed_model or getattr(self, 'current_gemini_model', None) or getattr(self, 'latest_flash_lite_model', candidates[0])
@@ -3869,6 +3928,265 @@ class LiveSentinel:
             except Exception as e:
                 print(f"❌ Error publishing Alibk3 alert to {target_channel} for msg {msg_id}: {e}")
 
+    async def synthesize_withyashar_post(self, text):
+        clean = (text or "").strip()
+        clean_prompt_text = re.sub(r'@\w+\s*$', '', clean).strip()
+
+        prompt = (
+            "تو تحلیلگر ارشد خبر برای کانال‌های دیده‌بان تلگرام (دیده‌بان جنگ، اقتصاد، اعتراضات) هستی.\n"
+            "پست زیر از کانال خبری و تحلیلی 'withyashar' منتشر شده است:\n\n"
+            f"{clean_prompt_text}\n\n"
+            "وظیفه تو این است که موضوع خبر را تحلیل کنی و ساختار کامل زیر را در قالب JSON استخراج کنی:\n"
+            "۱. category: یکی از مقادیر 'WAR' یا 'ECONOMY' یا 'PROTEST_RIGHTS' یا 'OTHER'. "
+            "(اخبار جنگ و نظامی و منطقه -> WAR، اخبار نوسان ارز/طلا/معیشت -> ECONOMY، اخبار اعتراضات/اعدام/زندان -> PROTEST_RIGHTS، سایر اخبار متفرقه -> OTHER)\n"
+            "۲. is_iran_related: مقدار true اگر خبر مستقیماً یا غیرمستقیم با ایران، خاک ایران، سپاه یا ارتش، یا رویارویی آمریکا/اسرائیل با ایران در ارتباط است، در غیر این صورت false.\n"
+            "۳. title: یک تیتر برجسته، صریح، گویا و کامل (بین ۵ تا ۸ کلمه) بدون قطع شدن در وسط جمله که اصل واقعه را بیان کند.\n"
+            "۴. summary: یک چکیده شیوا، شفاف و ۲ الی ۳ خطی (بین ۲۵ تا ۵۰ کلمه) که ابعاد و جزئیات مهم رویداد را شرح دهد. هرگز تیتر را تکرار نکن.\n\n"
+            "پاسخ را منحصراً در قالب JSON بنویس:\n"
+            "{\n"
+            '  "category": "WAR" | "ECONOMY" | "PROTEST_RIGHTS" | "OTHER",\n'
+            '  "is_iran_related": true | false,\n'
+            '  "title": "...",\n'
+            '  "summary": "..."\n'
+            "}"
+        )
+
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 300,
+                "temperature": 0.2
+            }
+        }
+
+        raw_text = await self.call_gemini_content(payload, timeout=10, max_retries=3)
+        if raw_text:
+            match = re.search(r'\{.*\}', raw_text, re.DOTALL)
+            if match:
+                try:
+                    res = json.loads(match.group(0))
+                    category = str(res.get("category", "WAR")).upper().strip()
+                    title = str(res.get("title", "")).strip()
+                    summary = str(res.get("summary", "")).strip()
+                    is_iran_related = bool(res.get("is_iran_related", False))
+                    if title and summary:
+                        return {
+                            "category": category,
+                            "is_iran_related": is_iran_related,
+                            "title": title,
+                            "summary": summary,
+                            "is_ai": True
+                        }
+                except Exception:
+                    pass
+
+        return self.generate_withyashar_heuristic_fallback(clean_prompt_text)
+
+    def generate_withyashar_heuristic_fallback(self, text):
+        clean = re.sub(r'@\w+\s*$', '', (text or "")).strip()
+        lines = [l.strip() for l in clean.split('\n') if l.strip()]
+        first_line = lines[0] if lines else clean
+        
+        is_economy = any(w in clean for w in ['دلار', 'تتر', 'ارز', 'طلا', 'سکه', 'بورس', 'تورم', 'قیمت'])
+        is_protest = any(w in clean for w in ['اعتراض', 'اعتصاب', 'اعدام', 'تجمع', 'زندان', 'دادگاه', 'بازداشت', 'حقوق بشری'])
+        category = 'ECONOMY' if is_economy else ('PROTEST_RIGHTS' if is_protest else 'WAR')
+
+        clean_first = re.sub(r'^[🚨⚡️📢🛑🔕⚖️📈📸📹🎙🔴⚠️📌\s\*\-]+', '', first_line).strip()
+        
+        parts = re.split(r'[.؛\n]', clean_first)
+        candidate_title = parts[0].strip() if parts else clean_first
+        if len(candidate_title) > 95:
+            sub = re.split(r'[,،]', candidate_title)
+            if sub and len(sub[0]) >= 25:
+                candidate_title = sub[0].strip()
+            
+        title = candidate_title if candidate_title else clean_first[:90]
+        title = title.replace("||FOREIGN||", "").replace("||ECONOMY||", "").strip()
+
+        summary = clean
+        is_iran = self.determine_iran_related(None, clean, title)
+
+        return {
+            "category": category,
+            "is_iran_related": is_iran,
+            "title": title,
+            "summary": summary,
+            "is_ai": False
+        }
+
+    async def catchup_unposted_withyashar(self, reader_client=None):
+        if not reader_client:
+            return
+        try:
+            now_utc = datetime.now(timezone.utc)
+            recent_yashar = []
+            async for msg in reader_client.iter_messages("withyashar", limit=5):
+                if msg.date and (now_utc - msg.date).total_seconds() > 300:
+                    continue
+                recent_yashar.append(msg)
+            recent_yashar.reverse()
+            for msg in recent_yashar:
+                clean_text = (msg.message or msg.text or "").strip()
+                if clean_text and len(clean_text) >= 10:
+                    if not self.is_source_posted("@DidebanJang", "withyashar", msg.id):
+                        await self.handle_withyashar_intelligence(clean_text, msg.id, raw_msg=msg, is_edit=False)
+                        await asyncio.sleep(2)
+        except Exception as e:
+            print(f"⚠️ Catchup for withyashar failed: {e}")
+
+    async def handle_withyashar_intelligence(self, text, msg_id, raw_msg=None, is_edit=False):
+        clean_text = (text or "").strip()
+        if not clean_text or len(clean_text) < 10:
+            return
+
+        # 1. Deduplication for Album / Media Groups (grouped_id)
+        grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
+        if grouped_id and grouped_id in self.vip_grouped_posted and not is_edit:
+            return
+        if grouped_id:
+            self.vip_grouped_posted.add(grouped_id)
+
+        target_channel = "@DidebanJang"
+        # 2. Check persistent dedup guard
+        if not is_edit and self.is_source_posted(target_channel, "withyashar", msg_id):
+            print(f"🛑 [DEDUP GUARD] withyashar msg {msg_id} already posted to {target_channel}. Aborting.")
+            return
+
+        # 3. Sequential lock per msg_id
+        if msg_id not in self.withyashar_msg_locks:
+            if len(self.withyashar_msg_locks) > 200:
+                self.withyashar_msg_locks.clear()
+            self.withyashar_msg_locks[msg_id] = asyncio.Lock()
+
+        async with self.withyashar_msg_locks[msg_id]:
+            ai_res = await self.synthesize_withyashar_post(clean_text)
+            if not ai_res:
+                return
+
+            category = ai_res.get('category', 'WAR')
+            if category == 'OTHER':
+                print(f"ℹ️ withyashar post {msg_id} filtered out by news policy (OTHER).")
+                return
+
+            title = ai_res.get('title', '').strip()
+            summary = ai_res.get('summary', '').strip()
+            if not title or not summary:
+                return
+
+            is_iran_related = self.determine_iran_related(ai_res, clean_text, title)
+            is_silent = not is_iran_related
+
+            if category == 'ECONOMY':
+                target_channel = "@DidehbanEghtesad"
+                tag = "#دیده‌بان_اقتصاد"
+                icon = "📈"
+                alert_type_name = "گزارش اقتصادی"
+            elif category == 'PROTEST_RIGHTS':
+                target_channel = "@DidebanEterazat"
+                tag = "#دیده‌بان_اعتراضات"
+                icon = "⚖️" if any(w in clean_text for w in ["اعدام", "حکم", "طناب دار", "زندان", "دادگاه", "بازداشت"]) else "📢"
+                alert_type_name = "گزارش حقوق بشری" if icon == "⚖️" else "گزارش مردمی"
+            else:
+                target_channel = "@DidebanJang"
+                tag = "#دیده‌بان_جنگ"
+                icon = "🚨" if is_iran_related else "🔕"
+                alert_type_name = "هشدار فوری" if is_iran_related else "هشدار منطقه‌ای"
+
+            link = f"https://t.me/withyashar/{msg_id}"
+            root_media_type = self.detect_msg_media_type(raw_msg)
+            root_icon = self.get_media_icon_from_type(root_media_type)
+
+            media_header = ""
+            if root_media_type == 'video': media_header = " 📹"
+            elif root_media_type == 'photo': media_header = " 📸"
+            elif root_media_type == 'voice': media_header = " 🎙"
+
+            alert_header = f"{icon} **{alert_type_name}: {title}**{media_header}"
+            sources_text = f"🔗 **منبع خبر:**\n- [withyashar]({link}) {root_icon}"
+
+            alert_text = (
+                f"{alert_header}\n\n"
+                f"📝 **چکیده رویداد:**\n{summary}\n\n"
+                f"{sources_text}\n\n"
+                f"{tag}\n{target_channel}"
+            )
+
+            msg_key = f"withyashar_{msg_id}"
+            try:
+                if msg_key in self.vip_alert_history and is_edit:
+                    posted_mid = self.vip_alert_history[msg_key].get('sent_msg_id')
+                    posted_ch = self.vip_alert_history[msg_key].get('target_channel', target_channel)
+                    time_fa = self.get_tehran_time_fa()
+                    updated_text = (
+                        f"{alert_header}\n\n"
+                        f"📝 **چکیده رویداد:**\n{summary}\n\n"
+                        f"{sources_text}\n\n"
+                        f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | ویرایش و تکمیل خبر**\n\n"
+                        f"{tag}\n{posted_ch}"
+                    )
+                    try:
+                        await self.bot.edit_message(posted_ch, posted_mid, updated_text, link_preview=False)
+                        print(f"✏️ Edited withyashar post {posted_mid} in {posted_ch}.")
+                    except Exception as edit_err:
+                        if "not modified" in str(edit_err).lower():
+                            pass
+                        else:
+                            raise edit_err
+                else:
+                    merged = await self.check_and_merge_with_active_alert(
+                        text=clean_text,
+                        node="withyashar",
+                        msg_id=msg_id,
+                        target_channel=target_channel,
+                        candidate_title=title,
+                        candidate_summary=summary,
+                        raw_msg=raw_msg,
+                        category=category,
+                        is_iran_related=is_iran_related
+                    )
+                    if merged:
+                        return
+
+                    sent = await self.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
+                    if sent:
+                        self.channel_last_alert_id[target_channel] = sent.id
+                        self.vip_alert_history[msg_key] = {
+                            'target_channel': target_channel,
+                            'sent_msg_id': sent.id,
+                            'time': time.time(),
+                            'text': clean_text,
+                            'pattern': 'withyashar_report'
+                        }
+                        self.record_posted_message(target_channel, "withyashar", msg_id, sent.id)
+                        thread_key = f"withyashar_{msg_id}"
+                        self.thread_alerts[thread_key] = {
+                            'channel': target_channel,
+                            'alert_msg_id': sent.id,
+                            'node': 'withyashar',
+                            'root_id': msg_id,
+                            'root_text': clean_text,
+                            'root_media_type': root_media_type,
+                            'timestamp': time.time(),
+                            'category': category,
+                            'is_iran_related': is_iran_related,
+                            'title': title,
+                            'summary': summary,
+                            'sources': [{
+                                'node': 'withyashar',
+                                'msg_id': msg_id,
+                                'media_type': root_media_type,
+                                'link': link,
+                                'timestamp': time.time()
+                            }],
+                            'replies': [],
+                            'tag': tag
+                        }
+                        self.save_persisted_state()
+                        status_label = "Iran/Sound" if is_iran_related else "Regional/Silent"
+                        print(f"🚨 Published intelligent withyashar alert ({status_label}) to {target_channel} for msg {msg_id}: {title}")
+            except Exception as e:
+                print(f"❌ Error publishing withyashar alert to {target_channel} for msg {msg_id}: {e}")
+
 import signal
 import sys
 
@@ -4099,6 +4417,10 @@ async def main():
             await sentinel.catchup_unposted_alibk(reader_client=client)
         except Exception as e:
             print(f"⚠️ Alibk catchup error: {e}")
+        try:
+            await sentinel.catchup_unposted_withyashar(reader_client=client)
+        except Exception as e:
+            print(f"⚠️ withyashar catchup error: {e}")
     except Exception as e:
         if hasattr(e, 'seconds'):
             print(f"⚠️ FloodWaitError! Sleeping for {e.seconds} seconds before retrying...")
@@ -4119,6 +4441,7 @@ async def main():
                 sentinel.catchup_unposted_ilia(reader_client=client),
                 sentinel.catchup_unposted_vahid(reader_client=client),
                 sentinel.catchup_unposted_alibk(reader_client=client),
+                sentinel.catchup_unposted_withyashar(reader_client=client),
                 return_exceptions=True
             )
         else:
