@@ -1,6 +1,12 @@
 import os
 import re
 import sys
+
+# Ensure repository root is on sys.path regardless of execution environment
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if REPO_ROOT not in sys.path:
+    sys.path.insert(0, REPO_ROOT)
+
 import json
 import time
 import signal
@@ -485,8 +491,8 @@ class LiveSentinel:
                 
         # Retroactive polish for Posts 165 and 166 in @DidebanJang (fix raw text copies & titles)
         try:
-            m165 = await self.bot.get_messages('@DidebanJang', ids=165)
-            if m165 and m165.text and 'روزنامه ژاپنی' in m165.text and 'ناو «یو‌اس‌اس تئودور' in m165.text.split('\n')[0]:
+            m165 = await fetch_client.get_messages('@DidebanJang', ids=165)
+            if m165 and m165.text and 'روزنامه ژاپنی' in m165.text and 'بازنویسی تحلیلی' not in m165.text:
                 fixed_165 = (
                     "🚨 **هشدار فوری: تاخیر در ورود ناو هواپیمابر «تئودور روزولت» آمریکا به ژاپن به دلیل شرایط طوفانی** 📝\n\n"
                     "📝 **چکیده رویداد:**\n"
@@ -502,8 +508,8 @@ class LiveSentinel:
             print(f"⚠️ Error polishing post 165 in @DidebanJang: {e165}")
 
         try:
-            m166 = await self.bot.get_messages('@DidebanJang', ids=166)
-            if m166 and m166.text and 'گراهام' in m166.text and 'اصلاً چرا باید الان بخواهیم متوقف شویم' in m166.text:
+            m166 = await fetch_client.get_messages('@DidebanJang', ids=166)
+            if m166 and m166.text and 'گراهام' in m166.text and 'بازنویسی تحلیلی' not in m166.text:
                 fixed_166 = (
                     "🚨 **هشدار فوری: تاکید سناتور لیندسی گراهام بر ادامه فشار نظامی علیه ایران و مخالفت با توقف درگیری‌ها** 📹\n\n"
                     "📝 **چکیده رویداد:**\n"
