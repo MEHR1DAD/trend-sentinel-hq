@@ -8,39 +8,39 @@
       "recovered_source"
     ],
     "iliaen_4743": [
-      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
     ],
     "VahidOnline_78687": [
       "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
       "recovered_source"
     ],
     "VahidOnline_78694": [
-      "recovered_source",
-      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
+      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
+      "recovered_source"
     ],
     "withyashar_25419": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25420": [
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
     ],
     "withyashar_25422": [
-      "recovered_source",
-      "withyashar_report"
-    ],
-    "withyashar_25423": [
-      "حملات نظامی در ایران، بازار",
+      "withyashar_report",
       "recovered_source"
     ],
-    "withyashar_25428": [
+    "withyashar_25423": [
       "recovered_source",
-      "withyashar_report"
+      "حملات نظامی در ایران، بازار"
+    ],
+    "withyashar_25428": [
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25426": [
       "recovered_source",
@@ -78,8 +78,8 @@
       "withyashar_report"
     ],
     "withyashar_25438": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25439": [
       "withyashar_report"
@@ -95,37 +95,37 @@
       "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
     ],
     "withyashar_25443": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25444": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25451": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25461": [
       "withyashar_report"
     ],
     "withyashar_25462": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25460": [
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
     ],
     "withyashar_25465": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "Alibk3_38780": [
       "recovered_source"
@@ -1369,6 +1369,15 @@
       "target_channel": "@DidebanJang",
       "time": 1791807973.884323,
       "thread_key": "Alibk3_38817"
+    },
+    "withyashar_25490": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 176,
+      "time": 1791811852.8720653,
+      "text": "بنیامین نتانیاهو، نخست‌وزیر اسرائیل:\nایران برای دست‌یابی به سلاح هسته‌ای تلاش می‌کند، اما ما رژیم حاکم بر ایران را سرنگون خواهیم کرد \n@WarRoom 🚨🚨🚨🚨",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 193.55
     }
   },
   "last_alert_time": {},
@@ -6835,6 +6844,32 @@
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25490": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 176,
+      "node": "withyashar",
+      "root_id": 25490,
+      "root_text": "بنیامین نتانیاهو، نخست‌وزیر اسرائیل:\nایران برای دست‌یابی به سلاح هسته‌ای تلاش می‌کند، اما ما رژیم حاکم بر ایران را سرنگون خواهیم کرد \n@WarRoom 🚨🚨🚨🚨",
+      "root_media_type": "text",
+      "timestamp": 1791811852.8734107,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "بنیامین نتانیاهو، نخست‌وزیر اسرائیل:",
+      "summary": "بنیامین نتانیاهو، نخست‌وزیر اسرائیل:\nایران برای دست‌یابی به سلاح هسته‌ای تلاش می‌کند، اما ما رژیم حاکم بر ایران را سرنگون خواهیم کرد \n@WarRoom 🚨🚨🚨🚨",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 193.55,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25490,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25490",
+          "timestamp": 1791811852.873416
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
     }
   },
   "reply_to_root_map": {
@@ -6886,47 +6921,47 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 173,
+    "@DidebanJang": 176,
     "@DidehbanEghtesad": 15,
     "@DidebanEterazat": 7,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38819,
-    "VahidHeadline": 326075,
-    "VahidOOnLine": 264751,
-    "RadioFarda": 162271,
-    "IranintlTV": 361885,
-    "Tasnimnews": 450814,
-    "Farsna": 467948,
-    "isna94": 408470,
-    "irna_1313": 461486,
-    "akharinkhabar": 637873,
-    "khabarfouri": 569183,
-    "akhbarefori": 697723,
-    "dw_farsi": 131094,
-    "entekhab_ir": 383162,
-    "Khabar_Fouri": 551298,
-    "khabari": 201082,
-    "thezoomit": 103724,
-    "farsivoa": 233511,
-    "myITiran": 18262,
-    "Farsi_Iranwire": 94615,
-    "bbcpersian": 293243,
-    "Alarabiya_far": 152038,
-    "thezoomon": 5237,
-    "Mr_Economy": 63955,
-    "Eghtesadnews_com": 370666,
-    "Digiato": 114038,
-    "Indypersian": 180019,
-    "withyashar": 25486,
-    "euronewspe": 90525,
-    "Economic_News_Channel": 82692,
-    "farsna": 467940,
-    "persiannbloomberg": 68126,
-    "iliaen": 4744,
-    "VahidOnline": 78696
+    "Alibk3": 38827,
+    "VahidHeadline": 326083,
+    "VahidOOnLine": 264762,
+    "RadioFarda": 162274,
+    "IranintlTV": 361898,
+    "Tasnimnews": 450824,
+    "Farsna": 467968,
+    "isna94": 408476,
+    "irna_1313": 461519,
+    "akharinkhabar": 637881,
+    "khabarfouri": 569189,
+    "akhbarefori": 697754,
+    "dw_farsi": 131102,
+    "entekhab_ir": 383167,
+    "Khabar_Fouri": 551301,
+    "khabari": 201095,
+    "thezoomit": 103727,
+    "farsivoa": 233520,
+    "myITiran": 18264,
+    "Farsi_Iranwire": 94618,
+    "bbcpersian": 293244,
+    "Alarabiya_far": 152043,
+    "thezoomon": 5238,
+    "Mr_Economy": 63957,
+    "Eghtesadnews_com": 370671,
+    "Digiato": 114041,
+    "Indypersian": 180027,
+    "withyashar": 25490,
+    "euronewspe": 90527,
+    "Economic_News_Channel": 82696,
+    "farsna": 467969,
+    "persiannbloomberg": 68133,
+    "VahidOnline": 78696,
+    "iliaen": 4744
   },
   "vahid_post_time": {
     "78694": 1791735142.0123565
@@ -7007,5 +7042,5 @@
     "gemini-3.5-flash-lite": 65,
     "gemini-2.5-flash": 1
   },
-  "last_saved": "2026-10-12 12:28:59 UTC"
+  "last_saved": "2026-10-12 13:40:44 UTC"
 }
