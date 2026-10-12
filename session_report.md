@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 54
-- **Last Message Text:** گشایش نمایشگاه گردشگری و صنایع‌دستی ایران در شیراز اکسپو
-
-🔹نمایشگاه گردشگری و صنایع‌دستی ایران در حا...
-- **Last Message Time:** 2026-10-12 00:53:34
+- **Messages Processed:** 36
+- **Last Message Text:** ♦️وقوع سیلاب ناگهانی در رودخانه بودی گانداکی در شمال مرکزی نپال، روز یکشنبه ۱۹ مهرماه، باعث تخریب پل...
+- **Last Message Time:** 2026-10-12 02:03:46
