@@ -97,6 +97,13 @@ class IntelligencePipeline:
         parts = re.split(r'[.؛!?\n]', clean_first)
         candidate_title = parts[0].strip() if parts else clean_first
 
+        # If title starts with a reporting preamble (e.g., "روزنامه X گزارش داد: ..."), extract the core subject
+        preamble_match = re.match(r'^(?:[^\n:]{5,50})\s+(?:گزارش داد|اعلام کرد|گفت|افزود|مدعی شد|نوشت)\s*:\s*(.+)$', candidate_title)
+        if preamble_match and len(preamble_match.group(1).strip()) >= 20:
+            candidate_title = preamble_match.group(1).strip()
+
+        # Remove trailing colons, dashes, or broken punctuation
+        candidate_title = candidate_title.rstrip("،,؛.:- ")
         if len(candidate_title) > 135:
             words = candidate_title.split()
             truncated = []
@@ -112,7 +119,29 @@ class IntelligencePipeline:
         title = candidate_title if candidate_title else clean_first[:90]
         title = title.replace("||FOREIGN||", "").replace("||ECONOMY||", "").strip()
 
-        summary = clean
+        # Heuristic Summarizer: Extract concise core factual sentence, never paste raw full text!
+        cleaned_paras = [l.strip() for l in clean.split('\n') if l.strip() and not l.strip().startswith('@')]
+        content_lines = [p for p in cleaned_paras if p != first_line]
+        if not content_lines:
+            content_lines = cleaned_paras
+
+        summary_sentences = []
+        for line in content_lines:
+            sents = re.split(r'(?<=[.؛!?])\s+', line)
+            for s in sents:
+                s_clean = s.strip()
+                if len(s_clean) >= 15 and s_clean not in summary_sentences:
+                    summary_sentences.append(s_clean)
+                if len(" ".join(summary_sentences)) >= 200:
+                    break
+            if len(" ".join(summary_sentences)) >= 200:
+                break
+                
+        if summary_sentences:
+            summary = " ".join(summary_sentences[:2]).strip()
+        else:
+            summary = clean[:200].rstrip("،,؛.:- ") + "..."
+
         is_iran = self.sentinel.determine_iran_related(None, clean, title)
 
         return {
@@ -122,6 +151,69 @@ class IntelligencePipeline:
             "summary": summary,
             "is_ai": False
         }
+
+    async def schedule_withyashar_ai_upgrade(self, target_channel, posted_id, src_msg_id, original_text, raw_msg=None, delay=20):
+        """
+        Background Auto-Upgrade Engine:
+        When a breaking news alert was published via emergency heuristic fallback to ensure speed,
+        this worker asynchronously rotates Gemini models and re-synthesizes the post,
+        editing the live Telegram message with high-quality AI rewrite as soon as available.
+        """
+        print(f"⏳ [AI UPGRADE] Scheduled background AI enhancement for withyashar msg {src_msg_id} (posted {posted_id}) in {delay}s...")
+        await asyncio.sleep(delay)
+        for attempt in range(1, 5):
+            try:
+                await self.sentinel.gemini.rotate_gemini_model_dynamic()
+                ai_res = await self.synthesize_withyashar_post(original_text)
+                if ai_res and ai_res.get('is_ai'):
+                    upgraded_title = ai_res.get('title', '').strip()
+                    upgraded_summary = ai_res.get('summary', '').strip()
+                    if not upgraded_title or not upgraded_summary:
+                        await asyncio.sleep(15)
+                        continue
+                        
+                    category = ai_res.get('category', 'WAR')
+                    is_iran_related = self.sentinel.determine_iran_related(ai_res, original_text, upgraded_title)
+                    icon = "🚨" if is_iran_related else "🔕"
+                    alert_type_name = "هشدار فوری" if is_iran_related else "هشدار منطقه‌ای"
+                    if category == 'ECONOMY':
+                        icon = "📈"
+                        alert_type_name = "گزارش اقتصادی"
+                    elif category == 'PROTEST_RIGHTS':
+                        icon = "⚖️" if any(w in original_text for w in ["اعدام", "حکم", "طناب دار", "زندان", "دادگاه", "بازداشت"]) else "📢"
+                        alert_type_name = "گزارش حقوق بشری" if icon == "⚖️" else "گزارش مردمی"
+
+                    root_media_type = detect_msg_media_type(raw_msg)
+                    root_icon = get_media_icon_from_type(root_media_type)
+                    media_header = f" {root_icon}" if root_icon != "📝" else ""
+
+                    alert_header = f"{icon} **{alert_type_name}: {upgraded_title}**{media_header}"
+                    link = f"https://t.me/withyashar/{src_msg_id}"
+                    sources_text = f"🔗 **منبع خبر:**\n- [withyashar]({link}) {root_icon}"
+                    time_fa = get_tehran_time_fa()
+                    tag = "#دیده‌بان_اقتصاد" if target_channel == "@DidehbanEghtesad" else ("#دیده‌بان_اعتراضات" if target_channel == "@DidebanEterazat" else "#دیده‌بان_جنگ")
+
+                    updated_text = (
+                        f"{alert_header}\n\n"
+                        f"📝 **چکیده رویداد:**\n{upgraded_summary}\n\n"
+                        f"{sources_text}\n\n"
+                        f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | ویرایش و بازنویسی تحلیلی**\n\n"
+                        f"{tag}\n{target_channel}"
+                    )
+
+                    await self.sentinel.bot.edit_message(target_channel, posted_id, updated_text, link_preview=False)
+                    print(f"✨ [AI UPGRADE SUCCESS] Successfully auto-upgraded post {posted_id} in {target_channel}: {upgraded_title}")
+
+                    thread_key = f"withyashar_{src_msg_id}"
+                    if thread_key in self.sentinel.thread_alerts:
+                        self.sentinel.thread_alerts[thread_key]['title'] = upgraded_title
+                        self.sentinel.thread_alerts[thread_key]['summary'] = upgraded_summary
+                        self.sentinel.save_persisted_state()
+                    return True
+            except Exception as e:
+                print(f"⚠️ [AI UPGRADE] Attempt {attempt} failed for withyashar post {posted_id}: {e}")
+            await asyncio.sleep(25)
+        return False
 
     async def catchup_unposted_withyashar(self, reader_client=None):
         if not reader_client:
@@ -292,6 +384,10 @@ class IntelligencePipeline:
                         self.sentinel.save_persisted_state()
                         status_label = "Iran/Sound" if is_iran_related else "Regional/Silent"
                         print(f"🚨 Published intelligent withyashar alert ({status_label}) to {target_channel} for msg {msg_id}: {title}")
+
+                        # Trigger background AI enhancement if emergency fallback was used
+                        if not ai_res.get('is_ai'):
+                            asyncio.create_task(self.schedule_withyashar_ai_upgrade(target_channel, sent.id, msg_id, clean_text, raw_msg=raw_msg))
             except Exception as e:
                 print(f"❌ Error publishing withyashar alert to {target_channel} for msg {msg_id}: {e}")
 

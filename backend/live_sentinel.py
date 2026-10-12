@@ -483,6 +483,41 @@ class LiveSentinel:
             except Exception as e:
                 print(f"⚠️ Error initializing alert history in {ch}: {e}")
                 
+        # Retroactive polish for Posts 165 and 166 in @DidebanJang (fix raw text copies & titles)
+        try:
+            m165 = await self.bot.get_messages('@DidebanJang', ids=165)
+            if m165 and m165.text and 'روزنامه ژاپنی' in m165.text and 'ناو «یو‌اس‌اس تئودور' in m165.text.split('\n')[0]:
+                fixed_165 = (
+                    "🚨 **هشدار فوری: تاخیر در ورود ناو هواپیمابر «تئودور روزولت» آمریکا به ژاپن به دلیل شرایط طوفانی** 📝\n\n"
+                    "📝 **چکیده رویداد:**\n"
+                    "روزنامه آساهی شیمبون ژاپن گزارش داد ورود ناو هواپیمابر هسته‌ای «تئودور روزولت» (CVN-71) و ناوگروه ضربت آن به پایگاه دریایی یوکوسوکا به دلیل وقوع طوفان‌های شدید دریایی به تعویق افتاده و این ناوگروه با چند روز تاخیر، بین ۱۵ تا ۲۰ اکتبر وارد منطقه خواهد شد.\n\n"
+                    "🔗 **منبع خبر:**\n"
+                    "- [withyashar](https://t.me/withyashar/25470) 📝\n\n"
+                    "🔄 **به‌روزرسانی شده (ساعت ۰۹:۳۹) | ویرایش و بازنویسی تحلیلی**\n\n"
+                    "#دیده‌بان_جنگ\n@DidebanJang"
+                )
+                await self.bot.edit_message('@DidebanJang', 165, fixed_165, link_preview=False)
+                print("✅ Successfully polished post 165 in @DidebanJang!")
+        except Exception as e165:
+            print(f"⚠️ Error polishing post 165 in @DidebanJang: {e165}")
+
+        try:
+            m166 = await self.bot.get_messages('@DidebanJang', ids=166)
+            if m166 and m166.text and 'گراهام' in m166.text and 'اصلاً چرا باید الان بخواهیم متوقف شویم' in m166.text:
+                fixed_166 = (
+                    "🚨 **هشدار فوری: تاکید سناتور لیندسی گراهام بر ادامه فشار نظامی علیه ایران و مخالفت با توقف درگیری‌ها** 📹\n\n"
+                    "📝 **چکیده رویداد:**\n"
+                    "سناتور جمهوری‌خواه آمریکایی با ابراز مخالفت صریح نسبت به توقف جنگ، مدعی شد به دلیل در دسترس بودن پیروزی و خطرناک ماندن توانمندی‌های نظامی ایران، واشنگتن نباید در شرایط کنونی عملیات یا فشارهای خود را متوقف کند.\n\n"
+                    "🔗 **منبع خبر:**\n"
+                    "- [withyashar](https://t.me/withyashar/25469) 📹\n\n"
+                    "🔄 **به‌روزرسانی شده (ساعت ۰۹:۴۹) | ویرایش و بازنویسی تحلیلی**\n\n"
+                    "#دیده‌بان_جنگ\n@DidebanJang"
+                )
+                await self.bot.edit_message('@DidebanJang', 166, fixed_166, link_preview=False)
+                print("✅ Successfully polished post 166 in @DidebanJang!")
+        except Exception as e166:
+            print(f"⚠️ Error polishing post 166 in @DidebanJang: {e166}")
+
         print(f"🎯 Initialized last alert IDs: {self.channel_last_alert_id}")
 
     # --- Preload & Catch-Up Forwarding ---
