@@ -8,43 +8,43 @@
       "recovered_source"
     ],
     "iliaen_4743": [
-      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
     ],
     "VahidOnline_78687": [
       "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
       "recovered_source"
     ],
     "VahidOnline_78694": [
-      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
     ],
     "withyashar_25419": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25420": [
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
     ],
     "withyashar_25422": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25423": [
       "حملات نظامی در ایران، بازار",
       "recovered_source"
     ],
     "withyashar_25428": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25426": [
-      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان"
     ],
     "withyashar_25427": [
       "فعالیت هوایی و جنگنده در آمریکا"
@@ -78,8 +78,8 @@
       "withyashar_report"
     ],
     "withyashar_25438": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25439": [
       "withyashar_report"
@@ -91,27 +91,27 @@
       "withyashar_report"
     ],
     "withyashar_25442": [
-      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
     ],
     "withyashar_25443": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25444": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25451": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25461": [
       "withyashar_report"
     ],
     "withyashar_25462": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25460": [
       "withyashar_report"
@@ -124,8 +124,8 @@
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
     ],
     "withyashar_25465": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "Alibk3_38780": [
       "recovered_source"
@@ -546,8 +546,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "آتش‌سوزی در پایگاه هوایی ایران",
-      "recovered_source"
+      "recovered_source",
+      "آتش‌سوزی در پایگاه هوایی ایران"
     ],
     "Alibk3_38863": [
       "recovered_source"
@@ -2046,6 +2046,33 @@
       "pattern": "withyashar_autonomous",
       "ai_model": "heuristic_fallback",
       "latency_sec": 87.62
+    },
+    "withyashar_25518": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 202,
+      "time": 1791839038.0148258,
+      "text": "ترامپ: با ولیعهد سعودی صحبت کردم و حوثی‌ها رفتارهای بسیار نامناسبی دارند.\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 12.67
+    },
+    "withyashar_25519": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 203,
+      "time": 1791839193.6764987,
+      "text": "ترامپ: روسیه و اوکراین می‌خواهند به توافقی برسند، اما نمی‌دانند چگونه این کار را انجام دهند.فقط این ماه ۳۲،۰۰۰ نفر کشته شدند\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 16.49
+    },
+    "withyashar_25520": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 204,
+      "time": 1791839307.8504114,
+      "text": "دونالد ترامپ درباره انتخابات میان‌دوره‌ای آمریکا: فکر می‌کنم گردهمایی‌های انتخاباتی تأثیر بسیار بزرگی داشته‌اند. هر بار که در یک گردهمایی شرکت می‌کنم، آمارها بهتر می‌شوند؛ حتی تأثیر آن‌ها فراتر از همان منطقه است. تمام این گردهمایی‌ها با استقبال گسترده روبه‌رو شده‌اند و هزاران نفر بیرون محل برگزاری می‌مانند، چون نمی‌توانند وارد شوند. به همین دلیل، نمایشگرهای بزرگ تلویزیونی در بیرون ساختمان‌ها نصب می‌کنیم.\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 18.59
     }
   },
   "last_alert_time": {
@@ -5111,30 +5138,6 @@
           "media_type": "text",
           "link": "https://t.me/Alibk3/38507",
           "timestamp": 1791581651.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38504": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 47,
-      "node": "Alibk3",
-      "root_id": 38504,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791580116.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "تعطیلی طولانی‌مدت فرودگاه‌های نجران و جازان عربستان",
-      "summary": "فرودگاه‌های نجران و جازان در عربستان سعودی بیش از ۸۳ ساعت است که به حالت تعلیق درآمده و فعالیت آن‌ها متوقف شده است. این رویداد در پی شرایط امنیتی و تنش‌های نظامی اخیر در منطقه رخ داده است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38504,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38504",
-          "timestamp": 1791580116.0
         }
       ],
       "replies": [],
@@ -9294,6 +9297,84 @@
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25518": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 202,
+      "node": "withyashar",
+      "root_id": 25518,
+      "root_text": "ترامپ: با ولیعهد سعودی صحبت کردم و حوثی‌ها رفتارهای بسیار نامناسبی دارند.\n@WarRoom",
+      "root_media_type": "text",
+      "timestamp": 1791839038.0163722,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "ترامپ: با ولیعهد سعودی صحبت کردم و حوثی‌ها رفتارهای بسیار نامناسبی دارند.",
+      "summary": "ترامپ: با ولیعهد سعودی صحبت کردم و حوثی‌ها رفتارهای بسیار نامناسبی دارند.",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 12.67,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25518,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25518",
+          "timestamp": 1791839038.016378
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25519": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 203,
+      "node": "withyashar",
+      "root_id": 25519,
+      "root_text": "ترامپ: روسیه و اوکراین می‌خواهند به توافقی برسند، اما نمی‌دانند چگونه این کار را انجام دهند.فقط این ماه ۳۲،۰۰۰ نفر کشته شدند\n@WarRoom",
+      "root_media_type": "text",
+      "timestamp": 1791839193.6779945,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "ترامپ: روسیه و اوکراین می‌خواهند به توافقی برسند، اما نمی‌دانند چگونه این کار را انجام ...",
+      "summary": "ترامپ: روسیه و اوکراین می‌خواهند به توافقی برسند، اما نمی‌دانند چگونه این کار را انجام دهند.فقط این ماه ۳۲،۰۰۰ نفر کشته شدند",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 16.49,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25519,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25519",
+          "timestamp": 1791839193.6780002
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25520": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 204,
+      "node": "withyashar",
+      "root_id": 25520,
+      "root_text": "دونالد ترامپ درباره انتخابات میان‌دوره‌ای آمریکا: فکر می‌کنم گردهمایی‌های انتخاباتی تأثیر بسیار بزرگی داشته‌اند. هر بار که در یک گردهمایی شرکت می‌کنم، آمارها بهتر می‌شوند؛ حتی تأثیر آن‌ها فراتر از همان منطقه است. تمام این گردهمایی‌ها با استقبال گسترده روبه‌رو شده‌اند و هزاران نفر بیرون محل برگزاری می‌مانند، چون نمی‌توانند وارد شوند. به همین دلیل، نمایشگرهای بزرگ تلویزیونی در بیرون ساختمان‌ها نصب می‌کنیم.\n@WarRoom",
+      "root_media_type": "text",
+      "timestamp": 1791839307.8517394,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "دونالد ترامپ درباره انتخابات میان‌دوره‌ای آمریکا: فکر می‌کنم گردهمایی‌های انتخاباتی تأث...",
+      "summary": "دونالد ترامپ درباره انتخابات میان‌دوره‌ای آمریکا: فکر می‌کنم گردهمایی‌های انتخاباتی تأثیر بسیار بزرگی داشته‌اند. هر بار که در یک گردهمایی شرکت می‌کنم، آمارها بهتر می‌شوند؛ حتی تأثیر آن‌ها فراتر از همان منطقه است. تمام این گردهمایی‌ها با استقبال گسترده روبه‌رو شده‌اند و هزاران نفر بیرون محل برگزاری می‌مانند، چون نمی‌توانند وارد شوند. به همین دلیل، نمایشگرهای بزرگ تلویزیونی در بیرون ساختمان‌ها نصب می‌کنیم.",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 18.59,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25520,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25520",
+          "timestamp": 1791839307.8517447
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
     }
   },
   "reply_to_root_map": {
@@ -9345,45 +9426,45 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 201,
+    "@DidebanJang": 204,
     "@DidehbanEghtesad": 15,
     "@DidebanEterazat": 9,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38897,
-    "VahidHeadline": 326138,
-    "VahidOOnLine": 264826,
+    "Alibk3": 38903,
+    "VahidHeadline": 326144,
+    "VahidOOnLine": 264829,
     "RadioFarda": 162288,
-    "IranintlTV": 361971,
-    "Tasnimnews": 450964,
-    "Farsna": 468061,
-    "isna94": 408532,
-    "irna_1313": 461640,
+    "IranintlTV": 361976,
+    "Tasnimnews": 450969,
+    "Farsna": 468065,
+    "isna94": 408535,
+    "irna_1313": 461645,
     "akharinkhabar": 637979,
-    "khabarfouri": 569244,
-    "akhbarefori": 697894,
+    "khabarfouri": 569249,
+    "akhbarefori": 697898,
     "dw_farsi": 131111,
     "entekhab_ir": 383212,
     "Khabar_Fouri": 551350,
     "khabari": 201168,
     "thezoomit": 103741,
-    "farsivoa": 233563,
+    "farsivoa": 233565,
     "myITiran": 18266,
     "Farsi_Iranwire": 94634,
-    "bbcpersian": 293263,
-    "Alarabiya_far": 152078,
+    "bbcpersian": 293268,
+    "Alarabiya_far": 152083,
     "thezoomon": 5246,
-    "Mr_Economy": 63978,
-    "Eghtesadnews_com": 370705,
+    "Mr_Economy": 63983,
+    "Eghtesadnews_com": 370708,
     "Digiato": 114051,
-    "Indypersian": 180054,
-    "withyashar": 25517,
-    "euronewspe": 90544,
+    "Indypersian": 180055,
+    "withyashar": 25520,
+    "euronewspe": 90545,
     "Economic_News_Channel": 82713,
-    "farsna": 468061,
-    "persiannbloomberg": 68158,
+    "farsna": 468065,
+    "persiannbloomberg": 68170,
     "VahidOnline": 78704,
     "iliaen": 4744
   },
@@ -9473,5 +9554,5 @@
     "gemini-3.5-flash-lite": 317,
     "gemini-2.5-flash": 18
   },
-  "last_saved": "2026-10-12 20:50:24 UTC"
+  "last_saved": "2026-10-12 21:25:52 UTC"
 }
