@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 330
-- **Last Message Text:** 🔺🔻سرلشکر رحیم‌صفوی: تنگه هرمز بخش جدایی‌ناپذیر سرزمین ایران است
+- **Messages Processed:** 362
+- **Last Message Text:** ⬇️قیمت نفت برنت از ۱۰۷ دلار عبور کرد
 
-🔹راهبرد اصلی ایران، مدیریت هوشمندان...
-- **Last Message Time:** 2026-10-12 14:16:13
+🚨 @Khabari خبری پلاس
+- **Last Message Time:** 2026-10-12 15:15:34

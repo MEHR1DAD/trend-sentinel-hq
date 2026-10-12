@@ -4,54 +4,54 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4743": [
       "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
       "recovered_source"
     ],
     "VahidOnline_78687": [
-      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78694": [
-      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
     ],
     "withyashar_25419": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25420": [
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
     ],
     "withyashar_25422": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25423": [
       "حملات نظامی در ایران، بازار",
       "recovered_source"
     ],
     "withyashar_25428": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25426": [
-      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان"
     ],
     "withyashar_25427": [
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -78,8 +78,8 @@
       "withyashar_report"
     ],
     "withyashar_25438": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25439": [
       "withyashar_report"
@@ -91,41 +91,41 @@
       "withyashar_report"
     ],
     "withyashar_25442": [
-      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
     ],
     "withyashar_25443": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25444": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25451": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25461": [
       "withyashar_report"
     ],
     "withyashar_25462": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25460": [
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
     ],
     "withyashar_25465": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "Alibk3_38780": [
       "recovered_source"
@@ -1439,9 +1439,44 @@
       "target_channel": "@DidebanJang",
       "time": 1791813411.451787,
       "thread_key": "withyashar_25482"
+    },
+    "withyashar_25495": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 180,
+      "time": 1791816667.4302993,
+      "text": "وزیر دفاع اسرائیل، اسرائیل کاتز، درباره حادثه امنیتی در مرز لبنان :\n«در غم سنگین خانواده پسری که در جریان یک گردش در نزدیکی مرز شمالی، بر اثر انفجار جان خود را از دست داد، شریک هستم و برای همه مجروحان آرزوی بهبودی سریع و کامل دارم.\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 31.99
+    },
+    "withyashar_25496": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 181,
+      "time": 1791817138.4031222,
+      "text": "آسوشیتدپرس: رسانه‌های وابسته به حوثی‌ها مدعی شدند حملات هوایی به دو منطقه در صنعا، پایتخت یمن، یک کشته و ۱۲ زخمی بر جا گذاشته است؛ از جمله در یک کارخانه نمک و یک منطقه مسکونی. حوثی‌ها عربستان را مسئول این حملات معرفی کرده‌اند\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 27.17
+    },
+    "Khabar_Fouri_551316": {
+      "sent_msg_id": 179,
+      "target_channel": "@DidebanJang",
+      "time": 1791817153.9558334,
+      "thread_key": "withyashar_25493"
+    },
+    "withyashar_25497": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 182,
+      "time": 1791818033.7141428,
+      "text": "وزیر امور خارجه بریتانیا: ما دو شهروند ایرانی را در فهرست تحریم‌ها قرار دادیم، زیرا آن‌ها در فعالیت‌های خصمانه به نمایندگی از رژیم [ایران] نقش داشته‌اند.تلاش‌های ایران برای تضعیف امنیت بریتانیا و متحدانش از طریق شبکه‌های جنایی و گروه‌های خود، غیرقابل قبول است. ما با هیچ تهدیدی علیه خاک خود مدارا نخواهیم کرد و سفیر ایران را احضار کردیم تا این پیام را به او منتقل کنیم.\n@WarRoom 🚨🚨🚨",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 23.54
     }
   },
-  "last_alert_time": {},
+  "last_alert_time": {
+    "حملات نظامی در ایران": 1791817146.7101414
+  },
   "alibk_posted": {
     "38474": {
       "channel": "@DidebanJang",
@@ -7048,8 +7083,8 @@
       "timestamp": 1791813307.2151556,
       "category": "WAR",
       "is_iran_related": true,
-      "title": "نیروی دریایی سپاه سومین نفتکش بزرگ را در تنگه هرمز هدف قرار داد",
-      "summary": "نیروی دریایی سپاه پاسداران طی دو روز گذشته از هدف قرار گرفتن سومین نفتکش بزرگ در تنگه هرمز خبر داد. بنا بر اعلام منابع نظامی، این شناور تجاری به دلیل تلاش برای خروج غیرمجاز، خاموش کردن سیستم ناوبری (AIS) و بی‌توجهی به اخطارهای مکرر، مورد اصابت قرار گرفته و دچار آتش‌سوزی شده است. این رخداد تنش‌ها در یکی از حیاتی‌ترین آبراه‌های انرژی جهان را به سطح هشدار جدیدی رسانده است.",
+      "title": "تشدید تنش‌ها: هدف قرار گرفتن سومین نفتکش در تنگه هرمز و ادعای لندن درباره دخالت سپاه در حادثه فیرفورد",
+      "summary": "نیروی دریایی سپاه پاسداران از هدف قرار گرفتن سومین نفتکش بزرگ در تنگه هرمز به دلیل تخلفات دریانوردی و بی‌توجهی به اخطارها خبر داد؛ رخدادی که تنش‌ها در آبراه‌های انرژی را به سطح هشدار رسانده است. در همین راستا، نخست‌وزیر بریتانیا مدعی شد که تلاش برای حمله به پایگاه فیرفورد احتمالاً به‌طور مستقیم توسط سپاه پاسداران در ایران هماهنگ شده و لندن در پی این حادثه تحریم‌های جدیدی علیه ایران اعمال خواهد کرد.",
       "ai_model": "gemini-3.5-flash-lite",
       "latency_sec": 3.99,
       "sources": [
@@ -7059,6 +7094,107 @@
           "media_type": "video",
           "link": "https://t.me/withyashar/25493",
           "timestamp": 1791813307.2151604
+        },
+        {
+          "node": "Khabar_Fouri",
+          "msg_id": 551316,
+          "media_type": "text",
+          "link": "https://t.me/Khabar_Fouri/551316",
+          "timestamp": 1791817149.7154014
+        },
+        {
+          "node": "akhbarefori",
+          "msg_id": 697780,
+          "media_type": "text",
+          "link": "https://t.me/akhbarefori/697780",
+          "timestamp": 1791817149.7154045
+        },
+        {
+          "node": "akharinkhabar",
+          "msg_id": 637903,
+          "media_type": "text",
+          "link": "https://t.me/akharinkhabar/637903",
+          "timestamp": 1791817149.7154064
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ",
+      "updated_at": 1791817153.7611494,
+      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
+    },
+    "withyashar_25495": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 180,
+      "node": "withyashar",
+      "root_id": 25495,
+      "root_text": "وزیر دفاع اسرائیل، اسرائیل کاتز، درباره حادثه امنیتی در مرز لبنان :\n«در غم سنگین خانواده پسری که در جریان یک گردش در نزدیکی مرز شمالی، بر اثر انفجار جان خود را از دست داد، شریک هستم و برای همه مجروحان آرزوی بهبودی سریع و کامل دارم.\n@WarRoom",
+      "root_media_type": "text",
+      "timestamp": 1791816667.4316683,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "اسرائیل کاتز به وقوع حادثه امنیتی و مرگ یک تن در مرز لبنان واکنش نشان داد",
+      "summary": "وزیر دفاع اسرائیل، اسرائیل کاتز، طی پیامی ضمن تایید وقوع یک «حادثه امنیتی» در نزدیکی مرزهای شمالی این کشور (مرز لبنان)، به جان باختن یک نفر در جریان یک گردش و زخمی شدن چند تن دیگر اشاره کرد. این منطقه از زمان آغاز درگیری‌های اخیر میان ارتش اسرائیل و حزب‌الله لبنان، همواره یکی از حساس‌ترین و ناامن‌ترین نقاط مرزی محسوب می‌شود و تردد در آن تحت نظارت شدید امنیتی و نظامی قرار دارد.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 31.99,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25495,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25495",
+          "timestamp": 1791816667.4316723
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25496": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 181,
+      "node": "withyashar",
+      "root_id": 25496,
+      "root_text": "آسوشیتدپرس: رسانه‌های وابسته به حوثی‌ها مدعی شدند حملات هوایی به دو منطقه در صنعا، پایتخت یمن، یک کشته و ۱۲ زخمی بر جا گذاشته است؛ از جمله در یک کارخانه نمک و یک منطقه مسکونی. حوثی‌ها عربستان را مسئول این حملات معرفی کرده‌اند\n@WarRoom",
+      "root_media_type": "text",
+      "timestamp": 1791817138.4044588,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "حملات هوایی به صنعا یک کشته و ۱۲ زخمی بر جای گذاشت",
+      "summary": "منابع وابسته به حوثی‌ها در یمن اعلام کردند که حملات هوایی منتسب به ائتلاف به رهبری عربستان سعودی، دو منطقه مسکونی و یک کارخانه نمک در پایتخت این کشور (صنعا) را هدف قرار داده است. این حملات دست‌کم یک کشته و ۱۲ زخمی برجای گذاشته است. این در حالی است که با وجود روند مذاکرات صلح میان انصارالله یمن و ریاض، تنش‌های مق مقطعی و اتهامات متقابل همچنان ثبات شکننده در این کشور جنگ‌زده را تهدید می‌کند.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 27.17,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25496,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25496",
+          "timestamp": 1791817138.404463
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25497": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 182,
+      "node": "withyashar",
+      "root_id": 25497,
+      "root_text": "وزیر امور خارجه بریتانیا: ما دو شهروند ایرانی را در فهرست تحریم‌ها قرار دادیم، زیرا آن‌ها در فعالیت‌های خصمانه به نمایندگی از رژیم [ایران] نقش داشته‌اند.تلاش‌های ایران برای تضعیف امنیت بریتانیا و متحدانش از طریق شبکه‌های جنایی و گروه‌های خود، غیرقابل قبول است. ما با هیچ تهدیدی علیه خاک خود مدارا نخواهیم کرد و سفیر ایران را احضار کردیم تا این پیام را به او منتقل کنیم.\n@WarRoom 🚨🚨🚨",
+      "root_media_type": "text",
+      "timestamp": 1791818033.7154799,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "بریتانیا دو شهروند ایرانی را تحریم و سفیر ایران را احضار کرد",
+      "summary": "دولت بریتانیا در واکنش به آنچه «فعالیت‌های خصمانه و تلاش برای تضعیف امنیت ملی» از سوی شبکه‌های وابسته به ایران خوانده، دو شهروند ایرانی را در فهرست تحریم‌های خود قرار داد. لندن همچنین در اقدامی دیپلماتیک، سفیر جمهوری اسلامی را در اعتراض به این اقدامات احضار کرد تا پیام صریح دولت بریتانیا را مبنی بر عدم مدارا با تهدیدات امنیتی در خاک این کشور دریافت کند.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 23.54,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25497,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25497",
+          "timestamp": 1791818033.715484
         }
       ],
       "replies": [],
@@ -7114,7 +7250,7 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 179,
+    "@DidebanJang": 182,
     "@DidehbanEghtesad": 15,
     "@DidebanEterazat": 9,
     "@VahidOnlineAI": 62,
@@ -7122,36 +7258,36 @@
   },
   "channel_watermarks": {
     "Alibk3": 38835,
-    "VahidHeadline": 326089,
-    "VahidOOnLine": 264770,
-    "RadioFarda": 162275,
-    "IranintlTV": 361903,
-    "Tasnimnews": 450830,
-    "Farsna": 467982,
-    "isna94": 408479,
-    "irna_1313": 461546,
-    "akharinkhabar": 637895,
-    "khabarfouri": 569197,
-    "akhbarefori": 697767,
-    "dw_farsi": 131103,
-    "entekhab_ir": 383171,
-    "Khabar_Fouri": 551308,
-    "khabari": 201100,
-    "thezoomit": 103736,
-    "farsivoa": 233524,
-    "myITiran": 18265,
-    "Farsi_Iranwire": 94621,
-    "bbcpersian": 293245,
-    "Alarabiya_far": 152047,
+    "VahidHeadline": 326098,
+    "VahidOOnLine": 264781,
+    "RadioFarda": 162277,
+    "IranintlTV": 361914,
+    "Tasnimnews": 450857,
+    "Farsna": 467989,
+    "isna94": 408485,
+    "irna_1313": 461566,
+    "akharinkhabar": 637908,
+    "khabarfouri": 569204,
+    "akhbarefori": 697785,
+    "dw_farsi": 131104,
+    "entekhab_ir": 383177,
+    "Khabar_Fouri": 551318,
+    "khabari": 201108,
+    "thezoomit": 103737,
+    "farsivoa": 233529,
+    "myITiran": 18266,
+    "Farsi_Iranwire": 94624,
+    "bbcpersian": 293250,
+    "Alarabiya_far": 152053,
     "thezoomon": 5239,
-    "Mr_Economy": 63959,
-    "Eghtesadnews_com": 370676,
-    "Digiato": 114044,
-    "Indypersian": 180029,
-    "withyashar": 25493,
-    "euronewspe": 90529,
-    "Economic_News_Channel": 82697,
-    "farsna": 467982,
+    "Mr_Economy": 63961,
+    "Eghtesadnews_com": 370677,
+    "Digiato": 114047,
+    "Indypersian": 180036,
+    "withyashar": 25497,
+    "euronewspe": 90532,
+    "Economic_News_Channel": 82704,
+    "farsna": 467989,
     "persiannbloomberg": 68133,
     "VahidOnline": 78699,
     "iliaen": 4744
@@ -7234,8 +7370,8 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 3,
-    "gemini-3.5-flash-lite": 92,
+    "gemini-3.5-flash-lite": 104,
     "gemini-2.5-flash": 1
   },
-  "last_saved": "2026-10-12 14:16:20 UTC"
+  "last_saved": "2026-10-12 15:15:35 UTC"
 }
