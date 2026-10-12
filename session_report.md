@@ -1,8 +1,10 @@
 # Sentinel Session Report
 
-- **Uptime:** 37 minutes
-- **Messages Processed:** 365
-- **Last Message Text:** 📻پادکست برنامه ۶۰ دقیقه، دوشنبه ۲۰ مهر ۱۴۰۵ 
+- **Uptime:** 35 minutes
+- **Messages Processed:** 267
+- **Last Message Text:** ⬇️شنیده شدن صدای انفجار در کی‌یف
 
-جنگ میان حوثی‌های یمن و سعودی‌ها بالا گرفته. همین دقای...
-- **Last Message Time:** 2026-10-12 19:38:33
+🔷بنابرگزارش‌ها، صدای ۶ انفجار در کی‌یف، پایتخت اوکراین شنیده شد.
+
+...
+- **Last Message Time:** 2026-10-12 20:14:52

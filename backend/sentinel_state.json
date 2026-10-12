@@ -4,20 +4,20 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "recovered_source",
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
+      "recovered_source"
     ],
     "iliaen_4743": [
       "recovered_source",
       "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
     ],
     "VahidOnline_78687": [
-      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78694": [
-      "recovered_source",
-      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
+      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
+      "recovered_source"
     ],
     "withyashar_25419": [
       "withyashar_report",
@@ -27,24 +27,24 @@
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
     ],
     "withyashar_25422": [
       "withyashar_report",
       "recovered_source"
     ],
     "withyashar_25423": [
-      "recovered_source",
-      "حملات نظامی در ایران، بازار"
+      "حملات نظامی در ایران، بازار",
+      "recovered_source"
     ],
     "withyashar_25428": [
       "withyashar_report",
       "recovered_source"
     ],
     "withyashar_25426": [
-      "recovered_source",
-      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان"
+      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
+      "recovered_source"
     ],
     "withyashar_25427": [
       "فعالیت هوایی و جنگنده در آمریکا"
@@ -91,8 +91,8 @@
       "withyashar_report"
     ],
     "withyashar_25442": [
-      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
     ],
     "withyashar_25443": [
       "withyashar_report",
@@ -117,8 +117,8 @@
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "recovered_source",
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
+      "recovered_source"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
@@ -434,8 +434,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "recovered_source",
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
+      "recovered_source"
     ],
     "VahidOnline_78700": [
       "recovered_source"
@@ -1221,13 +1221,6 @@
       "pattern": "recovered_source",
       "text": "🔕 **هشدار منطقه‌ای: ثبت حرارت غیرعادی در تاسیسات گازی عربستان** 📸\n\n📝 **چکیده رویداد:**\nسامانه‌های پایش حرارتی از ثبت گرمای بی‌سابقه معادل ۶۱۶ مگاوات در کارخانه گاز شدقم در منطقه شرقی عربستان خبر دادند؛ میزانی که حدود ۹ برابر بالاتر از میانگین طبیعی آن است.\n\n🔗 **منبع خبر:**\n- [Ali Bk - اخبار منطقه](https://t.me/Alibk3/38513) (پوشش تحولات منطقه)\n\n#دیده‌بان_اقتصاد\n@DidehbanEghtesad",
       "sent_msg_id": 14,
-      "target_channel": "@DidehbanEghtesad"
-    },
-    "Alibk3_38497": {
-      "time": 1791576591.0,
-      "pattern": "recovered_source",
-      "text": "🔕 **هشدار منطقه‌ای: آسيب شدید و آتش‌سوزی در مصفای نفت عدن** 📹\n\n📝 **چکیده رویداد:**\nتصاویر ماهواره‌ای نشان می‌دهند که دو مخزن ذخیره‌سازی نفت در مصفای عدن دچار آتش‌سوزی شده و بخش‌هایی از واحدهای پردازش این تأسیسات نیز متحمل خسارات ساختاری واضحی شده‌اند.\n\n🔗 **منبع خبر:**\n- [Ali Bk - اخبار منطقه](https://t.me/Alibk3/38497) (پوشش تحولات منطقه)\n\n#دیده‌بان_اقتصاد\n@DidehbanEghtesad",
-      "sent_msg_id": 13,
       "target_channel": "@DidehbanEghtesad"
     },
     "VahidOnline_78695": {
@@ -2017,6 +2010,24 @@
       "target_channel": "@DidebanJang",
       "time": 1791833370.33488,
       "thread_key": "akhbarefori_697828"
+    },
+    "withyashar_25514": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 198,
+      "time": 1791834995.3271341,
+      "text": "اتاق جنگ با یاشار : ترابری نظامی آمریکا همچنان با شدت ادامه دارد… از ۲۴ ساعت گذشته تا همین دقایقی پیش! ترامپ حرفه‌ای بارها تاکیید کرده که زمان به نفع او است !\n@WarRoom 🚨🚨🚨🚨🚨",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 102.98
+    },
+    "withyashar_25515": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 199,
+      "time": 1791835785.0346358,
+      "text": "مسابقات دختر شایسته جهان عمدتاً در چهار رقابت شناخته‌شده با عنوان «Big Four» شامل Miss Universe، Miss World، Miss International و Miss Earth دسته‌بندی می‌شوند. در میان آن‌ها، میس یونیورس و میس ورلد از قدیمی‌ترین و شناخته‌شده‌ترین رقابت‌های بین‌المللی هستند. دونالد ترامپ از سال ۱۹۹۶ تا ۲۰۱۵ مالک سازمان میس یونیورس بود؛ ابتدا به‌صورت مشترک با شبکه NBC و سپس به‌طور کامل. او در سپتامبر ۲۰۱۵ این سازمان را فروخت و دیگر مالک آن نیست. \nدیگر مسابقات صرفاً با تبلیغات، جذب اسپانسر یا پرداخت هزینه شرکت‌کنندگان تعیین می‌شود؛ مسابقات خارج از بیگ فور اعتبار منطقه‌ای یا تخصصی ندارند.\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 239.8
     }
   },
   "last_alert_time": {
@@ -5130,30 +5141,6 @@
           "media_type": "photo",
           "link": "https://t.me/Alibk3/38513",
           "timestamp": 1791584325.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_اقتصاد"
-    },
-    "Alibk3_38497": {
-      "channel": "@DidehbanEghtesad",
-      "alert_msg_id": 13,
-      "node": "Alibk3",
-      "root_id": 38497,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791576591.0,
-      "category": "ECONOMY",
-      "is_iran_related": false,
-      "title": "آسيب شدید و آتش‌سوزی در مصفای نفت عدن",
-      "summary": "تصاویر ماهواره‌ای نشان می‌دهند که دو مخزن ذخیره‌سازی نفت در مصفای عدن دچار آتش‌سوزی شده و بخش‌هایی از واحدهای پردازش این تأسیسات نیز متحمل خسارات ساختاری واضحی شده‌اند.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38497,
-          "media_type": "video",
-          "link": "https://t.me/Alibk3/38497",
-          "timestamp": 1791576591.0
         }
       ],
       "replies": [],
@@ -9185,6 +9172,58 @@
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25514": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 198,
+      "node": "withyashar",
+      "root_id": 25514,
+      "root_text": "اتاق جنگ با یاشار : ترابری نظامی آمریکا همچنان با شدت ادامه دارد… از ۲۴ ساعت گذشته تا همین دقایقی پیش! ترامپ حرفه‌ای بارها تاکیید کرده که زمان به نفع او است !\n@WarRoom 🚨🚨🚨🚨🚨",
+      "root_media_type": "video",
+      "timestamp": 1791834995.3285608,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "اتاق جنگ با یاشار : ترابری نظامی آمریکا همچنان با شدت ادامه دارد… از ۲۴ ساعت گذشته تا ه...",
+      "summary": "اتاق جنگ با یاشار : ترابری نظامی آمریکا همچنان با شدت ادامه دارد… از ۲۴ ساعت گذشته تا همین دقایقی پیش! ترامپ حرفه‌ای بارها تاکیید کرده که زمان به نفع او است !\n@WarRoom 🚨🚨🚨🚨🚨",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 102.98,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25514,
+          "media_type": "video",
+          "link": "https://t.me/withyashar/25514",
+          "timestamp": 1791834995.3285668
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25515": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 199,
+      "node": "withyashar",
+      "root_id": 25515,
+      "root_text": "مسابقات دختر شایسته جهان عمدتاً در چهار رقابت شناخته‌شده با عنوان «Big Four» شامل Miss Universe، Miss World، Miss International و Miss Earth دسته‌بندی می‌شوند. در میان آن‌ها، میس یونیورس و میس ورلد از قدیمی‌ترین و شناخته‌شده‌ترین رقابت‌های بین‌المللی هستند. دونالد ترامپ از سال ۱۹۹۶ تا ۲۰۱۵ مالک سازمان میس یونیورس بود؛ ابتدا به‌صورت مشترک با شبکه NBC و سپس به‌طور کامل. او در سپتامبر ۲۰۱۵ این سازمان را فروخت و دیگر مالک آن نیست. \nدیگر مسابقات صرفاً با تبلیغات، جذب اسپانسر یا پرداخت هزینه شرکت‌کنندگان تعیین می‌شود؛ مسابقات خارج از بیگ فور اعتبار منطقه‌ای یا تخصصی ندارند.\n@WarRoom",
+      "root_media_type": "voice",
+      "timestamp": 1791835785.035968,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "مسابقات دختر شایسته جهان عمدتاً در چهار رقابت شناخته‌شده با عنوان «Big Four» شامل Miss ...",
+      "summary": "مسابقات دختر شایسته جهان عمدتاً در چهار رقابت شناخته‌شده با عنوان «Big Four» شامل Miss Universe، Miss World، Miss International و Miss Earth دسته‌بندی می‌شوند. در میان آن‌ها، میس یونیورس و میس ورلد از قدیمی‌ترین و شناخته‌شده‌ترین رقابت‌های بین‌المللی هستند. دونالد ترامپ از سال ۱۹۹۶ تا ۲۰۱۵ مالک سازمان میس یونیورس بود؛ ابتدا به‌صورت مشترک با شبکه NBC و سپس به‌طور کامل. او در سپتامبر ۲۰۱۵ این سازمان را فروخت و دیگر مالک آن نیست. \nدیگر مسابقات صرفاً با تبلیغات، جذب اسپانسر یا پرداخت هزینه شرکت‌کنندگان تعیین می‌شود؛ مسابقات خارج از بیگ فور اعتبار منطقه‌ای یا تخصصی ندارند.",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 239.8,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25515,
+          "media_type": "voice",
+          "link": "https://t.me/withyashar/25515",
+          "timestamp": 1791835785.0359733
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
     }
   },
   "reply_to_root_map": {
@@ -9236,44 +9275,44 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 197,
+    "@DidebanJang": 199,
     "@DidehbanEghtesad": 15,
     "@DidebanEterazat": 9,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38880,
-    "VahidHeadline": 326131,
-    "VahidOOnLine": 264823,
-    "RadioFarda": 162287,
-    "IranintlTV": 361958,
-    "Tasnimnews": 450940,
-    "Farsna": 468038,
-    "isna94": 408521,
-    "irna_1313": 461631,
-    "akharinkhabar": 637962,
-    "khabarfouri": 569233,
-    "akhbarefori": 697869,
+    "Alibk3": 38884,
+    "VahidHeadline": 326136,
+    "VahidOOnLine": 264824,
+    "RadioFarda": 162288,
+    "IranintlTV": 361962,
+    "Tasnimnews": 450957,
+    "Farsna": 468054,
+    "isna94": 408527,
+    "irna_1313": 461635,
+    "akharinkhabar": 637973,
+    "khabarfouri": 569234,
+    "akhbarefori": 697883,
     "dw_farsi": 131111,
-    "entekhab_ir": 383206,
-    "Khabar_Fouri": 551345,
-    "khabari": 201151,
+    "entekhab_ir": 383209,
+    "Khabar_Fouri": 551347,
+    "khabari": 201162,
     "thezoomit": 103741,
-    "farsivoa": 233555,
+    "farsivoa": 233559,
     "myITiran": 18266,
-    "Farsi_Iranwire": 94633,
-    "bbcpersian": 293257,
-    "Alarabiya_far": 152074,
+    "Farsi_Iranwire": 94634,
+    "bbcpersian": 293261,
+    "Alarabiya_far": 152077,
     "thezoomon": 5245,
-    "Mr_Economy": 63974,
-    "Eghtesadnews_com": 370701,
+    "Mr_Economy": 63977,
+    "Eghtesadnews_com": 370703,
     "Digiato": 114051,
     "Indypersian": 180052,
-    "withyashar": 25513,
-    "euronewspe": 90542,
-    "Economic_News_Channel": 82708,
-    "farsna": 468038,
+    "withyashar": 25515,
+    "euronewspe": 90543,
+    "Economic_News_Channel": 82713,
+    "farsna": 468055,
     "persiannbloomberg": 68157,
     "VahidOnline": 78704,
     "iliaen": 4744
@@ -9364,5 +9403,5 @@
     "gemini-3.5-flash-lite": 316,
     "gemini-2.5-flash": 17
   },
-  "last_saved": "2026-10-12 19:39:15 UTC"
+  "last_saved": "2026-10-12 20:14:53 UTC"
 }
