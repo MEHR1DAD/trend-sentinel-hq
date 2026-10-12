@@ -1,10 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 267
-- **Last Message Text:** ⬇️شنیده شدن صدای انفجار در کی‌یف
+- **Messages Processed:** 172
+- **Last Message Text:** غریب آبادی: ایران از دیپلماسی استقبال می‌کند
 
-🔷بنابرگزارش‌ها، صدای ۶ انفجار در کی‌یف، پایتخت اوکراین شنیده شد.
-
-...
-- **Last Message Time:** 2026-10-12 20:14:52
+🔹کاظم غریب آبادی معاون امور حقوقی و بین‌المللی وزارت ا...
+- **Last Message Time:** 2026-10-12 20:49:42

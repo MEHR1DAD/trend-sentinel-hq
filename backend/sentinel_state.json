@@ -8,12 +8,12 @@
       "recovered_source"
     ],
     "iliaen_4743": [
-      "recovered_source",
-      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
+      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
+      "recovered_source"
     ],
     "VahidOnline_78687": [
-      "recovered_source",
-      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
+      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
+      "recovered_source"
     ],
     "VahidOnline_78694": [
       "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
@@ -27,8 +27,8 @@
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "recovered_source",
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
+      "recovered_source"
     ],
     "withyashar_25422": [
       "withyashar_report",
@@ -50,8 +50,8 @@
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "recovered_source",
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
+      "recovered_source"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -91,8 +91,8 @@
       "withyashar_report"
     ],
     "withyashar_25442": [
-      "recovered_source",
-      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
+      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا",
+      "recovered_source"
     ],
     "withyashar_25443": [
       "withyashar_report",
@@ -546,8 +546,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "recovered_source",
-      "آتش‌سوزی در پایگاه هوایی ایران"
+      "آتش‌سوزی در پایگاه هوایی ایران",
+      "recovered_source"
     ],
     "Alibk3_38863": [
       "recovered_source"
@@ -2028,6 +2028,24 @@
       "pattern": "withyashar_autonomous",
       "ai_model": "heuristic_fallback",
       "latency_sec": 239.8
+    },
+    "withyashar_25516": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 200,
+      "time": 1791836948.2791133,
+      "text": "هاآرتص: نتانیاهو در تلاش است با جلب موافقت عربستان، زمینه حملات گسترده اسرائیل برای نابودی حوثی‌های یمن را فراهم کند. به گزارش این روزنامه، محمد بن سلمان، ولیعهد عربستان، فعلاً با این اقدام مخالفت کرده و نگران پیامدهای سیاسی و واکنش افکار عمومی عربستان به مشارکت اسرائیل در جنگ یمن است.\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 111.84
+    },
+    "withyashar_25517": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 201,
+      "time": 1791836987.8392377,
+      "text": "فرانسه نفتکش DF Peak را در اقیانوس هند، در جنوب جزیره رئونیون، توقیف کرد. شواهد نشان می‌دهد این نفتکش بخشی از ناوگان سایه روسیه است که برای انتقال نفت و فرآورده‌های نفتی و دور زدن تحریم‌های غرب فعالیت می‌کند. این کشتی با پرچم بنین حرکت می‌کرد و به استفاده از پرچم غیرقانونی و حمل‌ونقل غیرقانونی سوخت مظنون است. نفتکش در فهرست تحریم‌های اتحادیه اروپا قرار دارد. تاکنون ارتباط مستقیمی میان این کشتی و صادرات نفت ایران تأیید نشده است.\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 87.62
     }
   },
   "last_alert_time": {
@@ -9224,6 +9242,58 @@
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25516": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 200,
+      "node": "withyashar",
+      "root_id": 25516,
+      "root_text": "هاآرتص: نتانیاهو در تلاش است با جلب موافقت عربستان، زمینه حملات گسترده اسرائیل برای نابودی حوثی‌های یمن را فراهم کند. به گزارش این روزنامه، محمد بن سلمان، ولیعهد عربستان، فعلاً با این اقدام مخالفت کرده و نگران پیامدهای سیاسی و واکنش افکار عمومی عربستان به مشارکت اسرائیل در جنگ یمن است.\n@WarRoom",
+      "root_media_type": "text",
+      "timestamp": 1791836948.3340507,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "هاآرتص: نتانیاهو در تلاش است با جلب موافقت عربستان، زمینه حملات گسترده اسرائیل برای ناب...",
+      "summary": "هاآرتص: نتانیاهو در تلاش است با جلب موافقت عربستان، زمینه حملات گسترده اسرائیل برای نابودی حوثی‌های یمن را فراهم کند. به گزارش این روزنامه، محمد بن سلمان، ولیعهد عربستان، فعلاً با این اقدام مخالفت کرده و نگران پیامدهای سیاسی و واکنش افکار عمومی عربستان به مشارکت اسرائیل در جنگ یمن است.",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 111.84,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25516,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25516",
+          "timestamp": 1791836948.334062
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25517": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 201,
+      "node": "withyashar",
+      "root_id": 25517,
+      "root_text": "فرانسه نفتکش DF Peak را در اقیانوس هند، در جنوب جزیره رئونیون، توقیف کرد. شواهد نشان می‌دهد این نفتکش بخشی از ناوگان سایه روسیه است که برای انتقال نفت و فرآورده‌های نفتی و دور زدن تحریم‌های غرب فعالیت می‌کند. این کشتی با پرچم بنین حرکت می‌کرد و به استفاده از پرچم غیرقانونی و حمل‌ونقل غیرقانونی سوخت مظنون است. نفتکش در فهرست تحریم‌های اتحادیه اروپا قرار دارد. تاکنون ارتباط مستقیمی میان این کشتی و صادرات نفت ایران تأیید نشده است.\n@WarRoom",
+      "root_media_type": "text",
+      "timestamp": 1791836987.8406293,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "فرانسه نفتکش DF Peak را در اقیانوس هند، در جنوب جزیره رئونیون، توقیف کرد. شواهد نشان می...",
+      "summary": "فرانسه نفتکش DF Peak را در اقیانوس هند، در جنوب جزیره رئونیون، توقیف کرد. شواهد نشان می‌دهد این نفتکش بخشی از ناوگان سایه روسیه است که برای انتقال نفت و فرآورده‌های نفتی و دور زدن تحریم‌های غرب فعالیت می‌کند. این کشتی با پرچم بنین حرکت می‌کرد و به استفاده از پرچم غیرقانونی و حمل‌ونقل غیرقانونی سوخت مظنون است. نفتکش در فهرست تحریم‌های اتحادیه اروپا قرار دارد. تاکنون ارتباط مستقیمی میان این کشتی و صادرات نفت ایران تأیید نشده است.",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 87.62,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25517,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25517",
+          "timestamp": 1791836987.8406346
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
     }
   },
   "reply_to_root_map": {
@@ -9275,45 +9345,45 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 199,
+    "@DidebanJang": 201,
     "@DidehbanEghtesad": 15,
     "@DidebanEterazat": 9,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38884,
-    "VahidHeadline": 326136,
-    "VahidOOnLine": 264824,
+    "Alibk3": 38897,
+    "VahidHeadline": 326138,
+    "VahidOOnLine": 264826,
     "RadioFarda": 162288,
-    "IranintlTV": 361962,
-    "Tasnimnews": 450957,
-    "Farsna": 468054,
-    "isna94": 408527,
-    "irna_1313": 461635,
-    "akharinkhabar": 637973,
-    "khabarfouri": 569234,
-    "akhbarefori": 697883,
+    "IranintlTV": 361971,
+    "Tasnimnews": 450964,
+    "Farsna": 468061,
+    "isna94": 408532,
+    "irna_1313": 461640,
+    "akharinkhabar": 637979,
+    "khabarfouri": 569244,
+    "akhbarefori": 697894,
     "dw_farsi": 131111,
-    "entekhab_ir": 383209,
-    "Khabar_Fouri": 551347,
-    "khabari": 201162,
+    "entekhab_ir": 383212,
+    "Khabar_Fouri": 551350,
+    "khabari": 201168,
     "thezoomit": 103741,
-    "farsivoa": 233559,
+    "farsivoa": 233563,
     "myITiran": 18266,
     "Farsi_Iranwire": 94634,
-    "bbcpersian": 293261,
-    "Alarabiya_far": 152077,
-    "thezoomon": 5245,
-    "Mr_Economy": 63977,
-    "Eghtesadnews_com": 370703,
+    "bbcpersian": 293263,
+    "Alarabiya_far": 152078,
+    "thezoomon": 5246,
+    "Mr_Economy": 63978,
+    "Eghtesadnews_com": 370705,
     "Digiato": 114051,
-    "Indypersian": 180052,
-    "withyashar": 25515,
-    "euronewspe": 90543,
+    "Indypersian": 180054,
+    "withyashar": 25517,
+    "euronewspe": 90544,
     "Economic_News_Channel": 82713,
-    "farsna": 468055,
-    "persiannbloomberg": 68157,
+    "farsna": 468061,
+    "persiannbloomberg": 68158,
     "VahidOnline": 78704,
     "iliaen": 4744
   },
@@ -9399,9 +9469,9 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 4,
-    "gemini-3.5-flash-lite": 316,
-    "gemini-2.5-flash": 17
+    "gemini-3.8-flash": 5,
+    "gemini-3.5-flash-lite": 317,
+    "gemini-2.5-flash": 18
   },
-  "last_saved": "2026-10-12 20:14:53 UTC"
+  "last_saved": "2026-10-12 20:50:24 UTC"
 }
