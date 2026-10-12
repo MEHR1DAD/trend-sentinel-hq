@@ -4,8 +4,8 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4743": [
       "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
@@ -16,31 +16,31 @@
       "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78694": [
-      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
     ],
     "withyashar_25419": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25420": [
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "recovered_source",
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
-    ],
-    "withyashar_25422": [
-      "recovered_source",
-      "withyashar_report"
-    ],
-    "withyashar_25423": [
-      "حملات نظامی در ایران، بازار",
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
       "recovered_source"
     ],
-    "withyashar_25428": [
+    "withyashar_25422": [
+      "withyashar_report",
+      "recovered_source"
+    ],
+    "withyashar_25423": [
       "recovered_source",
-      "withyashar_report"
+      "حملات نظامی در ایران، بازار"
+    ],
+    "withyashar_25428": [
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25426": [
       "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
@@ -78,8 +78,8 @@
       "withyashar_report"
     ],
     "withyashar_25438": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25439": [
       "withyashar_report"
@@ -91,41 +91,41 @@
       "withyashar_report"
     ],
     "withyashar_25442": [
-      "recovered_source",
-      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
+      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا",
+      "recovered_source"
     ],
     "withyashar_25443": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25444": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25451": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25461": [
       "withyashar_report"
     ],
     "withyashar_25462": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25460": [
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "recovered_source",
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
+      "recovered_source"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
     ],
     "withyashar_25465": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "Alibk3_38780": [
       "recovered_source"
@@ -1188,6 +1188,27 @@
       "target_channel": "@DidebanJang",
       "time": 1791798262.3605778,
       "thread_key": "withyashar_25466"
+    },
+    "withyashar_25483": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 169,
+      "time": 1791804694.9658968,
+      "text": "خبرگزاری معاریو: برآورد نهادهای امنیتی نشون میده اگر ایران [به اسرائیل] حمله نکنه رویارویی به بعد از انتخابات موکول خواهد شد.\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 126.64
+    },
+    "Alibk3_38813": {
+      "sent_msg_id": 155,
+      "target_channel": "@DidebanJang",
+      "time": 1791805390.3985875,
+      "thread_key": "withyashar_25451"
+    },
+    "Alibk3_38814": {
+      "sent_msg_id": 160,
+      "target_channel": "@DidebanJang",
+      "time": 1791805694.6835845,
+      "thread_key": "Alibk3_38780"
     }
   },
   "last_alert_time": {},
@@ -4791,8 +4812,8 @@
       "timestamp": 1791764079.6951103,
       "category": "WAR",
       "is_iran_related": false,
-      "title": "فلج شدن هوانوردی عربستان: توقف عملیات فرودگاه الدمام همزمان با هشدار پروازی آمریکا و استقرار هواپیمای هشدار زودهنگام",
-      "summary": "به دنبال تشدید تهدیدات امنیتی، حملات موشکی و پهپادی و صدور هشدار اضطراری از سوی اداره هوانوردی فدرال آمریکا برای آسمان عربستان، گزارش‌ها حاکی از توقف فعالیت و پروازها در فرودگاه الدمام است. این تحولات، به همراه پرواز هواپیمای رصد و انذار مبکر E-3G آمریکا در جنوب ریاض، نشان‌دهنده شکل‌گیری یک موج خطرناک و هماهنگ از تهدیدات نظامی و مختل شدن زیرساخت‌های هوانوردی در این کشور است.",
+      "title": "فلج شدن هوانوردی و فروپاشی نظامی ائتلاف در عربستان: توقف عملیات فرودگاه الدمام همزمان با پیشروی‌های انصارالله در لحج و تهدید باب‌المندب",
+      "summary": "در پی تشدید تهدیدات امنیتی، حملات موشکی و پهپادی و صدور هشدار اضطراری هوانوردی آمریکا برای آسمان عربستان که با توقف پروازهای فرودگاه الدمام و استقرار هواپیمای هشدار زودهنگام همراه بود، تحولات میدانی در جبهه‌های جنوبی نیز به ضرر ائتلاف سعودی رقم خورده است. با پیشروی نیروهای یمنی در مدیریه المضاربة در استان لحج و رسیدن به رأس العارة، نیروهای موالِی به عربستان در جبهه باب‌المندب در محاصره قرار گرفته و صفوف آنان دچار فروپاشی شده است؛ امری که نشان‌دهنده عمق بحران و شکست‌های زنجیره‌ای نظامی و زیرساختی این ائتلاف است.",
       "sources": [
         {
           "node": "Alibk3",
@@ -4828,11 +4849,18 @@
           "media_type": "photo",
           "link": "https://t.me/Alibk3/38803",
           "timestamp": 1791797496.3604
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38814,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38814",
+          "timestamp": 1791805694.5164602
         }
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ",
-      "updated_at": 1791797496.3604085,
+      "updated_at": 1791805694.5164702,
       "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
     },
     "withyashar_25465": {
@@ -4892,9 +4920,9 @@
       "root_media_type": "text",
       "timestamp": 1791750130.0,
       "category": "WAR",
-      "is_iran_related": false,
-      "title": "برخورد موشک بالستیک حوثی‌ها به ترمینال ۳ فرودگاه",
-      "summary": "انتشار تصاویر و ویدیوهای میدانی از اصابت موشک بالستیک شلیک‌شده توسط نیروهای حوثی به پایانه شماره ۳ فرودگاه و وقوع خسارات در محل برخورد.",
+      "is_iran_related": true,
+      "title": "گسترش حملات موشکی حوثی‌های یمن و اصابت به ترمینال ۳ فرودگاه",
+      "summary": "نیروهای یمنی (حوثی‌ها) در ادامه عملیات‌های خود، ضمن پیشروی در مناطق مختلف از جمله درگیری‌ها در مدیریت المسراخ، اقدام به شلیک موشک بالستیک به ترمینال شماره ۳ فرودگاه کرده‌اند که تصاویر و ویدیوهای میدانی حاکی از اصابت موشک و وقوع خسارت در محل است.",
       "tag": "#دیده‌بان_جنگ",
       "sources": [
         {
@@ -4903,9 +4931,18 @@
           "media_type": "text",
           "link": "https://t.me/withyashar/25451",
           "timestamp": 1791750130.0
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38813,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38813",
+          "timestamp": 1791805390.21512
         }
       ],
-      "replies": []
+      "replies": [],
+      "updated_at": 1791805390.2151265,
+      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
     },
     "withyashar_25447": {
       "channel": "@DidebanJang",
@@ -5958,6 +5995,32 @@
       "tag": "#دیده‌بان_جنگ",
       "updated_at": 1791798262.121074,
       "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
+    },
+    "withyashar_25483": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 169,
+      "node": "withyashar",
+      "root_id": 25483,
+      "root_text": "خبرگزاری معاریو: برآورد نهادهای امنیتی نشون میده اگر ایران [به اسرائیل] حمله نکنه رویارویی به بعد از انتخابات موکول خواهد شد.\n@WarRoom",
+      "root_media_type": "text",
+      "timestamp": 1791804694.9676135,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "نهادهای امنیتی اسرائیل وقوع هرگونه جنگ فراگیر را به پس از انتخابات موکول می‌کنند",
+      "summary": "بر اساس ارزیابی‌های تازه نهادهای امنیتی رژیم صهیونیستی که توسط روزنامه معاریو منتشر شده است، چنانچه جمهوری اسلامی ایران در واکنش به ترورهای اخیر دست به اقدام نظامی مستقیم نزند، سایه جنگ و رویارویی بزرگ تا پس از برگزاری انتخابات آمریکا تعلیق خواهد شد. این تحلیل نشان می‌دهد که معادلات بازدارندگی متقابل و پالس‌های ارسالی از سوی تهران، محاسبات امنیتی تل‌آویو را دستخوش تغییر کرده است.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 126.64,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25483,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25483",
+          "timestamp": 1791804694.9676182
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
     }
   },
   "reply_to_root_map": {
@@ -6009,47 +6072,47 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 163,
+    "@DidebanJang": 169,
     "@DidehbanEghtesad": 15,
     "@DidebanEterazat": 7,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38804,
-    "withyashar": 25477,
+    "Alibk3": 38814,
+    "VahidHeadline": 326067,
+    "VahidOOnLine": 264746,
+    "RadioFarda": 162268,
+    "IranintlTV": 361880,
+    "Tasnimnews": 450809,
+    "Farsna": 467940,
+    "isna94": 408465,
+    "irna_1313": 461475,
+    "akharinkhabar": 637865,
+    "khabarfouri": 569177,
+    "akhbarefori": 697716,
+    "dw_farsi": 131086,
+    "entekhab_ir": 383158,
+    "Khabar_Fouri": 551296,
+    "khabari": 201078,
+    "thezoomit": 103723,
+    "farsivoa": 233508,
+    "myITiran": 18262,
+    "Farsi_Iranwire": 94614,
+    "bbcpersian": 293240,
+    "Alarabiya_far": 152028,
+    "thezoomon": 5236,
+    "Mr_Economy": 63953,
+    "Eghtesadnews_com": 370662,
+    "Digiato": 114037,
+    "Indypersian": 180017,
+    "withyashar": 25483,
+    "euronewspe": 90524,
+    "Economic_News_Channel": 82688,
     "iliaen": 4744,
     "VahidOnline": 78696,
-    "entekhab_ir": 383148,
-    "Khabar_Fouri": 551286,
-    "akhbarefori": 697689,
-    "Tasnimnews": 450791,
-    "isna94": 408444,
-    "Farsi_Iranwire": 94607,
-    "farsna": 467911,
-    "khabarfouri": 569161,
-    "VahidHeadline": 326042,
-    "bbcpersian": 293235,
-    "Farsna": 467916,
-    "irna_1313": 461398,
-    "IranintlTV": 361862,
-    "khabari": 201065,
-    "akharinkhabar": 637845,
-    "Mr_Economy": 63947,
-    "Eghtesadnews_com": 370652,
-    "Indypersian": 180010,
-    "VahidOOnLine": 264717,
-    "euronewspe": 90518,
-    "Digiato": 114024,
-    "farsivoa": 233495,
-    "Alarabiya_far": 152020,
-    "myITiran": 18261,
-    "thezoomit": 103713,
-    "thezoomon": 5230,
-    "dw_farsi": 131077,
-    "RadioFarda": 162267,
-    "Economic_News_Channel": 82680,
-    "persiannbloomberg": 68108
+    "farsna": 467940,
+    "persiannbloomberg": 68124
   },
   "vahid_post_time": {
     "78694": 1791735142.0123565
@@ -6125,5 +6188,9 @@
     "4742": 6,
     "4744": 8
   },
-  "last_saved": "2026-10-12 09:47:20 UTC"
+  "gemini_model_stats": {
+    "gemini-3.8-flash": 1,
+    "gemini-3.5-flash-lite": 11
+  },
+  "last_saved": "2026-10-12 11:53:13 UTC"
 }
