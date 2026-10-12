@@ -4,8 +4,8 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4743": [
       "recovered_source",
@@ -16,12 +16,12 @@
       "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78694": [
-      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
     ],
     "withyashar_25419": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25420": [
       "withyashar_report"
@@ -31,27 +31,27 @@
       "recovered_source"
     ],
     "withyashar_25422": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25423": [
-      "حملات نظامی در ایران، بازار",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در ایران، بازار"
     ],
     "withyashar_25428": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25426": [
-      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان"
     ],
     "withyashar_25427": [
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -78,8 +78,8 @@
       "withyashar_report"
     ],
     "withyashar_25438": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25439": [
       "withyashar_report"
@@ -95,37 +95,37 @@
       "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
     ],
     "withyashar_25443": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25444": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25451": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25461": [
       "withyashar_report"
     ],
     "withyashar_25462": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25460": [
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
     ],
     "withyashar_25465": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "Alibk3_38780": [
       "recovered_source"
@@ -1531,6 +1531,57 @@
       "target_channel": "@DidebanJang",
       "time": 1791821846.9550955,
       "thread_key": "withyashar_25498"
+    },
+    "Alibk3_38843": {
+      "sent_msg_id": 183,
+      "target_channel": "@DidebanJang",
+      "time": 1791822576.559285,
+      "thread_key": "withyashar_25498"
+    },
+    "withyashar_25500": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 186,
+      "time": 1791822652.26938,
+      "text": "پست جدید ترامپ در تروث، وضعیت ۱۵۹ کشتی نیروی دریایی جمهوری اسلامی. در زمان ترامپ : کف دریا در زمان دیگر رئیس‌جمهورها: روی آب.\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 3.09
+    },
+    "withyashar_25501": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 187,
+      "time": 1791823362.63629,
+      "text": "امانی ، سفیر پیشین رژیم در لبنان : قرار بود پیجرها بررسی شود و برای همین عملیات را زودتر اجرا کردند\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 2.46
+    },
+    "Alibk3_38846": {
+      "sent_msg_id": 183,
+      "target_channel": "@DidebanJang",
+      "time": 1791823585.800991,
+      "thread_key": "withyashar_25498"
+    },
+    "Alibk3_38847": {
+      "sent_msg_id": 183,
+      "target_channel": "@DidebanJang",
+      "time": 1791824178.1856372,
+      "thread_key": "withyashar_25498"
+    },
+    "Alibk3_38848": {
+      "sent_msg_id": 183,
+      "target_channel": "@DidebanJang",
+      "time": 1791824252.2349157,
+      "thread_key": "withyashar_25498"
+    },
+    "withyashar_25502": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 188,
+      "time": 1791824511.7494283,
+      "text": "ممکن است آمریکا در تلاش باشد ایران را به حمله اول تحریک کند\nآلن ایر، عضو سابق تیم مذاکره کننده آمریکا نوشت: ممکن است آمریکا در تلاش باشد ایران را به حمله اول تحریک کند. احتمال انجام دور دیگری از حملات آمریکا علیه ایران بسیار زیاد است‌. با انتقال تجهیزات و نیروهای نظامی بیشتر آمریکا به منطقه و انتشار گزارش‌هایی درباره فعالیت هواپیماهای اسرائیلی در نزدیکی حریم هوایی عراق، این احتمال وجود دارد که  واشنگتن عمداً در حال آزمودن آستانه تحمل تهران باشد.\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 3.39
     }
   },
   "last_alert_time": {
@@ -7286,9 +7337,9 @@
       "root_media_type": "text",
       "timestamp": 1791819353.8091645,
       "category": "WAR",
-      "is_iran_related": true,
-      "title": "گسترش بحران زیرساختی در عربستان؛ توقف پروازهای فرودگاه جده در پی تداوم تنش‌های منطقه‌ای و ناامنی در تنگه هرمز",
-      "summary": "به دنبال تشدید بحران ژئوپلیتیک منطقه، بیانیه مشترک ۲۹ کشور علیه سپاه پاسداران و ناامنی در تنگه هرمز، اختلالات در زیرساخت‌های حیاتی عربستان سعودی گسترش یافته است. پس از تداوم توقف پروازها در فرودگاه‌های کلیدی ریاض، جازان، نجران، طائف و ينبع، گزارش‌های جدید از توقف عملیات پروازی در فرودگاه جده نیز حکایت دارد که نشان‌دهنده عمق تأثیر تنش‌های اخیر بر فضای هوایی و فرودگاه‌های اصلی این کشور است.",
+      "is_iran_related": false,
+      "title": "تشدید درگیری‌ها و پاکسازی مناطق جبل صبر، جبل حبشي و المضاربة در استان تعز یمن؛ هلاکت فرمانده ارشد ائتلاف و انتشار تصاویر تسلط نیروهای یمنی",
+      "summary": "به دنبال تشدید بحران‌ها و درگیری‌های شدید در جبهه یمن که با هلاکت 'فاروق الكعولي' فرمانده تیپ نهم صاعقه در مدیریت المضاربة و محاصره نیروهای متجاوز در جبل صبر همراه بود، تحولات میدانی در استان تعز گسترش یافت. منابع خبری از انتشار قریب‌الوقوع تصاویر مربوط به پاکسازی و تامین امنیت مدیریت جبل حبشي، مثلث البيرين و مفرق يفرس در تعز و عقب‌راندن تحشيدات نیروهای وابسته به ائتلاف سعودی خبر می‌دهند. این تحولات در حالی رخ می‌دهد که ناامنی‌ها در عربستان و واکنش‌های نظامی انگلیس نیز همزمان در جریان است.",
       "ai_model": "gemini-3.5-flash-lite",
       "latency_sec": 14.61,
       "sources": [
@@ -7319,11 +7370,39 @@
           "media_type": "photo",
           "link": "https://t.me/Alibk3/38842",
           "timestamp": 1791821846.7741325
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38843,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38843",
+          "timestamp": 1791822576.2064695
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38846,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38846",
+          "timestamp": 1791823585.5232692
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38847,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38847",
+          "timestamp": 1791824177.9754102
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38848,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38848",
+          "timestamp": 1791824252.0804417
         }
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ",
-      "updated_at": 1791821846.7741404,
+      "updated_at": 1791824252.0804565,
       "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
     },
     "withyashar_25499": {
@@ -7373,6 +7452,84 @@
           "media_type": "text",
           "link": "https://t.me/withyashar/25489",
           "timestamp": 1791821250.3492947
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25500": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 186,
+      "node": "withyashar",
+      "root_id": 25500,
+      "root_text": "پست جدید ترامپ در تروث، وضعیت ۱۵۹ کشتی نیروی دریایی جمهوری اسلامی. در زمان ترامپ : کف دریا در زمان دیگر رئیس‌جمهورها: روی آب.\n@WarRoom",
+      "root_media_type": "photo",
+      "timestamp": 1791822652.270928,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "ترامپ با انتشار تصویری ناوگان نیروی دریایی جمهوری اسلامی را تهدید به نابودی کرد",
+      "summary": "دونالد ترامپ، رئیس‌جمهور منتخب ایالات متحده، با انتشار پستی در شبکه اجتماعی «تروث سوشال» همراه با یک تصویر، مدعی شد که وضعیت ۱۵۹ فروند کشتی نیروی دریایی جمهوری اسلامی در دوران ریاست‌جمهوری او «کف دریا» و در دوران سایر رؤسای‌جمهور «روی آب» بوده است. این ادعا و تهدید غیرمستقیم، در راستای لفاظی‌های مرسوم او علیه توانمندی‌های نظامی ایران و یادآوری رویکرد تهاجمی دولت پیشین آمریکا در قبال تحرکات دریایی نیروهای مسلح ایران در خلیج فارس و آب‌های آزاد مطرح شده است.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 3.09,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25500,
+          "media_type": "photo",
+          "link": "https://t.me/withyashar/25500",
+          "timestamp": 1791822652.2709334
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25501": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 187,
+      "node": "withyashar",
+      "root_id": 25501,
+      "root_text": "امانی ، سفیر پیشین رژیم در لبنان : قرار بود پیجرها بررسی شود و برای همین عملیات را زودتر اجرا کردند\n@WarRoom",
+      "root_media_type": "video",
+      "timestamp": 1791823362.6374428,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "مجتبی امانی فاش کرد: لو رفتن موقت پیجرها عامل تعجیل اسرائیل در عملیات تروریستی لبنان شد",
+      "summary": "مجتبی امانی، سفیر پیشین ایران در لبنان که خود در جریان حمله سایبری-انفجاری تروریستی موساد به وسایل ارتباطی مجروح شده بود، پرده از یک پشت‌صحنه امنیتی برداشت. به گفته وی، تصمیم اولیه این بوده که دستگاه‌های ارتباطی (پیجرها) پیش از اقدام، مورد بررسی و بازرسی فنی قرار گیرند و همین حساسیت امنیتی و احتمال لو رفتن پروژه، باعث شد سرویس اطلاعاتی اسرائیل (موساد) عملیات خود را جلو بیندازد و زودتر از موعد مقرر دست به فعال‌سازی انفجاری آن‌ها بزند.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 2.46,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25501,
+          "media_type": "video",
+          "link": "https://t.me/withyashar/25501",
+          "timestamp": 1791823362.63745
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25502": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 188,
+      "node": "withyashar",
+      "root_id": 25502,
+      "root_text": "ممکن است آمریکا در تلاش باشد ایران را به حمله اول تحریک کند\nآلن ایر، عضو سابق تیم مذاکره کننده آمریکا نوشت: ممکن است آمریکا در تلاش باشد ایران را به حمله اول تحریک کند. احتمال انجام دور دیگری از حملات آمریکا علیه ایران بسیار زیاد است‌. با انتقال تجهیزات و نیروهای نظامی بیشتر آمریکا به منطقه و انتشار گزارش‌هایی درباره فعالیت هواپیماهای اسرائیلی در نزدیکی حریم هوایی عراق، این احتمال وجود دارد که  واشنگتن عمداً در حال آزمودن آستانه تحمل تهران باشد.\n@WarRoom",
+      "root_media_type": "text",
+      "timestamp": 1791824511.7506454,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "آمریکا با اعزام تجهیزات نظامی جدید آستانه تحمل ایران را می‌آزماید",
+      "summary": "آلن ایر، عضو سابق تیم مذاکره‌کننده ایالات متحده، هشدار داد که واشنگتن ممکن است با انتقال تجهیزات و نیروهای نظامی به منطقه و تحرکات هوایی در نزدیکی مرزهای عراق، در پی تحریک ایران به انجام «حمله اول» باشد. این اظهارات در حالی مطرح می‌شود که گزارش‌های متعددی از آماده‌باش و بازآرایی نیروهای نظامی آمریکا و اسرائیل در خاورمیانه منتشر شده است؛ راهبردی که سابقه دارد و می‌تواند به عنوان تامی برای مشروعیت‌بخشی به حملات پیشگیرانه بعدی یا تست کردن خطوط قرمز تهران استفاده شود.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 3.39,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25502,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25502",
+          "timestamp": 1791824511.7506516
         }
       ],
       "replies": [],
@@ -7428,45 +7585,45 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 185,
+    "@DidebanJang": 188,
     "@DidehbanEghtesad": 15,
     "@DidebanEterazat": 9,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38842,
-    "VahidHeadline": 326106,
-    "VahidOOnLine": 264790,
-    "RadioFarda": 162278,
-    "IranintlTV": 361927,
-    "Tasnimnews": 450882,
-    "Farsna": 468002,
-    "isna94": 408494,
-    "irna_1313": 461591,
-    "akharinkhabar": 637927,
-    "khabarfouri": 569210,
-    "akhbarefori": 697799,
+    "Alibk3": 38848,
+    "VahidHeadline": 326111,
+    "VahidOOnLine": 264800,
+    "RadioFarda": 162280,
+    "IranintlTV": 361934,
+    "Tasnimnews": 450890,
+    "Farsna": 468004,
+    "isna94": 408499,
+    "irna_1313": 461603,
+    "akharinkhabar": 637931,
+    "khabarfouri": 569211,
+    "akhbarefori": 697808,
     "dw_farsi": 131108,
-    "entekhab_ir": 383183,
-    "Khabar_Fouri": 551328,
-    "khabari": 201117,
+    "entekhab_ir": 383185,
+    "Khabar_Fouri": 551332,
+    "khabari": 201121,
     "thezoomit": 103738,
-    "farsivoa": 233535,
+    "farsivoa": 233541,
     "myITiran": 18266,
-    "Farsi_Iranwire": 94627,
-    "bbcpersian": 293250,
-    "Alarabiya_far": 152057,
-    "thezoomon": 5241,
-    "Mr_Economy": 63966,
-    "Eghtesadnews_com": 370684,
+    "Farsi_Iranwire": 94628,
+    "bbcpersian": 293251,
+    "Alarabiya_far": 152058,
+    "thezoomon": 5242,
+    "Mr_Economy": 63967,
+    "Eghtesadnews_com": 370685,
     "Digiato": 114049,
-    "Indypersian": 180039,
-    "withyashar": 25499,
-    "euronewspe": 90535,
+    "Indypersian": 180041,
+    "withyashar": 25502,
+    "euronewspe": 90536,
     "Economic_News_Channel": 82705,
-    "farsna": 468003,
-    "persiannbloomberg": 68136,
+    "farsna": 468004,
+    "persiannbloomberg": 68137,
     "VahidOnline": 78700,
     "iliaen": 4744
   },
@@ -7549,8 +7706,8 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 3,
-    "gemini-3.5-flash-lite": 133,
+    "gemini-3.5-flash-lite": 170,
     "gemini-2.5-flash": 1
   },
-  "last_saved": "2026-10-12 16:26:48 UTC"
+  "last_saved": "2026-10-12 17:02:19 UTC"
 }
