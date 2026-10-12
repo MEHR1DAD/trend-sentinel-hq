@@ -23,16 +23,30 @@ class DatabaseManager:
                     PRIMARY KEY (target_channel, source_node, source_msg_id)
                 )
             """)
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS channel_watermarks (
+                    canon_node TEXT PRIMARY KEY,
+                    last_seen_msg_id INTEGER,
+                    updated_at REAL
+                )
+            """)
             con.commit()
             
+            # 1. Load watermarks from dedicated durable table
+            cur.execute("SELECT canon_node, last_seen_msg_id FROM channel_watermarks")
+            for node, wm in cur.fetchall():
+                self.channel_watermarks[node] = int(wm)
+
+            # 2. Load posted records into fast lookup map
             cur.execute("SELECT target_channel, source_node, source_msg_id, posted_msg_id FROM posted_sources")
             rows = cur.fetchall()
             for ch, node, src_id, dst_id in rows:
                 canon = node or 'unknown'
                 self.recent_posted_map[(ch, canon, src_id)] = dst_id
+                # Backfill watermark if higher than existing
                 self.channel_watermarks[canon] = max(self.channel_watermarks.get(canon, 0), src_id)
             con.close()
-            print(f"🗄️ Initialized SQLite registry: loaded {len(rows)} posted records into in-memory fast map.")
+            print(f"🗄️ Initialized SQLite registry: loaded {len(rows)} posted records & {len(self.channel_watermarks)} watermarks.")
         except Exception as e:
             print(f"⚠️ Error initializing SQLite DB: {e}")
 
@@ -67,16 +81,17 @@ class DatabaseManager:
             dst_int = int(posted_msg_id) if str(posted_msg_id).isdigit() else posted_msg_id
             canon = source_node or 'unknown'
             
-            # 1. Update fast in-memory map & watermark (bounded to 1000 items)
+            # 1. Update fast in-memory map (bounded to 1000 items)
             self.recent_posted_map[(target_channel, canon, src_int)] = dst_int
             if len(self.recent_posted_map) > 1000:
                 oldest_keys = list(self.recent_posted_map.keys())[:200]
                 for ok in oldest_keys:
                     self.recent_posted_map.pop(ok, None)
                     
-            self.channel_watermarks[canon] = max(self.channel_watermarks.get(canon, 0), src_int)
+            # 2. Advance watermark in memory & SQLite
+            self.advance_watermark(canon, src_int)
             
-            # 2. Persist to SQLite
+            # 3. Persist to SQLite posted_sources
             con = sqlite3.connect(self.db_file)
             cur = con.cursor()
             cur.execute("""
@@ -94,5 +109,30 @@ class DatabaseManager:
         return self.channel_watermarks.get(canon_node, 0)
 
     def advance_watermark(self, canon_node, msg_id):
-        src_int = int(msg_id) if str(msg_id).isdigit() else msg_id
-        self.channel_watermarks[canon_node] = max(self.channel_watermarks.get(canon_node, 0), src_int)
+        if not canon_node or not msg_id:
+            return
+        try:
+            src_int = int(msg_id)
+        except (ValueError, TypeError):
+            return
+
+        old_val = self.channel_watermarks.get(canon_node, 0)
+        new_val = max(old_val, src_int)
+        self.channel_watermarks[canon_node] = new_val
+
+        # Durable immediate write to SQLite channel_watermarks table
+        if new_val > old_val or canon_node not in self.channel_watermarks:
+            try:
+                con = sqlite3.connect(self.db_file)
+                cur = con.cursor()
+                cur.execute("""
+                    INSERT INTO channel_watermarks (canon_node, last_seen_msg_id, updated_at)
+                    VALUES (?, ?, ?)
+                    ON CONFLICT(canon_node) DO UPDATE SET
+                        last_seen_msg_id = MAX(last_seen_msg_id, excluded.last_seen_msg_id),
+                        updated_at = excluded.updated_at
+                """, (canon_node, new_val, time.time()))
+                con.commit()
+                con.close()
+            except Exception as e:
+                print(f"⚠️ Error persisting watermark for {canon_node} to DB: {e}")

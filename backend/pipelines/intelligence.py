@@ -430,7 +430,11 @@ class IntelligencePipeline:
             "۲. تشخیص ارتباط مستقیم با ایران (is_iran_related):\n"
             "   - مقدار true: اگر خبر مستقیماً به ایران، خاک ایران، اهداف و پایگاه‌های نظامی ایران، نیروهای مسلح ایران (سپاه، ارتش، پدافند)، مقامات و رهبران ایران، یا درگیری مستقیم و پاسخ‌های موشکی/نظامی ایران مربوط است.\n"
             "   - مقدار false: اگر رویداد بین سایر طرف‌ها و کشورهای منطقه است و به طور مستقیم به ایران مربوط نمی‌شود (مانند درگیری نیروهای یمن با عربستان یا آمریکا، حملات به آرامکو، درگیری‌های داخلی سوریه یا عراق، درگیری‌های اسرائیل در غزه و لبنان بدون حمله مستقیم به ایران).\n\n"
-            "۳. قوانین تولید تیتر و چکیده:\n"
+            "۳. تعیین سطح فوریت و اضطرار رویداد (urgency_level):\n"
+            "   - 'EMERGENCY': تنها برای حوادث مستقیم نظامی و حملات اضطراری مرتبط با ایران (بمباران، شلیک موشک و پهپاد، اصابت‌ها و انفجارها، آژیر قرمز، پدافند فعال).\n"
+            "   - 'BREAKING': اخبار و تحولات مهم، راهبردی، سیاسی و نظامی ایران که بمباران لحظه‌ای نیستند (تحرکات ناوگان، رزمایش‌ها، مواضع مقامات، تحریم‌ها و گزارش‌های اطلاعاتی).\n"
+            "   - 'REGIONAL': جنگ و درگیری‌های سایر کشورهای منطقه (یمن، عربستان، آرامکو، الشیبه، غزه، لبنان، سوریه، اوکراین و...) که حمله مستقیم به خاک ایران نیست.\n\n"
+            "۴. قوانین تولید تیتر و چکیده:\n"
             "   - اگر category برابر OTHER است، فیلدهای title و summary خالی باشند.\n"
             "   - اگر category برابر WAR است، با تکیه بر دانش ژورنالیستی و زبانی خودت دو فیلد زیر را به زبان فارسی تولید کن:\n"
             "     * title: عنوان و تیتر رسا، جذاب و صریح به زبان فارسی همراه با فعل کامل که اصل اتفاق را بگوید.\n"
@@ -440,6 +444,7 @@ class IntelligencePipeline:
             "{\n"
             '  "category": "WAR" | "OTHER",\n'
             '  "is_iran_related": true | false,\n'
+            '  "urgency_level": "EMERGENCY" | "BREAKING" | "REGIONAL",\n'
             '  "title": "عنوان رسا و کامل فارسی",\n'
             '  "summary": "چکیده شیوا و ابهام‌زدایی‌شده به زبان فارسی"\n'
             "}"
@@ -448,7 +453,7 @@ class IntelligencePipeline:
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 400,
+                "maxOutputTokens": 450,
                 "temperature": 0.2
             }
         }
@@ -460,10 +465,11 @@ class IntelligencePipeline:
                 res = json.loads(match.group(0))
                 cat = str(res.get("category", "")).upper().strip()
                 is_iran = bool(res.get("is_iran_related", False))
+                urgency = str(res.get("urgency_level", "REGIONAL")).upper().strip()
                 title = str(res.get("title", "")).strip()
                 summary = str(res.get("summary", "")).strip()
                 if cat in ["WAR", "OTHER"]:
-                    return {"category": cat, "is_iran_related": is_iran, "title": title, "summary": summary}
+                    return {"category": cat, "is_iran_related": is_iran, "urgency_level": urgency, "title": title, "summary": summary}
         return None
 
     async def classify_and_translate_alibk_thread(self, thread_text):
@@ -480,13 +486,15 @@ class IntelligencePipeline:
             "   - WAR: اخبار جنگ، حملات موشکی/پهپادی، بمباران هوایی، شلیک پدافند، درگیری‌های مسلحانه، توقف پروازها یا ناوبری، تلفات و خسارات، آتش‌سوزی یا آسیب به تاسیسات نفتی/گازی و بندری/فرودگاهی و آرامکو.\n"
             "   - OTHER: نظرات شخصی، میم/شوخی، تحلیل‌های بدون رویداد نظامی جدید، اخبار آب‌وهوا.\n"
             "۳. is_iran_related: اگر رویداد مستقیماً به ایران، خاک ایران، سپاه یا ارتش ایران مربوط است true وگرنه false.\n"
-            "۴. title: یک تیتر رسا، جذاب و صریح به زبان فارسی همراه با فعل کامل که جدیدترین وضعیت نهایی رویداد را بازتاب دهد.\n"
-            "۵. summary: یک چکیده روان، منسجم و گویا به زبان فارسی با اولویت ایجاز و خلاصه‌سازی در کنار پوشش کامل نکات جدید اضافه شده؛ در صورت نیاز به توضیح تکمیلی یا رفع ابهام، با دانش خودت آن را شفاف کن.\n\n"
+            "۴. urgency_level: سطح فوریت خبر در صورت جنگی بودن ('EMERGENCY' برای حملات مستقیم میدانی ایران، 'BREAKING' برای تحولات مهم ناوگان و سیاسی ایران، 'REGIONAL' برای جنگ‌های منطقه‌ای).\n"
+            "۵. title: یک تیتر رسا، جذاب و صریح به زبان فارسی همراه با فعل کامل که جدیدترین وضعیت نهایی رویداد را بازتاب دهد.\n"
+            "۶. summary: یک چکیده روان، منسجم و گویا به زبان فارسی با اولویت ایجاز و خلاصه‌سازی در کنار پوشش کامل نکات جدید اضافه شده؛ در صورت نیاز به توضیح تکمیلی یا رفع ابهام، با دانش خودت آن را شفاف کن.\n\n"
             f"متن رویداد و گزارش‌های تکمیلی:\n{thread_text}\n\n"
             "پاسخ را دقیقاً و فقط در قالب این شیء JSON ارسال کن و هیچ عبارت دیگری ننویس:\n"
             "{\n"
             '  "category": "WAR" | "OTHER",\n'
             '  "is_iran_related": true | false,\n'
+            '  "urgency_level": "EMERGENCY" | "BREAKING" | "REGIONAL",\n'
             '  "title": "عنوان رسا و دقیق فارسی",\n'
             '  "summary": "چکیده منسجم به زبان فارسی"\n'
             "}"
@@ -507,10 +515,11 @@ class IntelligencePipeline:
                 res = json.loads(match.group(0))
                 cat = str(res.get("category", "")).upper().strip()
                 is_iran = bool(res.get("is_iran_related", False))
+                urgency = str(res.get("urgency_level", "REGIONAL")).upper().strip()
                 title = str(res.get("title", "")).strip()
                 summary = str(res.get("summary", "")).strip()
                 if cat in ["WAR", "OTHER"]:
-                    return {"category": cat, "is_iran_related": is_iran, "title": title, "summary": summary}
+                    return {"category": cat, "is_iran_related": is_iran, "urgency_level": urgency, "title": title, "summary": summary}
         return None
 
     async def preload_alibk_history(self, reader_client=None):

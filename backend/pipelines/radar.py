@@ -686,7 +686,8 @@ class RadarPipeline:
         if not text:
             return False
             
-        if (node or '').lower() in ['vahidonline', 'iliaen', 'withyashar']:
+        canon = (node or '').lower()
+        if canon in ['vahidonline', 'iliaen', 'withyashar', 'alibk3']:
             return False
 
         citizen_indicators = [
@@ -696,44 +697,12 @@ class RadarPipeline:
         if any(ind in text for ind in citizen_indicators):
             return False
             
-        if re.search(r'(۱۳\d{2}|۱۴۰[۰-۴]|13\d{2}|140[0-4])', text):
+        # Only true historical archival / anniversary markers without breaking news context
+        text_clean = text.lower()
+        is_anniversary = any(w in text_clean for w in ["در چنین روزی در سال", "سالگرد درگذشت", "سالروز درگذشت", "خاطره‌بازی"])
+        if is_anniversary and not any(k in text_clean for k in ["انفجار", "حمله", "موشک", "پهپاد", "بمباران", "آژیر", "فوری"]):
             return True
-        
-        now = datetime.now()
-        month_map = {1: 10, 2: 11, 3: 12, 4: 1, 5: 2, 6: 3, 7: 4, 8: 5, 9: 6, 10: 7, 11: 8, 12: 9}
-        current_month_idx = month_map.get(now.month, 7) - 1
-        months_fa = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"]
-        for i, month in enumerate(months_fa):
-            if (re.search(r'(?:\d{1,2}|یکم|دوم|سوم|چهارم|پنجم|سی‌ام)\s+' + month, text) or f"{month}‌ماه گذشته" in text or f"{month} گذشته" in text) and i < current_month_idx: 
-                return True
-        
-        news_stopwords = [
-            "vahidheadline", "vahidoonline", "به گزارش", "خبرگزاری مهر", "خبرگزاری فارس", 
-            "خبرگزاری تسنیم", "خبرگزاری ایسنا", "خبرگزاری ایرنا", "خبرگزاری ایلنا", "روزنامه همشهری", "روزنامه شرق", "رویترز", "روز گذشته", "صبح امروز", 
-            "در پاسخ به", "در گفت‌وگو", "در گفتوگو", "مجری", "مصاحبه", "تلویزیون",
-            "ترجمه ماشین", "ترجمه ماشینی", "به نقل از", 
-            "یادبود", "سالگرد", "خاطره",
-            "نیویورک تایمز", "آسوشیتدپرس", "وال استریت", "کاخ سفید", "پنتاگون",
-            "تست شد", "آزمایش شد", "آزمایش موفق", "با موفقیت", "رزمایش",
-            "ترامپ", "نتانیاهو", "بایدن", "پوتین", "خامنه‌ای", "پزشکیان", "عراقچی", 
-            "قالیباف", "ظریف", "سلامی", "قاآنی", "کامالا هریس", "بلینکن", "لوید آستین", 
-            "جیک سالیوان", "گالانت", "کاتس", "هرتزوگ", "مکرون", "اردوغان", "بن سلمان", 
-            "بشار اسد", "زلنسکی", "جوزپ بورل", "آنتونیو گوترش", "رافائل گروسی", "شولتز",
-            "کیر استارمر", "رضایی", "محسن رضایی", "باقری", "موسوی", "شمخانی", "کوثری",
-            "وزیر خارجه", "وزیر امور خارجه", "وزیر دفاع", "سخنگوی", "نماینده مجلس",
-            "رئیس‌جمهور", "رییس‌جمهور", "رئیس جمهور", "رییس جمهور", 
-            "نخست‌وزیر", "نخست وزیر", "پادشاه", "رئیس مجلس", "رییس مجلس", "رهبر انقلاب",
-            "سرلشکر", "سردار", "امیر", "دریادار", "سرتیپ"
-        ]
-        
-        text_lower = text.lower()
-        for word in news_stopwords:
-            if word in text_lower:
-                return True
-                
-        if re.search(r'(?:سرلشکر|سردار|فرمانده|امیر|دریادار|سرتیپ|سخنگوی|وزیر|رئیس|رییس|پزشکیان|عراقچی|قالیباف|نتانیاهو|ترامپ|بایدن|پوتین|رضایی|باقری)\s*[\w‌]*:', text):
-            return True
-                
+            
         return False
 
     def match_pattern(self, text, pattern):
@@ -1208,7 +1177,7 @@ class RadarPipeline:
     async def process_radar_consensus(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None):
         if msg_date:
             now_utc = datetime.now(timezone.utc)
-            if (now_utc - msg_date).total_seconds() > 900:
+            if (now_utc - msg_date).total_seconds() > 10800:
                 return
                 
         self.purge_old_messages()
@@ -1229,7 +1198,7 @@ class RadarPipeline:
         patterns_in_msg = self.get_message_patterns(text, is_citizen=is_citizen_report)
         has_economy = any("||ECONOMY||" in p for p in patterns_in_msg)
         
-        if (node or '').lower() not in ['vahidonline', 'iliaen', 'withyashar'] and not has_economy and self.is_old_news(text, node):
+        if (node or '').lower() not in ['vahidonline', 'iliaen', 'withyashar', 'alibk3'] and not has_economy and self.is_old_news(text, node):
             return
         
         is_syndicated = False
