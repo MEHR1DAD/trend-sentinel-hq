@@ -1272,6 +1272,18 @@ class LiveSentinel:
         print(f"📊 Initialized channel latest news IDs: {self.channel_last_alert_id}")
         print(f"🔄 Recovered {len(self.vip_alert_history)} VIP alerts and {len(self.thread_alerts)} thread alerts directly from Telegram channels.")
 
+        # Retroactive polish for Post 163 in @DidebanJang (fix title grammar and incomplete verb)
+        try:
+            m163 = await self.bot.get_messages('@DidebanJang', ids=163)
+            if m163 and m163.text and 'شناسایی نیروهای ارتش ایران' in m163.text and 'منتشر' not in m163.text.split('\n')[0]:
+                fixed_title = "🚨 **هشدار فوری: انتشار راهنمای تصویری ارتش آمریکا برای شناسایی تجهیزات و نیروهای ارتش ایران** 📸"
+                t163 = re.sub(r'^(?:🚨|🔕)\s*(?:\*\*)?هشدار [^\n]+', fixed_title, m163.text)
+                t163 = t163.replace("ایران ، منتشر", "ایران، منتشر")
+                await self.bot.edit_message('@DidebanJang', 163, t163, link_preview=False)
+                print("✅ Successfully polished title of post 163 in @DidebanJang!")
+        except Exception as e163:
+            print(f"⚠️ Error polishing post 163 in @DidebanJang: {e163}")
+
         # Startup initialization complete.
 
     async def handle_message_deleted(self, node_username, deleted_ids):
@@ -3641,7 +3653,7 @@ class LiveSentinel:
             "۱. category: یکی از مقادیر 'WAR' یا 'ECONOMY' یا 'PROTEST_RIGHTS' یا 'OTHER'. "
             "(اخبار جنگ و نظامی و منطقه -> WAR، اخبار نوسان ارز/طلا/معیشت -> ECONOMY، اخبار اعتراضات/اعدام/زندان -> PROTEST_RIGHTS، سایر اخبار متفرقه -> OTHER)\n"
             "۲. is_iran_related: مقدار true اگر خبر مستقیماً یا غیرمستقیم با ایران، خاک ایران، سپاه یا ارتش، یا رویارویی آمریکا/اسرائیل با ایران در ارتباط است، در غیر این صورت false.\n"
-            "۳. title: یک تیتر برجسته، صریح، گویا و کامل (بین ۵ تا ۸ کلمه) بدون قطع شدن در وسط جمله که اصل واقعه را بیان کند.\n"
+            "۳. title: یک تیتر بسیار شیوا، صریح، گویا و کامل به زبان فارسی (بین ۵ تا ۸ کلمه) همراه با فعل مناسب که هرگز در وسط جمله قطع نشود و کل پیام اصلی رویداد را برساند (مثال: 'انتشار راهنمای تصویری ارتش آمریکا برای شناسایی نیروهای ایران').\n"
             "۴. summary: یک چکیده شیوا، شفاف و ۲ الی ۳ خطی (بین ۲۵ تا ۵۰ کلمه) که ابعاد و جزئیات مهم رویداد را شرح دهد. هرگز تیتر را تکرار نکن.\n\n"
             "پاسخ را منحصراً در قالب JSON بنویس:\n"
             "{\n"
@@ -3660,7 +3672,7 @@ class LiveSentinel:
             }
         }
 
-        raw_text = await self.call_gemini_content(payload, timeout=10, max_retries=3)
+        raw_text = await self.call_gemini_content(payload, timeout=14, max_retries=5)
         if raw_text:
             match = re.search(r'\{.*\}', raw_text, re.DOTALL)
             if match:
@@ -3693,13 +3705,29 @@ class LiveSentinel:
         category = 'ECONOMY' if is_economy else ('PROTEST_RIGHTS' if is_protest else 'WAR')
 
         clean_first = re.sub(r'^[🚨⚡️📢🛑🔕⚖️📈📸📹🎙🔴⚠️📌\s\*\-]+', '', first_line).strip()
+        # Clean parentheticals (e.g. slogans or side notes like "(تهدید را بشناس)") which bloat length
+        clean_first = re.sub(r'\s*\([^)]*\)', '', clean_first)
+        clean_first = re.sub(r'\s+([,،])', r'\1', clean_first)
+        clean_first = re.sub(r'\s{2,}', ' ', clean_first).strip()
         
-        parts = re.split(r'[.؛\n]', clean_first)
+        # Take the first complete sentence ending in [.؛!?\n]
+        parts = re.split(r'[.؛!?\n]', clean_first)
         candidate_title = parts[0].strip() if parts else clean_first
-        if len(candidate_title) > 95:
-            sub = re.split(r'[,،]', candidate_title)
-            if sub and len(sub[0]) >= 25:
-                candidate_title = sub[0].strip()
+
+        # IMPORTANT: NEVER split candidate_title on comma [,،]!
+        # In Persian grammar, the main verb is placed at the end of the clause/sentence.
+        # Splitting on commas invariably chops off the verb and leaves an incomplete sentence.
+        if len(candidate_title) > 135:
+            words = candidate_title.split()
+            truncated = []
+            curr_len = 0
+            for w in words:
+                if curr_len + len(w) + 1 > 130:
+                    break
+                truncated.append(w)
+                curr_len += len(w) + 1
+            if truncated:
+                candidate_title = " ".join(truncated).rstrip("،,؛.:- ") + "..."
             
         title = candidate_title if candidate_title else clean_first[:90]
         title = title.replace("||FOREIGN||", "").replace("||ECONOMY||", "").strip()
