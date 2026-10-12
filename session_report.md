@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 210
-- **Last Message Text:** دریادار بمانی: ضربات مهلکی به نیروی دریایی آمریکا زدیم
+- **Messages Processed:** 332
+- **Last Message Text:** غریب‌آبادی: آمریکا تعهدات خود در تفاهم‌نامه اسلام‌آباد را نقض کرد
 
-▪️ آمریکایی‌ها بیشترین فاصله را از مرزهای ای...
-- **Last Message Time:** 2026-10-12 11:53:03
+ 🔹معاون وزیر امور خارجه ایران در ...
+- **Last Message Time:** 2026-10-12 12:28:47
