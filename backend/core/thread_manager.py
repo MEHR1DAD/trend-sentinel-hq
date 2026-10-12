@@ -5,6 +5,8 @@ import asyncio
 from backend.core.config import (
     to_fa_num,
     get_tehran_time_fa,
+    get_tehran_datetime_fa,
+    format_update_status_line,
     detect_msg_media_type,
     get_media_icon_from_type,
     classify_war_urgency,
@@ -539,8 +541,7 @@ class ThreadAlertManager:
         status_line = ""
         update_reason = thread_data.get('update_reason', 'اطلاعات تکمیلی')
         if thread_data.get('updated_at'):
-            time_fa = get_tehran_time_fa(thread_data['updated_at'])
-            status_line = f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | {update_reason}**\n\n"
+            status_line = f"{format_update_status_line(thread_data['updated_at'], update_reason)}\n\n"
             
         summary_section = f"📝 **چکیده رویداد:**\n{summary}\n\n" if summary else ""
         sources_section = f"{sources_text}\n\n" if sources_text else ""

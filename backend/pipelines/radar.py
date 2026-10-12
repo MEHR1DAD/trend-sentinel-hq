@@ -10,6 +10,8 @@ from backend.core.config import (
     IRAN_KEYWORDS,
     BOT_TOKEN,
     get_tehran_time_fa,
+    get_tehran_datetime_fa,
+    format_update_status_line,
     to_fa_num,
     detect_msg_media_type,
     get_media_icon_from_type,
@@ -820,11 +822,11 @@ class RadarPipeline:
                     root_media = detect_msg_media_type(raw_msg)
                     root_icon = get_media_icon_from_type(root_media)
                     tag = "#دیده‌بان_جنگ" if target_ch == "@DidebanJang" else ("#دیده‌بان_اقتصاد" if target_ch == "@DidehbanEghtesad" else "#دیده‌بان_اعتراضات")
-                    time_fa = get_tehran_time_fa()
+                    status_line = format_update_status_line(reason="دریافت اطلاعات تکمیلی")
                     updated_alert = (
                         f"{icon} **{alert_title}**\n\n"
                         f"🔗 **منبع خبر:**\n- [{canonical_node}]({link}) {root_icon}\n\n"
-                        f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | دریافت اطلاعات تکمیلی**\n\n"
+                        f"{status_line}\n\n"
                         f"{tag}\n\n{target_ch}"
                     )
                     try:
@@ -834,11 +836,10 @@ class RadarPipeline:
                     except Exception as edit_err:
                         print(f"⚠️ Failed to edit VIP alert {orig_sent_id} in {target_ch}: {edit_err}")
                 else:
-                    time_fa = get_tehran_time_fa()
+                    status_line = format_update_status_line(reason="دریافت اطلاعات تکمیلی")
                     try:
                         curr_msg = await self.sentinel.bot.get_messages(target_ch, ids=orig_sent_id)
                         if curr_msg and curr_msg.text:
-                            status_line = f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | دریافت اطلاعات تکمیلی**"
                             if '🔄 **به‌روزرسانی شده' in curr_msg.text:
                                 new_t = re.sub(r'🔄\s*\*\*به‌روزرسانی شده[^\n]+', status_line, curr_msg.text)
                             else:

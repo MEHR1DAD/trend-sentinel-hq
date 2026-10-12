@@ -5,6 +5,8 @@ import asyncio
 from datetime import datetime, timezone
 from backend.core.config import (
     get_tehran_time_fa,
+    get_tehran_datetime_fa,
+    format_update_status_line,
     detect_msg_media_type,
     get_media_icon_from_type,
     classify_war_urgency
@@ -205,14 +207,14 @@ class IntelligencePipeline:
                     alert_header = f"{icon} **{alert_type_name}: {upgraded_title}**{media_header}"
                     link = f"https://t.me/withyashar/{src_msg_id}"
                     sources_text = f"🔗 **منبع خبر:**\n- [withyashar]({link}) {root_icon}"
-                    time_fa = get_tehran_time_fa()
                     tag = "#دیده‌بان_اقتصاد" if target_channel == "@DidehbanEghtesad" else ("#دیده‌بان_اعتراضات" if target_channel == "@DidebanEterazat" else "#دیده‌بان_جنگ")
+                    status_line = format_update_status_line(reason="ویرایش و بازنویسی تحلیلی")
 
                     updated_text = (
                         f"{alert_header}\n\n"
                         f"📝 **چکیده رویداد:**\n{upgraded_summary}\n\n"
                         f"{sources_text}\n\n"
-                        f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | ویرایش و بازنویسی تحلیلی**\n\n"
+                        f"{status_line}\n\n"
                         f"{tag}\n{target_channel}"
                     )
 
@@ -338,12 +340,12 @@ class IntelligencePipeline:
                 if msg_key in self.sentinel.vip_alert_history and is_edit:
                     posted_mid = self.sentinel.vip_alert_history[msg_key].get('sent_msg_id')
                     posted_ch = self.sentinel.vip_alert_history[msg_key].get('target_channel', target_channel)
-                    time_fa = get_tehran_time_fa()
+                    status_line = format_update_status_line(reason="ویرایش و تکمیل خبر")
                     updated_text = (
                         f"{alert_header}\n\n"
                         f"📝 **چکیده رویداد:**\n{summary}\n\n"
                         f"{sources_text}\n\n"
-                        f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | ویرایش و تکمیل خبر**\n\n"
+                        f"{status_line}\n\n"
                         f"{tag}\n{posted_ch}"
                     )
                     try:
@@ -679,12 +681,12 @@ class IntelligencePipeline:
                         thread_data['update_reason'] = 'ویرایش و اطلاعات تکمیلی'
                         alert_text = self.sentinel.build_alert_post_content(thread_data)
                     else:
-                        time_fa = get_tehran_time_fa()
+                        status_line = format_update_status_line(reason="ویرایش و اطلاعات تکمیلی")
                         alert_text = (
                             f"{alert_header}\n\n"
                             f"📝 **چکیده رویداد:**\n{summary}\n\n"
                             f"{sources_text}\n\n"
-                            f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | ویرایش و اطلاعات تکمیلی**\n\n"
+                            f"{status_line}\n\n"
                             f"{tag}\n{posted_ch}"
                         )
                         

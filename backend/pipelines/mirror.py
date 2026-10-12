@@ -3,7 +3,7 @@ import time
 import json
 import asyncio
 from datetime import datetime, timezone
-from backend.core.config import get_tehran_time_fa
+from backend.core.config import get_tehran_time_fa, get_tehran_datetime_fa, format_update_status_line
 
 class MirrorPipeline:
     """
@@ -161,12 +161,12 @@ class MirrorPipeline:
                     link_action = f"شنیدن فایل صوتی در کانال {channel_fa_name}"
                     
             if is_edit and not is_upgrade:
-                time_fa = get_tehran_time_fa()
+                status_line = format_update_status_line(reason="ویرایش و تکمیل متن خبر")
                 post_content = (
                     f"⚡️ **{title}**{media_icon}\n\n"
                     f"{summary}\n\n"
                     f"🔗 [{link_action}]({link})\n\n"
-                    f"🔄 **به‌روزرسانی شده (ساعت {time_fa}) | ویرایش و تکمیل متن خبر**\n\n"
+                    f"{status_line}\n\n"
                     f"📡 {target_channel}"
                 )
             else:

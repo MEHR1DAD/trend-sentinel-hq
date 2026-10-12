@@ -136,6 +136,61 @@ def to_fa_num(n):
     fa_digits = "۰۱۲۳۴۵۶۷۸۹"
     return "".join(fa_digits[int(d)] if d.isdigit() else d for d in str(n))
 
+JALALI_MONTH_NAMES = [
+    "",
+    "فروردین", "اردیبهشت", "خرداد",
+    "تیر", "مرداد", "شهریور",
+    "مهر", "آبان", "آذر",
+    "دی", "بهمن", "اسفند"
+]
+
+def gregorian_to_jalali(gy, gm, gd):
+    g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
+    if gy > 1600:
+        jy = 979
+        gy -= 1600
+    else:
+        jy = 0
+        gy -= 621
+    gy2 = gy if gm > 2 else gy - 1
+    days = 365 * gy + (gy2 + 3) // 4 - (gy2 + 99) // 100 + (gy2 + 399) // 400 - 80 + gd + g_d_m[gm - 1]
+    jy += 33 * (days // 12053)
+    days %= 12053
+    jy += 4 * (days // 1461)
+    days %= 1461
+    if days > 365:
+        jy += (days - 1) // 365
+        days = (days - 1) % 365
+    if days < 186:
+        jm = 1 + days // 31
+        jd = 1 + days % 31
+    else:
+        jm = 7 + (days - 186) // 30
+        jd = 1 + (days - 186) % 30
+    return jy, jm, jd
+
+def get_tehran_datetime_fa(ts=None):
+    """
+    Returns Tehran Jalali date and time in Option 1 format:
+    e.g. '۲۰ مهر، ساعت ۱۳:۳۱'
+    """
+    tz = timezone(timedelta(hours=3, minutes=30))
+    dt = datetime.fromtimestamp(ts if ts else time.time(), tz=tz)
+    jy, jm, jd = gregorian_to_jalali(dt.year, dt.month, dt.day)
+    month_name = JALALI_MONTH_NAMES[jm] if 1 <= jm <= 12 else ""
+    time_str = dt.strftime("%H:%M")
+    jd_fa = to_fa_num(jd)
+    time_fa = to_fa_num(time_str)
+    return f"{jd_fa} {month_name}، ساعت {time_fa}"
+
+def format_update_status_line(ts=None, reason="ویرایش و اطلاعات تکمیلی"):
+    """
+    Standard format for updated news posts in Sentinel channels (Option 1):
+    e.g. '🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۱۳:۳۱) | ویرایش و اطلاعات تکمیلی**'
+    """
+    dt_fa = get_tehran_datetime_fa(ts)
+    return f"🔄 **به‌روزرسانی شده ({dt_fa}) | {reason}**"
+
 def get_tehran_time_fa(ts=None):
     tz = timezone(timedelta(hours=3, minutes=30))
     dt = datetime.fromtimestamp(ts if ts else time.time(), tz=tz)
