@@ -4,16 +4,16 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4743": [
-      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
     ],
     "VahidOnline_78687": [
-      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78694": [
       "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
@@ -27,31 +27,31 @@
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
     ],
     "withyashar_25422": [
       "recovered_source",
       "withyashar_report"
     ],
     "withyashar_25423": [
-      "حملات نظامی در ایران، بازار",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در ایران، بازار"
     ],
     "withyashar_25428": [
       "recovered_source",
       "withyashar_report"
     ],
     "withyashar_25426": [
-      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان"
     ],
     "withyashar_25427": [
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -91,8 +91,8 @@
       "withyashar_report"
     ],
     "withyashar_25442": [
-      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
     ],
     "withyashar_25443": [
       "recovered_source",
@@ -434,8 +434,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
-      "recovered_source"
+      "recovered_source",
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
     ],
     "VahidOnline_78700": [
       "recovered_source"
@@ -546,8 +546,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "آتش‌سوزی در پایگاه هوایی ایران",
-      "recovered_source"
+      "recovered_source",
+      "آتش‌سوزی در پایگاه هوایی ایران"
     ],
     "Alibk3_38863": [
       "recovered_source"
@@ -599,8 +599,8 @@
       "recovered_source"
     ],
     "VahidOnline_78704": [
-      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان"
     ],
     "withyashar_25522": [
       "recovered_source"
@@ -9638,38 +9638,39 @@
   "channel_watermarks": {
     "Alibk3": 38910,
     "VahidHeadline": 326155,
-    "VahidOOnLine": 264860,
+    "VahidOOnLine": 264862,
     "RadioFarda": 162288,
-    "IranintlTV": 362011,
-    "Tasnimnews": 450989,
-    "Farsna": 468081,
-    "isna94": 408544,
-    "irna_1313": 461674,
-    "akharinkhabar": 637979,
-    "khabarfouri": 569264,
+    "IranintlTV": 362014,
+    "Tasnimnews": 450992,
+    "Farsna": 468091,
+    "isna94": 408545,
+    "irna_1313": 461677,
+    "akharinkhabar": 637985,
+    "khabarfouri": 569271,
     "akhbarefori": 697898,
     "dw_farsi": 131111,
     "entekhab_ir": 383212,
-    "Khabar_Fouri": 551350,
-    "khabari": 201168,
+    "Khabar_Fouri": 551363,
+    "khabari": 201171,
     "thezoomit": 103741,
     "farsivoa": 233586,
-    "myITiran": 18266,
+    "myITiran": 18267,
     "Farsi_Iranwire": 94635,
     "bbcpersian": 293276,
     "Alarabiya_far": 152085,
     "thezoomon": 5246,
-    "Mr_Economy": 63985,
-    "Eghtesadnews_com": 370717,
+    "Mr_Economy": 63986,
+    "Eghtesadnews_com": 370721,
     "Digiato": 114051,
-    "Indypersian": 180068,
+    "Indypersian": 180071,
     "withyashar": 25525,
-    "euronewspe": 90554,
+    "euronewspe": 90555,
     "Economic_News_Channel": 82713,
-    "farsna": 468079,
-    "persiannbloomberg": 68173,
+    "farsna": 468091,
+    "persiannbloomberg": 68178,
     "VahidOnline": 78706,
-    "iliaen": 4744
+    "iliaen": 4744,
+    "mamlekate": 104812
   },
   "vahid_post_time": {
     "78694": 1791735142.0123565
@@ -9759,5 +9760,5 @@
     "gemini-3.5-flash-lite": 327,
     "gemini-2.5-flash": 28
   },
-  "last_saved": "2026-10-13 03:17:48 UTC"
+  "last_saved": "2026-10-13 03:53:20 UTC"
 }
