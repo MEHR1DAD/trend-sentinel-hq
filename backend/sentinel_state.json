@@ -16,12 +16,12 @@
       "recovered_source"
     ],
     "VahidOnline_78694": [
-      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
     ],
     "withyashar_25419": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25420": [
       "withyashar_report"
@@ -31,20 +31,20 @@
       "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
     ],
     "withyashar_25422": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25423": [
       "حملات نظامی در ایران، بازار",
       "recovered_source"
     ],
     "withyashar_25428": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25426": [
-      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان"
     ],
     "withyashar_25427": [
       "فعالیت هوایی و جنگنده در آمریکا"
@@ -78,8 +78,8 @@
       "withyashar_report"
     ],
     "withyashar_25438": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25439": [
       "withyashar_report"
@@ -95,23 +95,23 @@
       "recovered_source"
     ],
     "withyashar_25443": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25444": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25451": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25461": [
       "withyashar_report"
     ],
     "withyashar_25462": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "withyashar_25460": [
       "withyashar_report"
@@ -124,8 +124,8 @@
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
     ],
     "withyashar_25465": [
-      "recovered_source",
-      "withyashar_report"
+      "withyashar_report",
+      "recovered_source"
     ],
     "Alibk3_38780": [
       "recovered_source"
@@ -595,8 +595,8 @@
       "recovered_source"
     ],
     "VahidOnline_78703": [
-      "حملات نظامی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78704": [
       "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان",
@@ -2261,6 +2261,20 @@
       "pattern": "vip_multi_agent",
       "ai_model": "gemini-3.5-flash-lite",
       "latency_sec": null
+    },
+    "Alibk3_38930": {
+      "sent_msg_id": 213,
+      "target_channel": "@DidebanJang",
+      "time": 1791891405.2303214,
+      "thread_key": "Alibk3_38930",
+      "ai_model": "gemini-3.5-flash-lite"
+    },
+    "Alibk3_38931": {
+      "sent_msg_id": 213,
+      "target_channel": "@DidebanJang",
+      "time": 1791891931.6475472,
+      "thread_key": "Alibk3_38930",
+      "ai_model": "gemini-3.5-flash-lite"
     }
   },
   "last_alert_time": {
@@ -4946,54 +4960,6 @@
           "media_type": "photo",
           "link": "https://t.me/Alibk3/38561",
           "timestamp": 1791635250.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38560": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 65,
-      "node": "Alibk3",
-      "root_id": 38560,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791631980.0,
-      "category": "WAR",
-      "is_iran_related": true,
-      "title": "کاهش چشمگیر تردد نفت‌کش‌ها در تنگه هرمز",
-      "summary": "به دنبال حملات اخیر به نفت‌کش‌های متخلف در تنگه هرمز، آمار شناورهای در حال تردد از سوی آب‌های عمان به شدت کاهش یافته و تنها دو فروند کشتی در حال عبور از منطقه مشاهده شده‌اند.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38560,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38560",
-          "timestamp": 1791631980.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38559": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 64,
-      "node": "Alibk3",
-      "root_id": 38559,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791631897.0,
-      "category": "WAR",
-      "is_iran_related": true,
-      "title": "کاهش تردد نفت‌کش‌ها در تنگه هرمز",
-      "summary": "به دنبال حملات اخیر به نفت‌کش‌های متخلف در تنگه هرمز، تعداد کشتی‌های در حال عبور از سوی عمان به‌شدت کاهش یافته و تنها دو فروند کشتی در این منطقه مشاهده می‌شود.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38559,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38559",
-          "timestamp": 1791631897.0
         }
       ],
       "replies": [],
@@ -9729,6 +9695,42 @@
         }
       ],
       "replies": []
+    },
+    "Alibk3_38930": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 213,
+      "node": "Alibk3",
+      "root_id": 38930,
+      "root_text": "گزارش‌های میدانی حاکی از فرود دو فروند هواپیمای ترابری نظامی متعلق به ایالات متحده آمریکا و نیروی هوایی کویت در «پایگاه هوایی سلطان» واقع در استان الخرج عربستان سعودی است. پایگاه هوایی سلطان (Prince Sultan Air Base) یکی از مهم‌ترین استقرارگاه‌های راهبردی نیروهای آمریکایی در منطقه خلیج فارس به شمار می‌رود که نقش کلیدی در پشتیبانی لجستیکی، مدیریت عملیات هوایی و پدافندی ایالات متحده در شبه‌جزیره عربستان دارد. حضور هم‌زمان هواپیماهای ترابری دو کشور، نشانگر تداوم همکاری‌های نزدیک نظامی و لجستیکی میان ائتلاف غربی و کشورهای حاشیه جنوبی خلیج فارس در حوزه تحرکات ترابری و پشتیبانی هوایی است.",
+      "root_media_type": "photo",
+      "timestamp": 1791891360.7461739,
+      "category": "WAR",
+      "is_iran_related": true,
+      "urgency_level": "BREAKING",
+      "title": "پدافند هوایی عربستان سعودی سه فروند پهپاد را در شمال ریاض رهگیری کرد و هم‌زمان تحرکات لجستیکی در پایگاه راهبردی سلطان تقویت شد",
+      "summary": "منابع رسمی عربستان سعودی از رهگیری و انهدام سه فروند پرنده هدایت‌پذیر از دور (پهپاد) در آسمان شمال ریاض، پایتخت این کشور خبر دادند. این رخداد امنیتی با تحرکات فشرده ترابری و لجستیکی در «پایگاه هوایی سلطان» (واقع در استان الخرج) تقارن یافته است؛ تاسیسات راهبردی مهمی که به عنوان هاب اصلی پشتیبانی هوایی عمل کرده و پیش‌تر میزبان هواپیماهای ترابری نظامی ایالات متحده آمریکا و نیروی هوایی کویت جهت استقرار یگان‌های پشتیبانی و سامانه‌های پدافندی ائتلاف بوده است. این هم‌رویداد میان حملات پهپادی و تقویت خطوط لجستیکی در شبه‌جزیره عربستان، گویای ارتقای سطح آماده‌باش شبکه‌های راداری و پدافندی و استمرار هم‌افزایی امنیتی-اطلاعاتی میان کشورهای حوزه خلیج فارس و ایالات متحده برای مهار تهدیدات نامتقارن هوایی است.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 1880.52,
+      "tag": "#دیده‌بان_جنگ",
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38930,
+          "media_type": "photo",
+          "link": "https://t.me/Alibk3/38930",
+          "timestamp": 1791891360.7461827
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38931,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38931",
+          "timestamp": 1791891824.9240308
+        }
+      ],
+      "replies": [],
+      "updated_at": 1791891931.413656,
+      "update_reason": "خبر جدید از همان منبع و پیرامون دقیقاً همان رخداد امنیتی (تأیید رسمی حمله سه پهپاد به شمال ریاض توسط عربستان) است و مشمول قوانین پیگیری ابعاد تکمیلی و گزارش‌های پیاپی از یک منبع می‌گردد."
     }
   },
   "reply_to_root_map": {
@@ -9780,44 +9782,44 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 211,
+    "@DidebanJang": 213,
     "@DidehbanEghtesad": 17,
     "@DidebanEterazat": 10,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38930,
-    "VahidHeadline": 326229,
-    "VahidOOnLine": 264911,
+    "Alibk3": 38931,
+    "VahidHeadline": 326239,
+    "VahidOOnLine": 264913,
     "RadioFarda": 162307,
-    "IranintlTV": 362059,
-    "Tasnimnews": 451088,
-    "Farsna": 468148,
-    "isna94": 408602,
-    "irna_1313": 461882,
-    "akharinkhabar": 638089,
-    "khabarfouri": 569356,
-    "akhbarefori": 698054,
-    "dw_farsi": 131123,
-    "entekhab_ir": 383255,
-    "Khabar_Fouri": 551399,
-    "khabari": 201219,
-    "thezoomit": 103780,
-    "farsivoa": 233614,
+    "IranintlTV": 362065,
+    "Tasnimnews": 451095,
+    "Farsna": 468156,
+    "isna94": 408603,
+    "irna_1313": 461894,
+    "akharinkhabar": 638099,
+    "khabarfouri": 569359,
+    "akhbarefori": 698060,
+    "dw_farsi": 131127,
+    "entekhab_ir": 383259,
+    "Khabar_Fouri": 551402,
+    "khabari": 201237,
+    "thezoomit": 103781,
+    "farsivoa": 233619,
     "myITiran": 18271,
-    "Farsi_Iranwire": 94651,
-    "bbcpersian": 293297,
-    "Alarabiya_far": 152111,
+    "Farsi_Iranwire": 94653,
+    "bbcpersian": 293299,
+    "Alarabiya_far": 152112,
     "thezoomon": 5253,
-    "Mr_Economy": 64007,
-    "Eghtesadnews_com": 370768,
-    "Digiato": 114085,
-    "Indypersian": 180087,
-    "withyashar": 25540,
-    "euronewspe": 90573,
-    "Economic_News_Channel": 82746,
-    "farsna": 468130,
+    "Mr_Economy": 64011,
+    "Eghtesadnews_com": 370772,
+    "Digiato": 114086,
+    "Indypersian": 180089,
+    "withyashar": 25543,
+    "euronewspe": 90575,
+    "Economic_News_Channel": 82750,
+    "farsna": 468156,
     "persiannbloomberg": 68206,
     "VahidOnline": 78706,
     "mamlekate": 104815,
@@ -9908,11 +9910,23 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 14,
-    "gemini-3.5-flash-lite": 381,
-    "gemini-2.5-flash": 54,
+    "gemini-3.5-flash-lite": 388,
+    "gemini-2.5-flash": 55,
     "gemini-3-flash-preview": 13,
-    "gemini-3.1-flash-lite": 3
+    "gemini-3.1-flash-lite": 4
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-13 11:10:42 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_38931",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 38931,
+      "text": "‏السعوية تعلن تعرضها لهجوم بـ 3 مسيّرات استهدفت شمال مدينة الرياض",
+      "is_edit": true,
+      "enqueued_at": 1791891964.2568047,
+      "retries": 1,
+      "last_retry_at": 1791891970.3865316
+    }
+  ],
+  "last_saved": "2026-10-13 11:46:16 UTC"
 }

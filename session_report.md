@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 96
-- **Last Message Text:** 🔻ترامپ: شاید در کشتن رهبران ایران زیاده‌روی کرده باشیم
+- **Messages Processed:** 239
+- **Last Message Text:** ♦️ غریب‌آبادی، معاون وزیر خارجه:
 
-دونالد ترامپ، رئیس‌جمهور آمریکا در اظهاراتی ...
-- **Last Message Time:** 2026-10-13 11:10:39
+🔹 آمریکا باید در مذاکرات انعطاف نشان دهد، نه ایران؛ آن‌ها باید اقد...
+- **Last Message Time:** 2026-10-13 11:46:10
