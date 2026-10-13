@@ -12,8 +12,8 @@
       "recovered_source"
     ],
     "VahidOnline_78687": [
-      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78694": [
       "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
@@ -27,8 +27,8 @@
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "recovered_source",
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
+      "recovered_source"
     ],
     "withyashar_25422": [
       "recovered_source",
@@ -546,8 +546,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "recovered_source",
-      "آتش‌سوزی در پایگاه هوایی ایران"
+      "آتش‌سوزی در پایگاه هوایی ایران",
+      "recovered_source"
     ],
     "Alibk3_38863": [
       "recovered_source"
@@ -595,8 +595,8 @@
       "recovered_source"
     ],
     "VahidOnline_78703": [
-      "recovered_source",
-      "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
+      "حملات نظامی در تنگه هرمز، هرمز، نفتکش",
+      "recovered_source"
     ],
     "VahidOnline_78704": [
       "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان",
@@ -2191,11 +2191,18 @@
       "pattern": "withyashar_autonomous",
       "ai_model": "gemini-3.5-flash-lite",
       "latency_sec": 8.93
+    },
+    "Alibk3_38914": {
+      "sent_msg_id": 202,
+      "target_channel": "@DidebanJang",
+      "time": 1791874869.3129056,
+      "thread_key": "withyashar_25518"
     }
   },
   "last_alert_time": {
     "حملات نظامی در ایران": 1791817146.7101414,
-    "انفجار در ریاض": 1791828333.4131253
+    "انفجار در ریاض": 1791828333.4131253,
+    "تجمعات اعتراضی در زاهدان": 1791874234.5925622
   },
   "alibk_posted": {
     "38474": {
@@ -5061,54 +5068,6 @@
           "media_type": "video",
           "link": "https://t.me/Alibk3/38533",
           "timestamp": 1791617058.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38530": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 57,
-      "node": "Alibk3",
-      "root_id": 38530,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791615956.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "ورود هواپیمای سوخت‌رسان آمریکایی به آسمان عراق",
-      "summary": "با وجود خروج نیروهای آمریکایی از خاک عراق، یک فروند هواپیمای سوخت‌رسان متعلق به ارتش ایالات متحده در آسمان این کشور رصد و شناسایی شد.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38530,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38530",
-          "timestamp": 1791615956.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38529": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 56,
-      "node": "Alibk3",
-      "root_id": 38529,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791615086.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "توقف ناوبری هوایی در فرودگاه ریاض",
-      "summary": "منابع خبری از توقف کامل ناوبری و پروازهای هوایی در فرودگاه ریاض، پایتخت عربستان سعودی، خبر دادند؛ رویدادی که بار دیگر نگرانی‌ها پیرامون امنیت تاسیسات حیاتی این کشور را افزایش داده است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38529,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38529",
-          "timestamp": 1791615086.0
         }
       ],
       "replies": [],
@@ -9274,9 +9233,9 @@
       "root_media_type": "text",
       "timestamp": 1791839038.0163722,
       "category": "WAR",
-      "is_iran_related": true,
-      "title": "واکنش ترامپ به تحولات یمن: گفت‌وگو با ولیعهد سعودی درباره رفتارهای نامناسب حوثی‌ها همزمان با پیشروی‌های میدانی نیروهای یمنی",
-      "summary": "دونالد ترامپ پس از گفت‌وگو با ولیعهد سعودی، اقدامات حوثی‌ها را «بسیار نامناسب» توصیف کرد؛ این در حالی است که گزارش‌ها از پیشروی‌های میدانی نیروهای یمنی در چندین جبهه نبرد خبر می‌دهند.",
+      "is_iran_related": false,
+      "title": "تشدید بحران در یمن و فلج شدن فرودگاه ریاض: واکنش تند ترامپ و لغو بیش از ۵۰۰ پرواز همزمان با پیشروی‌های میدانی نیروهای یمنی",
+      "summary": "در پی پیشروی‌های گسترده میدانی نیروهای یمنی در جبهه‌های نبرد، بحران در منطقه ابعاد تازه‌ای به خود گرفته است؛ به گونه‌ای که فرودگاه ریاض از ساعت دو بعدازظهر شنبه دهم اکتبر از پذیرش و اعزام پروازها بازمانده و ۵۰۲ پرواز آن به طور رسمی لغو شده است. این تحولات همزمان با موضع‌گیری اخیر دونالد ترامپ پس از گفت‌وگو با ولیعهد سعودی صورت گرفته که در آن رفتارهای حوثی‌ها را «بسیار نامناسب» توصیف کرده بود.",
       "ai_model": "heuristic_fallback",
       "latency_sec": 12.67,
       "sources": [
@@ -9293,11 +9252,18 @@
           "media_type": "text",
           "link": "https://t.me/Alibk3/38909",
           "timestamp": 1791860596.6998575
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38914,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38914",
+          "timestamp": 1791874846.455769
         }
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ",
-      "updated_at": 1791860596.6998663,
+      "updated_at": 1791874846.4557762,
       "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
     },
     "withyashar_25519": {
@@ -9721,42 +9687,42 @@
   "channel_last_alert_id": {
     "@DidebanJang": 209,
     "@DidehbanEghtesad": 17,
-    "@DidebanEterazat": 9,
+    "@DidebanEterazat": 10,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
     "Alibk3": 38914,
-    "VahidHeadline": 326169,
-    "VahidOOnLine": 264869,
-    "RadioFarda": 162293,
-    "IranintlTV": 362027,
-    "Tasnimnews": 451008,
-    "Farsna": 468099,
-    "isna94": 408559,
-    "irna_1313": 461723,
-    "akharinkhabar": 638014,
-    "khabarfouri": 569301,
-    "akhbarefori": 697946,
-    "dw_farsi": 131115,
-    "entekhab_ir": 383226,
-    "Khabar_Fouri": 551373,
-    "khabari": 201188,
-    "thezoomit": 103750,
-    "farsivoa": 233592,
-    "myITiran": 18268,
+    "VahidHeadline": 326183,
+    "VahidOOnLine": 264870,
+    "RadioFarda": 162295,
+    "IranintlTV": 362032,
+    "Tasnimnews": 451017,
+    "Farsna": 468107,
+    "isna94": 408564,
+    "irna_1313": 461734,
+    "akharinkhabar": 638029,
+    "khabarfouri": 569306,
+    "akhbarefori": 697956,
+    "dw_farsi": 131116,
+    "entekhab_ir": 383229,
+    "Khabar_Fouri": 551380,
+    "khabari": 201191,
+    "thezoomit": 103753,
+    "farsivoa": 233594,
+    "myITiran": 18269,
     "Farsi_Iranwire": 94635,
-    "bbcpersian": 293282,
-    "Alarabiya_far": 152094,
-    "thezoomon": 5247,
-    "Mr_Economy": 63992,
-    "Eghtesadnews_com": 370741,
-    "Digiato": 114065,
-    "Indypersian": 180076,
+    "bbcpersian": 293292,
+    "Alarabiya_far": 152099,
+    "thezoomon": 5248,
+    "Mr_Economy": 63993,
+    "Eghtesadnews_com": 370745,
+    "Digiato": 114068,
+    "Indypersian": 180077,
     "withyashar": 25526,
-    "euronewspe": 90561,
-    "Economic_News_Channel": 82727,
-    "farsna": 468099,
+    "euronewspe": 90562,
+    "Economic_News_Channel": 82729,
+    "farsna": 468107,
     "persiannbloomberg": 68187,
     "VahidOnline": 78706,
     "mamlekate": 104812,
@@ -9847,43 +9813,9 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 14,
-    "gemini-3.5-flash-lite": 334,
+    "gemini-3.5-flash-lite": 337,
     "gemini-2.5-flash": 31
   },
-  "smart_queue": [
-    {
-      "id": "yashar_withyashar_25526",
-      "pipeline": "yashar",
-      "node": "withyashar",
-      "msg_id": 25526,
-      "text": "ترامپ: شعار موردعلاقه‌ام«گی‌ها حامی فلسطین هستند!» می‌دانید اگر گی باشید، آنجا چه بلایی سرتان می‌آورند؟ شما را از بالای ساختمان به پایین پرت می‌کنند. شما را به بالای بلندترین ساختمانی که دارند می‌برند ــ البته ساختمان چندان بلندی هم نیست ــ و از آنجا به پایین پرتتان می‌کنند. بااین‌حال، مدام می‌بینم گی‌ها از فلسطین حمایت می‌کنند!»\nاو در ادامه با لحنی کنایه‌آمیز پرسید: «زنان حامی فلسطین چه بلایی سرشان می‌آید؟»\n@WarRoom",
-      "is_edit": true,
-      "enqueued_at": 1791871578.7557573,
-      "retries": 10,
-      "last_retry_at": 1791873147.3506923
-    },
-    {
-      "id": "yashar_withyashar_25525",
-      "pipeline": "yashar",
-      "node": "withyashar",
-      "msg_id": 25525,
-      "text": "‏شبکه دویچه‌وله آلمان بعد از ماه ها راستی آزمایی مستندی را از مصاحبه با برخی ماموران جدا شده از جمهوری اسلامی منتشر کرد.  مصاحبه‌شوندگان در این مستند تاکید کردند که جمهوری اسلامی برای نجات خود از سقوط، به هر ابزاری متوسل می‌شود. \n@WarRoom \nیاشار : فردا براتون قرار میدم",
-      "is_edit": true,
-      "enqueued_at": 1791871720.9836602,
-      "retries": 7,
-      "last_retry_at": 1791873158.549742
-    },
-    {
-      "id": "alibk_Alibk3_38914",
-      "pipeline": "alibk",
-      "node": "Alibk3",
-      "msg_id": 38914,
-      "text": "منذ الساعة الثانية من مساء السبت 10 أكتوبر وحتى هذه اللحظة، مطار الرياض متوقف عن استقبال وتسيير الرحلات، وقد أُلغيت رسمياً 502 رحلة إليه.",
-      "is_edit": false,
-      "enqueued_at": 1791872339.155478,
-      "retries": 2,
-      "last_retry_at": 1791873175.0814736
-    }
-  ],
-  "last_saved": "2026-10-13 06:33:21 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-13 07:09:09 UTC"
 }
