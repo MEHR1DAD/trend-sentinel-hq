@@ -2628,15 +2628,15 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39020,
-    "VahidHeadline": 326313,
-    "VahidOOnLine": 265013,
+    "Alibk3": 39021,
+    "VahidHeadline": 326314,
+    "VahidOOnLine": 265014,
     "RadioFarda": 162326,
-    "IranintlTV": 362163,
-    "Tasnimnews": 451218,
-    "Farsna": 468314,
-    "isna94": 408659,
-    "irna_1313": 462071,
+    "IranintlTV": 362164,
+    "Tasnimnews": 451219,
+    "Farsna": 468317,
+    "isna94": 408660,
+    "irna_1313": 462073,
     "akharinkhabar": 638212,
     "khabarfouri": 569458,
     "akhbarefori": 698273,
@@ -2645,16 +2645,16 @@
     "Khabar_Fouri": 551495,
     "khabari": 201334,
     "thezoomit": 103831,
-    "farsivoa": 233671,
+    "farsivoa": 233672,
     "myITiran": 18274,
     "Farsi_Iranwire": 94667,
-    "bbcpersian": 293334,
+    "bbcpersian": 293335,
     "Alarabiya_far": 152165,
     "thezoomon": 5263,
     "Mr_Economy": 64044,
     "Eghtesadnews_com": 370833,
     "Digiato": 114126,
-    "Indypersian": 180140,
+    "Indypersian": 180141,
     "withyashar": 25588,
     "euronewspe": 90602,
     "Economic_News_Channel": 82774,
@@ -2748,14 +2748,15 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 14,
-    "gemini-3.5-flash-lite": 427,
+    "gemini-3.8-flash": 16,
+    "gemini-3.5-flash-lite": 429,
     "gemini-2.5-flash": 63,
     "gemini-3-flash-preview": 18,
     "gemini-3.1-flash-lite": 44,
     "gemini-3.1-flash-lite-preview": 21,
-    "gemini-3.6-flash": 2
+    "gemini-3.6-flash": 2,
+    "gemini-3.7-flash": 2
   },
   "smart_queue": [],
-  "last_saved": "2026-10-13 23:17:35 UTC"
+  "last_saved": "2026-10-13 23:50:09 UTC"
 }
