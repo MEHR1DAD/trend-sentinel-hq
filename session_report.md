@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 75
-- **Last Message Text:** یک مقام آمریکایی درباره مذاکرات با ایران: 
-🔹مذاکرات واقعاً متوقف نشده‌اند، اما در عین حال، کاملاً فع...
-- **Last Message Time:** 2026-10-13 18:38:21
+- **Messages Processed:** 99
+- **Last Message Text:** ♦️محمدرضا نقدی، معاون هماهنگ‌کننده سپاه پاسداران، روز سه‌شنبه ۲۱ مهرماه ادعا کرد که در یکی از حملات ...
+- **Last Message Time:** 2026-10-13 19:07:42

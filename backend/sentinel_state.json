@@ -5,8 +5,8 @@
       "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78704": [
-      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان"
     ],
     "withyashar_25522": [
       "recovered_source"
@@ -30,24 +30,6 @@
       "recovered_source"
     ],
     "withyashar_25514": [
-      "recovered_source"
-    ],
-    "withyashar_25511": [
-      "recovered_source"
-    ],
-    "withyashar_25510": [
-      "recovered_source"
-    ],
-    "Alibk3_38869": [
-      "recovered_source"
-    ],
-    "Alibk3_38866": [
-      "recovered_source"
-    ],
-    "Alibk3_38868": [
-      "recovered_source"
-    ],
-    "Alibk3_38870": [
       "recovered_source"
     ],
     "withyashar_25521": [
@@ -78,6 +60,24 @@
       "recovered_source"
     ],
     "entekhab_ir_383228": [
+      "recovered_source"
+    ],
+    "withyashar_25511": [
+      "recovered_source"
+    ],
+    "withyashar_25510": [
+      "recovered_source"
+    ],
+    "Alibk3_38869": [
+      "recovered_source"
+    ],
+    "Alibk3_38866": [
+      "recovered_source"
+    ],
+    "Alibk3_38868": [
+      "recovered_source"
+    ],
+    "Alibk3_38870": [
       "recovered_source"
     ],
     "Alibk3_38863": [
@@ -456,54 +456,6 @@
     ]
   },
   "vip_alert_history": {
-    "Alibk3_38866": {
-      "sent_msg_id": 192,
-      "target_channel": "@DidebanJang",
-      "time": 1791830378.9862459,
-      "thread_key": "Alibk3_38863"
-    },
-    "Alibk3_38868": {
-      "sent_msg_id": 192,
-      "target_channel": "@DidebanJang",
-      "time": 1791830848.2333856,
-      "thread_key": "Alibk3_38863"
-    },
-    "withyashar_25510": {
-      "target_channel": "@DidebanJang",
-      "sent_msg_id": 196,
-      "time": 1791831290.9727626,
-      "text": "العربیه: نیرو های امنیتی بخاطر حمله حوثی ها، بازی را متوقف کردند و سریعا رونالدو رو نیز از ورزشگاه خارج و به یک جای امن منتقل کردن\n@WarRoom",
-      "pattern": "withyashar_autonomous",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 4.75
-    },
-    "Alibk3_38869": {
-      "sent_msg_id": 194,
-      "target_channel": "@DidebanJang",
-      "time": 1791831315.107311,
-      "thread_key": "withyashar_25508"
-    },
-    "Alibk3_38870": {
-      "sent_msg_id": 192,
-      "target_channel": "@DidebanJang",
-      "time": 1791831633.128364,
-      "thread_key": "Alibk3_38863"
-    },
-    "withyashar_25511": {
-      "target_channel": "@DidebanJang",
-      "sent_msg_id": 197,
-      "time": 1791831851.9843314,
-      "text": "سازمان عملیات تجارت دریایی بریتانیا در سومین گزارش پی در پی اعلام کرد یک نفتکش حامل نفت خام هنگام خروج از تنگه هرمز، هدف پرتابه‌ای ناشناس قرار گرفته است.\n@WarRoom",
-      "pattern": "withyashar_autonomous",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 116.4
-    },
-    "Alibk3_38873": {
-      "sent_msg_id": 190,
-      "target_channel": "@DidebanJang",
-      "time": 1791831925.079628,
-      "thread_key": "withyashar_25504"
-    },
     "VahidOnline_78703": {
       "time": 1791832547.608955,
       "pattern": "حملات نظامی در تنگه هرمز، هرمز، نفتکش",
@@ -1319,58 +1271,6 @@
     }
   },
   "thread_alerts": {
-    "withyashar_25510": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 196,
-      "node": "withyashar",
-      "root_id": 25510,
-      "root_text": "العربیه: نیرو های امنیتی بخاطر حمله حوثی ها، بازی را متوقف کردند و سریعا رونالدو رو نیز از ورزشگاه خارج و به یک جای امن منتقل کردن\n@WarRoom",
-      "root_media_type": "text",
-      "timestamp": 1791831291.1759763,
-      "category": "WAR",
-      "is_iran_related": true,
-      "title": "نیروهای امنیتی مسابقه فوتبال را به دلیل تهدید پهپادی حوثی‌ها متوقف و کریستیانو رونالدو را تخلیه کردند",
-      "summary": "به گزارش شبکه العربیه، در پی تهدیدات امنیتی ناشی از حملات موشکی و پهپادی اخیر حوثی‌های یمن به اهداف منطقه‌ای، بازی فوتبال در یکی از استادیوم‌های حساس متوقف شد. نیروهای امنیتی به سرعت کریستیانو رونالدو، ستاره تیم النصر، و سایر بازیکنان را از ورزشگاه خارج کرده و به مکانی امن منتقل کردند. این رویداد بازتاب‌دهنده سطح بالای آماده‌باش امنیتی در زیرساخت‌های کلان و ورزشی منطقه در سایه تنش‌های نظامی جاری است.",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 4.75,
-      "sources": [
-        {
-          "node": "withyashar",
-          "msg_id": 25510,
-          "media_type": "text",
-          "link": "https://t.me/withyashar/25510",
-          "timestamp": 1791831291.175994
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "withyashar_25511": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 197,
-      "node": "withyashar",
-      "root_id": 25511,
-      "root_text": "سازمان عملیات تجارت دریایی بریتانیا در سومین گزارش پی در پی اعلام کرد یک نفتکش حامل نفت خام هنگام خروج از تنگه هرمز، هدف پرتابه‌ای ناشناس قرار گرفته است.\n@WarRoom",
-      "root_media_type": "photo",
-      "timestamp": 1791831851.9872441,
-      "category": "WAR",
-      "is_iran_related": true,
-      "title": "یک فروند نفتکش در خروج از تنگه هرمز هدف پرتابه ناشناس قرار گرفت",
-      "summary": "سازمان عملیات تجارت دریایی بریتانیا (UKMTO) در سومین گزارش متوالی خود از هدف قرار گرفتن یک فروند نفتکش حامل نفت خام توسط یک پرتابه ناشناس در هنگام خروج از تنگه هرمز خبر داد. این رویداد در یکی از حیاتی‌ترین آبراهelهای انرژی جهان رخ داده و با توجه به اهمیت استراتژیک تنگه هرمز در ترانزیت نفت جهانی، زنگ خطر را برای امنیت ناوبری تجاری و احتمال تشکیک تنش‌های منطقه‌ای به صدا درآورده است.",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 116.4,
-      "sources": [
-        {
-          "node": "withyashar",
-          "msg_id": 25511,
-          "media_type": "photo",
-          "link": "https://t.me/withyashar/25511",
-          "timestamp": 1791831851.9872534
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
     "withyashar_25514": {
       "channel": "@DidebanJang",
       "alert_msg_id": 198,
@@ -1990,35 +1890,35 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38984,
-    "VahidHeadline": 326284,
-    "VahidOOnLine": 264974,
-    "RadioFarda": 162319,
-    "IranintlTV": 362129,
-    "Tasnimnews": 451180,
-    "Farsna": 468258,
-    "isna94": 408650,
-    "irna_1313": 462034,
+    "Alibk3": 38988,
+    "VahidHeadline": 326285,
+    "VahidOOnLine": 264978,
+    "RadioFarda": 162322,
+    "IranintlTV": 362133,
+    "Tasnimnews": 451185,
+    "Farsna": 468263,
+    "isna94": 408653,
+    "irna_1313": 462041,
     "akharinkhabar": 638187,
-    "khabarfouri": 569427,
-    "akhbarefori": 698197,
+    "khabarfouri": 569428,
+    "akhbarefori": 698203,
     "dw_farsi": 131148,
-    "entekhab_ir": 383305,
-    "Khabar_Fouri": 551477,
-    "khabari": 201304,
+    "entekhab_ir": 383306,
+    "Khabar_Fouri": 551480,
+    "khabari": 201307,
     "thezoomit": 103781,
-    "farsivoa": 233633,
-    "myITiran": 18271,
-    "Farsi_Iranwire": 94657,
+    "farsivoa": 233651,
+    "myITiran": 18274,
+    "Farsi_Iranwire": 94662,
     "bbcpersian": 293317,
-    "Alarabiya_far": 152145,
+    "Alarabiya_far": 152149,
     "thezoomon": 5261,
-    "Mr_Economy": 64022,
-    "Eghtesadnews_com": 370772,
+    "Mr_Economy": 64034,
+    "Eghtesadnews_com": 370812,
     "Digiato": 114086,
-    "Indypersian": 180089,
-    "withyashar": 25573,
-    "euronewspe": 90586,
+    "Indypersian": 180119,
+    "withyashar": 25575,
+    "euronewspe": 90594,
     "Economic_News_Channel": 82774,
     "farsna": 468156,
     "persiannbloomberg": 68206,
@@ -2112,46 +2012,13 @@
   "gemini_model_stats": {
     "gemini-3.8-flash": 14,
     "gemini-3.5-flash-lite": 389,
-    "gemini-2.5-flash": 61,
-    "gemini-3-flash-preview": 16,
-    "gemini-3.1-flash-lite": 42,
-    "gemini-3.1-flash-lite-preview": 15,
+    "gemini-2.5-flash": 62,
+    "gemini-3-flash-preview": 18,
+    "gemini-3.1-flash-lite": 44,
+    "gemini-3.1-flash-lite-preview": 21,
     "gemini-3.6-flash": 2
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_38981",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 38981,
-      "text": "هجوم يمني يستهدف المنطقة الشرقية في السعودية.",
-      "is_edit": false,
-      "enqueued_at": 1791914897.1802711,
-      "retries": 4,
-      "last_retry_at": 1791915633.787531
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25572",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25572,
-      "text": "وزارت امور خارجه ایران امروز سفیر بریتانیا را احضار کرد به دلیل اتهامات مربوط به ارتباط تهران با حمله به پایگاه  نیروی هوایی فیرفورد بریتانیا.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1791914913.2576823,
-      "retries": 3,
-      "last_retry_at": 1791916226.0660534
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25573",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25573,
-      "text": "دفتر نتانیاهو : نخست‌وزیر، ترامپ را تشویق نمی‌کند که قبل از انتخابات، ایران را مورد حمله قرار دهد، بلکه با او و مقاماتش در حال گفتگو است.\n@WarRoom 😁",
-      "is_edit": false,
-      "enqueued_at": 1791915018.7190757,
-      "retries": 2,
-      "last_retry_at": 1791915363.2698522
-    },
     {
       "id": "vip_multi_agent_Alibk3_38982",
       "pipeline": "vip_multi_agent",
@@ -2160,9 +2027,20 @@
       "text": "القناة 15 العبرية:\n\nإيران تستعرض خططها العسكرية استعدادًا لأي تصعيد محتمل في المنطقة، مع إبقاء جميع الخيارات مفتوحة، بما فيها احتمال التوغّل البري داخل أراضي الإمارات.",
       "is_edit": false,
       "enqueued_at": 1791916199.0523176,
+      "retries": 2,
+      "last_retry_at": 1791917754.9893801
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_38989",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 38989,
+      "text": "صواريخ يمنية فوق الرياض والدمام",
+      "is_edit": false,
+      "enqueued_at": 1791917583.5092056,
       "retries": 0,
       "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-13 18:38:55 UTC"
+  "last_saved": "2026-10-13 19:08:03 UTC"
 }
