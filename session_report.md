@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 35 minutes
-- **Messages Processed:** 239
-- **Last Message Text:** با توافق تشکل‌های صنفی، کمیسیون مشترک «زیست‌بوم دیجیتال کودک» تشکیل می‌شود
+- **Messages Processed:** 316
+- **Last Message Text:** 🔻قوه قضائیه ۹۷ نفر را در پرونده «جنایات جنگی» آمریکا و اسرائیل متهم اعلام کرد
 
-تشکل‌های صنفی فناوری اطل...
-- **Last Message Time:** 2026-10-13 07:09:08
+سخنگوی قوه قضاییه ایر...
+- **Last Message Time:** 2026-10-13 07:44:32

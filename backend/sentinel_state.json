@@ -12,8 +12,8 @@
       "recovered_source"
     ],
     "VahidOnline_78687": [
-      "recovered_source",
-      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
+      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
+      "recovered_source"
     ],
     "VahidOnline_78694": [
       "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
@@ -27,16 +27,16 @@
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
     ],
     "withyashar_25422": [
       "recovered_source",
       "withyashar_report"
     ],
     "withyashar_25423": [
-      "حملات نظامی در ایران، بازار",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در ایران، بازار"
     ],
     "withyashar_25428": [
       "recovered_source",
@@ -91,8 +91,8 @@
       "withyashar_report"
     ],
     "withyashar_25442": [
-      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
     ],
     "withyashar_25443": [
       "recovered_source",
@@ -546,8 +546,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "آتش‌سوزی در پایگاه هوایی ایران",
-      "recovered_source"
+      "recovered_source",
+      "آتش‌سوزی در پایگاه هوایی ایران"
     ],
     "Alibk3_38863": [
       "recovered_source"
@@ -5020,54 +5020,6 @@
           "media_type": "video",
           "link": "https://t.me/Alibk3/38537",
           "timestamp": 1791619939.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38535": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 59,
-      "node": "Alibk3",
-      "root_id": 38535,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791617281.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "آتش‌سوزی در تأسیسات نفتی عربستان",
-      "summary": "گزارش‌ها حاکی از وقوع آتش‌سوزی بزرگ در کارخانه گاز شدقم و بلند شدن دود غلیظ از میدان نفتی الشيبة در عربستان سعودی است؛ این حوادث همزمان با احتمال حملات پهپادی یا موشکی از سوی یمن رخ داده است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38535,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38535",
-          "timestamp": 1791617281.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38533": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 58,
-      "node": "Alibk3",
-      "root_id": 38533,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791617058.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "تصاعد دود غلیظ از میدان نفتی شیبه",
-      "summary": "گزارش‌ها حاکی از آن است که صبح امروز دودی غلیظ از میدان نفتی و گازی استراتژیک «الشیبه» در صحراء الربع الخالی عربستان سعودی، واقع در نزدیکی مرز امارات، شروع به تصاعد کرده است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38533,
-          "media_type": "video",
-          "link": "https://t.me/Alibk3/38533",
-          "timestamp": 1791617058.0
         }
       ],
       "replies": [],
@@ -9693,37 +9645,37 @@
   },
   "channel_watermarks": {
     "Alibk3": 38914,
-    "VahidHeadline": 326183,
-    "VahidOOnLine": 264870,
-    "RadioFarda": 162295,
-    "IranintlTV": 362032,
-    "Tasnimnews": 451017,
-    "Farsna": 468107,
-    "isna94": 408564,
-    "irna_1313": 461734,
-    "akharinkhabar": 638029,
-    "khabarfouri": 569306,
-    "akhbarefori": 697956,
-    "dw_farsi": 131116,
-    "entekhab_ir": 383229,
-    "Khabar_Fouri": 551380,
-    "khabari": 201191,
-    "thezoomit": 103753,
-    "farsivoa": 233594,
+    "VahidHeadline": 326188,
+    "VahidOOnLine": 264881,
+    "RadioFarda": 162296,
+    "IranintlTV": 362036,
+    "Tasnimnews": 451025,
+    "Farsna": 468110,
+    "isna94": 408571,
+    "irna_1313": 461754,
+    "akharinkhabar": 638037,
+    "khabarfouri": 569313,
+    "akhbarefori": 697968,
+    "dw_farsi": 131117,
+    "entekhab_ir": 383232,
+    "Khabar_Fouri": 551384,
+    "khabari": 201200,
+    "thezoomit": 103756,
+    "farsivoa": 233597,
     "myITiran": 18269,
     "Farsi_Iranwire": 94635,
-    "bbcpersian": 293292,
-    "Alarabiya_far": 152099,
-    "thezoomon": 5248,
-    "Mr_Economy": 63993,
-    "Eghtesadnews_com": 370745,
-    "Digiato": 114068,
-    "Indypersian": 180077,
+    "bbcpersian": 293293,
+    "Alarabiya_far": 152100,
+    "thezoomon": 5249,
+    "Mr_Economy": 63995,
+    "Eghtesadnews_com": 370749,
+    "Digiato": 114069,
+    "Indypersian": 180079,
     "withyashar": 25526,
-    "euronewspe": 90562,
-    "Economic_News_Channel": 82729,
-    "farsna": 468107,
-    "persiannbloomberg": 68187,
+    "euronewspe": 90564,
+    "Economic_News_Channel": 82736,
+    "farsna": 468110,
+    "persiannbloomberg": 68188,
     "VahidOnline": 78706,
     "mamlekate": 104812,
     "iliaen": 4744
@@ -9817,5 +9769,5 @@
     "gemini-2.5-flash": 31
   },
   "smart_queue": [],
-  "last_saved": "2026-10-13 07:09:09 UTC"
+  "last_saved": "2026-10-13 07:44:40 UTC"
 }
