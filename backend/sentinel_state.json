@@ -553,12 +553,6 @@
     ]
   },
   "vip_alert_history": {
-    "Alibk3_38904": {
-      "sent_msg_id": 190,
-      "target_channel": "@DidebanJang",
-      "time": 1791845901.3533647,
-      "thread_key": "Alibk3_38860"
-    },
     "withyashar_25525": {
       "target_channel": "@DidebanJang",
       "sent_msg_id": 206,
@@ -2635,14 +2629,14 @@
   },
   "channel_watermarks": {
     "Alibk3": 39020,
-    "VahidHeadline": 326311,
-    "VahidOOnLine": 265012,
+    "VahidHeadline": 326313,
+    "VahidOOnLine": 265013,
     "RadioFarda": 162326,
-    "IranintlTV": 362160,
-    "Tasnimnews": 451215,
-    "Farsna": 468313,
+    "IranintlTV": 362163,
+    "Tasnimnews": 451218,
+    "Farsna": 468314,
     "isna94": 408659,
-    "irna_1313": 462069,
+    "irna_1313": 462071,
     "akharinkhabar": 638212,
     "khabarfouri": 569458,
     "akhbarefori": 698273,
@@ -2651,10 +2645,10 @@
     "Khabar_Fouri": 551495,
     "khabari": 201334,
     "thezoomit": 103831,
-    "farsivoa": 233668,
+    "farsivoa": 233671,
     "myITiran": 18274,
     "Farsi_Iranwire": 94667,
-    "bbcpersian": 293333,
+    "bbcpersian": 293334,
     "Alarabiya_far": 152165,
     "thezoomon": 5263,
     "Mr_Economy": 64044,
@@ -2763,5 +2757,5 @@
     "gemini-3.6-flash": 2
   },
   "smart_queue": [],
-  "last_saved": "2026-10-13 22:49:06 UTC"
+  "last_saved": "2026-10-13 23:17:35 UTC"
 }
