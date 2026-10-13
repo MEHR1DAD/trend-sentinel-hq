@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 77
-- **Last Message Text:** ♦️رایلی بارنز، دستیار وزیر امور خارجه ایالات متحده در امور دموکراسی، حقوق بشر و کار، روز سه‌شنبه با ...
-- **Last Message Time:** 2026-10-13 21:22:41
+- **Messages Processed:** 54
+- **Last Message Text:** 🔻 اکسیوس: ترامپ از نتانیاهو درباره مشارکت اسرائیل در حمله به ایران پرسید
+
+🔹به گفته یک مقام اسرائیلی،...
+- **Last Message Time:** 2026-10-13 21:51:38
