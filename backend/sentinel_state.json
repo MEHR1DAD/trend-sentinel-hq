@@ -35,8 +35,8 @@
       "withyashar_report"
     ],
     "withyashar_25423": [
-      "recovered_source",
-      "حملات نظامی در ایران، بازار"
+      "حملات نظامی در ایران، بازار",
+      "recovered_source"
     ],
     "withyashar_25428": [
       "recovered_source",
@@ -434,8 +434,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "recovered_source",
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
+      "recovered_source"
     ],
     "VahidOnline_78700": [
       "recovered_source"
@@ -5023,30 +5023,6 @@
           "media_type": "text",
           "link": "https://t.me/Alibk3/38551",
           "timestamp": 1791628700.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38542": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 61,
-      "node": "Alibk3",
-      "root_id": 38542,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791623337.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "تحرکات نیروهای یمنی در باب‌المندب",
-      "summary": "گزارش‌ها حاکی از تحرکات نیروهای مسلح یمن در منطقه راهبردی باب‌المندب است. این رویداد در راستای تحولات امنیتی و نظامی جاری در آبراهه‌های منطقه رخ داده است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38542,
-          "media_type": "video",
-          "link": "https://t.me/Alibk3/38542",
-          "timestamp": 1791623337.0
         }
       ],
       "replies": [],
@@ -9786,40 +9762,40 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38921,
-    "VahidHeadline": 326200,
-    "VahidOOnLine": 264885,
-    "RadioFarda": 162296,
-    "IranintlTV": 362042,
-    "Tasnimnews": 451034,
-    "Farsna": 468120,
-    "isna94": 408582,
-    "irna_1313": 461780,
-    "akharinkhabar": 638058,
-    "khabarfouri": 569323,
-    "akhbarefori": 697992,
-    "dw_farsi": 131119,
-    "entekhab_ir": 383240,
-    "Khabar_Fouri": 551389,
-    "khabari": 201210,
-    "thezoomit": 103762,
-    "farsivoa": 233601,
-    "myITiran": 18269,
-    "Farsi_Iranwire": 94641,
+    "Alibk3": 38922,
+    "VahidHeadline": 326203,
+    "VahidOOnLine": 264888,
+    "RadioFarda": 162301,
+    "IranintlTV": 362048,
+    "Tasnimnews": 451039,
+    "Farsna": 468128,
+    "isna94": 408588,
+    "irna_1313": 461793,
+    "akharinkhabar": 638066,
+    "khabarfouri": 569334,
+    "akhbarefori": 698002,
+    "dw_farsi": 131120,
+    "entekhab_ir": 383243,
+    "Khabar_Fouri": 551394,
+    "khabari": 201215,
+    "thezoomit": 103768,
+    "farsivoa": 233603,
+    "myITiran": 18270,
+    "Farsi_Iranwire": 94642,
     "bbcpersian": 293295,
-    "Alarabiya_far": 152100,
+    "Alarabiya_far": 152103,
     "thezoomon": 5250,
-    "Mr_Economy": 63997,
-    "Eghtesadnews_com": 370755,
-    "Digiato": 114072,
-    "Indypersian": 180081,
-    "withyashar": 25535,
-    "euronewspe": 90566,
+    "Mr_Economy": 64000,
+    "Eghtesadnews_com": 370758,
+    "Digiato": 114076,
+    "Indypersian": 180082,
+    "withyashar": 25538,
+    "euronewspe": 90568,
     "Economic_News_Channel": 82737,
-    "farsna": 468110,
+    "farsna": 468128,
     "persiannbloomberg": 68195,
     "VahidOnline": 78706,
-    "mamlekate": 104812,
+    "mamlekate": 104815,
     "iliaen": 4744
   },
   "vahid_post_time": {
@@ -9907,44 +9883,11 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 14,
-    "gemini-3.5-flash-lite": 354,
-    "gemini-2.5-flash": 36,
-    "gemini-3-flash-preview": 6
+    "gemini-3.5-flash-lite": 366,
+    "gemini-2.5-flash": 44,
+    "gemini-3-flash-preview": 12,
+    "gemini-3.1-flash-lite": 3
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_withyashar_25531",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25531,
-      "text": "گزارش‌ها از آغاز درگیری سنگین میان نیروهای نظامی جمهوری اسلامی و افراد مسلح در ارتفاعات منطقه چاه‌احمد شهرستان تفتان، در محدوده کوه لوپ و ارزن‌تاک، از ساعت ۶ صبح امروز حکایت دارند. گفته می‌شود در این درگیری از سلاح‌های سبک، نیمه‌سنگین و سنگین استفاده شده و نیروهای کمکی نیز به منطقه اعزام شده‌اند. تاکنون جزئیات مستقلی درباره تلفات احتمالی منتشر نشده است.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1791880146.7807896,
-      "retries": 1,
-      "last_retry_at": 1791880437.4498944
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25532",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25532,
-      "text": "وال‌استریت ژورنال به نقل از افراد مطلع گزارش داد که ایران به کشورهای عربی منطقه هشدار داده است در صورت آغاز جنگی تازه، احتمال گسترش عملیات نظامی به خاک کشورهای همسایه و حمله به تأسیسات نفتی عربستان سعودی وجود دارد. بر اساس این گزارش، تهران همچنین تهدید کرده است حملات علیه نیروهای آمریکایی را تشدید کند و شناورهای نیروی دریایی آمریکا را هدف قرار دهد؛ از جمله با هدف غرق‌کردن آن‌ها و کشتن ملوانان. این گزارش درباره تهدیدها و سناریوهای احتمالی ایران است و به معنای تأیید اجرای عملیات زمینی نیست.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1791880291.42628,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_38917",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 38917,
-      "text": "القوات اليمنية تحقق اختراقًا مهمًا في مديرية المضاربة بلحج، وتلتف على القوات الموالية للسعودية في جبهة الأغبرة، محررةً الجبال الاستراتيجية، وسط هروب قوات العمالقة الموالية للسعودية.",
-      "is_edit": true,
-      "enqueued_at": 1791880448.6489892,
-      "retries": 0,
-      "last_retry_at": 0
-    }
-  ],
-  "last_saved": "2026-10-13 08:46:32 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-13 09:22:11 UTC"
 }
