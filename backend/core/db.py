@@ -13,6 +13,8 @@ class DatabaseManager:
         try:
             con = sqlite3.connect(self.db_file)
             cur = con.cursor()
+            cur.execute("PRAGMA journal_mode = WAL;")
+            cur.execute("PRAGMA synchronous = NORMAL;")
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS posted_sources (
                     target_channel TEXT,
@@ -30,6 +32,8 @@ class DatabaseManager:
                     updated_at REAL
                 )
             """)
+            cur.execute("CREATE INDEX IF NOT EXISTS idx_posted_lookup ON posted_sources (target_channel, source_node, source_msg_id);")
+            cur.execute("CREATE INDEX IF NOT EXISTS idx_posted_created ON posted_sources (created_at);")
             con.commit()
             
             # 1. Load watermarks from dedicated durable table
@@ -163,3 +167,13 @@ class DatabaseManager:
                 con.close()
             except Exception as e:
                 print(f"⚠️ Error persisting watermark for {canon_node} to DB: {e}")
+
+    def optimize(self):
+        try:
+            con = sqlite3.connect(self.db_file)
+            cur = con.cursor()
+            cur.execute("PRAGMA optimize;")
+            con.commit()
+            con.close()
+        except Exception as e:
+            print(f"⚠️ Error optimizing SQLite DB: {e}")

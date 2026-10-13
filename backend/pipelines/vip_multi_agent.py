@@ -39,6 +39,7 @@ class VipMultiAgentEditorialPipeline:
         self.threads = threads or getattr(sentinel, 'threads', None)
         self.msg_locks = {}
         self.grouped_posted = set()
+        self.in_flight_alerts = {}
 
     # ========================================================
     # --- قفل آهنین ضد تکرار و چتر نجات (Ironclad Dedup & Parachute) ---
@@ -288,13 +289,40 @@ class VipMultiAgentEditorialPipeline:
     # --- سرباز ۴: دیده‌بان رشته‌های فعال ۶ ساعته (Flash Stack) ---
     # ==========================================================
 
-    async def soldier_4_thread_watcher(self, text, node, target_channel, candidate_title=""):
+    async def soldier_4_thread_watcher(self, text, node, target_channel, candidate_title="", current_msg_key=None):
         """
         سرباز ۴ (Flash):
         - پست‌های منتشر شده در کانال مقصد طی ۶ ساعت گذشته (۲۱۶۰۰ ثانیه) را بررسی می‌کند.
         - تصمیم می‌گیرد آیا این خبر باید با یکی از پست‌های فعال قبلی ادغام (MERGE) شود
           یا یک پست جدید و مستقل (NEW_ALERT) منتشر شود.
         """
+        # گام محافظتی: بررسی هشدارهای همزمان در حال پردازش (In-Flight Thread Guard)
+        # جلوگیری از Race Condition زمانی که دو پیام متوالی به فاصله چند ثانیه می‌رسند
+        if current_msg_key:
+            for if_key, if_data in list(self.in_flight_alerts.items()):
+                if if_key == current_msg_key:
+                    continue
+                if if_data.get('target_channel') != target_channel:
+                    continue
+                if (time.time() - if_data.get('started_at', 0)) > 35:
+                    continue
+
+                is_same_src = (if_data.get('node') == node)
+                overlap = set()
+                if self.threads:
+                    anchors_if = self.threads.extract_message_anchors(if_data.get('text', ''), if_data.get('candidate_title', ''))
+                    anchors_cur = self.threads.extract_message_anchors(text, candidate_title)
+                    overlap = anchors_cur.intersection(anchors_if)
+
+                if is_same_src or overlap:
+                    print(f"⏳ [IN-FLIGHT THREAD GUARD] Detected concurrent alert {if_key} processing for {target_channel}. Waiting up to 12s for it to finish dispatch...")
+                    try:
+                        await asyncio.wait_for(if_data['event'].wait(), timeout=12.0)
+                        print(f"✅ [IN-FLIGHT THREAD GUARD] Concurrent alert {if_key} dispatched. Resuming thread watcher with latest threads.")
+                    except asyncio.TimeoutError:
+                        print(f"⚠️ [IN-FLIGHT THREAD GUARD] Wait timed out for {if_key}. Proceeding with current state.")
+                    break
+
         now = time.time()
         six_hours = 6 * 3600 # 21600 seconds
 
@@ -792,53 +820,73 @@ class VipMultiAgentEditorialPipeline:
                     )
                     return
 
-            # ----------------------------------------------------
-            # گام ۲: سرباز شماره ۴ (دیده‌بان رشته‌های فعال ۶ ساعته - Flash)
-            # ----------------------------------------------------
-            thread_info = await self.soldier_4_thread_watcher(
-                clean_text, node, target_channel, candidate_title=route_info.get('candidate_title', '')
-            )
-            if not thread_info:
-                print(f"⏳ [VIP QUEUE: SOLDIER 4] Msg {node}_{msg_id} failed thread watcher. Enqueuing into Smart Queue (45m TTL)...")
-                if hasattr(self.sentinel, 'enqueue_unprocessed_message'):
-                    await self.sentinel.enqueue_unprocessed_message(
-                        pipeline="vip_multi_agent", node=node, msg_id=msg_id, text=clean_text, raw_msg=raw_msg, is_edit=is_edit
-                    )
-                return
+            # ثبت در in_flight_alerts برای هماهنگی و حل مسابقه زمانی (Race Condition)
+            in_flight_key = f"{node}_{msg_id}"
+            in_flight_entry = {
+                'key': in_flight_key,
+                'node': node,
+                'msg_id': msg_id,
+                'target_channel': target_channel,
+                'candidate_title': route_info.get('candidate_title', ''),
+                'text': clean_text,
+                'started_at': time.time(),
+                'event': asyncio.Event()
+            }
+            self.in_flight_alerts[in_flight_key] = in_flight_entry
 
-            is_merge = (thread_info.get('relation') == 'MERGE')
-            existing_td = thread_info.get('target_thread_data')
+            try:
+                # ----------------------------------------------------
+                # گام ۲: سرباز شماره ۴ (دیده‌بان رشته‌های فعال ۶ ساعته - Flash)
+                # ----------------------------------------------------
+                thread_info = await self.soldier_4_thread_watcher(
+                    clean_text, node, target_channel,
+                    candidate_title=route_info.get('candidate_title', ''),
+                    current_msg_key=in_flight_key
+                )
+                if not thread_info:
+                    print(f"⏳ [VIP QUEUE: SOLDIER 4] Msg {node}_{msg_id} failed thread watcher. Enqueuing into Smart Queue (45m TTL)...")
+                    if hasattr(self.sentinel, 'enqueue_unprocessed_message'):
+                        await self.sentinel.enqueue_unprocessed_message(
+                            pipeline="vip_multi_agent", node=node, msg_id=msg_id, text=clean_text, raw_msg=raw_msg, is_edit=is_edit
+                        )
+                    return
 
-            # ----------------------------------------------------
-            # گام ۳: سرباز شماره ۳ (سردبیر حوزه تخصصی - Flash)
-            # ----------------------------------------------------
-            editor_info = await self.soldier_3_domain_editor(
-                clean_text, node, target_channel,
-                is_merge=is_merge,
-                existing_thread_data=existing_td,
-                urgency_level=route_info.get('urgency_level', 'BREAKING'),
-                is_iran_related=route_info.get('is_iran_related', False)
-            )
-            if not editor_info:
-                print(f"⏳ [VIP QUEUE: SOLDIER 3] Msg {node}_{msg_id} failed domain editor. Enqueuing into Smart Queue (45m TTL)...")
-                if hasattr(self.sentinel, 'enqueue_unprocessed_message'):
-                    await self.sentinel.enqueue_unprocessed_message(
-                        pipeline="vip_multi_agent", node=node, msg_id=msg_id, text=clean_text, raw_msg=raw_msg, is_edit=is_edit
-                    )
-                return
+                is_merge = (thread_info.get('relation') == 'MERGE')
+                existing_td = thread_info.get('target_thread_data')
 
-            # ----------------------------------------------------
-            # گام ۴: انتشار یا ادغام نهایی
-            # ----------------------------------------------------
-            await self.execute_dispatch(
-                node=node,
-                msg_id=msg_id,
-                route_info=route_info,
-                thread_info=thread_info,
-                editor_info=editor_info,
-                raw_msg=raw_msg,
-                is_edit=is_edit
-            )
+                # ----------------------------------------------------
+                # گام ۳: سرباز شماره ۳ (سردبیر حوزه تخصصی - Flash)
+                # ----------------------------------------------------
+                editor_info = await self.soldier_3_domain_editor(
+                    clean_text, node, target_channel,
+                    is_merge=is_merge,
+                    existing_thread_data=existing_td,
+                    urgency_level=route_info.get('urgency_level', 'BREAKING'),
+                    is_iran_related=route_info.get('is_iran_related', False)
+                )
+                if not editor_info:
+                    print(f"⏳ [VIP QUEUE: SOLDIER 3] Msg {node}_{msg_id} failed domain editor. Enqueuing into Smart Queue (45m TTL)...")
+                    if hasattr(self.sentinel, 'enqueue_unprocessed_message'):
+                        await self.sentinel.enqueue_unprocessed_message(
+                            pipeline="vip_multi_agent", node=node, msg_id=msg_id, text=clean_text, raw_msg=raw_msg, is_edit=is_edit
+                        )
+                    return
+
+                # ----------------------------------------------------
+                # گام ۴: انتشار یا ادغام نهایی
+                # ----------------------------------------------------
+                await self.execute_dispatch(
+                    node=node,
+                    msg_id=msg_id,
+                    route_info=route_info,
+                    thread_info=thread_info,
+                    editor_info=editor_info,
+                    raw_msg=raw_msg,
+                    is_edit=is_edit
+                )
+            finally:
+                in_flight_entry['event'].set()
+                self.in_flight_alerts.pop(in_flight_key, None)
 
     async def process_queue_item(self, item, raw_msg=None):
         """

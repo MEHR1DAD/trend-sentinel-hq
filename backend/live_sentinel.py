@@ -45,11 +45,23 @@ from backend.core.gemini import GeminiClient
 from backend.core.thread_manager import ThreadAlertManager
 
 # --- Pipelines ---
-from backend.pipelines.mirror import MirrorPipeline
-from backend.pipelines.intelligence import IntelligencePipeline
-from backend.pipelines.yashar import YasharAutonomousPipeline
 from backend.pipelines.radar import RadarPipeline
 from backend.pipelines.vip_multi_agent import VipMultiAgentEditorialPipeline
+
+class _LegacyMirrorStub:
+    def __init__(self, posted_map):
+        self.posted_map = posted_map
+    async def preload_history(self, *args, **kwargs):
+        return 0
+
+class _LegacyIntelligenceStub:
+    def __init__(self, alibk_posted):
+        self.alibk_posted = alibk_posted
+    async def preload_alibk_history(self, *args, **kwargs):
+        return 0
+
+class _LegacyYasharStub:
+    pass
 
 
 class LiveSentinel:
@@ -84,10 +96,14 @@ class LiveSentinel:
             save_state_func=self.save_persisted_state
         )
 
-        # Specialized Pipelines
-        self.mirror_pipeline = MirrorPipeline(self)
-        self.intelligence_pipeline = IntelligencePipeline(self, threads=self.threads)
-        self.yashar_pipeline = YasharAutonomousPipeline(self, threads=self.threads)
+        # Decoupled Legacy Maps (replacing heavy ghost modules)
+        self.mirror_posted_map = {'VahidOnline': {}, 'iliaen': {}}
+        self.alibk_posted_map = {}
+        self.mirror_pipeline = _LegacyMirrorStub(self.mirror_posted_map)
+        self.intelligence_pipeline = _LegacyIntelligenceStub(self.alibk_posted_map)
+        self.yashar_pipeline = _LegacyYasharStub()
+
+        # Active Pipelines
         self.radar_pipeline = RadarPipeline(self, threads=self.threads)
         self.vip_pipeline = VipMultiAgentEditorialPipeline(self, threads=self.threads)
 
@@ -153,15 +169,15 @@ class LiveSentinel:
 
     @property
     def vahid_ai_posted(self):
-        return self.mirror_pipeline.posted_map['VahidOnline']
+        return self.mirror_posted_map['VahidOnline']
 
     @property
     def ilia_ai_posted(self):
-        return self.mirror_pipeline.posted_map['iliaen']
+        return self.mirror_posted_map['iliaen']
 
     @property
     def alibk_posted(self):
-        return self.intelligence_pipeline.alibk_posted
+        return self.alibk_posted_map
 
     @property
     def current_gemini_model(self):
@@ -476,9 +492,9 @@ class LiveSentinel:
                 for k, v in raw_alibk.items():
                     if isinstance(v, dict):
                         try:
-                            self.intelligence_pipeline.alibk_posted[int(k)] = v
+                            self.alibk_posted_map[int(k)] = v
                         except Exception:
-                            self.intelligence_pipeline.alibk_posted[k] = v
+                            self.alibk_posted_map[k] = v
 
                 raw_threads = data.get('thread_alerts', {})
                 for k, v in raw_threads.items():
@@ -505,16 +521,16 @@ class LiveSentinel:
                 raw_vahid_ai = data.get('vahid_ai_posted', {})
                 for k, v in raw_vahid_ai.items():
                     try:
-                        self.mirror_pipeline.posted_map['VahidOnline'][int(k)] = v
+                        self.mirror_posted_map['VahidOnline'][int(k)] = v
                     except Exception:
-                        self.mirror_pipeline.posted_map['VahidOnline'][k] = v
+                        self.mirror_posted_map['VahidOnline'][k] = v
 
                 raw_ilia_ai = data.get('ilia_ai_posted', {})
                 for k, v in raw_ilia_ai.items():
                     try:
-                        self.mirror_pipeline.posted_map['iliaen'][int(k)] = v
+                        self.mirror_posted_map['iliaen'][int(k)] = v
                     except Exception:
-                        self.mirror_pipeline.posted_map['iliaen'][k] = v
+                        self.mirror_posted_map['iliaen'][k] = v
                 
                 raw_watermarks = data.get('channel_watermarks', {})
                 for k, v in raw_watermarks.items():
@@ -530,7 +546,7 @@ class LiveSentinel:
                 self.smart_queue = [q for q in raw_queue if isinstance(q, dict) and (now - q.get('enqueued_at', 0)) <= 2700]
                 queue_log = f", {len(self.smart_queue)} queued items (45m TTL)" if self.smart_queue else ""
                 
-                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.intelligence_pipeline.alibk_posted)} Alibk alerts, {len(self.mirror_pipeline.posted_map['VahidOnline'])} Vahid AI, {len(self.mirror_pipeline.posted_map['iliaen'])} Ilia AI, {len(self.db.channel_watermarks)} watermarks{queue_log}.")
+                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.alibk_posted_map)} Alibk alerts, {len(self.mirror_posted_map['VahidOnline'])} Vahid AI, {len(self.mirror_posted_map['iliaen'])} Ilia AI, {len(self.db.channel_watermarks)} watermarks{queue_log}.")
         except Exception as e:
             print(f"⚠️ Error loading persisted state: {e}")
 
@@ -546,18 +562,18 @@ class LiveSentinel:
             clean_ilia_time = {str(k): v for k, v in self.ilia_post_time.items() if (now - v) <= 259200}
 
             # هرس دیکشنری‌های آینه به حداکثر ۱۵۰ مورد اخیر
-            vahid_ai_items = list(self.mirror_pipeline.posted_map['VahidOnline'].items())[-150:]
+            vahid_ai_items = list(self.mirror_posted_map['VahidOnline'].items())[-150:]
             clean_vahid_ai = {str(k): v for k, v in vahid_ai_items}
-            ilia_ai_items = list(self.mirror_pipeline.posted_map['iliaen'].items())[-150:]
+            ilia_ai_items = list(self.mirror_posted_map['iliaen'].items())[-150:]
             clean_ilia_ai = {str(k): v for k, v in ilia_ai_items}
 
             # هرس پست‌های علی‌بک با TTL سه روزه (یا حداکثر ۱۵۰ مورد اخیر)
             clean_alibk = {
-                k: v for k, v in self.intelligence_pipeline.alibk_posted.items()
+                k: v for k, v in self.alibk_posted_map.items()
                 if isinstance(v, dict) and (now - v.get('timestamp', 0)) <= 259200
             }
             if len(clean_alibk) < 50:
-                clean_alibk = dict(list(self.intelligence_pipeline.alibk_posted.items())[-150:])
+                clean_alibk = dict(list(self.alibk_posted_map.items())[-150:])
 
             clean_queue = [q for q in self.smart_queue if isinstance(q, dict) and (now - q.get('enqueued_at', 0)) <= 2700]
 
@@ -737,11 +753,11 @@ class LiveSentinel:
                             }
                         self.alerted_msg_patterns.setdefault(mk, set()).add('recovered_source')
                         if canon == 'Alibk3':
-                            self.intelligence_pipeline.alibk_posted.setdefault(src_id, {'channel': ch, 'msg_id': m.id, 'timestamp': m.date.timestamp() if m.date else time.time()})
+                            self.alibk_posted_map.setdefault(src_id, {'channel': ch, 'msg_id': m.id, 'timestamp': m.date.timestamp() if m.date else time.time()})
                         elif canon == 'VahidOnline' and ch == '@VahidOnlineAI':
-                            self.mirror_pipeline.posted_map['VahidOnline'].setdefault(src_id, m.id)
+                            self.mirror_posted_map['VahidOnline'].setdefault(src_id, m.id)
                         elif canon == 'iliaen' and ch == '@iliaenAI':
-                            self.mirror_pipeline.posted_map['iliaen'].setdefault(src_id, m.id)
+                            self.mirror_posted_map['iliaen'].setdefault(src_id, m.id)
 
                         if mk not in self.thread_alerts and ch in ('@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat'):
                             title_m = re.search(r'^(?:🚨|🔕|⚡️|📈|⚖️|📢)\s*\*\*(?:هشدار فوری|خبر فوری|هشدار منطقه‌ای|گزارش اقتصادی|گزارش حقوق بشری|گزارش مردمی):\s*([^\*\n]+)\*\*', text)
@@ -1216,6 +1232,10 @@ async def main():
             sentinel.gemini.save_cached_stacks()
         except Exception as e_mod:
             print(f"⚠️ Could not save gemini model cache: {e_mod}")
+        try:
+            sentinel.db.optimize()
+        except Exception:
+            pass
         uptime_mins = int((time.time() - sentinel.start_time) / 60)
         report_content = (
             f"# Sentinel Session Report\n\n"

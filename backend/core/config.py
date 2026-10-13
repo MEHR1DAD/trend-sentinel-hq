@@ -9,7 +9,7 @@ BASELINE_FILE = 'backend/trend_baselines.json'
 STATE_FILE = 'backend/sentinel_state.json'
 POSTED_DB_FILE = 'backend/posted_registry.db'
 PEER_CACHE_FILE = 'backend/telegram_peer_cache.json'
-MAX_RUNTIME_SEC = 35 * 60  # 35 minutes graceful rotation
+MAX_RUNTIME_SEC = 28 * 60  # 28 minutes graceful rotation (clean handover before 30m cron)
 
 # --- Telegram Credentials ---
 API_ID = os.environ.get("TELEGRAM_API_ID")

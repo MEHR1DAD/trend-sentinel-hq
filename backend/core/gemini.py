@@ -33,6 +33,8 @@ class GeminiClient:
         self.last_used_model = DEFAULT_GEMINI_MODEL
         self.model_usage_stats = {}
         self.key_cooldown_until = {k: 0.0 for k in self.api_keys}
+        self.key_locks = {k: asyncio.Lock() for k in self.api_keys}
+        self.key_last_call_time = {k: 0.0 for k in self.api_keys}
         self.gemini_lock = asyncio.Lock()
         self.last_gemini_call_time = 0.0
 
@@ -72,6 +74,11 @@ class GeminiClient:
         new_key = self.get_api_key()
         print(f"🔄 [SOLDIER 0: KEY ROTATE] Switched Key: slot #{old_idx + 1} ➡️ slot #{self.current_key_idx + 1}/{len(self.api_keys)} (Cooldown {cooldown_seconds}s)")
         return new_key
+
+    def _get_key_lock(self, key):
+        if key not in self.key_locks:
+            self.key_locks[key] = asyncio.Lock()
+        return self.key_locks[key]
 
     def load_cached_stacks(self):
         if os.path.exists(self.cache_file):
@@ -217,11 +224,12 @@ class GeminiClient:
                         with urllib.request.urlopen(req, timeout=timeout) as response:
                             return json.loads(response.read().decode('utf-8'))
 
-                    async with self.gemini_lock:
-                        gap = time.time() - self.last_gemini_call_time
-                        if gap < 1.5:
-                            await asyncio.sleep(1.5 - gap)
-                        self.last_gemini_call_time = time.time()
+                    key_lock = self._get_key_lock(cur_key)
+                    async with key_lock:
+                        gap = time.time() - self.key_last_call_time.get(cur_key, 0.0)
+                        if gap < 1.0:
+                            await asyncio.sleep(1.0 - gap)
+                        self.key_last_call_time[cur_key] = time.time()
                         data = await loop.run_in_executor(None, make_req)
 
                     candidates = data.get("candidates", [])
@@ -286,7 +294,12 @@ class GeminiClient:
                     def make_req():
                         with urllib.request.urlopen(req, timeout=timeout) as response:
                             return json.loads(response.read().decode('utf-8'))
-                    async with self.gemini_lock:
+                    key_lock = self._get_key_lock(cur_key)
+                    async with key_lock:
+                        gap = time.time() - self.key_last_call_time.get(cur_key, 0.0)
+                        if gap < 1.0:
+                            await asyncio.sleep(1.0 - gap)
+                        self.key_last_call_time[cur_key] = time.time()
                         data = await loop.run_in_executor(None, make_req)
                     candidates = data.get("candidates", [])
                     if candidates:
