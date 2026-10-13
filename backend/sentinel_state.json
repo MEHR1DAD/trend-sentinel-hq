@@ -8,12 +8,12 @@
       "recovered_source"
     ],
     "iliaen_4743": [
-      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
     ],
     "VahidOnline_78687": [
-      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78694": [
       "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
@@ -27,8 +27,8 @@
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
     ],
     "withyashar_25422": [
       "withyashar_report",
@@ -43,15 +43,15 @@
       "recovered_source"
     ],
     "withyashar_25426": [
-      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان"
     ],
     "withyashar_25427": [
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -91,8 +91,8 @@
       "withyashar_report"
     ],
     "withyashar_25442": [
-      "recovered_source",
-      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
+      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا",
+      "recovered_source"
     ],
     "withyashar_25443": [
       "withyashar_report",
@@ -117,8 +117,8 @@
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "recovered_source",
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
+      "recovered_source"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
@@ -434,8 +434,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "recovered_source",
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
+      "recovered_source"
     ],
     "VahidOnline_78700": [
       "recovered_source"
@@ -595,12 +595,12 @@
       "recovered_source"
     ],
     "VahidOnline_78703": [
-      "recovered_source",
-      "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
+      "حملات نظامی در تنگه هرمز، هرمز، نفتکش",
+      "recovered_source"
     ],
     "VahidOnline_78704": [
-      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان"
     ],
     "withyashar_25522": [
       "recovered_source"
@@ -2152,6 +2152,15 @@
       "target_channel": "@DidebanJang",
       "time": 1791845901.3533647,
       "thread_key": "Alibk3_38860"
+    },
+    "withyashar_25525": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 206,
+      "time": 1791849051.2031353,
+      "text": "‏شبکه دویچه‌وله آلمان بعد از ماه ها راستی آزمایی مستندی را از مصاحبه با برخی ماموران جدا شده از جمهوری اسلامی منتشر کرد.  مصاحبه‌شوندگان در این مستند تاکید کردند که جمهوری اسلامی برای نجات خود از سقوط، به هر ابزاری متوسل می‌شود. \n@WarRoom \nیاشار : فردا براتون قرار میدم",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 11.85
     }
   },
   "last_alert_time": {
@@ -5079,30 +5088,6 @@
           "media_type": "video",
           "link": "https://t.me/Alibk3/38524",
           "timestamp": 1791593169.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38523": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 54,
-      "node": "Alibk3",
-      "root_id": 38523,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791588462.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "تلفات سنگین نیروهای یمنی وابسته به عربستان",
-      "summary": "در پی حملات ناموفق نیروهای جنوب یمن وابسته به عربستان به منطقه باب‌المندب، ۱۵۰ تن از این نیروها کشته و زخمی شدند که آمار تلفات به تفکیک شهرهای مختلف منتشر شده است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38523,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38523",
-          "timestamp": 1791588462.0
         }
       ],
       "replies": [],
@@ -9515,6 +9500,32 @@
         }
       ],
       "replies": []
+    },
+    "withyashar_25525": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 206,
+      "node": "withyashar",
+      "root_id": 25525,
+      "root_text": "‏شبکه دویچه‌وله آلمان بعد از ماه ها راستی آزمایی مستندی را از مصاحبه با برخی ماموران جدا شده از جمهوری اسلامی منتشر کرد.  مصاحبه‌شوندگان در این مستند تاکید کردند که جمهوری اسلامی برای نجات خود از سقوط، به هر ابزاری متوسل می‌شود. \n@WarRoom \nیاشار : فردا براتون قرار میدم",
+      "root_media_type": "text",
+      "timestamp": 1791849051.204472,
+      "category": "WAR",
+      "is_iran_related": true,
+      "title": "‏شبکه دویچه‌وله آلمان بعد از ماه ها راستی آزمایی مستندی را از مصاحبه با برخی ماموران جد...",
+      "summary": "‏شبکه دویچه‌وله آلمان بعد از ماه ها راستی آزمایی مستندی را از مصاحبه با برخی ماموران جدا شده از جمهوری اسلامی منتشر کرد.  مصاحبه‌شوندگان در این مستند تاکید کردند که جمهوری اسلامی برای نجات خود از سقوط، به هر ابزاری متوسل می‌شود. \n@WarRoom \nیاشار : فردا براتون قرار میدم",
+      "ai_model": "heuristic_fallback",
+      "latency_sec": 11.85,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25525,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25525",
+          "timestamp": 1791849051.2044768
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
     }
   },
   "reply_to_root_map": {
@@ -9566,22 +9577,22 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 205,
+    "@DidebanJang": 206,
     "@DidehbanEghtesad": 17,
     "@DidebanEterazat": 9,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38904,
-    "VahidHeadline": 326147,
-    "VahidOOnLine": 264844,
+    "Alibk3": 38907,
+    "VahidHeadline": 326149,
+    "VahidOOnLine": 264850,
     "RadioFarda": 162288,
-    "IranintlTV": 362002,
-    "Tasnimnews": 450978,
-    "Farsna": 468072,
-    "isna94": 408538,
-    "irna_1313": 461653,
+    "IranintlTV": 362005,
+    "Tasnimnews": 450982,
+    "Farsna": 468074,
+    "isna94": 408539,
+    "irna_1313": 461657,
     "akharinkhabar": 637979,
     "khabarfouri": 569250,
     "akhbarefori": 697898,
@@ -9590,18 +9601,18 @@
     "Khabar_Fouri": 551350,
     "khabari": 201168,
     "thezoomit": 103741,
-    "farsivoa": 233571,
+    "farsivoa": 233576,
     "myITiran": 18266,
     "Farsi_Iranwire": 94635,
-    "bbcpersian": 293270,
+    "bbcpersian": 293271,
     "Alarabiya_far": 152085,
     "thezoomon": 5246,
     "Mr_Economy": 63985,
     "Eghtesadnews_com": 370712,
     "Digiato": 114051,
-    "Indypersian": 180060,
-    "withyashar": 25522,
-    "euronewspe": 90549,
+    "Indypersian": 180063,
+    "withyashar": 25525,
+    "euronewspe": 90550,
     "Economic_News_Channel": 82713,
     "farsna": 468068,
     "persiannbloomberg": 68173,
@@ -9692,7 +9703,7 @@
   "gemini_model_stats": {
     "gemini-3.8-flash": 6,
     "gemini-3.5-flash-lite": 320,
-    "gemini-2.5-flash": 21
+    "gemini-2.5-flash": 22
   },
-  "last_saved": "2026-10-12 23:12:44 UTC"
+  "last_saved": "2026-10-13 00:18:33 UTC"
 }
