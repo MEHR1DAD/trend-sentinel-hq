@@ -20,27 +20,27 @@
       "recovered_source"
     ],
     "withyashar_25419": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25420": [
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
     ],
     "withyashar_25422": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25423": [
       "حملات نظامی در ایران، بازار",
       "recovered_source"
     ],
     "withyashar_25428": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25426": [
       "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
@@ -78,8 +78,8 @@
       "withyashar_report"
     ],
     "withyashar_25438": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25439": [
       "withyashar_report"
@@ -95,23 +95,23 @@
       "recovered_source"
     ],
     "withyashar_25443": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25444": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25451": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25461": [
       "withyashar_report"
     ],
     "withyashar_25462": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "withyashar_25460": [
       "withyashar_report"
@@ -124,8 +124,8 @@
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
     ],
     "withyashar_25465": [
-      "withyashar_report",
-      "recovered_source"
+      "recovered_source",
+      "withyashar_report"
     ],
     "Alibk3_38780": [
       "recovered_source"
@@ -595,8 +595,8 @@
       "recovered_source"
     ],
     "VahidOnline_78703": [
-      "حملات نظامی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78704": [
       "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان",
@@ -2182,6 +2182,15 @@
       "target_channel": "@DidebanJang",
       "time": 1791861010.3691816,
       "thread_key": "Alibk3_38842"
+    },
+    "withyashar_25526": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 208,
+      "time": 1791871565.0336223,
+      "text": "ترامپ: شعار موردعلاقه‌ام«گی‌ها حامی فلسطین هستند!» می‌دانید اگر گی باشید، آنجا چه بلایی سرتان می‌آورند؟ شما را از بالای ساختمان به پایین پرت می‌کنند. شما را به بالای بلندترین ساختمانی که دارند می‌برند ــ البته ساختمان چندان بلندی هم نیست ــ و از آنجا به پایین پرتتان می‌کنند. بااین‌حال، مدام می‌بینم گی‌ها از فلسطین حمایت می‌کنند!»\nاو در ادامه با لحنی کنایه‌آمیز پرسید: «زنان حامی فلسطین چه بلایی سرشان می‌آید؟»\n@WarRoom",
+      "pattern": "withyashar_autonomous",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 8.93
     }
   },
   "last_alert_time": {
@@ -3087,6 +3096,11 @@
       "channel": "@DidebanJang",
       "msg_id": 202,
       "timestamp": 1791839037.0
+    },
+    "38912": {
+      "channel": "@DidebanJang",
+      "msg_id": 209,
+      "timestamp": 1791873059.710904
     }
   },
   "thread_alerts": {
@@ -9602,6 +9616,58 @@
         }
       ],
       "replies": []
+    },
+    "withyashar_25526": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 208,
+      "node": "withyashar",
+      "root_id": 25526,
+      "root_text": "ترامپ: شعار موردعلاقه‌ام«گی‌ها حامی فلسطین هستند!» می‌دانید اگر گی باشید، آنجا چه بلایی سرتان می‌آورند؟ شما را از بالای ساختمان به پایین پرت می‌کنند. شما را به بالای بلندترین ساختمانی که دارند می‌برند ــ البته ساختمان چندان بلندی هم نیست ــ و از آنجا به پایین پرتتان می‌کنند. بااین‌حال، مدام می‌بینم گی‌ها از فلسطین حمایت می‌کنند!»\nاو در ادامه با لحنی کنایه‌آمیز پرسید: «زنان حامی فلسطین چه بلایی سرشان می‌آید؟»\n@WarRoom",
+      "root_media_type": "video",
+      "timestamp": 1791871565.03502,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "ترامپ حمایت دوجنس‌گرایان و زنان از فلسطین را به سخره گرفت",
+      "summary": "دونالد ترامپ، رئیس‌جمهور سابق ایالات متحده، در اظهاراتی کنایه‌آمیز به حمایت برخی گروه‌های مدافع حقوق دوجنس‌گرایان و زنان از فلسطین تاخت. او با اشاره به وضعیت حقوق این اقلیت‌ها در مناطق تحت کنترل گروه‌های تندرو فلسطینی، این تناقض رفتاری را زیر سؤال برد. این اظهارات در راستای تلاش‌های ترامپ برای به چالش کشیدن موج اعتراضات و حمایت‌های دانشگاهی و مدنیِ غرب از فلسطین مطرح شده است.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 8.93,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25526,
+          "media_type": "video",
+          "link": "https://t.me/withyashar/25526",
+          "timestamp": 1791871565.035024
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38912": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 209,
+      "node": "Alibk3",
+      "root_id": 38912,
+      "root_text": "القناة 12 العبرية: \n\nعقب بلاغ عن وجود قنبلة في طائرة تابعة لشركة «دلتا» ،هبطت من الولايات المتحدة في مطار بن غوريون، عُزلت الطائرة في هذه الدقائق ويجري فحصها.",
+      "root_media_type": "video",
+      "timestamp": 1791873059.7121553,
+      "category": "WAR",
+      "is_iran_related": false,
+      "title": "فرود اضطراری و جداسازی یک فروند هواپیمای مسافربری در فرودگاه بن‌گوریون به دنبال هشدار بمب‌گذاری",
+      "summary": "شبکه ۱۲ تلویزیون رژیم صهیونیستی گزارش داد که یک فروند هواپیمای مسافربری متعلق به شرکت هواپیمایی «دلتا» که از ایالات متحده وارد فرودگاه بن‌گوریون شده بود، به دنبال دریافت گزارشی مبنی بر وجود بمب، بلافاصله پس از فرود قرنطینه شده و تیم‌های امنیتی در حال بازرسی آن هستند.",
+      "ai_model": "gemini-2.5-flash",
+      "latency_sec": 1491.71,
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38912,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/38912",
+          "timestamp": 1791873059.7121642
+        }
+      ],
+      "replies": [],
+      "tag": "#دیده‌بان_جنگ"
     }
   },
   "reply_to_root_map": {
@@ -9653,45 +9719,45 @@
     "Alibk3_38759": 38713
   },
   "channel_last_alert_id": {
-    "@DidebanJang": 207,
+    "@DidebanJang": 209,
     "@DidehbanEghtesad": 17,
     "@DidebanEterazat": 9,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38911,
-    "VahidHeadline": 326166,
-    "VahidOOnLine": 264866,
-    "RadioFarda": 162291,
-    "IranintlTV": 362025,
-    "Tasnimnews": 451005,
-    "Farsna": 468095,
-    "isna94": 408557,
-    "irna_1313": 461710,
-    "akharinkhabar": 638002,
-    "khabarfouri": 569294,
-    "akhbarefori": 697934,
-    "dw_farsi": 131113,
-    "entekhab_ir": 383222,
-    "Khabar_Fouri": 551370,
-    "khabari": 201183,
-    "thezoomit": 103746,
-    "farsivoa": 233591,
+    "Alibk3": 38914,
+    "VahidHeadline": 326169,
+    "VahidOOnLine": 264869,
+    "RadioFarda": 162293,
+    "IranintlTV": 362027,
+    "Tasnimnews": 451008,
+    "Farsna": 468099,
+    "isna94": 408559,
+    "irna_1313": 461723,
+    "akharinkhabar": 638014,
+    "khabarfouri": 569301,
+    "akhbarefori": 697946,
+    "dw_farsi": 131115,
+    "entekhab_ir": 383226,
+    "Khabar_Fouri": 551373,
+    "khabari": 201188,
+    "thezoomit": 103750,
+    "farsivoa": 233592,
     "myITiran": 18268,
     "Farsi_Iranwire": 94635,
-    "bbcpersian": 293281,
-    "Alarabiya_far": 152091,
+    "bbcpersian": 293282,
+    "Alarabiya_far": 152094,
     "thezoomon": 5247,
-    "Mr_Economy": 63990,
-    "Eghtesadnews_com": 370737,
-    "Digiato": 114056,
-    "Indypersian": 180075,
-    "withyashar": 25525,
-    "euronewspe": 90559,
-    "Economic_News_Channel": 82719,
-    "farsna": 468093,
-    "persiannbloomberg": 68183,
+    "Mr_Economy": 63992,
+    "Eghtesadnews_com": 370741,
+    "Digiato": 114065,
+    "Indypersian": 180076,
+    "withyashar": 25526,
+    "euronewspe": 90561,
+    "Economic_News_Channel": 82727,
+    "farsna": 468099,
+    "persiannbloomberg": 68187,
     "VahidOnline": 78706,
     "mamlekate": 104812,
     "iliaen": 4744
@@ -9780,10 +9846,44 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 9,
-    "gemini-3.5-flash-lite": 329,
-    "gemini-2.5-flash": 28
+    "gemini-3.8-flash": 14,
+    "gemini-3.5-flash-lite": 334,
+    "gemini-2.5-flash": 31
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-13 05:57:47 UTC"
+  "smart_queue": [
+    {
+      "id": "yashar_withyashar_25526",
+      "pipeline": "yashar",
+      "node": "withyashar",
+      "msg_id": 25526,
+      "text": "ترامپ: شعار موردعلاقه‌ام«گی‌ها حامی فلسطین هستند!» می‌دانید اگر گی باشید، آنجا چه بلایی سرتان می‌آورند؟ شما را از بالای ساختمان به پایین پرت می‌کنند. شما را به بالای بلندترین ساختمانی که دارند می‌برند ــ البته ساختمان چندان بلندی هم نیست ــ و از آنجا به پایین پرتتان می‌کنند. بااین‌حال، مدام می‌بینم گی‌ها از فلسطین حمایت می‌کنند!»\nاو در ادامه با لحنی کنایه‌آمیز پرسید: «زنان حامی فلسطین چه بلایی سرشان می‌آید؟»\n@WarRoom",
+      "is_edit": true,
+      "enqueued_at": 1791871578.7557573,
+      "retries": 10,
+      "last_retry_at": 1791873147.3506923
+    },
+    {
+      "id": "yashar_withyashar_25525",
+      "pipeline": "yashar",
+      "node": "withyashar",
+      "msg_id": 25525,
+      "text": "‏شبکه دویچه‌وله آلمان بعد از ماه ها راستی آزمایی مستندی را از مصاحبه با برخی ماموران جدا شده از جمهوری اسلامی منتشر کرد.  مصاحبه‌شوندگان در این مستند تاکید کردند که جمهوری اسلامی برای نجات خود از سقوط، به هر ابزاری متوسل می‌شود. \n@WarRoom \nیاشار : فردا براتون قرار میدم",
+      "is_edit": true,
+      "enqueued_at": 1791871720.9836602,
+      "retries": 7,
+      "last_retry_at": 1791873158.549742
+    },
+    {
+      "id": "alibk_Alibk3_38914",
+      "pipeline": "alibk",
+      "node": "Alibk3",
+      "msg_id": 38914,
+      "text": "منذ الساعة الثانية من مساء السبت 10 أكتوبر وحتى هذه اللحظة، مطار الرياض متوقف عن استقبال وتسيير الرحلات، وقد أُلغيت رسمياً 502 رحلة إليه.",
+      "is_edit": false,
+      "enqueued_at": 1791872339.155478,
+      "retries": 2,
+      "last_retry_at": 1791873175.0814736
+    }
+  ],
+  "last_saved": "2026-10-13 06:33:21 UTC"
 }
