@@ -4,20 +4,20 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4743": [
-      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
     ],
     "VahidOnline_78687": [
-      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78694": [
-      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
     ],
     "withyashar_25419": [
       "recovered_source",
@@ -50,8 +50,8 @@
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -117,8 +117,8 @@
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
@@ -434,8 +434,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
-      "recovered_source"
+      "recovered_source",
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
     ],
     "VahidOnline_78700": [
       "recovered_source"
@@ -595,12 +595,12 @@
       "recovered_source"
     ],
     "VahidOnline_78703": [
-      "حملات نظامی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78704": [
-      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان"
     ],
     "withyashar_25522": [
       "recovered_source"
@@ -669,6 +669,24 @@
       "recovered_source"
     ],
     "Alibk3_38909": [
+      "recovered_source"
+    ],
+    "withyashar_25526": [
+      "recovered_source"
+    ],
+    "withyashar_25530": [
+      "recovered_source"
+    ],
+    "Alibk3_38914": [
+      "recovered_source"
+    ],
+    "Khabar_Fouri_551375": [
+      "recovered_source"
+    ],
+    "akhbarefori_697951": [
+      "recovered_source"
+    ],
+    "entekhab_ir_383228": [
       "recovered_source"
     ]
   },
@@ -2197,6 +2215,34 @@
       "target_channel": "@DidebanJang",
       "time": 1791874869.3129056,
       "thread_key": "withyashar_25518"
+    },
+    "withyashar_25530": {
+      "time": 1791852773.0,
+      "pattern": "recovered_source",
+      "text": "⚡️ **خبر فوری: ترامپ هرگونه حمایت راهبردی چین و روسیه از ایران را رد کرد** 📸\n\n📝 **چکیده تحلیلی رویداد:**\nدونالد ترامپ، رئیس‌جمهور منتخب ایالات متحده، در واکنش به ادعاهای مطرح‌شده توسط برخی جریان‌های سیاسی موسوم به چپ‌گرای افراطی، اعلام کرد که پکن و مسکو هیچ‌گونه حمایت قابل‌توجهی از جمهوری اسلامی ایران به عمل نمی‌آورند. ترامپ با تاکید بر این موضوع که چین و روسیه منافع اقتصادی و ژئوپلیتیک کلانی در سطح جهان دارند که به دلیل حمایت از تهران آن‌ها را به خطر نمی‌اندازند، افزود که در صورت بروز هرگونه کمک پنهانی، ایالات متحده به سرعت از آن مطلع خواهد شد. این اظهارات در حالی مطرح می‌شود که همکاری‌های راهبردی نظامی و انرژی میان تهران، مسکو و پکن همواره یکی از محورهای اصلی نگرانی در دکترین امنیت ملی آمریکا و هم‌پیمانان غربی آن بوده است.\n\n🔗 **منبع خبر:**\n- [withyashar](https://t.me/withyashar/25530) 📸\n\n🔄 **به‌روزرسانی شده (۲۱ مهر، ساعت ۱۱:۳۰) | ویرایش و تکمیل خبر**\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "sent_msg_id": 207,
+      "target_channel": "@DidebanJang"
+    },
+    "Khabar_Fouri_551375": {
+      "time": 1791874253.0,
+      "pattern": "recovered_source",
+      "text": "📢 **گزارش مردمی: تجمعات اعتراضی در زاهدان**\n\n🔗 **منابع خبر:**\n- [Khabar_Fouri](https://t.me/Khabar_Fouri/551375)\n- [akhbarefori](https://t.me/akhbarefori/697951)\n- [entekhab_ir](https://t.me/entekhab_ir/383228)\n\n#دیده‌بان_اعتراضات\n\n@DidebanEterazat",
+      "sent_msg_id": 10,
+      "target_channel": "@DidebanEterazat"
+    },
+    "akhbarefori_697951": {
+      "time": 1791874253.0,
+      "pattern": "recovered_source",
+      "text": "📢 **گزارش مردمی: تجمعات اعتراضی در زاهدان**\n\n🔗 **منابع خبر:**\n- [Khabar_Fouri](https://t.me/Khabar_Fouri/551375)\n- [akhbarefori](https://t.me/akhbarefori/697951)\n- [entekhab_ir](https://t.me/entekhab_ir/383228)\n\n#دیده‌بان_اعتراضات\n\n@DidebanEterazat",
+      "sent_msg_id": 10,
+      "target_channel": "@DidebanEterazat"
+    },
+    "entekhab_ir_383228": {
+      "time": 1791874253.0,
+      "pattern": "recovered_source",
+      "text": "📢 **گزارش مردمی: تجمعات اعتراضی در زاهدان**\n\n🔗 **منابع خبر:**\n- [Khabar_Fouri](https://t.me/Khabar_Fouri/551375)\n- [akhbarefori](https://t.me/akhbarefori/697951)\n- [entekhab_ir](https://t.me/entekhab_ir/383228)\n\n#دیده‌بان_اعتراضات\n\n@DidebanEterazat",
+      "sent_msg_id": 10,
+      "target_channel": "@DidebanEterazat"
     }
   },
   "last_alert_time": {
@@ -3108,6 +3154,11 @@
       "channel": "@DidebanJang",
       "msg_id": 209,
       "timestamp": 1791873059.710904
+    },
+    "38914": {
+      "channel": "@DidebanJang",
+      "msg_id": 202,
+      "timestamp": 1791839037.0
     }
   },
   "thread_alerts": {
@@ -4996,30 +5047,6 @@
           "media_type": "video",
           "link": "https://t.me/Alibk3/38542",
           "timestamp": 1791623337.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38537": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 60,
-      "node": "Alibk3",
-      "root_id": 38537,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791619939.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "دود و آتش در تاسیسات گازی حویا",
-      "summary": "تصاویر ماهواره‌ای از بلند شدن دود از معمل گاز الحویه در میدان الغوار سعودی حکایت دارد. هم‌زمان، گزارش‌هایی از وقوع آتش‌سوزی در معمل گاز شدقم و میدان الشیبه نیز منتشر شده است که وضعیت استهداف آن‌ها همچنان در دست بررسی قرار دارد.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38537,
-          "media_type": "video",
-          "link": "https://t.me/Alibk3/38537",
-          "timestamp": 1791619939.0
         }
       ],
       "replies": [],
@@ -9586,6 +9613,121 @@
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ"
+    },
+    "withyashar_25530": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 207,
+      "node": "withyashar",
+      "root_id": 25530,
+      "root_text": "⚡️ **خبر فوری: ترامپ هرگونه حمایت راهبردی چین و روسیه از ایران را رد کرد** 📸\n\n📝 **چکیده تحلیلی رویداد:**\nدونالد ترامپ، رئیس‌جمهور منتخب ایالات متحده، در واکنش به ادعاهای مطرح‌شده توسط برخی جریان‌های سیاسی موسوم به چپ‌گرای افراطی، اعلام کرد که پکن و مسکو هیچ‌گونه حمایت قابل‌توجهی از جمهوری اسلامی ایران به عمل نمی‌آورند. ترامپ با تاکید بر این موضوع که چین و روسیه منافع اقتصادی و ژئوپلیتیک کلانی در سطح جهان دارند که به دلیل حمایت از تهران آن‌ها را به خطر نمی‌اندازند، افزود که در صورت بروز هرگونه کمک پنهانی، ایالات متحده به سرعت از آن مطلع خواهد شد. این اظهارات در حالی مطرح می‌شود که همکاری‌های راهبردی نظامی و انرژی میان تهران، مسکو و پکن همواره یکی از محورهای اصلی نگرانی در دکترین امنیت ملی آمریکا و هم‌پیمانان غربی آن بوده است.\n\n🔗 **منبع خبر:**\n- [withyashar](https://t.me/withyashar/25530) 📸\n\n🔄 **به‌روزرسانی شده (۲۱ مهر، ساعت ۱۱:۳۰) | ویرایش و تکمیل خبر**\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "root_media_type": "text",
+      "timestamp": 1791852773.0,
+      "title": "ترامپ هرگونه حمایت راهبردی چین و روسیه از ایران را رد کرد",
+      "summary": "",
+      "category": "WAR",
+      "is_iran_related": true,
+      "sources": [
+        {
+          "node": "withyashar",
+          "msg_id": 25530,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25530",
+          "timestamp": 1791852773.0
+        }
+      ],
+      "replies": []
+    },
+    "Alibk3_38914": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 202,
+      "node": "Alibk3",
+      "root_id": 38914,
+      "root_text": "🔕 **هشدار منطقه‌ای: تشدید بحران در یمن و فلج شدن فرودگاه ریاض: واکنش تند ترامپ و لغو بیش از ۵۰۰ پرواز همزمان با پیشروی‌های میدانی نیروهای یمنی**\n\n📝 **چکیده رویداد:**\nدر پی پیشروی‌های گسترده میدانی نیروهای یمنی در جبهه‌های نبرد، بحران در منطقه ابعاد تازه‌ای به خود گرفته است؛ به گونه‌ای که فرودگاه ریاض از ساعت دو بعدازظهر شنبه دهم اکتبر از پذیرش و اعزام پروازها بازمانده و ۵۰۲ پرواز آن به طور رسمی لغو شده است. این تحولات همزمان با موضع‌گیری اخیر دونالد ترامپ پس از گفت‌وگو با ولیعهد سعودی صورت گرفته که در آن رفتارهای حوثی‌ها را «بسیار نامناسب» توصیف کرده بود.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25518) 📝\n- [Alibk3](https://t.me/Alibk3/38909) 📝\n- [Alibk3](https://t.me/Alibk3/38914) 📝\n\n🔄 **به‌روزرسانی شده (۲۱ مهر، ساعت ۱۰:۳۰) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "root_media_type": "text",
+      "timestamp": 1791839037.0,
+      "title": "تشدید بحران در یمن و فلج شدن فرودگاه ریاض: واکنش تند ترامپ و لغو بیش از ۵۰۰ پرواز همزمان با پیشروی‌های میدانی نیروهای یمنی",
+      "summary": "در پی پیشروی‌های گسترده میدانی نیروهای یمنی در جبهه‌های نبرد، بحران در منطقه ابعاد تازه‌ای به خود گرفته است؛ به گونه‌ای که فرودگاه ریاض از ساعت دو بعدازظهر شنبه دهم اکتبر از پذیرش و اعزام پروازها بازمانده و ۵۰۲ پرواز آن به طور رسمی لغو شده است. این تحولات همزمان با موضع‌گیری اخیر دونالد ترامپ پس از گفت‌وگو با ولیعهد سعودی صورت گرفته که در آن رفتارهای حوثی‌ها را «بسیار نامناسب» توصیف کرده بود.",
+      "category": "WAR",
+      "is_iran_related": false,
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38914,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38914",
+          "timestamp": 1791839037.0
+        }
+      ],
+      "replies": []
+    },
+    "Khabar_Fouri_551375": {
+      "channel": "@DidebanEterazat",
+      "alert_msg_id": 10,
+      "node": "Khabar_Fouri",
+      "root_id": 551375,
+      "root_text": "📢 **گزارش مردمی: تجمعات اعتراضی در زاهدان**\n\n🔗 **منابع خبر:**\n- [Khabar_Fouri](https://t.me/Khabar_Fouri/551375)\n- [akhbarefori](https://t.me/akhbarefori/697951)\n- [entekhab_ir](https://t.me/entekhab_ir/383228)\n\n#دیده‌بان_اعتراضات\n\n@DidebanEterazat",
+      "root_media_type": "text",
+      "timestamp": 1791874253.0,
+      "title": "تجمعات اعتراضی در زاهدان",
+      "summary": "",
+      "category": "PROTEST_RIGHTS",
+      "is_iran_related": false,
+      "sources": [
+        {
+          "node": "Khabar_Fouri",
+          "msg_id": 551375,
+          "media_type": "text",
+          "link": "https://t.me/Khabar_Fouri/551375",
+          "timestamp": 1791874253.0
+        }
+      ],
+      "replies": []
+    },
+    "akhbarefori_697951": {
+      "channel": "@DidebanEterazat",
+      "alert_msg_id": 10,
+      "node": "akhbarefori",
+      "root_id": 697951,
+      "root_text": "📢 **گزارش مردمی: تجمعات اعتراضی در زاهدان**\n\n🔗 **منابع خبر:**\n- [Khabar_Fouri](https://t.me/Khabar_Fouri/551375)\n- [akhbarefori](https://t.me/akhbarefori/697951)\n- [entekhab_ir](https://t.me/entekhab_ir/383228)\n\n#دیده‌بان_اعتراضات\n\n@DidebanEterazat",
+      "root_media_type": "text",
+      "timestamp": 1791874253.0,
+      "title": "تجمعات اعتراضی در زاهدان",
+      "summary": "",
+      "category": "PROTEST_RIGHTS",
+      "is_iran_related": false,
+      "sources": [
+        {
+          "node": "akhbarefori",
+          "msg_id": 697951,
+          "media_type": "text",
+          "link": "https://t.me/akhbarefori/697951",
+          "timestamp": 1791874253.0
+        }
+      ],
+      "replies": []
+    },
+    "entekhab_ir_383228": {
+      "channel": "@DidebanEterazat",
+      "alert_msg_id": 10,
+      "node": "entekhab_ir",
+      "root_id": 383228,
+      "root_text": "📢 **گزارش مردمی: تجمعات اعتراضی در زاهدان**\n\n🔗 **منابع خبر:**\n- [Khabar_Fouri](https://t.me/Khabar_Fouri/551375)\n- [akhbarefori](https://t.me/akhbarefori/697951)\n- [entekhab_ir](https://t.me/entekhab_ir/383228)\n\n#دیده‌بان_اعتراضات\n\n@DidebanEterazat",
+      "root_media_type": "text",
+      "timestamp": 1791874253.0,
+      "title": "تجمعات اعتراضی در زاهدان",
+      "summary": "",
+      "category": "PROTEST_RIGHTS",
+      "is_iran_related": false,
+      "sources": [
+        {
+          "node": "entekhab_ir",
+          "msg_id": 383228,
+          "media_type": "text",
+          "link": "https://t.me/entekhab_ir/383228",
+          "timestamp": 1791874253.0
+        }
+      ],
+      "replies": []
     }
   },
   "reply_to_root_map": {
@@ -9644,38 +9786,38 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38914,
-    "VahidHeadline": 326188,
-    "VahidOOnLine": 264881,
+    "Alibk3": 38921,
+    "VahidHeadline": 326200,
+    "VahidOOnLine": 264885,
     "RadioFarda": 162296,
-    "IranintlTV": 362036,
-    "Tasnimnews": 451025,
-    "Farsna": 468110,
-    "isna94": 408571,
-    "irna_1313": 461754,
-    "akharinkhabar": 638037,
-    "khabarfouri": 569313,
-    "akhbarefori": 697968,
-    "dw_farsi": 131117,
-    "entekhab_ir": 383232,
-    "Khabar_Fouri": 551384,
-    "khabari": 201200,
-    "thezoomit": 103756,
-    "farsivoa": 233597,
+    "IranintlTV": 362042,
+    "Tasnimnews": 451034,
+    "Farsna": 468120,
+    "isna94": 408582,
+    "irna_1313": 461780,
+    "akharinkhabar": 638058,
+    "khabarfouri": 569323,
+    "akhbarefori": 697992,
+    "dw_farsi": 131119,
+    "entekhab_ir": 383240,
+    "Khabar_Fouri": 551389,
+    "khabari": 201210,
+    "thezoomit": 103762,
+    "farsivoa": 233601,
     "myITiran": 18269,
-    "Farsi_Iranwire": 94635,
-    "bbcpersian": 293293,
+    "Farsi_Iranwire": 94641,
+    "bbcpersian": 293295,
     "Alarabiya_far": 152100,
-    "thezoomon": 5249,
-    "Mr_Economy": 63995,
-    "Eghtesadnews_com": 370749,
-    "Digiato": 114069,
-    "Indypersian": 180079,
-    "withyashar": 25526,
-    "euronewspe": 90564,
-    "Economic_News_Channel": 82736,
+    "thezoomon": 5250,
+    "Mr_Economy": 63997,
+    "Eghtesadnews_com": 370755,
+    "Digiato": 114072,
+    "Indypersian": 180081,
+    "withyashar": 25535,
+    "euronewspe": 90566,
+    "Economic_News_Channel": 82737,
     "farsna": 468110,
-    "persiannbloomberg": 68188,
+    "persiannbloomberg": 68195,
     "VahidOnline": 78706,
     "mamlekate": 104812,
     "iliaen": 4744
@@ -9765,9 +9907,44 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 14,
-    "gemini-3.5-flash-lite": 337,
-    "gemini-2.5-flash": 31
+    "gemini-3.5-flash-lite": 354,
+    "gemini-2.5-flash": 36,
+    "gemini-3-flash-preview": 6
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-13 07:44:40 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_withyashar_25531",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25531,
+      "text": "گزارش‌ها از آغاز درگیری سنگین میان نیروهای نظامی جمهوری اسلامی و افراد مسلح در ارتفاعات منطقه چاه‌احمد شهرستان تفتان، در محدوده کوه لوپ و ارزن‌تاک، از ساعت ۶ صبح امروز حکایت دارند. گفته می‌شود در این درگیری از سلاح‌های سبک، نیمه‌سنگین و سنگین استفاده شده و نیروهای کمکی نیز به منطقه اعزام شده‌اند. تاکنون جزئیات مستقلی درباره تلفات احتمالی منتشر نشده است.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1791880146.7807896,
+      "retries": 1,
+      "last_retry_at": 1791880437.4498944
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25532",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25532,
+      "text": "وال‌استریت ژورنال به نقل از افراد مطلع گزارش داد که ایران به کشورهای عربی منطقه هشدار داده است در صورت آغاز جنگی تازه، احتمال گسترش عملیات نظامی به خاک کشورهای همسایه و حمله به تأسیسات نفتی عربستان سعودی وجود دارد. بر اساس این گزارش، تهران همچنین تهدید کرده است حملات علیه نیروهای آمریکایی را تشدید کند و شناورهای نیروی دریایی آمریکا را هدف قرار دهد؛ از جمله با هدف غرق‌کردن آن‌ها و کشتن ملوانان. این گزارش درباره تهدیدها و سناریوهای احتمالی ایران است و به معنای تأیید اجرای عملیات زمینی نیست.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1791880291.42628,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_38917",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 38917,
+      "text": "القوات اليمنية تحقق اختراقًا مهمًا في مديرية المضاربة بلحج، وتلتف على القوات الموالية للسعودية في جبهة الأغبرة، محررةً الجبال الاستراتيجية، وسط هروب قوات العمالقة الموالية للسعودية.",
+      "is_edit": true,
+      "enqueued_at": 1791880448.6489892,
+      "retries": 0,
+      "last_retry_at": 0
+    }
+  ],
+  "last_saved": "2026-10-13 08:46:32 UTC"
 }
