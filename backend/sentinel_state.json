@@ -4,12 +4,12 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "recovered_source",
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
+      "recovered_source"
     ],
     "iliaen_4743": [
-      "recovered_source",
-      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
+      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
+      "recovered_source"
     ],
     "VahidOnline_78687": [
       "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
@@ -35,23 +35,23 @@
       "withyashar_report"
     ],
     "withyashar_25423": [
-      "حملات نظامی در ایران، بازار",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در ایران، بازار"
     ],
     "withyashar_25428": [
       "recovered_source",
       "withyashar_report"
     ],
     "withyashar_25426": [
-      "recovered_source",
-      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان"
+      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
+      "recovered_source"
     ],
     "withyashar_25427": [
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "recovered_source",
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
+      "recovered_source"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -91,8 +91,8 @@
       "withyashar_report"
     ],
     "withyashar_25442": [
-      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
     ],
     "withyashar_25443": [
       "recovered_source",
@@ -117,8 +117,8 @@
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "recovered_source",
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
+      "recovered_source"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
@@ -434,8 +434,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "recovered_source",
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
+      "recovered_source"
     ],
     "VahidOnline_78700": [
       "recovered_source"
@@ -595,8 +595,8 @@
       "recovered_source"
     ],
     "VahidOnline_78703": [
-      "recovered_source",
-      "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
+      "حملات نظامی در تنگه هرمز، هرمز، نفتکش",
+      "recovered_source"
     ],
     "VahidOnline_78704": [
       "recovered_source",
@@ -9605,14 +9605,14 @@
   },
   "channel_watermarks": {
     "Alibk3": 38908,
-    "VahidHeadline": 326151,
-    "VahidOOnLine": 264855,
+    "VahidHeadline": 326153,
+    "VahidOOnLine": 264856,
     "RadioFarda": 162288,
     "IranintlTV": 362008,
-    "Tasnimnews": 450987,
-    "Farsna": 468076,
+    "Tasnimnews": 450988,
+    "Farsna": 468077,
     "isna94": 408539,
-    "irna_1313": 461662,
+    "irna_1313": 461663,
     "akharinkhabar": 637979,
     "khabarfouri": 569250,
     "akhbarefori": 697898,
@@ -9621,18 +9621,18 @@
     "Khabar_Fouri": 551350,
     "khabari": 201168,
     "thezoomit": 103741,
-    "farsivoa": 233581,
+    "farsivoa": 233583,
     "myITiran": 18266,
     "Farsi_Iranwire": 94635,
-    "bbcpersian": 293272,
+    "bbcpersian": 293274,
     "Alarabiya_far": 152085,
     "thezoomon": 5246,
     "Mr_Economy": 63985,
     "Eghtesadnews_com": 370712,
     "Digiato": 114051,
-    "Indypersian": 180065,
+    "Indypersian": 180066,
     "withyashar": 25525,
-    "euronewspe": 90552,
+    "euronewspe": 90553,
     "Economic_News_Channel": 82713,
     "farsna": 468076,
     "persiannbloomberg": 68173,
@@ -9725,5 +9725,5 @@
     "gemini-3.5-flash-lite": 321,
     "gemini-2.5-flash": 22
   },
-  "last_saved": "2026-10-13 01:30:51 UTC"
+  "last_saved": "2026-10-13 02:06:37 UTC"
 }
