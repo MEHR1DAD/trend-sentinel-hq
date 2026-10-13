@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 54
-- **Last Message Text:** 🔻 اکسیوس: ترامپ از نتانیاهو درباره مشارکت اسرائیل در حمله به ایران پرسید
+- **Messages Processed:** 52
+- **Last Message Text:** گفت و گوی ملی فلسطین در قاهره انجام می‌شود
 
-🔹به گفته یک مقام اسرائیلی،...
-- **Last Message Time:** 2026-10-13 21:51:38
+🔹شبکه الجزیره قطر از برگزاری دور جدید گفت و گوی ملی فلسط...
+- **Last Message Time:** 2026-10-13 22:19:04
