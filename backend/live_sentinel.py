@@ -292,17 +292,20 @@ class LiveSentinel:
                 cid = info.get('channel_id')
                 pid = info.get('peer_id')
                 ah = info.get('access_hash')
-                if cid:
-                    self.node_id_map[cid] = node
-                    self.node_id_map[str(cid)] = node
-                if pid:
-                    self.node_id_map[pid] = node
-                    self.node_id_map[str(pid)] = node
-                if cid and ah:
-                    from telethon.tl.types import InputPeerChannel
-                    inp = InputPeerChannel(channel_id=int(cid), access_hash=int(ah))
-                    self.node_input_peers[node] = inp
-                    self.node_input_peers[node.lower()] = inp
+                clean_n = node.lstrip('@')
+                at_n = f"@{clean_n}"
+                aliases = {node, clean_n, at_n, node.lower(), clean_n.lower(), at_n.lower()}
+                for n_alias in aliases:
+                    if cid:
+                        self.node_id_map[cid] = node
+                        self.node_id_map[str(cid)] = node
+                    if pid:
+                        self.node_id_map[pid] = node
+                        self.node_id_map[str(pid)] = node
+                    if cid and ah:
+                        from telethon.tl.types import InputPeerChannel
+                        inp = InputPeerChannel(channel_id=int(cid), access_hash=int(ah))
+                        self.node_input_peers[n_alias] = inp
 
         id_map = data.get('id_to_node', {})
         for k, v in id_map.items():
@@ -340,6 +343,8 @@ class LiveSentinel:
             pid = None
 
         if cid:
+            clean_n = node.lstrip('@')
+            at_n = f"@{clean_n}"
             self.node_peer_cache.setdefault('node_peers', {})[node] = {
                 'channel_id': cid,
                 'access_hash': ah,
@@ -348,20 +353,33 @@ class LiveSentinel:
             self.node_peer_cache.setdefault('id_to_node', {})[str(cid)] = node
             if pid:
                 self.node_peer_cache.setdefault('id_to_node', {})[str(pid)] = node
-            self.node_id_map[cid] = node
-            self.node_id_map[str(cid)] = node
-            if pid:
-                self.node_id_map[pid] = node
-                self.node_id_map[str(pid)] = node
-            if ah:
-                from telethon.tl.types import InputPeerChannel
-                inp = InputPeerChannel(channel_id=int(cid), access_hash=int(ah))
-                self.node_input_peers[node] = inp
-                self.node_input_peers[node.lower()] = inp
+            aliases = {node, clean_n, at_n, node.lower(), clean_n.lower(), at_n.lower()}
+            for n_alias in aliases:
+                self.node_id_map[cid] = node
+                self.node_id_map[str(cid)] = node
+                if pid:
+                    self.node_id_map[pid] = node
+                    self.node_id_map[str(pid)] = node
+                if ah:
+                    from telethon.tl.types import InputPeerChannel
+                    inp = InputPeerChannel(channel_id=int(cid), access_hash=int(ah))
+                    self.node_input_peers[n_alias] = inp
             self.save_peer_cache()
 
     def get_node_input_peer(self, node):
-        return self.node_input_peers.get(node) or self.node_input_peers.get((node or '').lower())
+        if not node:
+            return None
+        node_str = str(node)
+        clean_n = node_str.lstrip('@')
+        at_n = f"@{clean_n}"
+        return (
+            self.node_input_peers.get(node_str)
+            or self.node_input_peers.get(node_str.lower())
+            or self.node_input_peers.get(clean_n)
+            or self.node_input_peers.get(clean_n.lower())
+            or self.node_input_peers.get(at_n)
+            or self.node_input_peers.get(at_n.lower())
+        )
 
     def resolve_event_node(self, event):
         """
@@ -402,13 +420,26 @@ class LiveSentinel:
     async def preload_node_entities(self, reader_client):
         self.load_peer_cache()
         cached_nodes = set(self.node_peer_cache.get('node_peers', {}).keys())
-        missing_nodes = [n for n in self.nodes if n not in cached_nodes]
+
+        # Include all radar/source nodes AND destination target channels
+        dest_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat', '@VahidOnlineAI', '@iliaenAI']
+        all_targets = list(self.nodes)
+        for d in dest_channels:
+            if d not in all_targets and d.lstrip('@') not in all_targets:
+                all_targets.append(d)
+
+        missing_nodes = []
+        for n in all_targets:
+            clean_n = n.lstrip('@')
+            at_n = f"@{clean_n}"
+            if n not in cached_nodes and clean_n not in cached_nodes and at_n not in cached_nodes:
+                missing_nodes.append(n)
 
         if not missing_nodes:
-            print(f"📡 [PEER CACHE] All {len(self.nodes)} node entities verified in local disk cache. ZERO Telegram resolve requests made!")
+            print(f"📡 [PEER CACHE] All {len(all_targets)} source & destination entities verified in local disk cache. ZERO Telegram resolve requests made!")
             return
 
-        print(f"📡 [PEER CACHE] {len(missing_nodes)} node(s) missing from disk cache. Resolving with anti-flood delay (1.2s)...")
+        print(f"📡 [PEER CACHE] {len(missing_nodes)} entity/entities missing from disk cache. Resolving with anti-flood delay (1.2s)...")
         for n in missing_nodes:
             try:
                 ent = await reader_client.get_entity(n)
@@ -506,23 +537,42 @@ class LiveSentinel:
     def save_persisted_state(self):
         try:
             now = time.time()
-            clean_vip = {k: v for k, v in self.vip_alert_history.items() if isinstance(v, dict) and (now - v.get('time', 0)) <= 259200}
+            clean_vip = {k: v for k, v in self.vip_alert_history.items() if isinstance(v, dict) and (now - v.get('time', 0)) <= 86400}
             clean_last = {k: v for k, v in self.last_alert_time.items() if isinstance(v, (int, float)) and (now - v) <= 86400}
-            clean_threads = {k: v for k, v in self.thread_alerts.items() if isinstance(v, dict) and (now - v.get('timestamp', 0)) <= 259200}
+            clean_threads = {k: v for k, v in self.thread_alerts.items() if isinstance(v, dict) and (now - v.get('timestamp', 0)) <= 86400}
             active_roots = {v.get('root_id') for v in clean_threads.values()}
             clean_reply_map = {k: v for k, v in self.reply_to_root_map.items() if v in active_roots}
             clean_vahid_time = {str(k): v for k, v in self.vahid_post_time.items() if (now - v) <= 259200}
             clean_ilia_time = {str(k): v for k, v in self.ilia_post_time.items() if (now - v) <= 259200}
-            clean_vahid_ai = {str(k): v for k, v in self.mirror_pipeline.posted_map['VahidOnline'].items()}
-            clean_ilia_ai = {str(k): v for k, v in self.mirror_pipeline.posted_map['iliaen'].items()}
+
+            # هرس دیکشنری‌های آینه به حداکثر ۱۵۰ مورد اخیر
+            vahid_ai_items = list(self.mirror_pipeline.posted_map['VahidOnline'].items())[-150:]
+            clean_vahid_ai = {str(k): v for k, v in vahid_ai_items}
+            ilia_ai_items = list(self.mirror_pipeline.posted_map['iliaen'].items())[-150:]
+            clean_ilia_ai = {str(k): v for k, v in ilia_ai_items}
+
+            # هرس پست‌های علی‌بک با TTL سه روزه (یا حداکثر ۱۵۰ مورد اخیر)
+            clean_alibk = {
+                k: v for k, v in self.intelligence_pipeline.alibk_posted.items()
+                if isinstance(v, dict) and (now - v.get('timestamp', 0)) <= 259200
+            }
+            if len(clean_alibk) < 50:
+                clean_alibk = dict(list(self.intelligence_pipeline.alibk_posted.items())[-150:])
+
             clean_queue = [q for q in self.smart_queue if isinstance(q, dict) and (now - q.get('enqueued_at', 0)) <= 2700]
-            serializable_patterns = {k: list(v) for k, v in self.alerted_msg_patterns.items()}
-            
+
+            # هرس الگوهای پیام برای سبک‌سازی شدید sentinel_state.json از ۶۵۰ کیلوبایت به زیر ۸۰ کیلوبایت
+            active_keys = set(clean_vip.keys()) | set(clean_threads.keys())
+            recent_pattern_items = list(self.alerted_msg_patterns.items())[-150:]
+            clean_patterns = {k: list(v) for k, v in self.alerted_msg_patterns.items() if k in active_keys}
+            for k, v in recent_pattern_items:
+                clean_patterns[k] = list(v)
+
             data = {
-                "alerted_msg_patterns": serializable_patterns,
+                "alerted_msg_patterns": clean_patterns,
                 "vip_alert_history": clean_vip,
                 "last_alert_time": clean_last,
-                "alibk_posted": self.intelligence_pipeline.alibk_posted,
+                "alibk_posted": clean_alibk,
                 "thread_alerts": clean_threads,
                 "reply_to_root_map": clean_reply_map,
                 "channel_last_alert_id": self.channel_last_alert_id,
@@ -541,56 +591,10 @@ class LiveSentinel:
             print(f"⚠️ Error saving persisted state: {e}")
 
     async def cleanup_update_notification_bubbles(self, reader_client=None):
-        target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat']
-        fetch_client = reader_client or self.client or self.bot
-        print("🧹 Starting quick scan to delete any legacy update notification bubbles across channels...")
-        for ch in target_channels:
-            try:
-                to_delete = []
-                async for m in fetch_client.iter_messages(ch, limit=15):
-                    text = m.text or m.message or ""
-                    clean_m = text.replace('\u200c', '').replace(' ', '').replace('*', '')
-                    is_update_bubble = False
-                    if "اینگزارشبادریافتاطلاعاتتکمیلی" in clean_m:
-                        is_update_bubble = True
-                    elif "اطلاعاتتکمیلیبهروزرسانیشد" in clean_m or "اطلاعاتتکمیلیبروزرسانیشد" in clean_m:
-                        is_update_bubble = True
-                    elif ("بهروزرسانیشد" in clean_m or "بروزرسانیشد" in clean_m or "اطلاعاتتکمیلی" in clean_m):
-                        if len(text.strip()) < 200 and not any(k in text for k in ["چکیده", "هشدار", "گزارش اقتصادی", "گزارش حقوق بشری", "گزارش مردمی"]):
-                            is_update_bubble = True
-                    
-                    if is_update_bubble:
-                        to_delete.append(m.id)
-                    elif "سرعت انتشار" in text or "وضعیت عادی" in text:
-                        clean_text = re.sub(r'⚡️\s*سرعت انتشار[^\n]*\n+', '', text)
-                        clean_text = re.sub(r'📊\s*وضعیت عادی[^\n]*\n+', '', clean_text)
-                        clean_text = re.sub(r'\n{3,}', '\n\n', clean_text).strip()
-                        try:
-                            await self.bot.edit_message(ch, m.id, clean_text, link_preview=False)
-                            print(f"🧹 Cleaned velocity/baseline lines from {ch} msg {m.id}")
-                        except Exception:
-                            pass
-
-                if to_delete:
-                    print(f"🗑️ Found {len(to_delete)} update notification bubbles in {ch}: {to_delete}")
-                    for i in range(0, len(to_delete), 50):
-                        batch = to_delete[i:i+50]
-                        try:
-                            await self.bot.delete_messages(ch, batch)
-                            print(f"🗑️ Deleted {len(batch)} notification bubbles via bot in {ch}.")
-                        except Exception as del_err:
-                            print(f"⚠️ Bot failed to delete in {ch}: {del_err}")
-                            
-                        if fetch_client != self.bot:
-                            try:
-                                await fetch_client.delete_messages(ch, batch)
-                                print(f"🗑️ Deleted {len(batch)} notification bubbles via client in {ch}.")
-                            except Exception as c_err:
-                                print(f"⚠️ Client failed to delete in {ch}: {c_err}")
-                else:
-                    print(f"✨ No update notification bubbles found in {ch}.")
-            except Exception as e:
-                print(f"⚠️ Error cleaning up notification bubbles in {ch}: {e}")
+        """
+        Consolidated into init_channel_last_alert_ids for zero redundant message scans.
+        """
+        pass
 
     async def safe_edit_post(self, channel, msg_id, new_text, msg_obj=None, reader_client=None):
         """
@@ -599,6 +603,7 @@ class LiveSentinel:
         2. Bot client (self.bot.edit_message)
         3. User client (reader_client.edit_message or self.client.edit_message)
         """
+        target_peer = self.get_node_input_peer(channel) or channel
         if msg_obj:
             try:
                 await msg_obj.edit(new_text, link_preview=False)
@@ -609,7 +614,7 @@ class LiveSentinel:
 
         if self.bot:
             try:
-                await self.bot.edit_message(channel, msg_id, new_text, link_preview=False)
+                await self.bot.edit_message(target_peer, msg_id, new_text, link_preview=False)
                 print(f"✅ Successfully edited {channel} msg {msg_id} via Bot client.")
                 return True
             except Exception as e_bot:
@@ -618,7 +623,7 @@ class LiveSentinel:
         u_client = reader_client or self.client
         if u_client:
             try:
-                await u_client.edit_message(channel, msg_id, new_text, link_preview=False)
+                await u_client.edit_message(target_peer, msg_id, new_text, link_preview=False)
                 print(f"✅ Successfully edited {channel} msg {msg_id} via User client.")
                 return True
             except Exception as e_user:
@@ -629,13 +634,14 @@ class LiveSentinel:
     async def safe_delete_post(self, channel, msg_id, reader_client=None):
         """
         چتر نجات: حذف قطعی و امن پیام در صورت ایجاد دابل‌پست تصادفی یا دستور پاکسازی
-        تلاش با هر دو کلاینت: ربات ادمین و کلاینت کاربر
+        تلاش با هر دو کلاینت: ربات ادمین و کلاینت کاربر با استفاده از شناسه عددی (Peer ID)
         """
         deleted = False
+        target_peer = self.get_node_input_peer(channel) or channel
         target_ids = [msg_id] if isinstance(msg_id, int) else list(msg_id)
         if self.bot:
             try:
-                await self.bot.delete_messages(channel, target_ids)
+                await self.bot.delete_messages(target_peer, target_ids)
                 print(f"🗑️ [SAFE DELETE] Successfully deleted msg #{msg_id} in {channel} via Bot client.")
                 deleted = True
             except Exception as e_bot:
@@ -644,7 +650,7 @@ class LiveSentinel:
         u_client = reader_client or self.client
         if u_client:
             try:
-                await u_client.delete_messages(channel, target_ids)
+                await u_client.delete_messages(target_peer, target_ids)
                 print(f"🗑️ [SAFE DELETE] Successfully deleted msg #{msg_id} in {channel} via User client.")
                 deleted = True
             except Exception as e_user:
@@ -653,48 +659,62 @@ class LiveSentinel:
         return deleted
 
     async def init_channel_last_alert_ids(self, reader_client=None):
+        """
+        اسکن تجمیعی و سبک شروع کار:
+        تنها یک بار پیمایش ۴۰ پیام اخیر هر کانال دیده‌بان (به جای ۳ اسکن جداگانه).
+        وظایف در همین تک‌پیمایش:
+        ۱. پاکسازی حباب‌های اعلان و خطوط اضافه
+        ۲. استخراج و کش منابع (Alibk3, withyashar, VahidOnline, iliaen)
+        ۳. تنظیم آخرین ID معتبر کانال (channel_last_alert_id)
+        ۴. چتر نجات: حذف پست ۲۱۲ تکراری در صورت وجود
+        """
         target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat']
         fetch_client = reader_client or self.client or self.bot
-        await self.cleanup_update_notification_bubbles(reader_client=fetch_client)
-
         vip_map = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen', 'withyashar': 'withyashar', 'alibk3': 'Alibk3'}
-        for ch in target_channels:
-            try:
-                async for m in fetch_client.iter_messages(ch, limit=35):
-                    if not m or not m.text:
-                        continue
-                    if ch == '@DidebanJang':
-                        if m.id == 165 and ('خبر فوری' not in m.text or 'ساعت ۰۹:۳۹' in m.text):
-                            fixed_165 = (
-                                "⚡️ **خبر فوری: تاخیر در ورود ناو هواپیمابر «تئودور روزولت» آمریکا به ژاپن به دلیل شرایط طوفانی** 📝\n\n"
-                                "📝 **چکیده رویداد:**\n"
-                                "روزنامه آساهی شیمبون ژاپن گزارش داد ورود ناو هواپیمابر هسته‌ای «تئودور روزولت» (CVN-71) و ناوگروه ضربت آن به پایگاه دریایی یوکوسوکا به دلیل وقوع طوفان‌های شدید دریایی به تعویق افتاده و این ناوگروه با چند روز تاخیر، بین ۱۵ تا ۲۰ اکتبر وارد منطقه خواهد شد.\n\n"
-                                "🔗 **منبع خبر:**\n"
-                                "- [withyashar](https://t.me/withyashar/25470) 📝\n\n"
-                                "🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۰۹:۳۹) | ویرایش و بازنویسی تحلیلی**\n\n"
-                                "#دیده‌بان_جنگ\n@DidebanJang"
-                            )
-                            await self.safe_edit_post('@DidebanJang', 165, fixed_165, msg_obj=m, reader_client=fetch_client)
-                        elif m.id == 166 and ('خبر فوری' not in m.text or 'ساعت ۰۹:۴۹' in m.text):
-                            fixed_166 = (
-                                "⚡️ **خبر فوری: تاکید سناتور لیندسی گراهام بر ادامه فشار نظامی علیه ایران و مخالفت با توقف درگیری‌ها** 📹\n\n"
-                                "📝 **چکیده رویداد:**\n"
-                                "سناتور جمهوری‌خواه آمریکایی با ابراز مخالفت صریح نسبت به توقف جنگ، مدعی شد به دلیل در دسترس بودن پیروزی و خطرناک ماندن توانمندی‌های نظامی ایران، واشنگتن نباید در شرایط کنونی عملیات یا فشارهای خود را متوقف کند.\n\n"
-                                "🔗 **منبع خبر:**\n"
-                                "- [withyashar](https://t.me/withyashar/25469) 📹\n\n"
-                                "🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۰۹:۴۹) | ویرایش و بازنویسی تحلیلی**\n\n"
-                                "#دیده‌بان_جنگ\n@DidebanJang"
-                            )
-                            await self.safe_edit_post('@DidebanJang', 166, fixed_166, msg_obj=m, reader_client=fetch_client)
 
+        for ch in target_channels:
+            target_peer = self.get_node_input_peer(ch) or ch
+            to_delete_bubbles = []
+            try:
+                async for m in fetch_client.iter_messages(target_peer, limit=40):
+                    if not m:
+                        continue
+                    text = m.text or m.message or ""
+                    
+                    # الف) بررسی حباب‌های اعلان قدیمی جهت پاکسازی
+                    clean_m = text.replace('\u200c', '').replace(' ', '').replace('*', '')
+                    is_update_bubble = False
+                    if "اینگزارشبادریافتاطلاعاتتکمیلی" in clean_m or "اطلاعاتتکمیلیبهروزرسانیشد" in clean_m or "اطلاعاتتکمیلیبروزرسانیشد" in clean_m:
+                        is_update_bubble = True
+                    elif ("بهروزرسانیشد" in clean_m or "بروزرسانیشد" in clean_m or "اطلاعاتتکمیلی" in clean_m):
+                        if len(text.strip()) < 200 and not any(k in text for k in ["چکیده", "هشدار", "گزارش اقتصادی", "گزارش حقوق بشری", "گزارش مردمی"]):
+                            is_update_bubble = True
+
+                    if is_update_bubble:
+                        to_delete_bubbles.append(m.id)
+                        continue
+
+                    if not text:
+                        continue
+
+                    # ب) پالایش خطوط سرعت انتشار در صورت وجود
+                    if "سرعت انتشار" in text or "وضعیت عادی" in text:
+                        clean_text = re.sub(r'⚡️\s*سرعت انتشار[^\n]*\n+', '', text)
+                        clean_text = re.sub(r'📊\s*وضعیت عادی[^\n]*\n+', '', clean_text)
+                        clean_text = re.sub(r'\n{3,}', '\n\n', clean_text).strip()
+                        try:
+                            await self.bot.edit_message(target_peer, m.id, clean_text, link_preview=False)
+                        except Exception:
+                            pass
+
+                    # ج) تنظیم channel_last_alert_id
                     rep_to = getattr(m, 'reply_to_msg_id', None)
                     if not rep_to and getattr(m, 'reply_to', None):
                         rep_to = getattr(m.reply_to, 'reply_to_msg_id', None)
-                    if rep_to:
-                        continue
-                    if len(m.text.strip()) > 10 and ch not in self.channel_last_alert_id:
+                    if not rep_to and len(text.strip()) > 10 and ch not in self.channel_last_alert_id:
                         self.channel_last_alert_id[ch] = m.id
-                        
+
+                    # د) استخراج منابع و لینک‌های کانال‌های VIP
                     all_urls = self.extract_message_urls(m)
                     found_sources = []
                     for u in all_urls:
@@ -711,7 +731,7 @@ class LiveSentinel:
                             self.vip_alert_history[mk] = {
                                 'time': m.date.timestamp() if m.date else time.time(),
                                 'pattern': 'recovered_source',
-                                'text': m.text,
+                                'text': text,
                                 'sent_msg_id': m.id,
                                 'target_channel': ch
                             }
@@ -722,24 +742,24 @@ class LiveSentinel:
                             self.mirror_pipeline.posted_map['VahidOnline'].setdefault(src_id, m.id)
                         elif canon == 'iliaen' and ch == '@iliaenAI':
                             self.mirror_pipeline.posted_map['iliaen'].setdefault(src_id, m.id)
-                            
+
                         if mk not in self.thread_alerts and ch in ('@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat'):
-                            title_m = re.search(r'^(?:🚨|🔕|⚡️|📈|⚖️|📢)\s*\*\*(?:هشدار فوری|خبر فوری|هشدار منطقه‌ای|گزارش اقتصادی|گزارش حقوق بشری|گزارش مردمی):\s*([^\*\n]+)\*\*', m.text)
+                            title_m = re.search(r'^(?:🚨|🔕|⚡️|📈|⚖️|📢)\s*\*\*(?:هشدار فوری|خبر فوری|هشدار منطقه‌ای|گزارش اقتصادی|گزارش حقوق بشری|گزارش مردمی):\s*([^\*\n]+)\*\*', text)
                             title_text = title_m.group(1).strip() if title_m else ""
-                            summary_m = re.search(r'📝\s*\*\*چکیده رویداد:\*\*\s*\n([^\n]+(?:\n[^\n]+)?)', m.text)
+                            summary_m = re.search(r'📝\s*\*\*چکیده رویداد:\*\*\s*\n([^\n]+(?:\n[^\n]+)?)', text)
                             summary_text = summary_m.group(1).strip() if summary_m else ""
                             self.thread_alerts[mk] = {
                                 'channel': ch,
                                 'alert_msg_id': m.id,
                                 'node': canon,
                                 'root_id': src_id,
-                                'root_text': m.text,
+                                'root_text': text,
                                 'root_media_type': 'text',
                                 'timestamp': m.date.timestamp() if m.date else time.time(),
                                 'title': title_text,
                                 'summary': summary_text,
                                 'category': 'ECONOMY' if ch == '@DidehbanEghtesad' else ('PROTEST_RIGHTS' if ch == '@DidebanEterazat' else 'WAR'),
-                                'is_iran_related': ('🚨' in m.text or '⚡️' in m.text),
+                                'is_iran_related': ('🚨' in text or '⚡️' in text),
                                 'sources': [{
                                     'node': canon,
                                     'msg_id': src_id,
@@ -749,48 +769,19 @@ class LiveSentinel:
                                 }],
                                 'replies': []
                             }
+
+                if to_delete_bubbles:
+                    print(f"🗑️ Found {len(to_delete_bubbles)} update notification bubbles in {ch}. Deleting...")
+                    await self.safe_delete_post(ch, to_delete_bubbles, reader_client=fetch_client)
+
             except Exception as e:
                 print(f"⚠️ Error initializing alert history in {ch}: {e}")
-                
-        # Retroactive polish for Posts 165 and 166 in @DidebanJang (fix raw text copies & titles)
-        try:
-            m165 = await fetch_client.get_messages('@DidebanJang', ids=165)
-            if m165 and m165.text and 'روزنامه ژاپنی' in m165.text and ('خبر فوری' not in m165.text or 'ساعت ۰۹:۳۹' in m165.text):
-                fixed_165 = (
-                    "⚡️ **خبر فوری: تاخیر در ورود ناو هواپیمابر «تئودور روزولت» آمریکا به ژاپن به دلیل شرایط طوفانی** 📝\n\n"
-                    "📝 **چکیده رویداد:**\n"
-                    "روزنامه آساهی شیمبون ژاپن گزارش داد ورود ناو هواپیمابر هسته‌ای «تئودور روزولت» (CVN-71) و ناوگروه ضربت آن به پایگاه دریایی یوکوسوکا به دلیل وقوع طوفان‌های شدید دریایی به تعویق افتاده و این ناوگروه با چند روز تاخیر، بین ۱۵ تا ۲۰ اکتبر وارد منطقه خواهد شد.\n\n"
-                    "🔗 **منبع خبر:**\n"
-                    "- [withyashar](https://t.me/withyashar/25470) 📝\n\n"
-                    "🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۰۹:۳۹) | ویرایش و بازنویسی تحلیلی**\n\n"
-                    "#دیده‌بان_جنگ\n@DidebanJang"
-                )
-                await self.safe_edit_post('@DidebanJang', 165, fixed_165, msg_obj=m165, reader_client=fetch_client)
-                print("✅ Successfully polished post 165 in @DidebanJang!")
-        except Exception as e165:
-            print(f"⚠️ Error polishing post 165 in @DidebanJang: {e165}")
-
-        try:
-            m166 = await fetch_client.get_messages('@DidebanJang', ids=166)
-            if m166 and m166.text and 'گراهام' in m166.text and ('خبر فوری' not in m166.text or 'ساعت ۰۹:۴۹' in m166.text):
-                fixed_166 = (
-                    "⚡️ **خبر فوری: تاکید سناتور لیندسی گراهام بر ادامه فشار نظامی علیه ایران و مخالفت با توقف درگیری‌ها** 📹\n\n"
-                    "📝 **چکیده رویداد:**\n"
-                    "سناتور جمهوری‌خواه آمریکایی با ابراز مخالفت صریح نسبت به توقف جنگ، مدعی شد به دلیل در دسترس بودن پیروزی و خطرناک ماندن توانمندی‌های نظامی ایران، واشنگتن نباید در شرایط کنونی عملیات یا فشارهای خود را متوقف کند.\n\n"
-                    "🔗 **منبع خبر:**\n"
-                    "- [withyashar](https://t.me/withyashar/25469) 📹\n\n"
-                    "🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۰۹:۴۹) | ویرایش و بازنویسی تحلیلی**\n\n"
-                    "#دیده‌بان_جنگ\n@DidebanJang"
-                )
-                await self.safe_edit_post('@DidebanJang', 166, fixed_166, msg_obj=m166, reader_client=fetch_client)
-                print("✅ Successfully polished post 166 in @DidebanJang!")
-        except Exception as e166:
-            print(f"⚠️ Error polishing post 166 in @DidebanJang: {e166}")
 
         # Retroactive Parachute: Delete accidental duplicate Post 212 in @DidebanJang (superseded by Post 213)
         try:
-            m212 = await fetch_client.get_messages('@DidebanJang', ids=212)
-            m213 = await fetch_client.get_messages('@DidebanJang', ids=213)
+            target_peer = self.get_node_input_peer('@DidebanJang') or '@DidebanJang'
+            m212 = await fetch_client.get_messages(target_peer, ids=212)
+            m213 = await fetch_client.get_messages(target_peer, ids=213)
             if m212 and m213 and not getattr(m212, 'empty', False):
                 print("🧹 [PARACHUTE CLEANUP] Found redundant duplicate Post 212 in @DidebanJang. Removing via safe_delete_post...")
                 await self.safe_delete_post('@DidebanJang', 212, reader_client=fetch_client)
@@ -915,20 +906,23 @@ class LiveSentinel:
         for item in list(self.smart_queue):
             item_id = item.get('id')
             now = time.time()
-            if (now - item.get('last_retry_at', 0)) < 15:
+            retries = item.get('retries', 0)
+            backoff_delay = min(15 * (2 ** min(retries, 3)), 90)
+            if (now - item.get('last_retry_at', 0)) < backoff_delay:
                 continue
 
-            item['retries'] = item.get('retries', 0) + 1
+            item['retries'] = retries + 1
             item['last_retry_at'] = now
             age = now - item.get('enqueued_at', now)
-            print(f"🔄 [SMART QUEUE: RETRYING] Attempt #{item['retries']} for {item_id} (Age: {age:.1f}s / {ttl_seconds}s)...")
+            print(f"🔄 [SMART QUEUE: RETRYING] Attempt #{item['retries']} for {item_id} (Backoff: {backoff_delay}s | Age: {age:.1f}s / {ttl_seconds}s)...")
 
             raw_msg = self.smart_queue_raw_msgs.get(item_id)
             if not raw_msg and self.client:
                 try:
-                    fetched = await self.client.get_messages(item['node'], ids=[item['msg_id']])
+                    target_peer = self.get_node_input_peer(item.get('node')) or item.get('node')
+                    fetched = await self.client.get_messages(target_peer, ids=[item['msg_id']])
                     if fetched:
-                        raw_msg = fetched
+                        raw_msg = fetched[0] if isinstance(fetched, list) else fetched
                         self.smart_queue_raw_msgs[item_id] = raw_msg
                 except Exception:
                     pass
@@ -1096,7 +1090,7 @@ async def main():
         last_ids = {}
         last_deletion_check = time.time()
         while True:
-            if time.time() - last_deletion_check >= 90:
+            if time.time() - last_deletion_check >= 180:
                 last_deletion_check = time.time()
                 try:
                     await sentinel.verify_recent_messages_existence()
@@ -1126,7 +1120,7 @@ async def main():
                 except Exception:
                     pass
                 await asyncio.sleep(2.0)
-            await asyncio.sleep(20)
+            await asyncio.sleep(60)
 
     async def heartbeat_monitor():
         while True:
@@ -1162,12 +1156,6 @@ async def main():
             print(f"⚠️ Startup model query timed out or failed: {gm_err}")
         await sentinel.init_channel_last_alert_ids(reader_client=client)
         
-        print("📚 Preloading recent post history from target channels...")
-        await asyncio.gather(
-            sentinel.preload_alibk_history(reader_client=client),
-            return_exceptions=True
-        )
-        
         print("⚡ Executing transition catch-up for all 4 VIP channels...")
         for catchup_coro in (
             sentinel.catchup_unposted_alibk(reader_client=client),
@@ -1190,10 +1178,6 @@ async def main():
             smart_queue_task = asyncio.create_task(sentinel.run_smart_queue_worker())
             await sentinel.preload_node_entities(reader_client=client)
             await sentinel.init_channel_last_alert_ids(reader_client=client)
-            await asyncio.gather(
-                sentinel.preload_alibk_history(reader_client=client),
-                return_exceptions=True
-            )
             await asyncio.gather(
                 sentinel.catchup_unposted_alibk(reader_client=client),
                 sentinel.catchup_unposted_withyashar(reader_client=client),
@@ -1239,6 +1223,10 @@ async def main():
             print("⚠️ Disconnect timed out, forcing exit.")
         
         sentinel.save_persisted_state()
+        try:
+            sentinel.gemini.save_cached_stacks()
+        except Exception as e_mod:
+            print(f"⚠️ Could not save gemini model cache: {e_mod}")
         uptime_mins = int((time.time() - sentinel.start_time) / 60)
         report_content = (
             f"# Sentinel Session Report\n\n"
@@ -1252,7 +1240,7 @@ async def main():
             
     os.system('git config --global user.email "bot@sentinel.local"')
     os.system('git config --global user.name "Sentinel Bot"')
-    os.system('git add session_report.md backend/sentinel_state.json backend/posted_registry.db backend/telegram_peer_cache.json')
+    os.system('git add session_report.md backend/sentinel_state.json backend/posted_registry.db backend/telegram_peer_cache.json backend/model_cache.json')
     os.system('git diff --staged --quiet || (git commit -m "[skip ci] save session report and state" && git pull --rebase origin main && git push || true)')
 
 

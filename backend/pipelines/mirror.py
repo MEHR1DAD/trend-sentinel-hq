@@ -197,19 +197,20 @@ class MirrorPipeline:
                 else:
                     sent = None
                     has_media = raw_msg and getattr(raw_msg, 'media', None)
+                    target_peer = self.sentinel.get_node_input_peer(target_channel) or target_channel
                     if has_media:
                         try:
                             sent = await self.sentinel.bot.send_message(
-                                target_channel, 
+                                target_peer, 
                                 post_content, 
                                 file=raw_msg.media, 
                                 link_preview=False
                             )
                         except Exception as media_err:
                             print(f"⚠️ Media send failed for {source_node} msg {msg_id}: {media_err}. Retrying as text...")
-                            sent = await self.sentinel.bot.send_message(target_channel, post_content, link_preview=False)
+                            sent = await self.sentinel.bot.send_message(target_peer, post_content, link_preview=False)
                     else:
-                        sent = await self.sentinel.bot.send_message(target_channel, post_content, link_preview=False)
+                        sent = await self.sentinel.bot.send_message(target_peer, post_content, link_preview=False)
                         
                     if sent:
                         posted_dict[msg_id] = sent.id

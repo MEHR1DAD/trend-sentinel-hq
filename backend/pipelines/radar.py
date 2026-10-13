@@ -223,8 +223,8 @@ class RadarPipeline:
 
         for nd, ids in recent_ids_by_node.items():
             try:
-                check_ids = list(ids)[:20]
-                msgs = await self.sentinel.client.get_messages(nd, ids=check_ids)
+                target_peer = self.sentinel.get_node_input_peer(nd) or nd
+                msgs = await self.sentinel.client.get_messages(target_peer, ids=check_ids)
                 deleted_ids = []
                 for cid, m in zip(check_ids, msgs):
                     if m is None or isinstance(m, MessageEmpty) or (not getattr(m, 'message', None) and not getattr(m, 'media', None)):
@@ -716,7 +716,8 @@ class RadarPipeline:
             
         sent_msg = None
         try:
-            sent_msg = await self.sentinel.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
+            target_peer = self.sentinel.get_node_input_peer(target_channel) or target_channel
+            sent_msg = await self.sentinel.bot.send_message(target_peer, alert_text, link_preview=False, silent=is_silent)
             if sent_msg:
                 self.sentinel.channel_last_alert_id[target_channel] = sent_msg.id
         except Exception as e:

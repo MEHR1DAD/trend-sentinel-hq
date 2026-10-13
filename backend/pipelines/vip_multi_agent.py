@@ -630,7 +630,8 @@ class VipMultiAgentEditorialPipeline:
             return
 
         try:
-            sent = await self.sentinel.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
+            target_peer = self.sentinel.get_node_input_peer(target_channel) or target_channel
+            sent = await self.sentinel.bot.send_message(target_peer, alert_text, link_preview=False, silent=is_silent)
             if sent:
                 # چتر نجات: اطمینان مضاعف از عدم ارسال دابل‌پست همزمان
                 existing_ch, prev_id = self.find_existing_posted_alert(node, msg_id, target_channel=target_channel)
@@ -863,7 +864,8 @@ class VipMultiAgentEditorialPipeline:
             if watermark > 0:
                 kwargs['min_id'] = watermark
             recent_msgs = []
-            async for msg in reader_client.iter_messages(node, **kwargs):
+            node_peer = self.sentinel.get_node_input_peer(node) or node
+            async for msg in reader_client.iter_messages(node_peer, **kwargs):
                 recent_msgs.append(msg)
             recent_msgs.reverse()
             for msg in recent_msgs:

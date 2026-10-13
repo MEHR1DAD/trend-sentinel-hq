@@ -269,7 +269,8 @@ class YasharAutonomousPipeline:
         )
 
         try:
-            sent = await self.sentinel.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
+            target_peer = self.sentinel.get_node_input_peer(target_channel) or target_channel
+            sent = await self.sentinel.bot.send_message(target_peer, alert_text, link_preview=False, silent=is_silent)
             if sent:
                 self.sentinel.channel_last_alert_id[target_channel] = sent.id
                 self.sentinel.vip_alert_history[msg_key] = {

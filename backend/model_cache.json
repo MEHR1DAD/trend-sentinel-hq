@@ -1,0 +1,13 @@
+{
+  "flash_stack": [
+    "gemini-2.5-flash",
+    "gemini-2.0-flash",
+    "gemini-1.5-flash",
+    "gemini-1.5-flash-8b"
+  ],
+  "lite_stack": [
+    "gemini-2.0-flash-lite"
+  ],
+  "last_discovery_time": 1740000000.0,
+  "updated_at": "2026-10-13 12:45:00 UTC"
+}
