@@ -12,12 +12,12 @@
       "recovered_source"
     ],
     "VahidOnline_78687": [
-      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78694": [
-      "recovered_source",
-      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان"
+      "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
+      "recovered_source"
     ],
     "withyashar_25419": [
       "recovered_source",
@@ -50,8 +50,8 @@
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -546,8 +546,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "آتش‌سوزی در پایگاه هوایی ایران",
-      "recovered_source"
+      "recovered_source",
+      "آتش‌سوزی در پایگاه هوایی ایران"
     ],
     "Alibk3_38863": [
       "recovered_source"
@@ -595,8 +595,8 @@
       "recovered_source"
     ],
     "VahidOnline_78703": [
-      "حملات نظامی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78704": [
       "recovered_source",
@@ -9606,13 +9606,13 @@
   "channel_watermarks": {
     "Alibk3": 38908,
     "VahidHeadline": 326153,
-    "VahidOOnLine": 264856,
+    "VahidOOnLine": 264858,
     "RadioFarda": 162288,
-    "IranintlTV": 362008,
-    "Tasnimnews": 450988,
-    "Farsna": 468077,
-    "isna94": 408539,
-    "irna_1313": 461663,
+    "IranintlTV": 362010,
+    "Tasnimnews": 450989,
+    "Farsna": 468079,
+    "isna94": 408540,
+    "irna_1313": 461673,
     "akharinkhabar": 637979,
     "khabarfouri": 569250,
     "akhbarefori": 697898,
@@ -9621,7 +9621,7 @@
     "Khabar_Fouri": 551350,
     "khabari": 201168,
     "thezoomit": 103741,
-    "farsivoa": 233583,
+    "farsivoa": 233586,
     "myITiran": 18266,
     "Farsi_Iranwire": 94635,
     "bbcpersian": 293274,
@@ -9634,7 +9634,7 @@
     "withyashar": 25525,
     "euronewspe": 90553,
     "Economic_News_Channel": 82713,
-    "farsna": 468076,
+    "farsna": 468079,
     "persiannbloomberg": 68173,
     "VahidOnline": 78704,
     "iliaen": 4744
@@ -9725,5 +9725,5 @@
     "gemini-3.5-flash-lite": 321,
     "gemini-2.5-flash": 22
   },
-  "last_saved": "2026-10-13 02:06:37 UTC"
+  "last_saved": "2026-10-13 02:42:06 UTC"
 }
