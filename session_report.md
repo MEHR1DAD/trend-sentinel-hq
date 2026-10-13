@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 99
-- **Last Message Text:** ♦️ابوالفضل ظهره‌وند، نماینده مجلس: پیش‌بینی می‌کنم ظرف یک هفته تا ده روز آینده جنگ از سر گرفته شود
-
-...
-- **Last Message Time:** 2026-10-13 20:53:30
+- **Messages Processed:** 77
+- **Last Message Text:** ♦️رایلی بارنز، دستیار وزیر امور خارجه ایالات متحده در امور دموکراسی، حقوق بشر و کار، روز سه‌شنبه با ...
+- **Last Message Time:** 2026-10-13 21:22:41
