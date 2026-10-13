@@ -1,4 +1,48 @@
 {
-  "node_peers": {},
-  "id_to_node": {}
+  "node_peers": {
+    "VahidOnline": {
+      "channel_id": 1003363723,
+      "access_hash": -6182113671196147781,
+      "peer_id": -1001003363723
+    },
+    "VahidHeadline": {
+      "channel_id": 1680819743,
+      "access_hash": -4522143738305782691,
+      "peer_id": -1001680819743
+    },
+    "VahidOOnLine": {
+      "channel_id": 1056421841,
+      "access_hash": -4879845436332316756,
+      "peer_id": -1001056421841
+    },
+    "bbcpersian": {
+      "channel_id": 1006430686,
+      "access_hash": -9043216605012361613,
+      "peer_id": -1001006430686
+    },
+    "RadioFarda": {
+      "channel_id": 1002688148,
+      "access_hash": 6009831241672423611,
+      "peer_id": -1001002688148
+    },
+    "IranintlTV": {
+      "channel_id": 1140394567,
+      "access_hash": 3135742130884801445,
+      "peer_id": -1001140394567
+    }
+  },
+  "id_to_node": {
+    "1003363723": "VahidOnline",
+    "-1001003363723": "VahidOnline",
+    "1680819743": "VahidHeadline",
+    "-1001680819743": "VahidHeadline",
+    "1056421841": "VahidOOnLine",
+    "-1001056421841": "VahidOOnLine",
+    "1006430686": "bbcpersian",
+    "-1001006430686": "bbcpersian",
+    "1002688148": "RadioFarda",
+    "-1001002688148": "RadioFarda",
+    "1140394567": "IranintlTV",
+    "-1001140394567": "IranintlTV"
+  }
 }

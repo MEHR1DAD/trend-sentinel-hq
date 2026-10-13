@@ -1,13 +1,22 @@
 {
   "flash_stack": [
+    "gemini-3.8-flash",
+    "gemini-3.7-flash",
+    "gemini-3.6-flash",
+    "gemini-3.5-flash",
+    "gemini-3-flash-preview",
     "gemini-2.5-flash",
-    "gemini-2.0-flash",
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-8b"
+    "gemini-omni-1.1-flash",
+    "gemini-flash-latest",
+    "gemini-omni-flash-preview"
   ],
   "lite_stack": [
-    "gemini-2.0-flash-lite"
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-2.5-flash-lite",
+    "gemini-flash-lite-latest"
   ],
-  "last_discovery_time": 1740000000.0,
-  "updated_at": "2026-10-13 12:45:00 UTC"
+  "last_discovery_time": 1791901708.4715583,
+  "updated_at": "2026-10-13 14:57:47 UTC"
 }
