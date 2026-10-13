@@ -946,7 +946,7 @@ class RadarPipeline:
                     'is_iran_related': is_iran,
                     'title': topic_title,
                     'summary': topic_summary,
-                    'tag': '#دیده‌بان_اقتصاد' if target_channel == '@DidehbanEghtesad' else ('#دیده‌بان_اعتراضات' if target_channel == '@DidebanEterazat' else '#دیده‌بان_جنگ'),
+                    'tag': CHANNEL_CANONICAL_TAGS.get(target_channel, '#دیده‌بان_جنگ'),
                     'sources': [{
                         'node': canonical_node,
                         'msg_id': msg_id,
