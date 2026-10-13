@@ -1,13 +1,5 @@
 {
   "alerted_msg_patterns": {
-    "VahidOnline_78703": [
-      "recovered_source",
-      "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
-    ],
-    "VahidOnline_78704": [
-      "recovered_source",
-      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان"
-    ],
     "withyashar_25522": [
       "recovered_source"
     ],
@@ -60,6 +52,14 @@
       "recovered_source"
     ],
     "entekhab_ir_383228": [
+      "recovered_source"
+    ],
+    "VahidOnline_78703": [
+      "recovered_source",
+      "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
+    ],
+    "VahidOnline_78704": [
+      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان",
       "recovered_source"
     ],
     "withyashar_25511": [
@@ -132,8 +132,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "recovered_source",
-      "آتش‌سوزی در پایگاه هوایی ایران"
+      "آتش‌سوزی در پایگاه هوایی ایران",
+      "recovered_source"
     ],
     "withyashar_25505": [
       "recovered_source"
@@ -199,8 +199,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
-      "recovered_source"
+      "recovered_source",
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
     ],
     "withyashar_25495": [
       "recovered_source"
@@ -456,28 +456,6 @@
     ]
   },
   "vip_alert_history": {
-    "VahidOnline_78703": {
-      "time": 1791832547.608955,
-      "pattern": "حملات نظامی در تنگه هرمز، هرمز، نفتکش",
-      "text": "UKMTO:\nمرکز عملیات تجارت دریایی بریتانیا  گزارشی با تأخیر از وقوع حادثه‌ای در تنگه هرمز دریافت کرده است.\nیک منبع تأییدشده گزارش داده است که یک نفتکش حامل نفت خام هنگام خروج از تنگه هرمز، هدف اصابت پرتابه‌ای ناشناس قرار گرفته است.\nمقام‌های مسئول در حال بررسی این حادثه هستند.\nUK_MTO\n\n📡 @VahidOnline"
-    },
-    "VahidOnline_78704": {
-      "time": 1791832548.395361,
-      "pattern": "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان||FOREIGN||",
-      "text": "سخنگوی نیروهای ائتلاف تحت رهبری سعودی اعلام کرد که پدافند هوایی این کشور موفق شده است آتش موشک‌های ورودی از یمن را با موفقیت رهگیری و منهدم کند.\n\nدوشنبه شب، ۲۰ مهر دقایقی پس از ارسال پیامک هشدار تهدید هوایی به تلفن همراه ساکنان، چندین انفجار مهیب پایتخت عربستان سعودی، ریاض، را لرزاند که به احتمال زیاد ناشی از عملکرد همین موشک‌های رهگیر پدافند در انهدام پرتابه‌ها بوده است. سازمان دفاع مدنی عربستان سعودی حدود ۱۰ دقیقه پس از اعلام وضعیت هشدار، به شهروندان اطلاع داد که خطر رفع شده است.\n@VahidOOnLine\n\n📡 @VahidOnline"
-    },
-    "Alibk3_38875": {
-      "sent_msg_id": 134,
-      "target_channel": "@DidebanJang",
-      "time": 1791833054.943273,
-      "thread_key": "Alibk3_38698"
-    },
-    "Alibk3_38877": {
-      "sent_msg_id": 190,
-      "target_channel": "@DidebanJang",
-      "time": 1791833370.33488,
-      "thread_key": "akhbarefori_697828"
-    },
     "withyashar_25514": {
       "target_channel": "@DidebanJang",
       "sent_msg_id": 198,
@@ -676,19 +654,60 @@
       "pattern": "multi_agent_editorial",
       "ai_model": "gemini-3.5-flash-lite",
       "latency_sec": 4894.59
+    },
+    "VahidOnline_78713": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 217,
+      "time": 1791919618.6717002,
+      "text": "به دنبال دریافت گزارش اضطراری از سوی مرکز عملیات تجارت دریایی بریتانیا (UKMTO)، یک فروند نفتکش در آب‌های راهبردی تنگه هرمز هدف برخورد یک پرتابه ناشناس قرار گرفته است. این آبراه حیاتی که روزانه گذرگاهژئوپلیتیک میلیون‌ها بشکه نفت خام است، در وضعیت آماده‌باش اطلاعاتی قرار گرفته و تیم‌های تخصصی و مراجع ذی‌صلاح در حال بررسی ابعاد امنیتی، منشاء پرتابه و خسارات احتمالی این رویداد هستند.",
+      "pattern": "multi_agent_editorial",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 919.15
+    },
+    "Alibk3_38989": {
+      "sent_msg_id": 215,
+      "target_channel": "@DidebanJang",
+      "time": 1791919636.704419,
+      "thread_key": "VahidOnline_78712",
+      "ai_model": "gemini-3.5-flash-lite"
+    },
+    "Alibk3_39004": {
+      "sent_msg_id": 215,
+      "target_channel": "@DidebanJang",
+      "time": 1791920342.5052383,
+      "thread_key": "VahidOnline_78712",
+      "ai_model": "gemini-3.5-flash-lite"
+    },
+    "Alibk3_39005": {
+      "sent_msg_id": 215,
+      "target_channel": "@DidebanJang",
+      "time": 1791920434.24677,
+      "thread_key": "VahidOnline_78712",
+      "ai_model": "gemini-3.5-flash-lite"
+    },
+    "withyashar_25578": {
+      "sent_msg_id": 217,
+      "target_channel": "@DidebanJang",
+      "time": 1791920439.084582,
+      "thread_key": "VahidOnline_78713",
+      "ai_model": "gemini-3.5-flash-lite"
+    },
+    "Alibk3_39008": {
+      "sent_msg_id": 215,
+      "target_channel": "@DidebanJang",
+      "time": 1791921062.17724,
+      "thread_key": "VahidOnline_78712",
+      "ai_model": "gemini-3.5-flash-lite"
     }
   },
   "last_alert_time": {
     "تجمعات اعتراضی در زاهدان": 1791874234.5925622,
     "درگیری مسلحانه و ترور در زاهدان": 1791886792.9406521,
-    "حملات نظامی در ایران، تنگه هرمز، هرمز": 1791908083.2135282
+    "حملات نظامی در ایران، تنگه هرمز، هرمز": 1791908083.2135282,
+    "حملات نظامی در تنگه هرمز، هرمز، نفتکش": 1791919939.2893848,
+    "حملات نظامی در تنگه هرمز، هرمز": 1791920399.580123
   },
   "alibk_posted": {
-    "38643": {
-      "channel": "@DidebanJang",
-      "msg_id": 94,
-      "timestamp": 1791661964.0
-    },
     "38645": {
       "channel": "@DidebanJang",
       "msg_id": 95,
@@ -1864,8 +1883,8 @@
       "category": "WAR",
       "is_iran_related": true,
       "urgency_level": "BREAKING",
-      "title": "ترامپ با هشدار مستقیم به تهران و انصارالله: حملات یمنی‌ها بی‌سواستفاده از قیمت نفت بی‌ответ نخواهد ماند",
-      "summary": "دونالد ترامپ، رئیس‌جمهور منتخب ایالات متحده، در واکنش به ازسرگیری حملات موشک و پهپاد انصارالله یمن (حوثی‌ها) علیه منافع منطقه‌ای و زیرساخت‌های عربستان سعودی، ضمن متهم کردن ایران به هدایت این عملیات‌ها، نسبت به پیامدهای دستکاری بازار انرژی و افزایش قیمت نفت هشدار داد. ترامپ با یادآوری کارزار بمباران‌های سنگین گذشته علیه مواضع انصارالله، تأکید کرد که رویکرد تهاجمی کنونی این جنبش پس از دوران آتش‌بس، با واکنش قاطع و فراموش‌ناشدنی واشنگتن پس از استقرار در قدرت مواجه خواهد شد.",
+      "title": "انتشار تصاویر ویدیویی جدید از لحظه اصابت موشک یمنی به تأسیسات آرامکو در ظهران؛ ترامپ به تهران هشدار داد",
+      "summary": "با انتشار تصاویر ویدئویی جدید از لحظه اصابت مستقیم موشک دوربرد یمنی به مجتمع راهبردی شرکت نفت آرامکو (Saudi Aramco) در شهر صنعتی ظهران واقع در شرق عربستان سعودی، ابعاد تازه‌ای از ناکارآمدی لایه‌های پدافند هوایی ائتلاف در حفاظت از زیرساخت‌های حیاتی انرژی نمایان شد. این حملات که پیش‌تر ریاض و دمام را نیز هدف قرار داده بود، اکنون قلب تپنده نفت سعودی را به چالش کشیده است. همزمان، دونالد ترامپ، رئیس‌جمهور منتخب ایالات متحده، با متهم کردن تهران به هدایت این عملیات‌ها و هشدار نسبت به ناامنی بازار جهانی انرژی، تأکید کرد که تداوم این حملات با پاسخ قاطع و کوبنده واشنگتن مواجه خواهد شد.",
       "ai_model": "gemini-3.5-flash-lite",
       "latency_sec": 4894.59,
       "tag": "#دیده‌بان_جنگ",
@@ -1876,53 +1895,133 @@
           "media_type": "photo",
           "link": "https://t.me/VahidOnline/78712",
           "timestamp": 1791913283.997897
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 38989,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38989",
+          "timestamp": 1791919636.5021718
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 39004,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/39004",
+          "timestamp": 1791920342.3251705
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 39005,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/39005",
+          "timestamp": 1791920434.051386
+        },
+        {
+          "node": "Alibk3",
+          "msg_id": 39008,
+          "media_type": "video",
+          "link": "https://t.me/Alibk3/39008",
+          "timestamp": 1791921061.9684129
         }
       ],
-      "replies": []
+      "replies": [],
+      "updated_at": 1791921061.9684205,
+      "update_reason": "خبر جدید حاوی تصاویر و مشاهدات جدید (مشاهد جديدة) از لحظه اصابت موشک یمنی به تأسیسات آرامکو در ظهران است که مستقیماً به هشدار فعال قبلی در کانال مربوط می‌شود و بر اساس قوانین پیگیری، ابعاد تکمیلی و انتشار گزارش‌های پیاپی از همان منبع، باید با خبر قبلی ادغام شود."
+    },
+    "VahidOnline_78713": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 217,
+      "node": "VahidOnline",
+      "root_id": 78713,
+      "root_text": "به دنبال دریافت گزارش اضطراری از سوی مرکز عملیات تجارت دریایی بریتانیا (UKMTO)، یک فروند نفتکش در آب‌های راهبردی تنگه هرمز هدف برخورد یک پرتابه ناشناس قرار گرفته است. این آبراه حیاتی که روزانه گذرگاهژئوپلیتیک میلیون‌ها بشکه نفت خام است، در وضعیت آماده‌باش اطلاعاتی قرار گرفته و تیم‌های تخصصی و مراجع ذی‌صلاح در حال بررسی ابعاد امنیتی، منشاء پرتابه و خسارات احتمالی این رویداد هستند.",
+      "root_media_type": "photo",
+      "timestamp": 1791919618.6745677,
+      "category": "WAR",
+      "is_iran_related": true,
+      "urgency_level": "BREAKING",
+      "title": "یک فروند نفتکش و یک کشتی کانتینربر در تنگه هرمز هدف اصابت پرتابه‌های ناشناس قرار گرفتند",
+      "summary": "به دنبال دریافت گزارش‌های متوالی و اضطراری از سوی مرکز عملیات تجارت دریایی بریتانیا (UKMTO)، یک فروند نفتکش و یک کشتی کانتینربر در آب‌های راهبردی تنگه هرمز هدف برخورد پرتابه‌های ناشناس قرار گرفته‌اند. این آبراه حیاتی که روزانه گذرگاه ژئوپلیتیک میلیون‌ها بشکه نفت خام و زنجیره تأمین جهانی است، اکنون در وضعیت آماده‌باش کامل اطلاعاتی و عملیاتی قرار دارد؛ در همین راستا، تیم‌های تخصصی و مراجع ذی‌صلاح امنیتی و دریایی در حال بررسی ابعاد دقیق این رویداد، تعیین منشاء پرتابه‌ها، رصد تحولات و ارزیابی خسارات احتمالی هستند.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 919.15,
+      "tag": "#دیده‌بان_جنگ",
+      "sources": [
+        {
+          "node": "VahidOnline",
+          "msg_id": 78713,
+          "media_type": "photo",
+          "link": "https://t.me/VahidOnline/78713",
+          "timestamp": 1791919618.6745737
+        },
+        {
+          "node": "withyashar",
+          "msg_id": 25578,
+          "media_type": "text",
+          "link": "https://t.me/withyashar/25578",
+          "timestamp": 1791920399.580264
+        },
+        {
+          "node": "irna_1313",
+          "msg_id": 462050,
+          "media_type": "text",
+          "link": "https://t.me/irna_1313/462050",
+          "timestamp": 1791920399.5802677
+        },
+        {
+          "node": "Khabar_Fouri",
+          "msg_id": 551484,
+          "media_type": "text",
+          "link": "https://t.me/Khabar_Fouri/551484",
+          "timestamp": 1791920399.5802693
+        }
+      ],
+      "replies": [],
+      "updated_at": 1791920438.858727,
+      "update_reason": "خبر جدید جزئیات تکمیلی، تصحیح نوع شناور (از نفتکش به کشتی کانتینربر) و تاییدیه رسمی از سوی نهاد مرجع (UKMTO) پیرامون همان رویداد امنیتی فعال در تنگه هرمز است و بر اساس قانون پیگیری و ابعاد تکمیلی باید ادغام شود."
     }
   },
   "reply_to_root_map": {},
   "channel_last_alert_id": {
-    "@DidebanJang": 215,
+    "@DidebanJang": 217,
     "@DidehbanEghtesad": 17,
     "@DidebanEterazat": 10,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38988,
-    "VahidHeadline": 326285,
-    "VahidOOnLine": 264978,
-    "RadioFarda": 162322,
-    "IranintlTV": 362133,
-    "Tasnimnews": 451185,
-    "Farsna": 468263,
-    "isna94": 408653,
-    "irna_1313": 462041,
-    "akharinkhabar": 638187,
-    "khabarfouri": 569428,
-    "akhbarefori": 698203,
-    "dw_farsi": 131148,
-    "entekhab_ir": 383306,
-    "Khabar_Fouri": 551480,
-    "khabari": 201307,
+    "Alibk3": 39008,
+    "VahidHeadline": 326298,
+    "VahidOOnLine": 264988,
+    "RadioFarda": 162324,
+    "IranintlTV": 362140,
+    "Tasnimnews": 451193,
+    "Farsna": 468288,
+    "isna94": 408654,
+    "irna_1313": 462050,
+    "akharinkhabar": 638201,
+    "khabarfouri": 569436,
+    "akhbarefori": 698227,
+    "dw_farsi": 131150,
+    "entekhab_ir": 383312,
+    "Khabar_Fouri": 551488,
+    "khabari": 201317,
     "thezoomit": 103781,
-    "farsivoa": 233651,
+    "farsivoa": 233654,
     "myITiran": 18274,
-    "Farsi_Iranwire": 94662,
-    "bbcpersian": 293317,
-    "Alarabiya_far": 152149,
-    "thezoomon": 5261,
-    "Mr_Economy": 64034,
+    "Farsi_Iranwire": 94666,
+    "bbcpersian": 293323,
+    "Alarabiya_far": 152155,
+    "thezoomon": 5262,
+    "Mr_Economy": 64036,
     "Eghtesadnews_com": 370812,
     "Digiato": 114086,
     "Indypersian": 180119,
-    "withyashar": 25575,
-    "euronewspe": 90594,
+    "withyashar": 25579,
+    "euronewspe": 90596,
     "Economic_News_Channel": 82774,
     "farsna": 468156,
     "persiannbloomberg": 68206,
-    "VahidOnline": 78712,
+    "VahidOnline": 78713,
     "mamlekate": 104815,
     "iliaen": 4744
   },
@@ -2011,36 +2110,13 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 14,
-    "gemini-3.5-flash-lite": 389,
-    "gemini-2.5-flash": 62,
+    "gemini-3.5-flash-lite": 395,
+    "gemini-2.5-flash": 63,
     "gemini-3-flash-preview": 18,
     "gemini-3.1-flash-lite": 44,
     "gemini-3.1-flash-lite-preview": 21,
     "gemini-3.6-flash": 2
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_38982",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 38982,
-      "text": "القناة 15 العبرية:\n\nإيران تستعرض خططها العسكرية استعدادًا لأي تصعيد محتمل في المنطقة، مع إبقاء جميع الخيارات مفتوحة، بما فيها احتمال التوغّل البري داخل أراضي الإمارات.",
-      "is_edit": false,
-      "enqueued_at": 1791916199.0523176,
-      "retries": 2,
-      "last_retry_at": 1791917754.9893801
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_38989",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 38989,
-      "text": "صواريخ يمنية فوق الرياض والدمام",
-      "is_edit": false,
-      "enqueued_at": 1791917583.5092056,
-      "retries": 0,
-      "last_retry_at": 0
-    }
-  ],
-  "last_saved": "2026-10-13 19:08:03 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-13 19:55:00 UTC"
 }

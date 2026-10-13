@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 99
-- **Last Message Text:** ♦️محمدرضا نقدی، معاون هماهنگ‌کننده سپاه پاسداران، روز سه‌شنبه ۲۱ مهرماه ادعا کرد که در یکی از حملات ...
-- **Last Message Time:** 2026-10-13 19:07:42
+- **Messages Processed:** 112
+- **Last Message Text:** پلیس قضایی پرتغال در عملیاتی بین‌المللی علیه قاچاق مواد مخدر ۳.۷ تن کوکایین را در یک قایق تندرو در آ...
+- **Last Message Time:** 2026-10-13 19:54:23
