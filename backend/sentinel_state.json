@@ -4,12 +4,12 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4743": [
-      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
     ],
     "VahidOnline_78687": [
       "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
@@ -27,8 +27,8 @@
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
     ],
     "withyashar_25422": [
       "recovered_source",
@@ -43,15 +43,15 @@
       "withyashar_report"
     ],
     "withyashar_25426": [
-      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ایران، تهران، بن، ریاض، عربستان"
     ],
     "withyashar_25427": [
       "فعالیت هوایی و جنگنده در آمریکا"
     ],
     "withyashar_25429": [
-      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تهران، تنگه هرمز، گشت، هرمز"
     ],
     "withyashar_25430": [
       "withyashar_report"
@@ -117,8 +117,8 @@
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
@@ -434,8 +434,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
-      "recovered_source"
+      "recovered_source",
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
     ],
     "VahidOnline_78700": [
       "recovered_source"
@@ -595,12 +595,12 @@
       "recovered_source"
     ],
     "VahidOnline_78703": [
-      "حملات نظامی در تنگه هرمز، هرمز، نفتکش",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78704": [
-      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان"
     ],
     "withyashar_25522": [
       "recovered_source"
@@ -660,6 +660,12 @@
       "recovered_source"
     ],
     "withyashar_25521": [
+      "recovered_source"
+    ],
+    "Alibk3_38908": [
+      "recovered_source"
+    ],
+    "withyashar_25525": [
       "recovered_source"
     ]
   },
@@ -2161,6 +2167,13 @@
       "pattern": "withyashar_autonomous",
       "ai_model": "heuristic_fallback",
       "latency_sec": 11.85
+    },
+    "Alibk3_38908": {
+      "time": 1791852773.0,
+      "pattern": "recovered_source",
+      "text": "🚨 **هشدار فوری: هدف قرار گرفتن یک فروند کشتی در تنگه هرمز و صدور دستور بازگشت شناورها**\n\n📝 **چکیده رویداد:**\nگزارش‌ها حاکی از هدف قرار گرفتن یک فروند کشتی در تنگه هرمز است و در پی این رویداد، دستورالعمل‌هایی برای بازگشت کشتی‌هایی که تلاش داشتند از این آبراه حیاتی عبور کنند، صادر شده است.\n\n🔗 **منبع خبر:**\n- [Alibk3](https://t.me/Alibk3/38908) 📝\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "sent_msg_id": 207,
+      "target_channel": "@DidebanJang"
     }
   },
   "last_alert_time": {
@@ -9593,13 +9606,13 @@
   "channel_watermarks": {
     "Alibk3": 38908,
     "VahidHeadline": 326151,
-    "VahidOOnLine": 264851,
+    "VahidOOnLine": 264855,
     "RadioFarda": 162288,
-    "IranintlTV": 362006,
-    "Tasnimnews": 450984,
-    "Farsna": 468075,
+    "IranintlTV": 362008,
+    "Tasnimnews": 450987,
+    "Farsna": 468076,
     "isna94": 408539,
-    "irna_1313": 461660,
+    "irna_1313": 461662,
     "akharinkhabar": 637979,
     "khabarfouri": 569250,
     "akhbarefori": 697898,
@@ -9608,7 +9621,7 @@
     "Khabar_Fouri": 551350,
     "khabari": 201168,
     "thezoomit": 103741,
-    "farsivoa": 233579,
+    "farsivoa": 233581,
     "myITiran": 18266,
     "Farsi_Iranwire": 94635,
     "bbcpersian": 293272,
@@ -9617,11 +9630,11 @@
     "Mr_Economy": 63985,
     "Eghtesadnews_com": 370712,
     "Digiato": 114051,
-    "Indypersian": 180063,
+    "Indypersian": 180065,
     "withyashar": 25525,
-    "euronewspe": 90551,
+    "euronewspe": 90552,
     "Economic_News_Channel": 82713,
-    "farsna": 468075,
+    "farsna": 468076,
     "persiannbloomberg": 68173,
     "VahidOnline": 78704,
     "iliaen": 4744
@@ -9712,5 +9725,5 @@
     "gemini-3.5-flash-lite": 321,
     "gemini-2.5-flash": 22
   },
-  "last_saved": "2026-10-13 00:53:59 UTC"
+  "last_saved": "2026-10-13 01:30:51 UTC"
 }
