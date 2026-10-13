@@ -22,6 +22,7 @@ from backend.core.config import (
     BASELINE_FILE,
     STATE_FILE,
     POSTED_DB_FILE,
+    PEER_CACHE_FILE,
     MAX_RUNTIME_SEC,
     API_ID,
     API_HASH,
@@ -67,6 +68,7 @@ class LiveSentinel:
         self.config = self.load_json(CONFIG_FILE)
         self.nodes = self.config.get('nodes', [])
         self.state_file = STATE_FILE
+        self.peer_cache_file = PEER_CACHE_FILE
         self.incident_severities = self.config.get('patterns', {}).get('incident_severities', {})
         self.baselines = self.fetch_remote_baselines()
         self.lock = asyncio.Lock()
@@ -96,9 +98,14 @@ class LiveSentinel:
         self.vip_alert_history = self.threads.vip_alert_history
         self.recent_alert_sources = deque()
         self.node_id_map = {}
+        self.node_input_peers = {}
+        self.node_peer_cache = {'node_peers': {}, 'id_to_node': {}}
         self.channel_last_alert_id = {}
         self.vahid_post_time = {}
         self.ilia_post_time = {}
+
+        # Load permanent peer cache from disk
+        self.load_peer_cache()
 
         # Keywords
         self.foreign_keywords = FOREIGN_KEYWORDS
@@ -269,20 +276,148 @@ class LiveSentinel:
             
         return False
 
-    # --- Preload & State Persistence ---
-    async def preload_node_entities(self, reader_client):
+    # --- Permanent Peer Cache & Node Resolution ---
+    def load_peer_cache(self):
+        """
+        بارگذاری شناسه‌های عددی کانال‌ها از دیسک برای جلوگیری قطعی از ResolveUsernameRequest و ارور FloodWait
+        """
+        data = self.load_json(self.peer_cache_file)
+        if not data:
+            data = {'node_peers': {}, 'id_to_node': {}}
+        self.node_peer_cache = data
+
+        peers = data.get('node_peers', {})
+        for node, info in peers.items():
+            if isinstance(info, dict):
+                cid = info.get('channel_id')
+                pid = info.get('peer_id')
+                ah = info.get('access_hash')
+                if cid:
+                    self.node_id_map[cid] = node
+                    self.node_id_map[str(cid)] = node
+                if pid:
+                    self.node_id_map[pid] = node
+                    self.node_id_map[str(pid)] = node
+                if cid and ah:
+                    from telethon.tl.types import InputPeerChannel
+                    inp = InputPeerChannel(channel_id=int(cid), access_hash=int(ah))
+                    self.node_input_peers[node] = inp
+                    self.node_input_peers[node.lower()] = inp
+
+        id_map = data.get('id_to_node', {})
+        for k, v in id_map.items():
+            try:
+                self.node_id_map[int(k)] = v
+            except Exception:
+                pass
+            self.node_id_map[str(k)] = v
+
+        if peers:
+            print(f"📡 [PEER CACHE] Loaded {len(peers)} node entities from {self.peer_cache_file}.")
+
+    def save_peer_cache(self):
+        """
+        ذخیره دائمی کش متادیتا و شناسه‌های عددی کانال‌ها روی دیسک
+        """
         try:
-            from telethon.utils import get_peer_id
-            for n in self.nodes:
+            with open(self.peer_cache_file, 'w', encoding='utf-8') as f:
+                json.dump(self.node_peer_cache, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"⚠️ Error saving peer cache to {self.peer_cache_file}: {e}")
+
+    def record_node_peer(self, node, ent):
+        """
+        ثبت متادیتای عددی کانال تلگرام در کش دیسک برای عدم نیاز به استعلام مجدد
+        """
+        if not ent or not node:
+            return
+        from telethon.utils import get_peer_id
+        cid = getattr(ent, 'id', None)
+        ah = getattr(ent, 'access_hash', 0)
+        try:
+            pid = get_peer_id(ent)
+        except Exception:
+            pid = None
+
+        if cid:
+            self.node_peer_cache.setdefault('node_peers', {})[node] = {
+                'channel_id': cid,
+                'access_hash': ah,
+                'peer_id': pid
+            }
+            self.node_peer_cache.setdefault('id_to_node', {})[str(cid)] = node
+            if pid:
+                self.node_peer_cache.setdefault('id_to_node', {})[str(pid)] = node
+            self.node_id_map[cid] = node
+            self.node_id_map[str(cid)] = node
+            if pid:
+                self.node_id_map[pid] = node
+                self.node_id_map[str(pid)] = node
+            if ah:
+                from telethon.tl.types import InputPeerChannel
+                inp = InputPeerChannel(channel_id=int(cid), access_hash=int(ah))
+                self.node_input_peers[node] = inp
+                self.node_input_peers[node.lower()] = inp
+            self.save_peer_cache()
+
+    def get_node_input_peer(self, node):
+        return self.node_input_peers.get(node) or self.node_input_peers.get((node or '').lower())
+
+    def resolve_event_node(self, event):
+        """
+        تشخیص هویت کانال مبدا کاملاً درون حافظه RAM بر اساس شناسه‌های عددی بدون هیچ درخواست شبکه به تلگرام
+        """
+        if not event:
+            return None
+
+        chat_id = getattr(event, 'chat_id', None)
+        if chat_id is not None:
+            if chat_id in self.node_id_map:
+                return self.node_id_map[chat_id]
+            if str(chat_id) in self.node_id_map:
+                return self.node_id_map[str(chat_id)]
+
+        cid = getattr(event, 'channel_id', None)
+        if cid is not None:
+            if cid in self.node_id_map:
+                return self.node_id_map[cid]
+            if str(cid) in self.node_id_map:
+                return self.node_id_map[str(cid)]
+
+        msg = getattr(event, 'message', None)
+        if msg:
+            peer = getattr(msg, 'peer_id', None)
+            if peer:
+                from telethon.utils import get_peer_id
                 try:
-                    ent = await reader_client.get_entity(n)
-                    self.node_id_map[ent.id] = n
-                    self.node_id_map[get_peer_id(ent)] = n
+                    pid = get_peer_id(peer)
+                    if pid in self.node_id_map:
+                        return self.node_id_map[pid]
+                    if str(pid) in self.node_id_map:
+                        return self.node_id_map[str(pid)]
                 except Exception:
                     pass
-            print(f"📡 Preloaded {len(self.node_id_map)} node entity mappings.")
-        except Exception as e:
-            print(f"⚠️ Could not preload node entities: {e}")
+        return None
+
+    async def preload_node_entities(self, reader_client):
+        self.load_peer_cache()
+        cached_nodes = set(self.node_peer_cache.get('node_peers', {}).keys())
+        missing_nodes = [n for n in self.nodes if n not in cached_nodes]
+
+        if not missing_nodes:
+            print(f"📡 [PEER CACHE] All {len(self.nodes)} node entities verified in local disk cache. ZERO Telegram resolve requests made!")
+            return
+
+        print(f"📡 [PEER CACHE] {len(missing_nodes)} node(s) missing from disk cache. Resolving with anti-flood delay (1.2s)...")
+        for n in missing_nodes:
+            try:
+                ent = await reader_client.get_entity(n)
+                self.record_node_peer(n, ent)
+                print(f"   ✅ Cached entity: {n} (ID: {ent.id})")
+                await asyncio.sleep(1.2)
+            except Exception as e:
+                print(f"⚠️ [PEER CACHE] Could not resolve entity for {n}: {e}")
+        self.save_peer_cache()
 
     def load_persisted_state(self):
         try:
@@ -491,6 +626,32 @@ class LiveSentinel:
 
         return False
 
+    async def safe_delete_post(self, channel, msg_id, reader_client=None):
+        """
+        چتر نجات: حذف قطعی و امن پیام در صورت ایجاد دابل‌پست تصادفی یا دستور پاکسازی
+        تلاش با هر دو کلاینت: ربات ادمین و کلاینت کاربر
+        """
+        deleted = False
+        target_ids = [msg_id] if isinstance(msg_id, int) else list(msg_id)
+        if self.bot:
+            try:
+                await self.bot.delete_messages(channel, target_ids)
+                print(f"🗑️ [SAFE DELETE] Successfully deleted msg #{msg_id} in {channel} via Bot client.")
+                deleted = True
+            except Exception as e_bot:
+                print(f"⚠️ Bot failed to delete msg #{msg_id} in {channel}: {e_bot}")
+
+        u_client = reader_client or self.client
+        if u_client:
+            try:
+                await u_client.delete_messages(channel, target_ids)
+                print(f"🗑️ [SAFE DELETE] Successfully deleted msg #{msg_id} in {channel} via User client.")
+                deleted = True
+            except Exception as e_user:
+                print(f"⚠️ User client failed to delete msg #{msg_id} in {channel}: {e_user}")
+
+        return deleted
+
     async def init_channel_last_alert_ids(self, reader_client=None):
         target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat']
         fetch_client = reader_client or self.client or self.bot
@@ -625,6 +786,16 @@ class LiveSentinel:
                 print("✅ Successfully polished post 166 in @DidebanJang!")
         except Exception as e166:
             print(f"⚠️ Error polishing post 166 in @DidebanJang: {e166}")
+
+        # Retroactive Parachute: Delete accidental duplicate Post 212 in @DidebanJang (superseded by Post 213)
+        try:
+            m212 = await fetch_client.get_messages('@DidebanJang', ids=212)
+            m213 = await fetch_client.get_messages('@DidebanJang', ids=213)
+            if m212 and m213 and not getattr(m212, 'empty', False):
+                print("🧹 [PARACHUTE CLEANUP] Found redundant duplicate Post 212 in @DidebanJang. Removing via safe_delete_post...")
+                await self.safe_delete_post('@DidebanJang', 212, reader_client=fetch_client)
+        except Exception as e_del212:
+            print(f"ℹ️ Post 212 cleanup status: {e_del212}")
 
         print(f"🎯 Initialized last alert IDs: {self.channel_last_alert_id}")
 
@@ -889,19 +1060,21 @@ async def main():
                     
         return 'unknown'
 
-    @client.on(events.NewMessage(chats=sentinel.nodes))
+    @client.on(events.NewMessage())
     async def user_handler(event):
-        sender = await event.get_chat()
-        node_username = resolve_node_username(sender)
+        node_username = sentinel.resolve_event_node(event)
+        if not node_username:
+            return
         text = event.message.message
         msg_id = event.message.id
         msg_date = event.message.date
         await sentinel.process_message(text, node_username, msg_id, msg_date=msg_date, raw_msg=event.message)
 
-    @client.on(events.MessageEdited(chats=sentinel.nodes))
+    @client.on(events.MessageEdited())
     async def edit_handler(event):
-        sender = await event.get_chat()
-        node_username = resolve_node_username(sender)
+        node_username = sentinel.resolve_event_node(event)
+        if not node_username:
+            return
         text = event.message.message
         msg_id = event.message.id
         msg_date = getattr(event.message, 'edit_date', None) or event.message.date
@@ -910,22 +1083,9 @@ async def main():
     @client.on(events.MessageDeleted())
     async def delete_handler(event):
         try:
-            chat_id = event.chat_id
-            node_username = sentinel.node_id_map.get(chat_id)
-            if not node_username and hasattr(event, 'channel_id') and event.channel_id:
-                node_username = sentinel.node_id_map.get(event.channel_id)
-                if not node_username:
-                    from telethon.utils import get_peer_id
-                    from telethon.tl.types import PeerChannel
-                    node_username = sentinel.node_id_map.get(get_peer_id(PeerChannel(event.channel_id)))
-
+            node_username = sentinel.resolve_event_node(event)
             if not node_username:
-                try:
-                    chat = await event.get_chat()
-                    node_username = resolve_node_username(chat)
-                except Exception:
-                    node_username = None
-
+                return
             deleted_ids = getattr(event, 'deleted_ids', [])
             if deleted_ids:
                 await sentinel.handle_message_deleted(node_username, deleted_ids)
@@ -945,7 +1105,8 @@ async def main():
 
             for node in sentinel.nodes:
                 try:
-                    messages = await client.get_messages(node, limit=5)
+                    target_peer = sentinel.get_node_input_peer(node) or node
+                    messages = await client.get_messages(target_peer, limit=5)
                     if messages:
                         latest_id = messages[0].id
                         if node not in last_ids:
@@ -1091,7 +1252,7 @@ async def main():
             
     os.system('git config --global user.email "bot@sentinel.local"')
     os.system('git config --global user.name "Sentinel Bot"')
-    os.system('git add session_report.md backend/sentinel_state.json backend/posted_registry.db')
+    os.system('git add session_report.md backend/sentinel_state.json backend/posted_registry.db backend/telegram_peer_cache.json')
     os.system('git diff --staged --quiet || (git commit -m "[skip ci] save session report and state" && git pull --rebase origin main && git push || true)')
 
 

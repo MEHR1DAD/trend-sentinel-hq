@@ -41,8 +41,169 @@ class VipMultiAgentEditorialPipeline:
         self.grouped_posted = set()
 
     # ========================================================
-    # --- سرباز ۱+۲: دروازه‌بان و مسیرساز تک‌ضرب (Lite Stack) ---
+    # --- قفل آهنین ضد تکرار و چتر نجات (Ironclad Dedup & Parachute) ---
     # ========================================================
+
+    def find_existing_posted_alert(self, node, msg_id, target_channel=None):
+        """
+        بررسی چندلایه‌ای برای یافتن شناسه پست تلگرامی که قبلاً برای (node, msg_id) ارسال شده است.
+        """
+        msg_key = f"{node}_{msg_id}"
+
+        # ۱. تاریخچه هشدارهای VIP در حافظه
+        if msg_key in self.sentinel.vip_alert_history:
+            entry = self.sentinel.vip_alert_history[msg_key]
+            ch = entry.get('target_channel')
+            sent_id = entry.get('sent_msg_id')
+            if sent_id and (target_channel is None or ch == target_channel):
+                return ch, sent_id
+
+        # ۲. پایگاه داده پایدار SQLite (posted_sources)
+        target_channels = [target_channel] if target_channel else ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat']
+        for ch in target_channels:
+            posted_id = self.sentinel.db.get_posted_message_id(ch, node, msg_id)
+            if posted_id:
+                return ch, posted_id
+
+        # ۳. رشته‌های فعال ۶ ساعته (thread_alerts)
+        for tk, td in self.sentinel.thread_alerts.items():
+            if not isinstance(td, dict):
+                continue
+            ch = td.get('channel')
+            alert_msg_id = td.get('alert_msg_id')
+            if not alert_msg_id or (target_channel and ch != target_channel):
+                continue
+            if td.get('node') == node and (td.get('root_id') == msg_id or str(td.get('root_id')) == str(msg_id)):
+                return ch, alert_msg_id
+            for s in td.get('sources', []):
+                if s.get('node') == node and (s.get('msg_id') == msg_id or str(s.get('msg_id')) == str(msg_id)):
+                    return ch, alert_msg_id
+
+        return None, None
+
+    async def handle_existing_post_edit(self, node, msg_id, clean_text, target_channel, existing_post_id, raw_msg=None):
+        """
+        مدیریت ویرایش پیام‌های تلگرامی که قبلاً منتشر شده‌اند (In-Place Edit Only):
+        تحت هیچ شرایطی پست نو ایجاد نمی‌شود. متن توسط سرباز ۳ بازنویسی شده و پست موجود درجا ویرایش می‌گردد.
+        """
+        print(f"✏️ [VIP EDIT HANDLER] Processing Telegram edit for {node}_{msg_id} on existing post #{existing_post_id} in {target_channel}...")
+
+        # بررسی اینکه آیا این پست ریشه یا عضوی از یک رشته ۶ ساعته است
+        target_thread_key = None
+        target_thread_data = None
+        for tk, td in self.sentinel.thread_alerts.items():
+            if not isinstance(td, dict):
+                continue
+            if td.get('channel') == target_channel and td.get('alert_msg_id') == existing_post_id:
+                target_thread_key = tk
+                target_thread_data = td
+                break
+
+        urgency = "BREAKING"
+        is_iran = False
+        if target_thread_data:
+            urgency = target_thread_data.get('urgency_level', 'BREAKING')
+            is_iran = target_thread_data.get('is_iran_related', False)
+
+        editor_info = await self.soldier_3_domain_editor(
+            clean_text, node, target_channel,
+            is_merge=True if target_thread_data else False,
+            existing_thread_data=target_thread_data,
+            urgency_level=urgency,
+            is_iran_related=is_iran
+        )
+        if not editor_info:
+            print(f"⏳ [VIP EDIT] Soldier 3 failed during edit handling. Enqueuing for retry...")
+            if hasattr(self.sentinel, 'enqueue_unprocessed_message'):
+                await self.sentinel.enqueue_unprocessed_message(
+                    pipeline="vip_multi_agent", node=node, msg_id=msg_id, text=clean_text, raw_msg=raw_msg, is_edit=True
+                )
+            return
+
+        title = editor_info['title']
+        summary = editor_info['summary']
+        ai_model = editor_info.get('model', 'unknown')
+
+        tag = CHANNEL_CANONICAL_TAGS.get(target_channel, '#دیده‌بان_جنگ')
+        root_media_type = detect_msg_media_type(raw_msg)
+        root_icon = get_media_icon_from_type(root_media_type)
+        media_header = f" {root_icon}" if root_icon != "📝" else ""
+        link = f"https://t.me/{node}/{msg_id}"
+
+        # تعیین هدر بر اساس کانال
+        if target_channel == '@DidebanJang':
+            tier, icon, alert_type_name, is_silent = classify_war_urgency(
+                ai_urgency=urgency,
+                text=summary,
+                title=title,
+                is_iran_related=is_iran
+            )
+            alert_header = f"{icon} **{alert_type_name}: {title}**{media_header}"
+        elif target_channel == '@DidehbanEghtesad':
+            icon = "📈"
+            alert_type_name = "گزارش اقتصادی"
+            alert_header = f"{icon} **{alert_type_name}: {title}**{media_header}"
+        else:
+            alert_header = f"📢 **گزارش دیده‌بان: {title}**{media_header}"
+
+        if target_thread_data:
+            target_thread_data['title'] = title
+            target_thread_data['summary'] = summary
+            target_thread_data['updated_at'] = time.time()
+            target_thread_data['update_reason'] = 'ویرایش و اصلاح اطلاعات توسط منبع'
+            updated_text = self.threads.build_alert_post_content(target_thread_data) if self.threads else ""
+            if not updated_text:
+                status_line = format_update_status_line(target_thread_data['updated_at'], target_thread_data['update_reason'])
+                sources_lines = [f"- [{s.get('node', 'منبع')}]({s.get('link', '')}) {get_media_icon_from_type(s.get('media_type', 'text'))}" for s in target_thread_data.get('sources', [])]
+                updated_text = (
+                    f"{alert_header}\n\n"
+                    f"📝 **چکیده رویداد:**\n{summary}\n\n"
+                    f"🔗 **منابع خبر:**\n" + "\n".join(sources_lines) + "\n\n"
+                    f"{status_line}\n\n"
+                    f"{tag}\n{target_channel}"
+                )
+        else:
+            status_line = format_update_status_line(time.time(), 'ویرایش و اصلاح متن توسط منبع')
+            updated_text = (
+                f"{alert_header}\n\n"
+                f"📝 **چکیده تحلیلی رویداد:**\n{summary}\n\n"
+                f"🔗 **منبع خبر:**\n- [{node}]({link}) {root_icon}\n\n"
+                f"{status_line}\n\n"
+                f"{tag}\n{target_channel}"
+            )
+
+        # ویرایش درجا در تلگرام بدون ارسال پست نو
+        try:
+            await self.sentinel.safe_edit_post(target_channel, existing_post_id, updated_text, msg_obj=raw_msg)
+            print(f"✅ [VIP EDIT SUCCESS] Updated post #{existing_post_id} in {target_channel} for edited {node}_{msg_id}.")
+        except Exception as edit_err:
+            if "not modified" not in str(edit_err).lower():
+                print(f"⚠️ Error updating edited post #{existing_post_id} in {target_channel}: {edit_err}")
+
+        # به‌روزرسانی تاریخچه
+        msg_key = f"{node}_{msg_id}"
+        self.sentinel.vip_alert_history[msg_key] = {
+            'sent_msg_id': existing_post_id,
+            'target_channel': target_channel,
+            'time': time.time(),
+            'ai_model': ai_model,
+            'pattern': 'vip_edit_update'
+        }
+        self.sentinel.db.record_posted_message(target_channel, node, msg_id, existing_post_id)
+        self.sentinel.save_persisted_state()
+
+    async def safe_delete_duplicate_post(self, target_channel, alert_msg_id):
+        """
+        چتر نجات: حذف پست اشتباه یا تکراری در تلگرام و پاکسازی آن از رجیستری
+        """
+        try:
+            res = await self.sentinel.safe_delete_post(target_channel, alert_msg_id)
+            if res:
+                print(f"🗑️ [PARACHUTE] Successfully removed duplicate post #{alert_msg_id} from {target_channel}.")
+            return res
+        except Exception as e:
+            print(f"⚠️ [PARACHUTE] Failed to delete duplicate post #{alert_msg_id} in {target_channel}: {e}")
+            return False
 
     async def soldier_1_2_gatekeeper(self, text, node, raw_msg=None):
         """
@@ -456,17 +617,27 @@ class VipMultiAgentEditorialPipeline:
         # ----------------------------------------------------
         # حالت ۲: انتشار پست جدید و مستقل (NEW_ALERT)
         # ----------------------------------------------------
-        sources_text = f"🔗 **منبع خبر:**\n- [{node}]({link}) {root_icon}"
-        alert_text = (
-            f"{alert_header}\n\n"
-            f"📝 **چکیده تحلیلی رویداد:**\n{summary}\n\n"
-            f"{sources_text}\n\n"
-            f"{tag}\n{target_channel}"
-        )
+        # قفل آهنین سطح نهایی (Last-Mile Ironclad Guard):
+        # بررسی قطعی قبل از هرگونه ارسال پست نو به تلگرام
+        existing_ch, existing_post_id = self.find_existing_posted_alert(node, msg_id, target_channel=target_channel)
+        if existing_post_id:
+            print(f"🛑 [IRONCLAD LAST-MILE GUARD] Refusing NEW_ALERT! {node}_{msg_id} already exists in {existing_ch} as #{existing_post_id}. Redirecting to safe_edit_post!")
+            try:
+                await self.sentinel.safe_edit_post(existing_ch, existing_post_id, alert_text, msg_obj=raw_msg)
+                print(f"✅ [IRONCLAD LAST-MILE GUARD] In-place edit redirected successfully to #{existing_post_id} in {existing_ch}.")
+            except Exception as e:
+                print(f"⚠️ Error in last-mile edit redirect: {e}")
+            return
 
         try:
             sent = await self.sentinel.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
             if sent:
+                # چتر نجات: اطمینان مضاعف از عدم ارسال دابل‌پست همزمان
+                existing_ch, prev_id = self.find_existing_posted_alert(node, msg_id, target_channel=target_channel)
+                if prev_id and prev_id != sent.id:
+                    print(f"⚠️ [PARACHUTE ALERT] Detected duplicate post for {node}_{msg_id}: Sent #{sent.id} but #{prev_id} existed! Deleting newer duplicate...")
+                    await self.safe_delete_duplicate_post(target_channel, sent.id)
+                    return
                 self.sentinel.channel_last_alert_id[target_channel] = sent.id
                 msg_key = f"{node}_{msg_id}"
                 self.sentinel.vip_alert_history[msg_key] = {
@@ -548,6 +719,28 @@ class VipMultiAgentEditorialPipeline:
         msg_lock = self.msg_locks.setdefault(f"{node}_{msg_id}", asyncio.Lock())
         async with msg_lock:
             # ----------------------------------------------------
+            # گام ۰: قفل آهنین ضد تکرار (Ironclad Deduplication Guard)
+            # ----------------------------------------------------
+            existing_target_ch, existing_post_id = self.find_existing_posted_alert(node, msg_id)
+
+            if existing_post_id and not is_edit:
+                print(f"🛑 [VIP IRONCLAD DEDUP] Msg {node}_{msg_id} was ALREADY posted to {existing_target_ch} as #{existing_post_id}. Discarding duplicate invocation.")
+                return
+
+            if existing_post_id and is_edit:
+                # پیام قبلاً منتشر شده و اکنون نویسنده آن را در تلگرام ادیت کرده است.
+                # مستقیماً همان پست قبلی بدون ایجاد پست جدید درجا ویرایش می‌شود.
+                await self.handle_existing_post_edit(
+                    node=node,
+                    msg_id=msg_id,
+                    clean_text=clean_text,
+                    target_channel=existing_target_ch,
+                    existing_post_id=existing_post_id,
+                    raw_msg=raw_msg
+                )
+                return
+
+            # ----------------------------------------------------
             # گام ۱: سرباز شماره ۱+۲ (دروازه‌بان و مسیرساز تک‌ضرب - Lite)
             # ----------------------------------------------------
             route_info = await self.soldier_1_2_gatekeeper(clean_text, node, raw_msg=raw_msg)
@@ -582,9 +775,21 @@ class VipMultiAgentEditorialPipeline:
 
             # بررسی تکراری نبودن انتشار
             target_channel = route_info['target_channel']
-            if not is_edit and self.sentinel.db.is_source_posted(target_channel, node, msg_id):
-                print(f"🛑 [VIP DEDUP] Msg {node}_{msg_id} already posted to {target_channel}. Aborting.")
-                return
+            existing_ch_routed, existing_id_routed = self.find_existing_posted_alert(node, msg_id, target_channel=target_channel)
+            if existing_id_routed:
+                if not is_edit:
+                    print(f"🛑 [VIP DEDUP] Msg {node}_{msg_id} already posted to {target_channel} as #{existing_id_routed}. Aborting.")
+                    return
+                else:
+                    await self.handle_existing_post_edit(
+                        node=node,
+                        msg_id=msg_id,
+                        clean_text=clean_text,
+                        target_channel=target_channel,
+                        existing_post_id=existing_id_routed,
+                        raw_msg=raw_msg
+                    )
+                    return
 
             # ----------------------------------------------------
             # گام ۲: سرباز شماره ۴ (دیده‌بان رشته‌های فعال ۶ ساعته - Flash)

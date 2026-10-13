@@ -50,15 +50,18 @@ class DatabaseManager:
         except Exception as e:
             print(f"⚠️ Error initializing SQLite DB: {e}")
 
-    def is_source_posted(self, target_channel, source_node, source_msg_id):
+    def get_posted_message_id(self, target_channel, source_node, source_msg_id):
+        """
+        دریافت شناسه پست تلگرامی متناظر با منبع (یا None در صورت عدم انتشار).
+        """
         try:
             src_int = int(source_msg_id) if str(source_msg_id).isdigit() else source_msg_id
             canon = source_node or 'unknown'
-            
+
             # 1. Ultra-fast in-memory lookup (O(1))
             if (target_channel, canon, src_int) in self.recent_posted_map:
-                return True
-                
+                return self.recent_posted_map[(target_channel, canon, src_int)]
+
             # 2. Durable SQLite fallback
             con = sqlite3.connect(self.db_file)
             cur = con.cursor()
@@ -70,10 +73,34 @@ class DatabaseManager:
             con.close()
             if row:
                 self.recent_posted_map[(target_channel, canon, src_int)] = row[0]
-                return True
+                return row[0]
         except Exception:
             pass
-        return False
+        return None
+
+    def is_source_posted(self, target_channel, source_node, source_msg_id):
+        return self.get_posted_message_id(target_channel, source_node, source_msg_id) is not None
+
+    def delete_posted_record(self, target_channel, source_node, source_msg_id):
+        """
+        حذف رکورد ثبت‌شده در صورت نیاز به چتر نجات یا رفع دابل‌پست.
+        """
+        try:
+            src_int = int(source_msg_id) if str(source_msg_id).isdigit() else source_msg_id
+            canon = source_node or 'unknown'
+            self.recent_posted_map.pop((target_channel, canon, src_int), None)
+            con = sqlite3.connect(self.db_file)
+            cur = con.cursor()
+            cur.execute(
+                "DELETE FROM posted_sources WHERE target_channel = ? AND source_node = ? AND source_msg_id = ?",
+                (target_channel, source_node, src_int)
+            )
+            con.commit()
+            con.close()
+            return True
+        except Exception as e:
+            print(f"⚠️ Error deleting posted record from DB: {e}")
+            return False
 
     def record_posted_message(self, target_channel, source_node, source_msg_id, posted_msg_id):
         try:
