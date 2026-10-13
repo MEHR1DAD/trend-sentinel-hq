@@ -27,8 +27,8 @@
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "recovered_source",
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
+      "recovered_source"
     ],
     "withyashar_25422": [
       "withyashar_report",
@@ -117,8 +117,8 @@
       "withyashar_report"
     ],
     "withyashar_25463": [
-      "recovered_source",
-      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا"
+      "حملات نظامی و تلفات جانی در اسرائیل، آمریکا",
+      "recovered_source"
     ],
     "withyashar_25464": [
       "انفجار، تلفات جانی و آتش‌سوزی در زاهدان، ایرانشهر، سراوان، راسک، نصرت"
@@ -595,8 +595,8 @@
       "recovered_source"
     ],
     "VahidOnline_78703": [
-      "recovered_source",
-      "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
+      "حملات نظامی در تنگه هرمز، هرمز، نفتکش",
+      "recovered_source"
     ],
     "VahidOnline_78704": [
       "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان",
@@ -666,6 +666,9 @@
       "recovered_source"
     ],
     "withyashar_25525": [
+      "recovered_source"
+    ],
+    "Alibk3_38909": [
       "recovered_source"
     ]
   },
@@ -3079,6 +3082,11 @@
       "channel": "@DidebanJang",
       "msg_id": 207,
       "timestamp": 1791852773.5587614
+    },
+    "38909": {
+      "channel": "@DidebanJang",
+      "msg_id": 202,
+      "timestamp": 1791839037.0
     }
   },
   "thread_alerts": {
@@ -9571,6 +9579,29 @@
       ],
       "replies": [],
       "tag": "#دیده‌بان_جنگ"
+    },
+    "Alibk3_38909": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 202,
+      "node": "Alibk3",
+      "root_id": 38909,
+      "root_text": "⚡️ **خبر فوری: واکنش ترامپ به تحولات یمن: گفت‌وگو با ولیعهد سعودی درباره رفتارهای نامناسب حوثی‌ها همزمان با پیشروی‌های میدانی نیروهای یمنی**\n\n📝 **چکیده رویداد:**\nدونالد ترامپ پس از گفت‌وگو با ولیعهد سعودی، اقدامات حوثی‌ها را «بسیار نامناسب» توصیف کرد؛ این در حالی است که گزارش‌ها از پیشروی‌های میدانی نیروهای یمنی در چندین جبهه نبرد خبر می‌دهند.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25518) 📝\n- [Alibk3](https://t.me/Alibk3/38909) 📝\n\n🔄 **به‌روزرسانی شده (۲۱ مهر، ساعت ۰۶:۳۳) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
+      "root_media_type": "text",
+      "timestamp": 1791839037.0,
+      "title": "واکنش ترامپ به تحولات یمن: گفت‌وگو با ولیعهد سعودی درباره رفتارهای نامناسب حوثی‌ها همزمان با پیشروی‌های میدانی نیروهای یمنی",
+      "summary": "دونالد ترامپ پس از گفت‌وگو با ولیعهد سعودی، اقدامات حوثی‌ها را «بسیار نامناسب» توصیف کرد؛ این در حالی است که گزارش‌ها از پیشروی‌های میدانی نیروهای یمنی در چندین جبهه نبرد خبر می‌دهند.",
+      "category": "WAR",
+      "is_iran_related": true,
+      "sources": [
+        {
+          "node": "Alibk3",
+          "msg_id": 38909,
+          "media_type": "text",
+          "link": "https://t.me/Alibk3/38909",
+          "timestamp": 1791839037.0
+        }
+      ],
+      "replies": []
     }
   },
   "reply_to_root_map": {
@@ -9630,37 +9661,37 @@
   },
   "channel_watermarks": {
     "Alibk3": 38911,
-    "VahidHeadline": 326156,
-    "VahidOOnLine": 264863,
-    "RadioFarda": 162288,
-    "IranintlTV": 362022,
-    "Tasnimnews": 450992,
-    "Farsna": 468093,
-    "isna94": 408546,
-    "irna_1313": 461684,
-    "akharinkhabar": 637988,
-    "khabarfouri": 569274,
-    "akhbarefori": 697898,
-    "dw_farsi": 131111,
-    "entekhab_ir": 383212,
-    "Khabar_Fouri": 551366,
-    "khabari": 201174,
-    "thezoomit": 103741,
-    "farsivoa": 233586,
-    "myITiran": 18267,
+    "VahidHeadline": 326166,
+    "VahidOOnLine": 264866,
+    "RadioFarda": 162291,
+    "IranintlTV": 362025,
+    "Tasnimnews": 451005,
+    "Farsna": 468095,
+    "isna94": 408557,
+    "irna_1313": 461710,
+    "akharinkhabar": 638002,
+    "khabarfouri": 569294,
+    "akhbarefori": 697934,
+    "dw_farsi": 131113,
+    "entekhab_ir": 383222,
+    "Khabar_Fouri": 551370,
+    "khabari": 201183,
+    "thezoomit": 103746,
+    "farsivoa": 233591,
+    "myITiran": 18268,
     "Farsi_Iranwire": 94635,
-    "bbcpersian": 293277,
-    "Alarabiya_far": 152085,
-    "thezoomon": 5246,
-    "Mr_Economy": 63987,
-    "Eghtesadnews_com": 370725,
-    "Digiato": 114051,
-    "Indypersian": 180072,
+    "bbcpersian": 293281,
+    "Alarabiya_far": 152091,
+    "thezoomon": 5247,
+    "Mr_Economy": 63990,
+    "Eghtesadnews_com": 370737,
+    "Digiato": 114056,
+    "Indypersian": 180075,
     "withyashar": 25525,
-    "euronewspe": 90556,
-    "Economic_News_Channel": 82713,
+    "euronewspe": 90559,
+    "Economic_News_Channel": 82719,
     "farsna": 468093,
-    "persiannbloomberg": 68182,
+    "persiannbloomberg": 68183,
     "VahidOnline": 78706,
     "mamlekate": 104812,
     "iliaen": 4744
@@ -9750,8 +9781,9 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 9,
-    "gemini-3.5-flash-lite": 328,
+    "gemini-3.5-flash-lite": 329,
     "gemini-2.5-flash": 28
   },
-  "last_saved": "2026-10-13 04:28:49 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-13 05:57:47 UTC"
 }
