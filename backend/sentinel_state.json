@@ -1,67 +1,9 @@
 {
   "alerted_msg_patterns": {
-    "withyashar_25502": [
-      "recovered_source"
-    ],
-    "withyashar_25501": [
-      "recovered_source"
-    ],
-    "withyashar_25500": [
-      "recovered_source"
-    ],
-    "Alibk3_38843": [
-      "recovered_source"
-    ],
-    "Alibk3_38846": [
-      "recovered_source"
-    ],
-    "Alibk3_38847": [
-      "recovered_source"
-    ],
-    "Alibk3_38848": [
-      "recovered_source"
-    ],
-    "VahidOnline_78701": [
-      "recovered_source"
-    ],
-    "VahidOnline_78702": [
-      "recovered_source",
-      "آتش‌سوزی در پایگاه هوایی ایران"
-    ],
     "Alibk3_38863": [
       "recovered_source"
     ],
-    "withyashar_25505": [
-      "recovered_source"
-    ],
     "Alibk3_38862": [
-      "recovered_source"
-    ],
-    "withyashar_25504": [
-      "recovered_source"
-    ],
-    "Alibk3_38852": [
-      "recovered_source"
-    ],
-    "Alibk3_38856": [
-      "recovered_source"
-    ],
-    "Alibk3_38857": [
-      "recovered_source"
-    ],
-    "Alibk3_38858": [
-      "recovered_source"
-    ],
-    "akhbarefori_697828": [
-      "recovered_source"
-    ],
-    "Tasnimnews_450908": [
-      "recovered_source"
-    ],
-    "akharinkhabar_637942": [
-      "recovered_source"
-    ],
-    "Alibk3_38859": [
       "recovered_source"
     ],
     "Alibk3_38860": [
@@ -70,16 +12,13 @@
     "Alibk3_38861": [
       "recovered_source"
     ],
-    "withyashar_25503": [
-      "recovered_source"
-    ],
     "VahidOnline_78703": [
       "recovered_source",
       "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
     ],
     "VahidOnline_78704": [
-      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان"
     ],
     "withyashar_25522": [
       "recovered_source"
@@ -166,6 +105,67 @@
       "recovered_source"
     ],
     "entekhab_ir_383228": [
+      "recovered_source"
+    ],
+    "withyashar_25502": [
+      "recovered_source"
+    ],
+    "withyashar_25501": [
+      "recovered_source"
+    ],
+    "withyashar_25500": [
+      "recovered_source"
+    ],
+    "Alibk3_38843": [
+      "recovered_source"
+    ],
+    "Alibk3_38846": [
+      "recovered_source"
+    ],
+    "Alibk3_38847": [
+      "recovered_source"
+    ],
+    "Alibk3_38848": [
+      "recovered_source"
+    ],
+    "VahidOnline_78701": [
+      "recovered_source"
+    ],
+    "VahidOnline_78702": [
+      "آتش‌سوزی در پایگاه هوایی ایران",
+      "recovered_source"
+    ],
+    "withyashar_25505": [
+      "recovered_source"
+    ],
+    "withyashar_25504": [
+      "recovered_source"
+    ],
+    "Alibk3_38852": [
+      "recovered_source"
+    ],
+    "Alibk3_38856": [
+      "recovered_source"
+    ],
+    "Alibk3_38857": [
+      "recovered_source"
+    ],
+    "Alibk3_38858": [
+      "recovered_source"
+    ],
+    "akhbarefori_697828": [
+      "recovered_source"
+    ],
+    "Tasnimnews_450908": [
+      "recovered_source"
+    ],
+    "akharinkhabar_637942": [
+      "recovered_source"
+    ],
+    "Alibk3_38859": [
+      "recovered_source"
+    ],
+    "withyashar_25503": [
       "recovered_source"
     ],
     "withyashar_25489": [
@@ -456,146 +456,6 @@
     ]
   },
   "vip_alert_history": {
-    "Alibk3_38843": {
-      "sent_msg_id": 183,
-      "target_channel": "@DidebanJang",
-      "time": 1791822576.559285,
-      "thread_key": "withyashar_25498"
-    },
-    "withyashar_25500": {
-      "target_channel": "@DidebanJang",
-      "sent_msg_id": 186,
-      "time": 1791822652.26938,
-      "text": "پست جدید ترامپ در تروث، وضعیت ۱۵۹ کشتی نیروی دریایی جمهوری اسلامی. در زمان ترامپ : کف دریا در زمان دیگر رئیس‌جمهورها: روی آب.\n@WarRoom",
-      "pattern": "withyashar_autonomous",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 3.09
-    },
-    "withyashar_25501": {
-      "target_channel": "@DidebanJang",
-      "sent_msg_id": 187,
-      "time": 1791823362.63629,
-      "text": "امانی ، سفیر پیشین رژیم در لبنان : قرار بود پیجرها بررسی شود و برای همین عملیات را زودتر اجرا کردند\n@WarRoom",
-      "pattern": "withyashar_autonomous",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 2.46
-    },
-    "Alibk3_38846": {
-      "sent_msg_id": 183,
-      "target_channel": "@DidebanJang",
-      "time": 1791823585.800991,
-      "thread_key": "withyashar_25498"
-    },
-    "Alibk3_38847": {
-      "sent_msg_id": 183,
-      "target_channel": "@DidebanJang",
-      "time": 1791824178.1856372,
-      "thread_key": "withyashar_25498"
-    },
-    "Alibk3_38848": {
-      "sent_msg_id": 183,
-      "target_channel": "@DidebanJang",
-      "time": 1791824252.2349157,
-      "thread_key": "withyashar_25498"
-    },
-    "withyashar_25502": {
-      "target_channel": "@DidebanJang",
-      "sent_msg_id": 188,
-      "time": 1791824511.7494283,
-      "text": "ممکن است آمریکا در تلاش باشد ایران را به حمله اول تحریک کند\nآلن ایر، عضو سابق تیم مذاکره کننده آمریکا نوشت: ممکن است آمریکا در تلاش باشد ایران را به حمله اول تحریک کند. احتمال انجام دور دیگری از حملات آمریکا علیه ایران بسیار زیاد است‌. با انتقال تجهیزات و نیروهای نظامی بیشتر آمریکا به منطقه و انتشار گزارش‌هایی درباره فعالیت هواپیماهای اسرائیلی در نزدیکی حریم هوایی عراق، این احتمال وجود دارد که  واشنگتن عمداً در حال آزمودن آستانه تحمل تهران باشد.\n@WarRoom",
-      "pattern": "withyashar_autonomous",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 3.39
-    },
-    "VahidOnline_78701": {
-      "sent_msg_id": 188,
-      "target_channel": "@DidebanJang",
-      "time": 1791825802.9353065,
-      "thread_key": "withyashar_25502",
-      "text": "نخست‌وزیر بریتانیا روز دوشنبه ۲۰ مهر گفت طرح مشکوکی که پایگاه هوایی «آرای‌اف فرفورد» در بریتانیا را هدف قرار داده بود، «به احتمال بسیار زیاد» در ایران هماهنگ شده و قریب به یقین زیر نظر سپاه پاسداران انقلاب اسلامی هدایت شده است.\n\nاندی برنهام در سخنانی در پارلمان گفت: «ما این تهدیدها را در خاک خود تحمل نخواهیم کرد. با استفاده ایران از شبکه‌های جنایتکار برخورد قاطع خواهیم کرد، با به‌کارگیری همهٔ اختیارات‌مان، این شبکه‌ها و منابع مالی آن‌ها را هدف قرار می‌دهیم و تحریم‌های بیشتری اعمال خواهیم کرد تا توان ایران و سپاه پاسداران برای آسیب‌رساندن به ما محدود شود».\n\nاد میلیبند، وزیر خارجه بریتانیا، نیز خبر داد که در واکنش به این اقدام، سفیر جمهوری اسلامی ایران در لندن به وزارت خارجه احضار شده است.\n\nپلیس بریتانیا روز یکشنبه پنجم مهر پنج مرد را در نزدیکی پایگاه هوایی «فِرفورد» در جنوب غربی این کشور به ظن ارتکاب جرایم مرتبط با مواد منفجره و تروریسم بازداشت کرد.\n@VahidHeadline\n\n📡 @VahidOnline"
-    },
-    "Alibk3_38850": {
-      "sent_msg_id": 183,
-      "target_channel": "@DidebanJang",
-      "time": 1791826271.3924835,
-      "thread_key": "withyashar_25498"
-    },
-    "withyashar_25503": {
-      "target_channel": "@DidebanJang",
-      "sent_msg_id": 189,
-      "time": 1791826318.464692,
-      "text": "جت‌های جنگنده اسرائیل بر فراز چندین شهر و منطقه در لبنان، از جمله صیدا، منطقه بقاع، کوه لبنان و شمال این کشور، پرواز کردند.\n@WarRoom",
-      "pattern": "withyashar_autonomous",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 3.24
-    },
-    "withyashar_25504": {
-      "target_channel": "@DidebanJang",
-      "sent_msg_id": 190,
-      "time": 1791826414.4361718,
-      "text": "رویترز: ۶۰ کشور در بیانیه‌ای مشترک بر آزادی کشتیرانی در تنگه هرمز تأکید کردند و با وضع عوارض عبور کشتی‌ها، دریافت هزینه‌های غیرقانونی و الزام به اخذ مجوز قبلی برای عبور مخالفت کردند. بریتانیا، ژاپن، استرالیا و کشورهای اتحادیه اروپا از حامیان این بیانیه هستند.\n@WarRoom",
-      "pattern": "withyashar_autonomous",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 3.16
-    },
-    "Alibk3_38852": {
-      "sent_msg_id": 190,
-      "target_channel": "@DidebanJang",
-      "time": 1791826643.6584823,
-      "thread_key": "withyashar_25504"
-    },
-    "withyashar_25505": {
-      "target_channel": "@DidebanJang",
-      "sent_msg_id": 191,
-      "time": 1791826671.5545607,
-      "text": "صداوسیما لحظاتی از شلیک موشک‌های کروز در تنگه هرمز تا عملیات مین‌ریزی را منتشر کرد\n@WarRoom",
-      "pattern": "withyashar_autonomous",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 3.32
-    },
-    "Alibk3_38853": {
-      "sent_msg_id": 183,
-      "target_channel": "@DidebanJang",
-      "time": 1791826760.5915325,
-      "thread_key": "withyashar_25498"
-    },
-    "VahidOnline_78702": {
-      "sent_msg_id": 190,
-      "target_channel": "@DidebanJang",
-      "time": 1791827084.224086,
-      "thread_key": "withyashar_25504",
-      "text": "وزیران خارجه ایالات متحده، بریتانیا، استرالیا، کانادا و ۲۳ کشور دیگر با انتشار بیانیه‌ای مشترک، فعالیت‌های خصمانه جمهوری اسلامی ایران در خارج از مرزها را به شدت محکوم کردند.\n\nاین بیانیه روز دوشنبه ۲۰ مهر، پس از آن صادر شد که اندی برنهام، نخست‌وزیر بریتانیا، اعلام کرد حادثه امنیتی اخیر در پایگاه هوایی فیرفورد در انگلستان «تقریبا به طور قطع» توسط سپاه پاسداران انقلاب اسلامی هدایت شده است.\n\nکشورهای امضاکننده این بیانیه با اشاره به ماجرای پایگاه فیرفورد و سایر حملات اخیر علیه جوامع یهودی، روزنامه‌نگاران ایرانی و منافع ایالات متحده در اروپا، تاکید کردند که استفاده جمهوری اسلامی ایران از حملات خشونت‌آمیز، توطئه‌های مرگبار، آتش‌سوزی عمدی، خرابکاری و عملیات سایبری غیرقابل قبول است. آن‌ها هشدار دادند که هرگونه تلاش برای تهدید، ارعاب یا آسیب رساندن به افراد در خاک این کشورها با اقدام قاطع قانونی مواجه خواهد شد.\n@VahidOOnLine\n\n📡 @VahidOnline"
-    },
-    "Alibk3_38856": {
-      "sent_msg_id": 190,
-      "target_channel": "@DidebanJang",
-      "time": 1791827765.5171034,
-      "thread_key": "withyashar_25504"
-    },
-    "Alibk3_38857": {
-      "sent_msg_id": 190,
-      "target_channel": "@DidebanJang",
-      "time": 1791828059.5813832,
-      "thread_key": "withyashar_25504"
-    },
-    "Alibk3_38858": {
-      "sent_msg_id": 190,
-      "target_channel": "@DidebanJang",
-      "time": 1791828105.40387,
-      "thread_key": "withyashar_25504"
-    },
-    "akhbarefori_697828": {
-      "sent_msg_id": 190,
-      "target_channel": "@DidebanJang",
-      "time": 1791828336.6522193,
-      "thread_key": "withyashar_25504"
-    },
-    "Alibk3_38859": {
-      "sent_msg_id": 190,
-      "target_channel": "@DidebanJang",
-      "time": 1791828612.458695,
-      "thread_key": "withyashar_25504"
-    },
     "Alibk3_38860": {
       "sent_msg_id": 190,
       "target_channel": "@DidebanJang",
@@ -619,20 +479,6 @@
       "pattern": "recovered_source",
       "text": "🔕 **هشدار منطقه‌ای: هدف قرار گرفتن یک فروند کشتی دیگر در مضيق هرمز** 📸\n\n📝 **چکیده رویداد:**\nمنابع خبری از هدف قرار گرفتن یک فروند کشتی تجاری دیگر در آب‌های استراتژیک تنگه هرمز خبر دادند.\n\n🔗 **منبع خبر:**\n- [Alibk3](https://t.me/Alibk3/38863) 📸\n\n#دیده‌بان_جنگ\n@DidebanJang",
       "sent_msg_id": 192,
-      "target_channel": "@DidebanJang"
-    },
-    "Tasnimnews_450908": {
-      "time": 1791826414.0,
-      "pattern": "recovered_source",
-      "text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "sent_msg_id": 190,
-      "target_channel": "@DidebanJang"
-    },
-    "akharinkhabar_637942": {
-      "time": 1791826414.0,
-      "pattern": "recovered_source",
-      "text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "sent_msg_id": 190,
       "target_channel": "@DidebanJang"
     },
     "withyashar_25507": {
@@ -933,70 +779,23 @@
       "time": 1791891931.6475472,
       "thread_key": "Alibk3_38930",
       "ai_model": "gemini-3.5-flash-lite"
+    },
+    "VahidOnline_78712": {
+      "target_channel": "@DidebanJang",
+      "sent_msg_id": 215,
+      "time": 1791913283.9948447,
+      "text": "دونالد ترامپ، رئیس‌جمهور منتخب ایالات متحده، در واکنش به ازسرگیری حملات موشک و پهپاد انصارالله یمن (حوثی‌ها) علیه منافع منطقه‌ای و زیرساخت‌های عربستان سعودی، ضمن متهم کردن ایران به هدایت این عملیات‌ها، نسبت به پیامدهای دستکاری بازار انرژی و افزایش قیمت نفت هشدار داد. ترامپ با یادآوری کارزار بمباران‌های سنگین گذشته علیه مواضع انصارالله، تأکید کرد که رویکرد تهاجمی کنونی این جنبش پس از دوران آتش‌بس، با واکنش قاطع و فراموش‌ناشدنی واشنگتن پس از استقرار در قدرت مواجه خواهد شد.",
+      "pattern": "multi_agent_editorial",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 4894.59
     }
   },
   "last_alert_time": {
-    "انفجار در ریاض": 1791828333.4131253,
     "تجمعات اعتراضی در زاهدان": 1791874234.5925622,
     "درگیری مسلحانه و ترور در زاهدان": 1791886792.9406521,
     "حملات نظامی در ایران، تنگه هرمز، هرمز": 1791908083.2135282
   },
   "alibk_posted": {
-    "38617": {
-      "channel": "@DidebanJang",
-      "msg_id": 80,
-      "timestamp": 1791649592.0
-    },
-    "38618": {
-      "channel": "@DidebanJang",
-      "msg_id": 81,
-      "timestamp": 1791649637.0
-    },
-    "38620": {
-      "channel": "@DidebanJang",
-      "msg_id": 82,
-      "timestamp": 1791649782.0
-    },
-    "38623": {
-      "channel": "@DidebanJang",
-      "msg_id": 83,
-      "timestamp": 1791650068.0
-    },
-    "38627": {
-      "channel": "@DidebanJang",
-      "msg_id": 84,
-      "timestamp": 1791651188.0
-    },
-    "38634": {
-      "channel": "@DidebanJang",
-      "msg_id": 89,
-      "timestamp": 1791652869.0
-    },
-    "38633": {
-      "channel": "@DidebanJang",
-      "msg_id": 88,
-      "timestamp": 1791652651.0
-    },
-    "38632": {
-      "channel": "@DidebanJang",
-      "msg_id": 87,
-      "timestamp": 1791652316.0
-    },
-    "38631": {
-      "channel": "@DidebanJang",
-      "msg_id": 86,
-      "timestamp": 1791652171.0
-    },
-    "38630": {
-      "channel": "@DidebanJang",
-      "msg_id": 85,
-      "timestamp": 1791651688.0
-    },
-    "38638": {
-      "channel": "@DidebanJang",
-      "msg_id": 91,
-      "timestamp": 1791654084.0
-    },
     "38639": {
       "channel": "@DidebanJang",
       "msg_id": 92,
@@ -1589,266 +1388,6 @@
     }
   },
   "thread_alerts": {
-    "withyashar_25500": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 186,
-      "node": "withyashar",
-      "root_id": 25500,
-      "root_text": "پست جدید ترامپ در تروث، وضعیت ۱۵۹ کشتی نیروی دریایی جمهوری اسلامی. در زمان ترامپ : کف دریا در زمان دیگر رئیس‌جمهورها: روی آب.\n@WarRoom",
-      "root_media_type": "photo",
-      "timestamp": 1791822652.270928,
-      "category": "WAR",
-      "is_iran_related": true,
-      "title": "ترامپ با انتشار تصویری ناوگان نیروی دریایی جمهوری اسلامی را تهدید به نابودی کرد",
-      "summary": "دونالد ترامپ، رئیس‌جمهور منتخب ایالات متحده، با انتشار پستی در شبکه اجتماعی «تروث سوشال» همراه با یک تصویر، مدعی شد که وضعیت ۱۵۹ فروند کشتی نیروی دریایی جمهوری اسلامی در دوران ریاست‌جمهوری او «کف دریا» و در دوران سایر رؤسای‌جمهور «روی آب» بوده است. این ادعا و تهدید غیرمستقیم، در راستای لفاظی‌های مرسوم او علیه توانمندی‌های نظامی ایران و یادآوری رویکرد تهاجمی دولت پیشین آمریکا در قبال تحرکات دریایی نیروهای مسلح ایران در خلیج فارس و آب‌های آزاد مطرح شده است.",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 3.09,
-      "sources": [
-        {
-          "node": "withyashar",
-          "msg_id": 25500,
-          "media_type": "photo",
-          "link": "https://t.me/withyashar/25500",
-          "timestamp": 1791822652.2709334
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "withyashar_25501": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 187,
-      "node": "withyashar",
-      "root_id": 25501,
-      "root_text": "امانی ، سفیر پیشین رژیم در لبنان : قرار بود پیجرها بررسی شود و برای همین عملیات را زودتر اجرا کردند\n@WarRoom",
-      "root_media_type": "video",
-      "timestamp": 1791823362.6374428,
-      "category": "WAR",
-      "is_iran_related": true,
-      "title": "مجتبی امانی فاش کرد: لو رفتن موقت پیجرها عامل تعجیل اسرائیل در عملیات تروریستی لبنان شد",
-      "summary": "مجتبی امانی، سفیر پیشین ایران در لبنان که خود در جریان حمله سایبری-انفجاری تروریستی موساد به وسایل ارتباطی مجروح شده بود، پرده از یک پشت‌صحنه امنیتی برداشت. به گفته وی، تصمیم اولیه این بوده که دستگاه‌های ارتباطی (پیجرها) پیش از اقدام، مورد بررسی و بازرسی فنی قرار گیرند و همین حساسیت امنیتی و احتمال لو رفتن پروژه، باعث شد سرویس اطلاعاتی اسرائیل (موساد) عملیات خود را جلو بیندازد و زودتر از موعد مقرر دست به فعال‌سازی انفجاری آن‌ها بزند.",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 2.46,
-      "sources": [
-        {
-          "node": "withyashar",
-          "msg_id": 25501,
-          "media_type": "video",
-          "link": "https://t.me/withyashar/25501",
-          "timestamp": 1791823362.63745
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "withyashar_25502": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 188,
-      "node": "withyashar",
-      "root_id": 25502,
-      "root_text": "ممکن است آمریکا در تلاش باشد ایران را به حمله اول تحریک کند\nآلن ایر، عضو سابق تیم مذاکره کننده آمریکا نوشت: ممکن است آمریکا در تلاش باشد ایران را به حمله اول تحریک کند. احتمال انجام دور دیگری از حملات آمریکا علیه ایران بسیار زیاد است‌. با انتقال تجهیزات و نیروهای نظامی بیشتر آمریکا به منطقه و انتشار گزارش‌هایی درباره فعالیت هواپیماهای اسرائیلی در نزدیکی حریم هوایی عراق، این احتمال وجود دارد که  واشنگتن عمداً در حال آزمودن آستانه تحمل تهران باشد.\n@WarRoom",
-      "root_media_type": "text",
-      "timestamp": 1791824511.7506454,
-      "category": "WAR",
-      "is_iran_related": true,
-      "title": "تشدید تنش‌ها میان ایران و غرب؛ از هشدار درباره تحرکات نظامی آمریکا تا متهم شدن سپاه به طراحی حمله در بریتانیا",
-      "summary": "نخست‌وزیر بریتانیا اعلام کرد طرح حمله به پایگاه هوایی «آرای‌اف فرفورد» «به احتمال بسیار زیاد» از سوی ایران و سپاه پاسداران هدایت شده است. در پی بازداشت پنج مرد در ارتباط با جرایم تروریستی و مرتبط با مواد منفجره در نزدیکی این پایگاه در پنجم مهر، دولت بریتانیا سفیر ایران را احضار کرد. مقام‌های بریتانیایی بر برخورد قاطع با شبکه‌های جنایتکار وابسته به ایران، مسدودسازی منابع مالی آن‌ها و اعمال تحریم‌های بیشتر تأکید کردند.",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 3.39,
-      "sources": [
-        {
-          "node": "withyashar",
-          "msg_id": 25502,
-          "media_type": "text",
-          "link": "https://t.me/withyashar/25502",
-          "timestamp": 1791824511.7506516
-        },
-        {
-          "node": "VahidOnline",
-          "msg_id": 78701,
-          "media_type": "video",
-          "link": "https://t.me/VahidOnline/78701",
-          "timestamp": 1791825377.4251518
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ",
-      "updated_at": 1791825377.425157,
-      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
-    },
-    "withyashar_25503": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 189,
-      "node": "withyashar",
-      "root_id": 25503,
-      "root_text": "جت‌های جنگنده اسرائیل بر فراز چندین شهر و منطقه در لبنان، از جمله صیدا، منطقه بقاع، کوه لبنان و شمال این کشور، پرواز کردند.\n@WarRoom",
-      "root_media_type": "text",
-      "timestamp": 1791826318.4663355,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "جنگنده‌های اسرائیل حریم هوایی مناطق مختلف لبنان را نقض کردند",
-      "summary": "جنگنده‌های ارتش اسرائیل در اقدامی نمایشی و تهاجمی، پروازهای گسترده‌ای را در ارتفاع پایین بر فراز مناطق مختلف لبنان از جمله صیدا در جنوب، منطقه استراتژیک بقاع در شرق، ارتفاعات کوه لبنان و مناطق شمالی این کشور به اجرا گذاشتند. این تحرکات هوایی که اغلب با هدف شناسایی، ایجاد جنگ روانی با دیوار صوتی یا آماده‌سازی برای حملات احتمالی انجام می‌شود، نشان‌دهنده تداوم تنش‌های شدید در جبهه شمالی و استقرار مداوم ماشین جنگی اسرائیل در آسمان لبنان است.",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 3.24,
-      "sources": [
-        {
-          "node": "withyashar",
-          "msg_id": 25503,
-          "media_type": "text",
-          "link": "https://t.me/withyashar/25503",
-          "timestamp": 1791826318.4663405
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "withyashar_25504": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 190,
-      "node": "withyashar",
-      "root_id": 25504,
-      "root_text": "رویترز: ۶۰ کشور در بیانیه‌ای مشترک بر آزادی کشتیرانی در تنگه هرمز تأکید کردند و با وضع عوارض عبور کشتی‌ها، دریافت هزینه‌های غیرقانونی و الزام به اخذ مجوز قبلی برای عبور مخالفت کردند. بریتانیا، ژاپن، استرالیا و کشورهای اتحادیه اروپا از حامیان این بیانیه هستند.\n@WarRoom",
-      "root_media_type": "text",
-      "timestamp": 1791826414.4375381,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "تشدید بحران منطقه‌ای؛ حمله بالستیک به فرودگاه ریاض و پهپادی به پایگاه خمیس مشيط همزمان با هلاکت فرمانده ارشد جبهه تعز",
-      "summary": "به دنبال تشدید تنش‌های منطقه‌ای، نیروهای مسلح یمن مسئولیت حمله موشکی بالستیک به فرودگاه بین‌المللی ملک خالد در ریاض و حمله پهپادی به پایگاه هوایی خمیس مشيط را بر عهده گرفتند و به شرکت‌های هواپیمایی درباره ناامن بودن فرودگاه‌های عربستان هشدار دادند؛ رویدادهایی که همزمان با توقف پروازهای فرودگاه الطائف و هلاکت عمار مهيوب (فرمانده محور شرقی تعز) در درگیری‌های الضباب، موجی از اختلال در زیرساخت‌های هوانوردی و تشدید درگیری‌ها در منطقه را رقم زده است.",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 3.16,
-      "sources": [
-        {
-          "node": "withyashar",
-          "msg_id": 25504,
-          "media_type": "text",
-          "link": "https://t.me/withyashar/25504",
-          "timestamp": 1791826414.4375432
-        },
-        {
-          "node": "Alibk3",
-          "msg_id": 38852,
-          "media_type": "video",
-          "link": "https://t.me/Alibk3/38852",
-          "timestamp": 1791826643.2959695
-        },
-        {
-          "node": "VahidOnline",
-          "msg_id": 78702,
-          "media_type": "photo",
-          "link": "https://t.me/VahidOnline/78702",
-          "timestamp": 1791827058.502488
-        },
-        {
-          "node": "Alibk3",
-          "msg_id": 38856,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38856",
-          "timestamp": 1791827765.1619518
-        },
-        {
-          "node": "Alibk3",
-          "msg_id": 38857,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38857",
-          "timestamp": 1791828059.405423
-        },
-        {
-          "node": "Alibk3",
-          "msg_id": 38858,
-          "media_type": "video",
-          "link": "https://t.me/Alibk3/38858",
-          "timestamp": 1791828105.2233815
-        },
-        {
-          "node": "akhbarefori",
-          "msg_id": 697828,
-          "media_type": "text",
-          "link": "https://t.me/akhbarefori/697828",
-          "timestamp": 1791828334.321474
-        },
-        {
-          "node": "Tasnimnews",
-          "msg_id": 450908,
-          "media_type": "text",
-          "link": "https://t.me/Tasnimnews/450908",
-          "timestamp": 1791828334.3214777
-        },
-        {
-          "node": "akharinkhabar",
-          "msg_id": 637942,
-          "media_type": "text",
-          "link": "https://t.me/akharinkhabar/637942",
-          "timestamp": 1791828334.3214793
-        },
-        {
-          "node": "Alibk3",
-          "msg_id": 38859,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38859",
-          "timestamp": 1791828612.2069402
-        },
-        {
-          "node": "Alibk3",
-          "msg_id": 38860,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38860",
-          "timestamp": 1791828870.9038203
-        },
-        {
-          "node": "Alibk3",
-          "msg_id": 38861,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38861",
-          "timestamp": 1791828884.0937357
-        },
-        {
-          "node": "Alibk3",
-          "msg_id": 38873,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38873",
-          "timestamp": 1791831924.7552183
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ",
-      "updated_at": 1791831924.7552302,
-      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
-    },
-    "withyashar_25505": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 191,
-      "node": "withyashar",
-      "root_id": 25505,
-      "root_text": "صداوسیما لحظاتی از شلیک موشک‌های کروز در تنگه هرمز تا عملیات مین‌ریزی را منتشر کرد\n@WarRoom",
-      "root_media_type": "video",
-      "timestamp": 1791826671.555749,
-      "category": "WAR",
-      "is_iran_related": true,
-      "title": "گزارش‌ها از وقوع حمله به یک فروند کشتی در تنگه هرمز همزمان با رزمایش اقتدار دریایی ایران",
-      "summary": "به دنبال انتشار تصاویر رزمایش شلیک موشک‌های کروز و عملیات مین‌ریزی توسط رسانه ملی در تنگه هرمز، گزارش‌های جدید حاکی از هدف قرار گرفتن یک فروند کشتی در این آبراه استراتژیک است که ابعاد امنیتی و بازدارنده تحولات منطقه را وارد مرحله تازه‌ای می‌کند.",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 3.32,
-      "sources": [
-        {
-          "node": "withyashar",
-          "msg_id": 25505,
-          "media_type": "video",
-          "link": "https://t.me/withyashar/25505",
-          "timestamp": 1791826671.555754
-        },
-        {
-          "node": "Alibk3",
-          "msg_id": 38862,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38862",
-          "timestamp": 1791829195.376751
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ",
-      "updated_at": 1791829195.3767567,
-      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
-    },
     "Alibk3_38863": {
       "channel": "@DidebanJang",
       "alert_msg_id": 192,
@@ -1911,325 +1450,6 @@
       "tag": "#دیده‌بان_جنگ",
       "updated_at": 1791831703.375056,
       "update_reason": "دریافت اطلاعات تکمیلی"
-    },
-    "Alibk3_38862": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 191,
-      "node": "Alibk3",
-      "root_id": 38862,
-      "root_text": "🚨 **هشدار فوری: گزارش‌ها از وقوع حمله به یک فروند کشتی در تنگه هرمز همزمان با رزمایش اقتدار دریایی ایران** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال انتشار تصاویر رزمایش شلیک موشک‌های کروز و عملیات مین‌ریزی توسط رسانه ملی در تنگه هرمز، گزارش‌های جدید حاکی از هدف قرار گرفتن یک فروند کشتی در این آبراه استراتژیک است که ابعاد امنیتی و بازدارنده تحولات منطقه را وارد مرحله تازه‌ای می‌کند.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25505) 📹\n- [Alibk3](https://t.me/Alibk3/38862) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۹) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791826671.0,
-      "title": "گزارش‌ها از وقوع حمله به یک فروند کشتی در تنگه هرمز همزمان با رزمایش اقتدار دریایی ایران",
-      "summary": "به دنبال انتشار تصاویر رزمایش شلیک موشک‌های کروز و عملیات مین‌ریزی توسط رسانه ملی در تنگه هرمز، گزارش‌های جدید حاکی از هدف قرار گرفتن یک فروند کشتی در این آبراه استراتژیک است که ابعاد امنیتی و بازدارنده تحولات منطقه را وارد مرحله تازه‌ای می‌کند.",
-      "category": "WAR",
-      "is_iran_related": true,
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38862,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38862",
-          "timestamp": 1791826671.0
-        }
-      ],
-      "replies": []
-    },
-    "Alibk3_38852": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 190,
-      "node": "Alibk3",
-      "root_id": 38852,
-      "root_text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791826414.0,
-      "title": "تشدید بحران منطقه‌ای؛ حمله موشکی و پهپادی به فرودگاه ملک خالد ریاض و پایگاه خمیس مشيط همزمان با هلاکت فرمانده ارشد جبهه تعز",
-      "summary": "در پی تشدید تنش‌های منطقه‌ای، نیروهای مسلح یمن با انتشار بیانیه‌ای مسئولیت حمله دقیق موشکی بالیستیک به فرودگاه بین‌المللی ملک خالد در ریاض و حمله پهپادی به پایگاه هوایی خمیس مشيط را بر عهده گرفتند و به شرکت‌های هواپیمایی درباره ناامن بودن فرودگاه‌های عربستان هشدار دادند. همزمان با این حملات و توقف پروازهای فرودگاه الطائف، گزارش‌های میدانی از هلاکت عمار مهيوب، فرمانده محور شرقی تعز، در درگیری‌های الضباب حکایت دارد که نشان‌دهنده تداوم موج حملات هماهنگ و تشدید درگیری‌ها در چند جبهه است.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38852,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38852",
-          "timestamp": 1791826414.0
-        }
-      ],
-      "replies": [],
-      "updated_at": 1791831820.670436,
-      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
-    },
-    "VahidOnline_78702": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 190,
-      "node": "VahidOnline",
-      "root_id": 78702,
-      "root_text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791826414.0,
-      "title": "تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز",
-      "summary": "به دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "VahidOnline",
-          "msg_id": 78702,
-          "media_type": "text",
-          "link": "https://t.me/VahidOnline/78702",
-          "timestamp": 1791826414.0
-        }
-      ],
-      "replies": []
-    },
-    "Alibk3_38856": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 190,
-      "node": "Alibk3",
-      "root_id": 38856,
-      "root_text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791826414.0,
-      "title": "تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز",
-      "summary": "به دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38856,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38856",
-          "timestamp": 1791826414.0
-        }
-      ],
-      "replies": []
-    },
-    "Alibk3_38857": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 190,
-      "node": "Alibk3",
-      "root_id": 38857,
-      "root_text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791826414.0,
-      "title": "تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز",
-      "summary": "به دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38857,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38857",
-          "timestamp": 1791826414.0
-        }
-      ],
-      "replies": []
-    },
-    "Alibk3_38858": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 190,
-      "node": "Alibk3",
-      "root_id": 38858,
-      "root_text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791826414.0,
-      "title": "تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز",
-      "summary": "به دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38858,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38858",
-          "timestamp": 1791826414.0
-        }
-      ],
-      "replies": []
-    },
-    "akhbarefori_697828": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 190,
-      "node": "akhbarefori",
-      "root_id": 697828,
-      "root_text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791826414.0,
-      "title": "تشدید بحران منطقه‌ای، مشاهده موشک‌های یمنی بر فراز ریاض و توقف پروازهای الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز",
-      "summary": "به دنبال تشدید تنش‌های منطقه‌ای، گزارش‌هایی از مشاهده موشک‌های یمنی بر فراز ریاض منتشر شده و همزمان با وقوع انفجارها در پایتخت عربستان و توقف پروازهای فرودگاه الطائف، تحولات میدانی جبهه تعز در یمن نیز از هلاکت عمار مهيوب (فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که گویای یک موج حملات هماهنگ، اختلال در زیرساخت‌های هوانوردی و تشدید درگیری‌ها در منطقه است.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "akhbarefori",
-          "msg_id": 697828,
-          "media_type": "text",
-          "link": "https://t.me/akhbarefori/697828",
-          "timestamp": 1791826414.0
-        },
-        {
-          "node": "Alibk3",
-          "msg_id": 38877,
-          "media_type": "video",
-          "link": "https://t.me/Alibk3/38877",
-          "timestamp": 1791833370.0101256
-        }
-      ],
-      "replies": [],
-      "updated_at": 1791833370.0101306,
-      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
-    },
-    "Tasnimnews_450908": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 190,
-      "node": "Tasnimnews",
-      "root_id": 450908,
-      "root_text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791826414.0,
-      "title": "تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز",
-      "summary": "به دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "Tasnimnews",
-          "msg_id": 450908,
-          "media_type": "text",
-          "link": "https://t.me/Tasnimnews/450908",
-          "timestamp": 1791826414.0
-        }
-      ],
-      "replies": []
-    },
-    "akharinkhabar_637942": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 190,
-      "node": "akharinkhabar",
-      "root_id": 637942,
-      "root_text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791826414.0,
-      "title": "تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز",
-      "summary": "به دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "akharinkhabar",
-          "msg_id": 637942,
-          "media_type": "text",
-          "link": "https://t.me/akharinkhabar/637942",
-          "timestamp": 1791826414.0
-        }
-      ],
-      "replies": []
-    },
-    "Alibk3_38859": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 190,
-      "node": "Alibk3",
-      "root_id": 38859,
-      "root_text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791826414.0,
-      "title": "تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز",
-      "summary": "به دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38859,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38859",
-          "timestamp": 1791826414.0
-        }
-      ],
-      "replies": []
-    },
-    "Alibk3_38860": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 190,
-      "node": "Alibk3",
-      "root_id": 38860,
-      "root_text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791826414.0,
-      "title": "گسترش اختلالات هوانوردی در عربستان؛ تعلیق پروازهای قطربرویز به ریاض و الدمام همزمان با انفجارها و تحولات میدانی تعز",
-      "summary": "به دنبال تشدید تنش‌های منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف، شرکت هواپیمایی قطر نیز از تعلیق پروازهای خود به مقصد و مبدأ ریاض و الدمام خبر داد. این اختلالات گسترده در زیرساخت‌های هوانوردی عربستان سعودی همزمان با گزارش‌ها درباره هلاکت عمار مهيوب (فرمانده محور شرقی تعز) در درگیری‌های یمن رخ داده است که گستردگی موج جدید تنش‌ها و تحولات میدانی را نشان می‌دهد.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38860,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38860",
-          "timestamp": 1791826414.0
-        },
-        {
-          "node": "Alibk3",
-          "msg_id": 38904,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38904",
-          "timestamp": 1791845900.8500447
-        }
-      ],
-      "replies": [],
-      "updated_at": 1791845900.8500528,
-      "update_reason": "دریافت اطلاعات تکمیلی و پوشش حملات"
-    },
-    "Alibk3_38861": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 190,
-      "node": "Alibk3",
-      "root_id": 38861,
-      "root_text": "🔕 **هشدار منطقه‌ای: تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز** 📹\n\n📝 **چکیده رویداد:**\nبه دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.\n\n🔗 **منابع خبر:**\n- [withyashar](https://t.me/withyashar/25504) 📝\n- [Alibk3](https://t.me/Alibk3/38852) 📹\n- [VahidOnline](https://t.me/VahidOnline/78702) 📸\n- [Alibk3](https://t.me/Alibk3/38856) 📸\n- [Alibk3](https://t.me/Alibk3/38857) 📝\n- [Alibk3](https://t.me/Alibk3/38858) 📹\n- [akhbarefori](https://t.me/akhbarefori/697828) 📝\n- [Tasnimnews](https://t.me/Tasnimnews/450908) 📝\n- [akharinkhabar](https://t.me/akharinkhabar/637942) 📝\n- [Alibk3](https://t.me/Alibk3/38859) 📝\n- [Alibk3](https://t.me/Alibk3/38860) 📸\n- [Alibk3](https://t.me/Alibk3/38861) 📸\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۱:۴۴) | دریافت اطلاعات تکمیلی و پوشش حملات**\n\n#دیده‌بان_جنگ\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791826414.0,
-      "title": "تشدید بحران منطقه‌ای، وقوع انفجارها در ریاض و توقف پروازهای فرودگاه الطائف همزمان با هلاکت فرمانده ارشد جبهه تعز",
-      "summary": "به دنبال تشدید تنش‌های منطقه‌ای و وقوع انفجارهای تازه در ریاض و همچنین توقف پروازهای فرودگاه الطائف، گزارش‌های جدید از تحولات میدانی جبهه تعز در یمن از هلاکت عمار مهيوب (معروف به فرمانده محور شرقی تعز) در درگیری‌های الضباب حکایت دارد؛ رویدادهایی که پیوستگی موج حملات، اختلال در زیرساخت‌های هوانوردی عربستان و تشدید درگیری‌ها در منطقه را به نمایش می‌گذارد.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38861,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38861",
-          "timestamp": 1791826414.0
-        }
-      ],
-      "replies": []
-    },
-    "VahidOnline_78701": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 188,
-      "node": "VahidOnline",
-      "root_id": 78701,
-      "root_text": "⚡️ **خبر فوری: نخست‌وزیر بریتانیا سپاه پاسداران را به هدایت طرح حمله به پایگاه هوایی این کشور متهم کرد**\n\n📝 **چکیده رویداد:**\nنخست‌وزیر بریتانیا اعلام کرد طرح حمله به پایگاه هوایی «آرای‌اف فرفورد» «به احتمال بسیار زیاد» از سوی ایران و سپاه پاسداران هدایت شده است. در پی بازداشت پنج مرد در ارتباط با جرایم تروریستی و مرتبط با مواد منفجره در نزدیکی این پایگاه در پنجم مهر، دولت بریتانیا سفیر ایران را احضار کرد. مقام‌های بریتانیایی بر برخورد قاطع با شبکه‌های جنایتکار وابسته به ایران، مسدودسازی منابع مالی آن‌ها و اعمال تحریم‌های بیشتر تأکید کردند.\n\n🔗 **منبع خبر:**\n- [VahidOnline](https://t.me/VahidOnline/78701) 📹\n\n🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۲۰:۵۳) | دریافت اطلاعات تکمیلی**\n\n#دیده‌بان_جنگ\n\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791824511.0,
-      "title": "نخست‌وزیر بریتانیا سپاه پاسداران را به هدایت طرح حمله به پایگاه هوایی این کشور متهم کرد",
-      "summary": "نخست‌وزیر بریتانیا اعلام کرد طرح حمله به پایگاه هوایی «آرای‌اف فرفورد» «به احتمال بسیار زیاد» از سوی ایران و سپاه پاسداران هدایت شده است. در پی بازداشت پنج مرد در ارتباط با جرایم تروریستی و مرتبط با مواد منفجره در نزدیکی این پایگاه در پنجم مهر، دولت بریتانیا سفیر ایران را احضار کرد. مقام‌های بریتانیایی بر برخورد قاطع با شبکه‌های جنایتکار وابسته به ایران، مسدودسازی منابع مالی آن‌ها و اعمال تحریم‌های بیشتر تأکید کردند.",
-      "category": "WAR",
-      "is_iran_related": true,
-      "sources": [
-        {
-          "node": "VahidOnline",
-          "msg_id": 78701,
-          "media_type": "text",
-          "link": "https://t.me/VahidOnline/78701",
-          "timestamp": 1791824511.0
-        }
-      ],
-      "replies": []
     },
     "withyashar_25507": {
       "channel": "@DidebanJang",
@@ -3089,50 +2309,77 @@
       "replies": [],
       "updated_at": 1791891931.413656,
       "update_reason": "خبر جدید از همان منبع و پیرامون دقیقاً همان رخداد امنیتی (تأیید رسمی حمله سه پهپاد به شمال ریاض توسط عربستان) است و مشمول قوانین پیگیری ابعاد تکمیلی و گزارش‌های پیاپی از یک منبع می‌گردد."
+    },
+    "VahidOnline_78712": {
+      "channel": "@DidebanJang",
+      "alert_msg_id": 215,
+      "node": "VahidOnline",
+      "root_id": 78712,
+      "root_text": "دونالد ترامپ، رئیس‌جمهور منتخب ایالات متحده، در واکنش به ازسرگیری حملات موشک و پهپاد انصارالله یمن (حوثی‌ها) علیه منافع منطقه‌ای و زیرساخت‌های عربستان سعودی، ضمن متهم کردن ایران به هدایت این عملیات‌ها، نسبت به پیامدهای دستکاری بازار انرژی و افزایش قیمت نفت هشدار داد. ترامپ با یادآوری کارزار بمباران‌های سنگین گذشته علیه مواضع انصارالله، تأکید کرد که رویکرد تهاجمی کنونی این جنبش پس از دوران آتش‌بس، با واکنش قاطع و فراموش‌ناشدنی واشنگتن پس از استقرار در قدرت مواجه خواهد شد.",
+      "root_media_type": "photo",
+      "timestamp": 1791913283.9978874,
+      "category": "WAR",
+      "is_iran_related": true,
+      "urgency_level": "BREAKING",
+      "title": "ترامپ با هشدار مستقیم به تهران و انصارالله: حملات یمنی‌ها بی‌سواستفاده از قیمت نفت بی‌ответ نخواهد ماند",
+      "summary": "دونالد ترامپ، رئیس‌جمهور منتخب ایالات متحده، در واکنش به ازسرگیری حملات موشک و پهپاد انصارالله یمن (حوثی‌ها) علیه منافع منطقه‌ای و زیرساخت‌های عربستان سعودی، ضمن متهم کردن ایران به هدایت این عملیات‌ها، نسبت به پیامدهای دستکاری بازار انرژی و افزایش قیمت نفت هشدار داد. ترامپ با یادآوری کارزار بمباران‌های سنگین گذشته علیه مواضع انصارالله، تأکید کرد که رویکرد تهاجمی کنونی این جنبش پس از دوران آتش‌بس، با واکنش قاطع و فراموش‌ناشدنی واشنگتن پس از استقرار در قدرت مواجه خواهد شد.",
+      "ai_model": "gemini-3.5-flash-lite",
+      "latency_sec": 4894.59,
+      "tag": "#دیده‌بان_جنگ",
+      "sources": [
+        {
+          "node": "VahidOnline",
+          "msg_id": 78712,
+          "media_type": "photo",
+          "link": "https://t.me/VahidOnline/78712",
+          "timestamp": 1791913283.997897
+        }
+      ],
+      "replies": []
     }
   },
   "reply_to_root_map": {},
   "channel_last_alert_id": {
-    "@DidebanJang": 214,
+    "@DidebanJang": 215,
     "@DidehbanEghtesad": 17,
     "@DidebanEterazat": 10,
     "@VahidOnlineAI": 62,
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38970,
-    "VahidHeadline": 326271,
-    "VahidOOnLine": 264955,
-    "RadioFarda": 162317,
-    "IranintlTV": 362112,
-    "Tasnimnews": 451146,
-    "Farsna": 468223,
-    "isna94": 408629,
-    "irna_1313": 462003,
-    "akharinkhabar": 638161,
-    "khabarfouri": 569412,
-    "akhbarefori": 698147,
+    "Alibk3": 38980,
+    "VahidHeadline": 326280,
+    "VahidOOnLine": 264971,
+    "RadioFarda": 162319,
+    "IranintlTV": 362125,
+    "Tasnimnews": 451173,
+    "Farsna": 468250,
+    "isna94": 408645,
+    "irna_1313": 462031,
+    "akharinkhabar": 638184,
+    "khabarfouri": 569425,
+    "akhbarefori": 698190,
     "dw_farsi": 131144,
-    "entekhab_ir": 383286,
-    "Khabar_Fouri": 551445,
-    "khabari": 201287,
+    "entekhab_ir": 383303,
+    "Khabar_Fouri": 551470,
+    "khabari": 201301,
     "thezoomit": 103781,
     "farsivoa": 233633,
     "myITiran": 18271,
     "Farsi_Iranwire": 94657,
-    "bbcpersian": 293313,
-    "Alarabiya_far": 152132,
+    "bbcpersian": 293317,
+    "Alarabiya_far": 152143,
     "thezoomon": 5258,
     "Mr_Economy": 64022,
     "Eghtesadnews_com": 370772,
     "Digiato": 114086,
     "Indypersian": 180089,
-    "withyashar": 25562,
+    "withyashar": 25571,
     "euronewspe": 90586,
     "Economic_News_Channel": 82770,
     "farsna": 468156,
     "persiannbloomberg": 68206,
-    "VahidOnline": 78711,
+    "VahidOnline": 78712,
     "mamlekate": 104815,
     "iliaen": 4744
   },
@@ -3221,58 +2468,47 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 14,
-    "gemini-3.5-flash-lite": 388,
+    "gemini-3.5-flash-lite": 389,
     "gemini-2.5-flash": 60,
     "gemini-3-flash-preview": 16,
-    "gemini-3.1-flash-lite": 34,
+    "gemini-3.1-flash-lite": 37,
     "gemini-3.1-flash-lite-preview": 11,
     "gemini-3.6-flash": 2
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_25561",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25561,
-      "text": "ترامپ درباره ایران: خیلی زود در مورد ایران تصمیم خواهیم گرفت.\n@WarRoom 🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1791906464.547075,
-      "retries": 5,
-      "last_retry_at": 1791908137.758585
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_38971",
+      "id": "vip_multi_agent_Alibk3_38981",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 38971,
-      "text": "ترامب : \n\nالحوثيون يتصرفون بشكل سيء للغاية. اعتقدت أنهم تعلموا الدرس قبل عام عندما قصفناهم بالجحيم وتوقفنا بناء على طلبهم. لقد ظلوا صامتين لفترة طويلة، لكنهم ظهروا الآن مرة أخرى، ربما بناءً على طلب من إيران، وهي دولة فاشلة، بلا بحرية ولا قوات جوية، وأسوأ اقتصاد في العالم، وتضخم بنسبة 301٪، بطريقة سيئة للغاية، تضرب المملكة العربية السعودية، وتحاول عمدًا رفع أسعار النفط، ربما قبل الانتخابات الأمريكية - ليس جيدًا. يجب أن يشرح لهم شخص ما أنني لن أترشح للانتخابات، لقد فزت بالفعل بأغلبية ساحقة.",
+      "msg_id": 38981,
+      "text": "هجوم يمني يستهدف المنطقة الشرقية في السعودية.",
       "is_edit": false,
-      "enqueued_at": 1791908448.0503538,
+      "enqueued_at": 1791914897.1802711,
+      "retries": 1,
+      "last_retry_at": 1791914907.986476
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25572",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25572,
+      "text": "وزارت امور خارجه ایران امروز سفیر بریتانیا را احضار کرد به دلیل اتهامات مربوط به ارتباط تهران با حمله به پایگاه  نیروی هوایی فیرفورد بریتانیا.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1791914913.2576823,
       "retries": 0,
       "last_retry_at": 0
     },
     {
-      "id": "vip_multi_agent_Alibk3_38972",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 38972,
-      "text": "القوات اليمنية تصل مقبرة الجبليين بتعز، وتستعد لاقتحام جبل هان غرب تعز، من 3 محاور.",
-      "is_edit": false,
-      "enqueued_at": 1791908471.5003328,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25563",
+      "id": "vip_multi_agent_withyashar_25573",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
-      "msg_id": 25563,
-      "text": "خبرنگار:آقای رئیس جمهور آقای , رئیس جمهور ، آیا شما آمیدوارید که ….؟ \nترامپ :  این همیشه سوئال ایران داره ، بگو …\nخبرنگار : گام بعدی شما در قبال ایران چه خواهد بود؟\nدونالد ترامپ: زکی‌، نگفتم 😂\nایران کشوری شکست‌خورده است. آنها هیچ اقتصادی ندارند. نرخ تورم آنها ۳۰۰ درصد است. آنها هیچ پولی ندارند. آنها حقوق نیروهای نظامی‌شان را پرداخت نمی‌کنند. حقوق هیچ‌کس را پرداخت نمی‌کنند. ما خیلی زود درباره ایران تصمیم‌گیری خواهیم کرد. ما تنگه هرمز را در اختیار داریم و کنترل می‌کنیم و مقدار زیادی نفت از تنگه هرمز خارج می‌شود.\n@WarRoom",
+      "msg_id": 25573,
+      "text": "دفتر نتانیاهو : نخست‌وزیر، ترامپ را تشویق نمی‌کند که قبل از انتخابات، ایران را مورد حمله قرار دهد، بلکه با او و مقاماتش در حال گفتگو است.\n@WarRoom 😁",
       "is_edit": false,
-      "enqueued_at": 1791908587.2351522,
+      "enqueued_at": 1791915018.7190757,
       "retries": 0,
       "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-13 16:24:25 UTC"
+  "last_saved": "2026-10-13 18:10:19 UTC"
 }

@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 28 minutes
-- **Messages Processed:** 83
-- **Last Message Text:** دونالد ترامپ، رییس‌جمهوری آمریکا، سه‌شنبه ۲۱ مهر در شبکه اجتماعی تروث سوشال نوشت حوثی‌ها پس از مدتی ...
-- **Last Message Time:** 2026-10-13 16:24:04
+- **Uptime:** 29 minutes
+- **Messages Processed:** 96
+- **Last Message Text:** وزیر دفاع اسرائیل: تلاش‌های ایران و گروه‌های نیابتی آن برای ترویج و انجام حملاتی تاثیرگذار بر نتایج ...
+- **Last Message Time:** 2026-10-13 18:09:57
