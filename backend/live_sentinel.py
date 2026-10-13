@@ -777,17 +777,6 @@ class LiveSentinel:
             except Exception as e:
                 print(f"⚠️ Error initializing alert history in {ch}: {e}")
 
-        # Retroactive Parachute: Delete accidental duplicate Post 212 in @DidebanJang (superseded by Post 213)
-        try:
-            target_peer = self.get_node_input_peer('@DidebanJang') or '@DidebanJang'
-            m212 = await fetch_client.get_messages(target_peer, ids=212)
-            m213 = await fetch_client.get_messages(target_peer, ids=213)
-            if m212 and m213 and not getattr(m212, 'empty', False):
-                print("🧹 [PARACHUTE CLEANUP] Found redundant duplicate Post 212 in @DidebanJang. Removing via safe_delete_post...")
-                await self.safe_delete_post('@DidebanJang', 212, reader_client=fetch_client)
-        except Exception as e_del212:
-            print(f"ℹ️ Post 212 cleanup status: {e_del212}")
-
         print(f"🎯 Initialized last alert IDs: {self.channel_last_alert_id}")
 
     # --- Preload & Catch-Up Forwarding ---
