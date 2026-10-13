@@ -48,6 +48,7 @@ from backend.pipelines.mirror import MirrorPipeline
 from backend.pipelines.intelligence import IntelligencePipeline
 from backend.pipelines.yashar import YasharAutonomousPipeline
 from backend.pipelines.radar import RadarPipeline
+from backend.pipelines.vip_multi_agent import VipMultiAgentEditorialPipeline
 
 
 class LiveSentinel:
@@ -86,6 +87,7 @@ class LiveSentinel:
         self.intelligence_pipeline = IntelligencePipeline(self, threads=self.threads)
         self.yashar_pipeline = YasharAutonomousPipeline(self, threads=self.threads)
         self.radar_pipeline = RadarPipeline(self, threads=self.threads)
+        self.vip_pipeline = VipMultiAgentEditorialPipeline(self, threads=self.threads)
 
         # In-Memory Buffers & Fast Caches
         self.recent_messages = deque()
@@ -637,16 +639,16 @@ class LiveSentinel:
         return await self.intelligence_pipeline.preload_alibk_history(reader_client)
 
     async def catchup_unposted_vahid(self, reader_client=None):
-        return await self.mirror_pipeline.catchup_unposted(reader_client, 'VahidOnline', '@VahidOnlineAI')
+        return await self.vip_pipeline.catchup_unposted(reader_client, 'VahidOnline')
 
     async def catchup_unposted_ilia(self, reader_client=None):
-        return await self.mirror_pipeline.catchup_unposted(reader_client, 'iliaen', '@iliaenAI')
+        return await self.vip_pipeline.catchup_unposted(reader_client, 'iliaen')
 
     async def catchup_unposted_alibk(self, reader_client=None):
-        return await self.intelligence_pipeline.catchup_unposted_alibk(reader_client)
+        return await self.vip_pipeline.catchup_unposted(reader_client, 'Alibk3')
 
     async def catchup_unposted_withyashar(self, reader_client=None):
-        return await self.yashar_pipeline.catchup_unposted(reader_client)
+        return await self.vip_pipeline.catchup_unposted(reader_client, 'withyashar')
 
     async def flush_all_pending_debounces(self):
         return await self.threads.flush_all_pending_debounces()
@@ -762,28 +764,12 @@ class LiveSentinel:
 
             success = False
             try:
-                if item['pipeline'] == 'yashar':
-                    ai_eval = await self.yashar_pipeline.analyze_and_synthesize(item['text'], raw_msg=raw_msg)
-                    if ai_eval:
-                        await self.yashar_pipeline.process_evaluated_message(
-                            clean_text=item['text'],
-                            msg_id=item['msg_id'],
-                            ai_eval=ai_eval,
-                            raw_msg=raw_msg,
-                            is_edit=item.get('is_edit', False)
-                        )
-                        success = True
-                elif item['pipeline'] == 'alibk':
-                    ai_res = await self.intelligence_pipeline.classify_and_translate_alibk(item['text'])
-                    if ai_res:
-                        await self.intelligence_pipeline.process_classified_alibk(
-                            clean_text=item['text'],
-                            msg_id=item['msg_id'],
-                            ai_res=ai_res,
-                            raw_msg=raw_msg,
-                            is_edit=item.get('is_edit', False)
-                        )
-                        success = True
+                if item.get('pipeline') in ('vip_multi_agent', 'vip', 'yashar', 'alibk'):
+                    await self.vip_pipeline.process_queue_item(item, raw_msg=raw_msg)
+                    success = True
+                elif item.get('pipeline') == 'radar':
+                    # Future radar queue extensions
+                    success = False
             except Exception as proc_err:
                 print(f"⚠️ [SMART QUEUE: ERROR] Processing failed for {item_id}: {proc_err}")
 
@@ -808,20 +794,9 @@ class LiveSentinel:
                 self.db.advance_watermark(canon_node, msg_id)
 
             if not skip_mirror_channels:
-                # 1. Monitored VIP channels (Radar consensus feed, mirror channels deactivated)
-                if canon == 'vahidonline':
-                    asyncio.create_task(self.radar_pipeline.process_vip_channel(text, 'VahidOnline', msg_id, raw_msg=raw_msg, is_edit=is_edit))
-                    return
-                elif canon == 'iliaen':
-                    asyncio.create_task(self.radar_pipeline.process_vip_channel(text, 'iliaen', msg_id, raw_msg=raw_msg, is_edit=is_edit))
-                    return
-                # 2. Yashar Autonomous Pipeline (@withyashar) - 100% Dedicated AI Editor
-                elif canon == 'withyashar':
-                    asyncio.create_task(self.yashar_pipeline.handle_message(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
-                    return
-                # 3. Intelligence Pipeline (@Alibk3)
-                elif canon == 'alibk3':
-                    asyncio.create_task(self.intelligence_pipeline.handle_alibk(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+                # VIP Channels: 4-Soldier Multi-Agent Pipeline (withyashar, Alibk3, VahidOnline, iliaen)
+                if canon in ('vahidonline', 'iliaen', 'withyashar', 'alibk3'):
+                    asyncio.create_task(self.vip_pipeline.handle_message(text, canon_node, msg_id, raw_msg=raw_msg, is_edit=is_edit))
                     return
 
             # 4. Consensus Radar Pipeline (General monitored nodes)
@@ -1032,15 +1007,17 @@ async def main():
             return_exceptions=True
         )
         
-        print("⚡ Executing transition catch-up: Alibk3 and withyashar...")
-        try:
-            await sentinel.catchup_unposted_alibk(reader_client=client)
-        except Exception as e:
-            print(f"⚠️ Alibk catchup error: {e}")
-        try:
-            await sentinel.catchup_unposted_withyashar(reader_client=client)
-        except Exception as e:
-            print(f"⚠️ withyashar catchup error: {e}")
+        print("⚡ Executing transition catch-up for all 4 VIP channels...")
+        for catchup_coro in (
+            sentinel.catchup_unposted_alibk(reader_client=client),
+            sentinel.catchup_unposted_withyashar(reader_client=client),
+            sentinel.catchup_unposted_vahid(reader_client=client),
+            sentinel.catchup_unposted_ilia(reader_client=client)
+        ):
+            try:
+                await catchup_coro
+            except Exception as e:
+                print(f"⚠️ VIP catchup error: {e}")
     except Exception as e:
         if hasattr(e, 'seconds'):
             print(f"⚠️ FloodWaitError! Sleeping for {e.seconds} seconds before retrying...")

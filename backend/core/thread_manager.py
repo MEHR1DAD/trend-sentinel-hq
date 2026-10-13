@@ -203,7 +203,7 @@ class ThreadAlertManager:
                 continue
             if td.get('channel') != target_channel:
                 continue
-            if (now - td.get('timestamp', 0)) > 259200: # 72 hours
+            if (now - td.get('timestamp', 0)) > 21600: # 6 hours
                 continue
             if any(s.get('node') == node and (s.get('msg_id') == msg_id or str(s.get('msg_id')) == str(msg_id)) for s in td.get('sources', [])):
                 return True
