@@ -18,20 +18,37 @@ class GeminiClient:
         self.latest_flash_lite_model = DEFAULT_GEMINI_MODEL
         self.last_used_model = DEFAULT_GEMINI_MODEL
         self.model_usage_stats = {}
+        self.key_cooldown_until = {k: 0.0 for k in self.api_keys}
         self.gemini_lock = asyncio.Lock()
         self.last_gemini_call_time = 0.0
+        print(f"🔑 Initialized Gemini Pool with {len(self.api_keys)} API keys (Primary Model: {DEFAULT_GEMINI_MODEL})")
 
     def get_api_key(self):
         if not self.api_keys:
             return None
-        return self.api_keys[self.current_key_idx % len(self.api_keys)]
+        now = time.time()
+        for i in range(len(self.api_keys)):
+            idx = (self.current_key_idx + i) % len(self.api_keys)
+            k = self.api_keys[idx]
+            if self.key_cooldown_until.get(k, 0.0) <= now:
+                self.current_key_idx = idx
+                return k
+        # Fallback: key with earliest cooldown expiration
+        best_idx = min(range(len(self.api_keys)), key=lambda i: self.key_cooldown_until.get(self.api_keys[i], 0.0))
+        self.current_key_idx = best_idx
+        return self.api_keys[best_idx]
 
-    def rotate_api_key(self):
-        if len(self.api_keys) > 1:
-            self.current_key_idx = (self.current_key_idx + 1) % len(self.api_keys)
-            print(f"🔄 Rotated to backup Gemini API Key #{self.current_key_idx + 1}/{len(self.api_keys)}")
-            return self.get_api_key()
-        return None
+    def rotate_api_key(self, cooldown_seconds=60):
+        if not self.api_keys:
+            return None
+        cur_key = self.api_keys[self.current_key_idx % len(self.api_keys)]
+        if cooldown_seconds > 0:
+            self.key_cooldown_until[cur_key] = time.time() + cooldown_seconds
+        old_idx = self.current_key_idx
+        self.current_key_idx = (self.current_key_idx + 1) % len(self.api_keys)
+        new_key = self.get_api_key()
+        print(f"🔄 Switched Gemini Key: slot #{old_idx + 1} ➡️ slot #{self.current_key_idx + 1}/{len(self.api_keys)} (Cooldown {cooldown_seconds}s)")
+        return new_key
 
     @staticmethod
     def parse_model_version_score(model_name):
@@ -216,13 +233,12 @@ class GeminiClient:
                     err_body = e.read().decode('utf-8', errors='ignore')
                 except Exception:
                     pass
-                print(f"⚠️ Gemini API HTTP Error {e.code} ({e.reason}) on model {model} (Attempt {attempt+1}/{max_retries}): {err_body[:200]}")
-                if e.code == 429 and "quota" in err_body.lower():
-                    self.rotate_api_key()
+                if e.code in (429, 503):
+                    self.rotate_api_key(cooldown_seconds=60)
                 if attempt < max_retries - 1:
                     model = await self.rotate_gemini_model_dynamic(failed_model=model)
                     if e.code in (429, 503):
-                        await asyncio.sleep(1.5)
+                        await asyncio.sleep(2.0)
                 else:
                     break
             except Exception as e:

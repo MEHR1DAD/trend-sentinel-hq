@@ -40,6 +40,13 @@ VIP_MAP = {
     'withyashar': 'withyashar'
 }
 
+# --- Strict Canonical Channel Hashtags ---
+CHANNEL_CANONICAL_TAGS = {
+    "@DidebanJang": "#دیده‌بان_جنگ",
+    "@DidehbanEghtesad": "#دیده‌بان_اقتصاد",
+    "@DidebanEterazat": "#دیده‌بان_اعتراضات"
+}
+
 # --- Country Theatres & Geographic Entities ---
 COUNTRY_THEATRES = {
     'عربستان': [

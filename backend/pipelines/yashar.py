@@ -4,6 +4,7 @@ import json
 import asyncio
 from datetime import datetime, timezone
 from backend.core.config import (
+    CHANNEL_CANONICAL_TAGS,
     get_tehran_datetime_fa,
     format_update_status_line,
     detect_msg_media_type,
@@ -117,34 +118,9 @@ class YasharAutonomousPipeline:
                 except Exception as parse_err:
                     print(f"⚠️ Failed to parse Yashar AI JSON response: {parse_err}")
 
-        # Emergency Fallback only if Gemini API is completely unreachable
-        return self._generate_emergency_fallback(clean_prompt_text)
-
-    def _generate_emergency_fallback(self, text):
-        clean = re.sub(r'@\w+\s*$', '', (text or "")).strip()
-        lines = [l.strip() for l in clean.split('\n') if l.strip()]
-        first_line = lines[0] if lines else clean
-        
-        is_economy = any(w in clean for w in ['دلار', 'تتر', 'ارز', 'طلا', 'سکه', 'بورس', 'تورم', 'قیمت'])
-        is_protest = any(w in clean for w in ['اعتراض', 'اعتصاب', 'اعدام', 'تجمع', 'زندان', 'دادگاه', 'بازداشت'])
-        target_ch = "@DidehbanEghtesad" if is_economy else ("@DidebanEterazat" if is_protest else "@DidebanJang")
-        
-        clean_title = re.sub(r'^[🚨⚡️📢🛑🔕⚖️📈📸📹🎙🔴⚠️📌\s\*\-]+', '', first_line).strip()
-        if len(clean_title) > 90:
-            clean_title = clean_title[:87] + "..."
-
-        return {
-            "decision": "PUBLISH",
-            "drop_reason": "",
-            "target_channel": target_ch,
-            "urgency_level": "BREAKING",
-            "is_iran_related": True,
-            "title": clean_title,
-            "summary": clean,
-            "editorial_reasoning": "Emergency fallback triggered due to AI connectivity issue.",
-            "model": "heuristic_fallback",
-            "is_ai": False
-        }
+        # Emergency Fallback abolished - Return None to trigger Smart Queue
+        print(f"⚠️ [YASHAR AI] Gemini API unreachable or returned invalid response for withyashar.")
+        return None
 
     # ==========================================
     # --- MESSAGE PROCESSING & ROUTING ---
@@ -170,163 +146,176 @@ class YasharAutonomousPipeline:
             # 1. Ask Autonomous AI Editor
             ai_eval = await self.analyze_and_synthesize(clean_text, raw_msg=raw_msg)
             if not ai_eval:
+                print(f"⏳ [YASHAR AI QUEUED] Msg #{msg_id} could not be evaluated by AI. Enqueueing into Smart Queue (45m TTL)...")
+                if hasattr(self.sentinel, 'enqueue_unprocessed_message'):
+                    await self.sentinel.enqueue_unprocessed_message(
+                        pipeline="yashar",
+                        node="withyashar",
+                        msg_id=msg_id,
+                        text=clean_text,
+                        raw_msg=raw_msg,
+                        is_edit=is_edit
+                    )
                 return
 
-            decision = ai_eval.get('decision', 'PUBLISH')
-            target_channel = ai_eval.get('target_channel', '@DidebanJang')
-            title = ai_eval.get('title', '').strip()
-            summary = ai_eval.get('summary', '').strip()
-            editorial_reasoning = ai_eval.get('editorial_reasoning', '')
+            await self.process_evaluated_message(clean_text, msg_id, ai_eval, raw_msg=raw_msg, is_edit=is_edit)
 
-            ai_model = ai_eval.get('model', getattr(self.sentinel.gemini, 'last_used_model', 'unknown'))
-            latency_sec, latency_str = calculate_source_latency(raw_msg)
+    async def process_evaluated_message(self, clean_text, msg_id, ai_eval, raw_msg=None, is_edit=False):
+        decision = ai_eval.get('decision', 'PUBLISH')
+        target_channel = ai_eval.get('target_channel', '@DidebanJang')
+        title = ai_eval.get('title', '').strip()
+        summary = ai_eval.get('summary', '').strip()
+        editorial_reasoning = ai_eval.get('editorial_reasoning', '')
 
-            # 2. Handle DROP Decision
-            if decision == 'DROP':
-                drop_reason = ai_eval.get('drop_reason', 'فاقد ارزش خبری یا غیرمرتبط')
-                print(f"🛑 [YASHAR AI: DROPPED | Model: {ai_model} | Latency: {latency_str}] Msg #{msg_id} was filtered out by AI Editor.")
-                print(f"   Reason: {drop_reason} | Reasoning: {editorial_reasoning}")
-                return
+        ai_model = ai_eval.get('model', getattr(self.sentinel.gemini, 'last_used_model', 'unknown'))
+        latency_sec, latency_str = calculate_source_latency(raw_msg)
 
-            # Dedup guard for publish
-            if not is_edit and self.sentinel.db.is_source_posted(target_channel, "withyashar", msg_id):
-                print(f"🛑 [DEDUP GUARD] withyashar msg {msg_id} already posted to {target_channel}. Aborting.")
-                return
+        # 2. Handle DROP Decision
+        if decision == 'DROP':
+            drop_reason = ai_eval.get('drop_reason', 'فاقد ارزش خبری یا غیرمرتبط')
+            print(f"🛑 [YASHAR AI: DROPPED | Model: {ai_model} | Latency: {latency_str}] Msg #{msg_id} was filtered out by AI Editor.")
+            print(f"   Reason: {drop_reason} | Reasoning: {editorial_reasoning}")
+            return
 
-            if not title or not summary:
-                return
+        # Dedup guard for publish
+        if not is_edit and self.sentinel.db.is_source_posted(target_channel, "withyashar", msg_id):
+            print(f"🛑 [DEDUP GUARD] withyashar msg {msg_id} already posted to {target_channel}. Aborting.")
+            return
 
-            # 3. Determine presentation and tags
-            is_iran_related = ai_eval.get('is_iran_related', True)
-            ai_urgency = ai_eval.get('urgency_level', 'BREAKING')
+        if not title or not summary:
+            return
 
-            if target_channel == '@DidehbanEghtesad':
-                tag = "#دیده‌بان_اقتصاد"
-                icon = "📈"
-                alert_type_name = "گزارش اقتصادی"
-                is_silent = False
-            elif target_channel == '@DidebanEterazat':
-                tag = "#دیده‌بان_اعتراضات"
-                is_legal = any(w in clean_text for w in ["اعدام", "حکم", "طناب دار", "زندان", "دادگاه", "بازداشت"])
-                icon = "⚖️" if is_legal else "📢"
-                alert_type_name = "گزارش حقوق بشری" if icon == "⚖️" else "گزارش مردمی"
-                is_silent = False
-            else:
-                target_channel = "@DidebanJang"
-                tag = "#دیده‌بان_جنگ"
-                tier, icon, alert_type_name, is_silent = classify_war_urgency(
-                    ai_urgency=ai_urgency,
-                    text=clean_text,
-                    title=title,
-                    is_iran_related=is_iran_related
-                )
+        # 3. Determine presentation and strict canonical tags
+        is_iran_related = ai_eval.get('is_iran_related', True)
+        ai_urgency = ai_eval.get('urgency_level', 'BREAKING')
+        tag = CHANNEL_CANONICAL_TAGS.get(target_channel, "#دیده‌بان_جنگ")
 
-            link = f"https://t.me/withyashar/{msg_id}"
-            root_media_type = detect_msg_media_type(raw_msg)
-            root_icon = get_media_icon_from_type(root_media_type)
+        if target_channel == '@DidehbanEghtesad':
+            icon = "📈"
+            alert_type_name = "گزارش اقتصادی"
+            is_silent = False
+        elif target_channel == '@DidebanEterazat':
+            is_legal = any(w in clean_text for w in ["اعدام", "حکم", "طناب دار", "زندان", "دادگاه", "بازداشت"])
+            icon = "⚖️" if is_legal else "📢"
+            alert_type_name = "گزارش حقوق بشری" if icon == "⚖️" else "گزارش مردمی"
+            is_silent = False
+        else:
+            target_channel = "@DidebanJang"
+            tag = CHANNEL_CANONICAL_TAGS.get(target_channel, "#دیده‌بان_جنگ")
+            tier, icon, alert_type_name, is_silent = classify_war_urgency(
+                ai_urgency=ai_urgency,
+                text=clean_text,
+                title=title,
+                is_iran_related=is_iran_related
+            )
 
-            media_header = f" {root_icon}" if root_icon != "📝" else ""
-            alert_header = f"{icon} **{alert_type_name}: {title}**{media_header}"
-            sources_text = f"🔗 **منبع خبر:**\n- [withyashar]({link}) {root_icon}"
+        link = f"https://t.me/withyashar/{msg_id}"
+        root_media_type = detect_msg_media_type(raw_msg)
+        root_icon = get_media_icon_from_type(root_media_type)
 
-            alert_text = (
+        media_header = f" {root_icon}" if root_icon != "📝" else ""
+        alert_header = f"{icon} **{alert_type_name}: {title}**{media_header}"
+        sources_text = f"🔗 **منبع خبر:**\n- [withyashar]({link}) {root_icon}"
+
+        msg_key = f"withyashar_{msg_id}"
+
+        # 4. Handle Edit / Update
+        if is_edit and msg_key in self.sentinel.vip_alert_history:
+            posted_mid = self.sentinel.vip_alert_history[msg_key].get('sent_msg_id')
+            posted_ch = self.sentinel.vip_alert_history[msg_key].get('target_channel', target_channel)
+            posted_tag = CHANNEL_CANONICAL_TAGS.get(posted_ch, tag)
+            status_line = format_update_status_line(reason="ویرایش و تکمیل خبر")
+
+            updated_text = (
                 f"{alert_header}\n\n"
                 f"📝 **چکیده تحلیلی رویداد:**\n{summary}\n\n"
                 f"{sources_text}\n\n"
-                f"{tag}\n{target_channel}"
+                f"{status_line}\n\n"
+                f"{posted_tag}\n{posted_ch}"
             )
+            try:
+                await self.sentinel.safe_edit_post(posted_ch, posted_mid, updated_text)
+                print(f"✏️ [YASHAR AI: EDITED | Model: {ai_model} | Latency: {latency_str}] Post {posted_mid} in {posted_ch} updated with in-place analysis.")
+            except Exception as edit_err:
+                if "not modified" in str(edit_err).lower():
+                    pass
+                else:
+                    print(f"⚠️ Error editing withyashar post: {edit_err}")
+            return
 
-            msg_key = f"withyashar_{msg_id}"
-
-            # 4. Handle Edit / Update
-            if is_edit and msg_key in self.sentinel.vip_alert_history:
-                posted_mid = self.sentinel.vip_alert_history[msg_key].get('sent_msg_id')
-                posted_ch = self.sentinel.vip_alert_history[msg_key].get('target_channel', target_channel)
-                status_line = format_update_status_line(reason="ویرایش و تکمیل خبر")
-
-                updated_text = (
-                    f"{alert_header}\n\n"
-                    f"📝 **چکیده تحلیلی رویداد:**\n{summary}\n\n"
-                    f"{sources_text}\n\n"
-                    f"{status_line}\n\n"
-                    f"{tag}\n{posted_ch}"
-                )
-                try:
-                    await self.sentinel.safe_edit_post(posted_ch, posted_mid, updated_text)
-                    print(f"✏️ [YASHAR AI: EDITED | Model: {ai_model} | Latency: {latency_str}] Post {posted_mid} in {posted_ch} updated with in-place analysis.")
-                except Exception as edit_err:
-                    if "not modified" in str(edit_err).lower():
-                        pass
-                    else:
-                        print(f"⚠️ Error editing withyashar post: {edit_err}")
+        # 5. SINGLE CHEF ARCHITECTURE: Always check active thread merge across all sources before posting
+        if self.threads:
+            merged = await self.threads.check_and_merge_with_active_alert(
+                text=clean_text,
+                node="withyashar",
+                msg_id=msg_id,
+                target_channel=target_channel,
+                candidate_title=title,
+                candidate_summary=summary,
+                raw_msg=raw_msg,
+                category='WAR' if target_channel == '@DidebanJang' else ('ECONOMY' if target_channel == '@DidehbanEghtesad' else 'PROTEST_RIGHTS'),
+                is_iran_related=is_iran_related
+            )
+            if merged:
+                print(f"🔀 [YASHAR AI: MERGED | Model: {ai_model} | Latency: {latency_str}] Successfully merged withyashar msg {msg_id} into active alert in {target_channel}.")
                 return
 
-            # 5. Handle MERGE Decision
-            if decision == 'MERGE' and self.threads:
-                merged = await self.threads.check_and_merge_with_active_alert(
-                    text=clean_text,
-                    node="withyashar",
-                    msg_id=msg_id,
-                    target_channel=target_channel,
-                    candidate_title=title,
-                    candidate_summary=summary,
-                    raw_msg=raw_msg,
-                    category='WAR' if target_channel == '@DidebanJang' else ('ECONOMY' if target_channel == '@DidehbanEghtesad' else 'PROTEST_RIGHTS'),
-                    is_iran_related=is_iran_related
-                )
-                if merged:
-                    print(f"🔀 [YASHAR AI: MERGED | Model: {ai_model} | Latency: {latency_str}] Successfully merged withyashar msg {msg_id} into active alert in {target_channel}.")
-                    return
+        # 6. Publish New Alert to Target Channel
+        alert_text = (
+            f"{alert_header}\n\n"
+            f"📝 **چکیده تحلیلی رویداد:**\n{summary}\n\n"
+            f"{sources_text}\n\n"
+            f"{tag}\n{target_channel}"
+        )
 
-            # 6. Publish to Target Channel
-            try:
-                sent = await self.sentinel.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
-                if sent:
-                    self.sentinel.channel_last_alert_id[target_channel] = sent.id
-                    self.sentinel.vip_alert_history[msg_key] = {
-                        'target_channel': target_channel,
-                        'sent_msg_id': sent.id,
-                        'time': time.time(),
-                        'text': clean_text,
-                        'pattern': 'withyashar_autonomous',
-                        'ai_model': ai_model,
-                        'latency_sec': round(latency_sec, 2) if latency_sec is not None else None
-                    }
-                    self.sentinel.db.record_posted_message(target_channel, "withyashar", msg_id, sent.id)
+        try:
+            sent = await self.sentinel.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
+            if sent:
+                self.sentinel.channel_last_alert_id[target_channel] = sent.id
+                self.sentinel.vip_alert_history[msg_key] = {
+                    'target_channel': target_channel,
+                    'sent_msg_id': sent.id,
+                    'time': time.time(),
+                    'text': clean_text,
+                    'pattern': 'withyashar_autonomous',
+                    'ai_model': ai_model,
+                    'latency_sec': round(latency_sec, 2) if latency_sec is not None else None
+                }
+                self.sentinel.db.record_posted_message(target_channel, "withyashar", msg_id, sent.id)
 
-                    thread_key = f"withyashar_{msg_id}"
-                    self.sentinel.thread_alerts[thread_key] = {
-                        'channel': target_channel,
-                        'alert_msg_id': sent.id,
+                thread_key = f"withyashar_{msg_id}"
+                self.sentinel.thread_alerts[thread_key] = {
+                    'channel': target_channel,
+                    'alert_msg_id': sent.id,
+                    'node': 'withyashar',
+                    'root_id': msg_id,
+                    'root_text': clean_text,
+                    'root_media_type': root_media_type,
+                    'timestamp': time.time(),
+                    'category': 'WAR' if target_channel == '@DidebanJang' else ('ECONOMY' if target_channel == '@DidehbanEghtesad' else 'PROTEST_RIGHTS'),
+                    'is_iran_related': is_iran_related,
+                    'title': title,
+                    'summary': summary,
+                    'ai_model': ai_model,
+                    'latency_sec': round(latency_sec, 2) if latency_sec is not None else None,
+                    'sources': [{
                         'node': 'withyashar',
-                        'root_id': msg_id,
-                        'root_text': clean_text,
-                        'root_media_type': root_media_type,
-                        'timestamp': time.time(),
-                        'category': 'WAR' if target_channel == '@DidebanJang' else ('ECONOMY' if target_channel == '@DidehbanEghtesad' else 'PROTEST_RIGHTS'),
-                        'is_iran_related': is_iran_related,
-                        'title': title,
-                        'summary': summary,
-                        'ai_model': ai_model,
-                        'latency_sec': round(latency_sec, 2) if latency_sec is not None else None,
-                        'sources': [{
-                            'node': 'withyashar',
-                            'msg_id': msg_id,
-                            'media_type': root_media_type,
-                            'link': link,
-                            'timestamp': time.time()
-                        }],
-                        'replies': [],
-                        'tag': tag
-                    }
-                    self.sentinel.save_persisted_state()
+                        'msg_id': msg_id,
+                        'media_type': root_media_type,
+                        'link': link,
+                        'timestamp': time.time()
+                    }],
+                    'replies': [],
+                    'tag': tag
+                }
+                self.sentinel.save_persisted_state()
 
-                    urg_label = "Alarm/Sound" if not is_silent else "Silent"
-                    print(f"✨ [YASHAR AI: PUBLISHED | Model: {ai_model} | Latency: {latency_str}] Posted to {target_channel} ({urg_label}) for msg #{msg_id}:")
-                    print(f"   📌 Title: {title}")
-                    print(f"   💡 Editorial Rationale: {editorial_reasoning}")
-            except Exception as pub_err:
-                print(f"❌ Error publishing autonomous withyashar alert to {target_channel}: {pub_err}")
+                urg_label = "Alarm/Sound" if not is_silent else "Silent"
+                print(f"✨ [YASHAR AI: PUBLISHED | Model: {ai_model} | Latency: {latency_str}] Posted to {target_channel} ({urg_label}) for msg #{msg_id}:")
+                print(f"   📌 Title: {title}")
+                print(f"   💡 Editorial Rationale: {editorial_reasoning}")
+        except Exception as pub_err:
+            print(f"❌ Error publishing autonomous withyashar alert to {target_channel}: {pub_err}")
 
     # ==========================================
     # --- CATCHUP SCANNER ---

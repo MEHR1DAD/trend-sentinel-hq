@@ -3,6 +3,7 @@ import time
 import json
 import asyncio
 from backend.core.config import (
+    CHANNEL_CANONICAL_TAGS,
     to_fa_num,
     get_tehran_time_fa,
     get_tehran_datetime_fa,
@@ -466,7 +467,7 @@ class ThreadAlertManager:
         title = thread_data.get('title', '').strip()
         summary = thread_data.get('summary', '').strip()
         target_channel = thread_data.get('channel', '@DidebanJang')
-        tag = thread_data.get('tag', '#دیده‌بان_جنگ')
+        tag = CHANNEL_CANONICAL_TAGS.get(target_channel, thread_data.get('tag', '#دیده‌بان_جنگ'))
         
         raw_sources = list(thread_data.get('sources', []))
         if not raw_sources:

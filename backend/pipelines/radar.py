@@ -5,6 +5,7 @@ import json
 import asyncio
 from datetime import datetime, timezone
 from backend.core.config import (
+    CHANNEL_CANONICAL_TAGS,
     COUNTRY_THEATRES,
     FOREIGN_KEYWORDS,
     IRAN_KEYWORDS,
@@ -710,12 +711,8 @@ class RadarPipeline:
             else:
                 target_channel = "@DidebanJang"
                 
-        if target_channel == "@DidehbanEghtesad":
-            alert_text += f"#دیده‌بان_اقتصاد\n\n{target_channel}"
-        elif target_channel == "@DidebanEterazat":
-            alert_text += f"#دیده‌بان_اعتراضات\n\n{target_channel}"
-        else:
-            alert_text += f"#دیده‌بان_جنگ\n\n{target_channel}"
+        canonical_tag = CHANNEL_CANONICAL_TAGS.get(target_channel, "#دیده‌بان_جنگ")
+        alert_text += f"{canonical_tag}\n\n{target_channel}"
             
         sent_msg = None
         try:

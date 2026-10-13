@@ -4,6 +4,7 @@ import json
 import asyncio
 from datetime import datetime, timezone
 from backend.core.config import (
+    CHANNEL_CANONICAL_TAGS,
     get_tehran_time_fa,
     get_tehran_datetime_fa,
     format_update_status_line,
@@ -245,130 +246,147 @@ class IntelligencePipeline:
 
             ai_res = await self.classify_and_translate_alibk(clean_text)
             if not ai_res:
-                print(f"⚠️ Alibk3 AI processing skipped/failed for msg {msg_id}")
-                return
-
-            category = ai_res.get('category', 'OTHER')
-            if category != 'WAR':
-                print(f"ℹ️ Alibk3 post {msg_id} filtered out by news policy (category={category}).")
-                return
-
-            title = ai_res.get('title', '').strip()
-            summary = ai_res.get('summary', '').strip()
-            if not title or not summary:
-                return
-
-            is_iran_related = self.sentinel.determine_iran_related(ai_res, clean_text, title)
-            ai_urgency = ai_res.get('urgency_level') if ai_res else None
-            tier, icon, alert_type_name, is_silent = classify_war_urgency(
-                ai_urgency=ai_urgency,
-                text=clean_text,
-                title=title,
-                is_iran_related=is_iran_related
-            )
-
-            target_channel = "@DidebanJang"
-            tag = "#دیده‌بان_جنگ"
-            link = f"https://t.me/Alibk3/{msg_id}"
-
-            root_media_type = detect_msg_media_type(raw_msg)
-            root_icon = get_media_icon_from_type(root_media_type)
-
-            icon_header = ""
-            if root_media_type == 'video': icon_header = " 📹"
-            elif root_media_type == 'photo': icon_header = " 📸"
-            elif root_media_type == 'voice': icon_header = " 🎙"
-
-            alert_header = f"{icon} **{alert_type_name}: {title}**{icon_header}"
-
-            sources_text = f"🔗 **منبع خبر:**\n- [Alibk3]({link}) {root_icon}"
-            alert_text = (
-                f"{alert_header}\n\n"
-                f"📝 **چکیده رویداد:**\n{summary}\n\n"
-                f"{sources_text}\n\n"
-                f"{tag}\n{target_channel}"
-            )
-
-            try:
-                if is_already_posted:
-                    posted_info = self.alibk_posted[msg_id]
-                    posted_ch = posted_info.get('channel', target_channel)
-                    posted_mid = posted_info.get('msg_id')
-                    
-                    thread_key = f"Alibk3_{msg_id}"
-                    if thread_key in self.sentinel.thread_alerts:
-                        thread_data = self.sentinel.thread_alerts[thread_key]
-                        thread_data['title'] = title
-                        thread_data['summary'] = summary
-                        thread_data['updated_at'] = time.time()
-                        thread_data['update_reason'] = 'ویرایش و اطلاعات تکمیلی'
-                        alert_text = self.sentinel.build_alert_post_content(thread_data)
-                    else:
-                        status_line = format_update_status_line(reason="ویرایش و اطلاعات تکمیلی")
-                        alert_text = (
-                            f"{alert_header}\n\n"
-                            f"📝 **چکیده رویداد:**\n{summary}\n\n"
-                            f"{sources_text}\n\n"
-                            f"{status_line}\n\n"
-                            f"{tag}\n{posted_ch}"
-                        )
-                        
-                    try:
-                        await self.sentinel.safe_edit_post(posted_ch, posted_mid, alert_text)
-                        print(f"✏️ Updated Alibk3 alert in {posted_ch} (Alibk msg {msg_id}) with in-place status line.")
-                    except Exception as edit_err:
-                        if "not modified" in str(edit_err).lower():
-                            pass
-                        else:
-                            raise edit_err
-                else:
-                    merged = await self.sentinel.check_and_merge_with_active_alert(
-                        text=clean_text,
+                print(f"⏳ [ALIBK AI QUEUED] Msg #{msg_id} could not be processed by AI. Enqueueing into Smart Queue (45m TTL)...")
+                if hasattr(self.sentinel, 'enqueue_unprocessed_message'):
+                    await self.sentinel.enqueue_unprocessed_message(
+                        pipeline="alibk",
                         node="Alibk3",
                         msg_id=msg_id,
-                        target_channel=target_channel,
-                        candidate_title=title,
-                        candidate_summary=summary,
+                        text=clean_text,
                         raw_msg=raw_msg,
-                        category=category,
-                        is_iran_related=is_iran_related
+                        is_edit=is_edit
                     )
-                    if merged:
-                        return
+                return
 
-                    sent = await self.sentinel.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
-                    if sent:
-                        self.sentinel.channel_last_alert_id[target_channel] = sent.id
-                        self.alibk_posted[msg_id] = {'channel': target_channel, 'msg_id': sent.id, 'timestamp': time.time()}
-                        self.sentinel.db.record_posted_message(target_channel, "Alibk3", msg_id, sent.id)
-                        ai_model = getattr(self.sentinel.gemini, 'last_used_model', 'unknown')
-                        latency_sec, latency_str = calculate_source_latency(raw_msg)
-                        self.sentinel.thread_alerts[f"Alibk3_{msg_id}"] = {
-                            'channel': target_channel,
-                            'alert_msg_id': sent.id,
+            await self.process_classified_alibk(clean_text, msg_id, ai_res, raw_msg=raw_msg, is_edit=is_edit)
+
+    async def process_classified_alibk(self, clean_text, msg_id, ai_res, raw_msg=None, is_edit=False):
+        is_already_posted = msg_id in self.alibk_posted
+        if is_already_posted and not is_edit:
+            return
+
+        category = ai_res.get('category', 'OTHER')
+        if category != 'WAR':
+            print(f"ℹ️ Alibk3 post {msg_id} filtered out by news policy (category={category}).")
+            return
+
+        title = ai_res.get('title', '').strip()
+        summary = ai_res.get('summary', '').strip()
+        if not title or not summary:
+            return
+
+        is_iran_related = self.sentinel.determine_iran_related(ai_res, clean_text, title)
+        ai_urgency = ai_res.get('urgency_level') if ai_res else None
+        tier, icon, alert_type_name, is_silent = classify_war_urgency(
+            ai_urgency=ai_urgency,
+            text=clean_text,
+            title=title,
+            is_iran_related=is_iran_related
+        )
+
+        target_channel = "@DidebanJang"
+        tag = CHANNEL_CANONICAL_TAGS.get(target_channel, "#دیده‌بان_جنگ")
+        link = f"https://t.me/Alibk3/{msg_id}"
+
+        root_media_type = detect_msg_media_type(raw_msg)
+        root_icon = get_media_icon_from_type(root_media_type)
+
+        icon_header = ""
+        if root_media_type == 'video': icon_header = " 📹"
+        elif root_media_type == 'photo': icon_header = " 📸"
+        elif root_media_type == 'voice': icon_header = " 🎙"
+
+        alert_header = f"{icon} **{alert_type_name}: {title}**{icon_header}"
+
+        sources_text = f"🔗 **منبع خبر:**\n- [Alibk3]({link}) {root_icon}"
+        alert_text = (
+            f"{alert_header}\n\n"
+            f"📝 **چکیده رویداد:**\n{summary}\n\n"
+            f"{sources_text}\n\n"
+            f"{tag}\n{target_channel}"
+        )
+
+        try:
+            if is_already_posted:
+                posted_info = self.alibk_posted[msg_id]
+                posted_ch = posted_info.get('channel', target_channel)
+                posted_mid = posted_info.get('msg_id')
+                posted_tag = CHANNEL_CANONICAL_TAGS.get(posted_ch, tag)
+
+                thread_key = f"Alibk3_{msg_id}"
+                if thread_key in self.sentinel.thread_alerts:
+                    thread_data = self.sentinel.thread_alerts[thread_key]
+                    thread_data['title'] = title
+                    thread_data['summary'] = summary
+                    thread_data['updated_at'] = time.time()
+                    thread_data['update_reason'] = 'ویرایش و اطلاعات تکمیلی'
+                    alert_text = self.sentinel.build_alert_post_content(thread_data)
+                else:
+                    status_line = format_update_status_line(reason="ویرایش و اطلاعات تکمیلی")
+                    alert_text = (
+                        f"{alert_header}\n\n"
+                        f"📝 **چکیده رویداد:**\n{summary}\n\n"
+                        f"{sources_text}\n\n"
+                        f"{status_line}\n\n"
+                        f"{posted_tag}\n{posted_ch}"
+                    )
+
+                try:
+                    await self.sentinel.safe_edit_post(posted_ch, posted_mid, alert_text)
+                    print(f"✏️ Updated Alibk3 alert in {posted_ch} (Alibk msg {msg_id}) with in-place status line.")
+                except Exception as edit_err:
+                    if "not modified" in str(edit_err).lower():
+                        pass
+                    else:
+                        raise edit_err
+            else:
+                merged = await self.sentinel.check_and_merge_with_active_alert(
+                    text=clean_text,
+                    node="Alibk3",
+                    msg_id=msg_id,
+                    target_channel=target_channel,
+                    candidate_title=title,
+                    candidate_summary=summary,
+                    raw_msg=raw_msg,
+                    category=category,
+                    is_iran_related=is_iran_related
+                )
+                if merged:
+                    return
+
+                sent = await self.sentinel.bot.send_message(target_channel, alert_text, link_preview=False, silent=is_silent)
+                if sent:
+                    self.sentinel.channel_last_alert_id[target_channel] = sent.id
+                    self.alibk_posted[msg_id] = {'channel': target_channel, 'msg_id': sent.id, 'timestamp': time.time()}
+                    self.sentinel.db.record_posted_message(target_channel, "Alibk3", msg_id, sent.id)
+                    ai_model = getattr(self.sentinel.gemini, 'last_used_model', 'unknown')
+                    latency_sec, latency_str = calculate_source_latency(raw_msg)
+                    self.sentinel.thread_alerts[f"Alibk3_{msg_id}"] = {
+                        'channel': target_channel,
+                        'alert_msg_id': sent.id,
+                        'node': 'Alibk3',
+                        'root_id': msg_id,
+                        'root_text': clean_text,
+                        'root_media_type': root_media_type,
+                        'timestamp': time.time(),
+                        'category': category,
+                        'is_iran_related': is_iran_related,
+                        'title': title,
+                        'summary': summary,
+                        'ai_model': ai_model,
+                        'latency_sec': round(latency_sec, 2) if latency_sec is not None else None,
+                        'sources': [{
                             'node': 'Alibk3',
-                            'root_id': msg_id,
-                            'root_text': clean_text,
-                            'root_media_type': root_media_type,
-                            'timestamp': time.time(),
-                            'category': category,
-                            'is_iran_related': is_iran_related,
-                            'title': title,
-                            'summary': summary,
-                            'ai_model': ai_model,
-                            'latency_sec': round(latency_sec, 2) if latency_sec is not None else None,
-                            'sources': [{
-                                'node': 'Alibk3',
-                                'msg_id': msg_id,
-                                'media_type': root_media_type,
-                                'link': link,
-                                'timestamp': time.time()
-                            }],
-                            'replies': [],
-                            'tag': tag
-                        }
-                        self.sentinel.save_persisted_state()
-                        status_label = "Iran/Sound" if is_iran_related else "Regional/Silent"
-                        print(f"🚨 Published Persian Alibk3 alert ({status_label} | Model: {ai_model} | Latency: {latency_str}) to {target_channel} for msg {msg_id}: {title}")
-            except Exception as e:
-                print(f"❌ Error publishing Alibk3 alert to {target_channel} for msg {msg_id}: {e}")
+                            'msg_id': msg_id,
+                            'media_type': root_media_type,
+                            'link': link,
+                            'timestamp': time.time()
+                        }],
+                        'replies': [],
+                        'tag': tag
+                    }
+                    self.sentinel.save_persisted_state()
+                    status_label = "Iran/Sound" if is_iran_related else "Regional/Silent"
+                    print(f"🚨 Published Persian Alibk3 alert ({status_label} | Model: {ai_model} | Latency: {latency_str}) to {target_channel} for msg {msg_id}: {title}")
+        except Exception as e:
+            print(f"❌ Error publishing Alibk3 alert to {target_channel} for msg {msg_id}: {e}")

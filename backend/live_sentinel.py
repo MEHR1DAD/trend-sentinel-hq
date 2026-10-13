@@ -108,6 +108,12 @@ class LiveSentinel:
         self.last_msg_text = "No messages yet"
         self.last_msg_time = "N/A"
 
+        # Smart Queue for Unprocessed Messages during API Cooldown/Outages (TTL: 45m / 2700s)
+        self.smart_queue = []
+        self.smart_queue_raw_msgs = {}
+        self.smart_queue_lock = asyncio.Lock()
+        self.smart_queue_task = None
+
         # Load persisted state
         self.load_persisted_state()
 
@@ -350,8 +356,13 @@ class LiveSentinel:
                 raw_stats = data.get('gemini_model_stats', {})
                 if isinstance(raw_stats, dict):
                     self.gemini.model_usage_stats.update(raw_stats)
+
+                raw_queue = data.get('smart_queue', [])
+                now = time.time()
+                self.smart_queue = [q for q in raw_queue if isinstance(q, dict) and (now - q.get('enqueued_at', 0)) <= 2700]
+                queue_log = f", {len(self.smart_queue)} queued items (45m TTL)" if self.smart_queue else ""
                 
-                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.intelligence_pipeline.alibk_posted)} Alibk alerts, {len(self.mirror_pipeline.posted_map['VahidOnline'])} Vahid AI, {len(self.mirror_pipeline.posted_map['iliaen'])} Ilia AI, {len(self.db.channel_watermarks)} watermarks.")
+                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.intelligence_pipeline.alibk_posted)} Alibk alerts, {len(self.mirror_pipeline.posted_map['VahidOnline'])} Vahid AI, {len(self.mirror_pipeline.posted_map['iliaen'])} Ilia AI, {len(self.db.channel_watermarks)} watermarks{queue_log}.")
         except Exception as e:
             print(f"⚠️ Error loading persisted state: {e}")
 
@@ -367,6 +378,7 @@ class LiveSentinel:
             clean_ilia_time = {str(k): v for k, v in self.ilia_post_time.items() if (now - v) <= 259200}
             clean_vahid_ai = {str(k): v for k, v in self.mirror_pipeline.posted_map['VahidOnline'].items()}
             clean_ilia_ai = {str(k): v for k, v in self.mirror_pipeline.posted_map['iliaen'].items()}
+            clean_queue = [q for q in self.smart_queue if isinstance(q, dict) and (now - q.get('enqueued_at', 0)) <= 2700]
             serializable_patterns = {k: list(v) for k, v in self.alerted_msg_patterns.items()}
             
             data = {
@@ -383,6 +395,7 @@ class LiveSentinel:
                 "vahid_ai_posted": clean_vahid_ai,
                 "ilia_ai_posted": clean_ilia_ai,
                 "gemini_model_stats": self.gemini.model_usage_stats,
+                "smart_queue": clean_queue,
                 "last_saved": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
             }
             with open(self.state_file, 'w', encoding='utf-8') as f:
@@ -391,7 +404,7 @@ class LiveSentinel:
             print(f"⚠️ Error saving persisted state: {e}")
 
     async def cleanup_update_notification_bubbles(self, reader_client=None):
-        target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat', '@VahidOnlineAI', '@iliaenAI']
+        target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat']
         fetch_client = reader_client or self.client or self.bot
         print("🧹 Starting quick scan to delete any legacy update notification bubbles across channels...")
         for ch in target_channels:
@@ -477,7 +490,7 @@ class LiveSentinel:
         return False
 
     async def init_channel_last_alert_ids(self, reader_client=None):
-        target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat', '@VahidOnlineAI', '@iliaenAI']
+        target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat']
         fetch_client = reader_client or self.client or self.bot
         await self.cleanup_update_notification_bubbles(reader_client=fetch_client)
 
@@ -658,6 +671,133 @@ class LiveSentinel:
     def schedule_thread_debounce(self, thread_key):
         return self.threads.schedule_thread_debounce(thread_key)
 
+    # ==========================================
+    # --- SMART RETRY QUEUE (PLAN B / 45m TTL) ---
+    # ==========================================
+
+    async def enqueue_unprocessed_message(self, pipeline, node, msg_id, text, raw_msg=None, is_edit=False):
+        item_id = f"{pipeline}_{node}_{msg_id}"
+        async with self.smart_queue_lock:
+            if any(item.get('id') == item_id for item in self.smart_queue):
+                print(f"ℹ️ [SMART QUEUE] Item {item_id} is already in the queue. Skipping duplicate enqueue.")
+                return
+
+            now = time.time()
+            item = {
+                "id": item_id,
+                "pipeline": pipeline,
+                "node": node,
+                "msg_id": msg_id,
+                "text": text,
+                "is_edit": is_edit,
+                "enqueued_at": now,
+                "retries": 0,
+                "last_retry_at": 0
+            }
+            self.smart_queue.append(item)
+            if raw_msg:
+                self.smart_queue_raw_msgs[item_id] = raw_msg
+            print(f"📥 [SMART QUEUE: ENQUEUED] Added {item_id} to queue (Queue size: {len(self.smart_queue)}, TTL: 45m / 2700s). Waiting for API availability...")
+            self.save_persisted_state()
+
+    async def run_smart_queue_worker(self):
+        print("🚀 [SMART QUEUE] Background Retry Worker started (TTL: 45m / 2700s, Check Interval: 15s).")
+        while True:
+            try:
+                await asyncio.sleep(15)
+                await self.process_smart_queue_cycle()
+            except asyncio.CancelledError:
+                print("🛑 [SMART QUEUE] Background Retry Worker stopped.")
+                break
+            except Exception as e:
+                print(f"⚠️ [SMART QUEUE] Worker loop error: {e}")
+
+    async def process_smart_queue_cycle(self):
+        now = time.time()
+        ttl_seconds = 2700  # 45 minutes
+
+        async with self.smart_queue_lock:
+            if not self.smart_queue:
+                return
+
+            remaining_items = []
+            for item in self.smart_queue:
+                age = now - item.get('enqueued_at', now)
+                item_id = item.get('id', 'unknown')
+                if age > ttl_seconds:
+                    age_min = age / 60.0
+                    print(f"⏰ [SMART QUEUE: EXPIRED] Item {item_id} (msg #{item.get('msg_id')} from {item.get('node')}) exceeded TTL of 45m (Age: {age_min:.1f}m). Dropping without publishing.")
+                    self.smart_queue_raw_msgs.pop(item_id, None)
+                    continue
+                remaining_items.append(item)
+
+            self.smart_queue = remaining_items
+            if not self.smart_queue:
+                return
+
+            oldest_age_min = (now - min(q.get('enqueued_at', now) for q in self.smart_queue)) / 60.0
+            print(f"📊 [SMART QUEUE: STATUS] {len(self.smart_queue)} pending message(s) waiting in queue | Oldest age: {oldest_age_min:.1f}m.")
+
+        # Process pending items
+        for item in list(self.smart_queue):
+            item_id = item.get('id')
+            now = time.time()
+            if (now - item.get('last_retry_at', 0)) < 15:
+                continue
+
+            item['retries'] = item.get('retries', 0) + 1
+            item['last_retry_at'] = now
+            age = now - item.get('enqueued_at', now)
+            print(f"🔄 [SMART QUEUE: RETRYING] Attempt #{item['retries']} for {item_id} (Age: {age:.1f}s / {ttl_seconds}s)...")
+
+            raw_msg = self.smart_queue_raw_msgs.get(item_id)
+            if not raw_msg and self.client:
+                try:
+                    fetched = await self.client.get_messages(item['node'], ids=[item['msg_id']])
+                    if fetched:
+                        raw_msg = fetched
+                        self.smart_queue_raw_msgs[item_id] = raw_msg
+                except Exception:
+                    pass
+
+            success = False
+            try:
+                if item['pipeline'] == 'yashar':
+                    ai_eval = await self.yashar_pipeline.analyze_and_synthesize(item['text'], raw_msg=raw_msg)
+                    if ai_eval:
+                        await self.yashar_pipeline.process_evaluated_message(
+                            clean_text=item['text'],
+                            msg_id=item['msg_id'],
+                            ai_eval=ai_eval,
+                            raw_msg=raw_msg,
+                            is_edit=item.get('is_edit', False)
+                        )
+                        success = True
+                elif item['pipeline'] == 'alibk':
+                    ai_res = await self.intelligence_pipeline.classify_and_translate_alibk(item['text'])
+                    if ai_res:
+                        await self.intelligence_pipeline.process_classified_alibk(
+                            clean_text=item['text'],
+                            msg_id=item['msg_id'],
+                            ai_res=ai_res,
+                            raw_msg=raw_msg,
+                            is_edit=item.get('is_edit', False)
+                        )
+                        success = True
+            except Exception as proc_err:
+                print(f"⚠️ [SMART QUEUE: ERROR] Processing failed for {item_id}: {proc_err}")
+
+            if success:
+                async with self.smart_queue_lock:
+                    self.smart_queue = [q for q in self.smart_queue if q.get('id') != item_id]
+                    self.smart_queue_raw_msgs.pop(item_id, None)
+                total_wait = time.time() - item.get('enqueued_at', now)
+                print(f"✅ [SMART QUEUE: SUCCESS] Item {item_id} processed successfully after {total_wait:.1f}s in queue ({item['retries']} retries).")
+                self.save_persisted_state()
+                await asyncio.sleep(2.0)
+            else:
+                print(f"⏳ [SMART QUEUE: REMAINING] Item {item_id} still pending AI availability. Will retry in next worker cycle.")
+
     # --- Central Event Router ---
     async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None, skip_mirror_channels=False):
         async with self.lock:
@@ -668,13 +808,11 @@ class LiveSentinel:
                 self.db.advance_watermark(canon_node, msg_id)
 
             if not skip_mirror_channels:
-                # 1. Mirror Pipelines (@VahidOnlineAI, @iliaenAI)
+                # 1. Monitored VIP channels (Radar consensus feed, mirror channels deactivated)
                 if canon == 'vahidonline':
-                    asyncio.create_task(self.mirror_pipeline.handle_message('VahidOnline', '@VahidOnlineAI', text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
                     asyncio.create_task(self.radar_pipeline.process_vip_channel(text, 'VahidOnline', msg_id, raw_msg=raw_msg, is_edit=is_edit))
                     return
                 elif canon == 'iliaen':
-                    asyncio.create_task(self.mirror_pipeline.handle_message('iliaen', '@iliaenAI', text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
                     asyncio.create_task(self.radar_pipeline.process_vip_channel(text, 'iliaen', msg_id, raw_msg=raw_msg, is_edit=is_edit))
                     return
                 # 2. Yashar Autonomous Pipeline (@withyashar) - 100% Dedicated AI Editor
@@ -686,7 +824,7 @@ class LiveSentinel:
                     asyncio.create_task(self.intelligence_pipeline.handle_alibk(text, msg_id, raw_msg=raw_msg, is_edit=is_edit))
                     return
 
-            # 3. Consensus Radar Pipeline (General monitored nodes)
+            # 4. Consensus Radar Pipeline (General monitored nodes)
             await self.radar_pipeline.process_radar_consensus(text, node, msg_id, is_edit=is_edit, msg_date=msg_date, raw_msg=raw_msg)
 
 
@@ -879,6 +1017,7 @@ async def main():
         
         poller_task = asyncio.create_task(active_poller())
         heartbeat_task = asyncio.create_task(heartbeat_monitor())
+        smart_queue_task = asyncio.create_task(sentinel.run_smart_queue_worker())
         
         await sentinel.preload_node_entities(reader_client=client)
         try:
@@ -889,21 +1028,11 @@ async def main():
         
         print("📚 Preloading recent post history from target channels...")
         await asyncio.gather(
-            sentinel.preload_vahid_ai_history(reader_client=client),
-            sentinel.preload_ilia_ai_history(reader_client=client),
             sentinel.preload_alibk_history(reader_client=client),
             return_exceptions=True
         )
         
-        print("⚡ Executing transition catch-up: iliaen first, then VahidOnline and Alibk3...")
-        try:
-            await sentinel.catchup_unposted_ilia(reader_client=client)
-        except Exception as e:
-            print(f"⚠️ Ilia catchup error: {e}")
-        try:
-            await sentinel.catchup_unposted_vahid(reader_client=client)
-        except Exception as e:
-            print(f"⚠️ Vahid catchup error: {e}")
+        print("⚡ Executing transition catch-up: Alibk3 and withyashar...")
         try:
             await sentinel.catchup_unposted_alibk(reader_client=client)
         except Exception as e:
@@ -920,17 +1049,14 @@ async def main():
             await client.start()
             poller_task = asyncio.create_task(active_poller())
             heartbeat_task = asyncio.create_task(heartbeat_monitor())
+            smart_queue_task = asyncio.create_task(sentinel.run_smart_queue_worker())
             await sentinel.preload_node_entities(reader_client=client)
             await sentinel.init_channel_last_alert_ids(reader_client=client)
             await asyncio.gather(
-                sentinel.preload_vahid_ai_history(reader_client=client),
-                sentinel.preload_ilia_ai_history(reader_client=client),
                 sentinel.preload_alibk_history(reader_client=client),
                 return_exceptions=True
             )
             await asyncio.gather(
-                sentinel.catchup_unposted_ilia(reader_client=client),
-                sentinel.catchup_unposted_vahid(reader_client=client),
                 sentinel.catchup_unposted_alibk(reader_client=client),
                 sentinel.catchup_unposted_withyashar(reader_client=client),
                 return_exceptions=True
@@ -953,6 +1079,8 @@ async def main():
     finally:
         poller_task.cancel()
         heartbeat_task.cancel()
+        if 'smart_queue_task' in locals() and not smart_queue_task.done():
+            smart_queue_task.cancel()
         print("⏳ Flushing any pending debounce updates before exit...")
         try:
             await sentinel.flush_all_pending_debounces()
