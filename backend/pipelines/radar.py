@@ -395,99 +395,6 @@ class RadarPipeline:
             
         return list(set(patterns))
 
-    async def classify_message(self, text):
-        if not self.sentinel.gemini.get_api_key():
-            return None
-            
-        prompt = (
-            "تو یک تحلیلگر و دروازه‌بان هوشمند خبر برای یک سیستم دیده‌بان و مانیتورینگ تلگرام هستی.\n"
-            "یک رویداد خبری مهم دریافت شده است. موضوع این خبر را تحلیل کن و مشخص کن آیا این خبر باید در یکی از ۳ کانال تخصصی زیر منتشر شود:\n\n"
-            "دسته‌بندی‌های مجاز (category):\n"
-            "1. WAR: اخبار جنگ، تنش‌های نظامی، حملات هوایی/موشکی/پهپادی، بمباران، پدافند هوایی، درگیری‌های مسلحانه، آژیر خطر، انفجارهای نظامی، حوادث و آسیب به تاسیسات نفتی/گازی و پالایشگاهی ناشی از جنگ در منطقه.\n"
-            "2. ECONOMY: اخبار مهم اقتصادی، نوسانات شدید نرخ ارز (دلار، تتر، یورو)، طلا و سکه، بازار بورس، سقوط ریال، تصمیمات کلیدی ارزی و شوک‌های معیشتی.\n"
-            "3. PROTEST_RIGHTS: اخبار اعتراضات مردمی، اعتصابات، تجمعات خیابانی، سرکوب معترضان، بازداشت‌ها، احکام دادگاه‌ها و پرونده‌های معترضان و فعالان، اجرای احکام اعدام، وضعیت زندانیان سیاسی.\n"
-            "4. OTHER: اخبار متفرقه که در هیچ‌کدام از ۳ دسته بالا قرار نمی‌گیرد (مانند اخبار پزشکی، حمله قلبی، حوادث روزمره، اخبار فرهنگی/ورزشی، روابط دیپلماتیک عادی بدون جنگ، هواشناسی).\n\n"
-            "تشخیص ارتباط با ایران و آمادگی‌های جنگی (is_iran_related):\n"
-            "- مقدار true: اگر رویداد مستقیماً به خاک ایران، اهداف نظامی یا پدافندی ایران، سپاه یا ارتش، مقامات ایران مربوط است، یا اگر خبر درباره «آمادگی‌ها، آرایش جنگی، جابجایی تانکرهای سوخت‌رسان، بمب‌افکن‌ها و تسلیحات توسط آمریکا یا اسرائیل برای پشتیبانی از حمله احتمالی به ایران یا رویارویی مستقیم با ایران» است.\n"
-            "- مقدار false: اگر صرفاً یک رویداد داخلی در کشوری دوردست (مثل اوکراین) یا درگیری بین سایر طرف‌های منطقه‌ای بدون هیچ ربطی به جبهه رویارویی با ایران است.\n\n"
-            "سطح فوریت خبر جنگی (urgency_level):\n"
-            "- 'EMERGENCY': رویدادهای اضطراری و میدانی فوری (بمباران، شلیک موشک و پهپاد، انفجار، آژیر قرمز، درگیری مسلحانه مستقیم).\n"
-            "- 'BREAKING': اخبار مهم و تحولات امنیتی/سیاسی/تسلیحاتی ایران که بمباران لحظه‌ای نیستند.\n"
-            "- 'REGIONAL': جنگ‌های منطقه‌ای بدون درگیری مستقیم ایران.\n\n"
-            f"متن خبر:\n{text}\n\n"
-            "پاسخ را دقیقاً و فقط در قالب یک شیء JSON با این فیلدها بنویس و هیچ کلمه یا توضیح دیگری قبل یا بعد از آن ننویس:\n"
-            "{\n"
-            '  "category": "WAR" | "ECONOMY" | "PROTEST_RIGHTS" | "OTHER",\n'
-            '  "is_iran_related": true | false,\n'
-            '  "urgency_level": "EMERGENCY" | "BREAKING" | "REGIONAL",\n'
-            '  "topic_title": "یک عنوان رسا، جذاب و صریح فارسی همراه با فعل کامل که اصل رویداد را بدون ابهام بیان کند",\n'
-            '  "summary": "چکیده شفاف و شیوا از رویداد با اولویت ایجاز و کوتاه‌سازی در کنار ابهام‌زدایی و توضیحات تکمیلی لازم"\n'
-            "}"
-        )
-        
-        payload = {
-            "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {
-                "maxOutputTokens": 400,
-                "temperature": 0.2
-            }
-        }
-        
-        raw_text = await self.sentinel.gemini.call_gemini_content(payload, timeout=14, max_retries=5)
-        if raw_text:
-            res = safe_extract_json(raw_text)
-            if res and isinstance(res, dict):
-                category = str(res.get("category", "")).upper().strip()
-                topic_title = str(res.get("topic_title", "")).strip()
-                summary = str(res.get("summary", "")).strip()
-                is_iran_related = bool(res.get("is_iran_related", False))
-                urgency_level = str(res.get("urgency_level", "BREAKING" if is_iran_related else "REGIONAL")).upper().strip()
-                if category in ["WAR", "ECONOMY", "PROTEST_RIGHTS", "OTHER"]:
-                    return {"category": category, "is_iran_related": is_iran_related, "urgency_level": urgency_level, "topic_title": topic_title, "summary": summary}
-                    
-        return None
-
-    async def append_ai_summary(self, target_channel, message_id, original_text, raw_texts):
-        if not self.sentinel.gemini.get_api_key():
-            return
-            
-        prompt = (
-            "تو دستیار ارشد و همکار هوشمند تحریریه دیده‌بان هستی. "
-            "متن خبرهای زیر از منابع مختلف جمع‌آوری شده است. "
-            "لطفاً یک چکیده شفاف، دقیق، بی‌طرفانه و شیوا از رویداد بنویس. "
-            "اولویت اصلی ایجاز و خلاصه‌سازی در کنار بیان تمام نکات مهم و در صورت لزوم ابهام‌زدایی از رویداد است. "
-            "هیچگونه تیتر، مقدمه، سلام، هشتگ یا توضیحات اضافه‌ای ننویس و منحصراً خودِ متن چکیده را ارائه بده.\n\nاخبار:\n"
-            + "\n---\n".join(raw_texts)
-        )
-        
-        payload = {
-            "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {
-                "maxOutputTokens": 300,
-                "temperature": 0.25
-            }
-        }
-        
-        summary = await self.sentinel.gemini.call_gemini_content(payload, timeout=14, max_retries=5)
-        if summary:
-            delimiter = "🔗 **منابع خبر:**" if "🔗 **منابع خبر:**" in original_text else "🔗 **منبع خبر:**"
-            parts = original_text.split(delimiter)
-            if len(parts) == 2:
-                clean_part0 = re.sub(r'⚡️\s*سرعت انتشار[^\n]*\n+', '', parts[0])
-                clean_part0 = re.sub(r'📊\s*وضعیت عادی[^\n]*\n+', '', clean_part0)
-                clean_part0 = clean_part0.rstrip() + "\n\n"
-                new_text = f"{clean_part0}📝 **چکیده رویداد:**\n{summary}\n\n{delimiter}{parts[1]}"
-                try:
-                    await self.sentinel.safe_edit_post(target_channel, message_id, new_text)
-                    for tk, td in self.sentinel.thread_alerts.items():
-                        if td.get('alert_msg_id') == message_id and td.get('channel') == target_channel:
-                            td['summary'] = summary
-                            break
-                    self.sentinel.save_persisted_state()
-                    print(f"✅ AI Summary added to message {message_id} in {target_channel}.")
-                except Exception as edit_err:
-                    print(f"Failed to edit AI summary onto message {message_id}: {edit_err}")
-
     # ==========================================
     # --- ANOMALY CONSENSUS & SEND ALERT ---
     # ==========================================
@@ -537,199 +444,50 @@ class RadarPipeline:
             self.sentinel.last_alert_time[clean_pat] = now
             self.sentinel.recent_alert_sources.append((now, current_sources))
             
-            is_silent = True
-            if not is_foreign:
-                for inc, sev in self.sentinel.incident_severities.items():
-                    if inc in clean_pat and sev == "URGENT":
-                        is_silent = False
-                        break
-                    
+            parsed_anomaly_sources = []
+            for ch_node, ch_link in channels.items():
+                if not ch_node or str(ch_node).lower() in ('radar', 'unknown', 'sentinel'):
+                    continue
+                m_sl = re.search(r'https://t\.me/([^/]+)/(\d+)', ch_link)
+                if m_sl:
+                    parsed_anomaly_sources.append({
+                        'node': m_sl.group(1),
+                        'msg_id': int(m_sl.group(2)),
+                        'media_type': 'text',
+                        'link': ch_link,
+                        'timestamp': time.time()
+                    })
+
             raw_texts = [msg['text'] for msg in self.sentinel.recent_messages if msg['node'] in channels and msg['link'] == channels[msg['node']]]
             combined_text = "\n---\n".join(raw_texts[:3])
-            
-            ai_class = await self.classify_message(combined_text)
-            if ai_class:
-                category = ai_class.get('category')
-                topic_title = ai_class.get('topic_title', '').strip()
-                
-                if category == 'OTHER':
-                    print(f"ℹ️ Anomaly AI Classifier rejected alert as OTHER: '{topic_title}' ({clean_pat})")
-                    continue
-                    
-                if category == 'ECONOMY':
-                    target_ch = "@DidehbanEghtesad"
-                    title = f"گزارش اقتصادی: {topic_title}"
-                    icon = "📈"
-                    is_silent = False
-                elif category == 'PROTEST_RIGHTS':
-                    target_ch = "@DidebanEterazat"
-                    is_rights = any(w in combined_text for w in ["اعدام", "حکم", "طناب دار", "زندان", "دادگاه", "بازداشت", "محبوس", "قوه قضائیه"])
-                    title = f"گزارش حقوق بشری: {topic_title}" if is_rights else f"گزارش مردمی: {topic_title}"
-                    icon = "⚖️" if any(w in combined_text for w in ["اعدام", "حکم", "طناب دار", "دادگاه"]) else "📢"
-                    is_silent = False
-                elif category == 'WAR':
-                    target_ch = "@DidebanJang"
-                    is_iran = self.sentinel.determine_iran_related(ai_class, combined_text, topic_title)
-                    ai_urgency = ai_class.get('urgency_level') if ai_class else None
-                    tier, icon, alert_type_name, is_silent = classify_war_urgency(
-                        ai_urgency=ai_urgency,
-                        text=combined_text,
-                        title=topic_title,
-                        is_iran_related=is_iran
-                    )
-                    title = f"{alert_type_name}: {topic_title}"
-                else:
-                    continue
-                    
-                parsed_anomaly_sources = []
-                for ch_node, ch_link in channels.items():
-                    if not ch_node or str(ch_node).lower() in ('radar', 'unknown', 'sentinel'):
-                        continue
-                    m_sl = re.search(r'https://t\.me/([^/]+)/(\d+)', ch_link)
-                    if m_sl:
-                        parsed_anomaly_sources.append({
-                            'node': m_sl.group(1),
-                            'msg_id': int(m_sl.group(2)),
-                            'media_type': 'text',
-                            'link': ch_link,
-                            'timestamp': time.time()
-                        })
 
-                first_source_node = parsed_anomaly_sources[0]['node'] if parsed_anomaly_sources else 'Sentinel'
-                first_source_id = parsed_anomaly_sources[0]['msg_id'] if parsed_anomaly_sources else int(time.time())
-
-                is_iran = self.sentinel.determine_iran_related(ai_class, combined_text, topic_title) if category == 'WAR' else False
-                merged = await self.check_and_merge_with_active_alert(
-                    text=combined_text,
-                    node=first_source_node,
-                    msg_id=first_source_id,
-                    target_channel=target_ch,
-                    candidate_title=topic_title,
-                    candidate_summary="",
-                    raw_msg=None,
-                    category=category,
-                    is_iran_related=is_iran,
-                    candidate_sources=parsed_anomaly_sources
+            # -------------------------------------------------------------------
+            # انتقال انحصاری و رسمی رویداد اجماع به خط لوله تحریریه چندعامله (سرباز ۳ و ۴)
+            # رادار هیچ‌گونه حق ارسال مستقیم به تلگرام ندارد (Single Point of Dispatch)
+            # -------------------------------------------------------------------
+            if hasattr(self.sentinel, 'vip_pipeline') and self.sentinel.vip_pipeline:
+                print(f"📡 [RADAR CONSENSUS] 3-Channel consensus reached for '{clean_pat}' ({len(channels)} sources). Delegating exclusively to Multi-Agent Editorial Pipeline...")
+                await self.sentinel.vip_pipeline.handle_consensus_event(
+                    combined_text=combined_text,
+                    sources=parsed_anomaly_sources,
+                    clean_pat=clean_pat
                 )
-                if merged:
-                    continue
-
-                sent_msg, target_channel, alert_text = await self.send_alert(
-                    topic_title, 
-                    distinct_channel_count, 
-                    normal_rate, 
-                    source_links[:3], 
-                    is_silent=is_silent,
-                    target_channel=target_ch,
-                    alert_title=title,
-                    custom_icon=icon
-                )
-                if sent_msg:
-                    thread_key = f"{first_source_node}_{first_source_id}"
-                    self.sentinel.thread_alerts[thread_key] = {
-                        'channel': target_channel,
-                        'alert_msg_id': sent_msg.id,
-                        'node': first_source_node,
-                        'root_id': first_source_id,
-                        'root_text': combined_text,
-                        'root_media_type': 'text',
-                        'timestamp': time.time(),
-                        'category': category,
-                        'is_iran_related': is_iran,
-                        'title': topic_title,
-                        'summary': '',
-                        'tag': '#دیده‌بان_اقتصاد' if target_channel == '@DidehbanEghtesad' else ('#دیده‌بان_اعتراضات' if target_channel == '@DidebanEterazat' else '#دیده‌بان_جنگ'),
-                        'sources': parsed_anomaly_sources,
-                        'replies': []
-                    }
-                    self.sentinel.save_persisted_state()
-                    asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, raw_texts[:3]))
             else:
-                sent_msg, target_channel, alert_text = await self.send_alert(clean_pat, distinct_channel_count, normal_rate, source_links[:3], is_silent=is_silent)
-                if sent_msg:
-                    asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, raw_texts[:3]))
+                print(f"⚠️ [RADAR CONSENSUS] vip_pipeline not available to process consensus for '{clean_pat}'.")
 
     async def send_alert(self, pattern, count, normal_rate, context_msgs, is_silent=False, target_channel=None, alert_title=None, custom_icon=None, summary=None):
-        if not BOT_TOKEN:
-            return None, None, ""
-        
-        is_economy = "||ECONOMY||" in str(pattern) or target_channel == "@DidehbanEghtesad"
-        clean_pat_str = str(pattern).replace("||ECONOMY||", "").replace("||FOREIGN||", "").strip()
-        is_protest = ("اعتراض" in clean_pat_str or "اعتصاب" in clean_pat_str or "اعدام" in clean_pat_str or "حقوق بشری" in clean_pat_str) or target_channel == "@DidebanEterazat"
-        
-        if custom_icon:
-            icon = custom_icon
-        elif is_silent:
-            icon = "🔕"
-        elif is_economy:
-            icon = "📈"
-        elif is_protest:
-            if "اعدام" in clean_pat_str or "حقوق بشری" in clean_pat_str:
-                icon = "⚖️"
-            else:
-                icon = "🛑" if "اعتصاب" in clean_pat_str else "📢"
-        else:
-            icon = "🚨"
-            
-        if alert_title:
-            alert_title = str(alert_title).replace("||ECONOMY||", "").replace("||FOREIGN||", "").strip()
-        else:
-            if is_economy:
-                alert_title = f"گزارش اقتصادی: {clean_pat_str}"
-            elif is_protest:
-                if "اعدام" in clean_pat_str or "حقوق بشری" in clean_pat_str:
-                    alert_title = f"گزارش حقوق بشری: {clean_pat_str}"
-                else:
-                    alert_title = f"گزارش مردمی: {clean_pat_str}"
-            else:
-                if is_silent:
-                    alert_title = f"هشدار منطقه‌ای: {clean_pat_str}"
-                else:
-                    alert_title = f"هشدار فوری: {clean_pat_str}"
-            
-        source_header = "🔗 **منبع خبر:**" if len(context_msgs) == 1 else "🔗 **منابع خبر:**"
-        clean_context = [
-            m.replace(' (VIP Alert - Edited)', '').replace(' (VIP Alert)', '').replace(' (VIP Update)', '')
-              .replace(' (هشدار ویژه)', '').replace(' (به‌روزرسانی ویژه)', '').strip()
-            for m in context_msgs
-        ]
-        
-        if summary:
-            alert_text = (
-                f"{icon} **{alert_title}**\n\n"
-                f"📝 **چکیده رویداد:**\n{summary}\n\n"
-                f"{source_header}\n" + "\n".join(clean_context) + "\n\n"
-            )
-        else:
-            alert_text = (
-                f"{icon} **{alert_title}**\n\n"
-                f"{source_header}\n" + "\n".join(clean_context) + "\n\n"
-            )
-        
-        if not target_channel:
-            if is_economy:
-                target_channel = "@DidehbanEghtesad"
-            elif is_protest:
-                target_channel = "@DidebanEterazat"
-            else:
-                target_channel = "@DidebanJang"
-                
-        canonical_tag = CHANNEL_CANONICAL_TAGS.get(target_channel, "#دیده‌بان_جنگ")
-        alert_text += f"{canonical_tag}\n\n{target_channel}"
-            
-        sent_msg = None
-        try:
-            target_peer = self.sentinel.get_node_input_peer(target_channel) or target_channel
-            sent_msg = await self.sentinel.bot.send_message(target_peer, alert_text, link_preview=False, silent=is_silent)
-            if sent_msg:
-                self.sentinel.channel_last_alert_id[target_channel] = sent_msg.id
-        except Exception as e:
-            print(f"Failed to send alert to {target_channel}: {e}")
-            
-        if sent_msg:
-            self.sentinel.save_persisted_state()
-            
-        return sent_msg, target_channel, alert_text
+        """
+        [DISPATCHER LOCKOUT]: این متد برای جلوگیری از هرگونه ارسال موازی و دور زدن سردبیر به طور قطعی مسدود است.
+        تمام انتشارات کانال‌ها منحصراً و متمرکز از طریق VipMultiAgentEditorialPipeline انجام می‌شود.
+        """
+        print("🛑 [DISPATCHER LOCKOUT] Direct send_alert in Radar is permanently disabled. Parallel dispatch blocked.")
+        return None, None, ""
+
+    async def append_ai_summary(self, target_channel, message_id, original_text, raw_texts):
+        """
+        [DEPRECATED]: ویرایش تاخیری حذف شده و متون از ابتدا کامل، پخته و نهایی منتشر می‌شوند.
+        """
+        return None
 
     async def process_radar_consensus(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None):
         if msg_date:

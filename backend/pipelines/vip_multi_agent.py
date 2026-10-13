@@ -538,11 +538,12 @@ class VipMultiAgentEditorialPipeline:
     # --- لایه اجرایی و انتشار نهایی (Dispatch & Execute) ---
     # ========================================================
 
-    async def execute_dispatch(self, node, msg_id, route_info, thread_info, editor_info, raw_msg=None, is_edit=False):
+    async def execute_dispatch(self, node, msg_id, route_info, thread_info, editor_info, raw_msg=None, is_edit=False, custom_sources=None):
         """
-        اجرای نهایی عملیات:
+        اجرای نهایی عملیات (تنها درگاه رسمی انتشار سامانه):
         - در صورت MERGE: ویرایش درجا در تلگرام و به‌روزرسانی تاریخچه و وضعیت.
         - در صورت NEW_ALERT: انتشار پست جدید با برچسب‌های کانونی قطعی و ثبت در حافظه دیده‌بان.
+        پشتیبانی کامل از پیام‌های تک‌منبعی VIP و رویدادهای اجماع چندمنبعی رادار عمومی.
         """
         target_channel = route_info['target_channel']
         urgency_level = route_info['urgency_level']
@@ -582,6 +583,20 @@ class VipMultiAgentEditorialPipeline:
             is_silent = False
             alert_header = f"{icon} **{alert_type_name}: {title}**{media_header}"
 
+        # ساختار بلوک منابع و متن کامل پست برای ارسال نو یا ادیت بازهدایت‌شده
+        if custom_sources and len(custom_sources) > 1:
+            sources_lines = [f"- [{s.get('node', 'منبع')}]({s.get('link', '')}) {get_media_icon_from_type(s.get('media_type', 'text'))}" for s in custom_sources]
+            source_block = "🔗 **منابع خبر:**\n" + "\n".join(sources_lines)
+        else:
+            source_block = f"🔗 **منبع خبر:**\n- [{node}]({link}) {root_icon}"
+
+        alert_text = (
+            f"{alert_header}\n\n"
+            f"📝 **چکیده تحلیلی رویداد:**\n{summary}\n\n"
+            f"{source_block}\n\n"
+            f"{tag}\n{target_channel}"
+        )
+
         # ----------------------------------------------------
         # حالت ۱: ادغام با پست فعال قبلی (MERGE)
         # ----------------------------------------------------
@@ -592,15 +607,17 @@ class VipMultiAgentEditorialPipeline:
                 alert_msg_id = thread_data.get('alert_msg_id')
                 sources = thread_data.setdefault('sources', [])
 
-                # افزودن منبع جدید به لیست منابع رشته
-                if not any(s.get('node') == node and (s.get('msg_id') == msg_id or str(s.get('msg_id')) == str(msg_id)) for s in sources):
-                    sources.append({
-                        'node': node,
-                        'msg_id': msg_id,
-                        'media_type': root_media_type,
-                        'link': link,
-                        'timestamp': time.time()
-                    })
+                # افزودن منبع یا منابع جدید به لیست منابع رشته
+                new_additions = custom_sources if custom_sources else [{
+                    'node': node,
+                    'msg_id': msg_id,
+                    'media_type': root_media_type,
+                    'link': link,
+                    'timestamp': time.time()
+                }]
+                for item in new_additions:
+                    if not any(s.get('node') == item.get('node') and str(s.get('msg_id')) == str(item.get('msg_id')) for s in sources):
+                        sources.append(item)
 
                 thread_data['title'] = title
                 thread_data['summary'] = summary
@@ -621,11 +638,9 @@ class VipMultiAgentEditorialPipeline:
 
                 try:
                     await self.sentinel.safe_edit_post(target_channel, alert_msg_id, updated_text)
-                    print(f"🔀 [VIP MULTI-AGENT: MERGED | Model: {ai_model} | Latency: {latency_str}] Merged {node}_{msg_id} into alert #{alert_msg_id} in {target_channel}.")
+                    print(f"🔀 [MULTI-AGENT: MERGED | Model: {ai_model} | Latency: {latency_str}] Merged {node}_{msg_id} into alert #{alert_msg_id} in {target_channel}.")
                 except Exception as edit_err:
-                    if "not modified" in str(edit_err).lower():
-                        pass
-                    else:
+                    if "not modified" not in str(edit_err).lower():
                         print(f"⚠️ Error editing merged alert #{alert_msg_id} in {target_channel}: {edit_err}")
 
                 msg_key = f"{node}_{msg_id}"
@@ -636,7 +651,14 @@ class VipMultiAgentEditorialPipeline:
                     'thread_key': thread_key,
                     'ai_model': ai_model
                 }
-                self.sentinel.db.record_posted_message(target_channel, node, msg_id, alert_msg_id)
+                if custom_sources:
+                    for s in custom_sources:
+                        sn = s.get('node')
+                        sm = s.get('msg_id')
+                        if sn and sm:
+                            self.sentinel.db.record_posted_message(target_channel, sn, sm, alert_msg_id)
+                else:
+                    self.sentinel.db.record_posted_message(target_channel, node, msg_id, alert_msg_id)
                 self.sentinel.save_persisted_state()
                 return
 
@@ -672,11 +694,18 @@ class VipMultiAgentEditorialPipeline:
                     'sent_msg_id': sent.id,
                     'time': time.time(),
                     'text': summary,
-                    'pattern': 'vip_multi_agent',
+                    'pattern': 'multi_agent_editorial',
                     'ai_model': ai_model,
                     'latency_sec': round(latency_sec, 2) if latency_sec is not None else None
                 }
-                self.sentinel.db.record_posted_message(target_channel, node, msg_id, sent.id)
+                if custom_sources:
+                    for s in custom_sources:
+                        sn = s.get('node')
+                        sm = s.get('msg_id')
+                        if sn and sm:
+                            self.sentinel.db.record_posted_message(target_channel, sn, sm, sent.id)
+                else:
+                    self.sentinel.db.record_posted_message(target_channel, node, msg_id, sent.id)
 
                 # ثبت رشته ۶ ساعته در حافظه سیستم
                 thread_key = f"{node}_{msg_id}"
@@ -696,7 +725,7 @@ class VipMultiAgentEditorialPipeline:
                     'ai_model': ai_model,
                     'latency_sec': round(latency_sec, 2) if latency_sec is not None else None,
                     'tag': tag,
-                    'sources': [{
+                    'sources': custom_sources if custom_sources else [{
                         'node': node,
                         'msg_id': msg_id,
                         'media_type': root_media_type,
@@ -708,10 +737,10 @@ class VipMultiAgentEditorialPipeline:
                 self.sentinel.save_persisted_state()
 
                 urg_label = "Alarm/Sound" if not is_silent else "Silent"
-                print(f"✨ [VIP MULTI-AGENT: PUBLISHED | Model: {ai_model} | Latency: {latency_str}] Posted to {target_channel} ({urg_label}) for {node} #{msg_id}:")
+                print(f"✨ [MULTI-AGENT: PUBLISHED | Model: {ai_model} | Latency: {latency_str}] Posted to {target_channel} ({urg_label}) for {node} #{msg_id}:")
                 print(f"   📌 Title: {title}")
         except Exception as pub_err:
-            print(f"❌ Error publishing VIP alert to {target_channel}: {pub_err}")
+            print(f"❌ Error publishing alert to {target_channel}: {pub_err}")
 
     # ========================================================
     # --- موتور اصلی و هدایت پیام (Master Message Handler) ---
@@ -908,6 +937,95 @@ class VipMultiAgentEditorialPipeline:
         print(f"🔄 [VIP MULTI-AGENT] Retrying queued msg {node}_{msg_id} through 4-soldier pipeline...")
         success = await self.handle_message(text, node, msg_id, raw_msg=raw_msg, is_edit=is_edit, from_queue=True)
         return bool(success)
+
+    async def handle_consensus_event(self, combined_text, sources, clean_pat=""):
+        """
+        درگاه ورودی رسمی رویدادهای اجماع چندمنبعی رادار عمومی:
+        1. ضد تکرار آهنین (بررسی عدم وجود قبلی هریک از منابع)
+        2. قفل هماهنگی رویداد
+        3. فراخوانی سرباز ۱+۲ (دروازه‌بان و مسیرساز - Lite)
+        4. در صورت DROP: ثبت در لاگ و توقف بدون نشت پست خام
+        5. فراخوانی سرباز ۴ (دیده‌بان رشته‌ها - Flash) جهت تشخیص MERGE یا NEW_ALERT
+        6. فراخوانی سرباز ۳ (سردبیر تخصصی حوزه - Flash) جهت نگارش تیتر حرفه‌ای با فعل کامل و چکیده تحلیلی
+        7. انتشار یا ادغام رسمی و متمرکز از طریق execute_dispatch (تنها دیسپچر سامانه)
+        """
+        if not combined_text or not sources:
+            return False
+
+        first_node = sources[0].get('node', 'Radar')
+        first_msg_id = sources[0].get('msg_id', int(time.time()))
+
+        # ۱. گام ضد تکرار آهنین منابع اجماع
+        for s in sources:
+            sn = s.get('node')
+            sm = s.get('msg_id')
+            if sn and sm:
+                ex_ch, ex_id = self.find_existing_posted_alert(sn, sm)
+                if ex_id:
+                    print(f"🛑 [RADAR CONSENSUS DEDUP] Source {sn}_{sm} was already posted as #{ex_id} in {ex_ch}. Aborting duplicate consensus dispatch.")
+                    return True
+
+        consensus_lock_key = f"consensus_{first_node}_{first_msg_id}"
+        msg_lock = self.msg_locks.setdefault(consensus_lock_key, asyncio.Lock())
+        async with msg_lock:
+            # ۲. سرباز ۱+۲: دروازه‌بان و مسیرساز تک‌ضرب (Lite Stack)
+            route_info = await self.soldier_1_2_gatekeeper(combined_text, node=f"Radar:{first_node}")
+            if not route_info:
+                print(f"⏳ [RADAR CONSENSUS] Soldier 1+2 failed triage for consensus '{clean_pat}'.")
+                return False
+
+            if route_info.get('decision') == 'DROP':
+                drop_reason = route_info.get('drop_reason', 'فاقد ارزش خبری یا نامرتبط')
+                print(f"🛑 [RADAR CONSENSUS: DROPPED] Consensus event dropped by Soldier 1+2: {drop_reason}")
+                return True
+
+            target_channel = route_info.get('target_channel', '@DidebanJang')
+            candidate_title = route_info.get('candidate_title', '')
+
+            # ۳. سرباز ۴: دیده‌بان رشته‌های فعال ۶ ساعته (Flash Stack)
+            thread_info = await self.soldier_4_thread_watcher(
+                combined_text,
+                first_node,
+                target_channel,
+                candidate_title=candidate_title
+            )
+            if not thread_info:
+                thread_info = {
+                    'relation': 'NEW_ALERT',
+                    'target_thread_key': None,
+                    'target_thread_data': None,
+                    'merge_reason': 'Fallback to NEW_ALERT on thread watcher timeout'
+                }
+
+            is_merge = (thread_info.get('relation') == 'MERGE')
+            existing_td = thread_info.get('target_thread_data')
+
+            # ۴. سرباز ۳: سردبیر ارشد حوزه تخصصی (Flash Stack)
+            editor_info = await self.soldier_3_domain_editor(
+                combined_text,
+                first_node,
+                target_channel,
+                is_merge=is_merge,
+                existing_thread_data=existing_td,
+                urgency_level=route_info.get('urgency_level', 'BREAKING'),
+                is_iran_related=route_info.get('is_iran_related', False)
+            )
+            if not editor_info:
+                print(f"⚠️ [RADAR CONSENSUS] Soldier 3 failed to generate editorial content for consensus. Aborting dispatch.")
+                return False
+
+            # ۵. اجرای انتشار متمرکز از طریق تنها دیسپچر سامانه
+            await self.execute_dispatch(
+                node=first_node,
+                msg_id=first_msg_id,
+                route_info=route_info,
+                thread_info=thread_info,
+                editor_info=editor_info,
+                raw_msg=None,
+                is_edit=False,
+                custom_sources=sources
+            )
+            return True
 
     async def catchup_unposted(self, reader_client=None, node="withyashar"):
         """
