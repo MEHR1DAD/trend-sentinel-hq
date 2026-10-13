@@ -13,7 +13,8 @@ from backend.core.config import (
     classify_war_urgency,
     COUNTRY_THEATRES,
     FOREIGN_KEYWORDS,
-    IRAN_KEYWORDS
+    IRAN_KEYWORDS,
+    safe_extract_json
 )
 
 class ThreadAlertManager:
@@ -179,13 +180,9 @@ class ThreadAlertManager:
         
         raw_out = await self.gemini.call_gemini_content(payload, timeout=14, max_retries=5)
         if raw_out:
-            match = re.search(r'\{.*\}', raw_out, re.DOTALL)
-            if match:
-                try:
-                    parsed = json.loads(match.group(0))
-                    return parsed
-                except Exception:
-                    pass
+            parsed = safe_extract_json(raw_out)
+            if parsed and isinstance(parsed, dict):
+                return parsed
         return None
 
     async def check_and_merge_with_active_alert(self, text, node, msg_id, target_channel, candidate_title="", candidate_summary="", raw_msg=None, category='WAR', is_iran_related=False, candidate_sources=None):
@@ -336,9 +333,10 @@ class ThreadAlertManager:
     # ==========================================
 
     def schedule_thread_debounce(self, thread_key):
-        if thread_key not in self.debounce_tasks or self.debounce_tasks[thread_key].done():
-            self.debounce_tasks[thread_key] = asyncio.create_task(self.flush_thread_debounce(thread_key, delay=300))
-            print(f"⏳ Scheduled 5-minute debounce update for thread {thread_key}.")
+        if thread_key in self.debounce_tasks and not self.debounce_tasks[thread_key].done():
+            self.debounce_tasks[thread_key].cancel()
+        self.debounce_tasks[thread_key] = asyncio.create_task(self.flush_thread_debounce(thread_key, delay=180))
+        print(f"⏳ Scheduled/Extended 3-minute debounce update for thread {thread_key}.")
 
     async def flush_thread_debounce(self, thread_key, delay=300):
         if delay > 0:
@@ -449,16 +447,12 @@ class ThreadAlertManager:
         
         raw_out = await self.gemini.call_gemini_content(payload, timeout=14, max_retries=5)
         if raw_out:
-            match = re.search(r'\{.*\}', raw_out, re.DOTALL)
-            if match:
-                try:
-                    res = json.loads(match.group(0))
-                    title = res.get("title", "").strip()
-                    summary = res.get("summary", "").strip()
-                    if title and summary:
-                        return {"title": title, "summary": summary}
-                except Exception:
-                    pass
+            res = safe_extract_json(raw_out)
+            if res and isinstance(res, dict):
+                title = res.get("title", "").strip()
+                summary = res.get("summary", "").strip()
+                if title and summary:
+                    return {"title": title, "summary": summary}
         return None
 
     def build_alert_post_content(self, thread_data):

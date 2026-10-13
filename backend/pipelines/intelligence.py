@@ -11,7 +11,8 @@ from backend.core.config import (
     detect_msg_media_type,
     get_media_icon_from_type,
     classify_war_urgency,
-    calculate_source_latency
+    calculate_source_latency,
+    safe_extract_json
 )
 
 class IntelligencePipeline:
@@ -87,9 +88,8 @@ class IntelligencePipeline:
         
         raw_out = await self.sentinel.gemini.call_gemini_content(payload, timeout=14, max_retries=5)
         if raw_out:
-            match = re.search(r'\{.*\}', raw_out, re.DOTALL)
-            if match:
-                res = json.loads(match.group(0))
+            res = safe_extract_json(raw_out)
+            if res and isinstance(res, dict):
                 cat = str(res.get("category", "")).upper().strip()
                 is_iran = bool(res.get("is_iran_related", False))
                 urgency = str(res.get("urgency_level", "REGIONAL")).upper().strip()
@@ -137,9 +137,8 @@ class IntelligencePipeline:
         
         raw_out = await self.sentinel.gemini.call_gemini_content(payload, timeout=14, max_retries=5)
         if raw_out:
-            match = re.search(r'\{.*\}', raw_out, re.DOTALL)
-            if match:
-                res = json.loads(match.group(0))
+            res = safe_extract_json(raw_out)
+            if res and isinstance(res, dict):
                 cat = str(res.get("category", "")).upper().strip()
                 is_iran = bool(res.get("is_iran_related", False))
                 urgency = str(res.get("urgency_level", "REGIONAL")).upper().strip()

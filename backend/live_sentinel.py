@@ -13,7 +13,7 @@ import signal
 import asyncio
 from datetime import datetime, timezone, timedelta
 from collections import deque
-from telethon import TelegramClient, events
+from telethon import TelegramClient, events, errors
 from telethon.sessions import StringSession
 
 # --- Core Modules ---
@@ -620,7 +620,7 @@ class LiveSentinel:
         3. User client (reader_client.edit_message or self.client.edit_message)
         """
         target_peer = self.get_node_input_peer(channel) or channel
-        if msg_obj:
+        if msg_obj and getattr(msg_obj, 'out', False):
             try:
                 await msg_obj.edit(new_text, link_preview=False)
                 print(f"✅ Successfully edited {channel} msg {msg_id} via Message object.")
@@ -935,13 +935,13 @@ class LiveSentinel:
             success = False
             try:
                 if item.get('pipeline') in ('vip_multi_agent', 'vip', 'yashar', 'alibk'):
-                    await self.vip_pipeline.process_queue_item(item, raw_msg=raw_msg)
-                    success = True
+                    success = await self.vip_pipeline.process_queue_item(item, raw_msg=raw_msg)
                 elif item.get('pipeline') == 'radar':
                     # Future radar queue extensions
                     success = False
             except Exception as proc_err:
                 print(f"⚠️ [SMART QUEUE: ERROR] Processing failed for {item_id}: {proc_err}")
+                success = False
 
             if success:
                 async with self.smart_queue_lock:
@@ -952,7 +952,7 @@ class LiveSentinel:
                 self.save_persisted_state()
                 await asyncio.sleep(2.0)
             else:
-                print(f"⏳ [SMART QUEUE: REMAINING] Item {item_id} still pending AI availability. Will retry in next worker cycle.")
+                print(f"⏳ [SMART QUEUE: REMAINING] Item {item_id} still pending AI availability. Will retry in next worker cycle (attempt #{item.get('retries')}).")
 
     # --- Central Event Router ---
     async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None, skip_mirror_channels=False):
@@ -960,8 +960,6 @@ class LiveSentinel:
             canon = (node or '').lower()
             vip_map_fast = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen', 'withyashar': 'withyashar', 'alibk3': 'Alibk3'}
             canon_node = vip_map_fast.get(canon, node or 'unknown')
-            if not is_edit:
-                self.db.advance_watermark(canon_node, msg_id)
 
             if not skip_mirror_channels:
                 # VIP Channels: 4-Soldier Multi-Agent Pipeline (withyashar, Alibk3, VahidOnline, iliaen)
@@ -971,6 +969,8 @@ class LiveSentinel:
 
             # 4. Consensus Radar Pipeline (General monitored nodes)
             await self.radar_pipeline.process_radar_consensus(text, node, msg_id, is_edit=is_edit, msg_date=msg_date, raw_msg=raw_msg)
+            if not is_edit:
+                self.db.advance_watermark(canon_node, msg_id)
 
 
 async def main():
@@ -1094,38 +1094,55 @@ async def main():
     async def active_poller():
         last_ids = {}
         last_deletion_check = time.time()
+        general_idx = 0
+        vip_nodes = [n for n in sentinel.nodes if (n or '').lower() in ('withyashar', 'alibk3', 'vahidonline', 'iliaen')]
+        general_nodes = [n for n in sentinel.nodes if n not in vip_nodes]
+
         while True:
             if time.time() - last_deletion_check >= 180:
                 last_deletion_check = time.time()
                 try:
                     await sentinel.verify_recent_messages_existence()
-                except Exception:
-                    pass
+                except Exception as del_err:
+                    print(f"⚠️ [POLLER] Error verifying recent messages: {del_err}")
 
-            for node in sentinel.nodes:
+            # ترکیب کانال‌های VIP (همیشه) با یک دسته چرخشی از ۵ کانال عمومی
+            cycle_nodes = list(vip_nodes)
+            if general_nodes:
+                batch_size = 5
+                batch = [general_nodes[(general_idx + i) % len(general_nodes)] for i in range(min(batch_size, len(general_nodes)))]
+                cycle_nodes.extend(batch)
+                general_idx = (general_idx + batch_size) % len(general_nodes)
+
+            for node in cycle_nodes:
                 try:
                     target_peer = sentinel.get_node_input_peer(node) or node
                     messages = await client.get_messages(target_peer, limit=5)
                     if messages:
                         latest_id = messages[0].id
+                        wm = sentinel.db.get_watermark(node)
+                        effective_last_id = max(last_ids.get(node, 0), wm)
+
                         if node not in last_ids:
-                            wm = sentinel.db.get_watermark(node)
-                            last_ids[node] = wm if wm > 0 else latest_id
+                            last_ids[node] = effective_last_id if effective_last_id > 0 else latest_id
                             new_msgs = [m for m in messages if m.id > last_ids[node]]
                             new_msgs.reverse()
                             for m in new_msgs:
                                 await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m, skip_mirror_channels=True)
                             last_ids[node] = max(last_ids[node], latest_id)
                         else:
-                            new_msgs = [m for m in messages if m.id > last_ids[node]]
+                            new_msgs = [m for m in messages if m.id > effective_last_id]
                             new_msgs.reverse()
                             for m in new_msgs:
                                 await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m)
-                            last_ids[node] = max(last_ids[node], latest_id)
-                except Exception:
-                    pass
-                await asyncio.sleep(2.0)
-            await asyncio.sleep(60)
+                            last_ids[node] = max(effective_last_id, latest_id)
+                except errors.FloodWaitError as fwe:
+                    print(f"⚠️ [POLLER: FLOOD WAIT] Telegram requested {fwe.seconds}s pause on node {node}. Sleeping...")
+                    await asyncio.sleep(fwe.seconds + 5)
+                except Exception as e:
+                    print(f"⚠️ [POLLER: ERROR] Error polling {node}: {e}")
+                await asyncio.sleep(1.5)
+            await asyncio.sleep(45)
 
     async def heartbeat_monitor():
         while True:

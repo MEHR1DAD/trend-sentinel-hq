@@ -1,6 +1,7 @@
 import os
 import re
 import time
+import json
 from datetime import datetime, timezone, timedelta
 
 # --- Paths & General Settings ---
@@ -301,4 +302,48 @@ def calculate_source_latency(raw_msg):
         return latency_sec, formatted
     except Exception:
         return None, "N/A"
+
+def safe_extract_json(raw_text):
+    """
+    Robust non-greedy JSON extractor:
+    1. Direct json.loads if already clean.
+    2. Strips markdown fences (```json ... ```).
+    3. Finds the outermost balanced bracket { ... } block to avoid greedy matching errors.
+    """
+    if not raw_text:
+        return None
+    cleaned = re.sub(r'```(?:json)?', '', str(raw_text)).strip('` \n\r\t')
+    try:
+        return json.loads(cleaned)
+    except Exception:
+        pass
+
+    start_idx = cleaned.find('{')
+    if start_idx != -1:
+        depth = 0
+        in_string = False
+        escape = False
+        for i in range(start_idx, len(cleaned)):
+            c = cleaned[i]
+            if escape:
+                escape = False
+                continue
+            if c == '\\':
+                escape = True
+                continue
+            if c == '"':
+                in_string = not in_string
+                continue
+            if not in_string:
+                if c == '{':
+                    depth += 1
+                elif c == '}':
+                    depth -= 1
+                    if depth == 0:
+                        candidate = cleaned[start_idx:i+1]
+                        try:
+                            return json.loads(candidate)
+                        except Exception:
+                            break
+    return None
 

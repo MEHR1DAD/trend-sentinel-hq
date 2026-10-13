@@ -3,7 +3,7 @@ import time
 import json
 import asyncio
 from datetime import datetime, timezone
-from backend.core.config import get_tehran_time_fa, get_tehran_datetime_fa, format_update_status_line, calculate_source_latency
+from backend.core.config import get_tehran_time_fa, get_tehran_datetime_fa, format_update_status_line, calculate_source_latency, safe_extract_json
 
 class MirrorPipeline:
     """
@@ -73,16 +73,12 @@ class MirrorPipeline:
         
         raw_out = await self.sentinel.gemini.call_gemini_content(payload, timeout=14, max_retries=5)
         if raw_out:
-            match = re.search(r'\{.*\}', raw_out, re.DOTALL)
-            if match:
-                try:
-                    res = json.loads(match.group(0))
-                    title = str(res.get("title", "")).strip()
-                    summary = str(res.get("summary", "")).strip()
-                    if title and summary:
-                        return {"title": title, "summary": summary, "is_ai": True}
-                except Exception:
-                    pass
+            res = safe_extract_json(raw_out)
+            if res and isinstance(res, dict):
+                title = str(res.get("title", "")).strip()
+                summary = str(res.get("summary", "")).strip()
+                if title and summary:
+                    return {"title": title, "summary": summary, "is_ai": True}
                     
             lines = [l.strip() for l in raw_out.split('\n') if l.strip()]
             if len(lines) >= 2:

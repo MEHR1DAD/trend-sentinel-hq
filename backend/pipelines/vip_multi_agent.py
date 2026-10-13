@@ -15,7 +15,8 @@ from backend.core.config import (
     detect_msg_media_type,
     get_media_icon_from_type,
     classify_war_urgency,
-    calculate_source_latency
+    calculate_source_latency,
+    safe_extract_json
 )
 
 class VipMultiAgentEditorialPipeline:
@@ -263,10 +264,9 @@ class VipMultiAgentEditorialPipeline:
         if not raw_text:
             return None
 
-        match = re.search(r'\{.*\}', raw_text, re.DOTALL)
-        if match:
+        res = safe_extract_json(raw_text)
+        if res and isinstance(res, dict):
             try:
-                res = json.loads(match.group(0))
                 decision = str(res.get("decision", "ROUTE")).upper().strip()
                 target_channel = str(res.get("target_channel", "@DidebanJang")).strip()
                 if target_channel not in ("@DidebanJang", "@DidehbanEghtesad", "@DidebanEterazat"):
@@ -422,10 +422,9 @@ class VipMultiAgentEditorialPipeline:
         if not raw_text:
             return None
 
-        match = re.search(r'\{.*\}', raw_text, re.DOTALL)
-        if match:
+        res = safe_extract_json(raw_text)
+        if res and isinstance(res, dict):
             try:
-                res = json.loads(match.group(0))
                 rel = str(res.get("relation", "NEW_ALERT")).upper().strip()
                 return {
                     "relation": rel,
@@ -519,10 +518,9 @@ class VipMultiAgentEditorialPipeline:
         if not raw_text:
             return None
 
-        match = re.search(r'\{.*\}', raw_text, re.DOTALL)
-        if match:
+        res = safe_extract_json(raw_text)
+        if res and isinstance(res, dict):
             try:
-                res = json.loads(match.group(0))
                 title = str(res.get("title", "")).strip()
                 summary = str(res.get("summary", "")).strip()
                 if title and summary:
@@ -651,7 +649,7 @@ class VipMultiAgentEditorialPipeline:
         if existing_post_id:
             print(f"🛑 [IRONCLAD LAST-MILE GUARD] Refusing NEW_ALERT! {node}_{msg_id} already exists in {existing_ch} as #{existing_post_id}. Redirecting to safe_edit_post!")
             try:
-                await self.sentinel.safe_edit_post(existing_ch, existing_post_id, alert_text, msg_obj=raw_msg)
+                await self.sentinel.safe_edit_post(existing_ch, existing_post_id, alert_text)
                 print(f"✅ [IRONCLAD LAST-MILE GUARD] In-place edit redirected successfully to #{existing_post_id} in {existing_ch}.")
             except Exception as e:
                 print(f"⚠️ Error in last-mile edit redirect: {e}")
@@ -719,7 +717,7 @@ class VipMultiAgentEditorialPipeline:
     # --- موتور اصلی و هدایت پیام (Master Message Handler) ---
     # ========================================================
 
-    async def handle_message(self, text, node, msg_id, raw_msg=None, is_edit=False):
+    async def handle_message(self, text, node, msg_id, raw_msg=None, is_edit=False, from_queue=False):
         """
         نقطه ورود پیام‌های کانال‌های VIP:
         1. ضد تکرار آلبوم‌ها (media groups)
@@ -731,17 +729,23 @@ class VipMultiAgentEditorialPipeline:
         7. انتشار یا ادغام امن درجا
         8. در صورت قطعی هر مرحله: ارسال مستقیم به صف هوشمند ۴۵ دقیقه‌ای (بدون انتشار خام)
         """
-        if not is_edit:
-            self.sentinel.db.advance_watermark(node, msg_id)
-
         clean_text = (text or "").strip()
         if not clean_text or len(clean_text) < 10:
-            return
+            if not is_edit:
+                self.sentinel.db.advance_watermark(node, msg_id)
+            return True
+
+        # جلوگیری از رشد نامحدود حافظه در قفل‌ها و مجموعه‌ها
+        if len(self.msg_locks) > 500:
+            for old_k in list(self.msg_locks.keys())[:100]:
+                self.msg_locks.pop(old_k, None)
+        if len(self.grouped_posted) > 500:
+            self.grouped_posted = set(list(self.grouped_posted)[-200:])
 
         # جلوگیری از پردازش مکرر مدیاگروپ‌ها
         grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
         if grouped_id and grouped_id in self.grouped_posted and not is_edit:
-            return
+            return True
         if grouped_id:
             self.grouped_posted.add(grouped_id)
 
@@ -754,7 +758,8 @@ class VipMultiAgentEditorialPipeline:
 
             if existing_post_id and not is_edit:
                 print(f"🛑 [VIP IRONCLAD DEDUP] Msg {node}_{msg_id} was ALREADY posted to {existing_target_ch} as #{existing_post_id}. Discarding duplicate invocation.")
-                return
+                self.sentinel.db.advance_watermark(node, msg_id)
+                return True
 
             if existing_post_id and is_edit:
                 # پیام قبلاً منتشر شده و اکنون نویسنده آن را در تلگرام ادیت کرده است.
@@ -767,7 +772,7 @@ class VipMultiAgentEditorialPipeline:
                     existing_post_id=existing_post_id,
                     raw_msg=raw_msg
                 )
-                return
+                return True
 
             # ----------------------------------------------------
             # گام ۱: سرباز شماره ۱+۲ (دروازه‌بان و مسیرساز تک‌ضرب - Lite)
@@ -775,11 +780,11 @@ class VipMultiAgentEditorialPipeline:
             route_info = await self.soldier_1_2_gatekeeper(clean_text, node, raw_msg=raw_msg)
             if not route_info:
                 print(f"⏳ [VIP QUEUE: SOLDIER 1+2] Msg {node}_{msg_id} failed AI triage. Enqueuing into Smart Queue (45m TTL)...")
-                if hasattr(self.sentinel, 'enqueue_unprocessed_message'):
+                if not from_queue and hasattr(self.sentinel, 'enqueue_unprocessed_message'):
                     await self.sentinel.enqueue_unprocessed_message(
                         pipeline="vip_multi_agent", node=node, msg_id=msg_id, text=clean_text, raw_msg=raw_msg, is_edit=is_edit
                     )
-                return
+                return False
 
             decision = route_info['decision']
             if decision == 'DROP':
@@ -800,7 +805,9 @@ class VipMultiAgentEditorialPipeline:
                         'is_citizen_report': False
                     })
                     print(f"📡 [RADAR CONSENSUS FEED] Preserved {node}_{msg_id} in recent_messages buffer for multi-source consensus.")
-                return
+                if not is_edit:
+                    self.sentinel.db.advance_watermark(node, msg_id)
+                return True
 
             # بررسی تکراری نبودن انتشار
             target_channel = route_info['target_channel']
@@ -808,7 +815,8 @@ class VipMultiAgentEditorialPipeline:
             if existing_id_routed:
                 if not is_edit:
                     print(f"🛑 [VIP DEDUP] Msg {node}_{msg_id} already posted to {target_channel} as #{existing_id_routed}. Aborting.")
-                    return
+                    self.sentinel.db.advance_watermark(node, msg_id)
+                    return True
                 else:
                     await self.handle_existing_post_edit(
                         node=node,
@@ -818,7 +826,7 @@ class VipMultiAgentEditorialPipeline:
                         existing_post_id=existing_id_routed,
                         raw_msg=raw_msg
                     )
-                    return
+                    return True
 
             # ثبت در in_flight_alerts برای هماهنگی و حل مسابقه زمانی (Race Condition)
             in_flight_key = f"{node}_{msg_id}"
@@ -845,11 +853,11 @@ class VipMultiAgentEditorialPipeline:
                 )
                 if not thread_info:
                     print(f"⏳ [VIP QUEUE: SOLDIER 4] Msg {node}_{msg_id} failed thread watcher. Enqueuing into Smart Queue (45m TTL)...")
-                    if hasattr(self.sentinel, 'enqueue_unprocessed_message'):
+                    if not from_queue and hasattr(self.sentinel, 'enqueue_unprocessed_message'):
                         await self.sentinel.enqueue_unprocessed_message(
                             pipeline="vip_multi_agent", node=node, msg_id=msg_id, text=clean_text, raw_msg=raw_msg, is_edit=is_edit
                         )
-                    return
+                    return False
 
                 is_merge = (thread_info.get('relation') == 'MERGE')
                 existing_td = thread_info.get('target_thread_data')
@@ -866,11 +874,11 @@ class VipMultiAgentEditorialPipeline:
                 )
                 if not editor_info:
                     print(f"⏳ [VIP QUEUE: SOLDIER 3] Msg {node}_{msg_id} failed domain editor. Enqueuing into Smart Queue (45m TTL)...")
-                    if hasattr(self.sentinel, 'enqueue_unprocessed_message'):
+                    if not from_queue and hasattr(self.sentinel, 'enqueue_unprocessed_message'):
                         await self.sentinel.enqueue_unprocessed_message(
                             pipeline="vip_multi_agent", node=node, msg_id=msg_id, text=clean_text, raw_msg=raw_msg, is_edit=is_edit
                         )
-                    return
+                    return False
 
                 # ----------------------------------------------------
                 # گام ۴: انتشار یا ادغام نهایی
@@ -884,6 +892,7 @@ class VipMultiAgentEditorialPipeline:
                     raw_msg=raw_msg,
                     is_edit=is_edit
                 )
+                return True
             finally:
                 in_flight_entry['event'].set()
                 self.in_flight_alerts.pop(in_flight_key, None)
@@ -897,8 +906,8 @@ class VipMultiAgentEditorialPipeline:
         text = item.get('text', '')
         is_edit = item.get('is_edit', False)
         print(f"🔄 [VIP MULTI-AGENT] Retrying queued msg {node}_{msg_id} through 4-soldier pipeline...")
-        await self.handle_message(text, node, msg_id, raw_msg=raw_msg, is_edit=is_edit)
-        return True
+        success = await self.handle_message(text, node, msg_id, raw_msg=raw_msg, is_edit=is_edit, from_queue=True)
+        return bool(success)
 
     async def catchup_unposted(self, reader_client=None, node="withyashar"):
         """

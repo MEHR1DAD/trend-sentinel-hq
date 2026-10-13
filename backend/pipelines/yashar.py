@@ -10,7 +10,8 @@ from backend.core.config import (
     detect_msg_media_type,
     get_media_icon_from_type,
     classify_war_urgency,
-    calculate_source_latency
+    calculate_source_latency,
+    safe_extract_json
 )
 
 class YasharAutonomousPipeline:
@@ -88,10 +89,9 @@ class YasharAutonomousPipeline:
         raw_text, used_model = await self.sentinel.gemini.call_gemini_content(payload, timeout=20, max_retries=6, return_model=True)
         model_name = used_model or getattr(self.sentinel.gemini, 'last_used_model', 'unknown')
         if raw_text:
-            match = re.search(r'\{.*\}', raw_text, re.DOTALL)
-            if match:
+            res = safe_extract_json(raw_text)
+            if res and isinstance(res, dict):
                 try:
-                    res = json.loads(match.group(0))
                     decision = str(res.get("decision", "PUBLISH")).upper().strip()
                     drop_reason = str(res.get("drop_reason", "")).strip()
                     target_channel = str(res.get("target_channel", "@DidebanJang")).strip()

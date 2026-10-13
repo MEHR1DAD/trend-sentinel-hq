@@ -16,7 +16,8 @@ from backend.core.config import (
     to_fa_num,
     detect_msg_media_type,
     get_media_icon_from_type,
-    classify_war_urgency
+    classify_war_urgency,
+    safe_extract_json
 )
 
 class RadarPipeline:
@@ -289,7 +290,10 @@ class RadarPipeline:
 
     def purge_old_messages(self):
         now = time.time()
-        while self.sentinel.recent_messages and (now - self.sentinel.recent_messages[0]['timestamp']) > 180:
+        # نگهداری ۱۵ دقیقه‌ای پیام‌ها (۹۰۰ ثانیه) و محدودسازی طول بافر به ۵۰۰ مورد برای امکان‌پذیری اجماع رسانه‌های مختلف
+        while self.sentinel.recent_messages and (
+            (now - self.sentinel.recent_messages[0]['timestamp']) > 900 or len(self.sentinel.recent_messages) > 500
+        ):
             self.sentinel.recent_messages.popleft()
 
     def get_message_patterns(self, text, is_citizen=False):
@@ -431,9 +435,8 @@ class RadarPipeline:
         
         raw_text = await self.sentinel.gemini.call_gemini_content(payload, timeout=14, max_retries=5)
         if raw_text:
-            match = re.search(r'\{.*\}', raw_text, re.DOTALL)
-            if match:
-                res = json.loads(match.group(0))
+            res = safe_extract_json(raw_text)
+            if res and isinstance(res, dict):
                 category = str(res.get("category", "")).upper().strip()
                 topic_title = str(res.get("topic_title", "")).strip()
                 summary = str(res.get("summary", "")).strip()
@@ -755,13 +758,14 @@ class RadarPipeline:
         if (node or '').lower() not in ['vahidonline', 'iliaen', 'withyashar', 'alibk3'] and not has_economy and self.is_old_news(text, node):
             return
         
-        is_syndicated = False
+        is_same_node_duplicate = False
         for rm in self.sentinel.recent_messages:
-            if self.calculate_jaccard(text, rm['text']) > 0.75:
-                is_syndicated = True
+            # فقط تکرار پیام در همان کانال واحد فیلتر می‌شود؛ تکرار توسط کانال‌های دیگر برای تشکیل اجماع ضروری است
+            if rm.get('node') == node and self.calculate_jaccard(text, rm['text']) > 0.75:
+                is_same_node_duplicate = True
                 break
                 
-        if is_syndicated:
+        if is_same_node_duplicate:
             return
         
         msg_obj = {
@@ -774,190 +778,4 @@ class RadarPipeline:
         self.sentinel.recent_messages.append(msg_obj)
         await self.detect_anomalies()
 
-    async def process_vip_channel(self, text, node, msg_id, raw_msg=None, is_edit=False):
-        canonical_node = 'VahidOnline' if (node or '').lower() == 'vahidonline' else ('iliaen' if (node or '').lower() == 'iliaen' else node)
-        msg_key = f"{canonical_node}_{msg_id}"
-        now = time.time()
-        link = f"https://t.me/{canonical_node}/{msg_id}"
-        
-        is_citizen_report = any(ind in text for ind in [
-            "پیام دریافتی", "دریافتی:", "پیام‌های دریافتی", "پیامهای دریافتی", 
-            "ارسالی:", "پیام:", "از پیام‌ها:", "از پیامها:"
-        ])
-        patterns_in_msg = self.get_message_patterns(text, is_citizen=is_citizen_report)
-        
-        # Check if previously alerted
-        if msg_key in self.sentinel.vip_alert_history:
-            prev = self.sentinel.vip_alert_history[msg_key]
-            time_diff = now - prev.get('time', now)
-            target_ch = prev.get('target_channel')
-            orig_sent_id = prev.get('sent_msg_id')
-            
-            if time_diff <= 259200 and text != prev.get('text') and orig_sent_id and target_ch:
-                self.sentinel.vip_alert_history[msg_key]['time'] = now
-                self.sentinel.vip_alert_history[msg_key]['text'] = text
-                
-                ai_class = await self.classify_message(text)
-                if ai_class:
-                    topic_title = ai_class.get('topic_title', '').strip()
-                    category = ai_class.get('category')
-                    is_iran = self.sentinel.determine_iran_related(ai_class, text, topic_title)
-                    ai_urgency = ai_class.get('urgency_level') if ai_class else None
-                    tier, icon, alert_type_name, _ = classify_war_urgency(
-                        ai_urgency=ai_urgency,
-                        text=text,
-                        title=topic_title,
-                        is_iran_related=is_iran
-                    )
-                    alert_title = f"{alert_type_name}: {topic_title}"
-                    if category == 'ECONOMY':
-                        alert_title = f"گزارش اقتصادی: {topic_title}"
-                        icon = "📈"
-                    elif category == 'PROTEST_RIGHTS':
-                        alert_title = f"گزارش حقوق بشری: {topic_title}"
-                        icon = "⚖️"
-                        
-                    root_media = detect_msg_media_type(raw_msg)
-                    root_icon = get_media_icon_from_type(root_media)
-                    tag = "#دیده‌بان_جنگ" if target_ch == "@DidebanJang" else ("#دیده‌بان_اقتصاد" if target_ch == "@DidehbanEghtesad" else "#دیده‌بان_اعتراضات")
-                    status_line = format_update_status_line(reason="دریافت اطلاعات تکمیلی")
-                    updated_alert = (
-                        f"{icon} **{alert_title}**\n\n"
-                        f"🔗 **منبع خبر:**\n- [{canonical_node}]({link}) {root_icon}\n\n"
-                        f"{status_line}\n\n"
-                        f"{tag}\n\n{target_ch}"
-                    )
-                    try:
-                        await self.sentinel.safe_edit_post(target_ch, orig_sent_id, updated_alert)
-                        asyncio.create_task(self.append_ai_summary(target_ch, orig_sent_id, updated_alert, [text]))
-                        print(f"✏️ Updated VIP alert {orig_sent_id} in {target_ch} with in-place status line.")
-                    except Exception as edit_err:
-                        print(f"⚠️ Failed to edit VIP alert {orig_sent_id} in {target_ch}: {edit_err}")
-                else:
-                    status_line = format_update_status_line(reason="دریافت اطلاعات تکمیلی")
-                    try:
-                        curr_msg = await self.sentinel.bot.get_messages(target_ch, ids=orig_sent_id)
-                        if curr_msg and curr_msg.text:
-                            if '🔄 **به‌روزرسانی شده' in curr_msg.text:
-                                new_t = re.sub(r'🔄\s*\*\*به‌روزرسانی شده[^\n]+', status_line, curr_msg.text)
-                            else:
-                                tag = "#دیده‌بان_جنگ" if target_ch == "@DidebanJang" else ("#دیده‌بان_اقتصاد" if target_ch == "@DidehbanEghtesad" else "#دیده‌بان_اعتراضات")
-                                new_t = curr_msg.text.replace(tag, f"{status_line}\n\n{tag}")
-                            await self.sentinel.safe_edit_post(target_ch, orig_sent_id, new_t)
-                            print(f"✏️ Fallback updated VIP alert {orig_sent_id} in {target_ch}.")
-                    except Exception as fb_err:
-                        print(f"⚠️ Failed to fallback edit VIP alert {orig_sent_id} in {target_ch}: {fb_err}")
-                self.sentinel.save_persisted_state()
-            return
-        
-        # New message check
-        if not patterns_in_msg:
-            has_war_keyword = any(w in text for w in [
-                'حمله', 'موشک', 'پهپاد', 'انفجار', 'بمباران', 'آژیر', 'پدافند', 'جنگنده', 
-                'سپاه', 'ارتش', 'درگیری', 'نظامی', 'سقوط', 'کشته', 'مجروح', 'تلفات', 'تیراندازی', 'عملیات',
-                'آرامکو', 'پایگاه', 'ناو', 'بمب‌افکن', 'سوخت‌رسان', 'رادار', 'سنتکام', 'جبهه', 'اصابت', 'شهید'
-            ])
-            is_economy = any(w in text for w in ['دلار', 'تتر', 'ارز', 'طلا', 'سکه', 'بورس', 'تورم', 'قیمت'])
-            is_protest = any(w in text for w in ['اعتراض', 'اعتصاب', 'اعدام', 'تجمع', 'زندان', 'دادگاه', 'بازداشت', 'حقوق بشری'])
-            if not has_war_keyword and not is_economy and not is_protest:
-                return
-
-        self.sentinel.vip_alert_history[msg_key] = {'time': now, 'pattern': patterns_in_msg[0] if patterns_in_msg else "vip_report", 'text': text}
-        if msg_key not in self.sentinel.alerted_msg_patterns:
-            self.sentinel.alerted_msg_patterns[msg_key] = set()
-            
-        clean_pats = [p.replace("||FOREIGN||", "") for p in patterns_in_msg]
-        for p in clean_pats:
-            self.sentinel.alerted_msg_patterns[msg_key].add(p)
-            
-        ai_class = await self.classify_message(text)
-        if ai_class:
-            category = ai_class.get('category')
-            topic_title = ai_class.get('topic_title', '').strip()
-            if category == 'OTHER':
-                return
-            if category == 'ECONOMY':
-                target_channel = "@DidehbanEghtesad"
-                alert_title = f"گزارش اقتصادی: {topic_title}"
-                custom_icon = "📈"
-                is_silent = False if not is_edit else True
-            elif category == 'PROTEST_RIGHTS':
-                target_channel = "@DidebanEterazat"
-                is_rights = any(w in text for w in ["اعدام", "حکم", "طناب دار", "زندان", "دادگاه", "بازداشت", "محبوس", "قوه قضائیه", "فساد", "تخلف"])
-                alert_title = f"گزارش حقوق بشری: {topic_title}" if is_rights else f"گزارش مردمی: {topic_title}"
-                custom_icon = "⚖️" if any(w in text for w in ["اعدام", "حکم", "طناب دار", "دادگاه", "قوه قضائیه", "بازداشت"]) else "📢"
-                is_silent = False if not is_edit else True
-            elif category == 'WAR':
-                target_channel = "@DidebanJang"
-                is_iran = self.sentinel.determine_iran_related(ai_class, text, topic_title)
-                ai_urgency = ai_class.get('urgency_level') if ai_class else None
-                tier, custom_icon, alert_type_name, is_silent = classify_war_urgency(
-                    ai_urgency=ai_urgency,
-                    text=text,
-                    title=topic_title,
-                    is_iran_related=is_iran
-                )
-                alert_title = f"{alert_type_name}: {topic_title}"
-                if is_edit:
-                    is_silent = True
-            else:
-                return
-                
-            is_iran = self.sentinel.determine_iran_related(ai_class, text, topic_title) if category == 'WAR' else False
-            merged = await self.check_and_merge_with_active_alert(
-                text=text,
-                node=canonical_node,
-                msg_id=msg_id,
-                target_channel=target_channel,
-                candidate_title=topic_title,
-                candidate_summary="",
-                raw_msg=raw_msg,
-                category=category,
-                is_iran_related=is_iran
-            )
-            if merged:
-                return
-                
-            self.sentinel.vip_alert_history[msg_key]['target_channel'] = target_channel
-            baseline = self.sentinel.baselines.get(clean_pats[0], 0.1) if clean_pats else 0.1
-            topic_summary = ai_class.get('summary', '')
-            sent_msg, target_channel, alert_text = await self.send_alert(
-                topic_title,
-                "VIP_IMMEDIATE",
-                baseline,
-                [f"- [{canonical_node}]({link})"],
-                is_silent=is_silent,
-                target_channel=target_channel,
-                alert_title=alert_title,
-                custom_icon=custom_icon,
-                summary=topic_summary
-            )
-            if sent_msg:
-                self.sentinel.vip_alert_history[msg_key]['sent_msg_id'] = sent_msg.id
-                thread_key = f"{canonical_node}_{msg_id}"
-                self.sentinel.thread_alerts[thread_key] = {
-                    'channel': target_channel,
-                    'alert_msg_id': sent_msg.id,
-                    'node': canonical_node,
-                    'root_id': msg_id,
-                    'root_text': text,
-                    'root_media_type': detect_msg_media_type(raw_msg),
-                    'timestamp': time.time(),
-                    'category': category,
-                    'is_iran_related': is_iran,
-                    'title': topic_title,
-                    'summary': topic_summary,
-                    'tag': CHANNEL_CANONICAL_TAGS.get(target_channel, '#دیده‌بان_جنگ'),
-                    'sources': [{
-                        'node': canonical_node,
-                        'msg_id': msg_id,
-                        'media_type': detect_msg_media_type(raw_msg),
-                        'link': link,
-                        'timestamp': time.time()
-                    }],
-                    'replies': []
-                }
-                self.sentinel.save_persisted_state()
-                if not topic_summary:
-                    asyncio.create_task(self.append_ai_summary(target_channel, sent_msg.id, alert_text, [text]))
 
