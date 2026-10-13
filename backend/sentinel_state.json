@@ -4,16 +4,16 @@
       "فعالیت پدافند، درگیری مسلحانه و ترور و انفجار در تهران، شرق تهران"
     ],
     "iliaen_4742": [
-      "recovered_source",
-      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران"
+      "حملات نظامی، فعالیت پدافند و انفجار در تهران، شرق تهران",
+      "recovered_source"
     ],
     "iliaen_4743": [
-      "recovered_source",
-      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز"
+      "شلیک و پرتاب موشک و درگیری مسلحانه و ترور در تنگه هرمز، هرمز",
+      "recovered_source"
     ],
     "VahidOnline_78687": [
-      "recovered_source",
-      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش"
+      "حملات نظامی و آتش‌سوزی در تنگه هرمز، هرمز، نفتکش",
+      "recovered_source"
     ],
     "VahidOnline_78694": [
       "حملات نظامی، تلفات جانی و آتش‌سوزی در فرودگاه پایانه، ریاض، یمن، عربستان",
@@ -27,8 +27,8 @@
       "withyashar_report"
     ],
     "withyashar_25421": [
-      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان",
-      "recovered_source"
+      "recovered_source",
+      "حملات نظامی در فرودگاه ترمینال، ریاض، عربستان"
     ],
     "withyashar_25422": [
       "recovered_source",
@@ -91,8 +91,8 @@
       "withyashar_report"
     ],
     "withyashar_25442": [
-      "recovered_source",
-      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا"
+      "حملات نظامی و فعالیت هوایی و جنگنده در ایران، پرواز، آسمان، اسرائیل، عراق، آمریکا",
+      "recovered_source"
     ],
     "withyashar_25443": [
       "recovered_source",
@@ -546,8 +546,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "recovered_source",
-      "آتش‌سوزی در پایگاه هوایی ایران"
+      "آتش‌سوزی در پایگاه هوایی ایران",
+      "recovered_source"
     ],
     "Alibk3_38863": [
       "recovered_source"
@@ -595,12 +595,12 @@
       "recovered_source"
     ],
     "VahidOnline_78703": [
-      "recovered_source",
-      "حملات نظامی در تنگه هرمز، هرمز، نفتکش"
+      "حملات نظامی در تنگه هرمز، هرمز، نفتکش",
+      "recovered_source"
     ],
     "VahidOnline_78704": [
-      "recovered_source",
-      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان"
+      "فعالیت پدافند، آتش‌سوزی و حملات نظامی در ریاض، یمن، عربستان",
+      "recovered_source"
     ],
     "withyashar_25522": [
       "recovered_source"
@@ -4994,54 +4994,6 @@
           "media_type": "photo",
           "link": "https://t.me/Alibk3/38559",
           "timestamp": 1791631897.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38552": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 63,
-      "node": "Alibk3",
-      "root_id": 38552,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791629468.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "توقف متزامن پروازها در فرودگاه‌های عربستان",
-      "summary": "حرکت ناوبری هوایی در فرودگاه‌های جده، ریاض و دمام در عربستان سعودی به شکل همزمان متوقف شد. این رویداد امنیتی-نظامی بر فعالیت‌های هوانوردی این کشور تأثیر گذاشته است.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38552,
-          "media_type": "photo",
-          "link": "https://t.me/Alibk3/38552",
-          "timestamp": 1791629468.0
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Alibk3_38551": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 62,
-      "node": "Alibk3",
-      "root_id": 38551,
-      "root_text": "",
-      "root_media_type": "text",
-      "timestamp": 1791628700.0,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "انتشار تصاویر انهدام مواضع سعودی در یمن",
-      "summary": "رسانه جنگی یمن از انتشار تصاویر مربوط به حمله پهپادهای انتحاری «شواظ» به تجمع نیروهای ائتلاف سعودی در مناطق کهبوب و الوازعیه در ساعت چهار عصر خبر داد.",
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38551,
-          "media_type": "text",
-          "link": "https://t.me/Alibk3/38551",
-          "timestamp": 1791628700.0
         }
       ],
       "replies": [],
@@ -9835,38 +9787,38 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 38928,
-    "VahidHeadline": 326218,
-    "VahidOOnLine": 264904,
-    "RadioFarda": 162306,
-    "IranintlTV": 362056,
-    "Tasnimnews": 451075,
-    "Farsna": 468136,
-    "isna94": 408598,
-    "irna_1313": 461869,
-    "akharinkhabar": 638083,
-    "khabarfouri": 569352,
-    "akhbarefori": 698042,
-    "dw_farsi": 131122,
-    "entekhab_ir": 383253,
-    "Khabar_Fouri": 551398,
+    "Alibk3": 38930,
+    "VahidHeadline": 326229,
+    "VahidOOnLine": 264911,
+    "RadioFarda": 162307,
+    "IranintlTV": 362059,
+    "Tasnimnews": 451088,
+    "Farsna": 468148,
+    "isna94": 408602,
+    "irna_1313": 461882,
+    "akharinkhabar": 638089,
+    "khabarfouri": 569356,
+    "akhbarefori": 698054,
+    "dw_farsi": 131123,
+    "entekhab_ir": 383255,
+    "Khabar_Fouri": 551399,
     "khabari": 201219,
-    "thezoomit": 103776,
-    "farsivoa": 233610,
+    "thezoomit": 103780,
+    "farsivoa": 233614,
     "myITiran": 18271,
-    "Farsi_Iranwire": 94645,
-    "bbcpersian": 293296,
-    "Alarabiya_far": 152108,
-    "thezoomon": 5252,
+    "Farsi_Iranwire": 94651,
+    "bbcpersian": 293297,
+    "Alarabiya_far": 152111,
+    "thezoomon": 5253,
     "Mr_Economy": 64007,
-    "Eghtesadnews_com": 370764,
-    "Digiato": 114083,
-    "Indypersian": 180085,
+    "Eghtesadnews_com": 370768,
+    "Digiato": 114085,
+    "Indypersian": 180087,
     "withyashar": 25540,
-    "euronewspe": 90571,
+    "euronewspe": 90573,
     "Economic_News_Channel": 82746,
     "farsna": 468130,
-    "persiannbloomberg": 68195,
+    "persiannbloomberg": 68206,
     "VahidOnline": 78706,
     "mamlekate": 104815,
     "iliaen": 4744
@@ -9962,5 +9914,5 @@
     "gemini-3.1-flash-lite": 3
   },
   "smart_queue": [],
-  "last_saved": "2026-10-13 10:35:12 UTC"
+  "last_saved": "2026-10-13 11:10:42 UTC"
 }
