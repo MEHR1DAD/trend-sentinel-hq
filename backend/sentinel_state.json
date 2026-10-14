@@ -84,15 +84,6 @@
     "Alibk3_39025": [
       "recovered_source"
     ],
-    "akhbarefori_698062": [
-      "recovered_source"
-    ],
-    "withyashar_25511": [
-      "recovered_source"
-    ],
-    "withyashar_25510": [
-      "recovered_source"
-    ],
     "Alibk3_38869": [
       "recovered_source"
     ],
@@ -157,8 +148,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "recovered_source",
-      "آتش‌سوزی در پایگاه هوایی ایران"
+      "آتش‌سوزی در پایگاه هوایی ایران",
+      "recovered_source"
     ],
     "withyashar_25505": [
       "recovered_source"
@@ -535,6 +526,15 @@
     ],
     "withyashar_25540": [
       "recovered_source"
+    ],
+    "akhbarefori_698143": [
+      "recovered_source"
+    ],
+    "khabari_201287": [
+      "recovered_source"
+    ],
+    "akharinkhabar_638159": [
+      "recovered_source"
     ]
   },
   "vip_alert_history": {
@@ -749,7 +749,9 @@
     "وضعیت قرمز": 1791960811.9687238,
     "احکام و اعدام معترضان در فرودگاه کرمان": 1791960946.627893,
     "حملات نظامی در صحنه": 1791965339.019725,
-    "حملات نظامی در ایران، تهران، اسرائیل، تل آویو": 1791966227.9855578
+    "حملات نظامی در ایران، تهران، اسرائیل، تل آویو": 1791966227.9855578,
+    "سقوط و لاشه در فرودگاه ایران، تهران، تبریز، پرواز": 1791995090.2057362,
+    "آتش‌سوزی در نقاب": 1791995161.5966694
   },
   "alibk_posted": {
     "38729": {
@@ -1931,34 +1933,34 @@
   },
   "channel_watermarks": {
     "Alibk3": 39078,
-    "VahidHeadline": 326436,
-    "VahidOOnLine": 265105,
-    "RadioFarda": 162343,
-    "IranintlTV": 362259,
-    "Tasnimnews": 451359,
-    "Farsna": 468444,
-    "isna94": 408773,
-    "irna_1313": 462375,
-    "akharinkhabar": 638343,
-    "khabarfouri": 569593,
-    "akhbarefori": 698464,
-    "dw_farsi": 131197,
-    "entekhab_ir": 383384,
-    "Khabar_Fouri": 551606,
-    "khabari": 201452,
-    "thezoomit": 103868,
-    "farsivoa": 233750,
-    "myITiran": 18283,
+    "VahidHeadline": 326437,
+    "VahidOOnLine": 265111,
+    "RadioFarda": 162344,
+    "IranintlTV": 362265,
+    "Tasnimnews": 451365,
+    "Farsna": 468453,
+    "isna94": 408778,
+    "irna_1313": 462384,
+    "akharinkhabar": 638348,
+    "khabarfouri": 569619,
+    "akhbarefori": 698474,
+    "dw_farsi": 131199,
+    "entekhab_ir": 383387,
+    "Khabar_Fouri": 551614,
+    "khabari": 201458,
+    "thezoomit": 103872,
+    "farsivoa": 233753,
+    "myITiran": 18285,
     "Farsi_Iranwire": 94693,
     "bbcpersian": 293363,
-    "Alarabiya_far": 152223,
-    "thezoomon": 5283,
+    "Alarabiya_far": 152224,
+    "thezoomon": 5284,
     "Mr_Economy": 64057,
-    "Eghtesadnews_com": 370927,
-    "Digiato": 114161,
-    "Indypersian": 180187,
-    "withyashar": 25631,
-    "euronewspe": 90632,
+    "Eghtesadnews_com": 370930,
+    "Digiato": 114162,
+    "Indypersian": 180191,
+    "withyashar": 25634,
+    "euronewspe": 90633,
     "Economic_News_Channel": 82835,
     "farsna": 468156,
     "persiannbloomberg": 68366,
@@ -2050,15 +2052,27 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 16,
-    "gemini-3.5-flash-lite": 530,
-    "gemini-2.5-flash": 88,
-    "gemini-3-flash-preview": 46,
+    "gemini-3.5-flash-lite": 548,
+    "gemini-2.5-flash": 90,
+    "gemini-3-flash-preview": 47,
     "gemini-3.1-flash-lite": 190,
     "gemini-3.1-flash-lite-preview": 33,
     "gemini-3.6-flash": 4,
     "gemini-3.7-flash": 4,
     "gemini-flash-lite-latest": 3
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-14 16:16:21 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39080",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39080,
+      "text": "تجدد الاشتباكات في جبهات تعز، مع تقدم القوات اليمنية في الاطراف الجنوبية الشرقية للمدينة، على طريق العاوات شمالا باتجاه مرتفعات جبل صبر-قمة العروس، وجنوبا باتجاه عزلة النجادة مع اشتباكات عنيفة. \n\nمع اشتباكات أيضا في الاطراف الغربية بحيث تدور  المواجهات في ثلاث محاور أساسية، حيث تتقدم القوات اليمنية باتجاه المطار القديم لتعز، وتتقدم باتجاه حي العقاقة شرق نقطة الهنجر، وباتجاه جبل هان من مسارين جنوبي وشمالي.",
+      "is_edit": false,
+      "enqueued_at": 1791995973.273475,
+      "retries": 1,
+      "last_retry_at": 1791995973.2794845
+    }
+  ],
+  "last_saved": "2026-10-14 16:47:58 UTC"
 }
