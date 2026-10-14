@@ -3,15 +3,6 @@
     "Alibk3_38914": [
       "recovered_source"
     ],
-    "Khabar_Fouri_551375": [
-      "recovered_source"
-    ],
-    "akhbarefori_697951": [
-      "recovered_source"
-    ],
-    "entekhab_ir_383228": [
-      "recovered_source"
-    ],
     "VahidOnline_78713": [
       "recovered_source"
     ],
@@ -196,8 +187,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "recovered_source",
-      "آتش‌سوزی در پایگاه هوایی ایران"
+      "آتش‌سوزی در پایگاه هوایی ایران",
+      "recovered_source"
     ],
     "withyashar_25505": [
       "recovered_source"
@@ -263,8 +254,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
-      "recovered_source"
+      "recovered_source",
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
     ],
     "withyashar_25495": [
       "recovered_source"
@@ -553,6 +544,9 @@
     ],
     "Alibk3_38909": [
       "recovered_source"
+    ],
+    "withyashar_25526": [
+      "recovered_source"
     ]
   },
   "vip_alert_history": {
@@ -561,27 +555,6 @@
       "target_channel": "@DidebanJang",
       "time": 1791874869.3129056,
       "thread_key": "withyashar_25518"
-    },
-    "Khabar_Fouri_551375": {
-      "time": 1791874253.0,
-      "pattern": "recovered_source",
-      "text": "📢 **گزارش مردمی: تجمعات اعتراضی در زاهدان**\n\n🔗 **منابع خبر:**\n- [Khabar_Fouri](https://t.me/Khabar_Fouri/551375)\n- [akhbarefori](https://t.me/akhbarefori/697951)\n- [entekhab_ir](https://t.me/entekhab_ir/383228)\n\n#دیده‌بان_اعتراضات\n\n@DidebanEterazat",
-      "sent_msg_id": 10,
-      "target_channel": "@DidebanEterazat"
-    },
-    "akhbarefori_697951": {
-      "time": 1791874253.0,
-      "pattern": "recovered_source",
-      "text": "📢 **گزارش مردمی: تجمعات اعتراضی در زاهدان**\n\n🔗 **منابع خبر:**\n- [Khabar_Fouri](https://t.me/Khabar_Fouri/551375)\n- [akhbarefori](https://t.me/akhbarefori/697951)\n- [entekhab_ir](https://t.me/entekhab_ir/383228)\n\n#دیده‌بان_اعتراضات\n\n@DidebanEterazat",
-      "sent_msg_id": 10,
-      "target_channel": "@DidebanEterazat"
-    },
-    "entekhab_ir_383228": {
-      "time": 1791874253.0,
-      "pattern": "recovered_source",
-      "text": "📢 **گزارش مردمی: تجمعات اعتراضی در زاهدان**\n\n🔗 **منابع خبر:**\n- [Khabar_Fouri](https://t.me/Khabar_Fouri/551375)\n- [akhbarefori](https://t.me/akhbarefori/697951)\n- [entekhab_ir](https://t.me/entekhab_ir/383228)\n\n#دیده‌بان_اعتراضات\n\n@DidebanEterazat",
-      "sent_msg_id": 10,
-      "target_channel": "@DidebanEterazat"
     },
     "withyashar_25540": {
       "target_channel": "@DidebanJang",
@@ -852,7 +825,6 @@
     }
   },
   "last_alert_time": {
-    "تجمعات اعتراضی در زاهدان": 1791874234.5925622,
     "درگیری مسلحانه و ترور در زاهدان": 1791886792.9406521,
     "حملات نظامی در ایران، تنگه هرمز، هرمز": 1791908083.2135282,
     "حملات نظامی در تنگه هرمز، هرمز، نفتکش": 1791923118.6283169,
@@ -860,14 +832,11 @@
     "حملات نظامی در ایران، آمریکا": 1791923760.225421,
     "درگیری مسلحانه و ترور، حملات نظامی و شلیک و پرتاب موشک در ریاض، یمن، عربستان": 1791924300.8328476,
     "حملات نظامی در اسرائیل": 1791949630.2230272,
-    "حملات نظامی، تلفات جانی و احکام و اعدام معترضان در فرودگاه کرمان، میدان آزادی": 1791952970.7643518
+    "حملات نظامی، تلفات جانی و احکام و اعدام معترضان در فرودگاه کرمان، میدان آزادی": 1791952970.7643518,
+    "وضعیت قرمز": 1791960811.9687238,
+    "احکام و اعدام معترضان در فرودگاه کرمان": 1791960946.627893
   },
   "alibk_posted": {
-    "38673": {
-      "channel": "@DidebanJang",
-      "msg_id": 110,
-      "timestamp": 1791701190.0
-    },
     "38674": {
       "channel": "@DidebanJang",
       "msg_id": 111,
@@ -1430,101 +1399,6 @@
     }
   },
   "thread_alerts": {
-    "Alibk3_38912": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 209,
-      "node": "Alibk3",
-      "root_id": 38912,
-      "root_text": "القناة 12 العبرية: \n\nعقب بلاغ عن وجود قنبلة في طائرة تابعة لشركة «دلتا» ،هبطت من الولايات المتحدة في مطار بن غوريون، عُزلت الطائرة في هذه الدقائق ويجري فحصها.",
-      "root_media_type": "video",
-      "timestamp": 1791873059.7121553,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "فرود اضطراری و جداسازی یک فروند هواپیمای مسافربری در فرودگاه بن‌گوریون به دنبال هشدار بمب‌گذاری",
-      "summary": "شبکه ۱۲ تلویزیون رژیم صهیونیستی گزارش داد که یک فروند هواپیمای مسافربری متعلق به شرکت هواپیمایی «دلتا» که از ایالات متحده وارد فرودگاه بن‌گوریون شده بود، به دنبال دریافت گزارشی مبنی بر وجود بمب، بلافاصله پس از فرود قرنطینه شده و تیم‌های امنیتی در حال بازرسی آن هستند.",
-      "ai_model": "gemini-2.5-flash",
-      "latency_sec": 1491.71,
-      "sources": [
-        {
-          "node": "Alibk3",
-          "msg_id": 38912,
-          "media_type": "video",
-          "link": "https://t.me/Alibk3/38912",
-          "timestamp": 1791873059.7121642
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
-    "Khabar_Fouri_551375": {
-      "channel": "@DidebanEterazat",
-      "alert_msg_id": 10,
-      "node": "Khabar_Fouri",
-      "root_id": 551375,
-      "root_text": "📢 **گزارش مردمی: تجمعات اعتراضی در زاهدان**\n\n🔗 **منابع خبر:**\n- [Khabar_Fouri](https://t.me/Khabar_Fouri/551375)\n- [akhbarefori](https://t.me/akhbarefori/697951)\n- [entekhab_ir](https://t.me/entekhab_ir/383228)\n\n#دیده‌بان_اعتراضات\n\n@DidebanEterazat",
-      "root_media_type": "text",
-      "timestamp": 1791874253.0,
-      "title": "تجمعات اعتراضی در زاهدان",
-      "summary": "",
-      "category": "PROTEST_RIGHTS",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "Khabar_Fouri",
-          "msg_id": 551375,
-          "media_type": "text",
-          "link": "https://t.me/Khabar_Fouri/551375",
-          "timestamp": 1791874253.0
-        }
-      ],
-      "replies": []
-    },
-    "akhbarefori_697951": {
-      "channel": "@DidebanEterazat",
-      "alert_msg_id": 10,
-      "node": "akhbarefori",
-      "root_id": 697951,
-      "root_text": "📢 **گزارش مردمی: تجمعات اعتراضی در زاهدان**\n\n🔗 **منابع خبر:**\n- [Khabar_Fouri](https://t.me/Khabar_Fouri/551375)\n- [akhbarefori](https://t.me/akhbarefori/697951)\n- [entekhab_ir](https://t.me/entekhab_ir/383228)\n\n#دیده‌بان_اعتراضات\n\n@DidebanEterazat",
-      "root_media_type": "text",
-      "timestamp": 1791874253.0,
-      "title": "تجمعات اعتراضی در زاهدان",
-      "summary": "",
-      "category": "PROTEST_RIGHTS",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "akhbarefori",
-          "msg_id": 697951,
-          "media_type": "text",
-          "link": "https://t.me/akhbarefori/697951",
-          "timestamp": 1791874253.0
-        }
-      ],
-      "replies": []
-    },
-    "entekhab_ir_383228": {
-      "channel": "@DidebanEterazat",
-      "alert_msg_id": 10,
-      "node": "entekhab_ir",
-      "root_id": 383228,
-      "root_text": "📢 **گزارش مردمی: تجمعات اعتراضی در زاهدان**\n\n🔗 **منابع خبر:**\n- [Khabar_Fouri](https://t.me/Khabar_Fouri/551375)\n- [akhbarefori](https://t.me/akhbarefori/697951)\n- [entekhab_ir](https://t.me/entekhab_ir/383228)\n\n#دیده‌بان_اعتراضات\n\n@DidebanEterazat",
-      "root_media_type": "text",
-      "timestamp": 1791874253.0,
-      "title": "تجمعات اعتراضی در زاهدان",
-      "summary": "",
-      "category": "PROTEST_RIGHTS",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "entekhab_ir",
-          "msg_id": 383228,
-          "media_type": "text",
-          "link": "https://t.me/entekhab_ir/383228",
-          "timestamp": 1791874253.0
-        }
-      ],
-      "replies": []
-    },
     "withyashar_25540": {
       "channel": "@DidebanJang",
       "alert_msg_id": 210,
@@ -2594,38 +2468,38 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39031,
-    "VahidHeadline": 326333,
+    "Alibk3": 39035,
+    "VahidHeadline": 326337,
     "VahidOOnLine": 265036,
     "RadioFarda": 162329,
-    "IranintlTV": 362183,
-    "Tasnimnews": 451266,
-    "Farsna": 468335,
-    "isna94": 408689,
-    "irna_1313": 462152,
-    "akharinkhabar": 638237,
-    "khabarfouri": 569498,
-    "akhbarefori": 698314,
+    "IranintlTV": 362184,
+    "Tasnimnews": 451268,
+    "Farsna": 468339,
+    "isna94": 408696,
+    "irna_1313": 462160,
+    "akharinkhabar": 638242,
+    "khabarfouri": 569506,
+    "akhbarefori": 698322,
     "dw_farsi": 131153,
-    "entekhab_ir": 383329,
-    "Khabar_Fouri": 551518,
-    "khabari": 201353,
-    "thezoomit": 103837,
-    "farsivoa": 233688,
+    "entekhab_ir": 383333,
+    "Khabar_Fouri": 551520,
+    "khabari": 201359,
+    "thezoomit": 103838,
+    "farsivoa": 233690,
     "myITiran": 18276,
     "Farsi_Iranwire": 94667,
-    "bbcpersian": 293345,
+    "bbcpersian": 293346,
     "Alarabiya_far": 152169,
-    "thezoomon": 5266,
-    "Mr_Economy": 64048,
-    "Eghtesadnews_com": 370864,
-    "Digiato": 114131,
+    "thezoomon": 5267,
+    "Mr_Economy": 64049,
+    "Eghtesadnews_com": 370868,
+    "Digiato": 114132,
     "Indypersian": 180156,
-    "withyashar": 25589,
-    "euronewspe": 90609,
-    "Economic_News_Channel": 82794,
+    "withyashar": 25592,
+    "euronewspe": 90611,
+    "Economic_News_Channel": 82795,
     "farsna": 468156,
-    "persiannbloomberg": 68303,
+    "persiannbloomberg": 68304,
     "VahidOnline": 78723,
     "mamlekate": 104815,
     "iliaen": 4744
@@ -2718,23 +2592,12 @@
     "gemini-3.5-flash-lite": 439,
     "gemini-2.5-flash": 71,
     "gemini-3-flash-preview": 22,
-    "gemini-3.1-flash-lite": 153,
-    "gemini-3.1-flash-lite-preview": 30,
+    "gemini-3.1-flash-lite": 184,
+    "gemini-3.1-flash-lite-preview": 33,
     "gemini-3.6-flash": 4,
     "gemini-3.7-flash": 4
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39029",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39029,
-      "text": "توقف مطار جدة الآن.",
-      "is_edit": false,
-      "enqueued_at": 1791957176.2524233,
-      "retries": 14,
-      "last_retry_at": 1791959220.4972327
-    },
     {
       "id": "vip_multi_agent_Alibk3_39030",
       "pipeline": "vip_multi_agent",
@@ -2743,9 +2606,42 @@
       "text": "توقف 7 مطارات سعودية عن استقبال الرحلات حتى الآن:\n\n مطاري نجران وجازان لأكثر من 188 ساعة، والرياض لنحو 91 ساعة، وينبع لأكثر من 61 ساعة، وعرعر لنحو 24 ساعة، وحائل لنحو 12 ساعة، والجوف لنحو 11 ساعة.",
       "is_edit": true,
       "enqueued_at": 1791958840.6351116,
+      "retries": 11,
+      "last_retry_at": 1791960704.3831584
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25590",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25590,
+      "text": "صبر کنید ببینید با ایران چه خواهیم کرد؛ حسابی از آن‌ها پذیرایی خواهیم کرد! صبر کنید و ببینید. آن‌ها فقط منتظرند؛ منتظرند ببینند چه اتفاقی می‌افتد. صبر کنید ببینید با ایران چه خواهیم کرد. چون ما تا حدی کارمان را با آن‌ها انجام داده‌ایم؛ می‌دانید، کارهایی کرده‌ایم. اما خب، این موضوع اهمیتی ندارد. مسئله اصلی این است که ما اجازه نخواهیم داد ایران به سلاح هسته‌ای دست پیدا کند و آن‌ها هم سلاح هسته‌ای نخواهند داشت\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1791959857.315697,
+      "retries": 5,
+      "last_retry_at": 1791960724.0267162
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25591",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25591,
+      "text": "نتانیاهو : «به این نتیجه رسیده‌ایم , هم به زیرساخت‌ها حمله کردیم، هم به دانشمندان و هم به تأسیسات برنامه هسته‌ای. اکنون با حکومتی سرسخت روبه‌رو هستیم. تا زمانی که این حکومت پابرجا باشد، تلاش خواهد کرد توان خود را بازسازی کند، برنامه هسته‌ای‌اش را از سر بگیرد، دوباره ما را نابود کند و حزب‌الله و حماس را نیز بازسازی کند. برای نابود کردن تمام این ساختار، باید این حکومت را سرنگون کنیم.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1791960267.5588386,
       "retries": 2,
-      "last_retry_at": 1791958967.0591629
+      "last_retry_at": 1791960768.3361833
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39034",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39034,
+      "text": "ثلاثة مروحيات سعودية غادرت مطار الرياض قبل قليل إلى مهبط مروحيات بالقرب من الخرج.",
+      "is_edit": false,
+      "enqueued_at": 1791960710.8431277,
+      "retries": 0,
+      "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-14 06:27:40 UTC"
+  "last_saved": "2026-10-14 06:58:12 UTC"
 }

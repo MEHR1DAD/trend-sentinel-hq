@@ -1,9 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 28 minutes
-- **Messages Processed:** 136
-- **Last Message Text:** افزایش اعتبار کالابرگ در دو مرحله انجام می‌شود
+- **Uptime:** 30 minutes
+- **Messages Processed:** 112
+- **Last Message Text:** 🔺️فرد  اعدام‌شده در کرمان قصد تسخیر فرودگاه برای ورود رضا پهلوی را داشت
 
-عضو کمیسیون اجتماعی مجلس در گفت‌وگو با ایسنا: 
-🔹️قرا...
-- **Last Message Time:** 2026-10-14 06:27:39
+🔹رئیس دادگستری کرمان: براسا...
+- **Last Message Time:** 2026-10-14 06:57:52
