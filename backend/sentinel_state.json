@@ -30,15 +30,6 @@
     "Alibk3_39008": [
       "recovered_source"
     ],
-    "akhbarefori_698143": [
-      "recovered_source"
-    ],
-    "khabari_201287": [
-      "recovered_source"
-    ],
-    "akharinkhabar_638159": [
-      "recovered_source"
-    ],
     "VahidOnline_78714": [
       "recovered_source"
     ],
@@ -166,8 +157,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "آتش‌سوزی در پایگاه هوایی ایران",
-      "recovered_source"
+      "recovered_source",
+      "آتش‌سوزی در پایگاه هوایی ایران"
     ],
     "withyashar_25505": [
       "recovered_source"
@@ -621,27 +612,6 @@
       "sent_msg_id": 216,
       "target_channel": "@DidebanJang"
     },
-    "akhbarefori_698143": {
-      "time": 1791908138.0,
-      "pattern": "recovered_source",
-      "text": "🔕 **هشدار منطقه‌ای: حملات نظامی در ایران، تنگه هرمز، هرمز**\n\n📝 **چکیده رویداد:**\nیک مقام آمریکایی در گفتگو با شبکه الجزیره، ضمن اعلام رصد دقیق تحرکات ایران در تنگه هرمز، مدعی شد که ایالات متحده در صورت حمله به کشتی‌های این کشور، با هدف قرار دادن شناورهای ایرانی به آن پاسخ خواهد داد.\n\n🔗 **منابع خبر:**\n- [akhbarefori](https://t.me/akhbarefori/698143)\n- [khabari](https://t.me/khabari/201287)\n- [akharinkhabar](https://t.me/akharinkhabar/638159)\n\n#دیده‌بان_جنگ\n\n@DidebanJang",
-      "sent_msg_id": 214,
-      "target_channel": "@DidebanJang"
-    },
-    "khabari_201287": {
-      "time": 1791908138.0,
-      "pattern": "recovered_source",
-      "text": "🔕 **هشدار منطقه‌ای: حملات نظامی در ایران، تنگه هرمز، هرمز**\n\n📝 **چکیده رویداد:**\nیک مقام آمریکایی در گفتگو با شبکه الجزیره، ضمن اعلام رصد دقیق تحرکات ایران در تنگه هرمز، مدعی شد که ایالات متحده در صورت حمله به کشتی‌های این کشور، با هدف قرار دادن شناورهای ایرانی به آن پاسخ خواهد داد.\n\n🔗 **منابع خبر:**\n- [akhbarefori](https://t.me/akhbarefori/698143)\n- [khabari](https://t.me/khabari/201287)\n- [akharinkhabar](https://t.me/akharinkhabar/638159)\n\n#دیده‌بان_جنگ\n\n@DidebanJang",
-      "sent_msg_id": 214,
-      "target_channel": "@DidebanJang"
-    },
-    "akharinkhabar_638159": {
-      "time": 1791908138.0,
-      "pattern": "recovered_source",
-      "text": "🔕 **هشدار منطقه‌ای: حملات نظامی در ایران، تنگه هرمز، هرمز**\n\n📝 **چکیده رویداد:**\nیک مقام آمریکایی در گفتگو با شبکه الجزیره، ضمن اعلام رصد دقیق تحرکات ایران در تنگه هرمز، مدعی شد که ایالات متحده در صورت حمله به کشتی‌های این کشور، با هدف قرار دادن شناورهای ایرانی به آن پاسخ خواهد داد.\n\n🔗 **منابع خبر:**\n- [akhbarefori](https://t.me/akhbarefori/698143)\n- [khabari](https://t.me/khabari/201287)\n- [akharinkhabar](https://t.me/akharinkhabar/638159)\n\n#دیده‌بان_جنگ\n\n@DidebanJang",
-      "sent_msg_id": 214,
-      "target_channel": "@DidebanJang"
-    },
     "VahidOnline_78714": {
       "sent_msg_id": 217,
       "target_channel": "@DidebanJang",
@@ -770,7 +740,6 @@
     }
   },
   "last_alert_time": {
-    "حملات نظامی در ایران، تنگه هرمز، هرمز": 1791908083.2135282,
     "حملات نظامی در تنگه هرمز، هرمز، نفتکش": 1791923118.6283169,
     "حملات نظامی در تنگه هرمز، هرمز": 1791990554.7988856,
     "حملات نظامی در ایران، آمریکا": 1791923760.225421,
@@ -783,11 +752,6 @@
     "حملات نظامی در ایران، تهران، اسرائیل، تل آویو": 1791966227.9855578
   },
   "alibk_posted": {
-    "38712": {
-      "channel": "@DidebanJang",
-      "msg_id": 125,
-      "timestamp": 1791734254.6578417
-    },
     "38729": {
       "channel": "@DidebanJang",
       "msg_id": 150,
@@ -1542,75 +1506,6 @@
       ],
       "replies": []
     },
-    "akhbarefori_698143": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 214,
-      "node": "akhbarefori",
-      "root_id": 698143,
-      "root_text": "🔕 **هشدار منطقه‌ای: حملات نظامی در ایران، تنگه هرمز، هرمز**\n\n📝 **چکیده رویداد:**\nیک مقام آمریکایی در گفتگو با شبکه الجزیره، ضمن اعلام رصد دقیق تحرکات ایران در تنگه هرمز، مدعی شد که ایالات متحده در صورت حمله به کشتی‌های این کشور، با هدف قرار دادن شناورهای ایرانی به آن پاسخ خواهد داد.\n\n🔗 **منابع خبر:**\n- [akhbarefori](https://t.me/akhbarefori/698143)\n- [khabari](https://t.me/khabari/201287)\n- [akharinkhabar](https://t.me/akharinkhabar/638159)\n\n#دیده‌بان_جنگ\n\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791908138.0,
-      "title": "حملات نظامی در ایران، تنگه هرمز، هرمز",
-      "summary": "یک مقام آمریکایی در گفتگو با شبکه الجزیره، ضمن اعلام رصد دقیق تحرکات ایران در تنگه هرمز، مدعی شد که ایالات متحده در صورت حمله به کشتی‌های این کشور، با هدف قرار دادن شناورهای ایرانی به آن پاسخ خواهد داد.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "akhbarefori",
-          "msg_id": 698143,
-          "media_type": "text",
-          "link": "https://t.me/akhbarefori/698143",
-          "timestamp": 1791908138.0
-        }
-      ],
-      "replies": []
-    },
-    "khabari_201287": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 214,
-      "node": "khabari",
-      "root_id": 201287,
-      "root_text": "🔕 **هشدار منطقه‌ای: حملات نظامی در ایران، تنگه هرمز، هرمز**\n\n📝 **چکیده رویداد:**\nیک مقام آمریکایی در گفتگو با شبکه الجزیره، ضمن اعلام رصد دقیق تحرکات ایران در تنگه هرمز، مدعی شد که ایالات متحده در صورت حمله به کشتی‌های این کشور، با هدف قرار دادن شناورهای ایرانی به آن پاسخ خواهد داد.\n\n🔗 **منابع خبر:**\n- [akhbarefori](https://t.me/akhbarefori/698143)\n- [khabari](https://t.me/khabari/201287)\n- [akharinkhabar](https://t.me/akharinkhabar/638159)\n\n#دیده‌بان_جنگ\n\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791908138.0,
-      "title": "حملات نظامی در ایران، تنگه هرمز، هرمز",
-      "summary": "یک مقام آمریکایی در گفتگو با شبکه الجزیره، ضمن اعلام رصد دقیق تحرکات ایران در تنگه هرمز، مدعی شد که ایالات متحده در صورت حمله به کشتی‌های این کشور، با هدف قرار دادن شناورهای ایرانی به آن پاسخ خواهد داد.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "khabari",
-          "msg_id": 201287,
-          "media_type": "text",
-          "link": "https://t.me/khabari/201287",
-          "timestamp": 1791908138.0
-        }
-      ],
-      "replies": []
-    },
-    "akharinkhabar_638159": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 214,
-      "node": "akharinkhabar",
-      "root_id": 638159,
-      "root_text": "🔕 **هشدار منطقه‌ای: حملات نظامی در ایران، تنگه هرمز، هرمز**\n\n📝 **چکیده رویداد:**\nیک مقام آمریکایی در گفتگو با شبکه الجزیره، ضمن اعلام رصد دقیق تحرکات ایران در تنگه هرمز، مدعی شد که ایالات متحده در صورت حمله به کشتی‌های این کشور، با هدف قرار دادن شناورهای ایرانی به آن پاسخ خواهد داد.\n\n🔗 **منابع خبر:**\n- [akhbarefori](https://t.me/akhbarefori/698143)\n- [khabari](https://t.me/khabari/201287)\n- [akharinkhabar](https://t.me/akharinkhabar/638159)\n\n#دیده‌بان_جنگ\n\n@DidebanJang",
-      "root_media_type": "text",
-      "timestamp": 1791908138.0,
-      "title": "حملات نظامی در ایران، تنگه هرمز، هرمز",
-      "summary": "یک مقام آمریکایی در گفتگو با شبکه الجزیره، ضمن اعلام رصد دقیق تحرکات ایران در تنگه هرمز، مدعی شد که ایالات متحده در صورت حمله به کشتی‌های این کشور، با هدف قرار دادن شناورهای ایرانی به آن پاسخ خواهد داد.",
-      "category": "WAR",
-      "is_iran_related": false,
-      "sources": [
-        {
-          "node": "akharinkhabar",
-          "msg_id": 638159,
-          "media_type": "text",
-          "link": "https://t.me/akharinkhabar/638159",
-          "timestamp": 1791908138.0
-        }
-      ],
-      "replies": []
-    },
     "VahidOnline_78714": {
       "channel": "@DidebanJang",
       "alert_msg_id": 217,
@@ -2036,34 +1931,34 @@
   },
   "channel_watermarks": {
     "Alibk3": 39078,
-    "VahidHeadline": 326426,
-    "VahidOOnLine": 265102,
-    "RadioFarda": 162332,
-    "IranintlTV": 362254,
-    "Tasnimnews": 451355,
-    "Farsna": 468438,
-    "isna94": 408770,
-    "irna_1313": 462360,
-    "akharinkhabar": 638336,
-    "khabarfouri": 569590,
-    "akhbarefori": 698455,
+    "VahidHeadline": 326436,
+    "VahidOOnLine": 265105,
+    "RadioFarda": 162343,
+    "IranintlTV": 362259,
+    "Tasnimnews": 451359,
+    "Farsna": 468444,
+    "isna94": 408773,
+    "irna_1313": 462375,
+    "akharinkhabar": 638343,
+    "khabarfouri": 569593,
+    "akhbarefori": 698464,
     "dw_farsi": 131197,
-    "entekhab_ir": 383381,
-    "Khabar_Fouri": 551604,
-    "khabari": 201449,
-    "thezoomit": 103867,
-    "farsivoa": 233747,
+    "entekhab_ir": 383384,
+    "Khabar_Fouri": 551606,
+    "khabari": 201452,
+    "thezoomit": 103868,
+    "farsivoa": 233750,
     "myITiran": 18283,
-    "Farsi_Iranwire": 94692,
-    "bbcpersian": 293362,
-    "Alarabiya_far": 152222,
-    "thezoomon": 5282,
+    "Farsi_Iranwire": 94693,
+    "bbcpersian": 293363,
+    "Alarabiya_far": 152223,
+    "thezoomon": 5283,
     "Mr_Economy": 64057,
-    "Eghtesadnews_com": 370925,
-    "Digiato": 114160,
-    "Indypersian": 180186,
+    "Eghtesadnews_com": 370927,
+    "Digiato": 114161,
+    "Indypersian": 180187,
     "withyashar": 25631,
-    "euronewspe": 90630,
+    "euronewspe": 90632,
     "Economic_News_Channel": 82835,
     "farsna": 468156,
     "persiannbloomberg": 68366,
@@ -2072,9 +1967,7 @@
     "netblocks": 1567,
     "iliaen": 4744
   },
-  "vahid_post_time": {
-    "78694": 1791735142.0123565
-  },
+  "vahid_post_time": {},
   "ilia_post_time": {},
   "vahid_ai_posted": {
     "78687": 53,
@@ -2157,7 +2050,7 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 16,
-    "gemini-3.5-flash-lite": 523,
+    "gemini-3.5-flash-lite": 530,
     "gemini-2.5-flash": 88,
     "gemini-3-flash-preview": 46,
     "gemini-3.1-flash-lite": 190,
@@ -2167,5 +2060,5 @@
     "gemini-flash-lite-latest": 3
   },
   "smart_queue": [],
-  "last_saved": "2026-10-14 15:47:50 UTC"
+  "last_saved": "2026-10-14 16:16:21 UTC"
 }
