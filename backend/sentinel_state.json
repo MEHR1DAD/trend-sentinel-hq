@@ -1,15 +1,6 @@
 {
   "alerted_msg_patterns": {
-    "Alibk3_39015": [
-      "recovered_source"
-    ],
     "Alibk3_39017": [
-      "recovered_source"
-    ],
-    "withyashar_25584": [
-      "recovered_source"
-    ],
-    "Alibk3_39018": [
       "recovered_source"
     ],
     "withyashar_25585": [
@@ -34,40 +25,6 @@
       "recovered_source"
     ],
     "Alibk3_39025": [
-      "recovered_source"
-    ],
-    "VahidOnline_78702": [
-      "آتش‌سوزی در پایگاه هوایی ایران",
-      "recovered_source"
-    ],
-    "withyashar_25505": [
-      "recovered_source"
-    ],
-    "withyashar_25504": [
-      "recovered_source"
-    ],
-    "Alibk3_38852": [
-      "recovered_source"
-    ],
-    "Alibk3_38856": [
-      "recovered_source"
-    ],
-    "Alibk3_38857": [
-      "recovered_source"
-    ],
-    "Alibk3_38858": [
-      "recovered_source"
-    ],
-    "akhbarefori_697828": [
-      "recovered_source"
-    ],
-    "Tasnimnews_450908": [
-      "recovered_source"
-    ],
-    "akharinkhabar_637942": [
-      "recovered_source"
-    ],
-    "Alibk3_38859": [
       "recovered_source"
     ],
     "withyashar_25503": [
@@ -487,34 +444,46 @@
     ],
     "withyashar_25508": [
       "recovered_source"
+    ],
+    "VahidOnline_78714": [
+      "recovered_source"
+    ],
+    "Alibk3_39010": [
+      "recovered_source"
+    ],
+    "Alibk3_39011": [
+      "recovered_source"
+    ],
+    "Tasnimnews_451203": [
+      "recovered_source"
+    ],
+    "Alibk3_39008": [
+      "recovered_source"
+    ],
+    "withyashar_25507": [
+      "recovered_source"
+    ],
+    "Alibk3_38864": [
+      "recovered_source"
+    ],
+    "Alibk3_38865": [
+      "recovered_source"
+    ],
+    "VahidOnline_78701": [
+      "recovered_source"
+    ],
+    "withyashar_25501": [
+      "recovered_source"
+    ],
+    "withyashar_25500": [
+      "recovered_source"
     ]
   },
   "vip_alert_history": {
-    "Alibk3_39015": {
-      "sent_msg_id": 217,
-      "target_channel": "@DidebanJang",
-      "time": 1791926050.9673026,
-      "ai_model": "gemini-3.5-flash-lite",
-      "pattern": "vip_edit_update"
-    },
     "Alibk3_39017": {
       "sent_msg_id": 217,
       "target_channel": "@DidebanJang",
       "time": 1791928555.3263865,
-      "ai_model": "gemini-3.5-flash-lite",
-      "pattern": "vip_edit_update"
-    },
-    "withyashar_25584": {
-      "sent_msg_id": 217,
-      "target_channel": "@DidebanJang",
-      "time": 1791927424.4045136,
-      "ai_model": "gemini-3.5-flash-lite",
-      "pattern": "vip_edit_update"
-    },
-    "Alibk3_39018": {
-      "sent_msg_id": 217,
-      "target_channel": "@DidebanJang",
-      "time": 1791927696.1211896,
       "ai_model": "gemini-3.5-flash-lite",
       "pattern": "vip_edit_update"
     },
@@ -899,38 +868,38 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39093,
-    "VahidHeadline": 326455,
-    "VahidOOnLine": 265154,
+    "Alibk3": 39095,
+    "VahidHeadline": 326457,
+    "VahidOOnLine": 265156,
     "RadioFarda": 162348,
-    "IranintlTV": 362308,
-    "Tasnimnews": 451407,
-    "Farsna": 468511,
-    "isna94": 408802,
-    "irna_1313": 462433,
+    "IranintlTV": 362311,
+    "Tasnimnews": 451409,
+    "Farsna": 468514,
+    "isna94": 408812,
+    "irna_1313": 462436,
     "akharinkhabar": 638389,
     "khabarfouri": 569648,
     "akhbarefori": 698552,
     "dw_farsi": 131205,
     "entekhab_ir": 383416,
     "Khabar_Fouri": 551653,
-    "khabari": 201490,
+    "khabari": 201516,
     "thezoomit": 103881,
-    "farsivoa": 233778,
+    "farsivoa": 233782,
     "myITiran": 18285,
     "Farsi_Iranwire": 94699,
     "bbcpersian": 293372,
     "Alarabiya_far": 152249,
     "thezoomon": 5288,
     "Mr_Economy": 64057,
-    "Eghtesadnews_com": 370952,
+    "Eghtesadnews_com": 370956,
     "Digiato": 114171,
-    "Indypersian": 180207,
-    "withyashar": 25658,
-    "euronewspe": 90642,
+    "Indypersian": 180209,
+    "withyashar": 25668,
+    "euronewspe": 90643,
     "Economic_News_Channel": 82845,
     "farsna": 468156,
-    "persiannbloomberg": 68396,
+    "persiannbloomberg": 68401,
     "VahidOnline": 78728,
     "mamlekate": 104818,
     "netblocks": 1567,
@@ -1020,180 +989,15 @@
   "gemini_model_stats": {
     "gemini-3.8-flash": 16,
     "gemini-3.5-flash-lite": 626,
-    "gemini-2.5-flash": 92,
+    "gemini-2.5-flash": 93,
     "gemini-3-flash-preview": 48,
-    "gemini-3.1-flash-lite": 334,
-    "gemini-3.1-flash-lite-preview": 41,
+    "gemini-3.1-flash-lite": 452,
+    "gemini-3.1-flash-lite-preview": 43,
     "gemini-3.6-flash": 4,
     "gemini-3.7-flash": 5,
     "gemini-flash-lite-latest": 6
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_withyashar_25655",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25655,
-      "text": "نتانیاهو : من تمام زندگی‌ام را وقف این کار کرده‌ام. هزاران ساعت در برنامه‌های پربیننده تلویزیونی آمریکا حضور داشته‌ام.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792010300.695993,
-      "retries": 8,
-      "last_retry_at": 1792012085.9604442
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39087",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39087,
-      "text": "القيادة المركزية الأميركية تعلن استهداف مركباً شراعياً تابعاً لإيران",
-      "is_edit": false,
-      "enqueued_at": 1792010317.7063496,
-      "retries": 7,
-      "last_retry_at": 1792012141.2576754
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25654",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25654,
-      "text": "نتانیاهو درباره ایران به کانال ۱۱ : من می‌گویم که سرنگونی این رژیم ضروری است. ما اقدامات زیادی انجام داده‌ایم؛ آن را درهم شکسته‌ایم. این رژیم اکنون در ضعیف‌ترین موقعیت خود در تمام دورانش قرار دارد.اما باید کار را تمام کنیم.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792010336.1441214,
-      "retries": 7,
-      "last_retry_at": 1792012164.9948757
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25656",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25656,
-      "text": "نتانیاهو: اسرائیل امروز قدرتمندترین قدرت است. همچنین می‌توانم به شما بگویم که اقتصاد ما با چنان سرعتی در حال رشد است که باورکردنش دشوار است.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792010342.1050506,
-      "retries": 7,
-      "last_retry_at": 1792012180.593356
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39086",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39086,
-      "text": "توقف مطار جدة في السعودية الآن.",
-      "is_edit": false,
-      "enqueued_at": 1792010361.5335426,
-      "retries": 6,
-      "last_retry_at": 1792011851.9267757
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39088",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39088,
-      "text": "الخارجية الأميركية تُحذّر الموظفين الحكوميين العاملين في السعودية الحصول على تفويض خاص من رئيس البعثة لاستخدام أي مطار في السعودية بعد الهجمات الأخيرة بالصواريخ والمسيّرات على المطارات في المملكة.",
-      "is_edit": false,
-      "enqueued_at": 1792010381.9644835,
-      "retries": 6,
-      "last_retry_at": 1792011881.5343525
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39089",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39089,
-      "text": "سماع دوي انفجار في مضيق هرمز.",
-      "is_edit": false,
-      "enqueued_at": 1792010382.9627678,
-      "retries": 6,
-      "last_retry_at": 1792011894.9296923
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39090",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39090,
-      "text": "تم محو نحو 800 مليار دولار من القيمة السوقية للأسهم الأميركية خلال اليوم، في أكبر تراجع لمؤشر ستاندرد آند بورز منذ 29 يوليو.\n\nويتزايد التضخم مجدداً في الولايات المتحدة مقترباً من ضعف هدف التضخم طويل الأجل للاحتياطي الفيدرالي.",
-      "is_edit": false,
-      "enqueued_at": 1792010383.9528427,
-      "retries": 6,
-      "last_retry_at": 1792011908.502502
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39091",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39091,
-      "text": "دوي عدة انفجارات في مضيق هرمز",
-      "is_edit": false,
-      "enqueued_at": 1792010384.9650316,
-      "retries": 6,
-      "last_retry_at": 1792011923.2350342
-    },
-    {
-      "id": "vip_multi_agent_VahidOnline_78729",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78729,
-      "text": "وکلای وریشه مرادی روز چهارشنبه ۲۲ مهر اعلام کردند شعبه ۱۵ دادگاه انقلاب تهران که پیش‌تر این زندانی سیاسی محبوس در اوین را به اتهام «عضویت در گروه باغی» به اعدام محکوم کرده بود، با وجود درخواست دیوان عالی کشور برای بررسی «نقص تحقیقات»، بر حکم پیشین خود مبنی بر اعدام پافشاری کرد.\n\nامیر سجادی و کیوان عزیزی، وکلای وریشه مرادی، در گفت‌وگو با «امتداد»، با اعلام این خبر تصریح کردند که روز چهارشنبه ۲۲ مهر با مراجعه به شعبه ۱۵ دادگاه انقلاب حکم صادره توسط این شعبه را دریافت کرده‌اند، و مطابق حکم ابلاغی ۲۰ روز فرصت دارند در دیوان عالی کشور فرجام‌خواهی کنند.\n\nبه گفته آنها، این حکم در شرایطی صادر شده که حکم قبلی شعبه ۱۵ مبنی بر صدور مجازات اعدام برای وریشه مرادی با طرح شبهات جدی در مورد تحقیقات، توسط شعبه رسیدگی‌کننده در دیوان عالی کشور نقض شده بود؛ ولی شعبه مذکور بدون انجام تحقیقات مورد نظر دیوان عالی، صرفا با تغییر عنوان اتهامی، خانم مرادی را مجددا به اتهام عضویت در گروه باغی به اعدام محکوم کرد.\n\nامیر سجادی با بیان اینکه «به باور وکلا دلایل کافی و متقن برای انتساب چنین اتهامی به وریشه مرادی وجود ندارد» تاکید کرد: «خانم مرادی مطلقا در هیچ عملیاتی علیه جمهوری اسلامی مداخله نداشته و فعالیت‌های او صرفا مربوط به مبارزات نامبرده علیه داعش در شمال سوریه بوده است.»\n\nکیوان عزیزی هم با تاکید بر فرجام‌خواهی وکلای وریشه مرادی در مهلت قانونی ابراز امیدواری کرد «دیوان عالی کشور، همچون مرتبه‌ی پیشین، به دفاعیات و ایرادات، توجه کافی داشته باشد.»\n\nوریشه مرادی که در حال‌حاضر در زندان اوین محبوس است، ۱۰ مرداد ۱۴۰۲ در حومه سنندج بازداشت شد، و در تاریخ ۵ دی همان سال با اتمام مراحل بازجویی از بازداشتگاه وزارت اطلاعات موسوم به بند ۲۰۹ زندان اوین به بند زنان این زندان منتقل شد.\n\nاو ۲۰ آبان ۱۴۰۳ توسط شعبه ۱۵ دادگاه انقلاب تهران به اتهام «بغی» (قیام مسلحانه علیه حکومت) به اعدام محکوم شد. وی در نامه‌ای سرگشاده از زندان فاش کرد که در طول بازداشت تحت شکنجه‌های جسمی و روانی، تهدید به اعدام، و خشونت‌های جنسیتی قرار گرفته است.\n@VahidHeadline\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1792010765.8409615,
-      "retries": 3,
-      "last_retry_at": 1792011936.9777133
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25659",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25659,
-      "text": "دونالد ترامپ از چگونگی گربه‌گیبر کردن هواپیما جدید ایرفرس وان : «قطر … قطری‌ها… با امیر قطر تماس گرفتم؛ مردی بسیار محترم و فوق‌العاده است، جوان و در واقع خوش‌قیافه هم هست! واقعاً خوب است که آدم جوان و خوش‌قیافه باشد و پول زیادی هم داشته باشد! او چنین شرایطی دارد. فقط چند ساعت… مدت بسیار کوتاهی از آن استفاده شده بود. به او گفتم: تمیم، اگر امکان دارد، از طرف ایالات متحده آمریکا و نیروی هوایی، دوست دارم بتوانیم هواپیمای بوئینگ ۷۴۷ شما را قرض بگیریم یا از آن استفاده کنیم.»\n@WarRoom\nیاشار : دونالد ترامپ، ۹ ژوئن ۲۰۱۷ (۱۹ خرداد ۱۳۹۶): «متأسفانه، کشور قطر در طول تاریخ، در سطحی بسیار بالا تأمین‌کننده مالی تروریسم بوده است. زمان آن رسیده که از قطر بخواهیم به تأمین مالی تروریسم پایان دهد؛ آن‌ها باید این تأمین مالی را متوقف کنند.»",
-      "is_edit": false,
-      "enqueued_at": 1792010831.9390497,
-      "retries": 3,
-      "last_retry_at": 1792011950.6327987
-    },
-    {
-      "id": "vip_multi_agent_VahidOnline_78730",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78730,
-      "text": "محمدباقر قالیباف، رییس مجلس شورای اسلامی، روز چهارشنبه ۲۲ مهر گفت جمهوری اسلامی هم‌زمان با جنگ، مذاکره را نیز دنبال می‌کند و هدف از ادامه جنگ را وادار کردن دشمن به پذیرش خواسته‌های تهران یا پذیرفتن شکست عنوان کرد.\n\nقالیباف در یک پیام ویدیویی گفت: «هم می‌جنگیم و هم مذاکره می‌کنیم. باید در زمان لازم با تمام توان بجنگیم، آمادگی خود را بالا ببریم و هر وقت در میدان به پیروزی نظامی می‌رسیم، آن را در عرصه سیاسی ثبت و تثبیت و به سند شکست دشمن تبدیل کنیم.»\n\nاو در ادامه تاکید کرد که منظور جمهوری اسلامی از دنبال کردن هم‌زمان جنگ و مذاکره، ادامه بی‌پایان هیچ‌یک از این دو نیست.\nقالیباف گفت: «وقتی می‌گوییم هم می‌جنگیم و هم مذاکره می‌کنیم، منظورمان این نیست که جنگ بی‌پایان یا مذاکره همیشگی می‌کنیم، بلکه جنگ می‌کنیم تا دشمن را مستاصل کنیم و به خواسته‌های ما تن دهد یا اگر تن نداد، شکست را بپذیرد.»\n@VahidHeadline\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1792010834.9411855,
-      "retries": 3,
-      "last_retry_at": 1792011967.6511915
-    },
-    {
-      "id": "vip_multi_agent_VahidOnline_78731",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78731,
-      "text": "پست سنتکام، ترجمه ماشین:\nدر ۶ اکتبر، نیروهای آمریکایی یک لنج وابسته به ایران را که در دریای عمان مشغول شناسایی و رصد ناوهای نیروی دریایی آمریکا و تعیین اهداف برای حمله به آن‌ها بود، منهدم کردند.\n\nدر هفت ماه گذشته، سپاه پاسداران انقلاب اسلامی ایران علاوه بر ناوهای جنگی نیروی دریایی آمریکا، همچنان هزاران دریانورد غیرنظامی را که از آب‌های منطقه عبور می‌کنند، بدون تمایز هدف قرار داده است.\n\nخدمه این لنج پیش از انهدام آن، به‌سلامت از شناور خارج شدند. تلاش‌ها برای بازگرداندن آن‌ها به کشورشان ادامه دارد.\nCENTCOM\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1792010902.5914545,
-      "retries": 3,
-      "last_retry_at": 1792011991.9304416
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39092",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39092,
-      "text": "سماع دوي انفجار في صنعاء",
-      "is_edit": false,
-      "enqueued_at": 1792010960.8959076,
-      "retries": 3,
-      "last_retry_at": 1792012022.0114894
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25660",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25660,
-      "text": "ترامپ درباره ایلان ماسک:\nایلان ۸۰ درصد یک نابغه فوق‌العاده است و ۲۰ درصد هم یک مشکل کوچکی دارد( با حرکت دست نشون میده مخش تاب داره ) من همیشه این را به خودش می‌گویم.\nاو مرد فوق‌العاده‌ای است.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792011054.404931,
-      "retries": 3,
-      "last_retry_at": 1792012036.3521564
-    },
     {
       "id": "vip_multi_agent_Alibk3_39094",
       "pipeline": "vip_multi_agent",
@@ -1202,8 +1006,8 @@
       "text": "خلال آخر 24 ساعة، رُصدت 98 طائرة عسكرية في المنطقة، بينها 10 طائرات نقل وصلت من خارجها، منها 7 أميركية واثنتان بريطانيتان وواحدة إيطالية، إضافة إلى 7 طائرات نقل عسكري إقليمي و37 طائرة تزود بالوقود و8 طائرات تجسس و34 طائرة نقل عسكري تنقّلت داخل المنطقة ومروحيتان عسكريتان.",
       "is_edit": false,
       "enqueued_at": 1792011772.053179,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 7,
+      "last_retry_at": 1792014073.0761423
     },
     {
       "id": "vip_multi_agent_withyashar_25661",
@@ -1213,9 +1017,64 @@
       "text": "دونالد ترامپ: «رهبران رده اول آن‌ها از بین رفته‌اند. آن‌ها رهبران رده دوم را انتخاب کردند، اما رهبران رده دومشان هم از بین رفتند. سپس رهبران رده سوم را انتخاب کردند که نیمی از آن‌ها نیز از بین رفته‌اند. آن‌ها از من قول گرفتند که دیگر کسی را هدف قرار ندهم و من هم این قول را به آن‌ها دادم. به آن‌ها قول دادم. اما هیچ‌کس نمی‌خواهد رئیس‌جمهور جمهوری اسلامی ایران شود.»\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792012081.7360988,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 7,
+      "last_retry_at": 1792014126.378208
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39095",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39095,
+      "text": "ترامب عن إيران:\n\nالسبب وراء هجومنا على إيران كان حقاً للدفاع، لأننا لا نريد أن يملكون سلاحاً يمكنه تدمير ملايين الأشخاص في ضربة واحدة.",
+      "is_edit": true,
+      "enqueued_at": 1792012421.7740836,
+      "retries": 6,
+      "last_retry_at": 1792014139.6800296
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39096",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39096,
+      "text": "القوات المسلحة اليمنية بفضل الله قبل قليل من استهداف طائرة حربية سعودية نوع \"تايفون\" أقلعت من قاعدة الطائف وتم استهدافها في أجواء محافظة صعدة بصاروخ أرض جو وتمت إصابتها إصابة مباشرة وهي معرضة للسقوط.",
+      "is_edit": false,
+      "enqueued_at": 1792012611.852032,
+      "retries": 6,
+      "last_retry_at": 1792014153.2311091
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25663",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25663,
+      "text": "دونالد ترامپ در مورد ایران : «احتمالاً این کار کمی بیش از حد پیش رفت. متأسفم، چون دیگر نمی‌دانم اصلاً با چه کسانی طرف هستیم. اما این وضعیت خیلی زود به پایان خواهد رسید.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792012844.1447155,
+      "retries": 6,
+      "last_retry_at": 1792014181.369165
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25664",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25664,
+      "text": "دونالد ترامپ درمورد ایران : «ایران حامی دولتی تروریسم است. اگر آن‌ها سلاح هسته‌ای داشتند، ظرف ۲۴ ساعت از آن استفاده می‌کردند. آن‌ها خاورمیانه را نابود می‌کردند و بعد حمله به ما را از ساحل غربی آمریکا آغاز می‌کردند. به اروپا هم حمله می‌کردند، چون آن‌ها دیوانه‌اند.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792012958.5422137,
+      "retries": 5,
+      "last_retry_at": 1792014194.688738
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25665",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25665,
+      "text": "دونالد ترامپ: «چرا باید زمان حمله به یک کشور را لو بدهید، در حالی که دلیل حمله شما واقعاً دفاعی است؛ چون نمی‌خواهید آن کشور به سلاحی دست پیدا کند که بتواند در یک لحظه میلیون‌ها نفر را نابود کند.»\n@WarRoom\nیاشار : نگفتم !!!! 😀",
+      "is_edit": false,
+      "enqueued_at": 1792013018.093183,
+      "retries": 5,
+      "last_retry_at": 1792014208.6955576
     }
   ],
-  "last_saved": "2026-10-14 21:09:46 UTC"
+  "last_saved": "2026-10-14 21:43:44 UTC"
 }
