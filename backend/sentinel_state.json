@@ -266,8 +266,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "recovered_source",
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
+      "recovered_source"
     ],
     "withyashar_25495": [
       "recovered_source"
@@ -2643,38 +2643,38 @@
   },
   "channel_watermarks": {
     "Alibk3": 39028,
-    "VahidHeadline": 326322,
+    "VahidHeadline": 326325,
     "VahidOOnLine": 265034,
-    "RadioFarda": 162327,
+    "RadioFarda": 162328,
     "IranintlTV": 362183,
-    "Tasnimnews": 451237,
-    "Farsna": 468328,
-    "isna94": 408680,
-    "irna_1313": 462136,
-    "akharinkhabar": 638225,
-    "khabarfouri": 569484,
-    "akhbarefori": 698291,
+    "Tasnimnews": 451250,
+    "Farsna": 468331,
+    "isna94": 408681,
+    "irna_1313": 462143,
+    "akharinkhabar": 638227,
+    "khabarfouri": 569490,
+    "akhbarefori": 698298,
     "dw_farsi": 131150,
-    "entekhab_ir": 383323,
-    "Khabar_Fouri": 551509,
-    "khabari": 201343,
-    "thezoomit": 103833,
-    "farsivoa": 233681,
+    "entekhab_ir": 383324,
+    "Khabar_Fouri": 551515,
+    "khabari": 201346,
+    "thezoomit": 103835,
+    "farsivoa": 233683,
     "myITiran": 18276,
     "Farsi_Iranwire": 94667,
-    "bbcpersian": 293342,
+    "bbcpersian": 293343,
     "Alarabiya_far": 152165,
     "thezoomon": 5263,
-    "Mr_Economy": 64045,
-    "Eghtesadnews_com": 370851,
+    "Mr_Economy": 64046,
+    "Eghtesadnews_com": 370855,
     "Digiato": 114126,
-    "Indypersian": 180153,
-    "withyashar": 25588,
-    "euronewspe": 90606,
-    "Economic_News_Channel": 82778,
+    "Indypersian": 180154,
+    "withyashar": 25589,
+    "euronewspe": 90607,
+    "Economic_News_Channel": 82784,
     "farsna": 468156,
-    "persiannbloomberg": 68302,
-    "VahidOnline": 78716,
+    "persiannbloomberg": 68303,
+    "VahidOnline": 78723,
     "mamlekate": 104815,
     "iliaen": 4744
   },
@@ -2765,8 +2765,8 @@
     "gemini-3.8-flash": 16,
     "gemini-3.5-flash-lite": 438,
     "gemini-2.5-flash": 69,
-    "gemini-3-flash-preview": 20,
-    "gemini-3.1-flash-lite": 104,
+    "gemini-3-flash-preview": 21,
+    "gemini-3.1-flash-lite": 129,
     "gemini-3.1-flash-lite-preview": 27,
     "gemini-3.6-flash": 4,
     "gemini-3.7-flash": 4
@@ -2780,8 +2780,8 @@
       "text": "رویترز به نقل از یک مقام نظامی آمریکایی: سپاه پاسداران پس از آنکه حملات آمریکا بخش عمده زیرساخت‌های راداری ایران را نابود کرد، استفاده از دیده‌بان‌های غیرمسلح روی قایق‌های کوچک را برای شناسایی اهداف احتمالی، از جمله ناوهای جنگی آمریکا، آغاز کرده است. این افراد موقعیت اهداف را برای سپاه گزارش می‌کنند.\nبه گفته این مقام، هفته گذشته نیروهای آمریکایی یک لنج را که برای انتقال اطلاعات هدف‌گیری به سپاه استفاده می‌شد، رهگیری و منهدم کردند. در این حادثه هیچ تلفاتی گزارش نشده است.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1791953803.6542306,
-      "retries": 3,
-      "last_retry_at": 1791953944.4363306
+      "retries": 15,
+      "last_retry_at": 1791955753.2797978
     },
     {
       "id": "vip_multi_agent_VahidOnline_78717",
@@ -2791,9 +2791,9 @@
       "text": "دونالد ترامپ در جریان سخنرانی خود در آلاسکا گفت: «صبر کنید و ببینید با ایران چه خواهیم کرد. ما حسابی از خجالت‌شان درمی‌آییم و آنها فقط نشسته‌اند و منتظرند، چرا که دیگر واقعا کاسه صبرمان لبریز شده و تحملمان تمام شده است.» \n\nاو با تاکید بر اینکه آمریکا پس از دوره‌ای از بی‌احترامی‌ها اکنون دوباره جایگاه مقتدر و محترم خود را در جهان بازیافته است، تصریح کرد: «نکته اساسی و مهم این است که آنها قرار نبود سلاح هسته‌ای داشته باشند و هرگز هم نخواهند داشت؛ برنامه‌ای که اکنون زیر هزاران تن سنگ و صخره مدفون شده است.»\n@VahidOOnLine\n\n📡 @VahidOnline",
       "is_edit": false,
       "enqueued_at": 1791954001.6099038,
-      "retries": 1,
-      "last_retry_at": 1791954020.589667
+      "retries": 12,
+      "last_retry_at": 1791955702.0807285
     }
   ],
-  "last_saved": "2026-10-14 05:00:48 UTC"
+  "last_saved": "2026-10-14 05:29:50 UTC"
 }
