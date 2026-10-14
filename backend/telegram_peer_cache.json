@@ -194,6 +194,11 @@
       "channel_id": 4407315770,
       "access_hash": -4478857711202179352,
       "peer_id": -1004407315770
+    },
+    "netblocks": {
+      "channel_id": 1243366048,
+      "access_hash": -1108222355420708665,
+      "peer_id": -1001243366048
     }
   },
   "id_to_node": {
@@ -274,6 +279,8 @@
     "4368972945": "@VahidOnlineAI",
     "-1004368972945": "@VahidOnlineAI",
     "4407315770": "@iliaenAI",
-    "-1004407315770": "@iliaenAI"
+    "-1004407315770": "@iliaenAI",
+    "1243366048": "netblocks",
+    "-1001243366048": "netblocks"
   }
 }
