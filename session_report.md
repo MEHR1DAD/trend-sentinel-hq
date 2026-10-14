@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 33 minutes
-- **Messages Processed:** 75
-- **Last Message Text:** مراد ویسی، تحلیل‌گر ارشد ایران‌اینترنشنال، گفت: «اظهارات جدید رییس اورژانس تهران درباره بمباران دفتر...
-- **Last Message Time:** 2026-10-14 21:42:47
+- **Uptime:** 30 minutes
+- **Messages Processed:** 52
+- **Last Message Text:** یک کارمند سابق اوپن‌ای‌آی طبق ادعا یک دستگاه USB را در دستمال‌توالت پیچیده و آن را داخل تلویزیون واق...
+- **Last Message Time:** 2026-10-14 22:22:13
