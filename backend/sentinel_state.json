@@ -1,8 +1,5 @@
 {
   "alerted_msg_patterns": {
-    "withyashar_25526": [
-      "recovered_source"
-    ],
     "Alibk3_38914": [
       "recovered_source"
     ],
@@ -199,8 +196,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "آتش‌سوزی در پایگاه هوایی ایران",
-      "recovered_source"
+      "recovered_source",
+      "آتش‌سوزی در پایگاه هوایی ایران"
     ],
     "withyashar_25505": [
       "recovered_source"
@@ -266,8 +263,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "recovered_source",
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
+      "recovered_source"
     ],
     "withyashar_25495": [
       "recovered_source"
@@ -559,15 +556,6 @@
     ]
   },
   "vip_alert_history": {
-    "withyashar_25526": {
-      "target_channel": "@DidebanJang",
-      "sent_msg_id": 208,
-      "time": 1791871565.0336223,
-      "text": "ترامپ: شعار موردعلاقه‌ام«گی‌ها حامی فلسطین هستند!» می‌دانید اگر گی باشید، آنجا چه بلایی سرتان می‌آورند؟ شما را از بالای ساختمان به پایین پرت می‌کنند. شما را به بالای بلندترین ساختمانی که دارند می‌برند ــ البته ساختمان چندان بلندی هم نیست ــ و از آنجا به پایین پرتتان می‌کنند. بااین‌حال، مدام می‌بینم گی‌ها از فلسطین حمایت می‌کنند!»\nاو در ادامه با لحنی کنایه‌آمیز پرسید: «زنان حامی فلسطین چه بلایی سرشان می‌آید؟»\n@WarRoom",
-      "pattern": "withyashar_autonomous",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 8.93
-    },
     "Alibk3_38914": {
       "sent_msg_id": 202,
       "target_channel": "@DidebanJang",
@@ -875,16 +863,6 @@
     "حملات نظامی، تلفات جانی و احکام و اعدام معترضان در فرودگاه کرمان، میدان آزادی": 1791952970.7643518
   },
   "alibk_posted": {
-    "38670": {
-      "channel": "@DidebanJang",
-      "msg_id": 108,
-      "timestamp": 1791699430.0
-    },
-    "38671": {
-      "channel": "@DidebanJang",
-      "msg_id": 109,
-      "timestamp": 1791699582.0
-    },
     "38673": {
       "channel": "@DidebanJang",
       "msg_id": 110,
@@ -1452,32 +1430,6 @@
     }
   },
   "thread_alerts": {
-    "withyashar_25526": {
-      "channel": "@DidebanJang",
-      "alert_msg_id": 208,
-      "node": "withyashar",
-      "root_id": 25526,
-      "root_text": "ترامپ: شعار موردعلاقه‌ام«گی‌ها حامی فلسطین هستند!» می‌دانید اگر گی باشید، آنجا چه بلایی سرتان می‌آورند؟ شما را از بالای ساختمان به پایین پرت می‌کنند. شما را به بالای بلندترین ساختمانی که دارند می‌برند ــ البته ساختمان چندان بلندی هم نیست ــ و از آنجا به پایین پرتتان می‌کنند. بااین‌حال، مدام می‌بینم گی‌ها از فلسطین حمایت می‌کنند!»\nاو در ادامه با لحنی کنایه‌آمیز پرسید: «زنان حامی فلسطین چه بلایی سرشان می‌آید؟»\n@WarRoom",
-      "root_media_type": "video",
-      "timestamp": 1791871565.03502,
-      "category": "WAR",
-      "is_iran_related": false,
-      "title": "ترامپ حمایت دوجنس‌گرایان و زنان از فلسطین را به سخره گرفت",
-      "summary": "دونالد ترامپ، رئیس‌جمهور سابق ایالات متحده، در اظهاراتی کنایه‌آمیز به حمایت برخی گروه‌های مدافع حقوق دوجنس‌گرایان و زنان از فلسطین تاخت. او با اشاره به وضعیت حقوق این اقلیت‌ها در مناطق تحت کنترل گروه‌های تندرو فلسطینی، این تناقض رفتاری را زیر سؤال برد. این اظهارات در راستای تلاش‌های ترامپ برای به چالش کشیدن موج اعتراضات و حمایت‌های دانشگاهی و مدنیِ غرب از فلسطین مطرح شده است.",
-      "ai_model": "gemini-3.5-flash-lite",
-      "latency_sec": 8.93,
-      "sources": [
-        {
-          "node": "withyashar",
-          "msg_id": 25526,
-          "media_type": "video",
-          "link": "https://t.me/withyashar/25526",
-          "timestamp": 1791871565.035024
-        }
-      ],
-      "replies": [],
-      "tag": "#دیده‌بان_جنگ"
-    },
     "Alibk3_38912": {
       "channel": "@DidebanJang",
       "alert_msg_id": 209,
@@ -2642,36 +2594,36 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39028,
-    "VahidHeadline": 326329,
-    "VahidOOnLine": 265035,
-    "RadioFarda": 162328,
+    "Alibk3": 39031,
+    "VahidHeadline": 326333,
+    "VahidOOnLine": 265036,
+    "RadioFarda": 162329,
     "IranintlTV": 362183,
-    "Tasnimnews": 451255,
-    "Farsna": 468332,
-    "isna94": 408685,
-    "irna_1313": 462149,
-    "akharinkhabar": 638231,
-    "khabarfouri": 569494,
-    "akhbarefori": 698305,
-    "dw_farsi": 131151,
-    "entekhab_ir": 383326,
-    "Khabar_Fouri": 551517,
-    "khabari": 201349,
-    "thezoomit": 103836,
-    "farsivoa": 233686,
+    "Tasnimnews": 451266,
+    "Farsna": 468335,
+    "isna94": 408689,
+    "irna_1313": 462152,
+    "akharinkhabar": 638237,
+    "khabarfouri": 569498,
+    "akhbarefori": 698314,
+    "dw_farsi": 131153,
+    "entekhab_ir": 383329,
+    "Khabar_Fouri": 551518,
+    "khabari": 201353,
+    "thezoomit": 103837,
+    "farsivoa": 233688,
     "myITiran": 18276,
     "Farsi_Iranwire": 94667,
-    "bbcpersian": 293344,
-    "Alarabiya_far": 152166,
-    "thezoomon": 5265,
-    "Mr_Economy": 64047,
-    "Eghtesadnews_com": 370859,
-    "Digiato": 114129,
-    "Indypersian": 180155,
+    "bbcpersian": 293345,
+    "Alarabiya_far": 152169,
+    "thezoomon": 5266,
+    "Mr_Economy": 64048,
+    "Eghtesadnews_com": 370864,
+    "Digiato": 114131,
+    "Indypersian": 180156,
     "withyashar": 25589,
-    "euronewspe": 90608,
-    "Economic_News_Channel": 82791,
+    "euronewspe": 90609,
+    "Economic_News_Channel": 82794,
     "farsna": 468156,
     "persiannbloomberg": 68303,
     "VahidOnline": 78723,
@@ -2766,8 +2718,8 @@
     "gemini-3.5-flash-lite": 439,
     "gemini-2.5-flash": 71,
     "gemini-3-flash-preview": 22,
-    "gemini-3.1-flash-lite": 139,
-    "gemini-3.1-flash-lite-preview": 28,
+    "gemini-3.1-flash-lite": 153,
+    "gemini-3.1-flash-lite-preview": 30,
     "gemini-3.6-flash": 4,
     "gemini-3.7-flash": 4
   },
@@ -2780,9 +2732,20 @@
       "text": "توقف مطار جدة الآن.",
       "is_edit": false,
       "enqueued_at": 1791957176.2524233,
-      "retries": 3,
-      "last_retry_at": 1791957329.8709671
+      "retries": 14,
+      "last_retry_at": 1791959220.4972327
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39030",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39030,
+      "text": "توقف 7 مطارات سعودية عن استقبال الرحلات حتى الآن:\n\n مطاري نجران وجازان لأكثر من 188 ساعة، والرياض لنحو 91 ساعة، وينبع لأكثر من 61 ساعة، وعرعر لنحو 24 ساعة، وحائل لنحو 12 ساعة، والجوف لنحو 11 ساعة.",
+      "is_edit": true,
+      "enqueued_at": 1791958840.6351116,
+      "retries": 2,
+      "last_retry_at": 1791958967.0591629
     }
   ],
-  "last_saved": "2026-10-14 05:58:18 UTC"
+  "last_saved": "2026-10-14 06:27:40 UTC"
 }
