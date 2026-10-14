@@ -233,8 +233,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
-      "recovered_source"
+      "recovered_source",
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
     ],
     "withyashar_25495": [
       "recovered_source"
@@ -2036,41 +2036,41 @@
   },
   "channel_watermarks": {
     "Alibk3": 39078,
-    "VahidHeadline": 326420,
-    "VahidOOnLine": 265098,
+    "VahidHeadline": 326426,
+    "VahidOOnLine": 265102,
     "RadioFarda": 162332,
-    "IranintlTV": 362248,
-    "Tasnimnews": 451350,
-    "Farsna": 468429,
-    "isna94": 408766,
-    "irna_1313": 462345,
-    "akharinkhabar": 638332,
-    "khabarfouri": 569585,
-    "akhbarefori": 698449,
+    "IranintlTV": 362254,
+    "Tasnimnews": 451355,
+    "Farsna": 468438,
+    "isna94": 408770,
+    "irna_1313": 462360,
+    "akharinkhabar": 638336,
+    "khabarfouri": 569590,
+    "akhbarefori": 698455,
     "dw_farsi": 131197,
-    "entekhab_ir": 383379,
-    "Khabar_Fouri": 551601,
-    "khabari": 201445,
-    "thezoomit": 103865,
-    "farsivoa": 233739,
+    "entekhab_ir": 383381,
+    "Khabar_Fouri": 551604,
+    "khabari": 201449,
+    "thezoomit": 103867,
+    "farsivoa": 233747,
     "myITiran": 18283,
     "Farsi_Iranwire": 94692,
-    "bbcpersian": 293358,
-    "Alarabiya_far": 152219,
-    "thezoomon": 5280,
+    "bbcpersian": 293362,
+    "Alarabiya_far": 152222,
+    "thezoomon": 5282,
     "Mr_Economy": 64057,
-    "Eghtesadnews_com": 370924,
-    "Digiato": 114159,
-    "Indypersian": 180184,
+    "Eghtesadnews_com": 370925,
+    "Digiato": 114160,
+    "Indypersian": 180186,
     "withyashar": 25631,
     "euronewspe": 90630,
     "Economic_News_Channel": 82835,
     "farsna": 468156,
-    "persiannbloomberg": 68364,
+    "persiannbloomberg": 68366,
     "VahidOnline": 78728,
     "mamlekate": 104818,
-    "iliaen": 4744,
-    "netblocks": 1567
+    "netblocks": 1567,
+    "iliaen": 4744
   },
   "vahid_post_time": {
     "78694": 1791735142.0123565
@@ -2167,5 +2167,5 @@
     "gemini-flash-lite-latest": 3
   },
   "smart_queue": [],
-  "last_saved": "2026-10-14 15:18:55 UTC"
+  "last_saved": "2026-10-14 15:47:50 UTC"
 }
