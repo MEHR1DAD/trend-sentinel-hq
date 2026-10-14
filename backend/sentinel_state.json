@@ -233,8 +233,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "recovered_source",
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
+      "recovered_source"
     ],
     "withyashar_25495": [
       "recovered_source"
@@ -538,6 +538,12 @@
     ],
     "Alibk3_38914": [
       "recovered_source"
+    ],
+    "Alibk3_38926": [
+      "recovered_source"
+    ],
+    "withyashar_25540": [
+      "recovered_source"
     ]
   },
   "vip_alert_history": {
@@ -777,11 +783,6 @@
     "حملات نظامی در ایران، تهران، اسرائیل، تل آویو": 1791966227.9855578
   },
   "alibk_posted": {
-    "38702": {
-      "channel": "@DidebanJang",
-      "msg_id": 147,
-      "timestamp": 1791727638.0
-    },
     "38712": {
       "channel": "@DidebanJang",
       "msg_id": 125,
@@ -866,11 +867,6 @@
       "channel": "@DidebanJang",
       "msg_id": 155,
       "timestamp": 1791750130.0
-    },
-    "38811": {
-      "channel": "@DidebanJang",
-      "msg_id": 147,
-      "timestamp": 1791727638.0
     },
     "38817": {
       "channel": "@DidebanJang",
@@ -2039,38 +2035,38 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39073,
-    "VahidHeadline": 326346,
-    "VahidOOnLine": 265084,
+    "Alibk3": 39074,
+    "VahidHeadline": 326409,
+    "VahidOOnLine": 265090,
     "RadioFarda": 162332,
-    "IranintlTV": 362233,
-    "Tasnimnews": 451341,
-    "Farsna": 468407,
-    "isna94": 408759,
-    "irna_1313": 462308,
-    "akharinkhabar": 638251,
-    "khabarfouri": 569527,
-    "akhbarefori": 698423,
-    "dw_farsi": 131192,
-    "entekhab_ir": 383371,
-    "Khabar_Fouri": 551585,
-    "khabari": 201430,
-    "thezoomit": 103846,
-    "farsivoa": 233727,
+    "IranintlTV": 362237,
+    "Tasnimnews": 451344,
+    "Farsna": 468410,
+    "isna94": 408760,
+    "irna_1313": 462320,
+    "akharinkhabar": 638317,
+    "khabarfouri": 569580,
+    "akhbarefori": 698430,
+    "dw_farsi": 131194,
+    "entekhab_ir": 383374,
+    "Khabar_Fouri": 551588,
+    "khabari": 201436,
+    "thezoomit": 103865,
+    "farsivoa": 233731,
     "myITiran": 18283,
-    "Farsi_Iranwire": 94668,
+    "Farsi_Iranwire": 94687,
     "bbcpersian": 293358,
-    "Alarabiya_far": 152204,
-    "thezoomon": 5277,
+    "Alarabiya_far": 152213,
+    "thezoomon": 5278,
     "Mr_Economy": 64057,
-    "Eghtesadnews_com": 370916,
-    "Digiato": 114134,
-    "Indypersian": 180179,
-    "withyashar": 25620,
-    "euronewspe": 90614,
-    "Economic_News_Channel": 82830,
+    "Eghtesadnews_com": 370918,
+    "Digiato": 114155,
+    "Indypersian": 180180,
+    "withyashar": 25622,
+    "euronewspe": 90630,
+    "Economic_News_Channel": 82835,
     "farsna": 468156,
-    "persiannbloomberg": 68361,
+    "persiannbloomberg": 68364,
     "VahidOnline": 78728,
     "mamlekate": 104818,
     "iliaen": 4744
@@ -2160,7 +2156,7 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 16,
-    "gemini-3.5-flash-lite": 493,
+    "gemini-3.5-flash-lite": 501,
     "gemini-2.5-flash": 88,
     "gemini-3-flash-preview": 46,
     "gemini-3.1-flash-lite": 189,
@@ -2169,5 +2165,5 @@
     "gemini-3.7-flash": 4
   },
   "smart_queue": [],
-  "last_saved": "2026-10-14 13:48:19 UTC"
+  "last_saved": "2026-10-14 14:17:29 UTC"
 }

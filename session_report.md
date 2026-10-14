@@ -1,8 +1,9 @@
 # Sentinel Session Report
 
-- **Uptime:** 30 minutes
-- **Messages Processed:** 117
-- **Last Message Text:** 🎥 روز جهانی عصای سفید؛ وقتی همه ی راه‌ها با چشم دیده نمی‌شوند
+- **Uptime:** 28 minutes
+- **Messages Processed:** 106
+- **Last Message Text:** رد پنالتی پرسپولیس بعد از بازبینی VAR
 
-@IRNA_1313
-- **Last Message Time:** 2026-10-14 13:47:53
+#فوتبال
+@TasnimNews
+- **Last Message Time:** 2026-10-14 14:17:07
