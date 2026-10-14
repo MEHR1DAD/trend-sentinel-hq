@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 32
-- **Last Message Text:** 🎥 شنیده‌شدن صدای انفجار مهیب در تل‌آویو
+- **Messages Processed:** 23
+- **Last Message Text:** اعتراف فرماندهٔ پیشین سنتکام به قدرت پهپادی ایران
 
-🔹شبکه ۱۲ تلویزیون صهیونیستی در این‌باره گزارش داد که به‌نظر...
-- **Last Message Time:** 2026-10-13 23:48:34
+🔹دیوید پترائوس رئیس پیشین سازمان سیا که فرماندهی ...
+- **Last Message Time:** 2026-10-14 00:18:41
