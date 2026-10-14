@@ -437,8 +437,8 @@ class LiveSentinel:
         self.load_peer_cache()
         cached_nodes = set(self.node_peer_cache.get('node_peers', {}).keys())
 
-        # Include all radar/source nodes AND destination target channels
-        dest_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat', '@VahidOnlineAI', '@iliaenAI']
+        # Include destination target channels
+        dest_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat']
         all_targets = list(self.nodes)
         for d in dest_channels:
             if d not in all_targets and d.lstrip('@') not in all_targets:
@@ -958,12 +958,12 @@ class LiveSentinel:
     async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None, skip_mirror_channels=False):
         async with self.lock:
             canon = (node or '').lower()
-            vip_map_fast = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen', 'withyashar': 'withyashar', 'alibk3': 'Alibk3'}
+            vip_map_fast = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen', 'withyashar': 'withyashar', 'alibk3': 'Alibk3', 'netblocks': 'netblocks'}
             canon_node = vip_map_fast.get(canon, node or 'unknown')
 
             if not skip_mirror_channels:
-                # VIP Channels: 4-Soldier Multi-Agent Pipeline (withyashar, Alibk3, VahidOnline, iliaen)
-                if canon in ('vahidonline', 'iliaen', 'withyashar', 'alibk3'):
+                # VIP Channels: 5-Soldier Multi-Agent Pipeline (withyashar, Alibk3, VahidOnline, iliaen, netblocks)
+                if canon in ('vahidonline', 'iliaen', 'withyashar', 'alibk3', 'netblocks'):
                     asyncio.create_task(self.vip_pipeline.handle_message(text, canon_node, msg_id, raw_msg=raw_msg, is_edit=is_edit))
                     return
 
@@ -1095,7 +1095,7 @@ async def main():
         last_ids = {}
         last_deletion_check = time.time()
         general_idx = 0
-        vip_nodes = [n for n in sentinel.nodes if (n or '').lower() in ('withyashar', 'alibk3', 'vahidonline', 'iliaen')]
+        vip_nodes = [n for n in sentinel.nodes if (n or '').lower() in ('withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks')]
         general_nodes = [n for n in sentinel.nodes if n not in vip_nodes]
 
         while True:

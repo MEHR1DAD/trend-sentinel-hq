@@ -16,6 +16,7 @@ from backend.core.config import (
     get_media_icon_from_type,
     classify_war_urgency,
     calculate_source_latency,
+    detect_territory_scope,
     safe_extract_json
 )
 
@@ -220,19 +221,19 @@ class VipMultiAgentEditorialPipeline:
 
         prompt = (
             "تو «سرباز شماره ۱+۲ - دروازه‌بان و مسیرساز فوق‌سریع دیده‌بان» هستی.\n"
-            f"متن زیر از کانال VIP '{node}' دریافت شده است (ممکن است به زبان فارسی یا عربی باشد):\n\n"
+            f"متن زیر از کانال VIP '{node}' دریافت شده است (ممکن است به زبان فارسی، عربی یا انگلیسی باشد):\n\n"
             f"--- متن خام ---\n{clean_prompt_text}\n----------------\n\n"
             f"نوع پیوست چندرسانه‌ای: {media_type}\n\n"
             "وظیفه تو این است که سریعاً متن را بخوانید و تصمیم بگیرید:\n\n"
             "۱. decision (تصمیم):\n"
-            "   - 'ROUTE': اگر پیام دارای ارزش خبری، نظامی، امنیتی، اقتصادی، سیاسی یا حقوق بشری مهم و ملموس است.\n"
-            "   - 'DROP': اگر پیام شوخی، طنز، میم، کل‌کل، احوالپرسی شخصی، تسلیت/تبریک عمومی، تبلیغات، نظرسنجی روزمره، یا محتوای غیرخبری کم‌ارزش است. همچنین اگر از وحید یا ایلیا اخباری کاملاً غیرمرتبط با ۳ کانال ما است (مثل اخبار ورزشی/سینمایی/فناوری روزمره).\n\n"
+            "   - 'ROUTE': اگر پیام دارای ارزش خبری، نظامی، امنیتی، اقتصادی، سیاسی یا حقوق بشری مهم و ملموس است. همچنین اگر پیام از 'netblocks' پیرامون اختلال، قطعی یا افت اینترنت در ایران یا رویدادهای بحرانی جنگی است، حتماً 'ROUTE' شود.\n"
+            "   - 'DROP': اگر پیام شوخی، طنز، میم، کل‌کل، احوالپرسی شخصی، تسلیت/تبریک عمومی، تبلیغات، نظرسنجی روزمره، یا محتوای غیرخبری کم‌ارزش است. اگر پیام از 'netblocks' درباره کشورهای دوردست و نامربوط به ایران و خاورمیانه است، 'DROP' شود.\n\n"
             "۲. drop_reason:\n"
             "   - در صورت تصمیم DROP، دلیل خلاصه فارسی را بنویس؛ در غیر این صورت خالی باشد.\n\n"
             "۳. target_channel (انتخاب کانال مناسب):\n"
-            "   - '@DidebanJang': اخبار جنگ، نظامی، تحرکات موشکی/پهپادی، حملات هوایی، پدافند، انفجارها، ناوها، بمب‌افکن‌ها، بیانیه‌های نظامی و درگیری‌های منطقه‌ای.\n"
+            "   - '@DidebanJang': اخبار جنگ، نظامی، تحرکات موشکی/پهپادی، حملات هوایی، پدافند، انفجارها، درگیری‌های منطقه‌ای، و اختلالات اینترنت هم‌زمان با وضعیت جنگی.\n"
             "   - '@DidehbanEghtesad': نوسانات دلار، تتر، طلا، سکه، بورس، نفت، گاز، انرژی، تحریم‌ها و رویدادهای اقتصادی.\n"
-            "   - '@DidebanEterazat': گزارش‌های کارگری، احکام قضایی، دادگاه، زندان، اعدام، حقوق بشر و اعتراضات مردمی.\n\n"
+            "   - '@DidebanEterazat': گزارش‌های کارگری، احکام قضایی، دادگاه، زندان، اعدام، حقوق بشر، اعتراضات مردمی، و قطعی اینترنت مرتبط با اعتراضات مدنی.\n\n"
             "۴. urgency_level (سطح فوریت خبر جنگی):\n"
             "   - 'EMERGENCY': فقط برای رویدادهای میدانی زنده و دارای صدای آژیر یا انفجار لحظه‌ای (شلیک موشک/پهپاد، بمباران مستقیم، آژیر قرمز، پدافند فعال).\n"
             "   - 'BREAKING': اخبار و تحولات مهم و فوری بدون آژیر (سخنان مقامات، تحرکات ناوها، تصمیمات استراتژیک، گزارش‌های اختصاصی).\n"
@@ -324,89 +325,89 @@ class VipMultiAgentEditorialPipeline:
                     break
 
         now = time.time()
-        six_hours = 6 * 3600 # 21600 seconds
+        two_hours = 2 * 3600 # 7200 seconds (سقف پنجره پیوستگی اخبار)
 
-        # استخراج رشته‌های فعال در کانال مقصد طی ۶ ساعت گذشته
+        # استخراج حوزه جغرافیایی و مرزهای ادغام (Territory Scope)
+        new_scope = detect_territory_scope(text, candidate_title)
+        new_scope_str = new_scope.get('scope', 'UNKNOWN')
+
+        # استخراج رشته‌های فعال در کانال مقصد طی ۲ ساعت گذشته با انطباق قطعی حوزه جغرافیایی
         candidate_threads = []
         for tk, td in self.sentinel.thread_alerts.items():
             if not isinstance(td, dict):
                 continue
             if td.get('channel') != target_channel:
                 continue
-            thread_time = td.get('timestamp', 0)
-            if (now - thread_time) > six_hours:
+            thread_time = td.get('updated_at') or td.get('timestamp', 0)
+            if (now - thread_time) > two_hours:
                 continue
-            candidate_threads.append((tk, td))
+
+            # بررسی انطباق قطعی حوزه جغرافیایی (خارج از ایران به تفکیک کشور؛ داخل ایران به تفکیک شهر/منطقه)
+            td_text = f"{td.get('title', '')} {td.get('summary', '')} {td.get('root_text', '')}"
+            td_scope = td.get('territory_scope') or detect_territory_scope(td_text, td.get('title', ''))
+            td_scope_str = td_scope.get('scope', 'UNKNOWN')
+
+            if new_scope_str != td_scope_str:
+                # حوزه‌های جغرافیایی متفاوت (مثلاً شهرهای مختلف ایران یا کشورهای مختلف) هرگز با هم ادغام یا ریپلای نمی‌شوند
+                continue
+
+            candidate_threads.append((tk, td, td_scope, thread_time))
 
         if not candidate_threads:
-            print(f"ℹ️ [SOLDIER 4: THREAD WATCHER] No active threads in {target_channel} within 6h window. Decision: NEW_ALERT")
+            print(f"ℹ️ [SOLDIER 4: THREAD WATCHER] No active threads in {target_channel} within 2h window for scope '{new_scope_str}'. Decision: NEW_ALERT")
             return {
                 "relation": "NEW_ALERT",
                 "target_thread_key": None,
-                "merge_reason": "No active threads within 6 hours",
+                "target_thread_data": None,
+                "merge_reason": f"No active threads within 2h for territory scope {new_scope_str}",
+                "territory_scope": new_scope,
                 "model": "rule_engine",
                 "elapsed": 0.0
             }
 
-        # مرتب‌سازی از جدیدترین به قدیمی‌ترین
-        candidate_threads.sort(key=lambda item: item[1].get('timestamp', 0), reverse=True)
+        # مرتب‌سازی از تازه‌ترین به‌روزرسانی به قدیمی‌ترین
+        candidate_threads.sort(key=lambda item: item[3], reverse=True)
+        target_tk, target_td, target_scope, target_time = candidate_threads[0]
 
-        # استخراج انکرهای معنایی و جغرافیایی برای فیلتر اولیه
-        candidate_anchors = set()
-        if self.threads:
-            candidate_anchors = self.threads.extract_message_anchors(text, candidate_title)
-
-        relevant_candidates = []
-        for tk, td in candidate_threads:
-            thread_text = f"{td.get('title', '')} {td.get('summary', '')} {td.get('root_text', '')}"
-            existing_anchors = self.threads.extract_message_anchors(thread_text, td.get('title', '')) if self.threads else set()
-            overlap = candidate_anchors.intersection(existing_anchors)
-            
-            is_same_source = (td.get('node') == node or any(s.get('node') == node for s in td.get('sources', [])))
-            time_diff = now - td.get('timestamp', 0)
-
-            # اگر منبع یکسان است یا همپوشانی معنادار در کلمات جغرافیایی/عملیاتی دارد
-            if overlap or (is_same_source and time_diff <= 2700):
-                relevant_candidates.append((tk, td, overlap, is_same_source, time_diff))
-
-        if not relevant_candidates:
-            # هیچ کاندیدای مرتبطی پیدا نشد؛ پست جدید
-            return {
-                "relation": "NEW_ALERT",
-                "target_thread_key": None,
-                "merge_reason": "No thematic/theatre overlap with active 6h threads",
-                "model": "anchor_filter",
-                "elapsed": 0.0
-            }
-
-        # بررسی هوشمند با سرباز ۴ (مدل Flash) روی نزدیک‌ترین کاندیداها
-        best_candidate = relevant_candidates[0]
-        target_tk, target_td, overlap, is_same_source, time_diff = best_candidate
-
+        time_diff = now - target_time
         existing_title = target_td.get('title', '')
         existing_summary = target_td.get('summary', '')
+        is_same_source = (target_td.get('node') == node or any(s.get('node') == node for s in target_td.get('sources', [])))
+        same_source_hint = "نکته کمکی: این خبر جدید از همان کانال منبع فرستاده شده است.\n" if is_same_source else ""
 
-        same_source_hint = "نکته بسیار مهم: این خبر جدید از همان کانال منبع فرستاده شده است.\n" if is_same_source else ""
+        # تعیین رژیم تصمیم‌گیری بر اساس زمان:
+        # فاز ۱: زیر ۳۰ دقیقه (۰ تا ۱۸۰۰ ثانیه) -> امکان ادغام درجا (MERGE)
+        # فاز ۲: بین ۳۰ دقیقه تا ۲ ساعت (۱۸۰۰ تا ۷۲۰۰ ثانیه) -> امکان ریپلای روی خبر قبلی (THREAD_REPLY)
+        if time_diff <= 1800:
+            allowed_relations = '"MERGE" | "NEW_ALERT"'
+            time_policy_text = (
+                f"زمان دریافت: {int(time_diff/60)} دقیقه پس از هشدار قبلی (زیر ۳۰ دقیقه).\n"
+                "- تصمیم 'MERGE': اگر این خبر مستقیماً درباره همین واقعه است (تصاویر جدید، آمار خسارات، تأیید رسمی یا جزئیات فوری همان ماجرا) تا در همان پست ادغام و ویرایش شود.\n"
+                "- تصمیم 'NEW_ALERT': اگر یک حادثه یا رویداد مستقل است (حتی با اینکه در همان حوزه رخ داده).\n"
+            )
+        else:
+            allowed_relations = '"THREAD_REPLY" | "NEW_ALERT"'
+            time_policy_text = (
+                f"زمان دریافت: {int(time_diff/60)} دقیقه پس از هشدار قبلی (بین ۳۰ دقیقه تا ۲ ساعت).\n"
+                "جهت جلوگیری از تولید پست‌های طوماری و بیش‌ازحد طولانی، ادغام مستقیم در پست قبلی مجاز نیست.\n"
+                "- تصمیم 'THREAD_REPLY': اگر پیوستگی و امتداد این خبر به هشدار قبلی محرز است (واکنش‌های بعدی، تحولات تکمیلی، یا ابعاد جدید همان ماجرا) تا به صورت یک پست تازه و مجزا که روی خبر قبلی ریپلای شده منتشر شود (هم نوتیفیکیشن ایجاد می‌کند و هم به پست مادر متصل می‌شود).\n"
+                "- تصمیم 'NEW_ALERT': اگر حادثه یا موضوعی مستقل است و نیازی به ریپلای ندارد.\n"
+            )
 
         prompt = (
-            "تو «سرباز شماره ۴ - دیده‌بان و ناظر ارشد رشته‌های خبری ۶ ساعته دیده‌بان» هستی.\n"
-            "یک هشدار خبری فعال در ۶ ساعت گذشته در کانال منتشر شده و اکنون یک خبر جدید دریافت شده است:\n\n"
-            f"📌 [هشدار فعال قبلی در کانال]:\n"
+            "تو «سرباز شماره ۴ - دیده‌بان و ناظر پیوستگی رشته‌های خبری دیده‌بان» هستی.\n"
+            f"یک هشدار فعال در کانال با حوزه جغرافیایی یکسان ({new_scope_str}) ثبت شده و اکنون خبر جدید دریافت شده است:\n\n"
+            f"📌 [هشدار فعال قبلی]:\n"
             f"تیتر: {existing_title}\n"
             f"چکیده: {existing_summary}\n\n"
             f"📥 [خبر جدید دریافت شده از {node}]:\n"
             f"{text}\n\n"
             f"{same_source_hint}"
-            "وظیفه تو این است که تصمیم بگیری آیا این خبر جدید باید با هشدار قبلی ادغام (MERGE) شود یا یک پست جدید و مستقل (NEW_ALERT) باشد:\n\n"
-            "قوانین ادغام (MERGE):\n"
-            "۱. موج حملات همزمان / جبهه نبرد مشترک: اگر خبر جدید درباره حملات موشکی، پهپادی یا انفجار در همان کشور یا جبهه جنگ است (حتی نقاط مختلف در همان کشور)، این یک موج عملیاتی واحد است و باید MERGE شود.\n"
-            "۲. پیگیری و ابعاد تکمیلی: تلفات، تصاویر جدید، خسارات، بیانیه‌های مسئولان، لغو پروازها یا موضع‌گیری‌های تکمیلی پیرامون همان ماجرا باید MERGE شود.\n"
-            "۳. گزارش‌های پیاپی از یک منبع (Same Source): اگر منبع خبر همان کانال است و رویداد مرتبط را دنبال می‌کند، باید MERGE شود.\n\n"
-            "تنها در صورتی NEW_ALERT است که:\n"
-            "- ماجرا کاملاً در کشوری دیگر یا جبهه‌ای کاملاً بی‌ربط رخ داده باشد، یا ماهیت موضوع هیچ ربطی به هشدار فعال قبلی نداشته باشد.\n\n"
+            f"قوانین تصمیم‌گیری:\n"
+            f"{time_policy_text}\n"
             "پاسخ را دقیقاً در قالب شیء JSON زیر بدون هیچ متن اضافی ارسال کن:\n"
             "{\n"
-            '  "relation": "MERGE" | "NEW_ALERT",\n'
+            f'  "relation": {allowed_relations},\n'
             '  "merge_reason": "دلیل فنی و ژورنالیستی تصمیم"\n'
             "}"
         )
@@ -426,11 +427,19 @@ class VipMultiAgentEditorialPipeline:
         if res and isinstance(res, dict):
             try:
                 rel = str(res.get("relation", "NEW_ALERT")).upper().strip()
+                if time_diff <= 1800:
+                    if rel != "MERGE":
+                        rel = "NEW_ALERT"
+                else:
+                    if rel != "THREAD_REPLY":
+                        rel = "NEW_ALERT"
+
                 return {
                     "relation": rel,
-                    "target_thread_key": target_tk if rel == "MERGE" else None,
-                    "target_thread_data": target_td if rel == "MERGE" else None,
+                    "target_thread_key": target_tk if rel in ("MERGE", "THREAD_REPLY") else None,
+                    "target_thread_data": target_td if rel in ("MERGE", "THREAD_REPLY") else None,
                     "merge_reason": str(res.get("merge_reason", "")).strip(),
+                    "territory_scope": new_scope,
                     "model": used_model,
                     "elapsed": elapsed
                 }
@@ -442,6 +451,7 @@ class VipMultiAgentEditorialPipeline:
             "target_thread_key": None,
             "target_thread_data": None,
             "merge_reason": "Fallback to NEW_ALERT on parse error",
+            "territory_scope": new_scope,
             "model": used_model or "unknown",
             "elapsed": elapsed
         }
@@ -450,14 +460,16 @@ class VipMultiAgentEditorialPipeline:
     # --- سرباز ۳: سردبیر و تحلیلگر ارشد حوزه تخصصی (Flash Stack) ---
     # ==============================================================
 
-    async def soldier_3_domain_editor(self, text, node, target_channel, is_merge=False, existing_thread_data=None, urgency_level="BREAKING", is_iran_related=False):
+    async def soldier_3_domain_editor(self, text, node, target_channel, is_merge=False, is_reply=False, existing_thread_data=None, urgency_level="BREAKING", is_iran_related=False):
         """
         سرباز ۳ (Flash):
         - با اشراف کامل به حوزه تخصصی (دیده‌بان جنگ، اقتصاد، اعتراضات)، متن را با قلمی فاخر بازنویسی می‌کند.
         - اگر متن عربی است (مثل علی‌بک)، با نهایت تسلط و دقت نظامی آن را به فارسی روان ترجمه و کانتکست‌سازی می‌کند.
+        - اگر متن انگلیسی است (گزارش‌های فنی نت‌بلاکس NetBlocks)، آن را با دقت ترجمه و ابعاد افت شبکه را ابهام‌زدایی می‌کند.
         - تیتر مستقل همراه با «فعل کامل» می‌سازد.
         - چکیده تحلیلی و ابهام‌زدایی‌شده تولید می‌کند.
         - در صورت MERGE، متن جدید و هشدار قبلی را تلفیق کرده و چکیده یکپارچه می‌سازد.
+        - در صورت THREAD_REPLY، یک گزارش تکمیلی کوتاه و تازه بدون تکرار مکررات می‌نویسد.
         """
         # تنظیم پرسونای تخصصی سردبیر
         if target_channel == "@DidebanJang":
@@ -480,6 +492,13 @@ class VipMultiAgentEditorialPipeline:
                 "- با لحنی کاملاً دقیق، مستند، بی‌طرفانه و شفاف بنویس.\n"
             )
 
+        english_instructions = ""
+        if (node or '').lower() == 'netblocks' or any(ord(c) < 128 and c.isalpha() for c in (text or '')[:100]):
+            english_instructions = (
+                "- متن اصلی به زبان انگلیسی است (به ویژه گزارش‌ها و شاخص‌های آماری نت‌بلاکس NetBlocks درباره اختلال و قطعی اینترنت).\n"
+                "- متن را با تسلط کامل به فارسی روان و رسمی ترجمه کن. اگر گزارش درباره افت ترافیک یا قطعی اینترنت در ایران یا منطقه است، درصد دقیق کاهش، گستره جغرافیایی، اپراتورهای متأثر و اهمیت امنیتی را در چکیده بیان کن.\n"
+            )
+
         merge_context = ""
         if is_merge and existing_thread_data:
             merge_context = (
@@ -488,10 +507,17 @@ class VipMultiAgentEditorialPipeline:
                 f"[چکیده قبلی]: {existing_thread_data.get('summary', '')}\n\n"
                 "دستور ادغام: تیتر جدید باید تلفیق کامل هر دو رویداد باشد و چکیده تحلیلی باید حاصل تجمیع منسجم اطلاعات قبلی و خبر جدید بدون تکرار باشد.\n\n"
             )
+        elif is_reply and existing_thread_data:
+            merge_context = (
+                "⚠️ این خبر یک تحول جدید و گزارش تکمیلی است که به صورت ریپلای روی هشدار قبلی منتشر خواهد شد:\n"
+                f"[تیتر قبلی]: {existing_thread_data.get('title', '')}\n\n"
+                "دستور نگارش ریپلای: نیازی به تکرار متن خبر قبلی نیست. تیتری جذاب با فعل کامل بنویس که این تحول و گزارش تازه را اعلام کند و چکیده‌ای کوتاه و شفاف بنویس که ابعاد تازه، واکنش‌ها، یا تصاویر و شواهد جدید را پوشش دهد.\n\n"
+            )
 
         prompt = (
             f"تو «سرباز شماره ۳ - {persona_title}» هستی.\n"
             f"{domain_instructions}\n"
+            f"{english_instructions}\n"
             f"{merge_context}"
             f"متن خبر ارسالی از منبع '{node}':\n"
             f"{text}\n\n"
@@ -561,26 +587,31 @@ class VipMultiAgentEditorialPipeline:
         media_header = f" {root_icon}" if root_icon != "📝" else ""
         link = f"https://t.me/{node}/{msg_id}"
 
+        # استخراج حوزه جغرافیایی و خط‌مشی صوت/سایلنت
+        territory_scope = thread_info.get('territory_scope') or detect_territory_scope(summary, title)
+        is_silent = territory_scope.get('is_silent', True)
+
         # تعیین آیکون و نوع هشدار
         if target_channel == '@DidebanJang':
-            tier, icon, alert_type_name, is_silent = classify_war_urgency(
-                ai_urgency=urgency_level,
-                text=summary,
-                title=title,
-                is_iran_related=is_iran_related
-            )
-            alert_header = f"{icon} **{alert_type_name}: {title}**{media_header}"
+            if relation == "THREAD_REPLY":
+                alert_header = f"⚡️ **گزارش تکمیلی: {title}**{media_header}"
+            else:
+                tier, icon, alert_type_name, _ = classify_war_urgency(
+                    ai_urgency=urgency_level,
+                    text=summary,
+                    title=title,
+                    is_iran_related=is_iran_related
+                )
+                alert_header = f"{icon} **{alert_type_name}: {title}**{media_header}"
         elif target_channel == '@DidehbanEghtesad':
             icon = "📈"
-            alert_type_name = "گزارش اقتصادی"
-            is_silent = False
+            alert_type_name = "گزارش اقتصادی (تکمیلی)" if relation == "THREAD_REPLY" else "گزارش اقتصادی"
             alert_header = f"{icon} **{alert_type_name}: {title}**{media_header}"
         else: # @DidebanEterazat
             is_legal = any(w in title for w in ['اعدام', 'دادگاه', 'حکم', 'حقوق بشری', 'زندان', 'بازداشت'])
             is_strike = 'اعتصاب' in title
             icon = "⚖️" if is_legal else ("🛑" if is_strike else "📢")
-            alert_type_name = "گزارش حقوق بشری" if is_legal else ("گزارش کارگری و اعتصاب" if is_strike else "گزارش مردمی")
-            is_silent = False
+            alert_type_name = "گزارش تکمیلی" if relation == "THREAD_REPLY" else ("گزارش حقوق بشری" if is_legal else ("گزارش کارگری و اعتصاب" if is_strike else "گزارش مردمی"))
             alert_header = f"{icon} **{alert_type_name}: {title}**{media_header}"
 
         # ساختار بلوک منابع و متن کامل پست برای ارسال نو یا ادیت بازهدایت‌شده
@@ -598,7 +629,7 @@ class VipMultiAgentEditorialPipeline:
         )
 
         # ----------------------------------------------------
-        # حالت ۱: ادغام با پست فعال قبلی (MERGE)
+        # حالت ۱: ادغام درجا با پست فعال قبلی (MERGE - کمتر از ۳۰ دقیقه)
         # ----------------------------------------------------
         if relation == "MERGE" and thread_info.get('target_thread_key'):
             thread_key = thread_info['target_thread_key']
@@ -622,11 +653,11 @@ class VipMultiAgentEditorialPipeline:
                 thread_data['title'] = title
                 thread_data['summary'] = summary
                 thread_data['updated_at'] = time.time()
-                thread_data['update_reason'] = thread_info.get('merge_reason', 'دریافت اطلاعات تکمیلی و پوشش تحولات')
+                thread_data['territory_scope'] = territory_scope
 
                 updated_text = self.threads.build_alert_post_content(thread_data) if self.threads else ""
                 if not updated_text:
-                    status_line = format_update_status_line(thread_data['updated_at'], thread_data['update_reason'])
+                    status_line = format_update_status_line(thread_data['updated_at'])
                     sources_lines = [f"- [{s.get('node', 'منبع')}]({s.get('link', '')}) {get_media_icon_from_type(s.get('media_type', 'text'))}" for s in sources]
                     updated_text = (
                         f"{alert_header}\n\n"
@@ -638,7 +669,7 @@ class VipMultiAgentEditorialPipeline:
 
                 try:
                     await self.sentinel.safe_edit_post(target_channel, alert_msg_id, updated_text)
-                    print(f"🔀 [MULTI-AGENT: MERGED | Model: {ai_model} | Latency: {latency_str}] Merged {node}_{msg_id} into alert #{alert_msg_id} in {target_channel}.")
+                    print(f"🔀 [MULTI-AGENT: MERGED (<=30m) | Model: {ai_model} | Latency: {latency_str} | Scope: {territory_scope.get('scope')}] Merged {node}_{msg_id} into alert #{alert_msg_id} in {target_channel}.")
                 except Exception as edit_err:
                     if "not modified" not in str(edit_err).lower():
                         print(f"⚠️ Error editing merged alert #{alert_msg_id} in {target_channel}: {edit_err}")
@@ -649,7 +680,8 @@ class VipMultiAgentEditorialPipeline:
                     'target_channel': target_channel,
                     'time': time.time(),
                     'thread_key': thread_key,
-                    'ai_model': ai_model
+                    'ai_model': ai_model,
+                    'pattern': 'vip_edit_update'
                 }
                 if custom_sources:
                     for s in custom_sources:
@@ -663,7 +695,66 @@ class VipMultiAgentEditorialPipeline:
                 return
 
         # ----------------------------------------------------
-        # حالت ۲: انتشار پست جدید و مستقل (NEW_ALERT)
+        # حالت ۲: انتشار پست جدید با ریپلای روی پست قبلی (THREAD_REPLY - بین ۳۰ دقیقه تا ۲ ساعت)
+        # ----------------------------------------------------
+        elif relation == "THREAD_REPLY" and thread_info.get('target_thread_data'):
+            target_td = thread_info['target_thread_data']
+            reply_to_post_id = target_td.get('alert_msg_id')
+
+            existing_ch, existing_post_id = self.find_existing_posted_alert(node, msg_id, target_channel=target_channel)
+            if existing_post_id:
+                print(f"🛑 [IRONCLAD GUARD] Refusing duplicate reply! {node}_{msg_id} already exists as #{existing_post_id}. Redirecting to safe_edit_post.")
+                try:
+                    await self.sentinel.safe_edit_post(existing_ch, existing_post_id, alert_text)
+                except Exception as e:
+                    print(f"⚠️ Error editing existing reply #{existing_post_id}: {e}")
+                return
+
+            try:
+                target_peer = self.sentinel.get_node_input_peer(target_channel) or target_channel
+                sent = await self.sentinel.bot.send_message(
+                    target_peer,
+                    alert_text,
+                    link_preview=False,
+                    silent=is_silent,
+                    reply_to=reply_to_post_id
+                )
+                if sent:
+                    target_td['updated_at'] = time.time()
+                    target_td.setdefault('replies', []).append(sent.id)
+                    self.sentinel.channel_last_alert_id[target_channel] = sent.id
+
+                    msg_key = f"{node}_{msg_id}"
+                    self.sentinel.vip_alert_history[msg_key] = {
+                        'target_channel': target_channel,
+                        'sent_msg_id': sent.id,
+                        'time': time.time(),
+                        'text': summary,
+                        'pattern': 'thread_reply',
+                        'reply_to': reply_to_post_id,
+                        'ai_model': ai_model,
+                        'latency_sec': round(latency_sec, 2) if latency_sec is not None else None
+                    }
+                    if custom_sources:
+                        for s in custom_sources:
+                            sn = s.get('node')
+                            sm = s.get('msg_id')
+                            if sn and sm:
+                                self.sentinel.db.record_posted_message(target_channel, sn, sm, sent.id)
+                    else:
+                        self.sentinel.db.record_posted_message(target_channel, node, msg_id, sent.id)
+
+                    self.sentinel.save_persisted_state()
+                    urg_label = "Alarm/Sound" if not is_silent else "Silent"
+                    print(f"💬 [MULTI-AGENT: THREAD REPLY | Model: {ai_model} | Latency: {latency_str} | Scope: {territory_scope.get('scope')} | {urg_label}] Replied to alert #{reply_to_post_id} in {target_channel} for {node} #{msg_id}:")
+                    print(f"   {title}")
+                return
+            except Exception as reply_err:
+                print(f"❌ Error sending thread reply to {target_channel}: {reply_err}")
+                return
+
+        # ----------------------------------------------------
+        # حالت ۳: انتشار پست جدید و مستقل (NEW_ALERT)
         # ----------------------------------------------------
         # قفل آهنین سطح نهایی (Last-Mile Ironclad Guard):
         # بررسی قطعی قبل از هرگونه ارسال پست نو به تلگرام
@@ -707,7 +798,7 @@ class VipMultiAgentEditorialPipeline:
                 else:
                     self.sentinel.db.record_posted_message(target_channel, node, msg_id, sent.id)
 
-                # ثبت رشته ۶ ساعته در حافظه سیستم
+                # ثبت رشته در حافظه سیستم (با افق ۲ ساعته پیوستگی و متادیتا حوزه جغرافیایی)
                 thread_key = f"{node}_{msg_id}"
                 self.sentinel.thread_alerts[thread_key] = {
                     'channel': target_channel,
@@ -717,9 +808,11 @@ class VipMultiAgentEditorialPipeline:
                     'root_text': summary,
                     'root_media_type': root_media_type,
                     'timestamp': time.time(),
+                    'updated_at': time.time(),
                     'category': 'WAR' if target_channel == '@DidebanJang' else ('ECONOMY' if target_channel == '@DidehbanEghtesad' else 'PROTEST_RIGHTS'),
                     'is_iran_related': is_iran_related,
                     'urgency_level': urgency_level,
+                    'territory_scope': territory_scope,
                     'title': title,
                     'summary': summary,
                     'ai_model': ai_model,
@@ -889,6 +982,7 @@ class VipMultiAgentEditorialPipeline:
                     return False
 
                 is_merge = (thread_info.get('relation') == 'MERGE')
+                is_reply = (thread_info.get('relation') == 'THREAD_REPLY')
                 existing_td = thread_info.get('target_thread_data')
 
                 # ----------------------------------------------------
@@ -897,6 +991,7 @@ class VipMultiAgentEditorialPipeline:
                 editor_info = await self.soldier_3_domain_editor(
                     clean_text, node, target_channel,
                     is_merge=is_merge,
+                    is_reply=is_reply,
                     existing_thread_data=existing_td,
                     urgency_level=route_info.get('urgency_level', 'BREAKING'),
                     is_iran_related=route_info.get('is_iran_related', False)
@@ -998,6 +1093,7 @@ class VipMultiAgentEditorialPipeline:
                 }
 
             is_merge = (thread_info.get('relation') == 'MERGE')
+            is_reply = (thread_info.get('relation') == 'THREAD_REPLY')
             existing_td = thread_info.get('target_thread_data')
 
             # ۴. سرباز ۳: سردبیر ارشد حوزه تخصصی (Flash Stack)
@@ -1006,6 +1102,7 @@ class VipMultiAgentEditorialPipeline:
                 first_node,
                 target_channel,
                 is_merge=is_merge,
+                is_reply=is_reply,
                 existing_thread_data=existing_td,
                 urgency_level=route_info.get('urgency_level', 'BREAKING'),
                 is_iran_related=route_info.get('is_iran_related', False)

@@ -192,13 +192,158 @@ def get_tehran_datetime_fa(ts=None):
     time_fa = to_fa_num(time_str)
     return f"{jd_fa} {month_name}، ساعت {time_fa}"
 
-def format_update_status_line(ts=None, reason="ویرایش و اطلاعات تکمیلی"):
+IRAN_REGIONS = {
+    'هرمز': [
+        'هرمز', 'تنگه هرمز', 'تنگه_هرمز', 'بندرعباس', 'بندر عباس', 'قشم', 'کیش', 
+        'ابوموسی', 'تنب بزرگ', 'تنب کوچک', 'جاسک', 'هرمزگان', 'بندرلنگه', 'پارسیان', 'میناب',
+        'hormuz', 'hormoz'
+    ],
+    'تهران': [
+        'تهران', 'طهران', 'کرج', 'ورامین', 'شهریار', 'دماوند', 'فیروزکوه', 'شهر ری', 
+        'اسلامشهر', 'پردیس', 'لواسان', 'کهریزک', 'پاکدشت', 'رباط کریم', 'tehran'
+    ],
+    'اصفهان': [
+        'اصفهان', 'کاشان', 'نجف‌آباد', 'شاهین‌شهر', 'نطنز', 'شهرضا', 'زرین‌شهر', 'مبارکه', 'isfahan'
+    ],
+    'خوزستان': [
+        'خوزستان', 'اهواز', 'آبادان', 'خرمشهر', 'دزفول', 'ماهشهر', 'بندر امام', 'امیدیه', 
+        'شوشتر', 'ایذه', 'بهبهان', 'اندیمشک', 'رامهرمز', 'ahvaz', 'khuzestan'
+    ],
+    'فارس': [
+        'شیراز', 'فارس', 'مرودشت', 'کازرون', 'جهرم', 'لارستان', 'فسا', 'داراب', 'shiraz'
+    ],
+    'خراسان': [
+        'مشهد', 'خراسان', 'نیشابور', 'سبزوار', 'تربت حیدریه', 'تربت جام', 'قوچان', 'بیرجند', 'بجنورد', 'mashhad'
+    ],
+    'آذربایجان_شرقی': [
+        'تبریز', 'آذربایجان شرقی', 'مراغه', 'مرند', 'میانه', 'اهر', 'بناب', 'tabriz'
+    ],
+    'آذربایجان_غربی': [
+        'ارومیه', 'آذربایجان غربی', 'خوی', 'مهاباد', 'بوکان', 'میاندوآب', 'سلماس', 'پیرانشهر', 'urmia'
+    ],
+    'کردستان': [
+        'سنندج', 'کردستان', 'سقز', 'مریوان', 'بانه', 'قروه', 'کامیاران', 'sanandaj'
+    ],
+    'کرمانشاه': [
+        'کرمانشاه', 'قصرشیرین', 'سرپل ذهاب', 'پاوه', 'اسلام‌آباد غرب', 'کنگاور', 'جوانرود', 'kermanshah'
+    ],
+    'سیستان_بلوچستان': [
+        'زاهدان', 'سیستان', 'بلوچستان', 'چابهار', 'ایرانشهر', 'سراوان', 'خاش', 'زابل', 'کنارک', 'zahedan'
+    ],
+    'بوشهر': [
+        'بوشهر', 'عسلویه', 'کنگان', 'گناوه', 'خارگ', 'خارک', 'پارس جنوبی', 'دیر', 'دیلم', 'bushehr'
+    ],
+    'قم': [
+        'قم', 'فردو', 'qom'
+    ],
+    'کرمان': [
+        'کرمان', 'رفسنجان', 'سیرجان', 'جیرفت', 'بم', 'kerman'
+    ],
+    'مرکزی': [
+        'اراک', 'خنداب', 'ساوه', 'arak'
+    ],
+    'گیلان': [
+        'رشت', 'انزلی', 'لاهیجان', 'rasht'
+    ],
+    'مازندران': [
+        'ساری', 'بابل', 'آمل', 'قائم‌شهر', 'sari'
+    ],
+    'لرستان': [
+        'خرم‌آباد', 'بروجرد', 'دورود'
+    ],
+    'همدان': [
+        'همدان', 'ملایر', 'نهاوند', 'hamedan'
+    ],
+    'یزد': [
+        'یزد', 'میبد', 'اردکان', 'yazd'
+    ],
+    'سمنان': [
+        'سمنان', 'شاهرود', 'دامغان', 'semnan'
+    ]
+}
+
+def _word_in_text(word, text):
+    pattern = r'(?<![\u0600-\u06FF\w])' + re.escape(word.lower()) + r'(?![\u0600-\u06FF\w])'
+    return bool(re.search(pattern, text))
+
+def detect_territory_scope(text="", title=""):
     """
-    Standard format for updated news posts in Sentinel channels (Option 1):
-    e.g. '🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۱۳:۳۱) | ویرایش و اطلاعات تکمیلی**'
+    Detects geographic territory, merge scope, and notification sound policy:
+    1. Foreign events:
+       - Scope: FOREIGN:<COUNTRY> (merged only by country)
+       - Policy: ALWAYS SILENT (is_silent = True)
+    2. Iran events (internal territory):
+       - Scope: IRAN:<REGION> (merged only by city/region)
+       - Policy:
+         - Hormoz & Strait of Hormuz: SILENT (is_silent = True)
+         - All other Iran cities/regions: LOUD NOTIFICATION (is_silent = False)
+    """
+    combined = f"{title or ''} {text or ''}".lower()
+    
+    # 1. Check for Iran regions first with exact word boundary
+    for reg, kw_list in IRAN_REGIONS.items():
+        for kw in kw_list:
+            if _word_in_text(kw, combined):
+                is_hormoz = (reg == 'هرمز')
+                return {
+                    'is_iran': True,
+                    'is_hormoz': is_hormoz,
+                    'scope': f"IRAN:{reg}",
+                    'country': 'ایران',
+                    'region': reg,
+                    'is_silent': is_hormoz
+                }
+                
+    # 2. Check for general Iran keywords (including NetBlocks mentions like #Iran or Iran)
+    iran_general_kws = [
+        'ایران', 'إيران', 'طهران', 'تهران', 'سپاه', 'ارتش ایران', 
+        'پدافند هوایی ایران', 'نیروهای مسلح ایران', 'خامنه‌ای', 'پزشکیان',
+        '#iran', 'iran'
+    ]
+    for kw in iran_general_kws:
+        if _word_in_text(kw, combined):
+            return {
+                'is_iran': True,
+                'is_hormoz': False,
+                'scope': "IRAN:GENERAL",
+                'country': 'ایران',
+                'region': 'GENERAL',
+                'is_silent': False # Loud notification for Iran
+            }
+            
+    # 3. Check foreign countries (COUNTRY_THEATRES)
+    for country, kw_list in COUNTRY_THEATRES.items():
+        if country == 'ایران':
+            continue
+        for kw in kw_list:
+            if _word_in_text(kw, combined):
+                return {
+                    'is_iran': False,
+                    'is_hormoz': False,
+                    'scope': f"FOREIGN:{country}",
+                    'country': country,
+                    'region': country,
+                    'is_silent': True # Foreign is ALWAYS silent
+                }
+                
+    # 4. Default Fallback
+    return {
+        'is_iran': False,
+        'is_hormoz': False,
+        'scope': "FOREIGN:GENERAL",
+        'country': 'OTHER',
+        'region': 'OTHER',
+        'is_silent': True
+    }
+
+def format_update_status_line(ts=None, reason=None):
+    """
+    Standard clean minimalist format for updated news posts in Sentinel channels:
+    e.g. '🔄 **به‌روزرسانی شده (۲۰ مهر، ساعت ۱۳:۳۱)**'
+    All internal AI reasoning and descriptions are omitted for zero leak and clean UX.
     """
     dt_fa = get_tehran_datetime_fa(ts)
-    return f"🔄 **به‌روزرسانی شده ({dt_fa}) | {reason}**"
+    return f"🔄 **به‌روزرسانی شده ({dt_fa})**"
 
 def get_tehran_time_fa(ts=None):
     tz = timezone(timedelta(hours=3, minutes=30))
