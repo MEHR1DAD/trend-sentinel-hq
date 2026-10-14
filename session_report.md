@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 23
-- **Last Message Text:** اعتراف فرماندهٔ پیشین سنتکام به قدرت پهپادی ایران
+- **Messages Processed:** 16
+- **Last Message Text:** 🎥 لحظه‌ای از اصابت موشک‌های نیروهای مسلح یمن به اهداف خود در ریاض، عربستان سعودی 
 
-🔹دیوید پترائوس رئیس پیشین سازمان سیا که فرماندهی ...
-- **Last Message Time:** 2026-10-14 00:18:41
+@TasnimNews
+- **Last Message Time:** 2026-10-14 00:45:59
