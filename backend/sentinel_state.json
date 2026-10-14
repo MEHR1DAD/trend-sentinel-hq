@@ -1,8 +1,5 @@
 {
   "alerted_msg_patterns": {
-    "Alibk3_38914": [
-      "recovered_source"
-    ],
     "VahidOnline_78713": [
       "recovered_source"
     ],
@@ -187,8 +184,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "آتش‌سوزی در پایگاه هوایی ایران",
-      "recovered_source"
+      "recovered_source",
+      "آتش‌سوزی در پایگاه هوایی ایران"
     ],
     "withyashar_25505": [
       "recovered_source"
@@ -254,8 +251,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "recovered_source",
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
+      "recovered_source"
     ],
     "withyashar_25495": [
       "recovered_source"
@@ -547,15 +544,18 @@
     ],
     "withyashar_25526": [
       "recovered_source"
+    ],
+    "Khabar_Fouri_551375": [
+      "recovered_source"
+    ],
+    "akhbarefori_697951": [
+      "recovered_source"
+    ],
+    "entekhab_ir_383228": [
+      "recovered_source"
     ]
   },
   "vip_alert_history": {
-    "Alibk3_38914": {
-      "sent_msg_id": 202,
-      "target_channel": "@DidebanJang",
-      "time": 1791874869.3129056,
-      "thread_key": "withyashar_25518"
-    },
     "withyashar_25540": {
       "target_channel": "@DidebanJang",
       "sent_msg_id": 210,
@@ -2468,40 +2468,40 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39035,
-    "VahidHeadline": 326337,
-    "VahidOOnLine": 265036,
-    "RadioFarda": 162329,
-    "IranintlTV": 362184,
-    "Tasnimnews": 451268,
-    "Farsna": 468339,
-    "isna94": 408696,
-    "irna_1313": 462160,
-    "akharinkhabar": 638242,
-    "khabarfouri": 569506,
-    "akhbarefori": 698322,
+    "Alibk3": 39036,
+    "VahidHeadline": 326341,
+    "VahidOOnLine": 265038,
+    "RadioFarda": 162331,
+    "IranintlTV": 362185,
+    "Tasnimnews": 451277,
+    "Farsna": 468341,
+    "isna94": 408702,
+    "irna_1313": 462166,
+    "akharinkhabar": 638246,
+    "khabarfouri": 569512,
+    "akhbarefori": 698326,
     "dw_farsi": 131153,
-    "entekhab_ir": 383333,
-    "Khabar_Fouri": 551520,
-    "khabari": 201359,
-    "thezoomit": 103838,
-    "farsivoa": 233690,
-    "myITiran": 18276,
-    "Farsi_Iranwire": 94667,
-    "bbcpersian": 293346,
-    "Alarabiya_far": 152169,
-    "thezoomon": 5267,
-    "Mr_Economy": 64049,
-    "Eghtesadnews_com": 370868,
-    "Digiato": 114132,
-    "Indypersian": 180156,
+    "entekhab_ir": 383335,
+    "Khabar_Fouri": 551527,
+    "khabari": 201365,
+    "thezoomit": 103842,
+    "farsivoa": 233692,
+    "myITiran": 18277,
+    "Farsi_Iranwire": 94668,
+    "bbcpersian": 293347,
+    "Alarabiya_far": 152170,
+    "thezoomon": 5268,
+    "Mr_Economy": 64050,
+    "Eghtesadnews_com": 370872,
+    "Digiato": 114134,
+    "Indypersian": 180157,
     "withyashar": 25592,
-    "euronewspe": 90611,
-    "Economic_News_Channel": 82795,
+    "euronewspe": 90612,
+    "Economic_News_Channel": 82797,
     "farsna": 468156,
-    "persiannbloomberg": 68304,
+    "persiannbloomberg": 68314,
     "VahidOnline": 78723,
-    "mamlekate": 104815,
+    "mamlekate": 104816,
     "iliaen": 4744
   },
   "vahid_post_time": {
@@ -2589,37 +2589,15 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 16,
-    "gemini-3.5-flash-lite": 439,
+    "gemini-3.5-flash-lite": 460,
     "gemini-2.5-flash": 71,
-    "gemini-3-flash-preview": 22,
-    "gemini-3.1-flash-lite": 184,
+    "gemini-3-flash-preview": 43,
+    "gemini-3.1-flash-lite": 189,
     "gemini-3.1-flash-lite-preview": 33,
     "gemini-3.6-flash": 4,
     "gemini-3.7-flash": 4
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39030",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39030,
-      "text": "توقف 7 مطارات سعودية عن استقبال الرحلات حتى الآن:\n\n مطاري نجران وجازان لأكثر من 188 ساعة، والرياض لنحو 91 ساعة، وينبع لأكثر من 61 ساعة، وعرعر لنحو 24 ساعة، وحائل لنحو 12 ساعة، والجوف لنحو 11 ساعة.",
-      "is_edit": true,
-      "enqueued_at": 1791958840.6351116,
-      "retries": 11,
-      "last_retry_at": 1791960704.3831584
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25590",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25590,
-      "text": "صبر کنید ببینید با ایران چه خواهیم کرد؛ حسابی از آن‌ها پذیرایی خواهیم کرد! صبر کنید و ببینید. آن‌ها فقط منتظرند؛ منتظرند ببینند چه اتفاقی می‌افتد. صبر کنید ببینید با ایران چه خواهیم کرد. چون ما تا حدی کارمان را با آن‌ها انجام داده‌ایم؛ می‌دانید، کارهایی کرده‌ایم. اما خب، این موضوع اهمیتی ندارد. مسئله اصلی این است که ما اجازه نخواهیم داد ایران به سلاح هسته‌ای دست پیدا کند و آن‌ها هم سلاح هسته‌ای نخواهند داشت\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1791959857.315697,
-      "retries": 5,
-      "last_retry_at": 1791960724.0267162
-    },
     {
       "id": "vip_multi_agent_withyashar_25591",
       "pipeline": "vip_multi_agent",
@@ -2628,20 +2606,75 @@
       "text": "نتانیاهو : «به این نتیجه رسیده‌ایم , هم به زیرساخت‌ها حمله کردیم، هم به دانشمندان و هم به تأسیسات برنامه هسته‌ای. اکنون با حکومتی سرسخت روبه‌رو هستیم. تا زمانی که این حکومت پابرجا باشد، تلاش خواهد کرد توان خود را بازسازی کند، برنامه هسته‌ای‌اش را از سر بگیرد، دوباره ما را نابود کند و حزب‌الله و حماس را نیز بازسازی کند. برای نابود کردن تمام این ساختار، باید این حکومت را سرنگون کنیم.»\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1791960267.5588386,
-      "retries": 2,
-      "last_retry_at": 1791960768.3361833
+      "retries": 4,
+      "last_retry_at": 1791961625.4633586
     },
     {
-      "id": "vip_multi_agent_Alibk3_39034",
+      "id": "vip_multi_agent_Alibk3_39036",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39034,
-      "text": "ثلاثة مروحيات سعودية غادرت مطار الرياض قبل قليل إلى مهبط مروحيات بالقرب من الخرج.",
+      "msg_id": 39036,
+      "text": "هجوم يمن يستهدف محافظة الخرج في السعودية أيضاً.",
       "is_edit": false,
-      "enqueued_at": 1791960710.8431277,
+      "enqueued_at": 1791961169.8406627,
+      "retries": 1,
+      "last_retry_at": 1791961842.1167388
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39039",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39039,
+      "text": "رشقات صاروخية تنطلق من اليمن",
+      "is_edit": false,
+      "enqueued_at": 1791961228.0082207,
+      "retries": 1,
+      "last_retry_at": 1791962055.6959853
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39040",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39040,
+      "text": "صواريخ يمنية تنطلق",
+      "is_edit": false,
+      "enqueued_at": 1791961318.6850462,
+      "retries": 1,
+      "last_retry_at": 1791962623.3205705
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25593",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25593,
+      "text": "وای نت : دولت اسرائیل با اختصاص حدود ۳۲۵ میلیون دلار برای خرید هلیکپتر آپاچی موافقت کرده است؛ رقمی که بخش عمده آن، معادل حدود ۳۰۴ میلیون دلار، از بودجه برنامه پنج‌ساله توسعه جامعه عرب در اسرائیل طی سال‌های ۲۰۲۷ تا ۲۰۲۹ تأمین می‌شود.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1791961490.4535003,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25594",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25594,
+      "text": "خبرگزاری جی‌دی‌اِن اسرائیل: یک هواپیمای سوخت‌رسان نظامی آمریکا هنگام پرواز در نزدیکی فرودگاه بن‌گوریون از نقص فنی در سامانه هیدرولیک خبر داد و وضعیت اضطراری اعلام کرد. در پی این اتفاق، تیم‌های آتش‌نشانی، امداد و پزشکی در فرودگاه به حالت آماده‌باش درآمدند. این هواپیما با موفقیت فرود آمد\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1791961863.2247522,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25595",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25595,
+      "text": "کارشناس ارتباطات اوکراین، سرگئی بسکرستنوف، اعلام کرد اسپیس‌ایکس اتصال استارلینک نیروهای اوکراینی را در سرعت‌های بالاتر از ۱۶۰ کیلومتر بر ساعت محدود کرده؛ اقدامی که چند مأموریت نظامی را مختل کرده است. این محدودیت تأثیر بر حملات دوربرد اوکراین به خاک روسیه دارد، اما می‌تواند عملیات پهپادی در مناطق اشغالی را هم محدود کند.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1791962665.7549303,
       "retries": 0,
       "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-14 06:58:12 UTC"
+  "last_saved": "2026-10-14 07:27:53 UTC"
 }
