@@ -266,8 +266,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "recovered_source",
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
+      "recovered_source"
     ],
     "withyashar_25495": [
       "recovered_source"
@@ -2642,37 +2642,37 @@
   },
   "channel_watermarks": {
     "Alibk3": 39028,
-    "VahidHeadline": 326320,
+    "VahidHeadline": 326321,
     "VahidOOnLine": 265032,
     "RadioFarda": 162326,
-    "IranintlTV": 362177,
-    "Tasnimnews": 451232,
-    "Farsna": 468325,
-    "isna94": 408673,
-    "irna_1313": 462102,
-    "akharinkhabar": 638220,
-    "khabarfouri": 569479,
-    "akhbarefori": 698273,
+    "IranintlTV": 362180,
+    "Tasnimnews": 451235,
+    "Farsna": 468327,
+    "isna94": 408676,
+    "irna_1313": 462124,
+    "akharinkhabar": 638222,
+    "khabarfouri": 569480,
+    "akhbarefori": 698278,
     "dw_farsi": 131150,
-    "entekhab_ir": 383316,
-    "Khabar_Fouri": 551495,
-    "khabari": 201338,
+    "entekhab_ir": 383320,
+    "Khabar_Fouri": 551496,
+    "khabari": 201340,
     "thezoomit": 103833,
     "farsivoa": 233681,
-    "myITiran": 18275,
+    "myITiran": 18276,
     "Farsi_Iranwire": 94667,
-    "bbcpersian": 293340,
+    "bbcpersian": 293341,
     "Alarabiya_far": 152165,
     "thezoomon": 5263,
     "Mr_Economy": 64044,
-    "Eghtesadnews_com": 370845,
+    "Eghtesadnews_com": 370848,
     "Digiato": 114126,
     "Indypersian": 180153,
     "withyashar": 25588,
     "euronewspe": 90605,
-    "Economic_News_Channel": 82774,
+    "Economic_News_Channel": 82777,
     "farsna": 468156,
-    "persiannbloomberg": 68300,
+    "persiannbloomberg": 68302,
     "VahidOnline": 78716,
     "mamlekate": 104815,
     "iliaen": 4744
@@ -2771,5 +2771,5 @@
     "gemini-3.7-flash": 4
   },
   "smart_queue": [],
-  "last_saved": "2026-10-14 04:03:49 UTC"
+  "last_saved": "2026-10-14 04:32:21 UTC"
 }
