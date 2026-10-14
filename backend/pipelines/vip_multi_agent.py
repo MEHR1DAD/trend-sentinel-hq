@@ -2,6 +2,7 @@ import re
 import time
 import json
 import asyncio
+from collections import OrderedDict, deque
 from datetime import datetime, timezone
 from backend.core.config import (
     CHANNEL_CANONICAL_TAGS,
@@ -28,11 +29,12 @@ class VipMultiAgentEditorialPipeline:
     - @Alibk3
     - @VahidOnline
     - @iliaen
+    - @netblocks
 
     ساختار سربازها:
     - سرباز شماره ۰ (Soldier 0): مدیریت استراتژیک پشته مدل‌ها و ماتریس مدل × کلید (پیاده‌سازی شده در GeminiClient)
     - سرباز شماره ۱+۲ (Soldier 1+2): دروازه‌بان و مسیرساز تک‌ضرب فوق‌سریع دو زبانه (Flash-Lite)
-    - سرباز شماره ۴ (Soldier 4): دیده‌بان رشته‌های فعال کانال در پنجره سخت‌گیرانه ۶ ساعته (Flash)
+    - سرباز شماره ۴ (Soldier 4): دیده‌بان رشته‌های فعال کانال در پنجره سخت‌گیرانه (Flash)
     - سرباز شماره ۳ (Soldier 3): سردبیر و تحلیلگر ارشد حوزه تخصصی (Flash) با ۳ پرسونا (دیده‌بان جنگ، اقتصاد، اعتراضات)
     - لایه انتشار نهایی: ارسال فوری، برچسب‌های کانونی قطعی، همگام‌سازی درجا و لاگ تفصیلی
     """
@@ -40,7 +42,9 @@ class VipMultiAgentEditorialPipeline:
         self.sentinel = sentinel
         self.threads = threads or getattr(sentinel, 'threads', None)
         self.msg_locks = {}
-        self.grouped_posted = set()
+        self.grouped_posted = OrderedDict()
+        self.media_group_buffers = {}
+        self.thread_decision_lock = asyncio.Lock()
         self.in_flight_alerts = {}
 
     # ========================================================
@@ -369,27 +373,30 @@ class VipMultiAgentEditorialPipeline:
         candidate_threads.sort(key=lambda item: item[3], reverse=True)
         target_tk, target_td, target_scope, target_time = candidate_threads[0]
 
-        time_diff = now - target_time
+        # اندازه فاصله زمانی از زمان ایجاد پست ریشه (Root Creation Time) جهت جلوگیری از آلودگی زمانی ریپلای‌ها
+        root_time = target_td.get('timestamp') or target_time
+        time_since_root = now - root_time
+        has_existing_replies = bool(target_td.get('replies'))
         existing_title = target_td.get('title', '')
         existing_summary = target_td.get('summary', '')
         is_same_source = (target_td.get('node') == node or any(s.get('node') == node for s in target_td.get('sources', [])))
         same_source_hint = "نکته کمکی: این خبر جدید از همان کانال منبع فرستاده شده است.\n" if is_same_source else ""
 
         # تعیین رژیم تصمیم‌گیری بر اساس زمان:
-        # فاز ۱: زیر ۳۰ دقیقه (۰ تا ۱۸۰۰ ثانیه) -> امکان ادغام درجا (MERGE)
-        # فاز ۲: بین ۳۰ دقیقه تا ۲ ساعت (۱۸۰۰ تا ۷۲۰۰ ثانیه) -> امکان ریپلای روی خبر قبلی (THREAD_REPLY)
-        if time_diff <= 1800:
+        # فاز ۱: زیر ۳۰ دقیقه از پیام ریشه و فاقد ریپلای قبلی -> امکان ادغام درجا (MERGE)
+        # فاز ۲: بین ۳۰ دقیقه تا ۲ ساعت (یا زمانی که ریپلای قبلی در کانال وجود دارد تا متن زیر ریپلای ادیت نشود) -> امکان ریپلای (THREAD_REPLY)
+        if time_since_root <= 1800 and not has_existing_replies:
             allowed_relations = '"MERGE" | "NEW_ALERT"'
             time_policy_text = (
-                f"زمان دریافت: {int(time_diff/60)} دقیقه پس از هشدار قبلی (زیر ۳۰ دقیقه).\n"
+                f"زمان دریافت: {int(time_since_root/60)} دقیقه پس از هشدار ریشه (زیر ۳۰ دقیقه و فاقد ریپلای قبلی).\n"
                 "- تصمیم 'MERGE': اگر این خبر مستقیماً درباره همین واقعه است (تصاویر جدید، آمار خسارات، تأیید رسمی یا جزئیات فوری همان ماجرا) تا در همان پست ادغام و ویرایش شود.\n"
                 "- تصمیم 'NEW_ALERT': اگر یک حادثه یا رویداد مستقل است (حتی با اینکه در همان حوزه رخ داده).\n"
             )
         else:
             allowed_relations = '"THREAD_REPLY" | "NEW_ALERT"'
             time_policy_text = (
-                f"زمان دریافت: {int(time_diff/60)} دقیقه پس از هشدار قبلی (بین ۳۰ دقیقه تا ۲ ساعت).\n"
-                "جهت جلوگیری از تولید پست‌های طوماری و بیش‌ازحد طولانی، ادغام مستقیم در پست قبلی مجاز نیست.\n"
+                f"زمان دریافت: {int(time_since_root/60)} دقیقه پس از هشدار ریشه (بین ۳۰ دقیقه تا ۲ ساعت، یا دارای ریپلای قبلی در کانال).\n"
+                "جهت جلوگیری از تولید پست‌های طوماری یا ادیت پست مادر در حضور ریپلای‌ها، ادغام مستقیم در پست قبلی مجاز نیست.\n"
                 "- تصمیم 'THREAD_REPLY': اگر پیوستگی و امتداد این خبر به هشدار قبلی محرز است (واکنش‌های بعدی، تحولات تکمیلی، یا ابعاد جدید همان ماجرا) تا به صورت یک پست تازه و مجزا که روی خبر قبلی ریپلای شده منتشر شود (هم نوتیفیکیشن ایجاد می‌کند و هم به پست مادر متصل می‌شود).\n"
                 "- تصمیم 'NEW_ALERT': اگر حادثه یا موضوعی مستقل است و نیازی به ریپلای ندارد.\n"
             )
@@ -427,7 +434,7 @@ class VipMultiAgentEditorialPipeline:
         if res and isinstance(res, dict):
             try:
                 rel = str(res.get("relation", "NEW_ALERT")).upper().strip()
-                if time_diff <= 1800:
+                if time_since_root <= 1800 and not has_existing_replies:
                     if rel != "MERGE":
                         rel = "NEW_ALERT"
                 else:
@@ -710,6 +717,8 @@ class VipMultiAgentEditorialPipeline:
                     print(f"⚠️ Error editing existing reply #{existing_post_id}: {e}")
                 return
 
+            sent = None
+            is_fallback = False
             try:
                 target_peer = self.sentinel.get_node_input_peer(target_channel) or target_channel
                 sent = await self.sentinel.bot.send_message(
@@ -719,38 +728,51 @@ class VipMultiAgentEditorialPipeline:
                     silent=is_silent,
                     reply_to=reply_to_post_id
                 )
-                if sent:
-                    target_td['updated_at'] = time.time()
-                    target_td.setdefault('replies', []).append(sent.id)
-                    self.sentinel.channel_last_alert_id[target_channel] = sent.id
-
-                    msg_key = f"{node}_{msg_id}"
-                    self.sentinel.vip_alert_history[msg_key] = {
-                        'target_channel': target_channel,
-                        'sent_msg_id': sent.id,
-                        'time': time.time(),
-                        'text': summary,
-                        'pattern': 'thread_reply',
-                        'reply_to': reply_to_post_id,
-                        'ai_model': ai_model,
-                        'latency_sec': round(latency_sec, 2) if latency_sec is not None else None
-                    }
-                    if custom_sources:
-                        for s in custom_sources:
-                            sn = s.get('node')
-                            sm = s.get('msg_id')
-                            if sn and sm:
-                                self.sentinel.db.record_posted_message(target_channel, sn, sm, sent.id)
-                    else:
-                        self.sentinel.db.record_posted_message(target_channel, node, msg_id, sent.id)
-
-                    self.sentinel.save_persisted_state()
-                    urg_label = "Alarm/Sound" if not is_silent else "Silent"
-                    print(f"💬 [MULTI-AGENT: THREAD REPLY | Model: {ai_model} | Latency: {latency_str} | Scope: {territory_scope.get('scope')} | {urg_label}] Replied to alert #{reply_to_post_id} in {target_channel} for {node} #{msg_id}:")
-                    print(f"   {title}")
-                return
             except Exception as reply_err:
-                print(f"❌ Error sending thread reply to {target_channel}: {reply_err}")
+                print(f"⚠️ [REPLY FALLBACK] Could not reply to #{reply_to_post_id} in {target_channel} ({reply_err}). Falling back to standalone post...")
+                try:
+                    sent = await self.sentinel.bot.send_message(
+                        target_peer,
+                        alert_text,
+                        link_preview=False,
+                        silent=is_silent
+                    )
+                    is_fallback = True
+                except Exception as fallback_err:
+                    print(f"❌ [DISPATCH ERROR] Both reply and standalone fallback failed for {target_channel}: {fallback_err}")
+                    return
+
+            if sent:
+                target_td['updated_at'] = time.time()
+                target_td['last_reply_at'] = time.time()
+                target_td.setdefault('replies', []).append(sent.id)
+                self.sentinel.channel_last_alert_id[target_channel] = sent.id
+
+                msg_key = f"{node}_{msg_id}"
+                self.sentinel.vip_alert_history[msg_key] = {
+                    'target_channel': target_channel,
+                    'sent_msg_id': sent.id,
+                    'time': time.time(),
+                    'text': summary,
+                    'pattern': 'thread_reply' if not is_fallback else 'thread_reply_fallback',
+                    'reply_to': reply_to_post_id if not is_fallback else None,
+                    'ai_model': ai_model,
+                    'latency_sec': round(latency_sec, 2) if latency_sec is not None else None
+                }
+                if custom_sources:
+                    for s in custom_sources:
+                        sn = s.get('node')
+                        sm = s.get('msg_id')
+                        if sn and sm:
+                            self.sentinel.db.record_posted_message(target_channel, sn, sm, sent.id)
+                else:
+                    self.sentinel.db.record_posted_message(target_channel, node, msg_id, sent.id)
+
+                self.sentinel.save_persisted_state()
+                urg_label = "Alarm/Sound" if not is_silent else "Silent"
+                disp_type = "THREAD REPLY" if not is_fallback else "THREAD REPLY (STANDALONE FALLBACK)"
+                print(f"💬 [MULTI-AGENT: {disp_type} | Model: {ai_model} | Latency: {latency_str} | Scope: {territory_scope.get('scope')} | {urg_label}] Dispatched alert #{sent.id} to {target_channel} for {node} #{msg_id}:")
+                print(f"   {title}")
                 return
 
         # ----------------------------------------------------
@@ -851,25 +873,62 @@ class VipMultiAgentEditorialPipeline:
         7. انتشار یا ادغام امن درجا
         8. در صورت قطعی هر مرحله: ارسال مستقیم به صف هوشمند ۴۵ دقیقه‌ای (بدون انتشار خام)
         """
+        # جلوگیری از رشد نامحدود حافظه در قفل‌ها
+        if len(self.msg_locks) > 500:
+            for old_k in list(self.msg_locks.keys())[:100]:
+                self.msg_locks.pop(old_k, None)
+
+        # ----------------------------------------------------
+        # مدیریت هوشمند آلبوم‌ها و مدیاگروپ‌ها (Telegram Media Groups Buffer)
+        # ----------------------------------------------------
+        grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
+        if grouped_id and not is_edit:
+            str_gid = str(grouped_id)
+            # اگر این مدیاگروپ قبلاً پردازش شده است، پیام‌های پس‌آیند نادیده گرفته شوند
+            if str_gid in self.grouped_posted:
+                if not is_edit:
+                    self.sentinel.db.advance_watermark(node, msg_id)
+                return True
+
+            group_key = f"{node}_{str_gid}"
+            if group_key not in self.media_group_buffers:
+                # پیام اول آلبوم: ایجاد بافر و پنجره انتظار ۱.۵ ثانیه‌ای
+                self.media_group_buffers[group_key] = {
+                    'messages': [(text, msg_id, raw_msg)],
+                    'event': asyncio.Event()
+                }
+                await asyncio.sleep(1.5)
+                buf_entry = self.media_group_buffers.pop(group_key, None)
+                if not buf_entry or not buf_entry['messages']:
+                    return True
+
+                # انتخاب پیامی که طولانی‌ترین و کامل‌ترین کپشن را دارد
+                best_text, best_msg_id, best_raw_msg = max(
+                    buf_entry['messages'],
+                    key=lambda m: len(((m[0] or "")).strip())
+                )
+                self.grouped_posted[str_gid] = time.time()
+                if len(self.grouped_posted) > 1000:
+                    self.grouped_posted.popitem(last=False)  # هرس واقعی FIFO
+
+                buf_entry['event'].set()
+                text, msg_id, raw_msg = best_text, best_msg_id, best_raw_msg
+            else:
+                # پیام‌های بعدی همان آلبوم در طول پنجره ۱.۵ ثانیه‌ای
+                self.media_group_buffers[group_key]['messages'].append((text, msg_id, raw_msg))
+                try:
+                    await asyncio.wait_for(self.media_group_buffers[group_key]['event'].wait(), timeout=3.5)
+                except Exception:
+                    pass
+                if not is_edit:
+                    self.sentinel.db.advance_watermark(node, msg_id)
+                return True
+
         clean_text = (text or "").strip()
         if not clean_text or len(clean_text) < 10:
             if not is_edit:
                 self.sentinel.db.advance_watermark(node, msg_id)
             return True
-
-        # جلوگیری از رشد نامحدود حافظه در قفل‌ها و مجموعه‌ها
-        if len(self.msg_locks) > 500:
-            for old_k in list(self.msg_locks.keys())[:100]:
-                self.msg_locks.pop(old_k, None)
-        if len(self.grouped_posted) > 500:
-            self.grouped_posted = set(list(self.grouped_posted)[-200:])
-
-        # جلوگیری از پردازش مکرر مدیاگروپ‌ها
-        grouped_id = getattr(raw_msg, 'grouped_id', None) if raw_msg else None
-        if grouped_id and grouped_id in self.grouped_posted and not is_edit:
-            return True
-        if grouped_id:
-            self.grouped_posted.add(grouped_id)
 
         msg_lock = self.msg_locks.setdefault(f"{node}_{msg_id}", asyncio.Lock())
         async with msg_lock:
@@ -966,13 +1025,14 @@ class VipMultiAgentEditorialPipeline:
 
             try:
                 # ----------------------------------------------------
-                # گام ۲: سرباز شماره ۴ (دیده‌بان رشته‌های فعال ۶ ساعته - Flash)
+                # گام ۲: سرباز شماره ۴ (دیده‌بان رشته‌ها - Flash) تحت قفل هماهنگی
                 # ----------------------------------------------------
-                thread_info = await self.soldier_4_thread_watcher(
-                    clean_text, node, target_channel,
-                    candidate_title=route_info.get('candidate_title', ''),
-                    current_msg_key=in_flight_key
-                )
+                async with self.thread_decision_lock:
+                    thread_info = await self.soldier_4_thread_watcher(
+                        clean_text, node, target_channel,
+                        candidate_title=route_info.get('candidate_title', ''),
+                        current_msg_key=in_flight_key
+                    )
                 if not thread_info:
                     print(f"⏳ [VIP QUEUE: SOLDIER 4] Msg {node}_{msg_id} failed thread watcher. Enqueuing into Smart Queue (45m TTL)...")
                     if not from_queue and hasattr(self.sentinel, 'enqueue_unprocessed_message'):
@@ -1140,9 +1200,18 @@ class VipMultiAgentEditorialPipeline:
             async for msg in reader_client.iter_messages(node_peer, **kwargs):
                 recent_msgs.append(msg)
             recent_msgs.reverse()
+            now_ts = time.time()
             for msg in recent_msgs:
                 clean_text = (msg.message or msg.text or "").strip()
                 if clean_text and len(clean_text) >= 10:
+                    msg_date = getattr(msg, 'date', None)
+                    if msg_date:
+                        msg_age_sec = now_ts - msg_date.timestamp()
+                        if msg_age_sec > 7200:
+                            # نادیده گرفتن اخبار بیات با قدمت بیش از ۲ ساعت و پیشروی واتر‌مارک
+                            self.sentinel.db.advance_watermark(node, msg.id)
+                            continue
+
                     # بررسی عدم ارسال قبلی به کانال‌های دیده‌بان
                     already_posted = any(
                         self.sentinel.db.is_source_posted(ch, node, msg.id)

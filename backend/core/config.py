@@ -39,7 +39,8 @@ VIP_MAP = {
     'vahidonline': 'VahidOnline',
     'iliaen': 'iliaen',
     'alibk3': 'Alibk3',
-    'withyashar': 'withyashar'
+    'withyashar': 'withyashar',
+    'netblocks': 'netblocks'
 }
 
 # --- Strict Canonical Channel Hashtags ---

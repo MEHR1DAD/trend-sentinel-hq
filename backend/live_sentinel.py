@@ -48,20 +48,6 @@ from backend.core.thread_manager import ThreadAlertManager
 from backend.pipelines.radar import RadarPipeline
 from backend.pipelines.vip_multi_agent import VipMultiAgentEditorialPipeline
 
-class _LegacyMirrorStub:
-    def __init__(self, posted_map):
-        self.posted_map = posted_map
-    async def preload_history(self, *args, **kwargs):
-        return 0
-
-class _LegacyIntelligenceStub:
-    def __init__(self, alibk_posted):
-        self.alibk_posted = alibk_posted
-    async def preload_alibk_history(self, *args, **kwargs):
-        return 0
-
-class _LegacyYasharStub:
-    pass
 
 
 class LiveSentinel:
@@ -96,12 +82,9 @@ class LiveSentinel:
             save_state_func=self.save_persisted_state
         )
 
-        # Decoupled Legacy Maps (replacing heavy ghost modules)
+        # Decoupled Legacy Maps
         self.mirror_posted_map = {'VahidOnline': {}, 'iliaen': {}}
         self.alibk_posted_map = {}
-        self.mirror_pipeline = _LegacyMirrorStub(self.mirror_posted_map)
-        self.intelligence_pipeline = _LegacyIntelligenceStub(self.alibk_posted_map)
-        self.yashar_pipeline = _LegacyYasharStub()
 
         # Active Pipelines
         self.radar_pipeline = RadarPipeline(self, threads=self.threads)
@@ -601,8 +584,12 @@ class LiveSentinel:
                 "smart_queue": clean_queue,
                 "last_saved": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
             }
-            with open(self.state_file, 'w', encoding='utf-8') as f:
+            tmp_file = f"{self.state_file}.tmp"
+            with open(tmp_file, 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
+                f.flush()
+                os.fsync(f.fileno())
+            os.replace(tmp_file, self.state_file)
         except Exception as e:
             print(f"⚠️ Error saving persisted state: {e}")
 
@@ -795,15 +782,9 @@ class LiveSentinel:
 
         print(f"🎯 Initialized last alert IDs: {self.channel_last_alert_id}")
 
-    # --- Preload & Catch-Up Forwarding ---
-    async def preload_vahid_ai_history(self, reader_client=None):
-        return await self.mirror_pipeline.preload_history(reader_client, 'VahidOnline', '@VahidOnlineAI')
-
-    async def preload_ilia_ai_history(self, reader_client=None):
-        return await self.mirror_pipeline.preload_history(reader_client, 'iliaen', '@iliaenAI')
-
-    async def preload_alibk_history(self, reader_client=None):
-        return await self.intelligence_pipeline.preload_alibk_history(reader_client)
+    # --- Catch-Up Forwarding ---
+    async def catchup_unposted_netblocks(self, reader_client=None):
+        return await self.vip_pipeline.catchup_unposted(reader_client, 'netblocks')
 
     async def catchup_unposted_vahid(self, reader_client=None):
         return await self.vip_pipeline.catchup_unposted(reader_client, 'VahidOnline')
@@ -955,19 +936,18 @@ class LiveSentinel:
                 print(f"⏳ [SMART QUEUE: REMAINING] Item {item_id} still pending AI availability. Will retry in next worker cycle (attempt #{item.get('retries')}).")
 
     # --- Central Event Router ---
-    async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None, skip_mirror_channels=False):
+    async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None):
         async with self.lock:
             canon = (node or '').lower()
             vip_map_fast = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen', 'withyashar': 'withyashar', 'alibk3': 'Alibk3', 'netblocks': 'netblocks'}
             canon_node = vip_map_fast.get(canon, node or 'unknown')
 
-            if not skip_mirror_channels:
-                # VIP Channels: 5-Soldier Multi-Agent Pipeline (withyashar, Alibk3, VahidOnline, iliaen, netblocks)
-                if canon in ('vahidonline', 'iliaen', 'withyashar', 'alibk3', 'netblocks'):
-                    asyncio.create_task(self.vip_pipeline.handle_message(text, canon_node, msg_id, raw_msg=raw_msg, is_edit=is_edit))
-                    return
+            # VIP Channels: 5-Soldier Multi-Agent Pipeline (withyashar, Alibk3, VahidOnline, iliaen, netblocks)
+            if canon in ('vahidonline', 'iliaen', 'withyashar', 'alibk3', 'netblocks'):
+                asyncio.create_task(self.vip_pipeline.handle_message(text, canon_node, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+                return
 
-            # 4. Consensus Radar Pipeline (General monitored nodes)
+            # Consensus Radar Pipeline (General monitored nodes)
             await self.radar_pipeline.process_radar_consensus(text, node, msg_id, is_edit=is_edit, msg_date=msg_date, raw_msg=raw_msg)
             if not is_edit:
                 self.db.advance_watermark(canon_node, msg_id)
@@ -1000,17 +980,18 @@ async def main():
         
         if chat_id not in subs:
             subs.append(chat_id)
-            with open('backend/subscribers.json', 'w', encoding='utf-8') as f:
-                json.dump({'subscribers': subs}, f, indent=2)
+            tmp_subs = 'backend/subscribers.json.tmp'
+            try:
+                with open(tmp_subs, 'w', encoding='utf-8') as f:
+                    json.dump({'subscribers': subs}, f, indent=2)
+                    f.flush()
+                    os.fsync(f.fileno())
+                os.replace(tmp_subs, 'backend/subscribers.json')
+            except Exception as e:
+                print(f"⚠️ Error saving subscribers: {e}")
             
             await event.respond("✅ شما به سیستم هشدار فوری Sentinel اضافه شدید. از این پس هشدارهای اخبار فوری برای شما ارسال خواهد شد.")
             print(f"➕ New subscriber added: {chat_id}")
-            
-            os.system('git config --global user.email "bot@sentinel.local"')
-            os.system('git config --global user.name "Sentinel Bot"')
-            os.system('git add backend/subscribers.json')
-            os.system('git commit -m "[skip ci] add new subscriber"')
-            os.system('git push')
         else:
             await event.respond("شما قبلاً در سیستم هشدار ثبت‌نام کرده‌اید. 🛡️")
 
@@ -1128,7 +1109,7 @@ async def main():
                             new_msgs = [m for m in messages if m.id > last_ids[node]]
                             new_msgs.reverse()
                             for m in new_msgs:
-                                await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m, skip_mirror_channels=True)
+                                await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m)
                             last_ids[node] = max(last_ids[node], latest_id)
                         else:
                             new_msgs = [m for m in messages if m.id > effective_last_id]
@@ -1178,17 +1159,13 @@ async def main():
             print(f"⚠️ Startup model query timed out or failed: {gm_err}")
         await sentinel.init_channel_last_alert_ids(reader_client=client)
         
-        print("⚡ Executing transition catch-up for all 4 VIP channels...")
-        for catchup_coro in (
-            sentinel.catchup_unposted_alibk(reader_client=client),
-            sentinel.catchup_unposted_withyashar(reader_client=client),
-            sentinel.catchup_unposted_vahid(reader_client=client),
-            sentinel.catchup_unposted_ilia(reader_client=client)
-        ):
+        vip_nodes = ['Alibk3', 'withyashar', 'VahidOnline', 'iliaen', 'netblocks']
+        print(f"⚡ Executing transition catch-up for all {len(vip_nodes)} VIP channels...")
+        for v_node in vip_nodes:
             try:
-                await catchup_coro
+                await sentinel.vip_pipeline.catchup_unposted(reader_client=client, node=v_node)
             except Exception as e:
-                print(f"⚠️ VIP catchup error: {e}")
+                print(f"⚠️ VIP catchup error for {v_node}: {e}")
     except Exception as e:
         if hasattr(e, 'seconds'):
             print(f"⚠️ FloodWaitError! Sleeping for {e.seconds} seconds before retrying...")
@@ -1200,11 +1177,12 @@ async def main():
             smart_queue_task = asyncio.create_task(sentinel.run_smart_queue_worker())
             await sentinel.preload_node_entities(reader_client=client)
             await sentinel.init_channel_last_alert_ids(reader_client=client)
-            await asyncio.gather(
-                sentinel.catchup_unposted_alibk(reader_client=client),
-                sentinel.catchup_unposted_withyashar(reader_client=client),
-                return_exceptions=True
-            )
+            vip_nodes = ['Alibk3', 'withyashar', 'VahidOnline', 'iliaen', 'netblocks']
+            for v_node in vip_nodes:
+                try:
+                    await sentinel.vip_pipeline.catchup_unposted(reader_client=client, node=v_node)
+                except Exception as e_retry:
+                    print(f"⚠️ VIP catchup retry error for {v_node}: {e_retry}")
         else:
             raise
     
@@ -1251,6 +1229,10 @@ async def main():
             print(f"⚠️ Could not save gemini model cache: {e_mod}")
         try:
             sentinel.db.optimize()
+        except Exception:
+            pass
+        try:
+            sentinel.db.close()
         except Exception:
             pass
         uptime_mins = int((time.time() - sentinel.start_time) / 60)
