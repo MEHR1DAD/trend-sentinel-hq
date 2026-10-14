@@ -84,12 +84,6 @@
     "Alibk3_39025": [
       "recovered_source"
     ],
-    "Alibk3_38869": [
-      "recovered_source"
-    ],
-    "Alibk3_38866": [
-      "recovered_source"
-    ],
     "Alibk3_38868": [
       "recovered_source"
     ],
@@ -215,8 +209,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "recovered_source",
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
+      "recovered_source"
     ],
     "withyashar_25495": [
       "recovered_source"
@@ -535,6 +529,12 @@
     ],
     "akharinkhabar_638159": [
       "recovered_source"
+    ],
+    "withyashar_25511": [
+      "recovered_source"
+    ],
+    "withyashar_25510": [
+      "recovered_source"
     ]
   },
   "vip_alert_history": {
@@ -741,7 +741,7 @@
   },
   "last_alert_time": {
     "حملات نظامی در تنگه هرمز، هرمز، نفتکش": 1791923118.6283169,
-    "حملات نظامی در تنگه هرمز، هرمز": 1791990554.7988856,
+    "حملات نظامی در تنگه هرمز، هرمز": 1791998293.3966348,
     "حملات نظامی در ایران، آمریکا": 1791923760.225421,
     "درگیری مسلحانه و ترور، حملات نظامی و شلیک و پرتاب موشک در ریاض، یمن، عربستان": 1791924300.8328476,
     "حملات نظامی در اسرائیل": 1791949630.2230272,
@@ -754,11 +754,6 @@
     "آتش‌سوزی در نقاب": 1791995161.5966694
   },
   "alibk_posted": {
-    "38729": {
-      "channel": "@DidebanJang",
-      "msg_id": 150,
-      "timestamp": 1791738103.0
-    },
     "38739": {
       "channel": "@DidebanJang",
       "msg_id": 152,
@@ -1934,33 +1929,33 @@
   "channel_watermarks": {
     "Alibk3": 39078,
     "VahidHeadline": 326437,
-    "VahidOOnLine": 265111,
-    "RadioFarda": 162344,
-    "IranintlTV": 362265,
-    "Tasnimnews": 451365,
-    "Farsna": 468453,
-    "isna94": 408778,
-    "irna_1313": 462384,
-    "akharinkhabar": 638348,
-    "khabarfouri": 569619,
-    "akhbarefori": 698474,
-    "dw_farsi": 131199,
-    "entekhab_ir": 383387,
-    "Khabar_Fouri": 551614,
-    "khabari": 201458,
-    "thezoomit": 103872,
-    "farsivoa": 233753,
+    "VahidOOnLine": 265120,
+    "RadioFarda": 162345,
+    "IranintlTV": 362269,
+    "Tasnimnews": 451368,
+    "Farsna": 468457,
+    "isna94": 408782,
+    "irna_1313": 462390,
+    "akharinkhabar": 638356,
+    "khabarfouri": 569624,
+    "akhbarefori": 698477,
+    "dw_farsi": 131201,
+    "entekhab_ir": 383390,
+    "Khabar_Fouri": 551625,
+    "khabari": 201463,
+    "thezoomit": 103874,
+    "farsivoa": 233757,
     "myITiran": 18285,
-    "Farsi_Iranwire": 94693,
+    "Farsi_Iranwire": 94694,
     "bbcpersian": 293363,
-    "Alarabiya_far": 152224,
-    "thezoomon": 5284,
+    "Alarabiya_far": 152226,
+    "thezoomon": 5285,
     "Mr_Economy": 64057,
-    "Eghtesadnews_com": 370930,
-    "Digiato": 114162,
-    "Indypersian": 180191,
+    "Eghtesadnews_com": 370934,
+    "Digiato": 114163,
+    "Indypersian": 180192,
     "withyashar": 25634,
-    "euronewspe": 90633,
+    "euronewspe": 90634,
     "Economic_News_Channel": 82835,
     "farsna": 468156,
     "persiannbloomberg": 68366,
@@ -2052,8 +2047,8 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 16,
-    "gemini-3.5-flash-lite": 548,
-    "gemini-2.5-flash": 90,
+    "gemini-3.5-flash-lite": 565,
+    "gemini-2.5-flash": 91,
     "gemini-3-flash-preview": 47,
     "gemini-3.1-flash-lite": 190,
     "gemini-3.1-flash-lite-preview": 33,
@@ -2061,18 +2056,6 @@
     "gemini-3.7-flash": 4,
     "gemini-flash-lite-latest": 3
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39080",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39080,
-      "text": "تجدد الاشتباكات في جبهات تعز، مع تقدم القوات اليمنية في الاطراف الجنوبية الشرقية للمدينة، على طريق العاوات شمالا باتجاه مرتفعات جبل صبر-قمة العروس، وجنوبا باتجاه عزلة النجادة مع اشتباكات عنيفة. \n\nمع اشتباكات أيضا في الاطراف الغربية بحيث تدور  المواجهات في ثلاث محاور أساسية، حيث تتقدم القوات اليمنية باتجاه المطار القديم لتعز، وتتقدم باتجاه حي العقاقة شرق نقطة الهنجر، وباتجاه جبل هان من مسارين جنوبي وشمالي.",
-      "is_edit": false,
-      "enqueued_at": 1791995973.273475,
-      "retries": 1,
-      "last_retry_at": 1791995973.2794845
-    }
-  ],
-  "last_saved": "2026-10-14 16:47:58 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-14 17:21:58 UTC"
 }
