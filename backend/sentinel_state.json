@@ -266,8 +266,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
-      "recovered_source"
+      "recovered_source",
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
     ],
     "withyashar_25495": [
       "recovered_source"
@@ -871,7 +871,8 @@
     "حملات نظامی در تنگه هرمز، هرمز": 1791920399.580123,
     "حملات نظامی در ایران، آمریکا": 1791923760.225421,
     "درگیری مسلحانه و ترور، حملات نظامی و شلیک و پرتاب موشک در ریاض، یمن، عربستان": 1791924300.8328476,
-    "حملات نظامی در اسرائیل": 1791949630.2230272
+    "حملات نظامی در اسرائیل": 1791949630.2230272,
+    "حملات نظامی، تلفات جانی و احکام و اعدام معترضان در فرودگاه کرمان، میدان آزادی": 1791952970.7643518
   },
   "alibk_posted": {
     "38670": {
@@ -2642,35 +2643,35 @@
   },
   "channel_watermarks": {
     "Alibk3": 39028,
-    "VahidHeadline": 326321,
-    "VahidOOnLine": 265032,
-    "RadioFarda": 162326,
-    "IranintlTV": 362180,
-    "Tasnimnews": 451235,
-    "Farsna": 468327,
-    "isna94": 408676,
-    "irna_1313": 462124,
-    "akharinkhabar": 638222,
-    "khabarfouri": 569480,
-    "akhbarefori": 698278,
+    "VahidHeadline": 326322,
+    "VahidOOnLine": 265034,
+    "RadioFarda": 162327,
+    "IranintlTV": 362183,
+    "Tasnimnews": 451237,
+    "Farsna": 468328,
+    "isna94": 408680,
+    "irna_1313": 462136,
+    "akharinkhabar": 638225,
+    "khabarfouri": 569484,
+    "akhbarefori": 698291,
     "dw_farsi": 131150,
-    "entekhab_ir": 383320,
-    "Khabar_Fouri": 551496,
-    "khabari": 201340,
+    "entekhab_ir": 383323,
+    "Khabar_Fouri": 551509,
+    "khabari": 201343,
     "thezoomit": 103833,
     "farsivoa": 233681,
     "myITiran": 18276,
     "Farsi_Iranwire": 94667,
-    "bbcpersian": 293341,
+    "bbcpersian": 293342,
     "Alarabiya_far": 152165,
     "thezoomon": 5263,
-    "Mr_Economy": 64044,
-    "Eghtesadnews_com": 370848,
+    "Mr_Economy": 64045,
+    "Eghtesadnews_com": 370851,
     "Digiato": 114126,
     "Indypersian": 180153,
     "withyashar": 25588,
-    "euronewspe": 90605,
-    "Economic_News_Channel": 82777,
+    "euronewspe": 90606,
+    "Economic_News_Channel": 82778,
     "farsna": 468156,
     "persiannbloomberg": 68302,
     "VahidOnline": 78716,
@@ -2762,14 +2763,37 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 16,
-    "gemini-3.5-flash-lite": 437,
-    "gemini-2.5-flash": 67,
-    "gemini-3-flash-preview": 19,
-    "gemini-3.1-flash-lite": 96,
-    "gemini-3.1-flash-lite-preview": 26,
-    "gemini-3.6-flash": 3,
+    "gemini-3.5-flash-lite": 438,
+    "gemini-2.5-flash": 69,
+    "gemini-3-flash-preview": 20,
+    "gemini-3.1-flash-lite": 104,
+    "gemini-3.1-flash-lite-preview": 27,
+    "gemini-3.6-flash": 4,
     "gemini-3.7-flash": 4
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-14 04:32:21 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_withyashar_25589",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25589,
+      "text": "رویترز به نقل از یک مقام نظامی آمریکایی: سپاه پاسداران پس از آنکه حملات آمریکا بخش عمده زیرساخت‌های راداری ایران را نابود کرد، استفاده از دیده‌بان‌های غیرمسلح روی قایق‌های کوچک را برای شناسایی اهداف احتمالی، از جمله ناوهای جنگی آمریکا، آغاز کرده است. این افراد موقعیت اهداف را برای سپاه گزارش می‌کنند.\nبه گفته این مقام، هفته گذشته نیروهای آمریکایی یک لنج را که برای انتقال اطلاعات هدف‌گیری به سپاه استفاده می‌شد، رهگیری و منهدم کردند. در این حادثه هیچ تلفاتی گزارش نشده است.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1791953803.6542306,
+      "retries": 3,
+      "last_retry_at": 1791953944.4363306
+    },
+    {
+      "id": "vip_multi_agent_VahidOnline_78717",
+      "pipeline": "vip_multi_agent",
+      "node": "VahidOnline",
+      "msg_id": 78717,
+      "text": "دونالد ترامپ در جریان سخنرانی خود در آلاسکا گفت: «صبر کنید و ببینید با ایران چه خواهیم کرد. ما حسابی از خجالت‌شان درمی‌آییم و آنها فقط نشسته‌اند و منتظرند، چرا که دیگر واقعا کاسه صبرمان لبریز شده و تحملمان تمام شده است.» \n\nاو با تاکید بر اینکه آمریکا پس از دوره‌ای از بی‌احترامی‌ها اکنون دوباره جایگاه مقتدر و محترم خود را در جهان بازیافته است، تصریح کرد: «نکته اساسی و مهم این است که آنها قرار نبود سلاح هسته‌ای داشته باشند و هرگز هم نخواهند داشت؛ برنامه‌ای که اکنون زیر هزاران تن سنگ و صخره مدفون شده است.»\n@VahidOOnLine\n\n📡 @VahidOnline",
+      "is_edit": false,
+      "enqueued_at": 1791954001.6099038,
+      "retries": 1,
+      "last_retry_at": 1791954020.589667
+    }
+  ],
+  "last_saved": "2026-10-14 05:00:48 UTC"
 }
