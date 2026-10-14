@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 16
-- **Last Message Text:** 🎥 لحظه‌ای از اصابت موشک‌های نیروهای مسلح یمن به اهداف خود در ریاض، عربستان سعودی 
+- **Messages Processed:** 29
+- **Last Message Text:** ضربۀ کاری امباپه به لیگ فرانسه!
 
-@TasnimNews
-- **Last Message Time:** 2026-10-14 00:45:59
+⚽️ نشریۀ مارکا اسپانیا: لیگ فرانسه قبل از تصمیم به جدایی امباپه انت...
+- **Last Message Time:** 2026-10-14 01:16:11
