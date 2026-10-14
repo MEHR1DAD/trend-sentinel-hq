@@ -1,8 +1,5 @@
 {
   "alerted_msg_patterns": {
-    "Alibk3_38909": [
-      "recovered_source"
-    ],
     "withyashar_25526": [
       "recovered_source"
     ],
@@ -202,8 +199,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "آتش‌سوزی در پایگاه هوایی ایران",
-      "recovered_source"
+      "recovered_source",
+      "آتش‌سوزی در پایگاه هوایی ایران"
     ],
     "withyashar_25505": [
       "recovered_source"
@@ -269,8 +266,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
-      "recovered_source"
+      "recovered_source",
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
     ],
     "withyashar_25495": [
       "recovered_source"
@@ -559,12 +556,6 @@
     ]
   },
   "vip_alert_history": {
-    "Alibk3_38909": {
-      "sent_msg_id": 202,
-      "target_channel": "@DidebanJang",
-      "time": 1791860597.0478456,
-      "thread_key": "withyashar_25518"
-    },
     "Alibk3_38910": {
       "sent_msg_id": 183,
       "target_channel": "@DidebanJang",
@@ -2653,32 +2644,32 @@
   },
   "channel_watermarks": {
     "Alibk3": 39028,
-    "VahidHeadline": 326317,
-    "VahidOOnLine": 265024,
+    "VahidHeadline": 326318,
+    "VahidOOnLine": 265028,
     "RadioFarda": 162326,
     "IranintlTV": 362169,
-    "Tasnimnews": 451225,
-    "Farsna": 468321,
-    "isna94": 408661,
-    "irna_1313": 462092,
+    "Tasnimnews": 451228,
+    "Farsna": 468322,
+    "isna94": 408670,
+    "irna_1313": 462095,
     "akharinkhabar": 638212,
-    "khabarfouri": 569465,
+    "khabarfouri": 569469,
     "akhbarefori": 698273,
     "dw_farsi": 131150,
     "entekhab_ir": 383316,
     "Khabar_Fouri": 551495,
     "khabari": 201334,
-    "thezoomit": 103831,
+    "thezoomit": 103833,
     "farsivoa": 233681,
     "myITiran": 18274,
     "Farsi_Iranwire": 94667,
-    "bbcpersian": 293337,
+    "bbcpersian": 293338,
     "Alarabiya_far": 152165,
     "thezoomon": 5263,
     "Mr_Economy": 64044,
-    "Eghtesadnews_com": 370834,
+    "Eghtesadnews_com": 370837,
     "Digiato": 114126,
-    "Indypersian": 180147,
+    "Indypersian": 180151,
     "withyashar": 25588,
     "euronewspe": 90604,
     "Economic_News_Channel": 82774,
@@ -2782,5 +2773,5 @@
     "gemini-3.7-flash": 4
   },
   "smart_queue": [],
-  "last_saved": "2026-10-14 02:37:30 UTC"
+  "last_saved": "2026-10-14 03:05:59 UTC"
 }
