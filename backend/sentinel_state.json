@@ -199,8 +199,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "آتش‌سوزی در پایگاه هوایی ایران",
-      "recovered_source"
+      "recovered_source",
+      "آتش‌سوزی در پایگاه هوایی ایران"
     ],
     "withyashar_25505": [
       "recovered_source"
@@ -266,8 +266,8 @@
       "recovered_source"
     ],
     "VahidOnline_78697": [
-      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه",
-      "recovered_source"
+      "recovered_source",
+      "احکام و اعدام معترضان در ایران، چابهار، راسک، پیشین، اهل، قیام، مقر سپاه"
     ],
     "withyashar_25495": [
       "recovered_source"
@@ -870,7 +870,8 @@
     "حملات نظامی در تنگه هرمز، هرمز، نفتکش": 1791923118.6283169,
     "حملات نظامی در تنگه هرمز، هرمز": 1791920399.580123,
     "حملات نظامی در ایران، آمریکا": 1791923760.225421,
-    "درگیری مسلحانه و ترور، حملات نظامی و شلیک و پرتاب موشک در ریاض، یمن، عربستان": 1791924300.8328476
+    "درگیری مسلحانه و ترور، حملات نظامی و شلیک و پرتاب موشک در ریاض، یمن، عربستان": 1791924300.8328476,
+    "حملات نظامی در اسرائیل": 1791949630.2230272
   },
   "alibk_posted": {
     "38670": {
@@ -2641,37 +2642,37 @@
   },
   "channel_watermarks": {
     "Alibk3": 39028,
-    "VahidHeadline": 326319,
-    "VahidOOnLine": 265029,
+    "VahidHeadline": 326320,
+    "VahidOOnLine": 265032,
     "RadioFarda": 162326,
-    "IranintlTV": 362169,
-    "Tasnimnews": 451229,
-    "Farsna": 468323,
-    "isna94": 408671,
-    "irna_1313": 462097,
-    "akharinkhabar": 638213,
-    "khabarfouri": 569471,
+    "IranintlTV": 362177,
+    "Tasnimnews": 451232,
+    "Farsna": 468325,
+    "isna94": 408673,
+    "irna_1313": 462102,
+    "akharinkhabar": 638220,
+    "khabarfouri": 569479,
     "akhbarefori": 698273,
     "dw_farsi": 131150,
     "entekhab_ir": 383316,
     "Khabar_Fouri": 551495,
-    "khabari": 201335,
+    "khabari": 201338,
     "thezoomit": 103833,
     "farsivoa": 233681,
     "myITiran": 18275,
     "Farsi_Iranwire": 94667,
-    "bbcpersian": 293339,
+    "bbcpersian": 293340,
     "Alarabiya_far": 152165,
     "thezoomon": 5263,
     "Mr_Economy": 64044,
-    "Eghtesadnews_com": 370841,
+    "Eghtesadnews_com": 370845,
     "Digiato": 114126,
-    "Indypersian": 180152,
+    "Indypersian": 180153,
     "withyashar": 25588,
-    "euronewspe": 90604,
+    "euronewspe": 90605,
     "Economic_News_Channel": 82774,
     "farsna": 468156,
-    "persiannbloomberg": 68293,
+    "persiannbloomberg": 68300,
     "VahidOnline": 78716,
     "mamlekate": 104815,
     "iliaen": 4744
@@ -2765,10 +2766,10 @@
     "gemini-2.5-flash": 67,
     "gemini-3-flash-preview": 19,
     "gemini-3.1-flash-lite": 96,
-    "gemini-3.1-flash-lite-preview": 25,
+    "gemini-3.1-flash-lite-preview": 26,
     "gemini-3.6-flash": 3,
     "gemini-3.7-flash": 4
   },
   "smart_queue": [],
-  "last_saved": "2026-10-14 03:34:27 UTC"
+  "last_saved": "2026-10-14 04:03:49 UTC"
 }
