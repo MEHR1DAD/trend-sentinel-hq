@@ -81,12 +81,6 @@
     "Alibk3_39025": [
       "recovered_source"
     ],
-    "Alibk3_38861": [
-      "recovered_source"
-    ],
-    "withyashar_25509": [
-      "recovered_source"
-    ],
     "withyashar_25508": [
       "recovered_source"
     ],
@@ -124,8 +118,8 @@
       "recovered_source"
     ],
     "VahidOnline_78702": [
-      "recovered_source",
-      "آتش‌سوزی در پایگاه هوایی ایران"
+      "آتش‌سوزی در پایگاه هوایی ایران",
+      "recovered_source"
     ],
     "withyashar_25505": [
       "recovered_source"
@@ -532,6 +526,12 @@
     ],
     "Alibk3_38870": [
       "recovered_source"
+    ],
+    "Alibk3_38863": [
+      "recovered_source"
+    ],
+    "Alibk3_38862": [
+      "recovered_source"
     ]
   },
   "vip_alert_history": {
@@ -743,11 +743,6 @@
     "انفجار در ایران، خزانه، آمریکا": 1791999742.56139
   },
   "alibk_posted": {
-    "38754": {
-      "channel": "@DidebanJang",
-      "msg_id": 152,
-      "timestamp": 1791745077.0717614
-    },
     "38780": {
       "channel": "@DidebanJang",
       "msg_id": 160,
@@ -1770,35 +1765,35 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39081,
-    "VahidHeadline": 326442,
-    "VahidOOnLine": 265133,
+    "Alibk3": 39085,
+    "VahidHeadline": 326445,
+    "VahidOOnLine": 265138,
     "RadioFarda": 162345,
-    "IranintlTV": 362284,
-    "Tasnimnews": 451381,
-    "Farsna": 468479,
-    "isna94": 408792,
-    "irna_1313": 462405,
-    "akharinkhabar": 638370,
-    "khabarfouri": 569633,
-    "akhbarefori": 698502,
+    "IranintlTV": 362290,
+    "Tasnimnews": 451393,
+    "Farsna": 468494,
+    "isna94": 408800,
+    "irna_1313": 462414,
+    "akharinkhabar": 638379,
+    "khabarfouri": 569636,
+    "akhbarefori": 698518,
     "dw_farsi": 131203,
-    "entekhab_ir": 383401,
-    "Khabar_Fouri": 551639,
-    "khabari": 201479,
+    "entekhab_ir": 383408,
+    "Khabar_Fouri": 551648,
+    "khabari": 201486,
     "thezoomit": 103876,
-    "farsivoa": 233764,
+    "farsivoa": 233769,
     "myITiran": 18285,
-    "Farsi_Iranwire": 94696,
+    "Farsi_Iranwire": 94697,
     "bbcpersian": 293363,
-    "Alarabiya_far": 152231,
-    "thezoomon": 5285,
+    "Alarabiya_far": 152233,
+    "thezoomon": 5287,
     "Mr_Economy": 64057,
-    "Eghtesadnews_com": 370940,
+    "Eghtesadnews_com": 370942,
     "Digiato": 114170,
-    "Indypersian": 180200,
+    "Indypersian": 180201,
     "withyashar": 25639,
-    "euronewspe": 90637,
+    "euronewspe": 90638,
     "Economic_News_Channel": 82845,
     "farsna": 468156,
     "persiannbloomberg": 68377,
@@ -1890,15 +1885,71 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 16,
-    "gemini-3.5-flash-lite": 603,
+    "gemini-3.5-flash-lite": 619,
     "gemini-2.5-flash": 91,
     "gemini-3-flash-preview": 48,
-    "gemini-3.1-flash-lite": 190,
-    "gemini-3.1-flash-lite-preview": 33,
+    "gemini-3.1-flash-lite": 195,
+    "gemini-3.1-flash-lite-preview": 34,
     "gemini-3.6-flash": 4,
     "gemini-3.7-flash": 4,
-    "gemini-flash-lite-latest": 4
+    "gemini-flash-lite-latest": 5
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-14 18:37:44 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39085",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39085,
+      "text": "رئيس مجلس الشورى الإيراني، قاليباف:\n\nيجب أن نؤمن، ونحن في ميدان الحرب، بضرورة مواجهة العدو المتسلّط بشجاعة، وأن نواصل التفاوض أيضاً، بهدف إرساء ردع مستدام.",
+      "is_edit": true,
+      "enqueued_at": 1792003601.6412556,
+      "retries": 3,
+      "last_retry_at": 1792004532.6704216
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25640",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25640,
+      "text": "کانال ۱۳ اسرائیل: دو هفته آینده بسیار حساس است!\n@WarRoom 🚨🚨",
+      "is_edit": true,
+      "enqueued_at": 1792004332.8390462,
+      "retries": 1,
+      "last_retry_at": 1792004847.1602874
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25632",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25632,
+      "text": "ابوالفضل ظهره‌وند، نماینده مجلس: پیش بینی میکنم ظرف یک هفته تا ده روز آینده جنگ از سر گرفته شود.\nنتانیاهو بدون جنگ باید به زندان برود، برای همین چه با ترامپ و چه بدون ترامپ، جنگ را شروع میکند!\nبرای زدن زیرساخت‌های ایران ۳ روز برنامه ریختن، با این‌کار نتانیاهو انتخابات را به تأخیر میندازه!\n@WarRoom",
+      "is_edit": true,
+      "enqueued_at": 1792004513.3750615,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25643",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25643,
+      "text": "اتاق جنگ با یاشار : ترابری نظامی دیکتاتور براندازگونه آمریکا همچنان ادامه دارد…\nاز ۲۴ ساعت پیش تا همین الان الان !\n@WarRoom 🚨🚨🚨🚨🚨",
+      "is_edit": false,
+      "enqueued_at": 1792004515.4018433,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39086",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39086,
+      "text": "توقف مطار جدة في السعودية الآن.",
+      "is_edit": false,
+      "enqueued_at": 1792004613.1555717,
+      "retries": 0,
+      "last_retry_at": 0
+    }
+  ],
+  "last_saved": "2026-10-14 19:10:53 UTC"
 }
