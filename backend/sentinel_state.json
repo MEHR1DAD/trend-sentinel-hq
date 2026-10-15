@@ -3,12 +3,6 @@
     "Alibk3_39025": [
       "recovered_source"
     ],
-    "Alibk3_38671": [
-      "recovered_source"
-    ],
-    "Alibk3_38670": [
-      "recovered_source"
-    ],
     "Alibk3_38667": [
       "recovered_source"
     ],
@@ -452,6 +446,12 @@
     ],
     "Alibk3_38832": [
       "recovered_source"
+    ],
+    "Alibk3_39023": [
+      "recovered_source"
+    ],
+    "Alibk3_39024": [
+      "recovered_source"
     ]
   },
   "vip_alert_history": {
@@ -768,8 +768,8 @@
     "VahidOOnLine": 265167,
     "RadioFarda": 162348,
     "IranintlTV": 362338,
-    "Tasnimnews": 451416,
-    "Farsna": 468518,
+    "Tasnimnews": 451418,
+    "Farsna": 468520,
     "isna94": 408812,
     "irna_1313": 462446,
     "akharinkhabar": 638389,
@@ -780,7 +780,7 @@
     "Khabar_Fouri": 551653,
     "khabari": 201516,
     "thezoomit": 103881,
-    "farsivoa": 233794,
+    "farsivoa": 233795,
     "myITiran": 18285,
     "Farsi_Iranwire": 94699,
     "bbcpersian": 293376,
@@ -791,7 +791,7 @@
     "Digiato": 114171,
     "Indypersian": 180212,
     "withyashar": 25673,
-    "euronewspe": 90649,
+    "euronewspe": 90650,
     "Economic_News_Channel": 82845,
     "farsna": 468156,
     "persiannbloomberg": 68405,
@@ -885,25 +885,13 @@
     "gemini-3.8-flash": 16,
     "gemini-3.5-flash-lite": 628,
     "gemini-2.5-flash": 94,
-    "gemini-3-flash-preview": 50,
+    "gemini-3-flash-preview": 51,
     "gemini-3.1-flash-lite": 562,
-    "gemini-3.1-flash-lite-preview": 52,
+    "gemini-3.1-flash-lite-preview": 53,
     "gemini-3.6-flash": 4,
-    "gemini-3.7-flash": 5,
+    "gemini-3.7-flash": 6,
     "gemini-flash-lite-latest": 6
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39101",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39101,
-      "text": "مواجهات متواصلة بين القوات اليمنية والقوات الموالية للسعودية شمال وغرب مدينة تعز.",
-      "is_edit": false,
-      "enqueued_at": 1792023508.1926692,
-      "retries": 16,
-      "last_retry_at": 1792024877.289714
-    }
-  ],
-  "last_saved": "2026-10-15 00:42:43 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-15 01:11:28 UTC"
 }
