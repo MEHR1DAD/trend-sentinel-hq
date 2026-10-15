@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 37 minutes
-- **Messages Processed:** 157
-- **Last Message Text:** 🎥 تاجرنیا: «حرفه‌ای‌گری را از السد یاد بگیرید»؛ تیمی که بعد از شکست ۳ بر صفر هم شکایت نکرد
-
-سرپرست م...
-- **Last Message Time:** 2026-10-15 17:46:50
+- **Uptime:** 35 minutes
+- **Messages Processed:** 137
+- **Last Message Text:** با گذشت بیش از ۲۰۰روز از بازداشت بهزاد یزدانی، شهروند بهایی ساکن شیراز، او همچنان بدون تعیین تکلیف ق...
+- **Last Message Time:** 2026-10-15 18:22:03
