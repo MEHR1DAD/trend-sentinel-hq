@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 33 minutes
-- **Messages Processed:** 157
-- **Last Message Text:** 📌زلنسکی: در این جنگ تکنولوژیکی آمریکا با هوش مصنوعی و استارلینک به پوتین کمک کرده 
-
-🔹 وقتی هوش مصنوع...
-- **Last Message Time:** 2026-10-15 10:42:16
+- **Uptime:** 30 minutes
+- **Messages Processed:** 135
+- **Last Message Text:** شبکه یمنی حقوق و آزادی‌ها، با صدور بیانیه در روز پنجشنبه بیست‌وسوم مهرماه، اعلام کرد که طی ۴۸ ساعت گ...
+- **Last Message Time:** 2026-10-15 11:13:30
