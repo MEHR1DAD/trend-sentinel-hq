@@ -1,8 +1,5 @@
 {
   "alerted_msg_patterns": {
-    "Alibk3_39025": [
-      "recovered_source"
-    ],
     "Alibk3_38667": [
       "recovered_source"
     ],
@@ -454,15 +451,7 @@
       "recovered_source"
     ]
   },
-  "vip_alert_history": {
-    "Alibk3_39025": {
-      "sent_msg_id": 217,
-      "target_channel": "@DidebanJang",
-      "time": 1791940334.748929,
-      "ai_model": "gemini-3.5-flash-lite",
-      "pattern": "vip_edit_update"
-    }
-  },
+  "vip_alert_history": {},
   "last_alert_time": {
     "حملات نظامی در تنگه هرمز، هرمز": 1791998293.3966348,
     "حملات نظامی در اسرائیل": 1791949630.2230272,
@@ -765,13 +754,13 @@
   "channel_watermarks": {
     "Alibk3": 39100,
     "VahidHeadline": 326464,
-    "VahidOOnLine": 265167,
+    "VahidOOnLine": 265169,
     "RadioFarda": 162348,
-    "IranintlTV": 362338,
-    "Tasnimnews": 451418,
-    "Farsna": 468520,
-    "isna94": 408812,
-    "irna_1313": 462446,
+    "IranintlTV": 362339,
+    "Tasnimnews": 451419,
+    "Farsna": 468521,
+    "isna94": 408814,
+    "irna_1313": 462448,
     "akharinkhabar": 638389,
     "khabarfouri": 569648,
     "akhbarefori": 698552,
@@ -780,7 +769,7 @@
     "Khabar_Fouri": 551653,
     "khabari": 201516,
     "thezoomit": 103881,
-    "farsivoa": 233795,
+    "farsivoa": 233797,
     "myITiran": 18285,
     "Farsi_Iranwire": 94699,
     "bbcpersian": 293376,
@@ -789,9 +778,9 @@
     "Mr_Economy": 64057,
     "Eghtesadnews_com": 370963,
     "Digiato": 114171,
-    "Indypersian": 180212,
+    "Indypersian": 180213,
     "withyashar": 25673,
-    "euronewspe": 90650,
+    "euronewspe": 90651,
     "Economic_News_Channel": 82845,
     "farsna": 468156,
     "persiannbloomberg": 68405,
@@ -889,9 +878,21 @@
     "gemini-3.1-flash-lite": 562,
     "gemini-3.1-flash-lite-preview": 53,
     "gemini-3.6-flash": 4,
-    "gemini-3.7-flash": 6,
+    "gemini-3.7-flash": 7,
     "gemini-flash-lite-latest": 6
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-15 01:11:28 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39101",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39101,
+      "text": "مواجهات متواصلة بين القوات اليمنية والقوات الموالية للسعودية شمال وغرب مدينة تعز.",
+      "is_edit": false,
+      "enqueued_at": 1792026739.481448,
+      "retries": 19,
+      "last_retry_at": 1792028383.5622408
+    }
+  ],
+  "last_saved": "2026-10-15 01:40:22 UTC"
 }
