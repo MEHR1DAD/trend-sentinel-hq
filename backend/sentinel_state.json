@@ -1,15 +1,6 @@
 {
   "alerted_msg_patterns": {
-    "Alibk3_39023": [
-      "recovered_source"
-    ],
-    "Alibk3_39024": [
-      "recovered_source"
-    ],
     "Alibk3_39025": [
-      "recovered_source"
-    ],
-    "Alibk3_38673": [
       "recovered_source"
     ],
     "Alibk3_38671": [
@@ -458,23 +449,12 @@
     ],
     "withyashar_25490": [
       "recovered_source"
+    ],
+    "Alibk3_38832": [
+      "recovered_source"
     ]
   },
   "vip_alert_history": {
-    "Alibk3_39023": {
-      "sent_msg_id": 217,
-      "target_channel": "@DidebanJang",
-      "time": 1791936004.3425064,
-      "ai_model": "gemini-3.5-flash-lite",
-      "pattern": "vip_edit_update"
-    },
-    "Alibk3_39024": {
-      "sent_msg_id": 217,
-      "target_channel": "@DidebanJang",
-      "time": 1791935892.9102848,
-      "ai_model": "gemini-3.5-flash-lite",
-      "pattern": "vip_edit_update"
-    },
     "Alibk3_39025": {
       "sent_msg_id": 217,
       "target_channel": "@DidebanJang",
@@ -497,11 +477,6 @@
     "حملات نظامی در ایران، آمریکا": 1792017122.9893115
   },
   "alibk_posted": {
-    "38780": {
-      "channel": "@DidebanJang",
-      "msg_id": 160,
-      "timestamp": 1791764079.0
-    },
     "38798": {
       "channel": "@DidebanJang",
       "msg_id": 163,
@@ -521,26 +496,6 @@
       "channel": "@DidebanJang",
       "msg_id": 163,
       "timestamp": 1791783491.0
-    },
-    "38799": {
-      "channel": "@DidebanJang",
-      "msg_id": 160,
-      "timestamp": 1791764079.0
-    },
-    "38802": {
-      "channel": "@DidebanJang",
-      "msg_id": 160,
-      "timestamp": 1791764079.0
-    },
-    "38803": {
-      "channel": "@DidebanJang",
-      "msg_id": 160,
-      "timestamp": 1791764079.0
-    },
-    "38814": {
-      "channel": "@DidebanJang",
-      "msg_id": 160,
-      "timestamp": 1791764079.0
     },
     "38817": {
       "channel": "@DidebanJang",
@@ -809,11 +764,11 @@
   },
   "channel_watermarks": {
     "Alibk3": 39100,
-    "VahidHeadline": 326463,
-    "VahidOOnLine": 265163,
+    "VahidHeadline": 326464,
+    "VahidOOnLine": 265167,
     "RadioFarda": 162348,
-    "IranintlTV": 362336,
-    "Tasnimnews": 451413,
+    "IranintlTV": 362338,
+    "Tasnimnews": 451416,
     "Farsna": 468518,
     "isna94": 408812,
     "irna_1313": 462446,
@@ -825,7 +780,7 @@
     "Khabar_Fouri": 551653,
     "khabari": 201516,
     "thezoomit": 103881,
-    "farsivoa": 233791,
+    "farsivoa": 233794,
     "myITiran": 18285,
     "Farsi_Iranwire": 94699,
     "bbcpersian": 293376,
@@ -834,9 +789,9 @@
     "Mr_Economy": 64057,
     "Eghtesadnews_com": 370963,
     "Digiato": 114171,
-    "Indypersian": 180210,
+    "Indypersian": 180212,
     "withyashar": 25673,
-    "euronewspe": 90647,
+    "euronewspe": 90649,
     "Economic_News_Channel": 82845,
     "farsna": 468156,
     "persiannbloomberg": 68405,
@@ -928,9 +883,9 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 16,
-    "gemini-3.5-flash-lite": 627,
+    "gemini-3.5-flash-lite": 628,
     "gemini-2.5-flash": 94,
-    "gemini-3-flash-preview": 49,
+    "gemini-3-flash-preview": 50,
     "gemini-3.1-flash-lite": 562,
     "gemini-3.1-flash-lite-preview": 52,
     "gemini-3.6-flash": 4,
@@ -939,16 +894,16 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_25671",
+      "id": "vip_multi_agent_Alibk3_39101",
       "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25671,
-      "text": "@WarRoom نفت خام هوایی 😂",
-      "is_edit": true,
-      "enqueued_at": 1792020319.0539052,
-      "retries": 17,
-      "last_retry_at": 1792021814.292964
+      "node": "Alibk3",
+      "msg_id": 39101,
+      "text": "مواجهات متواصلة بين القوات اليمنية والقوات الموالية للسعودية شمال وغرب مدينة تعز.",
+      "is_edit": false,
+      "enqueued_at": 1792023508.1926692,
+      "retries": 16,
+      "last_retry_at": 1792024877.289714
     }
   ],
-  "last_saved": "2026-10-14 23:51:25 UTC"
+  "last_saved": "2026-10-15 00:42:43 UTC"
 }
