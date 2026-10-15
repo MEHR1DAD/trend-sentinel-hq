@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 35 minutes
-- **Messages Processed:** 137
-- **Last Message Text:** با گذشت بیش از ۲۰۰روز از بازداشت بهزاد یزدانی، شهروند بهایی ساکن شیراز، او همچنان بدون تعیین تکلیف ق...
-- **Last Message Time:** 2026-10-15 18:22:03
+- **Uptime:** 32 minutes
+- **Messages Processed:** 111
+- **Last Message Text:** مشاور وزیر کشور: کاهش حمایت‌های جهانی، تداوم خدمات به پناهندگان را دشوار کرده است
+
+🔹نادر یاراحمدی مش...
+- **Last Message Time:** 2026-10-15 19:21:48
