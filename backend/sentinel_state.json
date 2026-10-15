@@ -454,7 +454,6 @@
   "vip_alert_history": {},
   "last_alert_time": {
     "حملات نظامی در تنگه هرمز، هرمز": 1791998293.3966348,
-    "حملات نظامی در اسرائیل": 1791949630.2230272,
     "حملات نظامی، تلفات جانی و احکام و اعدام معترضان در فرودگاه کرمان، میدان آزادی": 1791952970.7643518,
     "وضعیت قرمز": 1791960811.9687238,
     "احکام و اعدام معترضان در فرودگاه کرمان": 1791960946.627893,
@@ -463,7 +462,8 @@
     "سقوط و لاشه در فرودگاه ایران، تهران، تبریز، پرواز": 1791995090.2057362,
     "آتش‌سوزی در نقاب": 1791995161.5966694,
     "انفجار در ایران، خزانه، آمریکا": 1791999742.56139,
-    "حملات نظامی در ایران، آمریکا": 1792017122.9893115
+    "حملات نظامی در ایران، آمریکا": 1792017122.9893115,
+    "حملات نظامی در آمریکا": 1792036872.131103
   },
   "alibk_posted": {
     "38798": {
@@ -754,20 +754,20 @@
   "channel_watermarks": {
     "Alibk3": 39101,
     "VahidHeadline": 326472,
-    "VahidOOnLine": 265177,
+    "VahidOOnLine": 265180,
     "RadioFarda": 162348,
-    "IranintlTV": 362344,
-    "Tasnimnews": 451424,
-    "Farsna": 468535,
-    "isna94": 408816,
-    "irna_1313": 462463,
-    "akharinkhabar": 638389,
-    "khabarfouri": 569650,
+    "IranintlTV": 362349,
+    "Tasnimnews": 451427,
+    "Farsna": 468538,
+    "isna94": 408817,
+    "irna_1313": 462465,
+    "akharinkhabar": 638405,
+    "khabarfouri": 569666,
     "akhbarefori": 698552,
     "dw_farsi": 131205,
     "entekhab_ir": 383416,
-    "Khabar_Fouri": 551653,
-    "khabari": 201516,
+    "Khabar_Fouri": 551678,
+    "khabari": 201517,
     "thezoomit": 103881,
     "farsivoa": 233805,
     "myITiran": 18285,
@@ -776,12 +776,12 @@
     "Alarabiya_far": 152251,
     "thezoomon": 5288,
     "Mr_Economy": 64057,
-    "Eghtesadnews_com": 370965,
+    "Eghtesadnews_com": 370971,
     "Digiato": 114171,
-    "Indypersian": 180218,
+    "Indypersian": 180220,
     "withyashar": 25673,
     "euronewspe": 90655,
-    "Economic_News_Channel": 82854,
+    "Economic_News_Channel": 82856,
     "farsna": 468156,
     "persiannbloomberg": 68405,
     "VahidOnline": 78731,
@@ -874,13 +874,25 @@
     "gemini-3.8-flash": 16,
     "gemini-3.5-flash-lite": 628,
     "gemini-2.5-flash": 94,
-    "gemini-3-flash-preview": 52,
+    "gemini-3-flash-preview": 53,
     "gemini-3.1-flash-lite": 563,
     "gemini-3.1-flash-lite-preview": 53,
     "gemini-3.6-flash": 4,
     "gemini-3.7-flash": 8,
-    "gemini-flash-lite-latest": 7
+    "gemini-flash-lite-latest": 8
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-15 03:34:32 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_withyashar_25656",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25656,
+      "text": "نتانیاهو: اسرائیل امروز قدرتمندترین قدرت است. همچنین می‌توانم به شما بگویم که اقتصاد ما با چنان سرعتی در حال رشد است که باورکردنش دشوار است.\n@WarRoom",
+      "is_edit": true,
+      "enqueued_at": 1792036253.47395,
+      "retries": 9,
+      "last_retry_at": 1792036943.7758732
+    }
+  ],
+  "last_saved": "2026-10-15 04:03:03 UTC"
 }

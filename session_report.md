@@ -1,8 +1,7 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 54
-- **Last Message Text:** مقاومت عراق از نقض حاکمیت بغداد توسط هواپیماهای آمریکایی خبر داد
-
-🔹مقاومت عراق اعلام کرد جنگنده‌ها و...
-- **Last Message Time:** 2026-10-15 03:34:30
+- **Messages Processed:** 85
+- **Last Message Text:** ترامپ: ما که کنترل کامل تنگه هرمز را در دست داریم و بیش از هر زمان دیگری نفت از آن عبور می‌کند
+💡💡 @K...
+- **Last Message Time:** 2026-10-15 04:02:51
