@@ -745,13 +745,13 @@
   "channel_watermarks": {
     "Alibk3": 39181,
     "VahidHeadline": 326605,
-    "VahidOOnLine": 265298,
+    "VahidOOnLine": 265301,
     "RadioFarda": 162377,
-    "IranintlTV": 362468,
+    "IranintlTV": 362470,
     "Tasnimnews": 451623,
     "Farsna": 468697,
     "isna94": 408926,
-    "irna_1313": 462746,
+    "irna_1313": 462747,
     "akharinkhabar": 638584,
     "khabarfouri": 569825,
     "akhbarefori": 698806,
@@ -769,9 +769,9 @@
     "Mr_Economy": 64057,
     "Eghtesadnews_com": 371056,
     "Digiato": 114192,
-    "Indypersian": 180289,
-    "withyashar": 25751,
-    "euronewspe": 90700,
+    "Indypersian": 180290,
+    "withyashar": 25755,
+    "euronewspe": 90701,
     "Economic_News_Channel": 82923,
     "farsna": 468156,
     "persiannbloomberg": 68487,
@@ -875,28 +875,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_25749",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25749,
-      "text": "@WarRoom flag3",
-      "is_edit": true,
-      "enqueued_at": 1792104588.087346,
-      "retries": 21,
-      "last_retry_at": 1792106478.229203
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25751",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25751,
-      "text": "@WarRoom iphone",
-      "is_edit": true,
-      "enqueued_at": 1792105341.0379674,
-      "retries": 13,
-      "last_retry_at": 1792106457.5620484
-    },
-    {
       "id": "vip_multi_agent_withyashar_25752",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
@@ -904,9 +882,53 @@
       "text": "@WarRoom iphone 2",
       "is_edit": true,
       "enqueued_at": 1792106092.3465626,
-      "retries": 6,
-      "last_retry_at": 1792106498.8984969
+      "retries": 23,
+      "last_retry_at": 1792108178.5383737
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25753",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25753,
+      "text": "صدای تیر اندازی در شرق تهران ، پدافند نیست ، احتمالا بسیجی‌ها شربت شهادت رو خوردن مست کردن \n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792107112.553329,
+      "retries": 13,
+      "last_retry_at": 1792108210.193221
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25754",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25754,
+      "text": "واشنگتن پست به نقل از یک مسئول اوکراینی: در تاریخ ۷ اکتبر، ما تنها ۱۰ موشک پاتریوت برای دفاع هوایی داشتیم و این موشک‌ها هم در حملات اخیر مورد استفاده قرار گرفتند.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792107411.9499705,
+      "retries": 10,
+      "last_retry_at": 1792108237.3778262
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25747",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25747,
+      "text": "@WarRoom flag",
+      "is_edit": true,
+      "enqueued_at": 1792107970.6404262,
+      "retries": 4,
+      "last_retry_at": 1792108188.6537907
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25755",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25755,
+      "text": "@WarRoom طب سنتی",
+      "is_edit": true,
+      "enqueued_at": 1792108187.659427,
+      "retries": 2,
+      "last_retry_at": 1792108258.1916652
     }
   ],
-  "last_saved": "2026-10-15 23:22:14 UTC"
+  "last_saved": "2026-10-15 23:51:01 UTC"
 }
