@@ -752,15 +752,15 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39100,
+    "Alibk3": 39101,
     "VahidHeadline": 326472,
     "VahidOOnLine": 265173,
     "RadioFarda": 162348,
     "IranintlTV": 362341,
     "Tasnimnews": 451422,
-    "Farsna": 468525,
+    "Farsna": 468527,
     "isna94": 408814,
-    "irna_1313": 462458,
+    "irna_1313": 462461,
     "akharinkhabar": 638389,
     "khabarfouri": 569650,
     "akhbarefori": 698552,
@@ -769,7 +769,7 @@
     "Khabar_Fouri": 551653,
     "khabari": 201516,
     "thezoomit": 103881,
-    "farsivoa": 233804,
+    "farsivoa": 233805,
     "myITiran": 18285,
     "Farsi_Iranwire": 94699,
     "bbcpersian": 293387,
@@ -780,7 +780,7 @@
     "Digiato": 114171,
     "Indypersian": 180215,
     "withyashar": 25673,
-    "euronewspe": 90652,
+    "euronewspe": 90654,
     "Economic_News_Channel": 82845,
     "farsna": 468156,
     "persiannbloomberg": 68405,
@@ -874,25 +874,13 @@
     "gemini-3.8-flash": 16,
     "gemini-3.5-flash-lite": 628,
     "gemini-2.5-flash": 94,
-    "gemini-3-flash-preview": 51,
-    "gemini-3.1-flash-lite": 562,
+    "gemini-3-flash-preview": 52,
+    "gemini-3.1-flash-lite": 563,
     "gemini-3.1-flash-lite-preview": 53,
     "gemini-3.6-flash": 4,
     "gemini-3.7-flash": 8,
     "gemini-flash-lite-latest": 7
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39101",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39101,
-      "text": "مواجهات متواصلة بين القوات اليمنية والقوات الموالية للسعودية شمال وغرب مدينة تعز.",
-      "is_edit": false,
-      "enqueued_at": 1792030174.9780214,
-      "retries": 19,
-      "last_retry_at": 1792031847.573049
-    }
-  ],
-  "last_saved": "2026-10-15 02:37:37 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-15 03:06:01 UTC"
 }
