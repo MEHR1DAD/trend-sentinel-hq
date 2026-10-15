@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 30 minutes
-- **Messages Processed:** 154
-- **Last Message Text:** دریادار سیاری: عاقبت ورود بدون هماهنگی به هرمز را در اخبار ببینید
+- **Uptime:** 31 minutes
+- **Messages Processed:** 135
+- **Last Message Text:** 🔴 سازمان دفاع مدنی عربستان از به‌صدادرآمدن آژیرهای هشدار در شهرهای نجران و جازان خبر داد.
 
-🔹معاون هماهنگ‌کنندهٔ ارتش در آیین...
-- **Last Message Time:** 2026-10-15 06:56:04
+@Farsna
+- **Last Message Time:** 2026-10-15 07:27:03
