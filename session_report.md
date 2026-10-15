@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 10
-- **Last Message Text:** ادعای ائتلاف سعودی درباره حمله پهپادی به شرق عربستان
+- **Messages Processed:** 54
+- **Last Message Text:** مقاومت عراق از نقض حاکمیت بغداد توسط هواپیماهای آمریکایی خبر داد
 
-🔹ترکی المالکی سخنگوی ائتلاف سعودی، مدعی حمله پ...
-- **Last Message Time:** 2026-10-15 03:01:59
+🔹مقاومت عراق اعلام کرد جنگنده‌ها و...
+- **Last Message Time:** 2026-10-15 03:34:30
