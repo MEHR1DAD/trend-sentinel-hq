@@ -466,26 +466,6 @@
     "آتش‌سوزی در کرمان": 1792041554.1051068
   },
   "alibk_posted": {
-    "38798": {
-      "channel": "@DidebanJang",
-      "msg_id": 163,
-      "timestamp": 1791783491.0
-    },
-    "38800": {
-      "channel": "@DidebanJang",
-      "msg_id": 163,
-      "timestamp": 1791783491.0
-    },
-    "38801": {
-      "channel": "@DidebanJang",
-      "msg_id": 163,
-      "timestamp": 1791783491.0
-    },
-    "38804": {
-      "channel": "@DidebanJang",
-      "msg_id": 163,
-      "timestamp": 1791783491.0
-    },
     "38817": {
       "channel": "@DidebanJang",
       "msg_id": 171,
@@ -753,37 +733,37 @@
   },
   "channel_watermarks": {
     "Alibk3": 39101,
-    "VahidHeadline": 326478,
-    "VahidOOnLine": 265182,
+    "VahidHeadline": 326479,
+    "VahidOOnLine": 265183,
     "RadioFarda": 162351,
     "IranintlTV": 362354,
-    "Tasnimnews": 451430,
-    "Farsna": 468542,
-    "isna94": 408822,
-    "irna_1313": 462488,
-    "akharinkhabar": 638422,
-    "khabarfouri": 569681,
-    "akhbarefori": 698565,
-    "dw_farsi": 131205,
-    "entekhab_ir": 383420,
-    "Khabar_Fouri": 551688,
-    "khabari": 201526,
+    "Tasnimnews": 451432,
+    "Farsna": 468545,
+    "isna94": 408823,
+    "irna_1313": 462495,
+    "akharinkhabar": 638423,
+    "khabarfouri": 569690,
+    "akhbarefori": 698570,
+    "dw_farsi": 131208,
+    "entekhab_ir": 383423,
+    "Khabar_Fouri": 551695,
+    "khabari": 201528,
     "thezoomit": 103881,
     "farsivoa": 233805,
     "myITiran": 18285,
     "Farsi_Iranwire": 94699,
-    "bbcpersian": 293389,
-    "Alarabiya_far": 152251,
+    "bbcpersian": 293390,
+    "Alarabiya_far": 152253,
     "thezoomon": 5290,
     "Mr_Economy": 64057,
-    "Eghtesadnews_com": 370979,
+    "Eghtesadnews_com": 370981,
     "Digiato": 114171,
-    "Indypersian": 180224,
+    "Indypersian": 180227,
     "withyashar": 25673,
-    "euronewspe": 90658,
-    "Economic_News_Channel": 82856,
+    "euronewspe": 90659,
+    "Economic_News_Channel": 82869,
     "farsna": 468156,
-    "persiannbloomberg": 68408,
+    "persiannbloomberg": 68415,
     "VahidOnline": 78731,
     "mamlekate": 104827,
     "netblocks": 1567,
@@ -874,25 +854,14 @@
     "gemini-3.8-flash": 17,
     "gemini-3.5-flash-lite": 630,
     "gemini-2.5-flash": 95,
-    "gemini-3-flash-preview": 53,
-    "gemini-3.1-flash-lite": 563,
+    "gemini-3-flash-preview": 54,
+    "gemini-3.1-flash-lite": 564,
     "gemini-3.1-flash-lite-preview": 53,
     "gemini-3.6-flash": 4,
-    "gemini-3.7-flash": 9,
-    "gemini-flash-lite-latest": 8
+    "gemini-3.7-flash": 10,
+    "gemini-flash-lite-latest": 9
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39102",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39102,
-      "text": "8 طائرات تزويد بالوقود أميركية تحلق فوق وقرب مضيق هرمز.",
-      "is_edit": true,
-      "enqueued_at": 1792040774.8097672,
-      "retries": 11,
-      "last_retry_at": 1792041907.8372624
-    },
     {
       "id": "vip_multi_agent_Alibk3_39103",
       "pipeline": "vip_multi_agent",
@@ -901,9 +870,9 @@
       "text": "سي إن إن:\n\n ترامب أصدر أوامر للجيش بتطوير حزم ضربات إضافية ضد الأهداف الإيرانية، والتي تشمل \"بنية تحتية طاقية كبيرة\"، وإمكانية استخدام أم القنابل.\n\nخطط الجيش لضرب المواقع النووية الإيرانية، بما في ذلك جبل الفأس، تتضمن أيضًا بشكل صريح استخدام قنبلة MOAB.\n\nالمسؤولين العسكريين قد طوروا بعض الخيارات التي يمكن أن تشبه \"عرضًا للألعاب النارية\" (كثافة نارية) ضد إيران، بهدف توفير مخرج لترامب من الصراع، حتى لو لم تحقق هذه الضربات الأهداف التي صرح بها كسبب لبدء الحرب في المقام الأول.",
       "is_edit": false,
       "enqueued_at": 1792041478.8120356,
-      "retries": 3,
-      "last_retry_at": 1792041880.9249818
+      "retries": 11,
+      "last_retry_at": 1792043549.8292
     }
   ],
-  "last_saved": "2026-10-15 05:26:06 UTC"
+  "last_saved": "2026-10-15 05:55:28 UTC"
 }
