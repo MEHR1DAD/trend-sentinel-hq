@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 30 minutes
-- **Messages Processed:** 43
-- **Last Message Text:** تیراندازی در مدرسه‌ای در ایالت اورگان آمریکا
+- **Uptime:** 28 minutes
+- **Messages Processed:** 22
+- **Last Message Text:** 📝 مخاطبان: برای تبلیغ علیه شاهزاده افرادی به مدرسه اعزام می‌کنند
 
-🔹 منابع خبری گزارش دادند که بر اثر حادثه تیراندازی بعد...
-- **Last Message Time:** 2026-10-15 22:23:03
+برخی مخاطبان ایران اینترنشنال با ا...
+- **Last Message Time:** 2026-10-15 22:52:29
