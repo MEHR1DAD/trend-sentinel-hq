@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 31 minutes
-- **Messages Processed:** 136
-- **Last Message Text:** کرملین: گازوئیل روسیه بازار جهانی را به ثبات کامل نمی‌رساند
+- **Uptime:** 49 minutes
+- **Messages Processed:** 197
+- **Last Message Text:** جبهه اصلاحات ایران:
 
-🔹دیمیتری پسکوف سخنگوی کرملین حملات دیرو...
-- **Last Message Time:** 2026-10-15 12:45:00
+🔹 پس از برگزاری نشست تخصصی بنیاد باران، فردی مسلح که قصد سوءقصد به «عباس آخوندی...
+- **Last Message Time:** 2026-10-15 14:25:10
