@@ -1,8 +1,5 @@
 {
   "alerted_msg_patterns": {
-    "Alibk3_38667": [
-      "recovered_source"
-    ],
     "Alibk3_38666": [
       "recovered_source"
     ],
@@ -449,6 +446,9 @@
     ],
     "Alibk3_39024": [
       "recovered_source"
+    ],
+    "Alibk3_39025": [
+      "recovered_source"
     ]
   },
   "vip_alert_history": {},
@@ -754,10 +754,10 @@
   "channel_watermarks": {
     "Alibk3": 39100,
     "VahidHeadline": 326464,
-    "VahidOOnLine": 265169,
+    "VahidOOnLine": 265171,
     "RadioFarda": 162348,
-    "IranintlTV": 362339,
-    "Tasnimnews": 451419,
+    "IranintlTV": 362340,
+    "Tasnimnews": 451421,
     "Farsna": 468521,
     "isna94": 408814,
     "irna_1313": 462448,
@@ -769,7 +769,7 @@
     "Khabar_Fouri": 551653,
     "khabari": 201516,
     "thezoomit": 103881,
-    "farsivoa": 233797,
+    "farsivoa": 233799,
     "myITiran": 18285,
     "Farsi_Iranwire": 94699,
     "bbcpersian": 293376,
@@ -778,14 +778,14 @@
     "Mr_Economy": 64057,
     "Eghtesadnews_com": 370963,
     "Digiato": 114171,
-    "Indypersian": 180213,
+    "Indypersian": 180214,
     "withyashar": 25673,
-    "euronewspe": 90651,
+    "euronewspe": 90652,
     "Economic_News_Channel": 82845,
     "farsna": 468156,
     "persiannbloomberg": 68405,
     "VahidOnline": 78731,
-    "mamlekate": 104818,
+    "mamlekate": 104819,
     "netblocks": 1567,
     "iliaen": 4744
   },
@@ -881,18 +881,6 @@
     "gemini-3.7-flash": 7,
     "gemini-flash-lite-latest": 6
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39101",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39101,
-      "text": "مواجهات متواصلة بين القوات اليمنية والقوات الموالية للسعودية شمال وغرب مدينة تعز.",
-      "is_edit": false,
-      "enqueued_at": 1792026739.481448,
-      "retries": 19,
-      "last_retry_at": 1792028383.5622408
-    }
-  ],
-  "last_saved": "2026-10-15 01:40:22 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-15 02:09:01 UTC"
 }
