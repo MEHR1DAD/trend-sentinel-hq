@@ -1,6 +1,10 @@
 # Sentinel Session Report
 
-- **Uptime:** 36 minutes
-- **Messages Processed:** 138
-- **Last Message Text:** ♦️ وال استریت ژورنال: زلنسکی به مقامات امریکایی پیشنهاد داده حاضر است به مدت ۱۰۰ روز حملات به پالایش...
-- **Last Message Time:** 2026-10-16 14:17:26
+- **Uptime:** 33 minutes
+- **Messages Processed:** 125
+- **Last Message Text:** 🎥 آتش‌سوزی در مجموعه ورزشی انقلاب
+
+🔹 این آتش‌سوزی در بخش فروشگاهی و کافی‌شاپ مجموعه رخ داده است.
+
+🔹 ...
+- **Last Message Time:** 2026-10-16 14:51:05
