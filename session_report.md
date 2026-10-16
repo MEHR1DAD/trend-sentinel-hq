@@ -1,9 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 31 minutes
-- **Messages Processed:** 121
-- **Last Message Text:** 🔺️ دستگیری سه نفر گروگانگیر در چابهار
+- **Messages Processed:** 156
+- **Last Message Text:** 🗣روایت شما: وضعیت زندگی در سایه سرکوب سیاسی و تنش‌های نظامی - جمعه ۲۴ مهر ۱۴۰۵
 
-فرمانده انتظامی شهرستان چابهار :
-🔹 گروگانگیران بعد از به گرو ...
-- **Last Message Time:** 2026-10-16 10:08:46
+🔹ج.ا فاسد و دروغ‌گو،...
+- **Last Message Time:** 2026-10-16 10:40:29
