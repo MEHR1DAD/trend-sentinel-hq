@@ -738,7 +738,7 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39232,
+    "Alibk3": 39240,
     "withyashar": 25817,
     "VahidOnline": 78739,
     "netblocks": 1568,
@@ -839,116 +839,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39236",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39236,
-      "text": "صور الأقمار الصناعية ترصد حريق فى مضيق هرمز قبالة سواحل عُمان، يبدو تم استهداف سفينة مخالفة.",
-      "is_edit": false,
-      "enqueued_at": 1792190478.852246,
-      "retries": 13,
-      "last_retry_at": 1792192966.1337628
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_10407",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 10407,
-      "text": "صور الأقمار الصناعية ترصد الآن حريقا فى مضيق هرمز قبالة سواحل عُمان، يبدو تم استهداف سفينة مخالفة.",
-      "is_edit": true,
-      "enqueued_at": 1792190496.7425208,
-      "retries": 13,
-      "last_retry_at": 1792192983.3616703
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39233",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39233,
-      "text": "خلال آخر 24 ساعة، رُصدت 80 طائرة عسكرية في المنطقة، بينها 6 طائرات نقل وصلت من خارجها، منها 4 أميركية وواحدة بريطانية وواحدة كويتية، إضافة إلى 8 طائرات نقل عسكري إقليمي و29 طائرة تزود بالوقود و7 طائرات تجسس و27 طائرة نقل عسكري تنقّلت داخل المنطقة و3 مروحيات عسكرية.",
-      "is_edit": false,
-      "enqueued_at": 1792191430.0163827,
-      "retries": 11,
-      "last_retry_at": 1792193107.769498
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39234",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39234,
-      "text": "ترامب: \n\n«لديك محمد، محمد، محمد، محمد، محمد. الجميع تقريبًا كذلك. إذا كنت في حيرة بشأن اسم شخص من الشرق الأوسط، فما عليك سوى أن تقول: محمد. وستكون لديك فرصة بنسبة 65% تقريباً بأن يكون اسمه كذلك».",
-      "is_edit": false,
-      "enqueued_at": 1792191432.002408,
-      "retries": 11,
-      "last_retry_at": 1792193126.105348
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39235",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39235,
-      "text": "طائرات التزويد بالوقود KC-46A والمقاتلات الأميركية تُحلق في المنطقة الشرقية في السعودية منذ فترة طويلة من اليوم.",
-      "is_edit": false,
-      "enqueued_at": 1792191433.0010881,
-      "retries": 10,
-      "last_retry_at": 1792192986.6649122
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39237",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39237,
-      "text": "هجوم يمني يستهدف خميس مشيط وأبها في السعودية.",
-      "is_edit": false,
-      "enqueued_at": 1792191435.0547924,
-      "retries": 10,
-      "last_retry_at": 1792193003.7926362
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25818",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25818,
-      "text": "آکسیوس ، فرمانده سنتکام، دریاسالار برد کوپرامروز گفت: شبه‌نظامیان مورد حمایت ایران در منطقه، برای کاهش فشار اقتصادی ناشی از ۹ ماه جنگ، در حال ارسال پول به سپاه پاسداران انقلاب اسلامی هستند.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792191436.0064929,
-      "retries": 10,
-      "last_retry_at": 1792193005.9152546
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25819",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25819,
-      "text": "الجزیره به نقل از اکسیوس ، یک مقام آمریکایی گفته است : کاخ سفید از واکنش تند به حملات موشکی و پهپادی ایران در تنگه هرمز خودداری کرده تا از تشدید تنش‌ها قبل از انتخابات جلوگیری شود.\n@WarRoom",
-      "is_edit": true,
-      "enqueued_at": 1792191642.1601636,
-      "retries": 9,
-      "last_retry_at": 1792193023.065558
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25820",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25820,
-      "text": "سی‌بی‌اس نیوز : ژنرال رندی جورج، رئیس پیشین برکنارشده ستاد ارتش آمریکا، پیش از آغاز جنگ با ایران هشدار داده بود که ذخایر موشک‌های رهگیر پاتریوت و تاد به‌دلیل کمک به اوکراین، دفاع از اسرائیل و محدودیت تولید تسلیحات، در سطح بحرانی قرار دارد و جبران این کمبود ممکن است تا سال ۲۰۳۰ طول بکشد و جنگ با ایران این وضعیت را تشدید می کند؛ برآوردها حاکی از مصرف تا ۶۱ درصد ذخایر پیش از جنگ پاتریوت و ۸۲ درصد رهگیرهای تاد است. جورج در آوریل برکنار شد، اما ارتباط مستقیم برکناری او با این هشدار تأیید نشده و همچنین پنتاگون هم ادعای کمبود مهمات را رد کرده است.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792191909.3670151,
-      "retries": 8,
-      "last_retry_at": 1792193025.203643
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25821",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25821,
-      "text": "ترامپ درباره عبدل السید:\nنام او در واقع عبدالالسابدالالا است. او عبدالالبابابابابا محمد ال‌سید است.\nپس نام میانی او محمد است. من درست گفته بودم.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792192068.2444658,
-      "retries": 7,
-      "last_retry_at": 1792193042.3243358
-    },
-    {
       "id": "vip_multi_agent_withyashar_25822",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
@@ -956,9 +846,31 @@
       "text": "ترامپ: می‌دونستین من میکاپ میکنم!؟\nاگه نکنم شبیه مُرده‌ها به نظر میام، پس یکم آرایش میکنم تا اینجوری به نظر نیام \n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792192918.5830204,
-      "retries": 2,
-      "last_retry_at": 1792193044.4879215
+      "retries": 11,
+      "last_retry_at": 1792194759.527137
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39239",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39239,
+      "text": "الإعلان عن مقتل مقتل 6 جنود وضباط سعوديين بالهجوم اليمني على قصر المعاشيق في عدن.",
+      "is_edit": false,
+      "enqueued_at": 1792194223.1459205,
+      "retries": 5,
+      "last_retry_at": 1792194761.8325562
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39240",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39240,
+      "text": "تحليق مكثف للطيران المسيّر فوق مدينة تعز الآن .",
+      "is_edit": true,
+      "enqueued_at": 1792194649.2493563,
+      "retries": 3,
+      "last_retry_at": 1792194793.9594193
     }
   ],
-  "last_saved": "2026-10-16 23:25:28 UTC"
+  "last_saved": "2026-10-16 23:54:23 UTC"
 }

@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 18
-- **Last Message Text:** ترامپ: می‌دونستین من میکاپ میکنم!؟
-اگه نکنم شبیه مُرده‌ها به نظر میام، پس یکم آرایش میکنم تا اینجوری...
-- **Last Message Time:** 2026-10-16 23:22:00
+- **Messages Processed:** 17
+- **Last Message Text:** تحليق مكثف للطيران المسيّر فوق مدينة تعز الآن.
+- **Last Message Time:** 2026-10-16 23:51:41
