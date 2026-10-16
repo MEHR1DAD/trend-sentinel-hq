@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 6
-- **Last Message Text:** هجوم يمني يستهدف خميس مشيط في السعودية.
-- **Last Message Time:** 2026-10-16 16:49:28
+- **Messages Processed:** 28
+- **Last Message Text:** كتائب القسام تنشر في الذكرى الثانية لاستشهاد القائد يحيى السنوار: 
+
+يقتلونا بل ونحيا لا يموت الشهداء...
+- **Last Message Time:** 2026-10-16 17:39:51

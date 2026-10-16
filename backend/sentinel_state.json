@@ -840,49 +840,93 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_25783",
+      "id": "vip_multi_agent_withyashar_25785",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
-      "msg_id": 25783,
-      "text": "@WarRoom شبات شااوم",
-      "is_edit": true,
-      "enqueued_at": 1792168044.9579206,
-      "retries": 24,
-      "last_retry_at": 1792170671.2997842
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25784",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25784,
-      "text": "رسانه های عبری: هم‌اکنون، سامانه‌های پدافند هوایی اسرائیل یک هدف هوایی مشکوک را در جنوب لبنان شناسایی و در حال هدف قرار دادن آن هستند. این سومین حادثه از همین نوع در کمتر از یک روز است.\n@WarRoom",
+      "msg_id": 25785,
+      "text": "نتانیاهو در ایکس: «دو سال پیش در چنین روزی، سربازان قهرمان ما یحیی سنوار را از بین بردند. اگر رویکرد آیزنکوت را می‌پذیرفتیم، چنین اتفاقی نمی‌افتاد؛ رویکردی که بر توقف جنگ، تسلیم‌شدن در برابر خواسته‌های حماس و خروج از غزه تأکید داشت و به سنوار اجازه می‌داد در ویلایی مجلل در قطر زندگی کند.به لطف سربازان قهرمانمان و پافشاری ما بر تکمیل تصرف رفح و کریدور فیلادلفی، سنوار، ضیف، هنیه، نصرالله، خامنه‌ای و هزاران تروریست دیگر را از بین بردیم.\nآیزنکوت می‌گوید حماس را نابود خواهد کرد؟ وقتی از کابینه خارج شد و خواستار توقف جنگ شد، کجا بود؟ چگونه می‌خواهد حماس را نابود کند، درحالی‌که در دولت او منصور عباس و احمد طیبی حضور خواهند داشت؛ کسانی که به ادعای نتانیاهو، حماس را «سازمان خیریه» می‌نامند؟\n«این یا «حذب یاشار» است یا فلسطین؛ یا بی‌بی یا طیبی. این یعنی «لیکود.»\n@WarRoom",
       "is_edit": false,
-      "enqueued_at": 1792168530.6716726,
-      "retries": 19,
-      "last_retry_at": 1792170677.0421734
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39211",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39211,
-      "text": "خام برنت يقفز إلى 109.13 دولاراً للبرميل.",
-      "is_edit": true,
-      "enqueued_at": 1792168641.828558,
+      "enqueued_at": 1792170749.4091015,
       "retries": 18,
-      "last_retry_at": 1792170683.7001963
+      "last_retry_at": 1792172366.9182768
     },
     {
-      "id": "vip_multi_agent_Alibk3_39213",
+      "id": "vip_multi_agent_Alibk3_39214",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39213,
-      "text": "هجوم يمني يستهدف خميس مشيط في السعودية.",
-      "is_edit": true,
-      "enqueued_at": 1792169167.4734497,
+      "msg_id": 39214,
+      "text": "س: هل تعتقد أن السعودية يجب أن تقبل المساعدة التي تقدمها إسرائيل لمحاربة اليمن؟\n\nترامب: نعم، بالتأكيد. لقد كانت إسرائيل مفيدة جدًا للسعودية.",
+      "is_edit": false,
+      "enqueued_at": 1792171059.3357751,
       "retries": 14,
-      "last_retry_at": 1792170690.3046777
+      "last_retry_at": 1792172372.407121
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25786",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25786,
+      "text": "موقع برگشتن زرشکیان از ارمنستان، شبکه خبر موزیک سریال گیم اف ترونز رو گذاشته روش\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792171098.4383588,
+      "retries": 14,
+      "last_retry_at": 1792172378.7585073
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25787",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25787,
+      "text": "‏لحظه ورود ناو هواپیمابر اتمی آمریکا  USS Theodore Roosevelt (CVN-71) به پایگاه دریایی یوکوسوکا ژاپن.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792171225.305857,
+      "retries": 13,
+      "last_retry_at": 1792172407.4327588
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25788",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25788,
+      "text": "نفت برنت ۱۰۹ دلار \n@WarRoom 🚨",
+      "is_edit": false,
+      "enqueued_at": 1792171433.7269647,
+      "retries": 11,
+      "last_retry_at": 1792172419.219234
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25789",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25789,
+      "text": "بیتکوین اومد زیر ۸۱ و هم اکنون ۸۰،۸۷۷ دلار\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792171583.8911815,
+      "retries": 10,
+      "last_retry_at": 1792172449.8116822
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25790",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25790,
+      "text": "دلار و تتر ۲۶۵،۰۰۰ تومان \n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792171643.6706316,
+      "retries": 9,
+      "last_retry_at": 1792172385.1736777
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39215",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39215,
+      "text": "كتائب القسام تنشر في الذكرى الثانية لاستشهاد يحيى السنوار: يقتلونا بل ونحيا لا يموت الشهداء\nنحن طوفان الأقصى فيه طاف الأنبياء",
+      "is_edit": true,
+      "enqueued_at": 1792172397.685426,
+      "retries": 1,
+      "last_retry_at": 1792172428.4040537
     }
   ],
-  "last_saved": "2026-10-16 17:11:37 UTC"
+  "last_saved": "2026-10-16 17:41:03 UTC"
 }
