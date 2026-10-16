@@ -48,7 +48,7 @@ class GeminiClient:
         self.load_cached_stacks()
         print(f"🔑 [SOLDIER 0] Initialized Gemini Pool with {len(self.api_keys)} API keys. Lite Stack: {len(self.lite_stack)}, Flash Stack: {len(self.flash_stack)}")
 
-    def get_api_key(self):
+    def get_api_key(self, allow_cooldown=False):
         if not self.api_keys:
             return None
         now = time.time()
@@ -58,10 +58,12 @@ class GeminiClient:
             if self.key_cooldown_until.get(k, 0.0) <= now:
                 self.current_key_idx = idx
                 return k
-        # Fallback: کلیدی که زودتر از همه کول‌داونش تمام می‌شود
-        best_idx = min(range(len(self.api_keys)), key=lambda i: self.key_cooldown_until.get(self.api_keys[i], 0.0))
-        self.current_key_idx = best_idx
-        return self.api_keys[best_idx]
+        # If all keys are currently cooling down, return None unless explicitly requested
+        if allow_cooldown:
+            best_idx = min(range(len(self.api_keys)), key=lambda i: self.key_cooldown_until.get(self.api_keys[i], 0.0))
+            self.current_key_idx = best_idx
+            return self.api_keys[best_idx]
+        return None
 
     def rotate_api_key(self, cooldown_seconds=60):
         if not self.api_keys:
@@ -71,7 +73,7 @@ class GeminiClient:
             self.key_cooldown_until[cur_key] = time.time() + cooldown_seconds
         old_idx = self.current_key_idx
         self.current_key_idx = (self.current_key_idx + 1) % len(self.api_keys)
-        new_key = self.get_api_key()
+        new_key = self.get_api_key(allow_cooldown=False)
         print(f"🔄 [SOLDIER 0: KEY ROTATE] Switched Key: slot #{old_idx + 1} ➡️ slot #{self.current_key_idx + 1}/{len(self.api_keys)} (Cooldown {cooldown_seconds}s)")
         return new_key
 
@@ -204,10 +206,11 @@ class GeminiClient:
 
         # پیمایش نزولی مدل‌ها در پشته (از جدیدترین به قدیمی‌ترین)
         for model_idx, model in enumerate(stack):
-            # برای هر مدل، ۴ شانس روی ۴ کلید موجود
+            # برای هر مدل، شانس روی کلیدهای معتبر
             for key_attempt in range(num_keys):
-                cur_key = self.get_api_key()
+                cur_key = self.get_api_key(allow_cooldown=False)
                 if not cur_key:
+                    print(f"⏳ [SOLDIER 0 | {soldier_name}] All API keys currently in cooldown. Routing to Smart Queue...")
                     break
 
                 t0 = time.time()
@@ -259,12 +262,20 @@ class GeminiClient:
                     except Exception:
                         pass
 
-                    if e.code in (429, 503):
-                        print(f"⚠️ [SOLDIER 0 | {soldier_name}] Quota/Busy error {e.code} on {model} (Key #{self.current_key_idx+1}). Rotating key...")
+                    if e.code == 403:
+                        print(f"🛑 [SOLDIER 0 | {soldier_name}] Key {cur_key[:12]}... PERMISSION_DENIED / LEAKED (403). Permanently disabling key.")
+                        self.key_cooldown_until[cur_key] = time.time() + (86400 * 30)
+                        self.rotate_api_key(cooldown_seconds=0)
+                    elif e.code == 429:
+                        print(f"⚠️ [SOLDIER 0 | {soldier_name}] Quota error 429 on {model} (Key #{self.current_key_idx+1}). Rotating key...")
                         self.rotate_api_key(cooldown_seconds=60)
                         await asyncio.sleep(1.0)
+                    elif e.code == 503:
+                        print(f"⚠️ [SOLDIER 0 | {soldier_name}] Model {model} temporarily busy (503). Switching to next model...")
+                        await asyncio.sleep(0.5)
+                        break # Switch to next model in stack without penalizing key
                     elif e.code == 404:
-                        print(f"⚠️ [SOLDIER 0 | {soldier_name}] Model {model} not found (404). Dropping model from active cycle.")
+                        print(f"⚠️ [SOLDIER 0 | {soldier_name}] Model {model} not found or deprecated (404). Dropping model from active cycle.")
                         break # بلافاصله برو سراغ مدل بعدی پشته
                     else:
                         print(f"⚠️ [SOLDIER 0 | {soldier_name}] HTTP {e.code} on {model}: {err_body[:100]}. Rotating key...")
@@ -277,14 +288,14 @@ class GeminiClient:
             # اگر تمام کلیدها برای این مدل ناموفق بودند، سقوط به مدل بعدی پشته
             if model_idx < len(stack) - 1:
                 next_cand = stack[model_idx + 1]
-                print(f"📉 [SOLDIER 0: MODEL FALLBACK | {soldier_name}] Model {model} exhausted across all keys. Falling back to #{model_idx+2}: {next_cand}")
+                print(f"📉 [SOLDIER 0: MODEL FALLBACK | {soldier_name}] Model {model} exhausted. Falling back to #{model_idx+2}: {next_cand}")
 
         # اگر کل پشته تمام شد، تلاش نهایی روی پشته معکوس (Cross-Tier Rescue)
         alt_stack = self.flash_stack if tier == "lite" else self.lite_stack
         if alt_stack:
             rescue_model = alt_stack[0]
             print(f"🆘 [SOLDIER 0: RESCUE | {soldier_name}] Primary tier ({tier}) exhausted. Attempting cross-tier rescue with {rescue_model}...")
-            cur_key = self.get_api_key()
+            cur_key = self.get_api_key(allow_cooldown=True)
             if cur_key:
                 t0 = time.time()
                 try:

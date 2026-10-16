@@ -110,6 +110,7 @@ class LiveSentinel:
         self.smart_queue_raw_msgs = {}
         self.smart_queue_lock = asyncio.Lock()
         self.smart_queue_task = None
+        self.active_tasks = set()
 
         # Load persisted state
         self.load_persisted_state()
@@ -962,17 +963,24 @@ class LiveSentinel:
             oldest_age_min = (now - min(q.get('enqueued_at', now) for q in self.smart_queue)) / 60.0
             print(f"📊 [SMART QUEUE: STATUS] {len(self.smart_queue)} pending message(s) waiting in queue | Oldest age: {oldest_age_min:.1f}m.")
 
-        # Process pending items
+        # Process pending items (max 2 per cycle with pause to prevent rate limit storms)
+        items_processed_in_cycle = 0
         for item in list(self.smart_queue):
+            if items_processed_in_cycle >= 2:
+                break
+
             item_id = item.get('id')
             now = time.time()
             retries = item.get('retries', 0)
-            backoff_delay = min(15 * (2 ** min(retries, 3)), 90)
+            backoff_delay = min(20 * (2 ** min(retries, 4)), 180)
             if (now - item.get('last_retry_at', 0)) < backoff_delay:
                 continue
 
-            item['retries'] = retries + 1
-            item['last_retry_at'] = now
+            items_processed_in_cycle += 1
+            async with self.smart_queue_lock:
+                item['retries'] = retries + 1
+                item['last_retry_at'] = now
+
             age = now - item.get('enqueued_at', now)
             print(f"🔄 [SMART QUEUE: RETRYING] Attempt #{item['retries']} for {item_id} (Backoff: {backoff_delay}s | Age: {age:.1f}s / {ttl_seconds}s)...")
 
@@ -980,7 +988,8 @@ class LiveSentinel:
             if not raw_msg and self.client:
                 try:
                     target_peer = self.get_node_input_peer(item.get('node')) or item.get('node')
-                    fetched = await self.client.get_messages(target_peer, ids=[item['msg_id']])
+                    msg_id_val = int(item['msg_id']) if str(item.get('msg_id', '')).isdigit() else item['msg_id']
+                    fetched = await self.client.get_messages(target_peer, ids=[msg_id_val])
                     if fetched:
                         raw_msg = fetched[0] if isinstance(fetched, list) else fetched
                         self.smart_queue_raw_msgs[item_id] = raw_msg
@@ -1002,9 +1011,10 @@ class LiveSentinel:
                 total_wait = time.time() - item.get('enqueued_at', now)
                 print(f"✅ [SMART QUEUE: SUCCESS] Item {item_id} processed successfully after {total_wait:.1f}s in queue ({item['retries']} retries).")
                 self.save_persisted_state()
-                await asyncio.sleep(2.0)
+                await asyncio.sleep(3.0)
             else:
                 print(f"⏳ [SMART QUEUE: REMAINING] Item {item_id} still pending AI availability. Will retry in next worker cycle (attempt #{item.get('retries')}).")
+                await asyncio.sleep(2.0)
 
     # --- Central Event Router ---
     async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None):
@@ -1021,7 +1031,9 @@ class LiveSentinel:
             self.last_msg_time = time.strftime("%Y-%m-%d %H:%M:%S")
 
             # VIP Channels: 5-Soldier Multi-Agent Pipeline (withyashar, Alibk3, VahidOnline, iliaen, netblocks)
-            asyncio.create_task(self.vip_pipeline.handle_message(text, canon_node, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+            task = asyncio.create_task(self.vip_pipeline.handle_message(text, canon_node, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+            self.active_tasks.add(task)
+            task.add_done_callback(self.active_tasks.discard)
 
 
 async def main():
@@ -1264,6 +1276,12 @@ async def main():
         heartbeat_task.cancel()
         if 'smart_queue_task' in locals() and not smart_queue_task.done():
             smart_queue_task.cancel()
+        if hasattr(sentinel, 'active_tasks') and sentinel.active_tasks:
+            print(f"⏳ Waiting for {len(sentinel.active_tasks)} in-flight tasks to complete before exit...")
+            try:
+                await asyncio.wait(sentinel.active_tasks, timeout=12)
+            except Exception:
+                pass
         print("⏳ Flushing any pending debounce updates before exit...")
         try:
             await sentinel.flush_all_pending_debounces()

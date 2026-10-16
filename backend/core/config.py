@@ -19,18 +19,33 @@ BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
 # --- Gemini API Configuration ---
-GEMINI_API_KEY_RAW = os.environ.get('GEMINI_API_KEY', '')
-GEMINI_API_KEYS = [k.strip() for k in GEMINI_API_KEY_RAW.split(',') if k.strip()]
+raw_env_keys = [k.strip() for k in os.environ.get('GEMINI_API_KEY', '').split(',') if k.strip()]
+# Filter out known revoked/leaked key (AIzaSy...xCMBc) that returns HTTP 403
+valid_env_keys = [k for k in raw_env_keys if not (k.startswith("AIzaSyDOM5") and k.endswith("xCMBc"))]
+
+# Filter out duplicate keys while preserving order
+seen = set()
+GEMINI_API_KEYS = []
+for k in valid_env_keys:
+    if k not in seen:
+        seen.add(k)
+        GEMINI_API_KEYS.append(k)
+
+# Automatically prioritize the fresh, active key from maedehyousefi93 (ends with OqTSA) to the front
+for i, k in enumerate(GEMINI_API_KEYS):
+    if k.endswith("OqTSA"):
+        fresh = GEMINI_API_KEYS.pop(i)
+        GEMINI_API_KEYS.insert(0, fresh)
+        break
+
 GEMINI_API_KEY = GEMINI_API_KEYS[0] if GEMINI_API_KEYS else None
-DEFAULT_GEMINI_MODEL = "gemini-2.0-flash-lite"
+DEFAULT_GEMINI_MODEL = "gemini-3.5-flash-lite"
 GEMINI_MODELS_PRIORITY = [
-    "gemini-2.0-flash-lite",
-    "gemini-2.0-flash",
-    "gemini-2.5-flash",
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-8b",
-    "gemini-2.0-pro-exp-02-05",
-    "gemini-1.5-pro"
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
+    "gemini-3.5-flash",
+    "gemini-3.6-flash",
+    "gemini-3.8-flash"
 ]
 
 # --- VIP Canonical Mapping ---

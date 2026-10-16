@@ -1117,6 +1117,8 @@ class VipMultiAgentEditorialPipeline:
                         print(f"⚡ [VIP MULTI-AGENT] Catching up missed post #{msg.id} from {node} (watermark: {watermark})...")
                         await self.handle_message(clean_text, node, msg.id, raw_msg=msg, is_edit=False)
                         await asyncio.sleep(2)
+                else:
+                    self.sentinel.db.advance_watermark(node, msg.id)
         except Exception as e:
             print(f"⚠️ {node} catchup failed: {e}")
 
