@@ -1,6 +1,9 @@
 # Sentinel Session Report
 
-- **Uptime:** 43 minutes
-- **Messages Processed:** 148
-- **Last Message Text:** ♦️ادعای رویترز: مقام‌های آمریکایی معتقدند ایران ممکن است برای اهداف خود در منطقه اطلاعاتی از روسیه و...
-- **Last Message Time:** 2026-10-16 09:37:14
+- **Uptime:** 31 minutes
+- **Messages Processed:** 121
+- **Last Message Text:** 🔺️ دستگیری سه نفر گروگانگیر در چابهار
+
+فرمانده انتظامی شهرستان چابهار :
+🔹 گروگانگیران بعد از به گرو ...
+- **Last Message Time:** 2026-10-16 10:08:46
