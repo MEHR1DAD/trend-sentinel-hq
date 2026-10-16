@@ -37,14 +37,22 @@ class DatabaseManager:
             """)
             cur.execute("CREATE INDEX IF NOT EXISTS idx_posted_lookup ON posted_sources (target_channel, source_node, source_msg_id);")
             cur.execute("CREATE INDEX IF NOT EXISTS idx_posted_created ON posted_sources (created_at);")
+            VIP_CANONICAL_NODES = {'withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'}
+
+            # 1. Clean up any non-VIP watermarks from table
+            cur.execute("""
+                DELETE FROM channel_watermarks 
+                WHERE LOWER(canon_node) NOT IN ('withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks')
+            """)
             con.commit()
-            
-            # 1. Load watermarks from dedicated durable table
+
+            # 2. Load watermarks from dedicated durable table for VIP channels only
             cur.execute("SELECT canon_node, last_seen_msg_id FROM channel_watermarks")
             for node, wm in cur.fetchall():
-                self.channel_watermarks[node] = int(wm)
+                if node.lower() in VIP_CANONICAL_NODES:
+                    self.channel_watermarks[node] = int(wm)
 
-            # 2. Load posted records into fast lookup map (bounded to 1000 items)
+            # 3. Load posted records into fast lookup map (bounded to 1000 items)
             cur.execute("SELECT target_channel, source_node, source_msg_id, posted_msg_id FROM posted_sources ORDER BY created_at ASC")
             rows = cur.fetchall()
             for ch, node, src_id, dst_id in rows:
@@ -52,10 +60,11 @@ class DatabaseManager:
                 self.recent_posted_map[(ch, canon, src_id)] = dst_id
                 if len(self.recent_posted_map) > 1000:
                     self.recent_posted_map.popitem(last=False)
-                # Backfill watermark if higher than existing
-                self.channel_watermarks[canon] = max(self.channel_watermarks.get(canon, 0), src_id)
+                # Backfill watermark if higher than existing (VIP only)
+                if canon.lower() in VIP_CANONICAL_NODES:
+                    self.channel_watermarks[canon] = max(self.channel_watermarks.get(canon, 0), src_id)
             con.close()
-            print(f"🗄️ Initialized SQLite registry: loaded {len(rows)} posted records & {len(self.channel_watermarks)} watermarks.")
+            print(f"🗄️ Initialized SQLite registry: loaded {len(rows)} posted records & {len(self.channel_watermarks)} VIP watermarks.")
         except Exception as e:
             print(f"⚠️ Error initializing SQLite DB: {e}")
 
@@ -173,7 +182,8 @@ class DatabaseManager:
             print(f"⚠️ Error persisting watermark for {canon_node} to DB: {e}")
 
     def advance_watermark(self, canon_node, msg_id):
-        if not canon_node or not msg_id:
+        VIP_CANONICAL_NODES = {'withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'}
+        if not canon_node or (canon_node or '').lower() not in VIP_CANONICAL_NODES or not msg_id:
             return
         try:
             src_int = int(msg_id)

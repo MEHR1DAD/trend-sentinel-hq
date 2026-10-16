@@ -1,286 +1,62 @@
 {
-  "node_peers": {
-    "VahidOnline": {
-      "channel_id": 1003363723,
-      "access_hash": -6182113671196147781,
-      "peer_id": -1001003363723
+    "node_peers": {
+        "VahidOnline": {
+            "channel_id": 1003363723,
+            "access_hash": -6182113671196147781,
+            "peer_id": -1001003363723
+        },
+        "iliaen": {
+            "channel_id": 1648796579,
+            "access_hash": -5262008076552999579,
+            "peer_id": -1001648796579
+        },
+        "Alibk3": {
+            "channel_id": 2338414262,
+            "access_hash": 1134146045935670237,
+            "peer_id": -1002338414262
+        },
+        "withyashar": {
+            "channel_id": 3815182817,
+            "access_hash": -4386073982084134713,
+            "peer_id": -1003815182817
+        },
+        "@DidebanJang": {
+            "channel_id": 3700599823,
+            "access_hash": 8412733897336994752,
+            "peer_id": -1003700599823
+        },
+        "@DidehbanEghtesad": {
+            "channel_id": 4404814128,
+            "access_hash": 5001141401553682015,
+            "peer_id": -1004404814128
+        },
+        "@DidebanEterazat": {
+            "channel_id": 4440390127,
+            "access_hash": 4612493368492104828,
+            "peer_id": -1004440390127
+        },
+        "netblocks": {
+            "channel_id": 1243366048,
+            "access_hash": -1108222355420708665,
+            "peer_id": -1001243366048
+        }
     },
-    "VahidHeadline": {
-      "channel_id": 1680819743,
-      "access_hash": -4522143738305782691,
-      "peer_id": -1001680819743
-    },
-    "VahidOOnLine": {
-      "channel_id": 1056421841,
-      "access_hash": -4879845436332316756,
-      "peer_id": -1001056421841
-    },
-    "bbcpersian": {
-      "channel_id": 1006430686,
-      "access_hash": -9043216605012361613,
-      "peer_id": -1001006430686
-    },
-    "RadioFarda": {
-      "channel_id": 1002688148,
-      "access_hash": 6009831241672423611,
-      "peer_id": -1001002688148
-    },
-    "IranintlTV": {
-      "channel_id": 1140394567,
-      "access_hash": 3135742130884801445,
-      "peer_id": -1001140394567
-    },
-    "Tasnimnews": {
-      "channel_id": 1001976122,
-      "access_hash": -5855356022965537144,
-      "peer_id": -1001001976122
-    },
-    "Farsna": {
-      "channel_id": 1006939659,
-      "access_hash": 825563337612667015,
-      "peer_id": -1001006939659
-    },
-    "isna94": {
-      "channel_id": 1005665139,
-      "access_hash": -9209973122815041737,
-      "peer_id": -1001005665139
-    },
-    "irna_1313": {
-      "channel_id": 1068487996,
-      "access_hash": 5693086946220518345,
-      "peer_id": -1001068487996
-    },
-    "khabarfouri": {
-      "channel_id": 1126629649,
-      "access_hash": -8102352737778242959,
-      "peer_id": -1001126629649
-    },
-    "Khabar_Fouri": {
-      "channel_id": 1002062924,
-      "access_hash": -8127626009949306232,
-      "peer_id": -1001002062924
-    },
-    "akhbarefori": {
-      "channel_id": 1004069147,
-      "access_hash": -6186985998191880703,
-      "peer_id": -1001004069147
-    },
-    "khabari": {
-      "channel_id": 1148799739,
-      "access_hash": -4531613078200136379,
-      "peer_id": -1001148799739
-    },
-    "akharinkhabar": {
-      "channel_id": 1007007698,
-      "access_hash": 8145082163942734954,
-      "peer_id": -1001007007698
-    },
-    "entekhab_ir": {
-      "channel_id": 1005280116,
-      "access_hash": 724501708199173774,
-      "peer_id": -1001005280116
-    },
-    "Alarabiya_far": {
-      "channel_id": 1003883923,
-      "access_hash": 2912071701382221030,
-      "peer_id": -1001003883923
-    },
-    "dw_farsi": {
-      "channel_id": 1009415043,
-      "access_hash": 4010646293822378692,
-      "peer_id": -1001009415043
-    },
-    "thezoomon": {
-      "channel_id": 3192944904,
-      "access_hash": 261508955140830607,
-      "peer_id": -1003192944904
-    },
-    "iliaen": {
-      "channel_id": 1648796579,
-      "access_hash": -5262008076552999579,
-      "peer_id": -1001648796579
-    },
-    "mamlekate": {
-      "channel_id": 1005042065,
-      "access_hash": 4558864267382730701,
-      "peer_id": -1001005042065
-    },
-    "Economic_News_Channel": {
-      "channel_id": 2131621218,
-      "access_hash": -7442524407115603060,
-      "peer_id": -1002131621218
-    },
-    "farsivoa": {
-      "channel_id": 1007396597,
-      "access_hash": -4569808364107843363,
-      "peer_id": -1001007396597
-    },
-    "Farsi_Iranwire": {
-      "channel_id": 1008727276,
-      "access_hash": 5487417987037704421,
-      "peer_id": -1001008727276
-    },
-    "Mr_Economy": {
-      "channel_id": 1376208776,
-      "access_hash": -3267327577465870333,
-      "peer_id": -1001376208776
-    },
-    "euronewspe": {
-      "channel_id": 1007143701,
-      "access_hash": -3369712738110479053,
-      "peer_id": -1001007143701
-    },
-    "myITiran": {
-      "channel_id": 1007177797,
-      "access_hash": -6016877683520438948,
-      "peer_id": -1001007177797
-    },
-    "Eghtesadnews_com": {
-      "channel_id": 1002738390,
-      "access_hash": -1217657760884468239,
-      "peer_id": -1001002738390
-    },
-    "Indypersian": {
-      "channel_id": 1367035239,
-      "access_hash": 8892213375545325692,
-      "peer_id": -1001367035239
-    },
-    "persiannbloomberg": {
-      "channel_id": 1022315395,
-      "access_hash": 1871877834169511489,
-      "peer_id": -1001022315395
-    },
-    "Digiato": {
-      "channel_id": 1006539822,
-      "access_hash": -4293991886826882296,
-      "peer_id": -1001006539822
-    },
-    "thezoomit": {
-      "channel_id": 1009658997,
-      "access_hash": -1666020012969747822,
-      "peer_id": -1001009658997
-    },
-    "Alibk3": {
-      "channel_id": 2338414262,
-      "access_hash": 1134146045935670237,
-      "peer_id": -1002338414262
-    },
-    "withyashar": {
-      "channel_id": 3815182817,
-      "access_hash": -4386073982084134713,
-      "peer_id": -1003815182817
-    },
-    "@DidebanJang": {
-      "channel_id": 3700599823,
-      "access_hash": 8412733897336994752,
-      "peer_id": -1003700599823
-    },
-    "@DidehbanEghtesad": {
-      "channel_id": 4404814128,
-      "access_hash": 5001141401553682015,
-      "peer_id": -1004404814128
-    },
-    "@DidebanEterazat": {
-      "channel_id": 4440390127,
-      "access_hash": 4612493368492104828,
-      "peer_id": -1004440390127
-    },
-    "@VahidOnlineAI": {
-      "channel_id": 4368972945,
-      "access_hash": -4930215027701537941,
-      "peer_id": -1004368972945
-    },
-    "@iliaenAI": {
-      "channel_id": 4407315770,
-      "access_hash": -4478857711202179352,
-      "peer_id": -1004407315770
-    },
-    "netblocks": {
-      "channel_id": 1243366048,
-      "access_hash": -1108222355420708665,
-      "peer_id": -1001243366048
+    "id_to_node": {
+        "1003363723": "VahidOnline",
+        "-1001003363723": "VahidOnline",
+        "1648796579": "iliaen",
+        "-1001648796579": "iliaen",
+        "2338414262": "Alibk3",
+        "-1002338414262": "Alibk3",
+        "3815182817": "withyashar",
+        "-1003815182817": "withyashar",
+        "3700599823": "@DidebanJang",
+        "-1003700599823": "@DidebanJang",
+        "4404814128": "@DidehbanEghtesad",
+        "-1004404814128": "@DidehbanEghtesad",
+        "4440390127": "@DidebanEterazat",
+        "-1004440390127": "@DidebanEterazat",
+        "1243366048": "netblocks",
+        "-1001243366048": "netblocks"
     }
-  },
-  "id_to_node": {
-    "1003363723": "VahidOnline",
-    "-1001003363723": "VahidOnline",
-    "1680819743": "VahidHeadline",
-    "-1001680819743": "VahidHeadline",
-    "1056421841": "VahidOOnLine",
-    "-1001056421841": "VahidOOnLine",
-    "1006430686": "bbcpersian",
-    "-1001006430686": "bbcpersian",
-    "1002688148": "RadioFarda",
-    "-1001002688148": "RadioFarda",
-    "1140394567": "IranintlTV",
-    "-1001140394567": "IranintlTV",
-    "1001976122": "Tasnimnews",
-    "-1001001976122": "Tasnimnews",
-    "1006939659": "Farsna",
-    "-1001006939659": "Farsna",
-    "1005665139": "isna94",
-    "-1001005665139": "isna94",
-    "1068487996": "irna_1313",
-    "-1001068487996": "irna_1313",
-    "1126629649": "khabarfouri",
-    "-1001126629649": "khabarfouri",
-    "1002062924": "Khabar_Fouri",
-    "-1001002062924": "Khabar_Fouri",
-    "1004069147": "akhbarefori",
-    "-1001004069147": "akhbarefori",
-    "1148799739": "khabari",
-    "-1001148799739": "khabari",
-    "1007007698": "akharinkhabar",
-    "-1001007007698": "akharinkhabar",
-    "1005280116": "entekhab_ir",
-    "-1001005280116": "entekhab_ir",
-    "1003883923": "Alarabiya_far",
-    "-1001003883923": "Alarabiya_far",
-    "1009415043": "dw_farsi",
-    "-1001009415043": "dw_farsi",
-    "3192944904": "thezoomon",
-    "-1003192944904": "thezoomon",
-    "1648796579": "iliaen",
-    "-1001648796579": "iliaen",
-    "1005042065": "mamlekate",
-    "-1001005042065": "mamlekate",
-    "2131621218": "Economic_News_Channel",
-    "-1002131621218": "Economic_News_Channel",
-    "1007396597": "farsivoa",
-    "-1001007396597": "farsivoa",
-    "1008727276": "Farsi_Iranwire",
-    "-1001008727276": "Farsi_Iranwire",
-    "1376208776": "Mr_Economy",
-    "-1001376208776": "Mr_Economy",
-    "1007143701": "euronewspe",
-    "-1001007143701": "euronewspe",
-    "1007177797": "myITiran",
-    "-1001007177797": "myITiran",
-    "1002738390": "Eghtesadnews_com",
-    "-1001002738390": "Eghtesadnews_com",
-    "1367035239": "Indypersian",
-    "-1001367035239": "Indypersian",
-    "1022315395": "persiannbloomberg",
-    "-1001022315395": "persiannbloomberg",
-    "1006539822": "Digiato",
-    "-1001006539822": "Digiato",
-    "1009658997": "thezoomit",
-    "-1001009658997": "thezoomit",
-    "2338414262": "Alibk3",
-    "-1002338414262": "Alibk3",
-    "3815182817": "withyashar",
-    "-1003815182817": "withyashar",
-    "3700599823": "@DidebanJang",
-    "-1003700599823": "@DidebanJang",
-    "4404814128": "@DidehbanEghtesad",
-    "-1004404814128": "@DidehbanEghtesad",
-    "4440390127": "@DidebanEterazat",
-    "-1004440390127": "@DidebanEterazat",
-    "4368972945": "@VahidOnlineAI",
-    "-1004368972945": "@VahidOnlineAI",
-    "4407315770": "@iliaenAI",
-    "-1004407315770": "@iliaenAI",
-    "1243366048": "netblocks",
-    "-1001243366048": "netblocks"
-  }
 }

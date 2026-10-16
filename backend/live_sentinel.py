@@ -19,7 +19,6 @@ from telethon.sessions import StringSession
 # --- Core Modules ---
 from backend.core.config import (
     CONFIG_FILE,
-    BASELINE_FILE,
     STATE_FILE,
     POSTED_DB_FILE,
     PEER_CACHE_FILE,
@@ -45,20 +44,15 @@ from backend.core.gemini import GeminiClient
 from backend.core.thread_manager import ThreadAlertManager
 
 # --- Pipelines ---
-from backend.pipelines.radar import RadarPipeline
 from backend.pipelines.vip_multi_agent import VipMultiAgentEditorialPipeline
 
 
 
 class LiveSentinel:
     """
-    Master Orchestrator for Sentinel Eye (Live API Mode).
-    Delegates channel processing to modular pipelines:
-    - MirrorPipeline: @VahidOnlineAI, @iliaenAI
-    - YasharAutonomousPipeline: 100% Autonomous AI Editor for withyashar
-    - IntelligencePipeline: Alibk / Alibk3
-    - RadarPipeline: 3-channel consensus, anomaly detection, semantic cross-channel merging
-    - ThreadAlertManager: thread merging, debounce updates, and live alert in-place sync
+    Master Orchestrator for Sentinel Eye (VIP Multi-Agent Live Mode).
+    Exclusively monitors and editorializes VIP channels:
+    withyashar, Alibk3, VahidOnline, iliaen, netblocks.
     """
     def __init__(self, bot, client=None):
         self.bot = bot
@@ -67,8 +61,6 @@ class LiveSentinel:
         self.nodes = self.config.get('nodes', [])
         self.state_file = STATE_FILE
         self.peer_cache_file = PEER_CACHE_FILE
-        self.incident_severities = self.config.get('patterns', {}).get('incident_severities', {})
-        self.baselines = self.fetch_remote_baselines()
         self.lock = asyncio.Lock()
 
         # Core Engines
@@ -87,15 +79,12 @@ class LiveSentinel:
         self.alibk_posted_map = {}
 
         # Active Pipelines
-        self.radar_pipeline = RadarPipeline(self, threads=self.threads)
         self.vip_pipeline = VipMultiAgentEditorialPipeline(self, threads=self.threads)
 
         # In-Memory Buffers & Fast Caches
-        self.recent_messages = deque()
         self.last_alert_time = {}
         self.alerted_msg_patterns = {}
         self.vip_alert_history = self.threads.vip_alert_history
-        self.recent_alert_sources = deque()
         self.node_id_map = {}
         self.node_input_peers = {}
         self.node_peer_cache = {'node_peers': {}, 'id_to_node': {}}
@@ -187,22 +176,6 @@ class LiveSentinel:
             except Exception:
                 pass
         return {}
-
-    def fetch_remote_baselines(self):
-        remote_url = "https://mehr1dad.github.io/python-utils-collection/data/trend_history.json"
-        try:
-            import requests
-            print(f"📥 Fetching Master Baselines from {remote_url}...")
-            resp = requests.get(remote_url, timeout=10)
-            if resp.status_code == 200:
-                data = resp.json()
-                print(f"✅ Loaded {len(data.get('baselines', {}))} baseline records.")
-                return data.get('baselines', {})
-        except Exception as e:
-            print(f"⚠️ Failed to fetch remote baselines: {e}")
-            
-        print("⚠️ Using local baseline fallback.")
-        return self.load_json(BASELINE_FILE).get('baselines', {})
 
     def get_gemini_api_key(self):
         return self.gemini.get_api_key()
@@ -515,9 +488,10 @@ class LiveSentinel:
                     except Exception:
                         self.mirror_posted_map['iliaen'][k] = v
                 
+                vip_nodes_filter = {'withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'}
                 raw_watermarks = data.get('channel_watermarks', {})
                 for k, v in raw_watermarks.items():
-                    if isinstance(v, (int, float)):
+                    if isinstance(v, (int, float)) and k.lower() in vip_nodes_filter:
                         self.db.channel_watermarks[k] = int(v)
                 
                 raw_stats = data.get('gemini_model_stats', {})
@@ -529,7 +503,7 @@ class LiveSentinel:
                 self.smart_queue = [q for q in raw_queue if isinstance(q, dict) and (now - q.get('enqueued_at', 0)) <= 2700]
                 queue_log = f", {len(self.smart_queue)} queued items (45m TTL)" if self.smart_queue else ""
                 
-                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.alibk_posted_map)} Alibk alerts, {len(self.mirror_posted_map['VahidOnline'])} Vahid AI, {len(self.mirror_posted_map['iliaen'])} Ilia AI, {len(self.db.channel_watermarks)} watermarks{queue_log}.")
+                print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.alibk_posted_map)} Alibk alerts, {len(self.mirror_posted_map['VahidOnline'])} Vahid AI, {len(self.mirror_posted_map['iliaen'])} Ilia AI, {len(self.db.channel_watermarks)} VIP watermarks{queue_log}.")
         except Exception as e:
             print(f"⚠️ Error loading persisted state: {e}")
 
@@ -567,6 +541,11 @@ class LiveSentinel:
             for k, v in recent_pattern_items:
                 clean_patterns[k] = list(v)
 
+            clean_watermarks = {
+                k: v for k, v in self.db.channel_watermarks.items()
+                if k.lower() in {'withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'}
+            }
+
             data = {
                 "alerted_msg_patterns": clean_patterns,
                 "vip_alert_history": clean_vip,
@@ -575,7 +554,7 @@ class LiveSentinel:
                 "thread_alerts": clean_threads,
                 "reply_to_root_map": clean_reply_map,
                 "channel_last_alert_id": self.channel_last_alert_id,
-                "channel_watermarks": self.db.channel_watermarks,
+                "channel_watermarks": clean_watermarks,
                 "vahid_post_time": clean_vahid_time,
                 "ilia_post_time": clean_ilia_time,
                 "vahid_ai_posted": clean_vahid_ai,
@@ -726,7 +705,9 @@ class LiveSentinel:
                             found_sources.append((sm.group(1), sm.group(2)))
                     for src_node, src_id_str in found_sources:
                         src_id = int(src_id_str)
-                        canon = vip_map.get(src_node.lower(), src_node)
+                        canon = vip_map.get(src_node.lower())
+                        if not canon:
+                            continue
                         self.db.advance_watermark(canon, src_id)
                         self.db.record_posted_message(ch, canon, src_id, m.id)
                         mk = f"{canon}_{src_id}"
@@ -802,10 +783,103 @@ class LiveSentinel:
         return await self.threads.flush_all_pending_debounces()
 
     async def handle_message_deleted(self, node_username, deleted_ids):
-        return await self.radar_pipeline.handle_message_deleted(node_username, deleted_ids)
+        if not deleted_ids:
+            return
+            
+        print(f"🗑️ Handling MessageDeleted event for node={node_username}: {deleted_ids}")
+        for del_id in deleted_ids:
+            del_int = int(del_id) if str(del_id).isdigit() else del_id
+            del_str = str(del_id)
+            
+            for tk, thread_data in list(self.thread_alerts.items()):
+                if not isinstance(thread_data, dict):
+                    continue
+                sources = thread_data.get('sources', [])
+                matching = [
+                    s for s in sources 
+                    if (s.get('msg_id') in (del_int, del_str) or str(s.get('msg_id')) == del_str)
+                    and (not node_username or node_username in ('unknown', None) or s.get('node') == node_username)
+                ]
+                if matching:
+                    target_ch = thread_data.get('channel', '@DidebanJang')
+                    alert_mid = thread_data.get('alert_msg_id')
+                    thread_data['sources'] = [s for s in sources if s not in matching]
+                    if 'replies' in thread_data:
+                        thread_data['replies'] = [r for r in thread_data['replies'] if r.get('msg_id') not in (del_int, del_str) and str(r.get('msg_id')) != del_str]
+                    
+                    if not thread_data['sources']:
+                        self.thread_alerts.pop(tk, None)
+                        task = self.debounce_tasks.pop(tk, None)
+                        if task and not task.done():
+                            task.cancel()
+                        if alert_mid:
+                            to_delete = [alert_mid]
+                            if thread_data.get('last_notified_msg_id'):
+                                to_delete.append(thread_data['last_notified_msg_id'])
+                            try:
+                                await self.bot.delete_messages(target_ch, to_delete)
+                                print(f"🗑️ Successfully deleted alert {alert_mid} in {target_ch} (all source posts deleted by admin).")
+                            except Exception as e:
+                                print(f"⚠️ Error deleting alert {alert_mid} in {target_ch}: {e}")
+                    else:
+                        updated_text = self.build_alert_post_content(thread_data)
+                        try:
+                            await self.safe_edit_post(target_ch, alert_mid, updated_text)
+                            print(f"✏️ Refreshed alert {alert_mid} in {target_ch} after removing deleted source {del_id}.")
+                        except Exception as e:
+                            print(f"⚠️ Error editing alert after source deletion: {e}")
+                    self.save_persisted_state()
+
+            # VIP alerts
+            for msg_key in list(self.vip_alert_history.keys()):
+                if msg_key.endswith(f"_{del_int}") or msg_key.endswith(f"_{del_str}"):
+                    if node_username and not msg_key.startswith(f"{node_username}_"):
+                        continue
+                    info = self.vip_alert_history.pop(msg_key, None)
+                    if info and info.get('sent_msg_id'):
+                        sent_mid = info['sent_msg_id']
+                        target_ch = info.get('target_channel', '@DidebanJang')
+                        try:
+                            await self.bot.delete_messages(target_ch, [sent_mid])
+                            print(f"🗑️ Successfully deleted VIP alert {sent_mid} in {target_ch} (source {msg_key} deleted).")
+                        except Exception as e:
+                            print(f"⚠️ Error deleting VIP alert {sent_mid} in {target_ch}: {e}")
+                    self.save_persisted_state()
 
     async def verify_recent_messages_existence(self):
-        return await self.radar_pipeline.verify_recent_messages_existence()
+        if not self.client or not self.client.is_connected():
+            return
+            
+        from telethon.tl.types import MessageEmpty
+        now = time.time()
+        
+        # Check active monitored VIP threads
+        recent_ids_by_node = {}
+        for k, v in self.thread_alerts.items():
+            if (now - v.get('timestamp', 0)) <= 7200:
+                nd = v.get('node')
+                root_id = v.get('root_id')
+                if nd and root_id:
+                    recent_ids_by_node.setdefault(nd, set()).add(int(root_id) if str(root_id).isdigit() else root_id)
+                for r in v.get('replies', []):
+                    rep_id = r.get('msg_id')
+                    if nd and rep_id:
+                        recent_ids_by_node.setdefault(nd, set()).add(int(rep_id) if str(rep_id).isdigit() else rep_id)
+
+        for nd, ids in recent_ids_by_node.items():
+            try:
+                check_ids = list(ids)
+                target_peer = self.get_node_input_peer(nd) or nd
+                msgs = await self.client.get_messages(target_peer, ids=check_ids)
+                deleted_ids = []
+                for cid, m in zip(check_ids, msgs):
+                    if m is None or isinstance(m, MessageEmpty) or (not getattr(m, 'message', None) and not getattr(m, 'media', None)):
+                        deleted_ids.append(cid)
+                if deleted_ids:
+                    print(f"🔍 Poller fallback detected deleted messages in {nd}: {deleted_ids}")
+                    await self.handle_message_deleted(nd, deleted_ids)
+            except Exception:
+                pass
 
     async def check_and_merge_with_active_alert(self, text, node, msg_id, target_channel, candidate_title="", candidate_summary="", raw_msg=None, category='WAR', is_iran_related=False, candidate_sources=None):
         return await self.threads.check_and_merge_with_active_alert(
@@ -917,9 +991,6 @@ class LiveSentinel:
             try:
                 if item.get('pipeline') in ('vip_multi_agent', 'vip', 'yashar', 'alibk'):
                     success = await self.vip_pipeline.process_queue_item(item, raw_msg=raw_msg)
-                elif item.get('pipeline') == 'radar':
-                    # Future radar queue extensions
-                    success = False
             except Exception as proc_err:
                 print(f"⚠️ [SMART QUEUE: ERROR] Processing failed for {item_id}: {proc_err}")
                 success = False
@@ -940,17 +1011,17 @@ class LiveSentinel:
         async with self.lock:
             canon = (node or '').lower()
             vip_map_fast = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen', 'withyashar': 'withyashar', 'alibk3': 'Alibk3', 'netblocks': 'netblocks'}
-            canon_node = vip_map_fast.get(canon, node or 'unknown')
-
-            # VIP Channels: 5-Soldier Multi-Agent Pipeline (withyashar, Alibk3, VahidOnline, iliaen, netblocks)
-            if canon in ('vahidonline', 'iliaen', 'withyashar', 'alibk3', 'netblocks'):
-                asyncio.create_task(self.vip_pipeline.handle_message(text, canon_node, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+            canon_node = vip_map_fast.get(canon)
+            if not canon_node:
+                # Strictly drop any non-VIP message immediately
                 return
 
-            # Consensus Radar Pipeline (General monitored nodes)
-            await self.radar_pipeline.process_radar_consensus(text, node, msg_id, is_edit=is_edit, msg_date=msg_date, raw_msg=raw_msg)
-            if not is_edit:
-                self.db.advance_watermark(canon_node, msg_id)
+            self.total_msgs_processed += 1
+            self.last_msg_text = (text[:100] + "...") if text and len(text) > 100 else (text or "")
+            self.last_msg_time = time.strftime("%Y-%m-%d %H:%M:%S")
+
+            # VIP Channels: 5-Soldier Multi-Agent Pipeline (withyashar, Alibk3, VahidOnline, iliaen, netblocks)
+            asyncio.create_task(self.vip_pipeline.handle_message(text, canon_node, msg_id, raw_msg=raw_msg, is_edit=is_edit))
 
 
 async def main():
@@ -1043,7 +1114,7 @@ async def main():
     @client.on(events.NewMessage())
     async def user_handler(event):
         node_username = sentinel.resolve_event_node(event)
-        if not node_username:
+        if not node_username or (node_username or '').lower() not in ('withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'):
             return
         text = event.message.message
         msg_id = event.message.id
@@ -1053,7 +1124,7 @@ async def main():
     @client.on(events.MessageEdited())
     async def edit_handler(event):
         node_username = sentinel.resolve_event_node(event)
-        if not node_username:
+        if not node_username or (node_username or '').lower() not in ('withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'):
             return
         text = event.message.message
         msg_id = event.message.id
@@ -1064,7 +1135,7 @@ async def main():
     async def delete_handler(event):
         try:
             node_username = sentinel.resolve_event_node(event)
-            if not node_username:
+            if not node_username or (node_username or '').lower() not in ('withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'):
                 return
             deleted_ids = getattr(event, 'deleted_ids', [])
             if deleted_ids:
@@ -1075,9 +1146,7 @@ async def main():
     async def active_poller():
         last_ids = {}
         last_deletion_check = time.time()
-        general_idx = 0
         vip_nodes = [n for n in sentinel.nodes if (n or '').lower() in ('withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks')]
-        general_nodes = [n for n in sentinel.nodes if n not in vip_nodes]
 
         while True:
             if time.time() - last_deletion_check >= 180:
@@ -1087,15 +1156,7 @@ async def main():
                 except Exception as del_err:
                     print(f"⚠️ [POLLER] Error verifying recent messages: {del_err}")
 
-            # ترکیب کانال‌های VIP (همیشه) با یک دسته چرخشی از ۵ کانال عمومی
-            cycle_nodes = list(vip_nodes)
-            if general_nodes:
-                batch_size = 5
-                batch = [general_nodes[(general_idx + i) % len(general_nodes)] for i in range(min(batch_size, len(general_nodes)))]
-                cycle_nodes.extend(batch)
-                general_idx = (general_idx + batch_size) % len(general_nodes)
-
-            for node in cycle_nodes:
+            for node in vip_nodes:
                 try:
                     target_peer = sentinel.get_node_input_peer(node) or node
                     messages = await client.get_messages(target_peer, limit=5)

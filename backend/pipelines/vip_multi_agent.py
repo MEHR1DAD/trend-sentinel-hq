@@ -973,19 +973,6 @@ class VipMultiAgentEditorialPipeline:
                 model_used = route_info.get('model', 'unknown')
                 elapsed = route_info.get('elapsed', 0.0)
                 print(f"🛑 [VIP SOLDIER 1+2: DROPPED | Model: {model_used} | {elapsed:.2f}s] Msg {node}_{msg_id} dropped: {drop_reason}")
-
-                # اگر پیام از وحید یا ایلیا بود، همچنان به recent_messages رادار اضافه شود تا اجماع ۳ کاناله کور نشود
-                if node.lower() in ('vahidonline', 'iliaen'):
-                    link = f"https://t.me/{node}/{msg_id}"
-                    self.sentinel.recent_messages.append({
-                        'node': node,
-                        'text': clean_text,
-                        'time': time.time(),
-                        'link': link,
-                        'id': msg_id,
-                        'is_citizen_report': False
-                    })
-                    print(f"📡 [RADAR CONSENSUS FEED] Preserved {node}_{msg_id} in recent_messages buffer for multi-source consensus.")
                 if not is_edit:
                     self.sentinel.db.advance_watermark(node, msg_id)
                 return True
@@ -1092,97 +1079,6 @@ class VipMultiAgentEditorialPipeline:
         print(f"🔄 [VIP MULTI-AGENT] Retrying queued msg {node}_{msg_id} through 4-soldier pipeline...")
         success = await self.handle_message(text, node, msg_id, raw_msg=raw_msg, is_edit=is_edit, from_queue=True)
         return bool(success)
-
-    async def handle_consensus_event(self, combined_text, sources, clean_pat=""):
-        """
-        درگاه ورودی رسمی رویدادهای اجماع چندمنبعی رادار عمومی:
-        1. ضد تکرار آهنین (بررسی عدم وجود قبلی هریک از منابع)
-        2. قفل هماهنگی رویداد
-        3. فراخوانی سرباز ۱+۲ (دروازه‌بان و مسیرساز - Lite)
-        4. در صورت DROP: ثبت در لاگ و توقف بدون نشت پست خام
-        5. فراخوانی سرباز ۴ (دیده‌بان رشته‌ها - Flash) جهت تشخیص MERGE یا NEW_ALERT
-        6. فراخوانی سرباز ۳ (سردبیر تخصصی حوزه - Flash) جهت نگارش تیتر حرفه‌ای با فعل کامل و چکیده تحلیلی
-        7. انتشار یا ادغام رسمی و متمرکز از طریق execute_dispatch (تنها دیسپچر سامانه)
-        """
-        if not combined_text or not sources:
-            return False
-
-        first_node = sources[0].get('node', 'Radar')
-        first_msg_id = sources[0].get('msg_id', int(time.time()))
-
-        # ۱. گام ضد تکرار آهنین منابع اجماع
-        for s in sources:
-            sn = s.get('node')
-            sm = s.get('msg_id')
-            if sn and sm:
-                ex_ch, ex_id = self.find_existing_posted_alert(sn, sm)
-                if ex_id:
-                    print(f"🛑 [RADAR CONSENSUS DEDUP] Source {sn}_{sm} was already posted as #{ex_id} in {ex_ch}. Aborting duplicate consensus dispatch.")
-                    return True
-
-        consensus_lock_key = f"consensus_{first_node}_{first_msg_id}"
-        msg_lock = self.msg_locks.setdefault(consensus_lock_key, asyncio.Lock())
-        async with msg_lock:
-            # ۲. سرباز ۱+۲: دروازه‌بان و مسیرساز تک‌ضرب (Lite Stack)
-            route_info = await self.soldier_1_2_gatekeeper(combined_text, node=f"Radar:{first_node}")
-            if not route_info:
-                print(f"⏳ [RADAR CONSENSUS] Soldier 1+2 failed triage for consensus '{clean_pat}'.")
-                return False
-
-            if route_info.get('decision') == 'DROP':
-                drop_reason = route_info.get('drop_reason', 'فاقد ارزش خبری یا نامرتبط')
-                print(f"🛑 [RADAR CONSENSUS: DROPPED] Consensus event dropped by Soldier 1+2: {drop_reason}")
-                return True
-
-            target_channel = route_info.get('target_channel', '@DidebanJang')
-            candidate_title = route_info.get('candidate_title', '')
-
-            # ۳. سرباز ۴: دیده‌بان رشته‌های فعال ۶ ساعته (Flash Stack)
-            thread_info = await self.soldier_4_thread_watcher(
-                combined_text,
-                first_node,
-                target_channel,
-                candidate_title=candidate_title
-            )
-            if not thread_info:
-                thread_info = {
-                    'relation': 'NEW_ALERT',
-                    'target_thread_key': None,
-                    'target_thread_data': None,
-                    'merge_reason': 'Fallback to NEW_ALERT on thread watcher timeout'
-                }
-
-            is_merge = (thread_info.get('relation') == 'MERGE')
-            is_reply = (thread_info.get('relation') == 'THREAD_REPLY')
-            existing_td = thread_info.get('target_thread_data')
-
-            # ۴. سرباز ۳: سردبیر ارشد حوزه تخصصی (Flash Stack)
-            editor_info = await self.soldier_3_domain_editor(
-                combined_text,
-                first_node,
-                target_channel,
-                is_merge=is_merge,
-                is_reply=is_reply,
-                existing_thread_data=existing_td,
-                urgency_level=route_info.get('urgency_level', 'BREAKING'),
-                is_iran_related=route_info.get('is_iran_related', False)
-            )
-            if not editor_info:
-                print(f"⚠️ [RADAR CONSENSUS] Soldier 3 failed to generate editorial content for consensus. Aborting dispatch.")
-                return False
-
-            # ۵. اجرای انتشار متمرکز از طریق تنها دیسپچر سامانه
-            await self.execute_dispatch(
-                node=first_node,
-                msg_id=first_msg_id,
-                route_info=route_info,
-                thread_info=thread_info,
-                editor_info=editor_info,
-                raw_msg=None,
-                is_edit=False,
-                custom_sources=sources
-            )
-            return True
 
     async def catchup_unposted(self, reader_client=None, node="withyashar"):
         """

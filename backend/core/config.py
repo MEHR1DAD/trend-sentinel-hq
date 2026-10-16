@@ -6,7 +6,6 @@ from datetime import datetime, timezone, timedelta
 
 # --- Paths & General Settings ---
 CONFIG_FILE = 'backend/sentinel_config.json'
-BASELINE_FILE = 'backend/trend_baselines.json'
 STATE_FILE = 'backend/sentinel_state.json'
 POSTED_DB_FILE = 'backend/posted_registry.db'
 PEER_CACHE_FILE = 'backend/telegram_peer_cache.json'
