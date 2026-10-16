@@ -739,8 +739,8 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39211,
-    "withyashar": 25783,
+    "Alibk3": 39219,
+    "withyashar": 25786,
     "VahidOnline": 78738,
     "netblocks": 1568,
     "iliaen": 4746
@@ -828,94 +828,17 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 32,
-    "gemini-3.5-flash-lite": 1067,
+    "gemini-3.5-flash-lite": 1069,
     "gemini-2.5-flash": 138,
     "gemini-3-flash-preview": 97,
     "gemini-3.1-flash-lite": 725,
     "gemini-3.1-flash-lite-preview": 92,
-    "gemini-3.6-flash": 28,
+    "gemini-3.6-flash": 29,
     "gemini-3.7-flash": 25,
     "gemini-flash-lite-latest": 26,
     "gemini-3.5-flash": 5
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_withyashar_25785",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25785,
-      "text": "نتانیاهو در ایکس: «دو سال پیش در چنین روزی، سربازان قهرمان ما یحیی سنوار را از بین بردند. اگر رویکرد آیزنکوت را می‌پذیرفتیم، چنین اتفاقی نمی‌افتاد؛ رویکردی که بر توقف جنگ، تسلیم‌شدن در برابر خواسته‌های حماس و خروج از غزه تأکید داشت و به سنوار اجازه می‌داد در ویلایی مجلل در قطر زندگی کند.به لطف سربازان قهرمانمان و پافشاری ما بر تکمیل تصرف رفح و کریدور فیلادلفی، سنوار، ضیف، هنیه، نصرالله، خامنه‌ای و هزاران تروریست دیگر را از بین بردیم.\nآیزنکوت می‌گوید حماس را نابود خواهد کرد؟ وقتی از کابینه خارج شد و خواستار توقف جنگ شد، کجا بود؟ چگونه می‌خواهد حماس را نابود کند، درحالی‌که در دولت او منصور عباس و احمد طیبی حضور خواهند داشت؛ کسانی که به ادعای نتانیاهو، حماس را «سازمان خیریه» می‌نامند؟\n«این یا «حذب یاشار» است یا فلسطین؛ یا بی‌بی یا طیبی. این یعنی «لیکود.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792170749.4091015,
-      "retries": 18,
-      "last_retry_at": 1792172366.9182768
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39214",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39214,
-      "text": "س: هل تعتقد أن السعودية يجب أن تقبل المساعدة التي تقدمها إسرائيل لمحاربة اليمن؟\n\nترامب: نعم، بالتأكيد. لقد كانت إسرائيل مفيدة جدًا للسعودية.",
-      "is_edit": false,
-      "enqueued_at": 1792171059.3357751,
-      "retries": 14,
-      "last_retry_at": 1792172372.407121
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25786",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25786,
-      "text": "موقع برگشتن زرشکیان از ارمنستان، شبکه خبر موزیک سریال گیم اف ترونز رو گذاشته روش\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792171098.4383588,
-      "retries": 14,
-      "last_retry_at": 1792172378.7585073
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25787",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25787,
-      "text": "‏لحظه ورود ناو هواپیمابر اتمی آمریکا  USS Theodore Roosevelt (CVN-71) به پایگاه دریایی یوکوسوکا ژاپن.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792171225.305857,
-      "retries": 13,
-      "last_retry_at": 1792172407.4327588
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25788",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25788,
-      "text": "نفت برنت ۱۰۹ دلار \n@WarRoom 🚨",
-      "is_edit": false,
-      "enqueued_at": 1792171433.7269647,
-      "retries": 11,
-      "last_retry_at": 1792172419.219234
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25789",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25789,
-      "text": "بیتکوین اومد زیر ۸۱ و هم اکنون ۸۰،۸۷۷ دلار\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792171583.8911815,
-      "retries": 10,
-      "last_retry_at": 1792172449.8116822
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25790",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25790,
-      "text": "دلار و تتر ۲۶۵،۰۰۰ تومان \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792171643.6706316,
-      "retries": 9,
-      "last_retry_at": 1792172385.1736777
-    },
     {
       "id": "vip_multi_agent_Alibk3_39215",
       "pipeline": "vip_multi_agent",
@@ -924,9 +847,86 @@
       "text": "كتائب القسام تنشر في الذكرى الثانية لاستشهاد يحيى السنوار: يقتلونا بل ونحيا لا يموت الشهداء\nنحن طوفان الأقصى فيه طاف الأنبياء",
       "is_edit": true,
       "enqueued_at": 1792172397.685426,
-      "retries": 1,
-      "last_retry_at": 1792172428.4040537
+      "retries": 19,
+      "last_retry_at": 1792174742.8717985
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39213",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39213,
+      "text": "هجوم يمني يستهدف خميس مشيط في السعودية.",
+      "is_edit": false,
+      "enqueued_at": 1792172953.6483881,
+      "retries": 18,
+      "last_retry_at": 1792174748.8537438
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39216",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39216,
+      "text": "نيويورك تايمز: \n\nإقالة متحدثة البيت الأبيض الجديدة بعد 5 أيام في المنصب.",
+      "is_edit": false,
+      "enqueued_at": 1792172956.3536584,
+      "retries": 18,
+      "last_retry_at": 1792174755.301198
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39217",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39217,
+      "text": "تعرض ناقلة النفط الخام MT ST 3، التي كانت تقل 15 بحاراً هندياً، لإصابة بطلقة في مضيق هرمز.",
+      "is_edit": false,
+      "enqueued_at": 1792173037.6427295,
+      "retries": 17,
+      "last_retry_at": 1792174664.6830323
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25791",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25791,
+      "text": "ترامپ: نه من و نه احتمالاً ایلان ماسک، دسترسی ارتش اوکراین به استارلینک را قطع نکرده‌ایم\nخبرنگار: این شما بودید یا ایلان ماسک که تصمیم گرفتید دسترسی ارتش اوکراین به استارلینک را موقتاً متوقف کنید؟\nترامپ: خب، نمی‌دانم اصلاً کسی چنین تصمیمی گرفته یا نه؛ چون من این کار را نکرده‌ام و فکر نمی‌کنم ایلان ماسک هم چنین کاری کرده باشد.\nتا جایی که اطلاع دارم، وضعیت استارلینک مانند گذشته است و تغییری نکرده است\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792173375.1135962,
+      "retries": 13,
+      "last_retry_at": 1792174671.3806212
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25792",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25792,
+      "text": "خبرنگار: آیا فکر می‌کنید عربستان سعودی ممکن است کمک پیشنهادی اسرائیل برای مقابله با شورشیان حوثی را بپذیرد؟\nدونالد ترامپ: بله، فکر می‌کنم بپذیرد، قطعاً. اسرائیل کمک زیادی به عربستان سعودی کرده است و بله، مطمئناً چنین کاری خواهند کرد.\nخبرنگار: آیا توافق ابراهیم با عربستان سعودی دوباره روی میز قرار گرفته است؟\nدونالد ترامپ: بله، فکر می‌کنم همین‌طور است. بله، به نظرم این احتمال وجود دارد؛ شاید حتی بیش از هر زمان دیگری.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792173589.0823255,
+      "retries": 11,
+      "last_retry_at": 1792174678.0524654
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25766",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25766,
+      "text": "اتاق جنگ با یاشار: تسلا رودستر؛ ابرخودروی برقی با قابلیت پرواز! پس از نزدیک به ۹ سال انتظار، نسل جدید تسلا رودستر با ادعای شتاب صفر تا ۹۶ کیلومتر بر ساعت در ۰٫۸۱ ثانیه و سرعت نهایی بیش از ۳۷۰ کیلومتر بر ساعت خبرساز شده است. نسخه مجهز به فناوری اسپیس‌ایکس از پیشرانه‌های گاز فشرده استفاده می‌کند که به خودرو امکان می‌دهد برای لحظاتی از زمین جدا شود و از روی موانع بپرد. سامانه مورد بحث شامل مخازن تحت فشار و حدود ۲۵۰ کیلوگرم تجهیزات و گاز فشرده است, نسخه بعدی راکتی این خودرو شتاب زیر ۰.۶ دارد\n @WarRoom",
+      "is_edit": true,
+      "enqueued_at": 1792173855.972981,
+      "retries": 9,
+      "last_retry_at": 1792174684.5656588
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39219",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39219,
+      "text": "صور الأقمار الصناعية تؤكد تعرّض الشركة الدولية للبتروكيماويات السعودية، الواقعة في مدينة الجبيل الصناعية بشرق السعودية، لضربات بصواريخ باليستية ومسيّرات من قبل القوات اليمنية.",
+      "is_edit": true,
+      "enqueued_at": 1792174329.6214085,
+      "retries": 5,
+      "last_retry_at": 1792174691.3016047
     }
   ],
-  "last_saved": "2026-10-16 17:41:03 UTC"
+  "last_saved": "2026-10-16 18:19:19 UTC"
 }
