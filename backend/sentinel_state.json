@@ -743,9 +743,9 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39181,
-    "VahidHeadline": 326605,
-    "VahidOOnLine": 265301,
+    "Alibk3": 39183,
+    "VahidHeadline": 326608,
+    "VahidOOnLine": 265304,
     "RadioFarda": 162377,
     "IranintlTV": 362470,
     "Tasnimnews": 451623,
@@ -760,18 +760,18 @@
     "Khabar_Fouri": 551822,
     "khabari": 201671,
     "thezoomit": 103925,
-    "farsivoa": 233885,
+    "farsivoa": 233887,
     "myITiran": 18287,
     "Farsi_Iranwire": 94731,
-    "bbcpersian": 293427,
+    "bbcpersian": 293429,
     "Alarabiya_far": 152335,
     "thezoomon": 5308,
     "Mr_Economy": 64057,
     "Eghtesadnews_com": 371056,
     "Digiato": 114192,
-    "Indypersian": 180290,
+    "Indypersian": 180293,
     "withyashar": 25755,
-    "euronewspe": 90701,
+    "euronewspe": 90703,
     "Economic_News_Channel": 82923,
     "farsna": 468156,
     "persiannbloomberg": 68487,
@@ -875,39 +875,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_25752",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25752,
-      "text": "@WarRoom iphone 2",
-      "is_edit": true,
-      "enqueued_at": 1792106092.3465626,
-      "retries": 23,
-      "last_retry_at": 1792108178.5383737
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25753",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25753,
-      "text": "صدای تیر اندازی در شرق تهران ، پدافند نیست ، احتمالا بسیجی‌ها شربت شهادت رو خوردن مست کردن \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792107112.553329,
-      "retries": 13,
-      "last_retry_at": 1792108210.193221
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25754",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25754,
-      "text": "واشنگتن پست به نقل از یک مسئول اوکراینی: در تاریخ ۷ اکتبر، ما تنها ۱۰ موشک پاتریوت برای دفاع هوایی داشتیم و این موشک‌ها هم در حملات اخیر مورد استفاده قرار گرفتند.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792107411.9499705,
-      "retries": 10,
-      "last_retry_at": 1792108237.3778262
-    },
-    {
       "id": "vip_multi_agent_withyashar_25747",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
@@ -915,8 +882,8 @@
       "text": "@WarRoom flag",
       "is_edit": true,
       "enqueued_at": 1792107970.6404262,
-      "retries": 4,
-      "last_retry_at": 1792108188.6537907
+      "retries": 20,
+      "last_retry_at": 1792110483.991562
     },
     {
       "id": "vip_multi_agent_withyashar_25755",
@@ -926,9 +893,86 @@
       "text": "@WarRoom طب سنتی",
       "is_edit": true,
       "enqueued_at": 1792108187.659427,
+      "retries": 18,
+      "last_retry_at": 1792110511.268085
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25745",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25745,
+      "text": "اتاق جنگ با یاشار: تفاوت بمب MOAB و بمب سنگرشکن GBU-57\nبمب GBU-43/B MOAB با وزن حدود ۹.۸ تن، یکی از بزرگ‌ترین بمب‌های متعارف آمریکاست که با ایجاد موج انفجار عظیم، اهداف سطحی و مناطق گسترده را تخریب می‌کند؛ اما برای نفوذ عمیق به سازه‌های زیرزمینی طراحی نشده است. در مقابل، بمب GBU-57 MOP با وزن حدود ۱۳.۶ تن، یک بمب سنگرشکن تخصصی است که برای نفوذ به لایه‌های ضخیم سنگ و بتن و هدف‌گیری تأسیسات مستحکم زیرزمینی ساخته شده است. این همان نوع بمبی است که بمب‌افکن‌های پنهان‌کار B-2 آمریکا در حمله به تأسیسات هسته‌ای ایران استفاده کردند. تفاوت اصلی: MOAB انفجار عظیمی در سطح ایجاد می‌کند، اما GBU-57 برای نفوذ به عمق و تخریب اهداف مدفون‌شده طراحی شده است؛ بنابراین، انفجار بزرگ‌تر لزوماً به معنای قدرت بیشتر برای تخریب تأسیسات زیرزمینی نیست.\n@WarRoom",
+      "is_edit": true,
+      "enqueued_at": 1792109405.9355235,
+      "retries": 11,
+      "last_retry_at": 1792110428.527657
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25748",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25748,
+      "text": "@WarRoom flag 2",
+      "is_edit": true,
+      "enqueued_at": 1792109411.3341675,
+      "retries": 11,
+      "last_retry_at": 1792110489.699787
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25750",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25750,
+      "text": "@WarRoom Chess Grandmaster",
+      "is_edit": true,
+      "enqueued_at": 1792109486.3135285,
+      "retries": 10,
+      "last_retry_at": 1792110435.9690118
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25751",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25751,
+      "text": "@WarRoom iphone",
+      "is_edit": true,
+      "enqueued_at": 1792109487.3197842,
+      "retries": 10,
+      "last_retry_at": 1792110442.5350354
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39182",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39182,
+      "text": "ترامب عن إيران:\n\n اريد أن ألقي هذه القنبلة الضخمة للغاية، إنها مثل قنبلة نووية صغيرة.\"",
+      "is_edit": false,
+      "enqueued_at": 1792110101.9281564,
+      "retries": 5,
+      "last_retry_at": 1792110449.0775607
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39183",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39183,
+      "text": "المراسل: ماذا يعني «أم القنابل» بعد انتخابات التجديد النصفي: \n \nترامب: هذه القنبلة ليست نووية ولا سلاحًا نوويًا تكتيكيًا، بل قنبلة تقليدية ضخمة، إنها تشبه قنبلة نووية صغيرة.",
+      "is_edit": true,
+      "enqueued_at": 1792110309.052994,
+      "retries": 3,
+      "last_retry_at": 1792110516.9950726
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25756",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25756,
+      "text": "خبرنگار: امروز گزارش‌هایی منتشر شده مبنی بر اینکه شما در حال بررسی استفاده از «مادر همه بمب‌ها»، احتمالاً پس از انتخابات میان‌دوره‌ای هستید. می‌خواهم بدانم منظورتان از این موضوع چیست؟\nدونالد ترامپ: خب، «مادر همه بمب‌ها» هسته‌ای نیست.\nخبرنگار: یعنی هسته‌ای تاکتیکی هم نیست؟\nدونالد ترامپ: نه، نه، اصلاً هسته‌ای نیست. این فقط یک بمب فوق‌العاده بزرگ است. مثل یک بمب هسته‌ای کوچک است، اما «مادر همه بمب‌ها» در واقع یک بمب بسیار بزرگ است، نه یک سلاح هسته‌ای. من از سلاح هسته‌ای استفاده نمی‌کنم؛ نیازی به آن نداریم. ما بزرگ‌ترین قدرت هسته‌ای جهان هستیم. زرادخانه هسته‌ای ما از روسیه بزرگ‌تر است. روسیه در رتبه دوم و چین در رتبه سوم قرار دارد.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792110321.0558527,
       "retries": 2,
-      "last_retry_at": 1792108258.1916652
+      "last_retry_at": 1792110462.1858745
     }
   ],
-  "last_saved": "2026-10-15 23:51:01 UTC"
+  "last_saved": "2026-10-16 00:28:39 UTC"
 }
