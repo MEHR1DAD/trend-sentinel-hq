@@ -738,8 +738,8 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39225,
-    "withyashar": 25795,
+    "Alibk3": 39232,
+    "withyashar": 25809,
     "VahidOnline": 78739,
     "netblocks": 1568,
     "iliaen": 4746
@@ -827,7 +827,7 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 32,
-    "gemini-3.5-flash-lite": 1069,
+    "gemini-3.5-flash-lite": 1071,
     "gemini-2.5-flash": 138,
     "gemini-3-flash-preview": 97,
     "gemini-3.1-flash-lite": 725,
@@ -839,138 +839,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_25802",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25802,
-      "text": "تحلیل ۱ ساعت دیگه میرم ، چند شات بلو کامی‌کازه بزنم ، یه ردبول هم روش 😁",
-      "is_edit": false,
-      "enqueued_at": 1792183295.0605717,
-      "retries": 14,
-      "last_retry_at": 1792185560.770549
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39230",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39230,
-      "text": "أكسيوس عن مسؤول أميركي: \n\nالبيت الأبيض أمر بتعليق الضربات على إيران لتجنب تصعيد الحرب قبيل الانتخابات النصفية",
-      "is_edit": false,
-      "enqueued_at": 1792183848.1092546,
-      "retries": 11,
-      "last_retry_at": 1792185600.7705336
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25798",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25798,
-      "text": "کانال ۱۵ اسرائیل: ایران ممکن است حمله‌ای پیش‌دستانه انجام دهد و رویارویی مستقیم با ایران برای انتخابات اسرائیل از اهمیت بسیار زیادی برخوردار خواهد بود\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792183924.2220783,
-      "retries": 10,
-      "last_retry_at": 1792185564.187598
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39227",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39227,
-      "text": "مصدر يمني: \n\nاستهداف مقر قيادة القوات السعودية في معسكر بدر بمحافظة عدن ومخازن أسلحة بالمعسكر.",
-      "is_edit": false,
-      "enqueued_at": 1792183925.2246695,
-      "retries": 10,
-      "last_retry_at": 1792185581.4420712
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39228",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39228,
-      "text": "مشاهد من الاستهداف المباشر في عدن.",
-      "is_edit": false,
-      "enqueued_at": 1792183926.218393,
-      "retries": 10,
-      "last_retry_at": 1792185583.6052878
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25799",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25799,
-      "text": "ترامپ : «قطعاً خیلی دوست دارم پوتین در نشست گروه ۲۰ (G20) حضور داشته باشد.\nنمی‌دانم که آیا او خواهد آمد یا نه.» \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792183929.2341719,
-      "retries": 9,
-      "last_retry_at": 1792185602.9269857
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25797",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25797,
-      "text": "منابع  سانه های عبری مدعی شده اند که ترامپ و نتانیاهو برای باقی ماندن نتانیاهو در قدرت توافق کرده و ترامپ متعهد به حمایت از نخست وزیر فعلی اسرائیل شده است. طراحی برای حمله به ایران قبل از انتخابات اسرائیل هم احتمالا بخشی از این پروژه است\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792183946.3273995,
-      "retries": 9,
-      "last_retry_at": 1792185620.0999165
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39231",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39231,
-      "text": "ترامب بشأن فنزويلا: \n\n«للغالب الغنائم».",
-      "is_edit": false,
-      "enqueued_at": 1792184158.0240316,
-      "retries": 9,
-      "last_retry_at": 1792185622.241022
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25803",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25803,
-      "text": "ترامپ‌ اشاره به جنگ عراق و افغانستان: «قبلاً وارد می‌شدیم، مردم را بمباران می‌کردیم و بعد می‌رفتیم. این دیگر چه کاری بود؟ زندگی مردم را نابود می‌کردیم، هزینه هنگفتی روی دستمان می‌گذاشت و در نهایت هم می‌رفتیم. اصلاً داشتیم چه کار می‌کردیم؟»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792184186.2712083,
-      "retries": 7,
-      "last_retry_at": 1792185454.3875082
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39232",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39232,
-      "text": "سُبحانَ اللهِ وَالحَمدُ للهِ وَلا إلهَ إلاّ الله وَاللهُ أكبَرُ، وَلا حَولَ وَلا قُوَّةَ إلاّ بِاللهِ العَليِّ العَظيمِ.\n\nرابط قناة الاحتياط:\n لینک کانال پشتیبان:\nEnglish News? Follow our backup:\nhttps://t.me/Ali_bk_2",
-      "is_edit": false,
-      "enqueued_at": 1792184508.0454772,
-      "retries": 6,
-      "last_retry_at": 1792185474.9284954
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39233",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39233,
-      "text": "خلال آخر 24 ساعة، رُصدت 80 طائرة عسكرية في المنطقة، بينها 6 طائرات نقل وصلت من خارجها، منها 4 أميركية وواحدة بريطانية وواحدة كويتية، إضافة إلى 8 طائرات نقل عسكري إقليمي و29 طائرة تزود بالوقود و7 طائرات تجسس و27 طائرة نقل عسكري تنقّلت داخل المنطقة و3 مروحيات عسكرية.",
-      "is_edit": false,
-      "enqueued_at": 1792184509.0216658,
-      "retries": 5,
-      "last_retry_at": 1792185456.550807
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39234",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39234,
-      "text": "ترامب: \n\nإذا كنت تشك في اسم شخص من الشرق الأوسط، فما عليك سوى أن تناديه «محمد». لقد فعلت ذلك لسنوات، ولم أخطئ قط.",
-      "is_edit": false,
-      "enqueued_at": 1792184510.0039692,
-      "retries": 5,
-      "last_retry_at": 1792185477.090748
-    },
-    {
       "id": "vip_multi_agent_withyashar_25804",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
@@ -978,8 +846,8 @@
       "text": "ترامپ درباره ایران:\nیکم زیاده روی کردم، همه رهبرانشون رو کشتم و الان کسی نیست باهاش مذاکره کنم\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792184829.7511241,
-      "retries": 4,
-      "last_retry_at": 1792185494.2748015
+      "retries": 13,
+      "last_retry_at": 1792187257.987714
     },
     {
       "id": "vip_multi_agent_withyashar_25805",
@@ -989,8 +857,8 @@
       "text": "ترامپ : اگر در مورد نام یک شخص در خاورمیانه شک دارید، کافی است او را \"محمد\" صدا کنید. من سال‌هاست این کار را می‌کنم و هرگز اشتباه نکرده‌ام. \n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792185032.7962906,
-      "retries": 3,
-      "last_retry_at": 1792185496.4512181
+      "retries": 12,
+      "last_retry_at": 1792187261.308629
     },
     {
       "id": "vip_multi_agent_withyashar_25806",
@@ -1000,9 +868,75 @@
       "text": "دونالد ترامپ درباره ایران : ما در حالی به بالاترین سطح بازار سهام در تاریخ رسیده‌ایم که درگیر یک جنگ هستیم. البته این جنگ نیست؛ فقط یک رزمایش نظامی است، بسیار خب؟ یک رزمایش نظامی است.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792185238.038502,
-      "retries": 2,
-      "last_retry_at": 1792185513.6006136
+      "retries": 11,
+      "last_retry_at": 1792187372.8516212
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39226",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39226,
+      "text": "هجوم يمني يستهدف جازان في السعودية.",
+      "is_edit": false,
+      "enqueued_at": 1792185677.416246,
+      "retries": 10,
+      "last_retry_at": 1792187393.3649347
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25807",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25807,
+      "text": "دونالد ترامپ درباره ایران:\nما از تمام کارهایی که انجام می‌دهند و تمام حرف‌هایی که می‌زنند، باخبریم.\nاین چیزی که بهتون گفتم محرمانه بود؛ من همین الان آن را از حالت محرمانه خارج کردم \n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792185687.3516688,
+      "retries": 9,
+      "last_retry_at": 1792187278.4750848
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39229",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39229,
+      "text": "القوات اليمنية تحرر جبل ضحيح وقرية كحلان، وسط اشتباكات عنيفة في الشقب ودبّة، مع استمرار تقدمها واقتحام المنطقة من عدة محاور.",
+      "is_edit": false,
+      "enqueued_at": 1792185693.5186682,
+      "retries": 9,
+      "last_retry_at": 1792187295.6411645
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25800",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25800,
+      "text": "گزارش خبرنگار اسرائیل: نتانیاهو بدون جنگ نهایی از قدرت کنار نمی رود به ایران حمله میکند\n@WarRoom  🚨🚨🚨\nیاشار : ویس های دیشب رو گوش کرده",
+      "is_edit": false,
+      "enqueued_at": 1792185713.127164,
+      "retries": 9,
+      "last_retry_at": 1792187376.1827993
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25801",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25801,
+      "text": "این فیلم با زیرنویس فارسی هست و فرمانده سنتکام کامل توضیح داده",
+      "is_edit": false,
+      "enqueued_at": 1792185715.273785,
+      "retries": 8,
+      "last_retry_at": 1792187395.5344353
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25808",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25808,
+      "text": "شبکه کان‌نیوز : هر لحظه امکان شروع جنگ وجود دارد\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792186809.7481124,
+      "retries": 4,
+      "last_retry_at": 1792187225.7934844
     }
   ],
-  "last_saved": "2026-10-16 21:20:39 UTC"
+  "last_saved": "2026-10-16 21:50:10 UTC"
 }
