@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 32 minutes
-- **Messages Processed:** 122
-- **Last Message Text:** ⭕️ خالد عزیزی، سخنگوی گروهک تجزیه‌طلب دموکرات کردستان:
+- **Uptime:** 31 minutes
+- **Messages Processed:** 102
+- **Last Message Text:** 🔺کالابرگ برخی خانوارها فردا شارژ می‌شود
 
-🔸منتظر جنگ دوباره علیه ایران هستیم تا مسلحان...
-- **Last Message Time:** 2026-10-16 15:24:08
+🔹فردا شنبه ۲۵ مهر ۱۴۰۵ کالابرگ خانوارهایی که رقم انتهای کد ...
+- **Last Message Time:** 2026-10-16 15:56:29
