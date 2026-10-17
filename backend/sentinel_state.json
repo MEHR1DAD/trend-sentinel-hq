@@ -836,27 +836,27 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39299",
+      "id": "vip_multi_agent_withyashar_25858",
       "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39299,
-      "text": "السفارة الأميركية في الرياض: \n\nينبغي على مواطني الولايات المتحدة أن يكونوا على دراية باحتمالية وقوع هجمات على المطارات، وإغلاق المساحات الجوية، وإلغاء الرحلات الجوية، وتعطيل حركة السفر في السعودية.",
+      "node": "withyashar",
+      "msg_id": 25858,
+      "text": "آکسیوس: \n۶ هزار نظامی مصری برای حمایت از عربستان سعودی در جنگ علیه انصارالله یمن در خاک یمن مستقر شده‌اند\n@WarRoom",
       "is_edit": false,
-      "enqueued_at": 1792253407.012088,
-      "retries": 5,
-      "last_retry_at": 1792253921.9474263
+      "enqueued_at": 1792254927.0685318,
+      "retries": 11,
+      "last_retry_at": 1792256587.0671623
     },
     {
-      "id": "vip_multi_agent_Alibk3_4460",
+      "id": "vip_multi_agent_Alibk3_39300",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 4460,
-      "text": "سلسلة غارات صهيونية على طهران الآن",
-      "is_edit": true,
-      "enqueued_at": 1792253662.8295772,
-      "retries": 3,
-      "last_retry_at": 1792253837.622633
+      "msg_id": 39300,
+      "text": "طائرة شحن عسكري إماراتي هبطت هذا المساء في تل أبيب وهي تغادر الآن.",
+      "is_edit": false,
+      "enqueued_at": 1792254929.0255718,
+      "retries": 11,
+      "last_retry_at": 1792256590.4131444
     }
   ],
-  "last_saved": "2026-10-17 16:19:33 UTC"
+  "last_saved": "2026-10-17 17:03:35 UTC"
 }
