@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 29 minutes
-- **Messages Processed:** 20
-- **Last Message Text:** أنباء عن عملية دهس في مستوطنة قدوميم بالضفة الغربية.
-- **Last Message Time:** 2026-10-17 09:03:17
+- **Uptime:** 28 minutes
+- **Messages Processed:** 18
+- **Last Message Text:** السيسي يتوعد بحماية السعودية بعد عجزها هي بذلك: 
+
+طبقا لتوجيهات الملك سلمان وولي العهد السعودي سننفذ...
+- **Last Message Time:** 2026-10-17 10:00:03
