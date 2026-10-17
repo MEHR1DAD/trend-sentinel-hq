@@ -827,7 +827,7 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 32,
-    "gemini-3.5-flash-lite": 1075,
+    "gemini-3.5-flash-lite": 1076,
     "gemini-2.5-flash": 138,
     "gemini-3-flash-preview": 97,
     "gemini-3.1-flash-lite": 725,
@@ -837,6 +837,51 @@
     "gemini-flash-lite-latest": 26,
     "gemini-3.5-flash": 5
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-17 01:56:44 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39242",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39242,
+      "text": "5 طائرات شحن عسكري أميركي نحو الشرق الأوسط.",
+      "is_edit": false,
+      "enqueued_at": 1792202237.1724212,
+      "retries": 11,
+      "last_retry_at": 1792203890.7642436
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39241",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39241,
+      "text": "توقف حركة الملاحة الجوية فوق مطار بغداد، بسبب العاصفة والغبار.",
+      "is_edit": false,
+      "enqueued_at": 1792202238.1842606,
+      "retries": 11,
+      "last_retry_at": 1792203892.9458919
+    },
+    {
+      "id": "vip_multi_agent_netblocks_1569",
+      "pipeline": "vip_multi_agent",
+      "node": "netblocks",
+      "msg_id": 1569,
+      "text": "⚠️ Confirmed: Metrics show a significant disruption to internet connectivity in Zhytomyr Oblast, western #Ukraine, corresponding to power outages after Russian drone attacks targeting energy and transport infrastructure 📉",
+      "is_edit": false,
+      "enqueued_at": 1792202242.0247521,
+      "retries": 11,
+      "last_retry_at": 1792203910.1028895
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39243",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39243,
+      "text": "الحرس الثوري يعلن انفجار واندلاع حريق هائل في ناقلة نفط تحمل أكثر من مليوني برميل، بعد اصطدامها بلغم بحري أثناء محاولتها عبور مضيق هرمز من مسار غير مصرح به.",
+      "is_edit": false,
+      "enqueued_at": 1792202955.3444543,
+      "retries": 7,
+      "last_retry_at": 1792203857.1808903
+    }
+  ],
+  "last_saved": "2026-10-17 02:25:25 UTC"
 }
