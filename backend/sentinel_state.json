@@ -739,7 +739,7 @@
   },
   "channel_watermarks": {
     "Alibk3": 39240,
-    "withyashar": 25817,
+    "withyashar": 25822,
     "VahidOnline": 78739,
     "netblocks": 1568,
     "iliaen": 4746
@@ -827,7 +827,7 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 32,
-    "gemini-3.5-flash-lite": 1073,
+    "gemini-3.5-flash-lite": 1075,
     "gemini-2.5-flash": 138,
     "gemini-3-flash-preview": 97,
     "gemini-3.1-flash-lite": 725,
@@ -839,17 +839,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_25822",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25822,
-      "text": "ترامپ: می‌دونستین من میکاپ میکنم!؟\nاگه نکنم شبیه مُرده‌ها به نظر میام، پس یکم آرایش میکنم تا اینجوری به نظر نیام \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792192918.5830204,
-      "retries": 11,
-      "last_retry_at": 1792194759.527137
-    },
-    {
       "id": "vip_multi_agent_Alibk3_39239",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
@@ -857,8 +846,8 @@
       "text": "الإعلان عن مقتل مقتل 6 جنود وضباط سعوديين بالهجوم اليمني على قصر المعاشيق في عدن.",
       "is_edit": false,
       "enqueued_at": 1792194223.1459205,
-      "retries": 5,
-      "last_retry_at": 1792194761.8325562
+      "retries": 14,
+      "last_retry_at": 1792196447.3562021
     },
     {
       "id": "vip_multi_agent_Alibk3_39240",
@@ -868,9 +857,75 @@
       "text": "تحليق مكثف للطيران المسيّر فوق مدينة تعز الآن .",
       "is_edit": true,
       "enqueued_at": 1792194649.2493563,
-      "retries": 3,
-      "last_retry_at": 1792194793.9594193
+      "retries": 12,
+      "last_retry_at": 1792196464.9967117
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25818",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25818,
+      "text": "آکسیوس ، فرمانده سنتکام، دریاسالار برد کوپرامروز گفت: شبه‌نظامیان مورد حمایت ایران در منطقه، برای کاهش فشار اقتصادی ناشی از ۹ ماه جنگ، در حال ارسال پول به سپاه پاسداران انقلاب اسلامی هستند.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792194890.9533186,
+      "retries": 11,
+      "last_retry_at": 1792196531.4984932
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25819",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25819,
+      "text": "الجزیره به نقل از اکسیوس ، یک مقام آمریکایی گفته است : کاخ سفید از واکنش تند به حملات موشکی و پهپادی ایران در تنگه هرمز خودداری کرده تا از تشدید تنش‌ها قبل از انتخابات جلوگیری شود.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792194891.9184828,
+      "retries": 11,
+      "last_retry_at": 1792196549.7902303
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25820",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25820,
+      "text": "سی‌بی‌اس نیوز : ژنرال رندی جورج، رئیس پیشین برکنارشده ستاد ارتش آمریکا، پیش از آغاز جنگ با ایران هشدار داده بود که ذخایر موشک‌های رهگیر پاتریوت و تاد به‌دلیل کمک به اوکراین، دفاع از اسرائیل و محدودیت تولید تسلیحات، در سطح بحرانی قرار دارد و جبران این کمبود ممکن است تا سال ۲۰۳۰ طول بکشد و جنگ با ایران این وضعیت را تشدید می کند؛ برآوردها حاکی از مصرف تا ۶۱ درصد ذخایر پیش از جنگ پاتریوت و ۸۲ درصد رهگیرهای تاد است. جورج در آوریل برکنار شد، اما ارتباط مستقیم برکناری او با این هشدار تأیید نشده و همچنین پنتاگون هم ادعای کمبود مهمات را رد کرده است.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792194892.9362772,
+      "retries": 11,
+      "last_retry_at": 1792196552.0386043
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39241",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39241,
+      "text": "توقف حركة الملاحة الجوية فوق مطار بغداد، بسبب العاصفة والغبار.",
+      "is_edit": false,
+      "enqueued_at": 1792195047.9220855,
+      "retries": 10,
+      "last_retry_at": 1792196482.152062
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39242",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39242,
+      "text": "5 طائرات شحن عسكري أميركي نحو الشرق الأوسط.",
+      "is_edit": false,
+      "enqueued_at": 1792195786.4451535,
+      "retries": 6,
+      "last_retry_at": 1792196499.3085954
+    },
+    {
+      "id": "vip_multi_agent_netblocks_1569",
+      "pipeline": "vip_multi_agent",
+      "node": "netblocks",
+      "msg_id": 1569,
+      "text": "⚠️ Confirmed: Metrics show a significant disruption to internet connectivity in Zhytomyr Oblast, western #Ukraine, corresponding to power outages after Russian drone attacks targeting energy and transport infrastructure 📉",
+      "is_edit": false,
+      "enqueued_at": 1792195897.420497,
+      "retries": 6,
+      "last_retry_at": 1792196584.1997154
     }
   ],
-  "last_saved": "2026-10-16 23:54:23 UTC"
+  "last_saved": "2026-10-17 00:23:06 UTC"
 }
