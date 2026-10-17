@@ -1,6 +1,7 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 19
-- **Last Message Text:** هگست درباره ایران: «نمی‌توانیم در جهانی زندگی کنیم که افراد دیوانه، مرگبارترین بمب‌ها و سلاح‌های جها...
-- **Last Message Time:** 2026-10-17 20:25:26
+- **Messages Processed:** 31
+- **Last Message Text:** اتاق جنگ با یاشار : «ایران ایر» دوباره بال‌هایش را خواهد گشود.
+@WarRoom
+- **Last Message Time:** 2026-10-17 20:51:58
