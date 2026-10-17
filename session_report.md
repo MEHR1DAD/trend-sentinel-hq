@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 28 minutes
-- **Messages Processed:** 31
-- **Last Message Text:** اتاق جنگ با یاشار : «ایران ایر» دوباره بال‌هایش را خواهد گشود.
-@WarRoom
-- **Last Message Time:** 2026-10-17 20:51:58
+- **Uptime:** 29 minutes
+- **Messages Processed:** 23
+- **Last Message Text:** مرد خردمند ، مارک لوین درباره اتفاقات فرانسه: مارکسیست-اسلام‌گرایان در عرض چند ساعت تمدن را نابود می...
+- **Last Message Time:** 2026-10-17 21:39:25
