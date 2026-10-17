@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 15
-- **Last Message Text:** تحليق مكثف للطيران المسيّر فوق مدينة تعز الآن.
-- **Last Message Time:** 2026-10-17 00:20:45
+- **Messages Processed:** 3
+- **Last Message Text:** ⚠️ Confirmed: Metrics show a significant disruption to internet connectivity in Zhytomyr Oblast, wes...
+- **Last Message Time:** 2026-10-17 00:23:37
