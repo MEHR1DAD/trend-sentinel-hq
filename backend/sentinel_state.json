@@ -453,7 +453,6 @@
   },
   "vip_alert_history": {},
   "last_alert_time": {
-    "آتش‌سوزی در ایران، تنگه هرمز، هرمز، نفتکش": 1792147646.0480034,
     "آتش‌سوزی در تهران": 1792162698.630735
   },
   "alibk_posted": {
@@ -827,7 +826,7 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 51,
-    "gemini-3.5-flash-lite": 1187,
+    "gemini-3.5-flash-lite": 1211,
     "gemini-2.5-flash": 138,
     "gemini-3-flash-preview": 97,
     "gemini-3.1-flash-lite": 725,
@@ -838,5 +837,5 @@
     "gemini-3.5-flash": 5
   },
   "smart_queue": [],
-  "last_saved": "2026-10-17 10:32:20 UTC"
+  "last_saved": "2026-10-17 11:01:44 UTC"
 }
