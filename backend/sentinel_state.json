@@ -736,8 +736,8 @@
   },
   "channel_watermarks": {
     "Alibk3": 39311,
-    "withyashar": 25875,
-    "VahidOnline": 78746,
+    "withyashar": 25877,
+    "VahidOnline": 78747,
     "netblocks": 1571,
     "iliaen": 4746
   },
@@ -836,38 +836,159 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_25885",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25885,
-      "text": "مرد خردمند ، مارک لوین درباره اتفاقات فرانسه: مارکسیست-اسلام‌گرایان در عرض چند ساعت تمدن را نابود می‌کنند\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792273149.2661154,
-      "retries": 6,
-      "last_retry_at": 1792275351.5325475
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25880",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25880,
-      "text": "اتاق جنگ با یاشار : «ایران ایر» دوباره بال‌هایش را خواهد گشود.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792273726.1346383,
-      "retries": 6,
-      "last_retry_at": 1792275369.8291197
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39316",
+      "id": "vip_multi_agent_Alibk3_39312",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39316,
-      "text": "القوات اليمنية تحرر مناطق طالوق، والمعارك تصل إلى قرى مشرعة وحدنان في جبل صبر بمحافظة تعز.",
+      "msg_id": 39312,
+      "text": "خلال آخر 24 ساعة، رُصدت 72 طائرة عسكرية في المنطقة، بينها 6 طائرات نقل وصلت من خارجها، منها اثنتان أميركيتان وواحدة كويتية وواحدة فرنسية وواحدة روسية وواحدة غير معروفة، إضافة إلى 4 طائرات نقل عسكري إقليمي و27 طائرة تزود بالوقود و8 طائرات تجسس ومقاتلة واحدة و23 طائرة نقل عسكري تنقّلت داخل المنطقة و3 مروحيات عسكرية.",
       "is_edit": false,
-      "enqueued_at": 1792274440.780062,
+      "enqueued_at": 1792275454.3721251,
+      "retries": 11,
+      "last_retry_at": 1792277049.5424812
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25881",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25881,
+      "text": "کاتس ، وزیر دفاع اسرائیل : «ایران، به‌دلیل فشارهای داخلی و مسائل دیگر، ممکن است حمله کند… ما هم کاملاً آماده‌ایم؛ بدون هیچ تردیدی آماده‌ایم که با تمام قدرت به ایران حمله کنیم و این بار، تمام تأسیسات انرژی را هم هدف قرار دهیم. هدف قرار دادن تأسیسات انرژی برای عقب راندن ایران به‌اندازه ۴۰ سال، به دوران تاریکی و عصر حجر، اقدامی حیاتی است. ما با قدرت بسیار زیادی به تمام این اهداف ضربه خواهیم زد. نظر شما چیست؟»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792275455.3295107,
+      "retries": 11,
+      "last_retry_at": 1792277086.9818318
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39313",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39313,
+      "text": "هجوم يمني يستهدف العاصمة السعودية الرياض.",
+      "is_edit": false,
+      "enqueued_at": 1792275456.362566,
+      "retries": 11,
+      "last_retry_at": 1792277089.1015985
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39314",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39314,
+      "text": "هجوم يمني يستهدف أبها، وخميس مشيط في السعوية.",
+      "is_edit": false,
+      "enqueued_at": 1792275457.3028212,
+      "retries": 11,
+      "last_retry_at": 1792277106.2061546
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39315",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39315,
+      "text": "توقف مطار الدمام بالمنطقة الشرقية في السعودية.",
+      "is_edit": false,
+      "enqueued_at": 1792275458.3248746,
+      "retries": 11,
+      "last_retry_at": 1792277125.4455276
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25882",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25882,
+      "text": "کاتس ، وزیر دفاع اسرائیل : « ۳۵ هزار بمب از سوی اسرائیل و ایالات متحده علیه ایران شلیک شده است که البته بخش عمده آن‌ها را ما شلیک کرده‌ایم. باید اهمیت این موضوع را درک کرد. ما عملاً زیرساخت‌ها و اهداف آنجا را ویران کرده‌ایم، اما هنوز کارهایی باقی مانده که باید برای نابودی کامل آن‌ها انجام شود.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792275460.3191228,
+      "retries": 10,
+      "last_retry_at": 1792277015.294489
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25883",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25883,
+      "text": "کاتس ، وزیر دفاع اسرائیل : به‌محض آنکه رژیم ایران شکست بخورد، تمام منطقه به منطقه‌ای امن تبدیل خواهد شد. اسرائیل بر این هدف متمرکز خواهد بود و طبیعتاً با ایالات متحده نیز هماهنگی خواهد داشت.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792275461.304232,
+      "retries": 10,
+      "last_retry_at": 1792277069.8645372
+    },
+    {
+      "id": "vip_multi_agent_VahidOnline_78747",
+      "pipeline": "vip_multi_agent",
+      "node": "VahidOnline",
+      "msg_id": 78747,
+      "text": "بنیامین نتانیاهو، نخست‌وزیر اسراییل، جمهوری اسلامی را به سرطان تشبیه کرد و گفت اگر حکومت ایران از بین نرود، دوباره بازخواهد گشت. او همچنین از احتمال اقدام نظامی دوباره علیه حکومت ایران سخن گفت و جمهوری اسلامی را به تلاش برای تاثیرگذاری بر انتخابات اسراییل متهم کرد.\nنتانیاهو، روز شنبه ۲۵ مهر ۱۴۰۵، در گفت‌وگو با شبکه عبری آی۲۴ نیوز، با اشاره به اقدامات دولتش علیه تهران گفت: «ما ۹۰ درصد کار را انجام داده‌ایم، اما می‌دانید، این مثل سرطان است. اگر از شر این رژیم در ایران خلاص نشوید، بازخواهد گشت.»\nنخست‌وزیر اسراییل در بخش دیگری از این مصاحبه گفت نشانه‌هایی از تلاش برای دخالت در انتخابات این کشور وجود دارد و احتمال داد جمهوری اسلامی برای تاثیرگذاری بر رای‌دهندگان، حوادث امنیتی ترتیب دهد.\n@VahidHeadline\n\n📡 @VahidOnline",
+      "is_edit": false,
+      "enqueued_at": 1792275462.3279688,
+      "retries": 9,
+      "last_retry_at": 1792276998.2019088
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25884",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25884,
+      "text": "خبرگزاری فرانسه AFP : شهرداری تاریخی  ۱۴۳ ساله شهر لیموژ فرانسه که در سال ۱۸۸۳ افتتاح شده، در جریان ناآرامی‌های ۱۷ اکتبر هدف حمله گروهی از افراد نقاب‌دار قرار گرفت. مهاجمان پس از آتش‌زدن خودروی پلیس، وارد ساختمان شدند و آن را به آتش کشیدند؛ آتش‌سوزی به فروریختن سقف و برجک ساختمان منجر شد.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792275463.3170261,
+      "retries": 9,
+      "last_retry_at": 1792277017.4167664
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25878",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25878,
+      "text": "هگست درباره ایران: «نمی‌توانیم در جهانی زندگی کنیم که افراد دیوانه، مرگبارترین بمب‌ها و سلاح‌های جهان را در اختیار داشته باشند.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792275474.9934714,
+      "retries": 9,
+      "last_retry_at": 1792277108.3295264
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25879",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25879,
+      "text": "بر اساس تصاویر ماهواره‌ای سنتینل-۲ ثبت‌شده در ۱۷ اکتبر ۲۰۲۶، یک ناوشکن نیروی دریایی آمریکا که به گروه رزمی ناو هواپیمابر «یواس‌اس جورج واشنگتن» اختصاص دارد، شناسایی شده است.\nاین شناور در شمال دریای مکران ، نزدیک سواحل پاکستان و در فاصله تقریبی ۴۰۰ کیلومتری ایران قرار دارد.\nپیشتر این فعالیت ها را برایتان گزارش کردم\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792275477.0963068,
+      "retries": 9,
+      "last_retry_at": 1792277130.040726
+    },
+    {
+      "id": "vip_multi_agent_netblocks_1572",
+      "pipeline": "vip_multi_agent",
+      "node": "netblocks",
+      "msg_id": 1572,
+      "text": "⚠️ Confirmed: Live network data show a significant reduction in internet connectivity across the US territory of #Guam corresponding to power outages as Category 4-equivalent Super Typhoon #Champi passes the island; observed connectivity is now down to 41% of ordinary levels",
+      "is_edit": false,
+      "enqueued_at": 1792275809.134123,
+      "retries": 9,
+      "last_retry_at": 1792277147.1603298
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25886",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25886,
+      "text": "مرد خردمند ، مارک لوین : «مردم ایران را مسلح کنید و رژیم ایران را نابود کنید. در دهه آینده و پس از آن، به ۹۰ میلیون ایرانی نیاز داریم تا شانه‌به‌شانه در کنار ما بایستند؛ در شرایطی که آنچه من «جنگ صلیبی اسلام‌گرایانه» و «انقلاب مارکسیستی چین سرخ» می‌نامم، بیش از پیش گسترش می‌یابد و فراگیر می‌شود. زمان در حال تمام شدن است. متحدان در حال از دست رفتن هستند. وقت آن رسیده که به‌سرعت اقداماتمان را فراتر از صرفاً تحریم‌های اقتصادی گسترش دهیم.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792276410.2763627,
       "retries": 6,
-      "last_retry_at": 1792275386.9956603
+      "last_retry_at": 1792277149.2707136
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39317",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39317,
+      "text": "المعارك بين القوات اليمنية والقوات الموالية للسعودية تقترب من منطقة بير باشا التي تبعد عن وسط مدينة تعز 3 كيلومتر.",
+      "is_edit": false,
+      "enqueued_at": 1792276731.3504107,
+      "retries": 4,
+      "last_retry_at": 1792277166.3842788
     }
   ],
-  "last_saved": "2026-10-17 22:17:01 UTC"
+  "last_saved": "2026-10-17 22:46:12 UTC"
 }
