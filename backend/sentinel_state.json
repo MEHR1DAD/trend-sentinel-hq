@@ -737,8 +737,8 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39260,
-    "withyashar": 25835,
+    "Alibk3": 39269,
+    "withyashar": 25837,
     "VahidOnline": 78739,
     "netblocks": 1569,
     "iliaen": 4746
@@ -826,7 +826,7 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 51,
-    "gemini-3.5-flash-lite": 1230,
+    "gemini-3.5-flash-lite": 1254,
     "gemini-2.5-flash": 138,
     "gemini-3-flash-preview": 97,
     "gemini-3.1-flash-lite": 725,
@@ -836,6 +836,18 @@
     "gemini-flash-lite-latest": 26,
     "gemini-3.5-flash": 5
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-17 11:31:02 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39270",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39270,
+      "text": "بحرية الحرس الثوري تحذّر سفينة مخالفة في مضيق هرمز الآن، مؤكدةً تحديد إحداثياتها وتوجيه الصواريخ نحوها، وتطالبها بتغيير مسارها فوراً وإلا ستواجه العواقب.",
+      "is_edit": true,
+      "enqueued_at": 1792238402.988815,
+      "retries": 0,
+      "last_retry_at": 0
+    }
+  ],
+  "last_saved": "2026-10-17 12:00:11 UTC"
 }
