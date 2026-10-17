@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 20
-- **Last Message Text:** المتحدث باسم القوات المسلحة اليمنية، العميد يحيى سريع: 
-
-تمكنت قواتنا المسلحة بفضل الله وعونه من إسق...
-- **Last Message Time:** 2026-10-17 17:59:23
+- **Messages Processed:** 36
+- **Last Message Text:** بنیامین نتانیاهو درباره سرنگونی جمهوری اسلامی: «مسئله این نیست که چگونه این کار را انجام دهیم، چون ن...
+- **Last Message Time:** 2026-10-17 18:23:37
