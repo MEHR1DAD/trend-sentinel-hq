@@ -735,8 +735,8 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39295,
-    "withyashar": 25855,
+    "Alibk3": 39298,
+    "withyashar": 25857,
     "VahidOnline": 78744,
     "netblocks": 1571,
     "iliaen": 4746
@@ -823,8 +823,8 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 54,
-    "gemini-3.5-flash-lite": 1315,
+    "gemini-3.8-flash": 55,
+    "gemini-3.5-flash-lite": 1318,
     "gemini-2.5-flash": 138,
     "gemini-3-flash-preview": 97,
     "gemini-3.1-flash-lite": 725,
@@ -836,126 +836,27 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39284",
+      "id": "vip_multi_agent_Alibk3_39299",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39284,
-      "text": "دوي انفجار في العاصمة العراقية بغداد.",
-      "is_edit": true,
-      "enqueued_at": 1792249830.8843226,
-      "retries": 14,
-      "last_retry_at": 1792252122.6447656
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39286",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39286,
-      "text": "مشاهد لتصاعد أعمدة الدخان في العاصمة بغداد.",
-      "is_edit": true,
-      "enqueued_at": 1792250045.5730953,
-      "retries": 13,
-      "last_retry_at": 1792252139.813051
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39288",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39288,
-      "text": "العاصمة بغداد.",
-      "is_edit": true,
-      "enqueued_at": 1792250145.477416,
-      "retries": 13,
-      "last_retry_at": 1792252196.7452204
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39291",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39291,
-      "text": "5 طائرات أميركية تُحلق بالقرب من مضيق هرمز.",
+      "msg_id": 39299,
+      "text": "السفارة الأميركية في الرياض: \n\nينبغي على مواطني الولايات المتحدة أن يكونوا على دراية باحتمالية وقوع هجمات على المطارات، وإغلاق المساحات الجوية، وإلغاء الرحلات الجوية، وتعطيل حركة السفر في السعودية.",
       "is_edit": false,
-      "enqueued_at": 1792250471.2943792,
-      "retries": 11,
-      "last_retry_at": 1792252216.0985274
+      "enqueued_at": 1792253407.012088,
+      "retries": 5,
+      "last_retry_at": 1792253921.9474263
     },
     {
-      "id": "vip_multi_agent_VahidOnline_78744",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78744,
-      "text": "استاندار تهران می‌گوید شمار دانش‌آموزان شهر تهران هفت هزار نفر کاهش یافته، در حالی که تعداد دانش‌آموزان شهرستان‌های این استان ۱۷ هزار نفر بیشتر شده است.\n\nاو این تغییر را به انتقال شماری از دانش‌آموزان از پایتخت به شهرستان‌ها به‌دلیل شرایط اقتصادی و بازگشت تعدادی از اتباع خارجی نسبت داد.\n\nهم‌زمان با افزایش نرخ تورم به‌ویژه در ماه‌های اخیر گزارش‌های متعددی درباره کوچ شهروندان از تهران به حاشیه شهر و استان منتشر شده است.\n@VahidHeadline\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1792250565.6502075,
-      "retries": 10,
-      "last_retry_at": 1792252143.1037767
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39292",
+      "id": "vip_multi_agent_Alibk3_4460",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39292,
-      "text": "القوات اليمنية تسيطر على جبل هان الاستراتيجي، المطلّ على المدخل الغربي لمدينة تعز.",
-      "is_edit": false,
-      "enqueued_at": 1792250594.6386373,
-      "retries": 10,
-      "last_retry_at": 1792252177.4095948
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25852",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25852,
-      "text": "درگیری مرزی افغانستان و پاکستان\n نیروهای مرزی افغانستان و پاکستان در مرزهای مشترک درگیر شدند.\nدر این درگیری شماری از دو طرف کشته و یا زخمی شدند.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792250933.5740132,
-      "retries": 8,
-      "last_retry_at": 1792252090.4575093
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39293",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39293,
-      "text": "سماع دوي انفجار في بندر عباس الإيرانية مجدداً",
+      "msg_id": 4460,
+      "text": "سلسلة غارات صهيونية على طهران الآن",
       "is_edit": true,
-      "enqueued_at": 1792251092.9800627,
-      "retries": 7,
-      "last_retry_at": 1792252072.1262052
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39294",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39294,
-      "text": "لحظة وقوع الانفجارات في مقر للحشد الشعبي شرقي القناة بالعاصمة العراقية بغداد.",
-      "is_edit": true,
-      "enqueued_at": 1792251146.5066092,
-      "retries": 7,
-      "last_retry_at": 1792252160.2655523
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39295",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39295,
-      "text": "طائرات نقل عسكرية تهبط في مطار جدة.",
-      "is_edit": true,
-      "enqueued_at": 1792251217.4376907,
-      "retries": 7,
-      "last_retry_at": 1792252179.5754082
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39296",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39296,
-      "text": "لحظة وقوع الانفجارات في مقر للحشد الشعبي شرقي القناة بالعاصمة العراقية بغداد.",
-      "is_edit": false,
-      "enqueued_at": 1792251254.63373,
-      "retries": 7,
-      "last_retry_at": 1792252198.9406028
+      "enqueued_at": 1792253662.8295772,
+      "retries": 3,
+      "last_retry_at": 1792253837.622633
     }
   ],
-  "last_saved": "2026-10-17 15:50:54 UTC"
+  "last_saved": "2026-10-17 16:19:33 UTC"
 }
