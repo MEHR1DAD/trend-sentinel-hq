@@ -452,9 +452,7 @@
     ]
   },
   "vip_alert_history": {},
-  "last_alert_time": {
-    "آتش‌سوزی در تهران": 1792162698.630735
-  },
+  "last_alert_time": {},
   "alibk_posted": {
     "38817": {
       "channel": "@DidebanJang",
@@ -737,7 +735,7 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39273,
+    "Alibk3": 39290,
     "withyashar": 25848,
     "VahidOnline": 78743,
     "netblocks": 1571,
@@ -838,127 +836,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39274",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39274,
-      "text": "البرلمان المصري يعقد جلسة طارئة غدًا عقب طلب السيسي تفويضا بالدفاع عن السعودية.",
-      "is_edit": false,
-      "enqueued_at": 1792247074.6476839,
-      "retries": 11,
-      "last_retry_at": 1792248730.349198
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25845",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25845,
-      "text": "فاکس نیوز : ایلان ماسک با اختصاص نزدیک به ۳۰۰ میلیون دلار برای حمایت از جریان «ماگا» (MAGA) و سیاست «اول آمریکا» در انتخابات میان‌دوره‌ای سال ۲۰۲۶، چپ‌گرایان را به شدت برآشفته کرده است.\n@WarRoom 🚨🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1792247075.6491063,
-      "retries": 11,
-      "last_retry_at": 1792248732.4596097
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39277",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39277,
-      "text": "دوي انفجار جديد في مضيق هرمز الآن.",
-      "is_edit": false,
-      "enqueued_at": 1792247076.6547835,
-      "retries": 11,
-      "last_retry_at": 1792248749.572857
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39278",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39278,
-      "text": "إطلاق نار على ناقلة غاز مسال في خليج عدن.",
-      "is_edit": false,
-      "enqueued_at": 1792247077.6324792,
-      "retries": 11,
-      "last_retry_at": 1792248751.6742568
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39279",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39279,
-      "text": "صواريخ باليستية يمنية تستهدف تحشدًا عسكريًا للقوات الموالية للسعودية في لحج أثناء الاستعداد للتقدم نحو مناطق القوات اليمنية.",
-      "is_edit": false,
-      "enqueued_at": 1792247078.6542525,
-      "retries": 10,
-      "last_retry_at": 1792248651.2671192
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39280",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39280,
-      "text": "القوات اليمنية تحرر مدرات والرجمة في مدينة تعز، والمعارك تمتد إلى حي المربعة ومعسكر المطار وتقاطع الثلاثين – المطار.",
-      "is_edit": false,
-      "enqueued_at": 1792247079.6382563,
-      "retries": 10,
-      "last_retry_at": 1792248671.6080797
-    },
-    {
-      "id": "vip_multi_agent_VahidOnline_78744",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78744,
-      "text": "استاندار تهران می‌گوید شمار دانش‌آموزان شهر تهران هفت هزار نفر کاهش یافته، در حالی که تعداد دانش‌آموزان شهرستان‌های این استان ۱۷ هزار نفر بیشتر شده است.\n\nاو این تغییر را به انتقال شماری از دانش‌آموزان از پایتخت به شهرستان‌ها به‌دلیل شرایط اقتصادی و بازگشت تعدادی از اتباع خارجی نسبت داد.\n\nهم‌زمان با افزایش نرخ تورم به‌ویژه در ماه‌های اخیر گزارش‌های متعددی درباره کوچ شهروندان از تهران به حاشیه شهر و استان منتشر شده است.\n@VahidHeadline\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1792247080.6413105,
-      "retries": 10,
-      "last_retry_at": 1792248673.7006583
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25847",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25847,
-      "text": "وال‌استریت ژورنال: جمهوری اسلامی افسران سپاه و محموله‌های تسلیحاتی شامل قطعات پهپاد و سامانه‌های هدایت موشک به یمن فرستاده است. به نوشته این روزنامه، افسران سپاه به حوثی‌ها در استقرار موشک‌ها و رادارها و هدایت حملات پهپادی و موشکی علیه عربستان کمک می‌کنند. این حمایت‌ها تهدیدی برای تنگه راهبردی باب‌المندب، مسیر مهم تجارت جهانی و انتقال نفت محسوب می‌شود. \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792247081.6414692,
-      "retries": 10,
-      "last_retry_at": 1792248690.821625
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25846",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25846,
-      "text": "باسن سوزی کارشناس صداوسیما  :\nایلان ماسک و تسلا روزبه‌روز بدبخت‌تر می‌شن!\nماشین پرنده تسلا بیشتر جنبه نمایشی داره و قرار بوده باهاش سهام شرکت رو بالا ببرن، اما سهام تسلا همچنان در حال سقوطه.\n@WarRoom\n یاشار: ۳۰۰ میلیون دلار کمک ایلان ماسک در یک روز معادل ۷۹ همت و ۲۰۰ میلیارد تومان است؛ با فرض دلار ۲۶۴ هزار تومانی. اگر میانگین حقوق ماهانه یک کارمند صداوسیما را ۵۴ میلیون تومان در نظر بگیریم، او باید تمام حقوق خود را بدون خرج‌کردن پس‌انداز کند و بیش از ۱۲۲ هزار سال کار کند تا مجموع دریافتی‌اش به این مبلغ برسد. این محاسبه بدون احتساب تورم و افزایش دلار است\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792247082.6397023,
-      "retries": 10,
-      "last_retry_at": 1792248768.7766829
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39275",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39275,
-      "text": "مشاهد ضرب تحشيدات تابعة للعدو السعودي في اليتمة شمالي الجوف وتدمير واغتنام عدد من الآليات - 17 أكتوبر 2026م",
-      "is_edit": false,
-      "enqueued_at": 1792247083.6471589,
-      "retries": 9,
-      "last_retry_at": 1792248692.931287
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39276",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39276,
-      "text": "دوي انفجار في مضيق هرمز الآن.",
-      "is_edit": false,
-      "enqueued_at": 1792247085.635561,
-      "retries": 9,
-      "last_retry_at": 1792248710.0382795
-    },
-    {
       "id": "vip_multi_agent_withyashar_25801",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
@@ -966,8 +843,8 @@
       "text": "این فیلم با زیرنویس فارسی هست و فرمانده سنتکام کامل توضیح داده",
       "is_edit": true,
       "enqueued_at": 1792248374.528426,
-      "retries": 4,
-      "last_retry_at": 1792248770.8737676
+      "retries": 13,
+      "last_retry_at": 1792250498.955177
     },
     {
       "id": "vip_multi_agent_Alibk3_39281",
@@ -977,8 +854,8 @@
       "text": "دوي انفجار في مضيق هرمز مجددًا.",
       "is_edit": true,
       "enqueued_at": 1792248443.7082026,
-      "retries": 3,
-      "last_retry_at": 1792248597.8543036
+      "retries": 12,
+      "last_retry_at": 1792250342.6769814
     },
     {
       "id": "vip_multi_agent_withyashar_25850",
@@ -988,8 +865,8 @@
       "text": "اتاق جنگ با یاشار : نیروی دریایی ایالات متحده اکنون در خاک پاکستان علیه ایران مشغول فعالیت است. این دومین روزی است که نیروی دریایی آمریکا در اینجا دست به عملیات می‌زند. این امر احتمالاً بدین معناست که «عاصم منیر»، به آمریکا چراغ سبز نشان داده تا از حریم هوایی و خاک پاکستان برای انجام عملیات علیه ایران استفاده کند. این تحول هم‌زمان با گزارش‌هایی مبنی بر لغو معافیت‌های تجاری پاکستان با ایران صورت می‌گیرد. مرز ایران و پاکستان به روی هرگونه تجارت و تردد بسته شده است.\n@WarRoom 🚨🚨🚨🚨🚨",
       "is_edit": false,
       "enqueued_at": 1792248497.538113,
-      "retries": 2,
-      "last_retry_at": 1792248654.4947755
+      "retries": 11,
+      "last_retry_at": 1792250345.8873553
     },
     {
       "id": "vip_multi_agent_Alibk3_39282",
@@ -999,8 +876,8 @@
       "text": "دوي عدة انفجارات في مضيق هرمز الآن",
       "is_edit": false,
       "enqueued_at": 1792248550.4821665,
-      "retries": 2,
-      "last_retry_at": 1792248712.1430974
+      "retries": 11,
+      "last_retry_at": 1792250362.994446
     },
     {
       "id": "vip_multi_agent_Alibk3_39283",
@@ -1010,9 +887,75 @@
       "text": "دوي انفجارات قرب سواحل سيريك وبندر عباس الإيرانية",
       "is_edit": false,
       "enqueued_at": 1792248551.4969275,
+      "retries": 10,
+      "last_retry_at": 1792250399.338626
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25849",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25849,
+      "text": "عباس چپقچی، وزیر امور خارجه، ادعا کرده «طرحی مشخص و هفت‌روزه از طریق قطر ارائه شده است که بر اساس آن  در صورت فراهم شدن شرایط لازم می‌توان تنگه هرمز را بازگشایی کرد و تردد عادی دریایی را ظرف هفت روز از سر گرفت.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792248817.3096144,
+      "retries": 9,
+      "last_retry_at": 1792250461.4953275
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25851",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25851,
+      "text": "رئیس جمعیت هلال احمر: رئیسی ترور شد ، محل هلاکت انگار جمینگ می‌شد لوکیشن هایی که می دادند همه اشتباه بود/وقتی به محل حادثه رسیدیم هم آنتن بود هم موبایل ها زنگ می خورد\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792248951.7896981,
+      "retries": 9,
+      "last_retry_at": 1792250464.7165186
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39284",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39284,
+      "text": "دوي انفجار في العاصمة العراقية بغداد.",
+      "is_edit": true,
+      "enqueued_at": 1792249830.8843226,
+      "retries": 5,
+      "last_retry_at": 1792250365.0971413
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39286",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39286,
+      "text": "مشاهد لتصاعد أعمدة الدخان في العاصمة بغداد.",
+      "is_edit": true,
+      "enqueued_at": 1792250045.5730953,
+      "retries": 4,
+      "last_retry_at": 1792250382.2099411
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39288",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39288,
+      "text": "العاصمة بغداد.",
+      "is_edit": true,
+      "enqueued_at": 1792250145.477416,
+      "retries": 4,
+      "last_retry_at": 1792250501.076926
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39291",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39291,
+      "text": "5 طائرات أميركية تُحلق بالقرب من مضيق هرمز.",
+      "is_edit": false,
+      "enqueued_at": 1792250471.2943792,
       "retries": 1,
-      "last_retry_at": 1792248619.1538696
+      "last_retry_at": 1792250481.835475
     }
   ],
-  "last_saved": "2026-10-17 14:53:03 UTC"
+  "last_saved": "2026-10-17 15:22:10 UTC"
 }
