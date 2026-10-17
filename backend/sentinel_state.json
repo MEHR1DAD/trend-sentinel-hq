@@ -845,9 +845,20 @@
       "msg_id": 39242,
       "text": "5 طائرات شحن عسكري أميركي نحو الشرق الأوسط.",
       "is_edit": false,
-      "enqueued_at": 1792195786.4451535,
-      "retries": 15,
-      "last_retry_at": 1792198178.2861109
+      "enqueued_at": 1792198799.801744,
+      "retries": 11,
+      "last_retry_at": 1792200432.2979496
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39241",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39241,
+      "text": "توقف حركة الملاحة الجوية فوق مطار بغداد، بسبب العاصفة والغبار.",
+      "is_edit": false,
+      "enqueued_at": 1792198800.7991009,
+      "retries": 11,
+      "last_retry_at": 1792200435.5694268
     },
     {
       "id": "vip_multi_agent_netblocks_1569",
@@ -856,10 +867,10 @@
       "msg_id": 1569,
       "text": "⚠️ Confirmed: Metrics show a significant disruption to internet connectivity in Zhytomyr Oblast, western #Ukraine, corresponding to power outages after Russian drone attacks targeting energy and transport infrastructure 📉",
       "is_edit": false,
-      "enqueued_at": 1792195897.420497,
-      "retries": 15,
-      "last_retry_at": 1792198256.5716832
+      "enqueued_at": 1792198804.6978774,
+      "retries": 11,
+      "last_retry_at": 1792200452.6955087
     }
   ],
-  "last_saved": "2026-10-17 00:51:41 UTC"
+  "last_saved": "2026-10-17 01:28:07 UTC"
 }
