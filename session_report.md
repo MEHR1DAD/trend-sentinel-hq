@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 1
-- **Last Message Text:** الحرس الثوري يعلن انفجار واندلاع حريق هائل في ناقلة نفط تحمل أكثر من مليوني برميل، بعد اصطدامها بلغم...
-- **Last Message Time:** 2026-10-17 03:51:41
+- **Messages Processed:** 0
+- **Last Message Text:** No messages yet
+- **Last Message Time:** N/A

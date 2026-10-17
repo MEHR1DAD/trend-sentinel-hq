@@ -738,7 +738,7 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39242,
+    "Alibk3": 39243,
     "withyashar": 25822,
     "VahidOnline": 78739,
     "netblocks": 1569,
@@ -827,7 +827,7 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 33,
-    "gemini-3.5-flash-lite": 1078,
+    "gemini-3.5-flash-lite": 1079,
     "gemini-2.5-flash": 138,
     "gemini-3-flash-preview": 97,
     "gemini-3.1-flash-lite": 725,
@@ -837,18 +837,6 @@
     "gemini-flash-lite-latest": 26,
     "gemini-3.5-flash": 5
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39243",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39243,
-      "text": "الحرس الثوري يعلن انفجار واندلاع حريق هائل في ناقلة نفط تحمل أكثر من مليوني برميل، بعد اصطدامها بلغم بحري أثناء محاولتها عبور مضيق هرمز من مسار غير مصرح به.",
-      "is_edit": false,
-      "enqueued_at": 1792209101.7285085,
-      "retries": 11,
-      "last_retry_at": 1792210707.0064502
-    }
-  ],
-  "last_saved": "2026-10-17 04:19:44 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-17 04:48:16 UTC"
 }
