@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 0
-- **Last Message Text:** No messages yet
-- **Last Message Time:** N/A
+- **Messages Processed:** 14
+- **Last Message Text:** استهداف سفينة قرب السواحل السعودية
+- **Last Message Time:** 2026-10-17 06:22:12

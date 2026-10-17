@@ -738,7 +738,7 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39243,
+    "Alibk3": 39248,
     "withyashar": 25822,
     "VahidOnline": 78739,
     "netblocks": 1569,
@@ -827,7 +827,7 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 33,
-    "gemini-3.5-flash-lite": 1079,
+    "gemini-3.5-flash-lite": 1081,
     "gemini-2.5-flash": 138,
     "gemini-3-flash-preview": 97,
     "gemini-3.1-flash-lite": 725,
@@ -837,6 +837,40 @@
     "gemini-flash-lite-latest": 26,
     "gemini-3.5-flash": 5
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-17 05:54:17 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39244",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39244,
+      "text": "صور الاقمار الصناعية ترصد تغيرات واضحة في منشآت ومواقع سعودية يرجح أنها أصيبت بهجمات الجيش اليمني الأخيرة: \n\n1- مصفى الرياض 0.8 هكتار\n 2- مطار جازان 2 هكتار \n3- قاعدة سلطان الجوية 0.8 هكتار",
+      "is_edit": true,
+      "enqueued_at": 1792217264.2406294,
+      "retries": 7,
+      "last_retry_at": 1792218135.614182
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39247",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39247,
+      "text": "وزير الدفاع الإيراني السيد مجيد ابن الرضا:\n\n أنواع وأبعاد القنابل لا تهمنا، قوة الصواريخ لدينا هي التي غيرت المعادلات، ووصلت بكم إلى مرحلة يجب أن تقولوا فيها: \"مرحباً سيدي\"",
+      "is_edit": false,
+      "enqueued_at": 1792217967.385881,
+      "retries": 3,
+      "last_retry_at": 1792218117.2589648
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39248",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39248,
+      "text": "استهداف سفينة قرب السواحل السعودية",
+      "is_edit": true,
+      "enqueued_at": 1792218131.3661308,
+      "retries": 1,
+      "last_retry_at": 1792218137.755806
+    }
+  ],
+  "last_saved": "2026-10-17 06:22:42 UTC"
 }
