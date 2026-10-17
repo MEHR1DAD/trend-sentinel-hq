@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 28 minutes
-- **Messages Processed:** 23
-- **Last Message Text:** هلال‌احمر :‌ از لاریجانی فقط یک دست نصفه بجای مانده بود 
-@WarRoom
-- **Last Message Time:** 2026-10-17 13:49:24
+- **Uptime:** 29 minutes
+- **Messages Processed:** 15
+- **Last Message Text:** القوات اليمنية تحرر مدرات والرجمة في مدينة تعز، والمعارك تمتد إلى حي المربعة ومعسكر المطار وتقاطع ال...
+- **Last Message Time:** 2026-10-17 14:00:56
