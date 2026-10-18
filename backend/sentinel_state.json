@@ -735,7 +735,7 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39325,
+    "Alibk3": 39327,
     "withyashar": 25896,
     "VahidOnline": 78749,
     "netblocks": 1573,
@@ -834,6 +834,51 @@
     "gemini-flash-lite-latest": 26,
     "gemini-3.5-flash": 5
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-18 05:39:35 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39326",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39326,
+      "text": "الطيّاران السعوديان الذان قُتلا:\n\n علي إبراهيم علي الطلحة\n‏ عبدالعزيز عيد هرسان المسردي",
+      "is_edit": true,
+      "enqueued_at": 1792303234.6372893,
+      "retries": 4,
+      "last_retry_at": 1792303550.1869938
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_3368",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 3368,
+      "text": "في قاعدة الأمير سلطان بالسعودية، التقطت صور أقمار صناعية صينية مشاهد لطائرتي E-11A وKC-135 أثناء تحرّكهما على المدرج، فيما لم يطرأ تغيير كبير على أنواع وأعداد الطائرات المتوقفة في ساحة المطار.\n\nAt Prince Sultan Air Base in Saudi Arabia, Chinese satellite imagery captured footage of an E-11A and a KC-135 operating on the runway, while there were no significant changes in the types and numbers of aircraft parked on the apron",
+      "is_edit": true,
+      "enqueued_at": 1792303385.2877896,
+      "retries": 3,
+      "last_retry_at": 1792303529.4097102
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_3354",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 3354,
+      "text": "وصول 12 طائرة أميركية F-22 إضافية إلى بريطانيا اليوم، وستتجه إلى الكيان، ما يرفع العدد إلى 24 طائرة.\n\nThe arrival of 12 additional U.S. F-22 fighter jets to Britain today; they will head to occupied Palestine, bringing the total number to 24 aircraft.",
+      "is_edit": true,
+      "enqueued_at": 1792303386.2932715,
+      "retries": 3,
+      "last_retry_at": 1792303532.6518219
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_3341",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 3341,
+      "text": "تعزيزات عسكرية أميركية مستمرة تتجه نحو تل أبيب، حيث وصلت عدة طائرات للتزود بالوقود عصر اليوم، بينما تتجه أربع طائرات إضافية.\n\nContinuous U.S. military reinforcements are heading toward Tel Aviv, with several refueling aircraft having arrived this afternoon, while four additional planes are also en route.",
+      "is_edit": true,
+      "enqueued_at": 1792303387.2542784,
+      "retries": 3,
+      "last_retry_at": 1792303552.289119
+    }
+  ],
+  "last_saved": "2026-10-18 06:08:06 UTC"
 }
