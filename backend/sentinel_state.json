@@ -836,138 +836,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39318",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39318,
-      "text": "بعد معارك استمرت لأسابيع.. القوات اليمنية تحرر جبال كهبوب الاستراتيجية والمُشرفة على مضيق باب المندب، في تقدم ميداني يعزز السيطرة على المرتفعات الحاكمة لباب المندب.",
-      "is_edit": false,
-      "enqueued_at": 1792283682.5396056,
-      "retries": 14,
-      "last_retry_at": 1792285885.281042
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25888",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25888,
-      "text": "استاد بزرگ شطرنج در‌ مصاحبه‌ای ویژه با مرد خردمند:\n«اوج سقوط اخلاقی جهان آنجاست که حماس غیرنظامیان را با تهدید اسلحه وادار می‌کند در مناطق جنگی بمانند و به آن‌ها می‌گوید: «نباید مناطق درگیری را ترک کنید.»\nحماس غیرنظامیان را با تهدید اسلحه در آنجا نگه می‌دارد. به همین دلیل است که تلفات غیرنظامیان رخ داده است.\nاما چه کسی متهم می‌شود؟ اسرائیل! واقعاً دیوانه‌وار است!»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792283788.1092298,
-      "retries": 13,
-      "last_retry_at": 1792285811.2037904
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39319",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39319,
-      "text": "توقف حركة الملاحة الجوية في مطار الدمام.",
-      "is_edit": false,
-      "enqueued_at": 1792284109.0401597,
-      "retries": 11,
-      "last_retry_at": 1792285761.8752708
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25886",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25886,
-      "text": "مرد خردمند ، مارک لوین : «مردم ایران را مسلح کنید و رژیم ایران را نابود کنید. در دهه آینده و پس از آن، به ۹۰ میلیون ایرانی نیاز داریم تا شانه‌به‌شانه در کنار ما بایستند؛ در شرایطی که آنچه من «جنگ صلیبی اسلام‌گرایانه» و «انقلاب مارکسیستی چین سرخ» می‌نامم، بیش از پیش گسترش می‌یابد و فراگیر می‌شود. زمان در حال تمام شدن است. متحدان در حال از دست رفتن هستند. وقت آن رسیده که به‌سرعت اقداماتمان را فراتر از صرفاً تحریم‌های اقتصادی گسترش دهیم.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792284233.1271741,
-      "retries": 11,
-      "last_retry_at": 1792285868.1341062
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25887",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25887,
-      "text": "ارتش اسرائیل سندی از شستشوی مغذی را فاش کرد که پسر تروریست یحیئ سنوار برای پدرش نوشته است:\n«می‌خواهم فریاد بزنم \"خداوند بزرگترین است\"، یک کلاشینکف بردارم و به یهودیان شلیک کنم. چه زمانی می‌آیی تا در آغوشم بخوابی؟ من همیشه تفنگ، تانک و کلاشینکف از کاغذ و مقوا درست می‌کنم.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792284246.1084402,
-      "retries": 11,
-      "last_retry_at": 1792285888.5818563
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25889",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25889,
-      "text": "بنیامین نتانیاهو در مورد جمهوری اسلامی : «آن‌ها اوباش ایدئولوژیک هستند و کاملاً مصمم‌اند آمریکا را نابود کنند. خودشان هم این را می‌گویند: شما شیطان بزرگ هستید و ما شیطان کوچک. من به دوستان اروپایی‌ام می‌گویم، امیدوارم ناراحت نشوید؛ شما هم شیطان متوسط هستید! می‌دانید، شما از بسیاری جهات متوسط و معمولی هستید.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792284355.6004162,
-      "retries": 10,
-      "last_retry_at": 1792285831.6572406
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25890",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25890,
-      "text": "نتانیاهو در مورد جمهوری اسلامی :\n«آن‌ها می‌خواهند خاورمیانه را فتح کنند، بر آبراه‌های جهان و منابع نفتی کنترل داشته باشند و با ایجاد خفقان، به سراغ هدف بعدی بروند؛ اروپا و سپس شما. به همین دلیل، در حال ساخت موشک‌های بالستیک قاره‌پیما هستند تا بتوانند خاک ایالات متحده را هدف قرار دهند و می‌خواهند این موشک‌ها به کلاهک‌های هسته‌ای مجهز باشند. در آن صورت، تمام شهرهای آمریکا، تک‌تک شهرها، گروگان باج‌خواهی این افراط‌گرایان خواهند بود.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792284547.9289773,
-      "retries": 9,
-      "last_retry_at": 1792285814.5140264
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25891",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25891,
-      "text": "بنیامین نتانیاهو درباره جمهوری اسلامی: «بمب‌های اتمی‌ای که بتوانند شهرهای شما را هدف قرار دهند، خطری مرگبار هستند. ایران در صورت تبدیل شدن به یک قدرت هسته‌ای، با هر قدرت هسته‌ای دیگری که در جهان می‌شناسیم متفاوت خواهد بود؛ زیرا آن‌ها محاسبه دقیق هزینه و فایده را در نظر نمی‌گیرند و به‌شدت متعصب و افراطی هستند.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792284760.4192986,
-      "retries": 8,
-      "last_retry_at": 1792285833.81841
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25892",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25892,
-      "text": "بنیامین نتانیاهو درباره جمهوری اسلامی: «بمب‌های اتمی‌ای که بتوانند شهرهای شما را هدف قرار دهند، خطری مرگبار هستند. ایران در صورت تبدیل شدن به یک قدرت هسته‌ای، با هر قدرت هسته‌ای دیگری که در جهان می‌شناسیم متفاوت خواهد بود؛ زیرا آن‌ها محاسبه دقیق هزینه و فایده را در نظر نمی‌گیرند و به‌شدت متعصب و افراطی هستند.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792284761.4214547,
-      "retries": 8,
-      "last_retry_at": 1792285905.7412083
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25893",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25893,
-      "text": "گزارش های بسیار از زلزله تهران و اطراف \n@WarRoom 🚨",
-      "is_edit": false,
-      "enqueued_at": 1792285008.9506168,
-      "retries": 7,
-      "last_retry_at": 1792285922.9071913
-    },
-    {
-      "id": "vip_multi_agent_VahidOnline_78748",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78748,
-      "text": "زمین‌لرزه در شرق استان تهران\nپیام‌های دریافتی:\n\nزلزله اومد فکر کنم\n\nاقا وحید همین الان بومهن زلزله اومد البته نمیدونم دقیقا زلزله بود یان\n\nپردیس امروز یکشنبه ۲۶ مهر، حدود ساعت ۴ صبح زلزله اومد\n\nدو‌دفعه رودهن لرزید ساعت۴:۱۰\n\nالان رودهن لرزید\nنمید‌نم چی بود\n\nسلام وحید زلزله اومد پردیس 4:12 دقیقه\n\nزلزله اومد \nرودهن بد لرزید\n\nدماوند لرزید\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1792285129.712875,
-      "retries": 6,
-      "last_retry_at": 1792285850.9529552
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25894",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25894,
-      "text": "مرکز زلزله ، بومهن بود\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792285185.5804904,
-      "retries": 6,
-      "last_retry_at": 1792285925.054592
-    },
-    {
       "id": "vip_multi_agent_withyashar_25895",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
@@ -975,9 +843,64 @@
       "text": "نتانیاهو در باره جمهوری اسلامی:\n«هیچ توافقی حتی دو ثانیه هم دوام نمی‌آورد، چون آن‌ها یک کار را به‌طور مداوم و قابل‌اعتماد انجام می‌دهند: دروغ می‌گویند و فریبکاری می‌کنند. بنابراین…»\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792285548.9723775,
-      "retries": 3,
-      "last_retry_at": 1792285764.0204453
+      "retries": 12,
+      "last_retry_at": 1792288062.6033752
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39318",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39318,
+      "text": "بعد معارك استمرت لأسابيع.. القوات اليمنية تحرر جبال كهبوب الاستراتيجية والمُشرفة على مضيق باب المندب، في تقدم ميداني يعزز السيطرة على المرتفعات الحاكمة لباب المندب.",
+      "is_edit": false,
+      "enqueued_at": 1792286440.0562954,
+      "retries": 10,
+      "last_retry_at": 1792288080.865578
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25896",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25896,
+      "text": "نتانیاهو : «گاهی یک رهبر باید انتقادها و هزینه‌ها را به جان بخرد تا کار درست را برای نسل‌های آینده انجام دهد. فکر می‌کنم رئیس‌جمهور ترامپ با اعتقاد راسخ و اراده‌ای پایدار، همین کار را انجام داده است.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792286596.2460392,
+      "retries": 9,
+      "last_retry_at": 1792288082.9905407
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39320",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39320,
+      "text": "الأقمار الصناعية تظهر حريقًا غير طبيعي في معمل غاز ومرفأ الجعيمة بـ رأس تنورة السعودية بالتزامن مع توقف مطار الدمام.",
+      "is_edit": false,
+      "enqueued_at": 1792286675.156575,
+      "retries": 9,
+      "last_retry_at": 1792288100.111306
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39321",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39321,
+      "text": "توقف حركة الملاحة الجوية في مطار دبي.",
+      "is_edit": false,
+      "enqueued_at": 1792287128.5870728,
+      "retries": 7,
+      "last_retry_at": 1792288102.2252364
+    },
+    {
+      "id": "vip_multi_agent_netblocks_1573",
+      "pipeline": "vip_multi_agent",
+      "node": "netblocks",
+      "msg_id": 1573,
+      "text": "⚠️ Confirmed: Russian social media network VK (VKontakte) is currently experiencing a major disruption, with metrics showing connectivity at 56% of ordinary levels. The incident comes amid reports of a Ukrainian drone attack in the vicinity of its St. Petersburg data center",
+      "is_edit": false,
+      "enqueued_at": 1792288114.9405468,
+      "retries": 1,
+      "last_retry_at": 1792288119.3198328
     }
   ],
-  "last_saved": "2026-10-18 01:12:18 UTC"
+  "last_saved": "2026-10-18 01:49:11 UTC"
 }
