@@ -736,8 +736,8 @@
   },
   "channel_watermarks": {
     "Alibk3": 39387,
-    "withyashar": 25947,
-    "VahidOnline": 78758,
+    "withyashar": 25960,
+    "VahidOnline": 78759,
     "netblocks": 1573,
     "iliaen": 4746
   },
@@ -823,18 +823,63 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 112,
-    "gemini-3.5-flash-lite": 2120,
+    "gemini-3.8-flash": 131,
+    "gemini-3.5-flash-lite": 2201,
     "gemini-2.5-flash": 175,
-    "gemini-3-flash-preview": 195,
-    "gemini-3.1-flash-lite": 728,
+    "gemini-3-flash-preview": 199,
+    "gemini-3.1-flash-lite": 734,
     "gemini-3.1-flash-lite-preview": 92,
-    "gemini-3.6-flash": 111,
-    "gemini-3.7-flash": 96,
+    "gemini-3.6-flash": 125,
+    "gemini-3.7-flash": 117,
     "gemini-flash-lite-latest": 26,
-    "gemini-3.5-flash": 23,
-    "gemini-flash-latest": 2
+    "gemini-3.5-flash": 26,
+    "gemini-flash-latest": 3
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-18 21:09:09 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39386",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39386,
+      "text": "خلال آخر 24 ساعة، رُصدت 94 طائرة عسكرية في المنطقة، بينها 3 طائرات نقل وصلت من خارجها، منها اثنتان أميركيتان وواحدة بريطانية، إضافة إلى 7 طائرات نقل عسكري إقليمي و37 طائرة تزود بالوقود و14 طائرة تجسس و32 طائرة نقل عسكري تنقّلت داخل المنطقة ومروحية عسكرية واحدة.",
+      "is_edit": true,
+      "enqueued_at": 1792358177.2089958,
+      "retries": 9,
+      "last_retry_at": 1792359479.0871215
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25953",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25953,
+      "text": "کاربران پیغام میدن و میگن باز کنارک رو زد\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792358585.0262015,
+      "retries": 6,
+      "last_retry_at": 1792359301.2091641
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25956",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25956,
+      "text": "خبر انفجار شرق تهران فیکه",
+      "is_edit": false,
+      "enqueued_at": 1792359125.9973457,
+      "retries": 3,
+      "last_retry_at": 1792359335.4364626
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25957",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25957,
+      "text": "خبر پرتاب موشک از شیراز فیکه",
+      "is_edit": false,
+      "enqueued_at": 1792359225.9768622,
+      "retries": 3,
+      "last_retry_at": 1792359445.0506475
+    }
+  ],
+  "last_saved": "2026-10-18 21:38:31 UTC"
 }
