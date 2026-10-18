@@ -1,9 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 6
-- **Last Message Text:** الطيّاران السعوديان الذان قُتلا بعد إسقاط طائرتهما الأباتشي في نجران:
-
- علي إبراهيم علي الطلحة
-‏ عبد...
-- **Last Message Time:** 2026-10-18 06:22:15
+- **Messages Processed:** 7
+- **Last Message Text:** روزنامه پاکستانی «داون» گزارش داد تجارت از گذرگاه‌های مرزی گبد–ریمدان و تفتان به‌طور موقت متوقف شده ...
+- **Last Message Time:** 2026-10-18 07:09:33
