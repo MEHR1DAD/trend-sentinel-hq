@@ -735,7 +735,7 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39315,
+    "Alibk3": 39316,
     "withyashar": 25885,
     "VahidOnline": 78747,
     "netblocks": 1571,
@@ -836,60 +836,49 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_25887",
+      "id": "vip_multi_agent_netblocks_1572",
       "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25887,
-      "text": "ارتش اسرائیل سندی از شستشوی مغذی را فاش کرد که پسر تروریست یحیئ سنوار برای پدرش نوشته است:\n«می‌خواهم فریاد بزنم \"خداوند بزرگترین است\"، یک کلاشینکف بردارم و به یهودیان شلیک کنم. چه زمانی می‌آیی تا در آغوشم بخوابی؟ من همیشه تفنگ، تانک و کلاشینکف از کاغذ و مقوا درست می‌کنم.»\n@WarRoom",
+      "node": "netblocks",
+      "msg_id": 1572,
+      "text": "⚠️ Confirmed: Live network data show a significant reduction in internet connectivity across the US territory of #Guam corresponding to power outages as Category 4-equivalent Super Typhoon #Champi passes the island; observed connectivity is now down to 41% of ordinary levels",
       "is_edit": false,
-      "enqueued_at": 1792279903.0855987,
-      "retries": 15,
-      "last_retry_at": 1792282347.6270726
+      "enqueued_at": 1792282517.187939,
+      "retries": 11,
+      "last_retry_at": 1792284162.0532508
     },
     {
-      "id": "vip_multi_agent_Alibk3_39316",
+      "id": "vip_multi_agent_Alibk3_39318",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39316,
-      "text": "القوات اليمنية تحرر مناطق طالوق، والمعارك تصل إلى قرى مشرعة وحدنان في جبل صبر بمحافظة تعز.",
+      "msg_id": 39318,
+      "text": "بعد معارك استمرت لأسابيع.. القوات اليمنية تحرر جبال كهبوب الاستراتيجية والمُشرفة على مضيق باب المندب، في تقدم ميداني يعزز السيطرة على المرتفعات الحاكمة لباب المندب.",
       "is_edit": false,
-      "enqueued_at": 1792280788.6062694,
-      "retries": 11,
-      "last_retry_at": 1792282445.535224
+      "enqueued_at": 1792283682.5396056,
+      "retries": 5,
+      "last_retry_at": 1792284181.3945045
     },
     {
-      "id": "vip_multi_agent_Alibk3_39317",
+      "id": "vip_multi_agent_withyashar_25888",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25888,
+      "text": "استاد بزرگ شطرنج در‌ مصاحبه‌ای ویژه با مرد خردمند:\n«اوج سقوط اخلاقی جهان آنجاست که حماس غیرنظامیان را با تهدید اسلحه وادار می‌کند در مناطق جنگی بمانند و به آن‌ها می‌گوید: «نباید مناطق درگیری را ترک کنید.»\nحماس غیرنظامیان را با تهدید اسلحه در آنجا نگه می‌دارد. به همین دلیل است که تلفات غیرنظامیان رخ داده است.\nاما چه کسی متهم می‌شود؟ اسرائیل! واقعاً دیوانه‌وار است!»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792283788.1092298,
+      "retries": 4,
+      "last_retry_at": 1792284110.5549572
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39319",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39317,
-      "text": "المعارك بين القوات اليمنية والقوات الموالية للسعودية تقترب من منطقة بير باشا التي تبعد عن وسط مدينة تعز 3 كيلومتر.",
+      "msg_id": 39319,
+      "text": "توقف حركة الملاحة الجوية في مطار الدمام.",
       "is_edit": false,
-      "enqueued_at": 1792280790.587819,
-      "retries": 11,
-      "last_retry_at": 1792282463.8235016
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25885",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25885,
-      "text": "مرد خردمند ، مارک لوین درباره اتفاقات فرانسه: مارکسیست-اسلام‌گرایان در عرض چند ساعت تمدن را نابود می‌کنند\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792280792.6332088,
-      "retries": 10,
-      "last_retry_at": 1792282366.248987
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25886",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25886,
-      "text": "مرد خردمند ، مارک لوین : «مردم ایران را مسلح کنید و رژیم ایران را نابود کنید. در دهه آینده و پس از آن، به ۹۰ میلیون ایرانی نیاز داریم تا شانه‌به‌شانه در کنار ما بایستند؛ در شرایطی که آنچه من «جنگ صلیبی اسلام‌گرایانه» و «انقلاب مارکسیستی چین سرخ» می‌نامم، بیش از پیش گسترش می‌یابد و فراگیر می‌شود. زمان در حال تمام شدن است. متحدان در حال از دست رفتن هستند. وقت آن رسیده که به‌سرعت اقداماتمان را فراتر از صرفاً تحریم‌های اقتصادی گسترش دهیم.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792280793.5936003,
-      "retries": 10,
-      "last_retry_at": 1792282368.3791888
+      "enqueued_at": 1792284109.0401597,
+      "retries": 2,
+      "last_retry_at": 1792284164.2157035
     }
   ],
-  "last_saved": "2026-10-18 00:14:46 UTC"
+  "last_saved": "2026-10-18 00:43:23 UTC"
 }
