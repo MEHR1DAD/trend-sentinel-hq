@@ -737,7 +737,7 @@
   "channel_watermarks": {
     "Alibk3": 39373,
     "withyashar": 25925,
-    "VahidOnline": 78756,
+    "VahidOnline": 78757,
     "netblocks": 1573,
     "iliaen": 4746
   },
@@ -823,30 +823,41 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 100,
-    "gemini-3.5-flash-lite": 1886,
-    "gemini-2.5-flash": 165,
-    "gemini-3-flash-preview": 171,
+    "gemini-3.8-flash": 101,
+    "gemini-3.5-flash-lite": 1910,
+    "gemini-2.5-flash": 166,
+    "gemini-3-flash-preview": 173,
     "gemini-3.1-flash-lite": 728,
     "gemini-3.1-flash-lite-preview": 92,
     "gemini-3.6-flash": 103,
-    "gemini-3.7-flash": 78,
+    "gemini-3.7-flash": 80,
     "gemini-flash-lite-latest": 26,
-    "gemini-3.5-flash": 17,
+    "gemini-3.5-flash": 18,
     "gemini-flash-latest": 1
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39373",
+      "id": "vip_multi_agent_withyashar_25927",
       "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39373,
-      "text": "توقف مطار الدمام في السعودية مجددًا.",
+      "node": "withyashar",
+      "msg_id": 25927,
+      "text": "ترامپ در گفت‌وگو با شبکه ۱۲ اسرائیل: همیشه قصد داشتم از نتانیاهو حمایت کنم، اما نمی‌خواستم خیلی زود این کار را انجام دهم. ترامپ در پاسخ به این سؤال که آیا می‌تواند با نخست‌وزیر دیگری در اسرائیل همکاری کند، گفت: «شاید، اما چرا باید چنین ریسکی کرد؟» او نتانیاهو را نخست‌وزیری قدرتمند و جنگجویی بزرگ توصیف کرد و بر ادامه همکاری با او تأکید داشت.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792345285.5790105,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25928",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25928,
+      "text": "اکسیوس: ترامپ در پیام حمایتی خود از نتانیاهو ظاهراً این پیام را منتقل کرد که اجازه خواهد داد او پس از انتخابات میان‌دوره‌ای آمریکا به ایران حمله کند\n@WarRoom 🚨🚨🚨🚨",
       "is_edit": true,
-      "enqueued_at": 1792343479.428369,
-      "retries": 2,
-      "last_retry_at": 1792343535.9759219
+      "enqueued_at": 1792345304.8186362,
+      "retries": 0,
+      "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-18 17:12:54 UTC"
+  "last_saved": "2026-10-18 17:41:48 UTC"
 }
