@@ -56,7 +56,7 @@ class GeminiClient:
             idx = (self.current_key_idx + i) % len(self.api_keys)
             k = self.api_keys[idx]
             if self.key_cooldown_until.get(k, 0.0) <= now:
-                self.current_key_idx = idx
+                self.current_key_idx = (idx + 1) % len(self.api_keys)
                 return k
         # If all keys are currently cooling down, return None unless explicitly requested
         if allow_cooldown:
