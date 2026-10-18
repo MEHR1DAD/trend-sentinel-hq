@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 17
-- **Last Message Text:** البرلمان المصري يعقد جلسة للموافقة على قرار السيسي بإرسال قوات عسكرية إلى السعودية في "مهمة دفاعية"
-- **Last Message Time:** 2026-10-18 08:42:00
+- **Messages Processed:** 13
+- **Last Message Text:** مطار جدة يعاني من اضطرابات، 8 طائرات لا تستطيع الهبوط وتنتظر الإذن في الجو.
+- **Last Message Time:** 2026-10-18 09:01:01
