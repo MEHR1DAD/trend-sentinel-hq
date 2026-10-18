@@ -736,7 +736,7 @@
   },
   "channel_watermarks": {
     "Alibk3": 39373,
-    "withyashar": 25923,
+    "withyashar": 25925,
     "VahidOnline": 78756,
     "netblocks": 1573,
     "iliaen": 4746
@@ -824,16 +824,29 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 100,
-    "gemini-3.5-flash-lite": 1863,
+    "gemini-3.5-flash-lite": 1886,
     "gemini-2.5-flash": 165,
-    "gemini-3-flash-preview": 164,
+    "gemini-3-flash-preview": 171,
     "gemini-3.1-flash-lite": 728,
     "gemini-3.1-flash-lite-preview": 92,
-    "gemini-3.6-flash": 102,
-    "gemini-3.7-flash": 69,
+    "gemini-3.6-flash": 103,
+    "gemini-3.7-flash": 78,
     "gemini-flash-lite-latest": 26,
-    "gemini-3.5-flash": 17
+    "gemini-3.5-flash": 17,
+    "gemini-flash-latest": 1
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-18 16:42:17 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39373",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39373,
+      "text": "توقف مطار الدمام في السعودية مجددًا.",
+      "is_edit": true,
+      "enqueued_at": 1792343479.428369,
+      "retries": 2,
+      "last_retry_at": 1792343535.9759219
+    }
+  ],
+  "last_saved": "2026-10-18 17:12:54 UTC"
 }
