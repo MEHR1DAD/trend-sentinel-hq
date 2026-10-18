@@ -736,8 +736,8 @@
   },
   "channel_watermarks": {
     "Alibk3": 39387,
-    "withyashar": 25960,
-    "VahidOnline": 78759,
+    "withyashar": 25962,
+    "VahidOnline": 78760,
     "netblocks": 1573,
     "iliaen": 4746
   },
@@ -823,63 +823,96 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 131,
-    "gemini-3.5-flash-lite": 2201,
-    "gemini-2.5-flash": 175,
-    "gemini-3-flash-preview": 199,
-    "gemini-3.1-flash-lite": 734,
+    "gemini-3.8-flash": 132,
+    "gemini-3.5-flash-lite": 2235,
+    "gemini-2.5-flash": 180,
+    "gemini-3-flash-preview": 217,
+    "gemini-3.1-flash-lite": 765,
     "gemini-3.1-flash-lite-preview": 92,
-    "gemini-3.6-flash": 125,
-    "gemini-3.7-flash": 117,
+    "gemini-3.6-flash": 129,
+    "gemini-3.7-flash": 119,
     "gemini-flash-lite-latest": 26,
-    "gemini-3.5-flash": 26,
+    "gemini-3.5-flash": 29,
     "gemini-flash-latest": 3
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39386",
+      "id": "vip_multi_agent_VahidOnline_78762",
       "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39386,
-      "text": "خلال آخر 24 ساعة، رُصدت 94 طائرة عسكرية في المنطقة، بينها 3 طائرات نقل وصلت من خارجها، منها اثنتان أميركيتان وواحدة بريطانية، إضافة إلى 7 طائرات نقل عسكري إقليمي و37 طائرة تزود بالوقود و14 طائرة تجسس و32 طائرة نقل عسكري تنقّلت داخل المنطقة ومروحية عسكرية واحدة.",
+      "node": "VahidOnline",
+      "msg_id": 78762,
+      "text": "پیام‌های دریافتی:\n\nسلام وحید جان چند صدا اومد سمت کنارک\n\nصدای دو انفجار همین الان کنارک\n\nکنارک ۰۰:۲۹  دوتا صدای انفجار اومد\n\n📡 @VahidOnline",
+      "is_edit": false,
+      "enqueued_at": 1792359566.5198164,
+      "retries": 4,
+      "last_retry_at": 1792361288.8484628
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25961",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25961,
+      "text": "هواپیمای E-11A BACN که یک هواپیماهای تخصصی برای ایجاد ارتباط میان جنگنده‌ها، نیروهای زمینی و مراکز فرماندهی است به پرواز در اومده هم چنین ۶ سوخترسان در حال انجام مأموریت هستند !\n@WarRoom 🚨🚨🚨🚨🚨🚨",
+      "is_edit": false,
+      "enqueued_at": 1792359816.3307571,
+      "retries": 2,
+      "last_retry_at": 1792361182.5573425
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25964",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25964,
+      "text": "گزارش نفتکش زده سپاه که فوری دادم تاییده",
+      "is_edit": false,
+      "enqueued_at": 1792360443.8390331,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25963",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25963,
+      "text": "گزارش پرتاب از یزدی که دادم تاییده",
       "is_edit": true,
-      "enqueued_at": 1792358177.2089958,
-      "retries": 9,
-      "last_retry_at": 1792359479.0871215
+      "enqueued_at": 1792360581.318116,
+      "retries": 0,
+      "last_retry_at": 0
     },
     {
-      "id": "vip_multi_agent_withyashar_25953",
+      "id": "vip_multi_agent_withyashar_25965",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
-      "msg_id": 25953,
-      "text": "کاربران پیغام میدن و میگن باز کنارک رو زد\n@WarRoom",
+      "msg_id": 25965,
+      "text": "اتاق جنگ با یاشار : ۶ دقیقه تا باز شدن بازار ها ، نفت حتما میره بالای ۱۱۰-۱۱۵ دلار ، برای همینه سه پا داره میزنه \n@WarRoom",
       "is_edit": false,
-      "enqueued_at": 1792358585.0262015,
-      "retries": 6,
-      "last_retry_at": 1792359301.2091641
+      "enqueued_at": 1792360613.683011,
+      "retries": 0,
+      "last_retry_at": 0
     },
     {
-      "id": "vip_multi_agent_withyashar_25956",
+      "id": "vip_multi_agent_withyashar_25966",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
-      "msg_id": 25956,
-      "text": "خبر انفجار شرق تهران فیکه",
+      "msg_id": 25966,
+      "text": "پرتاب موشک بالستیک جدید دوباره از یزد\n@WarRoom 🚨🚨🚨",
       "is_edit": false,
-      "enqueued_at": 1792359125.9973457,
-      "retries": 3,
-      "last_retry_at": 1792359335.4364626
+      "enqueued_at": 1792360695.6819694,
+      "retries": 0,
+      "last_retry_at": 0
     },
     {
-      "id": "vip_multi_agent_withyashar_25957",
+      "id": "vip_multi_agent_withyashar_25967",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
-      "msg_id": 25957,
-      "text": "خبر پرتاب موشک از شیراز فیکه",
-      "is_edit": false,
-      "enqueued_at": 1792359225.9768622,
-      "retries": 3,
-      "last_retry_at": 1792359445.0506475
+      "msg_id": 25967,
+      "text": "یک پی-۸ پوسایدن دیگر هم مشاهده شد !\n@WarRoom",
+      "is_edit": true,
+      "enqueued_at": 1792361176.5422816,
+      "retries": 0,
+      "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-18 21:38:31 UTC"
+  "last_saved": "2026-10-18 22:08:16 UTC"
 }
