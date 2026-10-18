@@ -834,18 +834,6 @@
     "gemini-flash-lite-latest": 26,
     "gemini-3.5-flash": 5
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39325",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39325,
-      "text": "استهداف سفينة قبالة السواحل الإماراتية.",
-      "is_edit": true,
-      "enqueued_at": 1792297642.9166367,
-      "retries": 16,
-      "last_retry_at": 1792300168.306165
-    }
-  ],
-  "last_saved": "2026-10-18 05:11:02 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-18 05:39:35 UTC"
 }
