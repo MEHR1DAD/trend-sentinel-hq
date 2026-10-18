@@ -736,7 +736,7 @@
   },
   "channel_watermarks": {
     "Alibk3": 39315,
-    "withyashar": 25882,
+    "withyashar": 25885,
     "VahidOnline": 78747,
     "netblocks": 1571,
     "iliaen": 4746
@@ -824,7 +824,7 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 56,
-    "gemini-3.5-flash-lite": 1327,
+    "gemini-3.5-flash-lite": 1328,
     "gemini-2.5-flash": 138,
     "gemini-3-flash-preview": 97,
     "gemini-3.1-flash-lite": 725,
@@ -836,50 +836,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_25882",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25882,
-      "text": "کاتس ، وزیر دفاع اسرائیل : « ۳۵ هزار بمب از سوی اسرائیل و ایالات متحده علیه ایران شلیک شده است که البته بخش عمده آن‌ها را ما شلیک کرده‌ایم. باید اهمیت این موضوع را درک کرد. ما عملاً زیرساخت‌ها و اهداف آنجا را ویران کرده‌ایم، اما هنوز کارهایی باقی مانده که باید برای نابودی کامل آن‌ها انجام شود.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792279054.762411,
-      "retries": 11,
-      "last_retry_at": 1792280734.3572989
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25883",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25883,
-      "text": "کاتس ، وزیر دفاع اسرائیل : به‌محض آنکه رژیم ایران شکست بخورد، تمام منطقه به منطقه‌ای امن تبدیل خواهد شد. اسرائیل بر این هدف متمرکز خواهد بود و طبیعتاً با ایالات متحده نیز هماهنگی خواهد داشت.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792279056.7490668,
-      "retries": 10,
-      "last_retry_at": 1792280619.7258463
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25884",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25884,
-      "text": "خبرگزاری فرانسه AFP : شهرداری تاریخی  ۱۴۳ ساله شهر لیموژ فرانسه که در سال ۱۸۸۳ افتتاح شده، در جریان ناآرامی‌های ۱۷ اکتبر هدف حمله گروهی از افراد نقاب‌دار قرار گرفت. مهاجمان پس از آتش‌زدن خودروی پلیس، وارد ساختمان شدند و آن را به آتش کشیدند؛ آتش‌سوزی به فروریختن سقف و برجک ساختمان منجر شد.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792279057.744453,
-      "retries": 10,
-      "last_retry_at": 1792280622.970637
-    },
-    {
-      "id": "vip_multi_agent_netblocks_1572",
-      "pipeline": "vip_multi_agent",
-      "node": "netblocks",
-      "msg_id": 1572,
-      "text": "⚠️ Confirmed: Live network data show a significant reduction in internet connectivity across the US territory of #Guam corresponding to power outages as Category 4-equivalent Super Typhoon #Champi passes the island; observed connectivity is now down to 41% of ordinary levels",
-      "is_edit": false,
-      "enqueued_at": 1792279061.7602177,
-      "retries": 10,
-      "last_retry_at": 1792280640.1023574
-    },
-    {
       "id": "vip_multi_agent_withyashar_25887",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
@@ -887,9 +843,53 @@
       "text": "ارتش اسرائیل سندی از شستشوی مغذی را فاش کرد که پسر تروریست یحیئ سنوار برای پدرش نوشته است:\n«می‌خواهم فریاد بزنم \"خداوند بزرگترین است\"، یک کلاشینکف بردارم و به یهودیان شلیک کنم. چه زمانی می‌آیی تا در آغوشم بخوابی؟ من همیشه تفنگ، تانک و کلاشینکف از کاغذ و مقوا درست می‌کنم.»\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792279903.0855987,
-      "retries": 6,
-      "last_retry_at": 1792280642.2120068
+      "retries": 15,
+      "last_retry_at": 1792282347.6270726
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39316",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39316,
+      "text": "القوات اليمنية تحرر مناطق طالوق، والمعارك تصل إلى قرى مشرعة وحدنان في جبل صبر بمحافظة تعز.",
+      "is_edit": false,
+      "enqueued_at": 1792280788.6062694,
+      "retries": 11,
+      "last_retry_at": 1792282445.535224
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39317",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39317,
+      "text": "المعارك بين القوات اليمنية والقوات الموالية للسعودية تقترب من منطقة بير باشا التي تبعد عن وسط مدينة تعز 3 كيلومتر.",
+      "is_edit": false,
+      "enqueued_at": 1792280790.587819,
+      "retries": 11,
+      "last_retry_at": 1792282463.8235016
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25885",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25885,
+      "text": "مرد خردمند ، مارک لوین درباره اتفاقات فرانسه: مارکسیست-اسلام‌گرایان در عرض چند ساعت تمدن را نابود می‌کنند\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792280792.6332088,
+      "retries": 10,
+      "last_retry_at": 1792282366.248987
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25886",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25886,
+      "text": "مرد خردمند ، مارک لوین : «مردم ایران را مسلح کنید و رژیم ایران را نابود کنید. در دهه آینده و پس از آن، به ۹۰ میلیون ایرانی نیاز داریم تا شانه‌به‌شانه در کنار ما بایستند؛ در شرایطی که آنچه من «جنگ صلیبی اسلام‌گرایانه» و «انقلاب مارکسیستی چین سرخ» می‌نامم، بیش از پیش گسترش می‌یابد و فراگیر می‌شود. زمان در حال تمام شدن است. متحدان در حال از دست رفتن هستند. وقت آن رسیده که به‌سرعت اقداماتمان را فراتر از صرفاً تحریم‌های اقتصادی گسترش دهیم.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792280793.5936003,
+      "retries": 10,
+      "last_retry_at": 1792282368.3791888
     }
   ],
-  "last_saved": "2026-10-17 23:45:56 UTC"
+  "last_saved": "2026-10-18 00:14:46 UTC"
 }
