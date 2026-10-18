@@ -735,10 +735,10 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39323,
+    "Alibk3": 39325,
     "withyashar": 25896,
-    "VahidOnline": 78748,
-    "netblocks": 1572,
+    "VahidOnline": 78749,
+    "netblocks": 1573,
     "iliaen": 4746
   },
   "vahid_post_time": {},
@@ -836,49 +836,16 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_VahidOnline_78749",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78749,
-      "text": "جی‌دی ونس، معاون رئیس‌جمهوری ایالات متحده، روز شنبه در گفتگو با «سی‌بی‌اس نیوز»، با دفاع از راهبرد دولت ترامپ در قبال جنگ با ایران و اشاره به نقش آن بر نوسانات بهای سوخت تأکید کرد: «ما هرگز با وضعیتی مواجه نبوده‌ایم که بزرگ‌ترین دولت حامی تروریسم تلاش کند شریان تأمین انرژی جهان را قطع کند. اگر منطقه را ترک می‌کردیم و کنترل کشتیرانی در تنگه هرمز را به ایرانی‌ها می‌سپردیم، مردم باید بهای بسیار بیشتری برای بنزین می‌پرداختند و با پایان این درگیری، قیمت بنزین کاهش خواهد یافت». ونس که خود در جریان مذاکرات تابستان گذشته با تهران حضور داشته است، در پاسخ به سؤالی درباره فرسایشی شدن این نبرد گفت که آمریکا از برخی جنبه‌ها «پیروزی قاطعی» به دست آورده اما «دولت ترامپ به دنبال تعهد نهایی و محکم ایرانی‌ها مبنی بر بازسازی نکردن برنامه هسته‌ای‌شان است.» براساس این گزارش، او همچنین در واکنش به کشته‌شدن نظامیان آمریکایی در حملات پهپادی سپاه در کویت، وقوع برخی اشتباهات در استقرار نیروها را پذیرفت و از تغییر تاکتیک‌های نظامی واشنگتن برای مهار پهپادها خبر داد.\n@VahidOOnLine\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1792295148.5799234,
-      "retries": 11,
-      "last_retry_at": 1792296786.7276788
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25896",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25896,
-      "text": "نتانیاهو : «گاهی یک رهبر باید انتقادها و هزینه‌ها را به جان بخرد تا کار درست را برای نسل‌های آینده انجام دهد. فکر می‌کنم رئیس‌جمهور ترامپ با اعتقاد راسخ و اراده‌ای پایدار، همین کار را انجام داده است.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792295149.6306562,
-      "retries": 11,
-      "last_retry_at": 1792296805.0906227
-    },
-    {
-      "id": "vip_multi_agent_netblocks_1573",
-      "pipeline": "vip_multi_agent",
-      "node": "netblocks",
-      "msg_id": 1573,
-      "text": "⚠️ Confirmed: Russian social media network VK (VKontakte) is currently experiencing a major disruption, with metrics showing connectivity at 56% of ordinary levels. The incident comes amid reports of a Ukrainian drone attack in the vicinity of its St. Petersburg data center",
-      "is_edit": false,
-      "enqueued_at": 1792295151.8685477,
-      "retries": 11,
-      "last_retry_at": 1792296824.4348154
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39324",
+      "id": "vip_multi_agent_Alibk3_39325",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39324,
-      "text": "‏السعودية تعترف بمقتل طيارين اثنين في نجران.",
-      "is_edit": false,
-      "enqueued_at": 1792295732.0109813,
-      "retries": 8,
-      "last_retry_at": 1792296807.2601576
+      "msg_id": 39325,
+      "text": "استهداف سفينة قبالة السواحل الإماراتية.",
+      "is_edit": true,
+      "enqueued_at": 1792297642.9166367,
+      "retries": 7,
+      "last_retry_at": 1792298509.9015725
     }
   ],
-  "last_saved": "2026-10-18 04:13:53 UTC"
+  "last_saved": "2026-10-18 04:42:26 UTC"
 }
