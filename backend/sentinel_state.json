@@ -823,17 +823,51 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 76,
-    "gemini-3.5-flash-lite": 1385,
+    "gemini-3.8-flash": 82,
+    "gemini-3.5-flash-lite": 1434,
     "gemini-2.5-flash": 138,
-    "gemini-3-flash-preview": 97,
+    "gemini-3-flash-preview": 99,
     "gemini-3.1-flash-lite": 725,
     "gemini-3.1-flash-lite-preview": 92,
-    "gemini-3.6-flash": 33,
-    "gemini-3.7-flash": 28,
+    "gemini-3.6-flash": 53,
+    "gemini-3.7-flash": 48,
     "gemini-flash-lite-latest": 26,
-    "gemini-3.5-flash": 5
+    "gemini-3.5-flash": 6
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-18 09:52:48 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_withyashar_25903",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25903,
+      "text": "مهرداد اخلاقی که پیشتر گفتم امروز رسمأ وزیر دفاع شد\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792317581.8457222,
+      "retries": 8,
+      "last_retry_at": 1792319455.1683536
+    },
+    {
+      "id": "vip_multi_agent_withyashar_25905",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25905,
+      "text": "جی‌دی ونس، معاون ترامپ، درباره حرفهای ، عبدالسید در مورد جنگ ایران گفت: «می‌بینم که او از تصمیماتی که رئیس‌جمهور و ارتش گرفته‌اند انتقاد می‌کند؛ اما در نهایت، واقعیت این است که اکنون در همین موقعیت قرار داریم.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792318784.4067998,
+      "retries": 5,
+      "last_retry_at": 1792319487.9991693
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39340",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39340,
+      "text": "زيلينسكي مستمر بمخالفة أوامر ترامب، مشاهد لاستهداف محطة تصدير الوقود في ميناء سانت بطرسبرغ الروسي صباح اليوم.",
+      "is_edit": false,
+      "enqueued_at": 1792319031.7224097,
+      "retries": 4,
+      "last_retry_at": 1792319549.6534886
+    }
+  ],
+  "last_saved": "2026-10-18 10:33:01 UTC"
 }
