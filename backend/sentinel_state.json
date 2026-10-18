@@ -736,7 +736,7 @@
   },
   "channel_watermarks": {
     "Alibk3": 39338,
-    "withyashar": 25903,
+    "withyashar": 25904,
     "VahidOnline": 78749,
     "netblocks": 1573,
     "iliaen": 4746
@@ -824,61 +824,16 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 82,
-    "gemini-3.5-flash-lite": 1507,
-    "gemini-2.5-flash": 151,
-    "gemini-3-flash-preview": 128,
-    "gemini-3.1-flash-lite": 725,
+    "gemini-3.5-flash-lite": 1550,
+    "gemini-2.5-flash": 155,
+    "gemini-3-flash-preview": 137,
+    "gemini-3.1-flash-lite": 726,
     "gemini-3.1-flash-lite-preview": 92,
-    "gemini-3.6-flash": 75,
-    "gemini-3.7-flash": 48,
+    "gemini-3.6-flash": 79,
+    "gemini-3.7-flash": 49,
     "gemini-flash-lite-latest": 26,
-    "gemini-3.5-flash": 12
+    "gemini-3.5-flash": 13
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39340",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39340,
-      "text": "زيلينسكي مستمر بمخالفة أوامر ترامب، مشاهد لاستهداف محطة تصدير الوقود في ميناء سانت بطرسبرغ الروسي صباح اليوم.",
-      "is_edit": false,
-      "enqueued_at": 1792319031.7224097,
-      "retries": 14,
-      "last_retry_at": 1792321518.319299
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39339",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39339,
-      "text": "طائرة شحن قادمة من بيلاروسيا تهبط في مطار تبريز الإيراني",
-      "is_edit": false,
-      "enqueued_at": 1792319681.9303706,
-      "retries": 9,
-      "last_retry_at": 1792321447.4446654
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25906",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25906,
-      "text": "جی‌دی ونس، معاون ترامپ ، درباره جنگ با ایران : «در محل استقرار نیروهایمان مشکلاتی وجود داشت که متوجه شدیم اشتباه بزرگی بوده و می‌توانستیم بهتر عمل کنیم؛ ما این وضعیت را تغییر داده‌ایم.»\n«نمی‌خواهم ایرانی‌ها اطلاعات دیگری به دست بیاورند که از آن برای هدف قرار دادن همسر یا مادر فرد دیگری استفاده کنند.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792319694.0442247,
-      "retries": 8,
-      "last_retry_at": 1792321411.6767461
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39341",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39341,
-      "text": "هجوم يمني يستهدف نجران",
-      "is_edit": false,
-      "enqueued_at": 1792319944.1679091,
-      "retries": 8,
-      "last_retry_at": 1792321467.7516208
-    }
-  ],
-  "last_saved": "2026-10-18 11:05:45 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-18 12:10:02 UTC"
 }
