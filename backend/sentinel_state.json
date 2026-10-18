@@ -843,8 +843,8 @@
       "text": "الطيّاران السعوديان الذان قُتلا:\n\n علي إبراهيم علي الطلحة\n‏ عبدالعزيز عيد هرسان المسردي",
       "is_edit": true,
       "enqueued_at": 1792303234.6372893,
-      "retries": 4,
-      "last_retry_at": 1792303550.1869938
+      "retries": 13,
+      "last_retry_at": 1792305668.0668232
     },
     {
       "id": "vip_multi_agent_Alibk3_3368",
@@ -854,8 +854,8 @@
       "text": "في قاعدة الأمير سلطان بالسعودية، التقطت صور أقمار صناعية صينية مشاهد لطائرتي E-11A وKC-135 أثناء تحرّكهما على المدرج، فيما لم يطرأ تغيير كبير على أنواع وأعداد الطائرات المتوقفة في ساحة المطار.\n\nAt Prince Sultan Air Base in Saudi Arabia, Chinese satellite imagery captured footage of an E-11A and a KC-135 operating on the runway, while there were no significant changes in the types and numbers of aircraft parked on the apron",
       "is_edit": true,
       "enqueued_at": 1792303385.2877896,
-      "retries": 3,
-      "last_retry_at": 1792303529.4097102
+      "retries": 12,
+      "last_retry_at": 1792305671.318262
     },
     {
       "id": "vip_multi_agent_Alibk3_3354",
@@ -865,8 +865,8 @@
       "text": "وصول 12 طائرة أميركية F-22 إضافية إلى بريطانيا اليوم، وستتجه إلى الكيان، ما يرفع العدد إلى 24 طائرة.\n\nThe arrival of 12 additional U.S. F-22 fighter jets to Britain today; they will head to occupied Palestine, bringing the total number to 24 aircraft.",
       "is_edit": true,
       "enqueued_at": 1792303386.2932715,
-      "retries": 3,
-      "last_retry_at": 1792303532.6518219
+      "retries": 12,
+      "last_retry_at": 1792305688.4423256
     },
     {
       "id": "vip_multi_agent_Alibk3_3341",
@@ -876,9 +876,20 @@
       "text": "تعزيزات عسكرية أميركية مستمرة تتجه نحو تل أبيب، حيث وصلت عدة طائرات للتزود بالوقود عصر اليوم، بينما تتجه أربع طائرات إضافية.\n\nContinuous U.S. military reinforcements are heading toward Tel Aviv, with several refueling aircraft having arrived this afternoon, while four additional planes are also en route.",
       "is_edit": true,
       "enqueued_at": 1792303387.2542784,
-      "retries": 3,
-      "last_retry_at": 1792303552.289119
+      "retries": 12,
+      "last_retry_at": 1792305690.56951
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39328",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39328,
+      "text": "الحظر الجوي اليمني مستمر على المطارات السعودية، إذ لا يزال مطارَي نجران وجازان متوقفَين منذ أكثر من 284 ساعة، ومطار الرياض نحو 15 ساعة، كما أن مطار القريات \"المحلي\" متوقف منذ 19 ساعة.",
+      "is_edit": false,
+      "enqueued_at": 1792304224.0942817,
+      "retries": 10,
+      "last_retry_at": 1792305707.7297523
     }
   ],
-  "last_saved": "2026-10-18 06:08:06 UTC"
+  "last_saved": "2026-10-18 06:43:17 UTC"
 }
