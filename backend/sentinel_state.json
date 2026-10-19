@@ -823,18 +823,30 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 134,
-    "gemini-3.5-flash-lite": 2271,
+    "gemini-3.8-flash": 138,
+    "gemini-3.5-flash-lite": 2276,
     "gemini-2.5-flash": 184,
     "gemini-3-flash-preview": 223,
-    "gemini-3.1-flash-lite": 1165,
+    "gemini-3.1-flash-lite": 1166,
     "gemini-3.1-flash-lite-preview": 104,
     "gemini-3.6-flash": 132,
-    "gemini-3.7-flash": 124,
+    "gemini-3.7-flash": 126,
     "gemini-flash-lite-latest": 29,
     "gemini-3.5-flash": 31,
     "gemini-flash-latest": 4
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-19 04:44:19 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_withyashar_25831",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 25831,
+      "text": "گاردین: حملات حوثی‌ها و تشدید تنش‌های منطقه‌ای، برنامه میزبانی رویدادهای بزرگ ورزشی عربستان را مختل کرده است. مسابقات گلف «سعودی اینترنشنال» به‌طور نامحدود به تعویق افتاده، مسابقات جهانی دوچرخه‌سواری شهری در ریاض لغو شده و رقابت‌های جهانی ورزش‌های الکترونیکی FIFAe در جده به تعویق افتاده است. مسابقات تنیس «سیکس کینگز سلام» نیز از اکتبر به اواخر دسامبر منتقل شده است. این تحولات درباره امنیت میزبانی جام ملت‌های آسیا ۲۰۲۷ و برنامه عربستان برای جام جهانی فوتبال ۲۰۳۴ تردیدهایی ایجاد کرده؛ با این حال، برگزارکنندگان جام ملت‌های آسیا می‌گویند آماده‌سازی‌ها طبق برنامه ادامه دارد.\n@WarRoom",
+      "is_edit": true,
+      "enqueued_at": 1792387307.016955,
+      "retries": 5,
+      "last_retry_at": 1792387800.1359904
+    }
+  ],
+  "last_saved": "2026-10-19 05:30:40 UTC"
 }
