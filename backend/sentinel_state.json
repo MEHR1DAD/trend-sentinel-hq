@@ -735,9 +735,9 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39476,
+    "Alibk3": 39485,
     "withyashar": 26042,
-    "VahidOnline": 78767,
+    "VahidOnline": 78768,
     "netblocks": 1574,
     "iliaen": 4746
   },
@@ -827,8 +827,8 @@
     "gemini-3.5-flash-lite": 3172,
     "gemini-2.5-flash": 239,
     "gemini-3-flash-preview": 395,
-    "gemini-3.1-flash-lite": 1327,
-    "gemini-3.1-flash-lite-preview": 133,
+    "gemini-3.1-flash-lite": 1406,
+    "gemini-3.1-flash-lite-preview": 139,
     "gemini-3.6-flash": 225,
     "gemini-3.7-flash": 180,
     "gemini-flash-lite-latest": 34,
@@ -837,104 +837,71 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_26036",
+      "id": "vip_multi_agent_Alibk3_39477",
       "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26036,
-      "text": "روزنامه بریتانیایی سان و وانجون شی، رئیس حزب دموکراسی چین و مخالف حکومت پکن، مدعی شدند ، کیم جونگ اون، رهبر کره شمالی، پس از خونریزی مغزی و انتقال اضطراری به بیمارستانی در پکن جان باخته و پیکرش مخفیانه به کره شمالی بازگردانده شده است. او همچنین ادعا کرد چین حدود ۹ هزار نیروی نظامی به پیونگ‌یانگ اعزام کرده تا در بحران جانشینی مداخله کنند و کیم یو جونگ، خواهر رهبر کره شمالی، قدرت را به دست گرفته است. شی مدعی شد نیروهای چینی در آماده‌باش قرار دارند و احتمال درگیری داخلی در کره شمالی وجود دارد.\n@WarRoom",
-      "is_edit": true,
-      "enqueued_at": 1792446250.5586212,
+      "node": "Alibk3",
+      "msg_id": 39477,
+      "text": "الطائرات المقاتلة تحلق فوق جنوب وغرب العراق.",
+      "is_edit": false,
+      "enqueued_at": 1792449178.6286914,
       "retries": 4,
-      "last_retry_at": 1792448762.5864615
+      "last_retry_at": 1792451749.248737
     },
     {
-      "id": "vip_multi_agent_VahidOnline_78768",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78768,
-      "text": "دونالد ترامپ، رئیس‌جمهوری آمریکا، روز دوشنبه ۲۷ مهر در جمع خبرنگاران در کاخ سفید اظهار داشت که روسیه هیچ اقدام قابل‌توجهی برای کمک به جمهوری اسلامی ایران انجام نداده و این مسئله بسیار مثبت است.\n\nاو افزود که چین و روسیه می‌توانستند اقدامات بسیار بیشتری برای کمک به ایران انجام دهند، اما عملکرد آن‌ها در این زمینه بسیار ناچیز و نزدیک به صفر بوده است. ترامپ تأکید کرد که نبود حمایت مؤثر مسکو و پکن از تهران را به عنوان یک «نقطه عطف بسیار مثبت» ارزیابی می‌کند.\n@VahidOOnLine\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1792446963.3672085,
-      "retries": 3,
-      "last_retry_at": 1792448847.0316343
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26041",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26041,
-      "text": "اتاق جنگ با یاشار : آب زنید راه را ، که پل هوایی ترابری نظامی سنگین و دیوانه‌وار آمریکا شب و روز ادامه دارد …\n@WarRoom 🚨🚨🚨🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1792447015.575159,
-      "retries": 1,
-      "last_retry_at": 1792448454.097686
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39478",
+      "id": "vip_multi_agent_Alibk3_39481",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39478,
-      "text": "بعد فلسطين وسوريا والعراق، تحليق مكثف للطيران الحربي فوق أجواء أربد في الأردن.",
-      "is_edit": false,
-      "enqueued_at": 1792447241.1929984,
-      "retries": 1,
-      "last_retry_at": 1792448495.0239077
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26043",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26043,
-      "text": "اکسیوس، به نقل از مقامات اوکراینی: ویتک (مشاور ارشد بایدن) و کوشنر (داماد ترامپ) بار دیگر از اوکراین خواسته‌اند که حملات به پالایشگاه‌های نفتی روسیه را متوقف کند.\nترامپ با محدود کردن حمایت از اوکراین، به دنبال اعمال فشار بر زلنسکی برای پذیرش توافق است\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792447728.5479376,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26044",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26044,
-      "text": "اکسیوس، به نقل از مقامات اوکراینی:  پیت هگست (وزیر جنگ آمریکا) با تحویل موشک‌های پاتریوت به کی‌یف موافقت نکرده است، با وجود اینکه کشورهای عضو ناتو هزینه آن را پرداخت کرده‌اند.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792447872.9449039,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26045",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26045,
-      "text": "اکسیوس به نقل از مقامات اوکراینی: زلنسکی پیشنهاد داد که در ازای دریافت موشک‌های پاتریوت، حملات به پالایشگاه‌های نفت روسیه متوقف شود.\nاما ویتکوف و کوشنر، تمایلی به پیشنهاد زلنسکی مبنی بر توقف حملات در ازای دریافت موشک‌های پاتریوت نشان ندادند.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792448016.438831,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39479",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39479,
-      "text": "إيران تحذّر عبر ممثلها في مجلس الأمن من تهديدات واشنطن وتل أبيب.",
+      "msg_id": 39481,
+      "text": "وزير الحرب الأميركي يزور الكيان الصهيوني بزيارة غير معلنة، ويلتقي نتنياهو.",
       "is_edit": true,
-      "enqueued_at": 1792448599.7470024,
+      "enqueued_at": 1792449426.655701,
+      "retries": 3,
+      "last_retry_at": 1792451662.276511
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26047",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26047,
+      "text": "آکسیوس به نقل از دو منبع آگاه: پیت هگست، وزیر جنگ آمریکا، امروز در اسرائیل با بنیامین نتانیاهو، نخست‌وزیر اسرائیل، دیدار کرده است.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792449602.194969,
+      "retries": 3,
+      "last_retry_at": 1792451698.140179
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39482",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39482,
+      "text": "هيئة البث العبرية:\n\nوزير الحرب الأميركي زار نتنياهو اليوم بزيارة غير معلنة والتقى كبار المسؤولين، في ظل مناقشات أمريكية إسرائيلية حول إمكانية استئناف العمليات القتالية الكبرى ضد إيران.",
+      "is_edit": false,
+      "enqueued_at": 1792449920.8973322,
       "retries": 0,
       "last_retry_at": 0
     },
     {
-      "id": "vip_multi_agent_Alibk3_39480",
+      "id": "vip_multi_agent_Alibk3_39485",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39480,
-      "text": "توقف مطار الدمام في السعودية مجدداً.",
+      "msg_id": 39485,
+      "text": "رصد جسم مجهول في أجواء شرق العراق.",
+      "is_edit": true,
+      "enqueued_at": 1792450635.8885982,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39486",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39486,
+      "text": "تتذكرون منشورنا الساعة 6 مساءً حول وصول طائرة حكومية إماراتية لتل أبيب؟\n\nالآن تم تأكيد مشاركة مسؤولين إماراتيين في الاجتماع الصهيوني-الأميركي، حول إيران.",
       "is_edit": false,
-      "enqueued_at": 1792448690.2804172,
+      "enqueued_at": 1792451104.2844467,
       "retries": 0,
       "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-19 22:27:44 UTC"
+  "last_saved": "2026-10-19 23:15:54 UTC"
 }
