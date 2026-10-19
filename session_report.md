@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 29 minutes
-- **Messages Processed:** 19
-- **Last Message Text:** أعداد كبيرة من القتلى والجرحى بالقوات الموالية للسعودية تم استهدافهم بضربة استباقية أثناء التدريب في...
-- **Last Message Time:** 2026-10-19 08:24:29
+- **Uptime:** 38 minutes
+- **Messages Processed:** 17
+- **Last Message Text:** صور الأقمار الصناعية تظهر العديد من ناقلات النفط العملاقة وهي تقوم بتحميل النفط من ميناء رأس تنورة ش...
+- **Last Message Time:** 2026-10-19 09:33:20
