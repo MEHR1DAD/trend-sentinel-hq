@@ -735,8 +735,8 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39417,
-    "withyashar": 25986,
+    "Alibk3": 39421,
+    "withyashar": 25987,
     "VahidOnline": 78763,
     "netblocks": 1574,
     "iliaen": 4746
@@ -824,9 +824,9 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 179,
-    "gemini-3.5-flash-lite": 2484,
-    "gemini-2.5-flash": 186,
-    "gemini-3-flash-preview": 282,
+    "gemini-3.5-flash-lite": 2556,
+    "gemini-2.5-flash": 206,
+    "gemini-3-flash-preview": 291,
     "gemini-3.1-flash-lite": 1166,
     "gemini-3.1-flash-lite-preview": 104,
     "gemini-3.6-flash": 187,
@@ -835,139 +835,6 @@
     "gemini-3.5-flash": 38,
     "gemini-flash-latest": 4
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_withyashar_25991",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25991,
-      "text": "روزنامه لبنانی \"الاخبار\" که با حزب‌الله هم‌سو است، گزارش داد: پیام‌هایی از آمریکا و همچنین از منابع غربی و عربی به لبنان رسیده است که در آن هشدار داده شده است پیوستن حزب‌الله به جنگ ، \"با یک واکنش گسترده و شدید اسرائیل مواجه خواهد شد که تمام محدودیت‌ها را درهم خواهد شکست.\" \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792400826.8471608,
-      "retries": 12,
-      "last_retry_at": 1792403050.0905712
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25990",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25990,
-      "text": "آژانس فرانسه (اف.پ.) گزارش داد: برنامه جهانی غذا به دلیل کمبود بودجه، کمک‌های غذایی را برای نیم میلیون نفر در نوار غزه متوقف کرده است.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792400843.5958085,
-      "retries": 11,
-      "last_retry_at": 1792403070.801988
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25992",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25992,
-      "text": "مارکو روبیو، وزیر امور خارجه آمریکا: «اگر روحانیون تندرو شیعه در ایران در قدرت نبودند، بسیاری از مشکلات خاورمیانه اصلاً به وجود نمی‌آمدند. مسئله فلسطین ممکن بود همچنان وجود داشته باشد، اما به اعتقاد من، اگر ایران در این معادلات نقش نداشت، حل‌وفصل مسئله فلسطین بسیار آسان‌تر بود.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792400918.3696015,
-      "retries": 10,
-      "last_retry_at": 1792403106.6474817
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25993",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25993,
-      "text": "بخش جدید مصاحبه مارک لوین با نتانیاهو : «ما در برابر ایران و گروه‌های وابسته و خطرناکش از خودمان دفاع می‌کنیم؛ اما با این کار، در واقع از آمریکا و کل تمدن بشری هم دفاع می‌کنیم. چون این‌ها بربرهایی هستند که می‌خواهند به سراغ شما هم بیایند.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792400922.0434813,
-      "retries": 10,
-      "last_retry_at": 1792403127.0132322
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39418",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39418,
-      "text": "700 فرد كانوا ملتحقين للتدرب على يد قيادات سعودية في معسكر العلم الذي تم استهدافه بضربة استباقية من قبل القوات المسلحة اليمنية",
-      "is_edit": false,
-      "enqueued_at": 1792400951.0769236,
-      "retries": 7,
-      "last_retry_at": 1792402830.1525722
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39411",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39411,
-      "text": "القوات المسلحة اليمنية تستهدف معسكر العلم في شبوة برشقة صاروخية أثناء تواجد عدد كبير من القوات الموالية للسعودية مخلفة قتلى وجرحى",
-      "is_edit": false,
-      "enqueued_at": 1792400951.5377502,
-      "retries": 6,
-      "last_retry_at": 1792402959.779169
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25994",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25994,
-      "text": "بنیامین نتانیاهو: «ما می‌پذیریم که آمریکا شریک ارشد ماست؛ این موضوع کاملاً روشن است. هیچ‌کس نمی‌گوید اسرائیل یک ابرقدرت است؛ آمریکا ابرقدرت است.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792400956.45848,
-      "retries": 5,
-      "last_retry_at": 1792402994.6582632
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25987",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25987,
-      "text": "حقیقت یاب اتاق جنگ : خبر حرکت مستقیم ناو روزولت به منطقه سنتکام و خاورمیانه غلط است طبق اعلام رسمی ،  ابتدا حدود ۱۰ روز رزمایش انجام میدهد\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792401163.1403944,
-      "retries": 1,
-      "last_retry_at": 1792403015.4478014
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25988",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25988,
-      "text": "هشدار دوباره امنیتی آمریکا درباره کل خاورمیانه: دولت آمریکا از شهروندان خود در سراسر خاورمیانه خواسته است هوشیاری بیشتری داشته باشند و برای احتمال لغو پروازها، بسته‌شدن حریم هوایی و اختلال در سفرها آماده باشند. این هشدار با اشاره به حملات حوثی‌های مورد حمایت جمهوری اسلامی به عربستان و احتمال گسترش سریع درگیری‌ها، می‌افزاید که ایران و گروه‌های همسو با آن ممکن است منافع و مراکز مرتبط با آمریکا را در سراسر جهان هدف قرار دهند. \n@WarRoom 🚨🚨🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1792401200.345566,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25989",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25989,
-      "text": "مدیرعامل ایران ایر: کشور به ۱۰۰۰ فروند هواپیمای مسافربری نیاز دارد. الان حدود ۳۰۰ هواپیما داریم. از این تعداد ۱۳۰ تا ۱۴۰ فروند فعال بود. از این تعداد ۲۰ تا ۳۰ هواپیما در جنگ امحا شد.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792401244.6947346,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25995",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25995,
-      "text": "مارکو روبیو، درباره ایران: تصور کنید اگر ایران به سلاح هسته‌ای دست یافته بود، چه اتفاقی می‌افتاد در آن صورت، ایران می‌توانست بگوید: «راستی، تنگه هرمز متعلق به ماست و شما نمی‌تونید هیچ کاری در این باره بکنید؛ چون ما فقط به کشتی‌ها حمله نخواهیم کرد، بلکه اگر برای مقابله با این اقدام کاری انجام دهید، از سلاح هسته‌ای علیه شما استفاده خواهیم کرد.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792401939.6818786,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39420",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39420,
-      "text": "صور الأقمار الصناعية تظهر العديد من ناقلات النفط العملاقة وهي تقوم بتحميل النفط من ميناء رأس تنورة شرقي السعودية.",
-      "is_edit": false,
-      "enqueued_at": 1792402374.1333582,
-      "retries": 0,
-      "last_retry_at": 0
-    }
-  ],
-  "last_saved": "2026-10-19 09:45:30 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-19 10:27:33 UTC"
 }
