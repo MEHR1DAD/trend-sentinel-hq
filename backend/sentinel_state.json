@@ -824,9 +824,9 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 190,
-    "gemini-3.5-flash-lite": 2844,
+    "gemini-3.5-flash-lite": 2858,
     "gemini-2.5-flash": 219,
-    "gemini-3-flash-preview": 343,
+    "gemini-3-flash-preview": 344,
     "gemini-3.1-flash-lite": 1166,
     "gemini-3.1-flash-lite-preview": 104,
     "gemini-3.6-flash": 205,
@@ -836,5 +836,5 @@
     "gemini-flash-latest": 4
   },
   "smart_queue": [],
-  "last_saved": "2026-10-19 15:17:24 UTC"
+  "last_saved": "2026-10-19 15:49:34 UTC"
 }

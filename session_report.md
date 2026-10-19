@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 30 minutes
-- **Messages Processed:** 15
-- **Last Message Text:** غارات سعودية على محافظة إب اليمنية.
-- **Last Message Time:** 2026-10-19 14:58:05
+- **Uptime:** 31 minutes
+- **Messages Processed:** 11
+- **Last Message Text:** طائرة خاصة إماراتية قادمة من أبوظبي تهبط في تل أبيب.
+- **Last Message Time:** 2026-10-19 15:49:00
