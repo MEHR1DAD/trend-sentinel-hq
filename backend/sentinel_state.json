@@ -735,10 +735,10 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39393,
+    "Alibk3": 39400,
     "withyashar": 25978,
     "VahidOnline": 78762,
-    "netblocks": 1573,
+    "netblocks": 1574,
     "iliaen": 4746
   },
   "vahid_post_time": {},
@@ -827,7 +827,7 @@
     "gemini-3.5-flash-lite": 2269,
     "gemini-2.5-flash": 183,
     "gemini-3-flash-preview": 220,
-    "gemini-3.1-flash-lite": 944,
+    "gemini-3.1-flash-lite": 1001,
     "gemini-3.1-flash-lite-preview": 104,
     "gemini-3.6-flash": 131,
     "gemini-3.7-flash": 122,
@@ -837,16 +837,115 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_25979",
+      "id": "vip_multi_agent_netblocks_1574",
       "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25979,
-      "text": "شبکه اسکای‌نیوز : پرواز شماره OS82 شرکت هواپیمایی اتریش، با ۵۱ مسافر و ۶ خدمه، شامگاه یکشنبه پس از دریافت تهدید بمب‌گذاری در مسیر تل‌آویو به وین، به فرودگاه صوفیه در بلغارستان تغییر مسیر داد و با همراهی جنگنده میگ‌ـ۲۹ بلغارستان به‌سلامت فرود آمد. مسافران از هواپیما خارج شدند و بازرسی امنیتی آغاز شد. شرکت هواپیمایی اتریش اعلام کرد پس از پایان بررسی‌ها، مسافران به پرواز جایگزین منتقل می‌شوند\n@WarRoom",
+      "node": "netblocks",
+      "msg_id": 1574,
+      "text": "⚠️ Confirmed: Network data show a significant decline in internet connectivity in Donetsk Oblast, Russian-occupied #Ukraine, amid renewed Ukrainian drone attacks on energy infrastructure; observed connectivity is now down to 39% of ordinary levels",
+      "is_edit": false,
+      "enqueued_at": 1792373122.984128,
+      "retries": 6,
+      "last_retry_at": 1792374764.6682162
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39394",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39394,
+      "text": "السفارة الأميركية في الكويت تصدر تحذيرًا أمنيًا للأميركيين من احتمال إغلاق المجال الجوي على خليفة التطورات فى المنطقة.",
+      "is_edit": false,
+      "enqueued_at": 1792373446.6747513,
+      "retries": 3,
+      "last_retry_at": 1792374823.7468045
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39395",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39395,
+      "text": "السفارة الأميركية في البحرين تصدر تحذيرًا أمنيًا للأميركيين من احتمال إغلاق المجال الجوي على خليفة التطورات فى المنطقة.",
+      "is_edit": false,
+      "enqueued_at": 1792373527.4880638,
+      "retries": 1,
+      "last_retry_at": 1792374667.23064
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39396",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39396,
+      "text": "السفارة الأميركية في الأردن تصدر تحذيرًا أمنيًا للأميركيين من احتمال إغلاق المجال الجوي على خليفة التطورات فى المنطقة.",
+      "is_edit": false,
+      "enqueued_at": 1792373633.103397,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39397",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39397,
+      "text": "السفارة الأميركية في الكيان الصهيوني تصدر تحذيرًا أمنيًا للأميركيين من احتمال إغلاق المجال الجوي على خليفة التطورات فى المنطقة.",
+      "is_edit": false,
+      "enqueued_at": 1792373704.3670933,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39398",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39398,
+      "text": "السفارة الأميركية في قطر تصدر تحذيرًا أمنيًا للأميركيين من احتمال إغلاق المجال الجوي على خليفة التطورات فى المنطقة.",
+      "is_edit": false,
+      "enqueued_at": 1792373937.0775855,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39399",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39399,
+      "text": "السفارة الأميركية في العراق تصدر تحذيرًا أمنيًا للأميركيين من احتمال إغلاق المجال الجوي على خليفة التطورات فى المنطقة.",
+      "is_edit": false,
+      "enqueued_at": 1792374046.457011,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39400",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39400,
+      "text": "هجوم يمني في مدينة جيزان السعودية.",
       "is_edit": true,
-      "enqueued_at": 1792371474.9031963,
-      "retries": 7,
-      "last_retry_at": 1792372914.4521518
+      "enqueued_at": 1792374286.9988656,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39401",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39401,
+      "text": "السفارة الأميركية في لبنان تصدر تحذيرًا أمنيًا للأميركيين من احتمال إغلاق المجال الجوي على خلفية التطورات فى المنطقة.",
+      "is_edit": false,
+      "enqueued_at": 1792374322.2375,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39402",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39402,
+      "text": "السفارة الأميركية الافتراضية في إيران تصدر تحذيرًا أمنيًا للأميركيين من احتمال إغلاق المجال الجوي على خلفية التطورات فى المنطقة وتطالبهم بمغادرة إيران",
+      "is_edit": false,
+      "enqueued_at": 1792374630.1567044,
+      "retries": 0,
+      "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-19 01:23:44 UTC"
+  "last_saved": "2026-10-19 01:53:54 UTC"
 }
