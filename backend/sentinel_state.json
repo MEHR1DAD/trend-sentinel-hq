@@ -735,9 +735,9 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39400,
+    "Alibk3": 39404,
     "withyashar": 25979,
-    "VahidOnline": 78762,
+    "VahidOnline": 78763,
     "netblocks": 1574,
     "iliaen": 4746
   },
@@ -823,8 +823,8 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 133,
-    "gemini-3.5-flash-lite": 2270,
+    "gemini-3.8-flash": 134,
+    "gemini-3.5-flash-lite": 2271,
     "gemini-2.5-flash": 184,
     "gemini-3-flash-preview": 223,
     "gemini-3.1-flash-lite": 1165,
@@ -835,18 +835,6 @@
     "gemini-3.5-flash": 31,
     "gemini-flash-latest": 4
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39394",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39394,
-      "text": "السفارة الأميركية في الكويت تصدر تحذيرًا أمنيًا للأميركيين من احتمال إغلاق المجال الجوي على خلفية التطورات فى المنطقة.",
-      "is_edit": true,
-      "enqueued_at": 1792382863.170399,
-      "retries": 4,
-      "last_retry_at": 1792383173.24364
-    }
-  ],
-  "last_saved": "2026-10-19 04:15:52 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-19 04:44:19 UTC"
 }
