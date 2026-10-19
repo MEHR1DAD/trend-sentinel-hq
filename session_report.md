@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 37 minutes
-- **Messages Processed:** 19
-- **Last Message Text:** فایننشال تایمز: تندروهای ایران می‌گویند زمان دستیابی به سلاح هسته‌ای فرا رسیده است.
-@WarRoom
-- **Last Message Time:** 2026-10-19 13:29:04
+- **Uptime:** 35 minutes
+- **Messages Processed:** 37
+- **Last Message Text:** لحظة إطلاق الرشقات الصاروخية اليمنية نحو السعودية.
+- **Last Message Time:** 2026-10-19 14:07:11
