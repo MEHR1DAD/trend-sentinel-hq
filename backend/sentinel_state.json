@@ -823,85 +823,41 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 190,
-    "gemini-3.5-flash-lite": 3172,
+    "gemini-3.8-flash": 207,
+    "gemini-3.5-flash-lite": 3190,
     "gemini-2.5-flash": 239,
-    "gemini-3-flash-preview": 395,
-    "gemini-3.1-flash-lite": 1406,
+    "gemini-3-flash-preview": 402,
+    "gemini-3.1-flash-lite": 1433,
     "gemini-3.1-flash-lite-preview": 139,
-    "gemini-3.6-flash": 225,
-    "gemini-3.7-flash": 180,
+    "gemini-3.6-flash": 236,
+    "gemini-3.7-flash": 188,
     "gemini-flash-lite-latest": 34,
-    "gemini-3.5-flash": 63,
+    "gemini-3.5-flash": 64,
     "gemini-flash-latest": 5
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39477",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39477,
-      "text": "الطائرات المقاتلة تحلق فوق جنوب وغرب العراق.",
-      "is_edit": false,
-      "enqueued_at": 1792449178.6286914,
-      "retries": 4,
-      "last_retry_at": 1792451749.248737
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39481",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39481,
-      "text": "وزير الحرب الأميركي يزور الكيان الصهيوني بزيارة غير معلنة، ويلتقي نتنياهو.",
-      "is_edit": true,
-      "enqueued_at": 1792449426.655701,
-      "retries": 3,
-      "last_retry_at": 1792451662.276511
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26047",
+      "id": "vip_multi_agent_withyashar_26046",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
-      "msg_id": 26047,
-      "text": "آکسیوس به نقل از دو منبع آگاه: پیت هگست، وزیر جنگ آمریکا، امروز در اسرائیل با بنیامین نتانیاهو، نخست‌وزیر اسرائیل، دیدار کرده است.\n@WarRoom",
+      "msg_id": 26046,
+      "text": "جی‌دی ونس درباره ایران گفت: «این جنگ می‌تواند فقط در حالتی خیلی زود تمام شود که ترامپ تصمیم بگیرد تسلیم شود و اجازه دهد ایرانی‌ها کنترل عرضه جهانی نفت را در دست بگیرند. فکر نمی‌کنم هیچ آمریکایی واقعاً بخواهد او چنین کاری انجام دهد.»\n@WarRoom",
       "is_edit": false,
-      "enqueued_at": 1792449602.194969,
-      "retries": 3,
-      "last_retry_at": 1792451698.140179
+      "enqueued_at": 1792451820.1727939,
+      "retries": 10,
+      "last_retry_at": 1792453462.9326835
     },
     {
-      "id": "vip_multi_agent_Alibk3_39482",
+      "id": "vip_multi_agent_withyashar_26048",
       "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39482,
-      "text": "هيئة البث العبرية:\n\nوزير الحرب الأميركي زار نتنياهو اليوم بزيارة غير معلنة والتقى كبار المسؤولين، في ظل مناقشات أمريكية إسرائيلية حول إمكانية استئناف العمليات القتالية الكبرى ضد إيران.",
+      "node": "withyashar",
+      "msg_id": 26048,
+      "text": "یک سامانه پدافند هوایی ایرانی سوم خرداد هنگام انتقال در‌ نزدیکی تهران مشاهده شده است.\n@WarRoom",
       "is_edit": false,
-      "enqueued_at": 1792449920.8973322,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39485",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39485,
-      "text": "رصد جسم مجهول في أجواء شرق العراق.",
-      "is_edit": true,
-      "enqueued_at": 1792450635.8885982,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39486",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39486,
-      "text": "تتذكرون منشورنا الساعة 6 مساءً حول وصول طائرة حكومية إماراتية لتل أبيب؟\n\nالآن تم تأكيد مشاركة مسؤولين إماراتيين في الاجتماع الصهيوني-الأميركي، حول إيران.",
-      "is_edit": false,
-      "enqueued_at": 1792451104.2844467,
-      "retries": 0,
-      "last_retry_at": 0
+      "enqueued_at": 1792452736.7457216,
+      "retries": 6,
+      "last_retry_at": 1792453488.6603124
     }
   ],
-  "last_saved": "2026-10-19 23:15:54 UTC"
+  "last_saved": "2026-10-19 23:47:11 UTC"
 }

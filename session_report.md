@@ -1,6 +1,7 @@
 # Sentinel Session Report
 
-- **Uptime:** 47 minutes
-- **Messages Processed:** 39
-- **Last Message Text:** تأكيدًا لما نشرناه عند الساعة السادسة مساءً بشأن وصول طائرة حكومية إماراتية إلى تل أبيب، تأكدت الآن ...
-- **Last Message Time:** 2026-10-19 23:05:18
+- **Uptime:** 30 minutes
+- **Messages Processed:** 9
+- **Last Message Text:** یک سامانه پدافند هوایی ایرانی سوم خرداد هنگام انتقال در‌ نزدیکی تهران مشاهده شده است.
+@WarRoom
+- **Last Message Time:** 2026-10-19 23:31:31
