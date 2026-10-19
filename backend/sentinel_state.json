@@ -824,95 +824,17 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 133,
-    "gemini-3.5-flash-lite": 2269,
-    "gemini-2.5-flash": 183,
-    "gemini-3-flash-preview": 221,
-    "gemini-3.1-flash-lite": 1052,
+    "gemini-3.5-flash-lite": 2270,
+    "gemini-2.5-flash": 184,
+    "gemini-3-flash-preview": 223,
+    "gemini-3.1-flash-lite": 1085,
     "gemini-3.1-flash-lite-preview": 104,
-    "gemini-3.6-flash": 131,
+    "gemini-3.6-flash": 132,
     "gemini-3.7-flash": 124,
     "gemini-flash-lite-latest": 29,
     "gemini-3.5-flash": 31,
-    "gemini-flash-latest": 3
+    "gemini-flash-latest": 4
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39400",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39400,
-      "text": "هجوم يمني في مدينة جيزان السعودية.",
-      "is_edit": true,
-      "enqueued_at": 1792374286.9988656,
-      "retries": 3,
-      "last_retry_at": 1792376674.9309115
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39401",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39401,
-      "text": "السفارة الأميركية في لبنان تصدر تحذيرًا أمنيًا للأميركيين من احتمال إغلاق المجال الجوي على خلفية التطورات فى المنطقة.",
-      "is_edit": false,
-      "enqueued_at": 1792374322.2375,
-      "retries": 3,
-      "last_retry_at": 1792376710.054131
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39402",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39402,
-      "text": "السفارة الأميركية الافتراضية في إيران تصدر تحذيرًا أمنيًا للأميركيين من احتمال إغلاق المجال الجوي على خلفية التطورات فى المنطقة وتطالبهم بمغادرة إيران",
-      "is_edit": false,
-      "enqueued_at": 1792374630.1567044,
-      "retries": 1,
-      "last_retry_at": 1792376775.0273435
-    },
-    {
-      "id": "vip_multi_agent_withyashar_25979",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 25979,
-      "text": "شبکه اسکای‌نیوز : پرواز شماره OS82 شرکت هواپیمایی اتریش، با ۵۱ مسافر و ۶ خدمه، شامگاه یکشنبه پس از دریافت تهدید بمب‌گذاری در مسیر تل‌آویو به وین، به فرودگاه صوفیه در بلغارستان تغییر مسیر داد و با همراهی جنگنده میگ‌ـ۲۹ بلغارستان به‌سلامت فرود آمد. مسافران از هواپیما خارج شدند و بازرسی امنیتی آغاز شد. شرکت هواپیمایی اتریش اعلام کرد پس از پایان بررسی‌ها، مسافران به پرواز جایگزین منتقل می‌شوند\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792374964.8172107,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_VahidOnline_78763",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78763,
-      "text": "وزیران خارجه کشورهای عضو شورای همکاری خلیج فارس در بیانیه پایانی نشست خود در منامه خواستار بازگشت به گفت‌وگو و دیپلماسی برای حل بحران کنونی با جمهوری اسلامی شدند و تاکید کردند هرگونه توافق باید برنامه هسته‌ای، موشکی و پهپادی تهران و حمایت از نیروهای نیابتی را در بر بگیرد.\n\nاین شورا یکشنبه ۲۶ مهر اعلام کرد تلاش‌ها برای دستیابی به راه‌حل سیاسی باید بر پایه احترام به حاکمیت ملی، حسن همجواری و عدم مداخله در امور داخلی کشورها باشد.\nوزیران خارجه کشورهای عضو همچنین تاکید کردند که این کشورها باید در هرگونه مذاکره یا ترتیباتی که بر امنیت و منافع آن‌ها تاثیر می‌گذارد، مشارکت داشته باشند.\n\nشورای همکاری خلیج فارس در بخش دیگری از بیانیه خود، حملات موشکی و پهپادی جمهوری اسلامی و نیروهای نیابتی آن علیه کشورهای عضو و اردن را محکوم کرد و خواستار تلاش‌های دیپلماتیک بیشتر برای جلوگیری از گسترش تنش‌ها در منطقه شد.\n@VahidOOnLine\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1792375202.64656,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39403",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39403,
-      "text": "السفارة الأميركية في الإمارات تصدر تحذيرًا أمنيًا للأميركيين من احتمال إغلاق المجال الجوي على خلفية التطورات فى المنطقة.",
-      "is_edit": false,
-      "enqueued_at": 1792375526.5202105,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39404",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39404,
-      "text": "توقف حركة الملاحة الجوية في مطار جدة.",
-      "is_edit": false,
-      "enqueued_at": 1792375632.5218549,
-      "retries": 0,
-      "last_retry_at": 0
-    }
-  ],
-  "last_saved": "2026-10-19 02:26:42 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-19 03:03:57 UTC"
 }
