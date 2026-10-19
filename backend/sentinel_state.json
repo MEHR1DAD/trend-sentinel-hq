@@ -823,74 +823,30 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 132,
-    "gemini-3.5-flash-lite": 2264,
-    "gemini-2.5-flash": 182,
-    "gemini-3-flash-preview": 217,
-    "gemini-3.1-flash-lite": 919,
+    "gemini-3.8-flash": 133,
+    "gemini-3.5-flash-lite": 2269,
+    "gemini-2.5-flash": 183,
+    "gemini-3-flash-preview": 220,
+    "gemini-3.1-flash-lite": 944,
     "gemini-3.1-flash-lite-preview": 104,
-    "gemini-3.6-flash": 129,
-    "gemini-3.7-flash": 120,
+    "gemini-3.6-flash": 131,
+    "gemini-3.7-flash": 122,
     "gemini-flash-lite-latest": 29,
-    "gemini-3.5-flash": 29,
+    "gemini-3.5-flash": 31,
     "gemini-flash-latest": 3
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39389",
+      "id": "vip_multi_agent_withyashar_25979",
       "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39389,
-      "text": "القوات اليمنية تحرر قلعة الرهن في عزان، جنوب منطقة النجادة بجبل صبر في تعز.",
-      "is_edit": false,
-      "enqueued_at": 1792369349.1768875,
-      "retries": 10,
-      "last_retry_at": 1792371133.5506022
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39392",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39392,
-      "text": "القوات اليمنية تحرر مناطق عنقبة والوقعة وجبل الجُميمة، غرب مديرية مشرعة وحدنان في جبل صبر بمحافظة تعز.",
-      "is_edit": false,
-      "enqueued_at": 1792369363.2143466,
-      "retries": 9,
-      "last_retry_at": 1792371181.492676
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39390",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39390,
-      "text": "توقف مطار الدمام بالمنطقة الشرقية في السعودية الآن.",
-      "is_edit": false,
-      "enqueued_at": 1792369377.1115067,
-      "retries": 8,
-      "last_retry_at": 1792371234.5340424
-    },
-    {
-      "id": "vip_multi_agent_netblocks_1574",
-      "pipeline": "vip_multi_agent",
-      "node": "netblocks",
-      "msg_id": 1574,
-      "text": "⚠️ Confirmed: Network data show a significant decline in internet connectivity in Donetsk Oblast, Russian-occupied #Ukraine, amid renewed Ukrainian drone attacks on energy infrastructure; observed connectivity is now down to 39% of ordinary levels",
-      "is_edit": false,
-      "enqueued_at": 1792369381.039026,
-      "retries": 7,
-      "last_retry_at": 1792371033.5323133
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39393",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39393,
-      "text": "القوات اليمنية من مفرق المخأ، بعد تجدد مزاعم القوات الموالية للسعودية بالوصول إليه",
+      "node": "withyashar",
+      "msg_id": 25979,
+      "text": "شبکه اسکای‌نیوز : پرواز شماره OS82 شرکت هواپیمایی اتریش، با ۵۱ مسافر و ۶ خدمه، شامگاه یکشنبه پس از دریافت تهدید بمب‌گذاری در مسیر تل‌آویو به وین، به فرودگاه صوفیه در بلغارستان تغییر مسیر داد و با همراهی جنگنده میگ‌ـ۲۹ بلغارستان به‌سلامت فرود آمد. مسافران از هواپیما خارج شدند و بازرسی امنیتی آغاز شد. شرکت هواپیمایی اتریش اعلام کرد پس از پایان بررسی‌ها، مسافران به پرواز جایگزین منتقل می‌شوند\n@WarRoom",
       "is_edit": true,
-      "enqueued_at": 1792370052.1589112,
-      "retries": 3,
-      "last_retry_at": 1792371083.553814
+      "enqueued_at": 1792371474.9031963,
+      "retries": 7,
+      "last_retry_at": 1792372914.4521518
     }
   ],
-  "last_saved": "2026-10-19 00:54:22 UTC"
+  "last_saved": "2026-10-19 01:23:44 UTC"
 }
