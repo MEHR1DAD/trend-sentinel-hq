@@ -824,17 +824,29 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 190,
-    "gemini-3.5-flash-lite": 3048,
-    "gemini-2.5-flash": 227,
-    "gemini-3-flash-preview": 362,
-    "gemini-3.1-flash-lite": 1166,
+    "gemini-3.5-flash-lite": 3097,
+    "gemini-2.5-flash": 232,
+    "gemini-3-flash-preview": 379,
+    "gemini-3.1-flash-lite": 1167,
     "gemini-3.1-flash-lite-preview": 104,
-    "gemini-3.6-flash": 207,
-    "gemini-3.7-flash": 179,
+    "gemini-3.6-flash": 215,
+    "gemini-3.7-flash": 180,
     "gemini-flash-lite-latest": 34,
-    "gemini-3.5-flash": 53,
+    "gemini-3.5-flash": 60,
     "gemini-flash-latest": 4
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-19 18:53:43 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_withyashar_26031",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26031,
+      "text": "خبرنگار: مکرون جنگ ایران و عملاً خود شما را مسئول شورش‌ها در فرانسه می‌داند.\nترامپ: فکر می‌کنم این خبر جعلی است. شما خبرنگار کدام رسانه هستید؟\nخبرنگار: خیر، آقای رئیس‌جمهور؛ من از رسانه «دیلی وایر» هستم.\nترامپ: آه، دیلی وایر رسانه خوبی است. ببخشید!\nترامپ : پاریس به زودی یک شهر مسلمان میشه\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792438294.5023024,
+      "retries": 0,
+      "last_retry_at": 0
+    }
+  ],
+  "last_saved": "2026-10-19 19:31:48 UTC"
 }
