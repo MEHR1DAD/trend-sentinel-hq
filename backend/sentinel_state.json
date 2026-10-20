@@ -824,29 +824,17 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 209,
-    "gemini-3.5-flash-lite": 3218,
+    "gemini-3.5-flash-lite": 3219,
     "gemini-2.5-flash": 246,
-    "gemini-3-flash-preview": 413,
-    "gemini-3.1-flash-lite": 1686,
-    "gemini-3.1-flash-lite-preview": 147,
+    "gemini-3-flash-preview": 418,
+    "gemini-3.1-flash-lite": 1689,
+    "gemini-3.1-flash-lite-preview": 149,
     "gemini-3.6-flash": 249,
     "gemini-3.7-flash": 189,
     "gemini-flash-lite-latest": 36,
     "gemini-3.5-flash": 74,
     "gemini-flash-latest": 6
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39492",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39492,
-      "text": "الحرس الثوري أعلن صباح اليوم إسقاط الطائرة المسيّرة رقم 54 من طراز MQ-9 الأميركية فوق مضيق هرمز",
-      "is_edit": false,
-      "enqueued_at": 1792470535.1438687,
-      "retries": 9,
-      "last_retry_at": 1792471980.7073214
-    }
-  ],
-  "last_saved": "2026-10-20 04:53:58 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-20 05:23:28 UTC"
 }
