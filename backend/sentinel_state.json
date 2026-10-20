@@ -735,7 +735,7 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39492,
+    "Alibk3": 39496,
     "withyashar": 26055,
     "VahidOnline": 78771,
     "netblocks": 1574,
@@ -823,63 +823,85 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 210,
-    "gemini-3.5-flash-lite": 3266,
+    "gemini-3.8-flash": 211,
+    "gemini-3.5-flash-lite": 3338,
     "gemini-2.5-flash": 249,
-    "gemini-3-flash-preview": 428,
+    "gemini-3-flash-preview": 465,
     "gemini-3.1-flash-lite": 1722,
     "gemini-3.1-flash-lite-preview": 149,
-    "gemini-3.6-flash": 285,
+    "gemini-3.6-flash": 307,
     "gemini-3.7-flash": 193,
     "gemini-flash-lite-latest": 36,
-    "gemini-3.5-flash": 76,
+    "gemini-3.5-flash": 88,
     "gemini-flash-latest": 6
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39493",
+      "id": "vip_multi_agent_Alibk3_39495",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39493,
-      "text": "القوات اليمنية تتقدم في قرى جبل صبر في محافظة تعز.",
-      "is_edit": false,
-      "enqueued_at": 1792479922.9009943,
-      "retries": 9,
-      "last_retry_at": 1792481573.061555
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39494",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39494,
-      "text": "رويترز: \n\nشركات النفط الكبرى تواجه اختبار الإنفاق من الأموال غير المتوقعة نتيجة حرب إيران.",
-      "is_edit": false,
-      "enqueued_at": 1792480125.2748852,
-      "retries": 8,
-      "last_retry_at": 1792481591.850987
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26053",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26053,
-      "text": "رسانه‌های کره شمالی با انتشار عکس‌‌های جدید از کیم جونگ اون ، به شایعه مرگ وی پایان دادند \n@WarRoom\nیاشار : این تحلیل هم درست در اومد",
+      "msg_id": 39495,
+      "text": "استمرار توقف 9 مطارات في السعودية عن استقبال الرحلات….\n\nمطاري نجران وجازان لأكثر من 334 ساعة، والرياض لنحو 236 ساعة، فيما تتراوح مدة توقف بقية المطارات بين ساعتين و20 ساعة.",
       "is_edit": true,
-      "enqueued_at": 1792480452.5794454,
-      "retries": 7,
-      "last_retry_at": 1792481427.290414
+      "enqueued_at": 1792482356.668775,
+      "retries": 6,
+      "last_retry_at": 1792483357.5151246
     },
     {
-      "id": "vip_multi_agent_withyashar_26056",
+      "id": "vip_multi_agent_Alibk3_39497",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39497,
+      "text": "قائد الجيش الباكستاني، عاصم منير في طريقه إلى طهران.",
+      "is_edit": false,
+      "enqueued_at": 1792482466.135384,
+      "retries": 6,
+      "last_retry_at": 1792483469.013162
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39498",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39498,
+      "text": "توقف مطار الدمام في السعودية الآن.",
+      "is_edit": false,
+      "enqueued_at": 1792482538.842343,
+      "retries": 5,
+      "last_retry_at": 1792483412.6401532
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26057",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
-      "msg_id": 26056,
-      "text": "وزیر دفاع اسرائیل: تصمیمی برای ایجاد یک تیپ نظامی تخصصی در زمینه فضا اتخاذ شد، به منظور تبدیل اسرائیل به یک قدرت پیشرو جهانی در این حوزه.\n@WarRoom",
+      "msg_id": 26057,
+      "text": "رویترز: قیمت نفت برنت در معاملات امروز به نزدیکی ۱۱۱ دلار در هر بشکه رسید و به بالاترین سطح حدود پنج ماه اخیر نزدیک شد. نگرانی از حملات به زیرساخت‌های انرژی عربستان و اختلال در تردد دریایی خلیج فارس از عوامل افزایش قیمت‌هاست. \n@WarRoom",
       "is_edit": false,
-      "enqueued_at": 1792481574.531113,
-      "retries": 0,
-      "last_retry_at": 0
+      "enqueued_at": 1792482582.9179842,
+      "retries": 5,
+      "last_retry_at": 1792483489.1019943
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26058",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26058,
+      "text": "رویترز: شرکت‌های بزرگ نفتی مانند شل، بی‌پی و توتال‌انرژیز انتظار دارند حاشیه سود پالایش نفت در سه‌ماهه سوم به‌شدت افزایش یابد. جنگ و اختلال در تنگه هرمز باعث بالا رفتن قیمت انرژی و سودآوری معاملات و پالایش شده؛ اکنون سرمایه‌گذاران منتظرند ببینند شرکت‌ها این درآمد اضافی را چگونه مصرف می‌کنند. \n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792483060.4933195,
+      "retries": 3,
+      "last_retry_at": 1792483433.1578903
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26059",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26059,
+      "text": "این‌وستینگ: بیت‌کوین در معاملات امروز به زیر ۸۲ هزار دلار سقوط کرد. افزایش قیمت نفت، تنش‌های ژئوپلیتیکی و نگرانی درباره مسیر نرخ بهره آمریکا، تقاضا برای دارایی‌های پرریسک را کاهش داده‌اند. \n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792483136.033338,
+      "retries": 2,
+      "last_retry_at": 1792483377.6389525
     }
   ],
-  "last_saved": "2026-10-20 07:33:39 UTC"
+  "last_saved": "2026-10-20 08:05:24 UTC"
 }
