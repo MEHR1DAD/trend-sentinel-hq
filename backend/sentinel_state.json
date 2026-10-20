@@ -735,8 +735,8 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39496,
-    "withyashar": 26055,
+    "Alibk3": 39504,
+    "withyashar": 26064,
     "VahidOnline": 78771,
     "netblocks": 1574,
     "iliaen": 4746
@@ -824,84 +824,17 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 211,
-    "gemini-3.5-flash-lite": 3338,
-    "gemini-2.5-flash": 249,
-    "gemini-3-flash-preview": 465,
+    "gemini-3.5-flash-lite": 3417,
+    "gemini-2.5-flash": 271,
+    "gemini-3-flash-preview": 486,
     "gemini-3.1-flash-lite": 1722,
     "gemini-3.1-flash-lite-preview": 149,
-    "gemini-3.6-flash": 307,
-    "gemini-3.7-flash": 193,
+    "gemini-3.6-flash": 313,
+    "gemini-3.7-flash": 194,
     "gemini-flash-lite-latest": 36,
-    "gemini-3.5-flash": 88,
+    "gemini-3.5-flash": 90,
     "gemini-flash-latest": 6
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39495",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39495,
-      "text": "استمرار توقف 9 مطارات في السعودية عن استقبال الرحلات….\n\nمطاري نجران وجازان لأكثر من 334 ساعة، والرياض لنحو 236 ساعة، فيما تتراوح مدة توقف بقية المطارات بين ساعتين و20 ساعة.",
-      "is_edit": true,
-      "enqueued_at": 1792482356.668775,
-      "retries": 6,
-      "last_retry_at": 1792483357.5151246
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39497",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39497,
-      "text": "قائد الجيش الباكستاني، عاصم منير في طريقه إلى طهران.",
-      "is_edit": false,
-      "enqueued_at": 1792482466.135384,
-      "retries": 6,
-      "last_retry_at": 1792483469.013162
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39498",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39498,
-      "text": "توقف مطار الدمام في السعودية الآن.",
-      "is_edit": false,
-      "enqueued_at": 1792482538.842343,
-      "retries": 5,
-      "last_retry_at": 1792483412.6401532
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26057",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26057,
-      "text": "رویترز: قیمت نفت برنت در معاملات امروز به نزدیکی ۱۱۱ دلار در هر بشکه رسید و به بالاترین سطح حدود پنج ماه اخیر نزدیک شد. نگرانی از حملات به زیرساخت‌های انرژی عربستان و اختلال در تردد دریایی خلیج فارس از عوامل افزایش قیمت‌هاست. \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792482582.9179842,
-      "retries": 5,
-      "last_retry_at": 1792483489.1019943
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26058",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26058,
-      "text": "رویترز: شرکت‌های بزرگ نفتی مانند شل، بی‌پی و توتال‌انرژیز انتظار دارند حاشیه سود پالایش نفت در سه‌ماهه سوم به‌شدت افزایش یابد. جنگ و اختلال در تنگه هرمز باعث بالا رفتن قیمت انرژی و سودآوری معاملات و پالایش شده؛ اکنون سرمایه‌گذاران منتظرند ببینند شرکت‌ها این درآمد اضافی را چگونه مصرف می‌کنند. \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792483060.4933195,
-      "retries": 3,
-      "last_retry_at": 1792483433.1578903
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26059",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26059,
-      "text": "این‌وستینگ: بیت‌کوین در معاملات امروز به زیر ۸۲ هزار دلار سقوط کرد. افزایش قیمت نفت، تنش‌های ژئوپلیتیکی و نگرانی درباره مسیر نرخ بهره آمریکا، تقاضا برای دارایی‌های پرریسک را کاهش داده‌اند. \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792483136.033338,
-      "retries": 2,
-      "last_retry_at": 1792483377.6389525
-    }
-  ],
-  "last_saved": "2026-10-20 08:05:24 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-20 09:40:58 UTC"
 }
