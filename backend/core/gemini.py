@@ -37,6 +37,7 @@ class GeminiClient:
         self.key_last_call_time = {k: 0.0 for k in self.api_keys}
         self.gemini_lock = asyncio.Lock()
         self.last_gemini_call_time = 0.0
+        self.model_cooldown_until = {}
 
         # پشته‌های پویا و کش دیسک برای سرباز شماره صفر
         self.cache_file = 'backend/model_cache.json'
@@ -65,17 +66,15 @@ class GeminiClient:
             return self.api_keys[best_idx]
         return None
 
-    def rotate_api_key(self, cooldown_seconds=60):
+    def rotate_api_key(self, key=None, cooldown_seconds=60):
         if not self.api_keys:
             return None
-        cur_key = self.api_keys[self.current_key_idx % len(self.api_keys)]
+        target_key = key if key and key in self.api_keys else self.api_keys[(self.current_key_idx - 1) % len(self.api_keys)]
         if cooldown_seconds > 0:
-            self.key_cooldown_until[cur_key] = time.time() + cooldown_seconds
-        old_idx = self.current_key_idx
-        self.current_key_idx = (self.current_key_idx + 1) % len(self.api_keys)
-        new_key = self.get_api_key(allow_cooldown=False)
-        print(f"🔄 [SOLDIER 0: KEY ROTATE] Switched Key: slot #{old_idx + 1} ➡️ slot #{self.current_key_idx + 1}/{len(self.api_keys)} (Cooldown {cooldown_seconds}s)")
-        return new_key
+            self.key_cooldown_until[target_key] = time.time() + cooldown_seconds
+        available = any(self.key_cooldown_until.get(k, 0.0) <= time.time() for k in self.api_keys)
+        print(f"🔄 [SOLDIER 0: KEY ROTATE] Cooldown on key {target_key[:8]}... ({cooldown_seconds}s). Active keys available: {available}")
+        return target_key
 
     def _get_key_lock(self, key):
         if key not in self.key_locks:
@@ -100,7 +99,15 @@ class GeminiClient:
         if not self.lite_stack:
             self.lite_stack = [m for m in GEMINI_MODELS_PRIORITY if 'lite' in m] or [DEFAULT_GEMINI_MODEL]
         if not self.flash_stack:
-            self.flash_stack = [m for m in GEMINI_MODELS_PRIORITY if 'lite' not in m and 'pro' not in m] or ["gemini-2.5-flash", "gemini-2.0-flash"]
+            self.flash_stack = [m for m in GEMINI_MODELS_PRIORITY if 'lite' not in m and 'pro' not in m] or ["gemini-3.5-flash", "gemini-2.5-flash"]
+
+        # اولویت‌بندی مدل‌های پایدار تولیدی
+        if self.lite_stack:
+            self.lite_stack.sort(key=self.parse_model_version_score, reverse=True)
+            self.latest_flash_lite_model = self.lite_stack[0]
+            self.current_gemini_model = self.lite_stack[0]
+        if self.flash_stack:
+            self.flash_stack.sort(key=self.parse_model_version_score, reverse=True)
 
     def save_cached_stacks(self):
         try:
@@ -120,9 +127,11 @@ class GeminiClient:
         clean = model_name.lower().replace("models/", "").strip()
         nums = re.findall(r'(\d+(?:\.\d+)?)', clean)
         score = float(nums[0]) if nums else 0.0
+        # مدل‌های پیش‌نمایش یا دارای سقف روزانه محدود (مانند ۳.۸ و ۳.۷ و ۳.۶ و ۳.۱ با لیمیت ۲۰) نباید اولویت بالاتری از مدل‌های پایدار GA داشته باشند
+        is_experimental = 1 if any(exp in clean for exp in ['3.8', '3.7', '3.6', '3.1', 'preview', 'exp', 'omni']) else 0
+        is_production = 1 if not is_experimental else 0
         has_date = 1 if re.search(r'\d{2}-\d{2}|\d{4}', clean) else 0
-        is_stable = 0 if ('preview' in clean or 'exp' in clean) else 1
-        return (score, is_stable, has_date, clean)
+        return (is_production, score, has_date, clean)
 
     async def fetch_latest_google_models(self, force=False):
         """
@@ -204,13 +213,18 @@ class GeminiClient:
 
         num_keys = max(len(self.api_keys), 1)
 
-        # پیمایش نزولی مدل‌ها در پشته (از جدیدترین به قدیمی‌ترین)
+        # پیمایش نزولی مدل‌ها در پشته (از جدیدترین و پایدارترین مدل‌ها)
         for model_idx, model in enumerate(stack):
+            cooldown_left = self.model_cooldown_until.get(model, 0.0) - time.time()
+            if cooldown_left > 0:
+                print(f"⏳ [SOLDIER 0 | {soldier_name}] Model {model} in cooldown ({int(cooldown_left)}s left). Skipping to next model...")
+                continue
+
             # برای هر مدل، شانس روی کلیدهای معتبر
             for key_attempt in range(num_keys):
                 cur_key = self.get_api_key(allow_cooldown=False)
                 if not cur_key:
-                    print(f"⏳ [SOLDIER 0 | {soldier_name}] All API keys currently in cooldown. Routing to Smart Queue...")
+                    print(f"⏳ [SOLDIER 0 | {soldier_name}] All API keys currently in cooldown for model {model}.")
                     break
 
                 t0 = time.time()
@@ -253,7 +267,7 @@ class GeminiClient:
                     # خالی بودن یا فیلتر سیفتی
                     finish_reason = candidates[0].get("finishReason", "UNKNOWN") if candidates else "NO_CANDIDATES"
                     print(f"⚠️ [SOLDIER 0 | {soldier_name}] Model {model} returned empty content ({finish_reason}). Key attempt {key_attempt+1}/{num_keys}")
-                    self.rotate_api_key(cooldown_seconds=10)
+                    self.rotate_api_key(key=cur_key, cooldown_seconds=10)
 
                 except urllib.error.HTTPError as e:
                     err_body = ""
@@ -265,25 +279,37 @@ class GeminiClient:
                     if e.code == 403:
                         print(f"🛑 [SOLDIER 0 | {soldier_name}] Key {cur_key[:12]}... PERMISSION_DENIED / LEAKED (403). Permanently disabling key.")
                         self.key_cooldown_until[cur_key] = time.time() + (86400 * 30)
-                        self.rotate_api_key(cooldown_seconds=0)
+                        self.rotate_api_key(key=cur_key, cooldown_seconds=0)
                     elif e.code == 429:
-                        print(f"⚠️ [SOLDIER 0 | {soldier_name}] Quota error 429 on {model} (Key #{self.current_key_idx+1}). Rotating key...")
-                        self.rotate_api_key(cooldown_seconds=60)
-                        await asyncio.sleep(1.0)
+                        # تفکیک خطای سهمیه اختصاصی مدل (مانند لیمیت ۲۰ در روز برای مدل‌های آزمایشی) از سهمیه کلی حساب
+                        is_model_specific = (
+                            any(t in err_body.lower() for t in ["permodel", "per_model", "limit: 20", "limit: 15", "limit: 50"])
+                            or any(exp in model for exp in ['3.8', '3.7', '3.6', '3.1', 'preview', 'exp', 'omni'])
+                        )
+                        if is_model_specific:
+                            print(f"🛑 [SOLDIER 0 | {soldier_name}] Model {model} hit model-specific quota limit (429). Cooldown model for 6h without penalizing API keys. Switching to next model...")
+                            self.model_cooldown_until[model] = time.time() + 21600 # 6 hours
+                            # بدون جریمه کردن کلید، بلافاصله از حلقه کلیدها خارج شو تا مدل بعدی در پشته امتحان شود
+                            break
+                        else:
+                            print(f"⚠️ [SOLDIER 0 | {soldier_name}] Account/RPM quota 429 on {model} (Key #{self.current_key_idx+1}). Rotating key with 15s cooldown...")
+                            self.rotate_api_key(key=cur_key, cooldown_seconds=15)
+                            await asyncio.sleep(0.5)
                     elif e.code == 503:
                         print(f"⚠️ [SOLDIER 0 | {soldier_name}] Model {model} temporarily busy (503). Switching to next model...")
                         await asyncio.sleep(0.5)
                         break # Switch to next model in stack without penalizing key
                     elif e.code == 404:
-                        print(f"⚠️ [SOLDIER 0 | {soldier_name}] Model {model} not found or deprecated (404). Dropping model from active cycle.")
+                        print(f"⚠️ [SOLDIER 0 | {soldier_name}] Model {model} not found or deprecated (404). Dropping model from active cycle for 24h.")
+                        self.model_cooldown_until[model] = time.time() + 86400
                         break # بلافاصله برو سراغ مدل بعدی پشته
                     else:
                         print(f"⚠️ [SOLDIER 0 | {soldier_name}] HTTP {e.code} on {model}: {err_body[:100]}. Rotating key...")
-                        self.rotate_api_key(cooldown_seconds=15)
+                        self.rotate_api_key(key=cur_key, cooldown_seconds=15)
 
                 except Exception as e:
                     print(f"⚠️ [SOLDIER 0 | {soldier_name}] Request error on {model}: {e}. Rotating key...")
-                    self.rotate_api_key(cooldown_seconds=15)
+                    self.rotate_api_key(key=cur_key, cooldown_seconds=15)
 
             # اگر تمام کلیدها برای این مدل ناموفق بودند، سقوط به مدل بعدی پشته
             if model_idx < len(stack) - 1:
@@ -291,37 +317,61 @@ class GeminiClient:
                 print(f"📉 [SOLDIER 0: MODEL FALLBACK | {soldier_name}] Model {model} exhausted. Falling back to #{model_idx+2}: {next_cand}")
 
         # اگر کل پشته تمام شد، تلاش نهایی روی پشته معکوس (Cross-Tier Rescue)
+        alt_tier = "flash" if tier == "lite" else "lite"
         alt_stack = self.flash_stack if tier == "lite" else self.lite_stack
         if alt_stack:
-            rescue_model = alt_stack[0]
-            print(f"🆘 [SOLDIER 0: RESCUE | {soldier_name}] Primary tier ({tier}) exhausted. Attempting cross-tier rescue with {rescue_model}...")
-            cur_key = self.get_api_key(allow_cooldown=True)
-            if cur_key:
-                t0 = time.time()
-                try:
-                    url = f"https://generativelanguage.googleapis.com/v1beta/models/{rescue_model}:generateContent?key={cur_key}"
-                    req = urllib.request.Request(url, data=json.dumps(payload).encode('utf-8'), headers={'Content-Type': 'application/json'}, method='POST')
-                    loop = asyncio.get_running_loop()
-                    def make_req():
-                        with urllib.request.urlopen(req, timeout=timeout) as response:
-                            return json.loads(response.read().decode('utf-8'))
-                    key_lock = self._get_key_lock(cur_key)
-                    async with key_lock:
-                        gap = time.time() - self.key_last_call_time.get(cur_key, 0.0)
-                        if gap < 1.0:
-                            await asyncio.sleep(1.0 - gap)
-                        self.key_last_call_time[cur_key] = time.time()
-                        data = await loop.run_in_executor(None, make_req)
-                    candidates = data.get("candidates", [])
-                    if candidates:
-                        parts = candidates[0].get("content", {}).get("parts", [])
-                        raw_text = "\n".join([p.get("text", "") for p in parts if p.get("text")]).strip()
-                        if raw_text:
-                            elapsed_sec = time.time() - t0
-                            print(f"✅ [SOLDIER 0: RESCUE SUCCESS | {soldier_name}] Rescued by {rescue_model} in {elapsed_sec:.2f}s.")
-                            return raw_text, rescue_model, elapsed_sec
-                except Exception as e:
-                    print(f"❌ [SOLDIER 0] Cross-tier rescue failed: {e}")
+            print(f"🆘 [SOLDIER 0: RESCUE | {soldier_name}] Primary tier ({tier}) exhausted. Attempting cross-tier rescue with {alt_tier} stack...")
+            for rescue_model in alt_stack:
+                if self.model_cooldown_until.get(rescue_model, 0.0) > time.time():
+                    continue
+                for key_attempt in range(num_keys):
+                    cur_key = self.get_api_key(allow_cooldown=True)
+                    if not cur_key:
+                        break
+                    t0 = time.time()
+                    try:
+                        url = f"https://generativelanguage.googleapis.com/v1beta/models/{rescue_model}:generateContent?key={cur_key}"
+                        req = urllib.request.Request(
+                            url,
+                            data=json.dumps(payload).encode('utf-8'),
+                            headers={'Content-Type': 'application/json'},
+                            method='POST'
+                        )
+                        loop = asyncio.get_running_loop()
+                        def make_req():
+                            with urllib.request.urlopen(req, timeout=timeout) as response:
+                                return json.loads(response.read().decode('utf-8'))
+
+                        key_lock = self._get_key_lock(cur_key)
+                        async with key_lock:
+                            gap = time.time() - self.key_last_call_time.get(cur_key, 0.0)
+                            if gap < 1.0:
+                                await asyncio.sleep(1.0 - gap)
+                            self.key_last_call_time[cur_key] = time.time()
+                            data = await loop.run_in_executor(None, make_req)
+
+                        candidates = data.get("candidates", [])
+                        if candidates:
+                            parts = candidates[0].get("content", {}).get("parts", [])
+                            raw_text = "\n".join([p.get("text", "") for p in parts if p.get("text")]).strip()
+                            if raw_text:
+                                elapsed_sec = time.time() - t0
+                                self.current_gemini_model = rescue_model
+                                self.last_used_model = rescue_model
+                                self.model_usage_stats[rescue_model] = self.model_usage_stats.get(rescue_model, 0) + 1
+                                print(f"✅ [SOLDIER 0: RESCUE SUCCESS | {soldier_name}] Rescued by {rescue_model} in {elapsed_sec:.2f}s.")
+                                return raw_text, rescue_model, elapsed_sec
+                    except urllib.error.HTTPError as e:
+                        if e.code == 429:
+                            is_per_model = any(exp in rescue_model for exp in ['3.8', '3.7', '3.6', '3.1', 'preview', 'exp', 'omni'])
+                            if is_per_model:
+                                self.model_cooldown_until[rescue_model] = time.time() + 21600
+                                break
+                            self.rotate_api_key(key=cur_key, cooldown_seconds=15)
+                        elif e.code in (404, 503):
+                            break
+                    except Exception as e:
+                        print(f"⚠️ [SOLDIER 0: RESCUE] Attempt failed on {rescue_model}: {e}")
 
         print(f"❌ [SOLDIER 0: ALL FAILED | {soldier_name}] All models and keys failed. Routing message to Smart Queue.")
         return None, None, 0.0
