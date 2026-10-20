@@ -1,6 +1,7 @@
 # Sentinel Session Report
 
-- **Uptime:** 39 minutes
-- **Messages Processed:** 41
-- **Last Message Text:** ‏وصول قائد الجيش الباكستاني، عاصم منير إلى طهران.
-- **Last Message Time:** 2026-10-20 09:37:08
+- **Uptime:** 32 minutes
+- **Messages Processed:** 18
+- **Last Message Text:** تام باراک ، سفیر آمریکا در ترکیه:
+آمریکا قصد ترک این منطقه را ندارد. ایالات متحده در حال ایفای نقش خ...
+- **Last Message Time:** 2026-10-20 10:11:57
