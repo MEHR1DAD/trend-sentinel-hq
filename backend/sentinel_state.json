@@ -825,16 +825,39 @@
   "gemini_model_stats": {
     "gemini-3.8-flash": 209,
     "gemini-3.5-flash-lite": 3220,
-    "gemini-2.5-flash": 247,
-    "gemini-3-flash-preview": 422,
-    "gemini-3.1-flash-lite": 1695,
+    "gemini-2.5-flash": 249,
+    "gemini-3-flash-preview": 424,
+    "gemini-3.1-flash-lite": 1720,
     "gemini-3.1-flash-lite-preview": 149,
-    "gemini-3.6-flash": 250,
+    "gemini-3.6-flash": 251,
     "gemini-3.7-flash": 189,
     "gemini-flash-lite-latest": 36,
     "gemini-3.5-flash": 74,
     "gemini-flash-latest": 6
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-20 06:05:27 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39492",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39492,
+      "text": "الحرس الثوري أعلن صباح اليوم إسقاط طائرة أميركية مسيّرة من طراز MQ-9 فوق مضيق هرمز، ليرتفع بذلك عدد الطائرات التي تم إسقاطها إلى 54 طائرة من النوع نفسه.",
+      "is_edit": false,
+      "enqueued_at": 1792476380.5114672,
+      "retries": 10,
+      "last_retry_at": 1792477984.935568
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39493",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39493,
+      "text": "القوات اليمنية تتقدم في قرى جبل صبر في محافظة تعز.",
+      "is_edit": false,
+      "enqueued_at": 1792476493.778322,
+      "retries": 9,
+      "last_retry_at": 1792477915.9786427
+    }
+  ],
+  "last_saved": "2026-10-20 06:34:24 UTC"
 }
