@@ -1,10 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 32 minutes
-- **Messages Processed:** 17
-- **Last Message Text:** وزير الخارجية الإيراني:
-
-هناك احتمال أن تبدأ الولايات المتحدة وإسرائيل حربًا أخرى ضد إيران.
-
-نحن في ...
-- **Last Message Time:** 2026-10-20 21:55:54
+- **Uptime:** 35 minutes
+- **Messages Processed:** 12
+- **Last Message Text:** 5 طائرات شحن عسكري نحو الشرق الأوسط.
+- **Last Message Time:** 2026-10-20 22:15:07
