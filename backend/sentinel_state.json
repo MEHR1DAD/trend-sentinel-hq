@@ -736,7 +736,7 @@
   },
   "channel_watermarks": {
     "Alibk3": 39492,
-    "withyashar": 26052,
+    "withyashar": 26055,
     "VahidOnline": 78771,
     "netblocks": 1574,
     "iliaen": 4746
@@ -824,17 +824,62 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 210,
-    "gemini-3.5-flash-lite": 3231,
+    "gemini-3.5-flash-lite": 3266,
     "gemini-2.5-flash": 249,
-    "gemini-3-flash-preview": 427,
+    "gemini-3-flash-preview": 428,
     "gemini-3.1-flash-lite": 1722,
     "gemini-3.1-flash-lite-preview": 149,
-    "gemini-3.6-flash": 258,
-    "gemini-3.7-flash": 190,
+    "gemini-3.6-flash": 285,
+    "gemini-3.7-flash": 193,
     "gemini-flash-lite-latest": 36,
-    "gemini-3.5-flash": 74,
+    "gemini-3.5-flash": 76,
     "gemini-flash-latest": 6
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-20 07:03:42 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39493",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39493,
+      "text": "القوات اليمنية تتقدم في قرى جبل صبر في محافظة تعز.",
+      "is_edit": false,
+      "enqueued_at": 1792479922.9009943,
+      "retries": 9,
+      "last_retry_at": 1792481573.061555
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39494",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39494,
+      "text": "رويترز: \n\nشركات النفط الكبرى تواجه اختبار الإنفاق من الأموال غير المتوقعة نتيجة حرب إيران.",
+      "is_edit": false,
+      "enqueued_at": 1792480125.2748852,
+      "retries": 8,
+      "last_retry_at": 1792481591.850987
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26053",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26053,
+      "text": "رسانه‌های کره شمالی با انتشار عکس‌‌های جدید از کیم جونگ اون ، به شایعه مرگ وی پایان دادند \n@WarRoom\nیاشار : این تحلیل هم درست در اومد",
+      "is_edit": true,
+      "enqueued_at": 1792480452.5794454,
+      "retries": 7,
+      "last_retry_at": 1792481427.290414
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26056",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26056,
+      "text": "وزیر دفاع اسرائیل: تصمیمی برای ایجاد یک تیپ نظامی تخصصی در زمینه فضا اتخاذ شد، به منظور تبدیل اسرائیل به یک قدرت پیشرو جهانی در این حوزه.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792481574.531113,
+      "retries": 0,
+      "last_retry_at": 0
+    }
+  ],
+  "last_saved": "2026-10-20 07:33:39 UTC"
 }
