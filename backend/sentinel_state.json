@@ -736,7 +736,7 @@
   },
   "channel_watermarks": {
     "Alibk3": 39543,
-    "withyashar": 26079,
+    "withyashar": 26090,
     "VahidOnline": 78780,
     "netblocks": 1574,
     "iliaen": 4746
@@ -824,128 +824,17 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 212,
-    "gemini-3.5-flash-lite": 3741,
-    "gemini-2.5-flash": 279,
-    "gemini-3-flash-preview": 504,
-    "gemini-3.1-flash-lite": 1733,
-    "gemini-3.1-flash-lite-preview": 182,
+    "gemini-3.5-flash-lite": 3744,
+    "gemini-2.5-flash": 280,
+    "gemini-3-flash-preview": 505,
+    "gemini-3.1-flash-lite": 1744,
+    "gemini-3.1-flash-lite-preview": 210,
     "gemini-3.6-flash": 314,
     "gemini-3.7-flash": 196,
-    "gemini-flash-lite-latest": 54,
-    "gemini-3.5-flash": 93,
+    "gemini-flash-lite-latest": 55,
+    "gemini-3.5-flash": 94,
     "gemini-flash-latest": 7
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39540",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39540,
-      "text": "مشاهد نوعية لاستهداف ضباط وجنود وآليات جيش العدو السعودي في جبهتي جيزان وعسير الحدودية بطائرات رجوم المسيرة - 20 أكتوبر 2026م",
-      "is_edit": false,
-      "enqueued_at": 1792514097.1699243,
-      "retries": 4,
-      "last_retry_at": 1792515915.2923355
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26079",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26079,
-      "text": "اسکات بسنت، وزیر خزانه‌داری آمریکا، درباره شدت فشار بر جمهوری اسلامی گفت: «اگر بخواهیم از یک تا ۱۰ اندازه بگیریم ، فشاری که میدیم در سطح ۱۲ است. تاکنون چنین چیزی را در یک کشور نداشته‌ایم»\n@WarRoom 🚨🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1792514271.896423,
-      "retries": 3,
-      "last_retry_at": 1792515943.79107
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26082",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26082,
-      "text": "بنیامین نتانیاهو درباره ایران: «تا زمانی که این رژیم پابرجاست، حتی اگر به‌شدت تضعیف و آسیب‌دیده باشد، آن‌قدر متعصب و افراطی است که دوباره خود را بازسازی می‌کند و همان اقداماتی را از سر می‌گیرد که یک سال پیش تلاش می‌کرد انجام دهد و ما مانع آن شدیم: تولید بمب‌های هسته‌ای و بازسازی محور منطقه‌ای خود.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792514301.675571,
-      "retries": 3,
-      "last_retry_at": 1792515962.65891
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39533",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39533,
-      "text": "الرئيس الإيراني يستقبل قائد الجيش الباكستاني.",
-      "is_edit": false,
-      "enqueued_at": 1792514360.1088884,
-      "retries": 1,
-      "last_retry_at": 1792516108.2946422
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39534",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39534,
-      "text": "توقف حركة الملاحة الجوية في مطار جدة.",
-      "is_edit": false,
-      "enqueued_at": 1792514365.8976068,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26083",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26083,
-      "text": "تراپی با منصور برادرم ، حسابی پخت و پز کرد 🔥\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792514430.5335345,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39542",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39542,
-      "text": "الحرس الثوري:\n\nانفجار ناقلة نفط عملاقة مخالفة جنوب مضيق هرمز.",
-      "is_edit": false,
-      "enqueued_at": 1792515090.7002864,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_VahidOnline_78781",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78781,
-      "text": "عاصم منیر، فرمانده ارتش پاکستان، در سفر به تهران با مسعود پزشکیان، محمدباقر قالیباف و محسن رضایی دیدار کرد. رضایی در دیدار با فرمانده ارتش پاکستان تاکید کرد حتی ذره‌ای از مواد هسته‌ای غنی‌شده ایران از کشور خارج نخواهد شد و قالیباف نیز گفت آمریکا تنها با اجرای شروط هفت‌گانه جمهوری اسلامی می‌تواند اعتماد تهران را جلب کند.\n@VahidHeadline\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1792515440.692646,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26085",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26085,
-      "text": "فاکس نیوز: گروه رزمی ناو یواس‌اس تئودور روزولت به همراه یگان سیزدهم تفنگداران دریایی آمریکا قرار است تا پایان نوامبر (هفته دوم آذر) وارد منطقه شود و حدود ۱۰ هزار ملوان و تفنگدار دریایی به نیروهای آمریکا اضافه کند. این ناو به دو ناو هواپیمابر یواس‌اس جورج اچ. دبلیو. بوش و یواس‌اس جورج واشنگتن خواهد پیوست که طبق این گزارش در دریای عرب مستقر هستند. این خبر یک روز پس از دیدار محرمانه پیت هگست، وزیر جنگ آمریکا، با بنیامین نتانیاهو در پایگاه هوایی عوودا در اسرائیل منتشر شده است.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792515757.9659843,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26084",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26084,
-      "text": "طبق گزارش منبعی آگاه، بعد از وساطت هیئت قطری که به تهران آمد، عاصم منیر و محسن رضایی با هم دیدار کردند.\n@WarRoom",
-      "is_edit": true,
-      "enqueued_at": 1792515758.717598,
-      "retries": 0,
-      "last_retry_at": 0
-    }
-  ],
-  "last_saved": "2026-10-20 17:08:28 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-20 17:39:43 UTC"
 }
