@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 32 minutes
-- **Messages Processed:** 18
-- **Last Message Text:** تام باراک ، سفیر آمریکا در ترکیه:
-آمریکا قصد ترک این منطقه را ندارد. ایالات متحده در حال ایفای نقش خ...
-- **Last Message Time:** 2026-10-20 10:11:57
+- **Uptime:** 29 minutes
+- **Messages Processed:** 25
+- **Last Message Text:** دونالد ترامپ، رییس‌جمهوری آمریکا، در سخنرانی خود در کانزاس گفت جمهوری اسلامی «کشتارهای بسیار زیادی» ...
+- **Last Message Time:** 2026-10-20 11:28:04
