@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 31 minutes
-- **Messages Processed:** 24
-- **Last Message Text:** سرايا القدس-كتيبة جنين:
-
-تمكنت إحدى مجموعاتنا في تمام الساعة 08:30 م اليوم من استهداف حافلة للمستوطن...
-- **Last Message Time:** 2026-10-20 20:48:45
+- **Uptime:** 34 minutes
+- **Messages Processed:** 19
+- **Last Message Text:** خلال آخر 24 ساعة، رُصدت 92 طائرة عسكرية في المنطقة، بينها 7 طائرات نقل وصلت من خارجها، منها 5 أميركي...
+- **Last Message Time:** 2026-10-20 21:03:05
