@@ -1,7 +1,7 @@
 # Sentinel Session Report
 
-- **Uptime:** 30 minutes
-- **Messages Processed:** 20
-- **Last Message Text:** تراپی با منصور برادرم ، حسابی پخت و پز کرد 🔥
-@WarRoom
-- **Last Message Time:** 2026-10-20 17:38:44
+- **Uptime:** 28 minutes
+- **Messages Processed:** 25
+- **Last Message Text:** هواپیمای عاصم منیر که دقایقی پیش تهران را ترک کرد
+@WarRpom
+- **Last Message Time:** 2026-10-20 18:00:53
