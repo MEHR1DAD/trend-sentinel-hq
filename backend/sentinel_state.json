@@ -735,7 +735,7 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39522,
+    "Alibk3": 39529,
     "withyashar": 26072,
     "VahidOnline": 78777,
     "netblocks": 1574,
@@ -824,17 +824,40 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 212,
-    "gemini-3.5-flash-lite": 3704,
-    "gemini-2.5-flash": 275,
-    "gemini-3-flash-preview": 495,
-    "gemini-3.1-flash-lite": 1722,
-    "gemini-3.1-flash-lite-preview": 149,
+    "gemini-3.5-flash-lite": 3725,
+    "gemini-2.5-flash": 276,
+    "gemini-3-flash-preview": 497,
+    "gemini-3.1-flash-lite": 1723,
+    "gemini-3.1-flash-lite-preview": 156,
     "gemini-3.6-flash": 314,
     "gemini-3.7-flash": 196,
-    "gemini-flash-lite-latest": 41,
-    "gemini-3.5-flash": 90,
+    "gemini-flash-lite-latest": 48,
+    "gemini-3.5-flash": 91,
     "gemini-flash-latest": 7
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-20 14:04:36 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_withyashar_26079",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26079,
+      "text": "اسکات بسنت، وزیر خزانه‌داری آمریکا، درباره شدت فشار بر جمهوری اسلامی گفت: «اگر بخواهیم از یک تا ۱۰ اندازه بگیریم ، فشاری که میدیم در سطح ۱۲ است. تاکنون چنین چیزی را در یک کشور نداشته‌ایم»\n@WarRoom 🚨🚨🚨🚨",
+      "is_edit": false,
+      "enqueued_at": 1792506764.349278,
+      "retries": 2,
+      "last_retry_at": 1792507342.0897794
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39506",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39506,
+      "text": "الحرس الثوري:\n\nاشتعال النيران في ناقلتي نفط مخالفتين إثر انفجار الألغام في الممر غير القانوني جنوب مضيق هرمز.\n\nنُحذّر من أن العبور عبر المسار الملغوم غير قانوني، ولن يؤدي إلا إلى احتراق ممتلكات المخالفين.",
+      "is_edit": true,
+      "enqueued_at": 1792506999.0654318,
+      "retries": 0,
+      "last_retry_at": 0
+    }
+  ],
+  "last_saved": "2026-10-20 14:42:58 UTC"
 }

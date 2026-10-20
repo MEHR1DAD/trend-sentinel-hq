@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 32 minutes
-- **Messages Processed:** 13
-- **Last Message Text:** روزنامه انصار به نقل از منابع : عاصم منیر در تهران حامل پیام جنگ است؛
-یا تسلیم شوید یا حمله میکنند
-د...
-- **Last Message Time:** 2026-10-20 13:45:57
+- **Uptime:** 37 minutes
+- **Messages Processed:** 30
+- **Last Message Text:** الحرس الثوري:
+
+اشتعال النيران في ناقلتي نفط مخالفتين إثر انفجار الألغام في الممر غير القانوني جنوب م...
+- **Last Message Time:** 2026-10-20 14:34:43
