@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 30 minutes
-- **Messages Processed:** 9
-- **Last Message Text:** یک سامانه پدافند هوایی ایرانی سوم خرداد هنگام انتقال در‌ نزدیکی تهران مشاهده شده است.
-@WarRoom
-- **Last Message Time:** 2026-10-19 23:31:31
+- **Uptime:** 41 minutes
+- **Messages Processed:** 20
+- **Last Message Text:** ترامپ با انتقاد از متحدان اروپایی ناتو گفت: «وقتی در مورد ایران درخواست کمک کردیم، آن‌ها کنار ما نبو...
+- **Last Message Time:** 2026-10-20 00:23:16
