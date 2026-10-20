@@ -1,6 +1,7 @@
 # Sentinel Session Report
 
 - **Uptime:** 29 minutes
-- **Messages Processed:** 25
-- **Last Message Text:** دونالد ترامپ، رییس‌جمهوری آمریکا، در سخنرانی خود در کانزاس گفت جمهوری اسلامی «کشتارهای بسیار زیادی» ...
-- **Last Message Time:** 2026-10-20 11:28:04
+- **Messages Processed:** 5
+- **Last Message Text:** نتانیاهو : تا زمانی که من نخست‌وزیر هستم، ایران سلاح‌های هسته‌ای نخواهد داشت.
+@WarRoom
+- **Last Message Time:** 2026-10-20 11:28:58
