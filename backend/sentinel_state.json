@@ -824,17 +824,17 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 213,
-    "gemini-3.5-flash-lite": 3763,
+    "gemini-3.5-flash-lite": 3764,
     "gemini-2.5-flash": 287,
-    "gemini-3-flash-preview": 529,
+    "gemini-3-flash-preview": 531,
     "gemini-3.1-flash-lite": 1921,
-    "gemini-3.1-flash-lite-preview": 554,
-    "gemini-3.6-flash": 317,
+    "gemini-3.1-flash-lite-preview": 568,
+    "gemini-3.6-flash": 318,
     "gemini-3.7-flash": 197,
     "gemini-flash-lite-latest": 69,
     "gemini-3.5-flash": 112,
     "gemini-flash-latest": 10
   },
   "smart_queue": [],
-  "last_saved": "2026-10-21 04:02:11 UTC"
+  "last_saved": "2026-10-21 04:31:33 UTC"
 }
