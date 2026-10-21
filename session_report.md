@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 28 minutes
-- **Messages Processed:** 39
-- **Last Message Text:** مسؤول أميركي:
-
- هناك تحركات سريعة لنشر أصول عسكرية في مواقعها، استعداداً لما يُتوقع أن يكون ضوءاً أخ...
-- **Last Message Time:** 2026-10-21 21:49:08
+- **Uptime:** 30 minutes
+- **Messages Processed:** 33
+- **Last Message Text:** الطيران السعودي يعلن وفاة شخص وإصابة 9 آخرين باستهداف لمطار الدمام.
+- **Last Message Time:** 2026-10-21 22:19:04
