@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 29 minutes
-- **Messages Processed:** 48
-- **Last Message Text:** وسائل إعلام سعودية عن ‏مصادر دبلوماسية: 
-
-قائد الجيش الباكستاني نقل تحذيرا أميركيا شديد اللهجة إلى ط...
-- **Last Message Time:** 2026-10-21 11:32:03
+- **Uptime:** 32 minutes
+- **Messages Processed:** 39
+- **Last Message Text:** التحركات الصهيونية غير الاعتيادية تتواصل في جنوب سوريا، بالتزامن مع تحليق مكثف للطيران المروحي فوق م...
+- **Last Message Time:** 2026-10-21 12:31:54
