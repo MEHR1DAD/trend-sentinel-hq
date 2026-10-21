@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 31 minutes
-- **Messages Processed:** 16
-- **Last Message Text:** رسانه های عربی: وقوع چندین انفجار در تنگه هرمز
-@WarRoom
-- **Last Message Time:** 2026-10-21 06:43:58
+- **Uptime:** 29 minutes
+- **Messages Processed:** 24
+- **Last Message Text:** فایننشال تایمز: ترامپ طرح حمله مجدد اسرائیل به ایران را متوقف کرد؛ طبق گزارش منابع آگاه، نتانیاهو قص...
+- **Last Message Time:** 2026-10-21 07:06:02
