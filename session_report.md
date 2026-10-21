@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 34 minutes
-- **Messages Processed:** 23
-- **Last Message Text:** قطر: اسرائیل به دنبال جنگ است نه صلح 
- ماجد الانصاری، سخنگوی وزارت امور خارجه قطر در نشست امنیت جهان...
-- **Last Message Time:** 2026-10-21 08:22:37
+- **Uptime:** 29 minutes
+- **Messages Processed:** 11
+- **Last Message Text:** ایزاکوت، رئیس حزب "یاشار"، گفت: "من به طور قاطع متعهد می‌شوم که زیر رهبری نتانیاهو، حتی در یک دولت ا...
+- **Last Message Time:** 2026-10-21 09:32:32
