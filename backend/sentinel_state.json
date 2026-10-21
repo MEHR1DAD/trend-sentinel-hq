@@ -736,8 +736,8 @@
   },
   "channel_watermarks": {
     "Alibk3": 39608,
-    "withyashar": 26139,
-    "VahidOnline": 78790,
+    "withyashar": 26147,
+    "VahidOnline": 78792,
     "netblocks": 1574,
     "iliaen": 4746
   },
@@ -824,17 +824,117 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 218,
-    "gemini-3.5-flash-lite": 4631,
+    "gemini-3.5-flash-lite": 4653,
     "gemini-2.5-flash": 313,
     "gemini-3-flash-preview": 621,
-    "gemini-3.1-flash-lite": 1931,
-    "gemini-3.1-flash-lite-preview": 593,
+    "gemini-3.1-flash-lite": 1935,
+    "gemini-3.1-flash-lite-preview": 598,
     "gemini-3.6-flash": 337,
     "gemini-3.7-flash": 198,
-    "gemini-flash-lite-latest": 92,
+    "gemini-flash-lite-latest": 94,
     "gemini-3.5-flash": 175,
     "gemini-flash-latest": 22
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-21 15:24:07 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39611",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39611,
+      "text": "نتنياهو:\n\nخامنئي الابن لم يتعلم الدرس وقرر العودة إلى البرنامج النووي لكن هذه المرة في أعماق الأرض.\n\nهناك طريقة واحدة فقط لإزالة هذا التهديد إلى الأبد - وهي إسقاط النظام في إيران.",
+      "is_edit": false,
+      "enqueued_at": 1792596468.6114166,
+      "retries": 11,
+      "last_retry_at": 1792598114.329233
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26141",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26141,
+      "text": "قوه قضائیه جمهوری اسلامی اعلام کرد از اعضای خاندان پهلوی شکایت کرده و منتظر است کشورهای محل حضور آن‌ها، این افراد را تحویل ایران دهند.\nاصغر جهانگیر، سخنگوی قوه قضائیه، پیش‌تر اتهاماتی از جمله همکاری با آمریکا و اسرائیل، جاسوسی، تحریک به خشونت و ارتباط با شبکه‌های تروریستی را در این پرونده مطرح کرده بود\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792596489.6342895,
+      "retries": 11,
+      "last_retry_at": 1792598136.8262799
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26142",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26142,
+      "text": "ویدئو دیروز از آتش‌سوزی و انفجارها که گفته می‌شود مربوط به «شرکت آلومینیوم ایران» (ایرالکو) در شهر اراک است.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792596503.97825,
+      "retries": 11,
+      "last_retry_at": 1792598161.1127856
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26143",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26143,
+      "text": "نتانیاهو: مجتبی خامنه‌ای از گذشته درس نگرفته و تصمیم دارد برنامه هسته‌ای ایران را از سر بگیرد؛ این بار با پنهان کردن تأسیسات در اعماق زمین، با این تصور که اسرائیل به آن‌ها دسترسی نخواهد داشت. او راه پدرش را ادامه می‌دهد و ایران بار دیگر به‌دنبال ساخت بمب هسته‌ای است. برای از بین بردن این تهدید برای همیشه، تنها راه، سرنگونی حکومت ایران است. این دستور من به ارتش اسرائیل، موساد و نهادهای امنیتی است. ما آماده‌ایم جنگ را به پایان برسانیم، حکومت ایران را سرنگون کنیم و برای همیشه به «محور شرارت» پایان دهیم. ما توانایی انجام این کار را داریم.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792596509.6350703,
+      "retries": 11,
+      "last_retry_at": 1792598197.8810992
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26144",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26144,
+      "text": "نتانیاهو: ما با یک تهدید جدی برای بقای خود روبرو هستیم، و ماموریت ما نجات این کشور است.\nالان این موضوع، مسئله‌ای حیاتی است ، یا ما بقا خواهیم داشت، یا از بین خواهیم رفت. این یا ما هستیم، یا آن‌ها.\nو اما ما خواهیم بود.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792596523.5189106,
+      "retries": 11,
+      "last_retry_at": 1792598216.7902274
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26145",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26145,
+      "text": "وزیر دفاع اسرائیل، اسرائیل کاتس، درباره ایران گفت:«رژیم ایران در ضعیف‌ترین وضعیت خود در تمام دوران قرار دارد؛ ما می‌دانیم که این ضعف ممکن است آن را به اتخاذ افراطی‌ترین اقدامات، از جمله علیه کشور اسرائیل، سوق دهد.\nاگر ایران به اسرائیل حمله کند، ایران در آتش خواهد سوخت!»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792596542.861293,
+      "retries": 10,
+      "last_retry_at": 1792598083.8441017
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39612",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39612,
+      "text": "القوات اليمنية تحرر حي المربعة ووادي العرين بمدينة تعز وتتقدم نحو شارع الثلاثين والمليحاء.",
+      "is_edit": false,
+      "enqueued_at": 1792596549.0053008,
+      "retries": 10,
+      "last_retry_at": 1792598118.1249387
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26146",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26146,
+      "text": "معاون رئیس‌جمهور روسیه: پوتین به ویتکوف اطلاع داد که روسیه آماده است مذاکرات سه جانبه درباره اوکراین را در تاریخ 10 نوامبر(۱۹آبان) از سر بگیرد.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792597082.9222608,
+      "retries": 7,
+      "last_retry_at": 1792598042.3801079
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39607",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39607,
+      "text": "المروحيات الصهيونية تواصل التحليق فوق أجواء جنوب سوريا.",
+      "is_edit": true,
+      "enqueued_at": 1792597904.7016902,
+      "retries": 3,
+      "last_retry_at": 1792598089.5806527
+    }
+  ],
+  "last_saved": "2026-10-21 15:57:06 UTC"
 }
