@@ -823,18 +823,41 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 213,
-    "gemini-3.5-flash-lite": 3764,
+    "gemini-3.8-flash": 214,
+    "gemini-3.5-flash-lite": 3767,
     "gemini-2.5-flash": 287,
-    "gemini-3-flash-preview": 531,
-    "gemini-3.1-flash-lite": 1921,
-    "gemini-3.1-flash-lite-preview": 568,
-    "gemini-3.6-flash": 318,
+    "gemini-3-flash-preview": 532,
+    "gemini-3.1-flash-lite": 1924,
+    "gemini-3.1-flash-lite-preview": 571,
+    "gemini-3.6-flash": 320,
     "gemini-3.7-flash": 197,
-    "gemini-flash-lite-latest": 69,
-    "gemini-3.5-flash": 112,
-    "gemini-flash-latest": 10
+    "gemini-flash-lite-latest": 70,
+    "gemini-3.5-flash": 113,
+    "gemini-flash-latest": 11
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-21 04:31:33 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_withyashar_26108",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26108,
+      "text": "دونالد ترامپ‌ درباره ایران: «ما تهدید تبدیل شدن بدترین کشور جهان به یک قدرت هسته‌ای را خنثی کردیم. از طرفی، قیمت بنزین در آمریکا پایین‌تر از دوران اوباما و جو بایدن است. ما کاری را انجام دادیم که آن‌ها و صادقانه بگویم، رؤسای‌جمهور قبلی باید مدت‌ها پیش انجام می‌دادند.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792557241.829377,
+      "retries": 11,
+      "last_retry_at": 1792558846.3813426
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26107",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26107,
+      "text": "دونالد ترامپ درباره ایران : «امیدوارم این کار را نکنید. اگر تهدیدی احتمالی پیش بیاید، که ممکن است اتفاق بیفتد، امیدوارم ناراحت نشوید اگر با آن‌ها بسیار، بسیار خشن برخورد کنم؛ چون دقیقاً همین اتفاق خواهد افتاد. آن‌ها کشور ما را نابود نخواهند کرد. اجازه نمی‌دهیم کشورمان را نابود کنند.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792557281.5358484,
+      "retries": 11,
+      "last_retry_at": 1792558908.4175818
+    }
+  ],
+  "last_saved": "2026-10-21 05:03:08 UTC"
 }
