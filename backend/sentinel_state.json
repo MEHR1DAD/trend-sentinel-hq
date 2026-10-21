@@ -735,8 +735,8 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39568,
-    "withyashar": 26109,
+    "Alibk3": 39573,
+    "withyashar": 26119,
     "VahidOnline": 78784,
     "netblocks": 1574,
     "iliaen": 4746
@@ -824,73 +824,17 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 214,
-    "gemini-3.5-flash-lite": 3882,
-    "gemini-2.5-flash": 292,
-    "gemini-3-flash-preview": 582,
-    "gemini-3.1-flash-lite": 1928,
-    "gemini-3.1-flash-lite-preview": 581,
+    "gemini-3.5-flash-lite": 3929,
+    "gemini-2.5-flash": 304,
+    "gemini-3-flash-preview": 585,
+    "gemini-3.1-flash-lite": 1929,
+    "gemini-3.1-flash-lite-preview": 583,
     "gemini-3.6-flash": 330,
     "gemini-3.7-flash": 198,
-    "gemini-flash-lite-latest": 74,
-    "gemini-3.5-flash": 162,
+    "gemini-flash-lite-latest": 75,
+    "gemini-3.5-flash": 168,
     "gemini-flash-latest": 14
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39567",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39567,
-      "text": "بلومبرغ:\n\n بريطانيا سترسل قوات إضافية للدفاع عن السعودية ضد هجمات الحوثيين، حيث سيتم نشر طائرات مقاتلة بريطانية للدفاع عن المدن والبنية التحتية السعودية ضد الهجمات اليمنية.",
-      "is_edit": false,
-      "enqueued_at": 1792567077.4101548,
-      "retries": 8,
-      "last_retry_at": 1792569015.6788335
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39569",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39569,
-      "text": "القناة 12 العبرية: \n\nشركات الطيران الإسرائيلية توقف رحلاتها إلى المغرب بطلب من الشاباك الصهيوني.",
-      "is_edit": false,
-      "enqueued_at": 1792568535.059168,
-      "retries": 5,
-      "last_retry_at": 1792569044.237335
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39570",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39570,
-      "text": "دوي انفجار قوي في عدن جنوب اليمن",
-      "is_edit": false,
-      "enqueued_at": 1792568865.2801356,
-      "retries": 4,
-      "last_retry_at": 1792569188.5343838
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39571",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39571,
-      "text": "نائب قائد الحرس الثوري: \n\n  الأمريكيون وحلفاؤهم يمتلكون رؤوسًا مال ضخمة، وإذا أرادوا إلحاق الضرر ببنيتنا التحتية، فمن الطبيعي أن تستخدم الجمهورية الإسلامية كل قدراتها، وستقوم بتدمير رؤوس الأموال والأصول التابعة لهم، بما في ذلك كابلات الإنترنت التي تمتد تحت مياه مضيق هرمز، بسهولة.",
-      "is_edit": false,
-      "enqueued_at": 1792569154.686273,
-      "retries": 1,
-      "last_retry_at": 1792569156.3118708
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26119",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26119,
-      "text": "‎ بنیامین نتانیاهو تنها استادیه که کلاسهاش رو هیچ وقت غیبت نمی‌کنم. \n‎در این ویدیو او یک هشت‌پا کشیده و می‌گوید خود جمهوری اسلامی است و هر پایش یک نیروی نیابتی، حماس ، حزب‌الله و غیره\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792569247.939419,
-      "retries": 0,
-      "last_retry_at": 0
-    }
-  ],
-  "last_saved": "2026-10-21 07:54:23 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-21 08:29:02 UTC"
 }

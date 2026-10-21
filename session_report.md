@@ -1,7 +1,7 @@
 # Sentinel Session Report
 
-- **Uptime:** 37 minutes
-- **Messages Processed:** 29
-- **Last Message Text:** ‎ بنیامین نتانیاهو تنها استادیه که کلاسهاش رو هیچ وقت غیبت نمی‌کنم. 
-‎در این ویدیو او یک هشت‌پا کشید...
-- **Last Message Time:** 2026-10-21 07:54:10
+- **Uptime:** 34 minutes
+- **Messages Processed:** 23
+- **Last Message Text:** قطر: اسرائیل به دنبال جنگ است نه صلح 
+ ماجد الانصاری، سخنگوی وزارت امور خارجه قطر در نشست امنیت جهان...
+- **Last Message Time:** 2026-10-21 08:22:37
