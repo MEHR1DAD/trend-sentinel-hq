@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 28 minutes
-- **Messages Processed:** 6
-- **Last Message Text:** فايننشال تايمز:
+- **Uptime:** 29 minutes
+- **Messages Processed:** 11
+- **Last Message Text:** مستشار الأمن القومي الأمريكي: 
 
-نتنياهو كان يخطط لشن هجوم كبير على إيران يوم 10 أكتوبر، لكن ترامب أعاق هذا الهجوم ب...
-- **Last Message Time:** 2026-10-21 05:06:41
+ الحرب في إيران أظهرت الاختلاف في المصالح بين إسرائيل والولايات المت...
+- **Last Message Time:** 2026-10-21 05:36:08
