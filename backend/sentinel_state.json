@@ -735,7 +735,7 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39602,
+    "Alibk3": 39608,
     "withyashar": 26139,
     "VahidOnline": 78790,
     "netblocks": 1574,
@@ -823,41 +823,41 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 214,
-    "gemini-3.5-flash-lite": 4551,
-    "gemini-2.5-flash": 309,
-    "gemini-3-flash-preview": 615,
-    "gemini-3.1-flash-lite": 1929,
-    "gemini-3.1-flash-lite-preview": 586,
+    "gemini-3.8-flash": 215,
+    "gemini-3.5-flash-lite": 4590,
+    "gemini-2.5-flash": 310,
+    "gemini-3-flash-preview": 618,
+    "gemini-3.1-flash-lite": 1930,
+    "gemini-3.1-flash-lite-preview": 589,
     "gemini-3.6-flash": 337,
     "gemini-3.7-flash": 198,
-    "gemini-flash-lite-latest": 86,
-    "gemini-3.5-flash": 173,
+    "gemini-flash-lite-latest": 88,
+    "gemini-3.5-flash": 175,
     "gemini-flash-latest": 21
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_26142",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26142,
-      "text": "ویدئو دیروز از آتش‌سوزی و انفجارها که گفته می‌شود مربوط به «شرکت آلومینیوم ایران» (ایرالکو) در شهر اراک است.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792591414.5654302,
-      "retries": 2,
-      "last_retry_at": 1792591502.8695056
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39606",
+      "id": "vip_multi_agent_Alibk3_39609",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39606,
-      "text": "نتنياهو: \n\n(السيد) مجتبى خامنئي قرر رفع التحريم وإيران تحاول تطوير قنبلة نووية.",
+      "msg_id": 39609,
+      "text": "وزير جيش الاحتلال، كاتس:\n\nلدينا إشارات إلى أن إيران قد تقدم على خطوات متطرفة جدًا بما في ذلك ضد إسرائيل، إذا فعلت ذلك، سندمر إيران.",
       "is_edit": false,
-      "enqueued_at": 1792591555.919842,
+      "enqueued_at": 1792592338.038997,
+      "retries": 5,
+      "last_retry_at": 1792593909.7217133
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26143",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26143,
+      "text": "نتانیاهو: مجتبی خامنه‌ای از گذشته درس نگرفته و تصمیم دارد برنامه هسته‌ای ایران را از سر بگیرد؛ این بار با پنهان کردن تأسیسات در اعماق زمین، با این تصور که اسرائیل به آن‌ها دسترسی نخواهد داشت. او راه پدرش را ادامه می‌دهد و ایران بار دیگر به‌دنبال ساخت بمب هسته‌ای است. برای از بین بردن این تهدید برای همیشه، تنها راه، سرنگونی حکومت ایران است. این دستور من به ارتش اسرائیل، موساد و نهادهای امنیتی است. ما آماده‌ایم جنگ را به پایان برسانیم، حکومت ایران را سرنگون کنیم و برای همیشه به «محور شرارت» پایان دهیم. ما توانایی انجام این کار را داریم.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792593255.0043788,
       "retries": 1,
-      "last_retry_at": 1792591556.0786283
+      "last_retry_at": 1792594034.9328427
     }
   ],
-  "last_saved": "2026-10-21 14:14:47 UTC"
+  "last_saved": "2026-10-21 14:47:25 UTC"
 }
