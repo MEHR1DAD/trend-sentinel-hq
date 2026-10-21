@@ -735,8 +735,8 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39633,
-    "withyashar": 26177,
+    "Alibk3": 39645,
+    "withyashar": 26181,
     "VahidOnline": 78796,
     "netblocks": 1575,
     "iliaen": 4746
@@ -824,61 +824,39 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 218,
-    "gemini-3.5-flash-lite": 4712,
+    "gemini-3.5-flash-lite": 4715,
     "gemini-2.5-flash": 316,
-    "gemini-3-flash-preview": 647,
-    "gemini-3.1-flash-lite": 1943,
-    "gemini-3.1-flash-lite-preview": 615,
+    "gemini-3-flash-preview": 649,
+    "gemini-3.1-flash-lite": 1945,
+    "gemini-3.1-flash-lite-preview": 618,
     "gemini-3.6-flash": 340,
     "gemini-3.7-flash": 199,
     "gemini-flash-lite-latest": 117,
     "gemini-3.5-flash": 189,
-    "gemini-flash-latest": 23
+    "gemini-flash-latest": 24
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39632",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39632,
-      "text": "من موقع تصاعد أعمدة الدخان في سيريك",
-      "is_edit": true,
-      "enqueued_at": 1792612244.4501243,
-      "retries": 13,
-      "last_retry_at": 1792614745.4189045
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39633",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39633,
-      "text": "برای عزیزانی که مایل‌اند اخبار را به زبان فارسی و انگلیسی دنبال کنند، می‌توانند از طریق لینک زیر کانال ما را دنبال کنند:\n\nDear brothers٫ Follow our channel for content in both English and Persian.\n\nhttps://t.me/Ali_bk_8",
-      "is_edit": false,
-      "enqueued_at": 1792612273.7270415,
-      "retries": 10,
-      "last_retry_at": 1792614578.2892294
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39634",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39634,
-      "text": "الخارجية الأميركية:\n\nأوامر مغادرة الموظفين الأميركيين وعوائلهم تشمل السعودية فقط.",
-      "is_edit": false,
-      "enqueued_at": 1792612327.2005002,
-      "retries": 10,
-      "last_retry_at": 1792614581.9033475
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26175",
+      "id": "vip_multi_agent_withyashar_26184",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
-      "msg_id": 26175,
-      "text": "تامی پیگوت، سخنگوی وزارت امور خارجه آمریکا: این گزارش نادرست است. وزارت امور خارجه آمریکا دستور خروج کارکنان غیراضطراری دولت ایالات متحده و اعضای خانواده‌های آن‌ها را فقط از عربستان سعودی صادر کرده است. حوثی‌های مورد حمایت ایران به‌طور فزاینده‌ای در اقدامات خصمانه علیه عربستان سعودی مشارکت داشته‌اند\n@WarRoom",
+      "msg_id": 26184,
+      "text": "خبرنگار: لغو برخی تحریم‌ها علیه روسیه برای تضمین آزادی گروگان، امتیاز دادن به روسیه محسوب نمی‌شود؟\nترامپ: شما آدم احمقی هستید؟ برای کجا کار می‌کنید؟\nخبرنگار: ای‌بی‌سی نیوز.\nترامپ: شما آدم احمقی هستید!\n@WarRoom",
       "is_edit": false,
-      "enqueued_at": 1792612589.0741796,
-      "retries": 9,
-      "last_retry_at": 1792614600.476077
+      "enqueued_at": 1792615901.4472504,
+      "retries": 11,
+      "last_retry_at": 1792617581.7515957
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26183",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26183,
+      "text": "سؤال: آیا از ورود به جنگ با ایران پشیمان هستید؟\nترامپ: فکر می‌کنم این یکی از بزرگ‌ترین کارهایی است که انجام داده‌ایم.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792615907.98841,
+      "retries": 10,
+      "last_retry_at": 1792617448.640351
     },
     {
       "id": "vip_multi_agent_Alibk3_39635",
@@ -887,87 +865,197 @@
       "msg_id": 39635,
       "text": "هآرتس عن مصادر في البيت الأبيض: \n\nيبدو أنه قد طرأ تغيير في الموقف الأميركي لصالح شن ضربة استباقية على إيران خلال الساعات القليلة الماضية.",
       "is_edit": false,
-      "enqueued_at": 1792612808.9986808,
-      "retries": 8,
-      "last_retry_at": 1792614604.211304
+      "enqueued_at": 1792615908.9566126,
+      "retries": 10,
+      "last_retry_at": 1792617450.6442947
     },
     {
-      "id": "vip_multi_agent_withyashar_26176",
+      "id": "vip_multi_agent_withyashar_26182",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
-      "msg_id": 26176,
-      "text": "گزارش انفجار جدید در سیریک فیک است (۲ تا لانچر زدن همین )\n@WarRokm",
+      "msg_id": 26182,
+      "text": "تصویر لو رفته از بیت رهبری فردای حمله\n@WarRoom",
       "is_edit": false,
-      "enqueued_at": 1792612889.0616958,
-      "retries": 8,
-      "last_retry_at": 1792614623.0013845
+      "enqueued_at": 1792615910.9647822,
+      "retries": 10,
+      "last_retry_at": 1792617467.6486003
     },
     {
-      "id": "vip_multi_agent_withyashar_26178",
+      "id": "vip_multi_agent_Alibk3_39639",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39639,
+      "text": "مسؤول أمني إيراني رفيع:\n\nإيران تعتبر الهجوم الأميركي والإسرائيلي أمرًا محسومًا، ولا تعتدّ بالمواقف الدبلوماسية.",
+      "is_edit": false,
+      "enqueued_at": 1792615919.8876076,
+      "retries": 10,
+      "last_retry_at": 1792617469.65128
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39634",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39634,
+      "text": "الخارجية الأميركية:\n\nأوامر مغادرة الموظفين الأميركيين وعوائلهم تشمل السعودية فقط.",
+      "is_edit": false,
+      "enqueued_at": 1792615920.9653301,
+      "retries": 10,
+      "last_retry_at": 1792617562.7391238
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39638",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39638,
+      "text": "طائرة شحن عسكري أميركي ثقيل تصل دبي بالإمارات.",
+      "is_edit": false,
+      "enqueued_at": 1792615920.9694562,
+      "retries": 10,
+      "last_retry_at": 1792617583.7555077
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39640",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39640,
+      "text": "تحليق مكثف للطيران الحربي الصهيوني فوق أجواء فلسطين المحتلة.",
+      "is_edit": true,
+      "enqueued_at": 1792615959.5999024,
+      "retries": 9,
+      "last_retry_at": 1792617486.6683803
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26185",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
-      "msg_id": 26178,
-      "text": "ادعای رسانه های رژیم : پهپاد آمریکایی MQ-9 Reaper که برای هدف قرار دادن سکوی پرتاب موشک استفاده شده بود، سرنگون شد. \n@WarRoom",
+      "msg_id": 26185,
+      "text": "یک مقام امنیتی ارشد ایرانی:\nایران حمله آمریکا و اسرائیل را قطعی می‌داند و به مواضع دیپلماتیک توجهی نمی‌کند.\n@WarRoom 🚨🚨🚨",
+      "is_edit": true,
+      "enqueued_at": 1792616013.175293,
+      "retries": 9,
+      "last_retry_at": 1792617488.6722116
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39641",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39641,
+      "text": "الخارجية الأميركية تأمر بمزيد من تخفيضات الموظفين في العديد من البعثات الدبلوماسية في المنطقة.",
       "is_edit": false,
-      "enqueued_at": 1792613148.7160017,
+      "enqueued_at": 1792616071.8150995,
+      "retries": 9,
+      "last_retry_at": 1792617600.7683759
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39642",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39642,
+      "text": "شبكة إن بي سي الأميركية عن مسؤولين أميركيين:\n\n الجيش الأميركي قلل بشكل تدريجي من عدد قواته المتواجدة في القواعد المنتشرة في جميع أنحاء الشرق الأوسط في الأيام الأخيرة.",
+      "is_edit": false,
+      "enqueued_at": 1792616212.599018,
+      "retries": 9,
+      "last_retry_at": 1792617602.7722852
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26186",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26186,
+      "text": "ترامپ می‌گوید از گزارش‌ها مبنی بر دستور خروج کارکنان سفارت آمریکا از برخی مناطق خاورمیانه اطلاعی ندارد.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792616227.3532774,
+      "retries": 8,
+      "last_retry_at": 1792617505.6913455
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39643",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39643,
+      "text": "سُبحانَ اللهِ وَالحَمدُ للهِ وَلا إلهَ إلاّ الله وَاللهُ أكبَرُ، وَلا حَولَ وَلا قُوَّةَ إلاّ بِاللهِ العَليِّ العَظيمِ.\n\nرابط قناة الاحتياط:\nترجمه‌ی فارسی همه‌ی اخبار، اکنون در کانال ما:\nEnglish News? Follow our backup:\nhttps://t.me/Ali_bk_8",
+      "is_edit": false,
+      "enqueued_at": 1792616441.260271,
       "retries": 7,
-      "last_retry_at": 1792614626.5656903
+      "last_retry_at": 1792617507.6952615
     },
     {
-      "id": "vip_multi_agent_withyashar_26179",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26179,
-      "text": "ترامپ : خوشحالم که روسیه در موضوع ایران ورود نکرد\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792613654.2731955,
-      "retries": 6,
-      "last_retry_at": 1792614645.1613748
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26180",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26180,
-      "text": "اتاق جنگ با یاشار : کمربندهار و ببندید ادمین های فیک تلگرام جنگ رو شورع کردن \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792613743.924493,
-      "retries": 6,
-      "last_retry_at": 1792614648.772374
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39636",
+      "id": "vip_multi_agent_Alibk3_39644",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39636,
-      "text": "طائرة إنذار مبكر أميركي تتجه إلى ألمانيا في طريقها إلى الشرق الأوسط.",
+      "msg_id": 39644,
+      "text": "خلال آخر 24 ساعة، رُصدت 97 طائرة عسكرية في المنطقة، بينها 8 طائرات نقل وصلت من خارجها، منها 6 أميركية وواحدة ألمانية وواحدة غير معروفة، إضافة إلى 6 طائرات نقل عسكري إقليمي و31 طائرة تزود بالوقود و21 طائرة تجسس ومقاتلة واحدة و25 طائرة نقل عسكري تنقّلت داخل المنطقة و5 مروحيات عسكرية.",
       "is_edit": false,
-      "enqueued_at": 1792614118.88752,
+      "enqueued_at": 1792616494.7874212,
+      "retries": 7,
+      "last_retry_at": 1792617619.7914586
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26187",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26187,
+      "text": "رسانه های عبری : گزارش‌ها از شنیده‌شدن صدای جنگنده‌های اسرائیلی بر فراز اربیل، مرکز اقلیم کردستان عراق، حکایت دارد. احتمال می‌رود این پروازها بخشی از دور جدید پروازهای شناسایی یا شبیه‌سازی حمله اسرائیل علیه ایران باشد؛ با این حال، هدف این پروازها هنوز تأیید نشده است. \n@WarRoom 🚨🚨🚨🚨",
+      "is_edit": false,
+      "enqueued_at": 1792617088.168959,
       "retries": 4,
-      "last_retry_at": 1792614667.3840842
+      "last_retry_at": 1792617524.700385
     },
     {
-      "id": "vip_multi_agent_withyashar_26181",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26181,
-      "text": "ناوهای  آمریکایی در رودخانه دربند دیده شدند و به سرعت سمت تجریش برای آزاد کردن ترامپ می آیند \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792614179.2085862,
-      "retries": 3,
-      "last_retry_at": 1792614670.9771926
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39637",
+      "id": "vip_multi_agent_Alibk3_39646",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39637,
-      "text": "مسؤول أمني إيراني رفيع: \n\nإيران تعتبر الأهداف السياسية الأمريكية والبنى التحتية للدول المشاركة في الحرب أهدافاً مشروعة.",
+      "msg_id": 39646,
+      "text": "صور الأقمار الصناعية تُظهر أن \"مبنى البرج\" في مقر شركة أرامكو في الظهران تعرض للأضرار، بصاروخ باليستي يمني.",
       "is_edit": false,
-      "enqueued_at": 1792614654.2666893,
+      "enqueued_at": 1792617112.630608,
+      "retries": 3,
+      "last_retry_at": 1792617526.7044134
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39645",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39645,
+      "text": "تحليق مكثف للطيران الحربي فوق أجواء شمال العراق",
+      "is_edit": true,
+      "enqueued_at": 1792617127.5583975,
+      "retries": 3,
+      "last_retry_at": 1792617543.716675
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39647",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39647,
+      "text": "تحليق مكثف للطيران الحربي فوق أجواء شمال العراق",
+      "is_edit": false,
+      "enqueued_at": 1792617141.6313615,
+      "retries": 3,
+      "last_retry_at": 1792617545.7205517
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26188",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26188,
+      "text": "یک اف-۳۵بی در خیابان ۴ بانده مهرشهر کرج دیده شد\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792617195.0542672,
+      "retries": 2,
+      "last_retry_at": 1792617564.743201
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26189",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26189,
+      "text": "جلوش ۲۰۶ داره به پراید شماره میده ، خدایی رعایت کنید جلوی سلطان 🤣",
+      "is_edit": false,
+      "enqueued_at": 1792617352.6256871,
       "retries": 1,
-      "last_retry_at": 1792614689.5472622
+      "last_retry_at": 1792617621.7954426
     }
   ],
-  "last_saved": "2026-10-21 20:32:29 UTC"
+  "last_saved": "2026-10-21 21:20:33 UTC"
 }
