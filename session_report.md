@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 30 minutes
-- **Messages Processed:** 15
-- **Last Message Text:** 2:05
-مادر پرنیان دبیری، از جانباختگان اعتراضات دی‌ماه ۱۴۰۴ در ویدئویی از سیاست دوگانه مقام‌های جمهور...
-- **Last Message Time:** 2026-10-21 16:15:26
+- **Uptime:** 29 minutes
+- **Messages Processed:** 30
+- **Last Message Text:** ائتلاف عربستان : رهگیری و نابود کردن یک پهپاد که توسط تروریست‌های حوثی به سمت منطقه جنوبی عربستان سع...
+- **Last Message Time:** 2026-10-21 16:44:27
