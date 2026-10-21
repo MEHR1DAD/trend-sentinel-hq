@@ -737,7 +737,7 @@
   "channel_watermarks": {
     "Alibk3": 39602,
     "withyashar": 26139,
-    "VahidOnline": 78788,
+    "VahidOnline": 78790,
     "netblocks": 1574,
     "iliaen": 4746
   },
@@ -824,17 +824,40 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 214,
-    "gemini-3.5-flash-lite": 4513,
+    "gemini-3.5-flash-lite": 4551,
     "gemini-2.5-flash": 309,
-    "gemini-3-flash-preview": 611,
+    "gemini-3-flash-preview": 615,
     "gemini-3.1-flash-lite": 1929,
-    "gemini-3.1-flash-lite-preview": 584,
+    "gemini-3.1-flash-lite-preview": 586,
     "gemini-3.6-flash": 337,
     "gemini-3.7-flash": 198,
     "gemini-flash-lite-latest": 86,
-    "gemini-3.5-flash": 172,
-    "gemini-flash-latest": 20
+    "gemini-3.5-flash": 173,
+    "gemini-flash-latest": 21
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-21 13:42:56 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_withyashar_26142",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26142,
+      "text": "ویدئو دیروز از آتش‌سوزی و انفجارها که گفته می‌شود مربوط به «شرکت آلومینیوم ایران» (ایرالکو) در شهر اراک است.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792591414.5654302,
+      "retries": 2,
+      "last_retry_at": 1792591502.8695056
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39606",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39606,
+      "text": "نتنياهو: \n\n(السيد) مجتبى خامنئي قرر رفع التحريم وإيران تحاول تطوير قنبلة نووية.",
+      "is_edit": false,
+      "enqueued_at": 1792591555.919842,
+      "retries": 1,
+      "last_retry_at": 1792591556.0786283
+    }
+  ],
+  "last_saved": "2026-10-21 14:14:47 UTC"
 }

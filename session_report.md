@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 29 minutes
-- **Messages Processed:** 24
-- **Last Message Text:** 7 طائرات أميركية للتزويد بالوقود تحلق فوق مضيق هرمز ودول المنطقة.
-- **Last Message Time:** 2026-10-21 13:34:52
+- **Uptime:** 31 minutes
+- **Messages Processed:** 18
+- **Last Message Text:** نتنياهو: 
+
+(السيد) مجتبى خامنئي قرر رفع التحريم، وإيران تحاول تطوير قنبلة نووية.
+- **Last Message Time:** 2026-10-21 14:05:36
