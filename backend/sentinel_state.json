@@ -735,8 +735,8 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39645,
-    "withyashar": 26181,
+    "Alibk3": 39649,
+    "withyashar": 26189,
     "VahidOnline": 78796,
     "netblocks": 1575,
     "iliaen": 4746
@@ -824,172 +824,18 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 218,
-    "gemini-3.5-flash-lite": 4715,
+    "gemini-3.5-flash-lite": 4716,
     "gemini-2.5-flash": 316,
-    "gemini-3-flash-preview": 649,
-    "gemini-3.1-flash-lite": 1945,
+    "gemini-3-flash-preview": 651,
+    "gemini-3.1-flash-lite": 1946,
     "gemini-3.1-flash-lite-preview": 618,
-    "gemini-3.6-flash": 340,
+    "gemini-3.6-flash": 341,
     "gemini-3.7-flash": 199,
-    "gemini-flash-lite-latest": 117,
+    "gemini-flash-lite-latest": 118,
     "gemini-3.5-flash": 189,
     "gemini-flash-latest": 24
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_withyashar_26184",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26184,
-      "text": "خبرنگار: لغو برخی تحریم‌ها علیه روسیه برای تضمین آزادی گروگان، امتیاز دادن به روسیه محسوب نمی‌شود؟\nترامپ: شما آدم احمقی هستید؟ برای کجا کار می‌کنید؟\nخبرنگار: ای‌بی‌سی نیوز.\nترامپ: شما آدم احمقی هستید!\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792615901.4472504,
-      "retries": 11,
-      "last_retry_at": 1792617581.7515957
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26183",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26183,
-      "text": "سؤال: آیا از ورود به جنگ با ایران پشیمان هستید؟\nترامپ: فکر می‌کنم این یکی از بزرگ‌ترین کارهایی است که انجام داده‌ایم.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792615907.98841,
-      "retries": 10,
-      "last_retry_at": 1792617448.640351
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39635",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39635,
-      "text": "هآرتس عن مصادر في البيت الأبيض: \n\nيبدو أنه قد طرأ تغيير في الموقف الأميركي لصالح شن ضربة استباقية على إيران خلال الساعات القليلة الماضية.",
-      "is_edit": false,
-      "enqueued_at": 1792615908.9566126,
-      "retries": 10,
-      "last_retry_at": 1792617450.6442947
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26182",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26182,
-      "text": "تصویر لو رفته از بیت رهبری فردای حمله\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792615910.9647822,
-      "retries": 10,
-      "last_retry_at": 1792617467.6486003
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39639",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39639,
-      "text": "مسؤول أمني إيراني رفيع:\n\nإيران تعتبر الهجوم الأميركي والإسرائيلي أمرًا محسومًا، ولا تعتدّ بالمواقف الدبلوماسية.",
-      "is_edit": false,
-      "enqueued_at": 1792615919.8876076,
-      "retries": 10,
-      "last_retry_at": 1792617469.65128
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39634",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39634,
-      "text": "الخارجية الأميركية:\n\nأوامر مغادرة الموظفين الأميركيين وعوائلهم تشمل السعودية فقط.",
-      "is_edit": false,
-      "enqueued_at": 1792615920.9653301,
-      "retries": 10,
-      "last_retry_at": 1792617562.7391238
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39638",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39638,
-      "text": "طائرة شحن عسكري أميركي ثقيل تصل دبي بالإمارات.",
-      "is_edit": false,
-      "enqueued_at": 1792615920.9694562,
-      "retries": 10,
-      "last_retry_at": 1792617583.7555077
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39640",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39640,
-      "text": "تحليق مكثف للطيران الحربي الصهيوني فوق أجواء فلسطين المحتلة.",
-      "is_edit": true,
-      "enqueued_at": 1792615959.5999024,
-      "retries": 9,
-      "last_retry_at": 1792617486.6683803
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26185",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26185,
-      "text": "یک مقام امنیتی ارشد ایرانی:\nایران حمله آمریکا و اسرائیل را قطعی می‌داند و به مواضع دیپلماتیک توجهی نمی‌کند.\n@WarRoom 🚨🚨🚨",
-      "is_edit": true,
-      "enqueued_at": 1792616013.175293,
-      "retries": 9,
-      "last_retry_at": 1792617488.6722116
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39641",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39641,
-      "text": "الخارجية الأميركية تأمر بمزيد من تخفيضات الموظفين في العديد من البعثات الدبلوماسية في المنطقة.",
-      "is_edit": false,
-      "enqueued_at": 1792616071.8150995,
-      "retries": 9,
-      "last_retry_at": 1792617600.7683759
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39642",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39642,
-      "text": "شبكة إن بي سي الأميركية عن مسؤولين أميركيين:\n\n الجيش الأميركي قلل بشكل تدريجي من عدد قواته المتواجدة في القواعد المنتشرة في جميع أنحاء الشرق الأوسط في الأيام الأخيرة.",
-      "is_edit": false,
-      "enqueued_at": 1792616212.599018,
-      "retries": 9,
-      "last_retry_at": 1792617602.7722852
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26186",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26186,
-      "text": "ترامپ می‌گوید از گزارش‌ها مبنی بر دستور خروج کارکنان سفارت آمریکا از برخی مناطق خاورمیانه اطلاعی ندارد.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792616227.3532774,
-      "retries": 8,
-      "last_retry_at": 1792617505.6913455
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39643",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39643,
-      "text": "سُبحانَ اللهِ وَالحَمدُ للهِ وَلا إلهَ إلاّ الله وَاللهُ أكبَرُ، وَلا حَولَ وَلا قُوَّةَ إلاّ بِاللهِ العَليِّ العَظيمِ.\n\nرابط قناة الاحتياط:\nترجمه‌ی فارسی همه‌ی اخبار، اکنون در کانال ما:\nEnglish News? Follow our backup:\nhttps://t.me/Ali_bk_8",
-      "is_edit": false,
-      "enqueued_at": 1792616441.260271,
-      "retries": 7,
-      "last_retry_at": 1792617507.6952615
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39644",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39644,
-      "text": "خلال آخر 24 ساعة، رُصدت 97 طائرة عسكرية في المنطقة، بينها 8 طائرات نقل وصلت من خارجها، منها 6 أميركية وواحدة ألمانية وواحدة غير معروفة، إضافة إلى 6 طائرات نقل عسكري إقليمي و31 طائرة تزود بالوقود و21 طائرة تجسس ومقاتلة واحدة و25 طائرة نقل عسكري تنقّلت داخل المنطقة و5 مروحيات عسكرية.",
-      "is_edit": false,
-      "enqueued_at": 1792616494.7874212,
-      "retries": 7,
-      "last_retry_at": 1792617619.7914586
-    },
     {
       "id": "vip_multi_agent_withyashar_26187",
       "pipeline": "vip_multi_agent",
@@ -998,8 +844,8 @@
       "text": "رسانه های عبری : گزارش‌ها از شنیده‌شدن صدای جنگنده‌های اسرائیلی بر فراز اربیل، مرکز اقلیم کردستان عراق، حکایت دارد. احتمال می‌رود این پروازها بخشی از دور جدید پروازهای شناسایی یا شبیه‌سازی حمله اسرائیل علیه ایران باشد؛ با این حال، هدف این پروازها هنوز تأیید نشده است. \n@WarRoom 🚨🚨🚨🚨",
       "is_edit": false,
       "enqueued_at": 1792617088.168959,
-      "retries": 4,
-      "last_retry_at": 1792617524.700385
+      "retries": 13,
+      "last_retry_at": 1792619329.1116657
     },
     {
       "id": "vip_multi_agent_Alibk3_39646",
@@ -1009,8 +855,8 @@
       "text": "صور الأقمار الصناعية تُظهر أن \"مبنى البرج\" في مقر شركة أرامكو في الظهران تعرض للأضرار، بصاروخ باليستي يمني.",
       "is_edit": false,
       "enqueued_at": 1792617112.630608,
-      "retries": 3,
-      "last_retry_at": 1792617526.7044134
+      "retries": 12,
+      "last_retry_at": 1792619331.1152868
     },
     {
       "id": "vip_multi_agent_Alibk3_39645",
@@ -1020,8 +866,8 @@
       "text": "تحليق مكثف للطيران الحربي فوق أجواء شمال العراق",
       "is_edit": true,
       "enqueued_at": 1792617127.5583975,
-      "retries": 3,
-      "last_retry_at": 1792617543.716675
+      "retries": 12,
+      "last_retry_at": 1792619348.1260958
     },
     {
       "id": "vip_multi_agent_Alibk3_39647",
@@ -1031,8 +877,8 @@
       "text": "تحليق مكثف للطيران الحربي فوق أجواء شمال العراق",
       "is_edit": false,
       "enqueued_at": 1792617141.6313615,
-      "retries": 3,
-      "last_retry_at": 1792617545.7205517
+      "retries": 12,
+      "last_retry_at": 1792619350.2478569
     },
     {
       "id": "vip_multi_agent_withyashar_26188",
@@ -1042,8 +888,8 @@
       "text": "یک اف-۳۵بی در خیابان ۴ بانده مهرشهر کرج دیده شد\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792617195.0542672,
-      "retries": 2,
-      "last_retry_at": 1792617564.743201
+      "retries": 11,
+      "last_retry_at": 1792619367.253002
     },
     {
       "id": "vip_multi_agent_withyashar_26189",
@@ -1053,9 +899,108 @@
       "text": "جلوش ۲۰۶ داره به پراید شماره میده ، خدایی رعایت کنید جلوی سلطان 🤣",
       "is_edit": false,
       "enqueued_at": 1792617352.6256871,
+      "retries": 9,
+      "last_retry_at": 1792619204.0181925
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39648",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39648,
+      "text": "تحليق للطيران المعادي فوق أجواء سوريا.",
+      "is_edit": true,
+      "enqueued_at": 1792617689.2980595,
+      "retries": 6,
+      "last_retry_at": 1792619369.256557
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39649",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39649,
+      "text": "تحليق مكثف للطيران الحربي فوق أجواء العراق.",
+      "is_edit": true,
+      "enqueued_at": 1792617870.4314773,
+      "retries": 5,
+      "last_retry_at": 1792619206.0216799
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26190",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26190,
+      "text": "خبرنگار اسرائیلی : منابعی در کاخ سفید به من گفتند در ساعات اخیر، تغییر مثبتی در موضع آمریکا درباره حمله به ایران ایجاد شده است. منابع کاخ سفید دلیل اصلی این تغییر را ارزیابی‌های اخیر دونالد ترامپ و اطلاع او از دیدار پیشِ روی پیت هگست، وزیر دفاع آمریکا، با بنیامین نتانیاهو، نخست‌وزیر اسرائیل، می‌دانند. \n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792618089.5653079,
+      "retries": 5,
+      "last_retry_at": 1792619223.026478
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39650",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39650,
+      "text": "رويترز: \n\nواشنطن تعتزم الطلب من موظفي سفاراتها غير الأساسيين وعائلاتهم مغادرة دول الخليج خلال الأيام القليلة المقبلة.",
+      "is_edit": false,
+      "enqueued_at": 1792618089.576031,
+      "retries": 5,
+      "last_retry_at": 1792619225.0299773
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26191",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26191,
+      "text": "چهار مقام آمریکایی به رویترز گفتند که قرار است خانواده‌های کارکنان برخی دیگر از نمایندگی‌های دیپلماتیک آمریکا در کشورهای حوزه خلیج فارس نیز خارج شوند. با این حال، سخنگوی وزارت خارجه آمریکا تأکید کرد که دستور رسمی خروج فعلاً فقط شامل عربستان سعودی است و گزارش‌ها درباره تخلیه گسترده سفارتخانه‌های منطقه را تأیید نکرد\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792618202.7442062,
+      "retries": 4,
+      "last_retry_at": 1792619242.0464396
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39651",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39651,
+      "text": "وول ستريت جورنال:\n\nالدبلوماسيون يتسابقون لتجنب التصعيد مع إيران.",
+      "is_edit": false,
+      "enqueued_at": 1792618569.8316948,
+      "retries": 4,
+      "last_retry_at": 1792619244.0499284
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39652",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39652,
+      "text": "إخلاء طائرات أميركية من قاعدة العديد بقطر خشيةً من تعرضها لهجمات.",
+      "is_edit": false,
+      "enqueued_at": 1792619107.9788601,
+      "retries": 2,
+      "last_retry_at": 1792619261.068686
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26192",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26192,
+      "text": "حقیقت یاب اتاق جنگ : خبر ان‌بی‌سی رو کامل ننوشتن ! این کاملش : \nان‌بی‌سی نیوز: گزارش‌ها درباره خروج کارکنان آمریکایی از خاورمیانه در پی افزایش تنش‌ها\nهم‌زمان با افزایش نگرانی‌ها از ازسرگیری درگیری‌ها با ایران، آمریکا دستور خروج کارکنان غیرضروری سفارت خود در عربستان سعودی و اعضای خانواده‌هایشان را صادر کرده است. همچنین گزارش‌ها حاکی از کاهش موقت نیروهای برخی نمایندگی‌های دیپلماتیک آمریکا در کشورهای خلیج فارس و جابه‌جایی تعدادی از نیروهای نظامی برای دورکردن آن‌ها از مناطق پرخطر است.\nبا این حال، تاکنون گزارشی معتبر مبنی بر تخلیه فوری تمام پایگاه‌های نظامی آمریکا در خاورمیانه منتشر نشده است.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792619214.6344066,
+      "retries": 2,
+      "last_retry_at": 1792619312.106498
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39653",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39653,
+      "text": "مسؤول أمريكي:\n\n هناك تحركات سريعة لنشر أصول عسكرية في مواقعها، استعداداً لما يُتوقع أن يكون ضوءاً أخضر من ترامب، لاستئناف الهجمات.",
+      "is_edit": false,
+      "enqueued_at": 1792619289.5932117,
       "retries": 1,
-      "last_retry_at": 1792617621.7954426
+      "last_retry_at": 1792619295.087772
     }
   ],
-  "last_saved": "2026-10-21 21:20:33 UTC"
+  "last_saved": "2026-10-21 21:49:39 UTC"
 }
