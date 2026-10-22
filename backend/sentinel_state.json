@@ -828,82 +828,16 @@
     "gemini-3.8-flash": 228,
     "gemini-3.5-flash-lite": 5532,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 740,
+    "gemini-3-flash-preview": 742,
     "gemini-3.1-flash-lite": 2285,
     "gemini-3.1-flash-lite-preview": 678,
-    "gemini-3.6-flash": 360,
+    "gemini-3.6-flash": 361,
     "gemini-3.7-flash": 204,
-    "gemini-flash-lite-latest": 299,
-    "gemini-3.5-flash": 319,
+    "gemini-flash-lite-latest": 300,
+    "gemini-3.5-flash": 320,
     "gemini-flash-latest": 38
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_withyashar_26248",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26248,
-      "text": "پوستر جدید رسانه رسمی رهبر (موشتبی ای‌آی) به نام “ساعت صفر” منتشر شد\nدر این پوستر تصویر نیروگاه هسته ای دیمونا واقع در صحرای نقب به عنوان یکی از اهداف جدید به تصویر کشیده شده است\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792695062.5619574,
-      "retries": 7,
-      "last_retry_at": 1792697240.8809578
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6542",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6542,
-      "text": "فعالیت فرودگاه دمام در عربستان سعودی بار دیگر متوقف شد.\n\nOperations halted again at Dammam Airport in Saudi Arabia.",
-      "is_edit": false,
-      "enqueued_at": 1792695440.6169915,
-      "retries": 7,
-      "last_retry_at": 1792697242.8851016
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39724",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39724,
-      "text": "توقف مطار الدمام في السعودية مجدداً.",
-      "is_edit": false,
-      "enqueued_at": 1792695451.094025,
-      "retries": 7,
-      "last_retry_at": 1792697259.8952115
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6544",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6544,
-      "text": "Brent crude jumps to $113 a barrel.",
-      "is_edit": false,
-      "enqueued_at": 1792696313.0548286,
-      "retries": 7,
-      "last_retry_at": 1792697261.8992405
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39726",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39726,
-      "text": "خام برنت يقفز إلى 113 دولارًا للبرميل.",
-      "is_edit": false,
-      "enqueued_at": 1792696313.0662646,
-      "retries": 6,
-      "last_retry_at": 1792697172.8329017
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93636",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93636,
-      "text": "🔴قیمت نفت کمتر از یکسال پیش ۶۰ دلار\nامشب ۱۱۳ دلار\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792696540.4484744,
-      "retries": 6,
-      "last_retry_at": 1792697278.9040976
-    },
     {
       "id": "vip_multi_agent_kianmeli1_93639",
       "pipeline": "vip_multi_agent",
@@ -912,8 +846,8 @@
       "text": "🔴رویترز: جنگ آغاز شود٫ نفت ۱۵۰ دلار میشود چراکه حوثی ها اعلام کرده هیچ چاه نفتی در عربستان نخواهد بود و ایران نیز میخواهد باب المندب را ببندد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792696709.8272762,
-      "retries": 5,
-      "last_retry_at": 1792697280.9072669
+      "retries": 14,
+      "last_retry_at": 1792699163.9115508
     },
     {
       "id": "vip_multi_agent_withyashar_26249",
@@ -923,8 +857,8 @@
       "text": "‏نتانیاهو: پیش از نابودی کامل حزب‌الله، سر اختاپوس را در تهران قطع خواهیم کرد\n‏ بنیامین نتانیاهو، نخست‌وزیر اسرائیل، در گفت‌وگو با شبکه ۱۴ این کشور تأکید کرد که هدف اسرائیل فراتر از نابودی حماس و حزب‌الله است و سرنگونی رژیم تروریستی جمهوری اسلامی را ضروری می‌داند. او با اشاره به همکاری خود با پرزیدنت دونالد ترامپ گفت اسرائیل پیش از واردکردن ضربه نهایی به حزب‌الله، به سراغ «سر اختاپوس» در تهران خواهد رفت. نتانیاهو همچنین گفت مردم ایران و بخش‌هایی از جامعه لبنان، از جمله شیعیان این کشور، از اقدامات اسرائیل علیه رژیم جمهوری اسلامی و نیروهای نیابتی آن حمایت می‌کنند.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792696793.1853414,
-      "retries": 4,
-      "last_retry_at": 1792697174.8362637
+      "retries": 13,
+      "last_retry_at": 1792699165.9154801
     },
     {
       "id": "vip_multi_agent_kianmeli1_93640",
@@ -934,8 +868,8 @@
       "text": "🔴در پی فراخوان آخرهفته در سراسر پاریس٫ پلیس به حالت آماده باش در آمد تا رویداد هفته پیش تکرار نشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792696822.8178825,
-      "retries": 4,
-      "last_retry_at": 1792697297.9222848
+      "retries": 13,
+      "last_retry_at": 1792699182.9349875
     },
     {
       "id": "vip_multi_agent_kianmeli1_93641",
@@ -945,8 +879,8 @@
       "text": "🔴وزارت ارتباطات: \n\nدر صورت وقوع جنگ تحمیلی، اینترنت محدود خواهد شد تا سطح تهدیدات دشمن کاهش یابد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792697033.0898445,
-      "retries": 3,
-      "last_retry_at": 1792697299.9264233
+      "retries": 12,
+      "last_retry_at": 1792699184.9390352
     },
     {
       "id": "vip_multi_agent_kianmeli1_93642",
@@ -956,8 +890,8 @@
       "text": "🔴گزارش‌های منتشره حاکی از آن است که ایالات متحده در حال «تخلیه گسترده» اعضای خانواده دیپلمات‌های آمریکایی در کشورهای خاورمیانه است.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792697033.099862,
-      "retries": 2,
-      "last_retry_at": 1792697191.8556604
+      "retries": 12,
+      "last_retry_at": 1792699201.9449685
     },
     {
       "id": "vip_multi_agent_kianmeli1_93643",
@@ -967,9 +901,163 @@
       "text": "🔴یک مقام ارتش اسرائیل به شبکه ۱۲ گفت: اگر در ایران تدارکاتی برای انجام حمله شناسایی کنیم، وارد عمل خواهیم شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792697273.0934293,
+      "retries": 11,
+      "last_retry_at": 1792699278.0112963
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26246",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26246,
+      "text": "کانال ۱۵ اسرائیل : سازمان تروریستی حماس در پیامی به اسرائیل از طریق فرستاده سازمان ملل اعلام کرد: «برای حمله‌ای دیگر در سبک حمله ۷ اکتبر آماده‌ایم.»\nمقام‌های اسرائیلی در واکنش گفتند: «این اظهارات ثابت می‌کند که حماس قصد خلع سلاح ندارد.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792697446.2224295,
+      "retries": 10,
+      "last_retry_at": 1792699203.948479
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39725",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39725,
+      "text": "5 طائرات تزويد بالوقود أميركية تُحلق بالقرب من مضيق هرمز.",
+      "is_edit": false,
+      "enqueued_at": 1792697553.0032144,
+      "retries": 10,
+      "last_retry_at": 1792699220.9634054
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93644",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93644,
+      "text": "🔴شمارش معکوس ایدی کوهن معروفترین خبرنگار اسرائیل برای آغاز جنگ.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792697555.0063312,
+      "retries": 9,
+      "last_retry_at": 1792699222.9675324
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6543",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6543,
+      "text": "5 فروند هواپیمای سوخت‌رسان آمریکایی در نزدیکی تنگه هرمز پرواز می‌کنند.\n\n5 American refueling aircraft are flying near the Strait of Hormuz.",
+      "is_edit": false,
+      "enqueued_at": 1792697555.0131178,
+      "retries": 9,
+      "last_retry_at": 1792699239.9867754
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6545",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6545,
+      "text": "Zionist airstrikes on Nuseirat in the central Gaza Strip",
+      "is_edit": false,
+      "enqueued_at": 1792697561.0515234,
+      "retries": 9,
+      "last_retry_at": 1792699241.989308
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26247",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26247,
+      "text": "ای۲۴نیوز : همه طرف‌ها خود را برای جنگ آماده می‌کنند: جمهوری اسلامی معتقد است که اگر اولین حمله را خود انجام دهد، این امر استراتژی آمریکا را مختل خواهد کرد\n@WarRoom 🚨🚨🚨",
+      "is_edit": false,
+      "enqueued_at": 1792697562.001394,
+      "retries": 9,
+      "last_retry_at": 1792699258.9944632
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39727",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39727,
+      "text": "غارات صهيونية على النصيرات وسط قطاع غزة",
+      "is_edit": false,
+      "enqueued_at": 1792697562.998396,
+      "retries": 8,
+      "last_retry_at": 1792699260.9971209
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39723",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39723,
+      "text": "القناة 15 العبرية عن مصدرين دبلوماسيين إقليميين:\n\nإجلاء واسع النطاق لأفراد عائلات الدبلوماسيين الأميركيين من جميع دول الشرق الأوسط، باستثناء عُمان والكيان، في إطار توصية تتجاوز مستوى التحذير الاعتيادي.",
+      "is_edit": false,
+      "enqueued_at": 1792697565.05597,
+      "retries": 8,
+      "last_retry_at": 1792699280.0152423
+    },
+    {
+      "id": "vip_multi_agent_netblocks_1576",
+      "pipeline": "vip_multi_agent",
+      "node": "netblocks",
+      "msg_id": 1576,
+      "text": "⚠️ Confirmed: Metrics show a disruption to internet connectivity in Zhytomyr Oblast, #Ukraine, corresponding to the third set of power outages this week as Russia's strategy of drone attacks targeting energy infrastructure during the colder months expands westward",
+      "is_edit": false,
+      "enqueued_at": 1792697566.0233176,
+      "retries": 8,
+      "last_retry_at": 1792699297.0343263
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39722",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39722,
+      "text": "نتنياهو: \n\n\"يريد النظام في إيران التأثير على الانتخابات - إذا حاول القيام باستفزاز، فسنتحرك بقوة\".",
+      "is_edit": false,
+      "enqueued_at": 1792697568.0123599,
+      "retries": 7,
+      "last_retry_at": 1792699299.0383422
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6540",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6540,
+      "text": "نتانیاهو:\n\n«رژیم ایران می‌خواهد بر انتخابات تأثیر بگذارد؛ اگر تلاش کند اقدامی تحریک‌آمیز انجام دهد، با قدرت وارد عمل خواهیم شد.»\n\nNetanyahu:\n\n\"The regime in Iran wants to influence the elections — if it tries to carry out a provocation, we will act forcefully.\"",
+      "is_edit": false,
+      "enqueued_at": 1792697570.0427816,
+      "retries": 7,
+      "last_retry_at": 1792699316.0437376
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6541",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6541,
+      "text": "شبکه ۱۵ عبری به نقل از دو منبع دیپلماتیک منطقه‌ای:\n\nتخلیه گسترده اعضای خانواده دیپلمات‌های آمریکایی از تمام کشورهای خاورمیانه، به‌استثنای عمان و رژیم صهیونیستی، در چارچوب توصیه‌ای که از سطح هشدار معمول فراتر می‌رود.\n\nHebrew Channel 15, citing two regional diplomatic sources:\n\nA large-scale evacuation of family members of US diplomats from all Middle Eastern countries, except Oman and the Zionist entity, under a recommendation that goes beyond the usual warning level.",
+      "is_edit": false,
+      "enqueued_at": 1792697571.0614433,
+      "retries": 2,
+      "last_retry_at": 1792699318.0467687
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93645",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93645,
+      "text": "🔴هم اکنون در بسیاری از متاطق تهران ایست های بازرسی تشکیل شده است\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792697724.9962714,
+      "retries": 1,
+      "last_retry_at": 1792699146.8974304
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26250",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26250,
+      "text": "نفت برنت ۱۱۳$ \n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792698178.361511,
       "retries": 0,
       "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-22 19:28:20 UTC"
+  "last_saved": "2026-10-22 20:02:05 UTC"
 }
