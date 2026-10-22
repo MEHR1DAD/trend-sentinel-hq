@@ -735,12 +735,12 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39676,
-    "withyashar": 26192,
+    "Alibk3": 39681,
+    "withyashar": 26210,
     "VahidOnline": 78799,
     "netblocks": 1575,
     "iliaen": 4747,
-    "Ali_bk_8": 6493,
+    "Ali_bk_8": 6498,
     "kianmeli1": 93620
   },
   "vahid_post_time": {},
@@ -826,17 +826,29 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 221,
-    "gemini-3.5-flash-lite": 4938,
+    "gemini-3.5-flash-lite": 4998,
     "gemini-2.5-flash": 325,
     "gemini-3-flash-preview": 669,
     "gemini-3.1-flash-lite": 1961,
     "gemini-3.1-flash-lite-preview": 631,
     "gemini-3.6-flash": 351,
     "gemini-3.7-flash": 200,
-    "gemini-flash-lite-latest": 185,
-    "gemini-3.5-flash": 228,
+    "gemini-flash-lite-latest": 253,
+    "gemini-3.5-flash": 229,
     "gemini-flash-latest": 27
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-22 09:33:34 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6499",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6499,
+      "text": "Zionist aircraft enter the airspace along the Iraqi-Syrian border.",
+      "is_edit": false,
+      "enqueued_at": 1792663440.5979,
+      "retries": 1,
+      "last_retry_at": 1792663442.4975882
+    }
+  ],
+  "last_saved": "2026-10-22 10:04:16 UTC"
 }
