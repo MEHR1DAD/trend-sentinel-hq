@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 35 minutes
-- **Messages Processed:** 38
-- **Last Message Text:** مشاهد استهداف التحشيدات والآليات التابعة للعدو السعودي في مأرب بطائرات "شواظ" الانقضاضية - 22 أكتوبر...
-- **Last Message Time:** 2026-10-22 13:03:24
+- **Uptime:** 44 minutes
+- **Messages Processed:** 50
+- **Last Message Text:** مشاهد لتصاعد أعمدة الدخان من العاصمة السعودية الرياض.
+- **Last Message Time:** 2026-10-22 13:57:17

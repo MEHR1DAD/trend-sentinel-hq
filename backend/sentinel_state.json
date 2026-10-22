@@ -735,12 +735,12 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39702,
+    "Alibk3": 39712,
     "withyashar": 26221,
     "VahidOnline": 78804,
     "netblocks": 1575,
     "iliaen": 4747,
-    "Ali_bk_8": 6520,
+    "Ali_bk_8": 6530,
     "kianmeli1": 93620
   },
   "vahid_post_time": {},
@@ -825,96 +825,41 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 222,
-    "gemini-3.5-flash-lite": 5456,
+    "gemini-3.8-flash": 227,
+    "gemini-3.5-flash-lite": 5460,
     "gemini-2.5-flash": 325,
     "gemini-3-flash-preview": 669,
-    "gemini-3.1-flash-lite": 2007,
+    "gemini-3.1-flash-lite": 2098,
     "gemini-3.1-flash-lite-preview": 631,
-    "gemini-3.6-flash": 352,
-    "gemini-3.7-flash": 201,
-    "gemini-flash-lite-latest": 288,
-    "gemini-3.5-flash": 262,
-    "gemini-flash-latest": 27
+    "gemini-3.6-flash": 353,
+    "gemini-3.7-flash": 204,
+    "gemini-flash-lite-latest": 289,
+    "gemini-3.5-flash": 278,
+    "gemini-flash-latest": 36
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Ali_bk_8_6523",
+      "id": "vip_multi_agent_Alibk3_39713",
       "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6523,
-      "text": "Announcement of the death of a Saudi soldier by Yemeni forces' fire.",
+      "node": "Alibk3",
+      "msg_id": 39713,
+      "text": "مشاهد لتصاعد أعمدة الدخان من العاصمة السعودية الرياض.",
       "is_edit": false,
-      "enqueued_at": 1792673229.7059622,
+      "enqueued_at": 1792677447.3492382,
       "retries": 1,
-      "last_retry_at": 1792674781.3625793
+      "last_retry_at": 1792677451.5902774
     },
     {
-      "id": "vip_multi_agent_Alibk3_39705",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39705,
-      "text": "الإعلان عن مقتل جندي سعودي بنيران القوات اليمنية.",
-      "is_edit": true,
-      "enqueued_at": 1792673230.729041,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93625",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93625,
-      "text": "🔴حملات موشکی به عربستان\n\nبه نظر می رسد موشک به فرودگاه اصابت کرده\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": true,
-      "enqueued_at": 1792673517.6311069,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93626",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93626,
-      "text": "🔴مخبر:‌ اگر نیروگاه یا پتروشیمی ما را بزنند، ما دوباره ۹ کشور را می‌زنیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": true,
-      "enqueued_at": 1792673770.9496574,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93627",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93627,
-      "text": "🔴ریزش شدید بورس چین\n\nاحتمالات از وقوع جنگ باعث شده معاملات فروش بالا برود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792674038.7521646,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39706",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39706,
-      "text": "مشاهد استهداف التحشيدات والآليات التابعة للعدو السعودي في مأرب بطائرات \"شواظ\" الانقضاضية - 22 أكتوبر 2026م",
-      "is_edit": true,
-      "enqueued_at": 1792674202.7283754,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6524",
+      "id": "vip_multi_agent_Ali_bk_8_6531",
       "pipeline": "vip_multi_agent",
       "node": "Ali_bk_8",
-      "msg_id": 6524,
-      "text": "تصاویری از هدف قرار دادن تجمع نیروها و خودروهای دشمن سعودی در مأرب با پهپادهای انتحاری «شُواظ» - ۲۲ اکتبر ۲۰۲۶\n\nFootage of strikes on Saudi enemy troop concentrations and vehicles in Marib using “Shu'az” dive-attack drones - 22 October 2026",
-      "is_edit": true,
-      "enqueued_at": 1792674204.6637177,
+      "msg_id": 6531,
+      "text": "Footage shows columns of smoke rising from the Saudi capital, Riyadh.",
+      "is_edit": false,
+      "enqueued_at": 1792677459.1869497,
       "retries": 0,
       "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-22 13:13:06 UTC"
+  "last_saved": "2026-10-22 13:58:29 UTC"
 }
