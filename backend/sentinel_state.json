@@ -825,30 +825,74 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 220,
-    "gemini-3.5-flash-lite": 4738,
+    "gemini-3.8-flash": 221,
+    "gemini-3.5-flash-lite": 4746,
     "gemini-2.5-flash": 325,
     "gemini-3-flash-preview": 669,
     "gemini-3.1-flash-lite": 1961,
     "gemini-3.1-flash-lite-preview": 631,
-    "gemini-3.6-flash": 348,
+    "gemini-3.6-flash": 351,
     "gemini-3.7-flash": 199,
-    "gemini-flash-lite-latest": 124,
-    "gemini-3.5-flash": 219,
+    "gemini-flash-lite-latest": 125,
+    "gemini-3.5-flash": 225,
     "gemini-flash-latest": 27
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39666",
+      "id": "vip_multi_agent_Ali_bk_8_6482",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6482,
+      "text": "فرودگاه جده در عربستان سعودی هم‌اکنون تعطیل شده است.\n\nJeddah Airport in Saudi Arabia has now been shut down.",
+      "is_edit": false,
+      "enqueued_at": 1792650185.3806875,
+      "retries": 11,
+      "last_retry_at": 1792651879.1993089
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6483",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6483,
+      "text": "تردد هوایی در فرودگاه کویت متوقف شده است.\n\nAir traffic at Kuwait Airport has been suspended.",
+      "is_edit": false,
+      "enqueued_at": 1792650208.9310327,
+      "retries": 11,
+      "last_retry_at": 1792651896.2185318
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93620",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93620,
+      "text": "🔴ترامپ با عصبانیت از لزوم ادامه جنگ گفت\n\nبهای بسیار ناچیزی است که باید پرداخت شود٫ بزرگ ترین کشور حامی تروریسم در جهان، پلیدترین کشور روی زمین. \nاگر سلاح هسته ای داشتند٫ ظرف یک روز یا حتی یک ساعت از آن استفاده می کردند.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792650286.4012647,
+      "retries": 11,
+      "last_retry_at": 1792651945.246252
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6484",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6484,
+      "text": "Saudi aviation announces that another person was killed in an attack on Dammam Airport.",
+      "is_edit": false,
+      "enqueued_at": 1792651238.6446333,
+      "retries": 6,
+      "last_retry_at": 1792651928.2267728
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39667",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39666,
-      "text": "توقف حركة الملاحة الجوية في مطار الكويت.",
+      "msg_id": 39667,
+      "text": "الطيران السعودي يعلن مقتل شخص آخر نتيجة استهداف مطار الدمام.",
       "is_edit": false,
-      "enqueued_at": 1792648376.3874142,
-      "retries": 11,
-      "last_retry_at": 1792650051.5816395
+      "enqueued_at": 1792651238.6643305,
+      "retries": 6,
+      "last_retry_at": 1792651947.2504985
     }
   ],
-  "last_saved": "2026-10-22 06:21:20 UTC"
+  "last_saved": "2026-10-22 06:52:50 UTC"
 }
