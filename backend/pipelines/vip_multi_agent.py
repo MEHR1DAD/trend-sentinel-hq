@@ -27,9 +27,11 @@ class VipMultiAgentEditorialPipeline:
     برای تمامی کانال‌های VIP:
     - @withyashar
     - @Alibk3
+    - @Ali_bk_8
     - @VahidOnline
     - @iliaen
     - @netblocks
+    - @kianmeli1
 
     ساختار سربازها:
     - سرباز شماره ۰ (Soldier 0): مدیریت استراتژیک پشته مدل‌ها و ماتریس مدل × کلید با تست زنده سلامت (در GeminiClient)

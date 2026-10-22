@@ -37,7 +37,9 @@ from backend.core.config import (
     get_tehran_time_fa,
     to_fa_num,
     detect_msg_media_type,
-    get_media_icon_from_type
+    get_media_icon_from_type,
+    VIP_MAP,
+    VIP_CANONICAL_SET
 )
 from backend.core.db import DatabaseManager
 from backend.core.gemini import GeminiClient
@@ -489,7 +491,7 @@ class LiveSentinel:
                     except Exception:
                         self.mirror_posted_map['iliaen'][k] = v
                 
-                vip_nodes_filter = {'withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'}
+                vip_nodes_filter = VIP_CANONICAL_SET
                 raw_watermarks = data.get('channel_watermarks', {})
                 for k, v in raw_watermarks.items():
                     if isinstance(v, (int, float)) and k.lower() in vip_nodes_filter:
@@ -544,7 +546,7 @@ class LiveSentinel:
 
             clean_watermarks = {
                 k: v for k, v in self.db.channel_watermarks.items()
-                if k.lower() in {'withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'}
+                if k.lower() in VIP_CANONICAL_SET
             }
 
             data = {
@@ -653,7 +655,7 @@ class LiveSentinel:
         """
         target_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat']
         fetch_client = reader_client or self.client or self.bot
-        vip_map = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen', 'withyashar': 'withyashar', 'alibk3': 'Alibk3'}
+        vip_map = VIP_MAP
 
         for ch in target_channels:
             target_peer = self.get_node_input_peer(ch) or ch
@@ -1020,8 +1022,7 @@ class LiveSentinel:
     async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None):
         async with self.lock:
             canon = (node or '').lower()
-            vip_map_fast = {'vahidonline': 'VahidOnline', 'iliaen': 'iliaen', 'withyashar': 'withyashar', 'alibk3': 'Alibk3', 'netblocks': 'netblocks'}
-            canon_node = vip_map_fast.get(canon)
+            canon_node = VIP_MAP.get(canon)
             if not canon_node:
                 # Strictly drop any non-VIP message immediately
                 return
@@ -1126,7 +1127,7 @@ async def main():
     @client.on(events.NewMessage())
     async def user_handler(event):
         node_username = sentinel.resolve_event_node(event)
-        if not node_username or (node_username or '').lower() not in ('withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'):
+        if not node_username or (node_username or '').lower() not in VIP_CANONICAL_SET:
             return
         text = event.message.message
         msg_id = event.message.id
@@ -1136,7 +1137,7 @@ async def main():
     @client.on(events.MessageEdited())
     async def edit_handler(event):
         node_username = sentinel.resolve_event_node(event)
-        if not node_username or (node_username or '').lower() not in ('withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'):
+        if not node_username or (node_username or '').lower() not in VIP_CANONICAL_SET:
             return
         text = event.message.message
         msg_id = event.message.id
@@ -1147,7 +1148,7 @@ async def main():
     async def delete_handler(event):
         try:
             node_username = sentinel.resolve_event_node(event)
-            if not node_username or (node_username or '').lower() not in ('withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'):
+            if not node_username or (node_username or '').lower() not in VIP_CANONICAL_SET:
                 return
             deleted_ids = getattr(event, 'deleted_ids', [])
             if deleted_ids:
@@ -1158,7 +1159,7 @@ async def main():
     async def active_poller():
         last_ids = {}
         last_deletion_check = time.time()
-        vip_nodes = [n for n in sentinel.nodes if (n or '').lower() in ('withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks')]
+        vip_nodes = [n for n in sentinel.nodes if (n or '').lower() in VIP_CANONICAL_SET]
 
         while True:
             if time.time() - last_deletion_check >= 180:
@@ -1232,7 +1233,7 @@ async def main():
             print(f"⚠️ Startup model query timed out or failed: {gm_err}")
         await sentinel.init_channel_last_alert_ids(reader_client=client)
         
-        vip_nodes = ['Alibk3', 'withyashar', 'VahidOnline', 'iliaen', 'netblocks']
+        vip_nodes = list(VIP_MAP.values())
         print(f"⚡ Executing transition catch-up for all {len(vip_nodes)} VIP channels...")
         for v_node in vip_nodes:
             try:
@@ -1250,7 +1251,7 @@ async def main():
             smart_queue_task = asyncio.create_task(sentinel.run_smart_queue_worker())
             await sentinel.preload_node_entities(reader_client=client)
             await sentinel.init_channel_last_alert_ids(reader_client=client)
-            vip_nodes = ['Alibk3', 'withyashar', 'VahidOnline', 'iliaen', 'netblocks']
+            vip_nodes = list(VIP_MAP.values())
             for v_node in vip_nodes:
                 try:
                     await sentinel.vip_pipeline.catchup_unposted(reader_client=client, node=v_node)

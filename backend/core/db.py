@@ -2,7 +2,7 @@ import sqlite3
 import time
 from collections import OrderedDict
 from concurrent.futures import ThreadPoolExecutor
-from backend.core.config import POSTED_DB_FILE
+from backend.core.config import POSTED_DB_FILE, VIP_CANONICAL_SET
 
 class DatabaseManager:
     def __init__(self, db_file=POSTED_DB_FILE):
@@ -37,13 +37,14 @@ class DatabaseManager:
             """)
             cur.execute("CREATE INDEX IF NOT EXISTS idx_posted_lookup ON posted_sources (target_channel, source_node, source_msg_id);")
             cur.execute("CREATE INDEX IF NOT EXISTS idx_posted_created ON posted_sources (created_at);")
-            VIP_CANONICAL_NODES = {'withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'}
+            VIP_CANONICAL_NODES = VIP_CANONICAL_SET
 
             # 1. Clean up any non-VIP watermarks from table
-            cur.execute("""
+            placeholders = ','.join('?' for _ in VIP_CANONICAL_SET)
+            cur.execute(f"""
                 DELETE FROM channel_watermarks 
-                WHERE LOWER(canon_node) NOT IN ('withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks')
-            """)
+                WHERE LOWER(canon_node) NOT IN ({placeholders})
+            """, list(VIP_CANONICAL_SET))
             con.commit()
 
             # 2. Load watermarks from dedicated durable table for VIP channels only
@@ -182,8 +183,7 @@ class DatabaseManager:
             print(f"⚠️ Error persisting watermark for {canon_node} to DB: {e}")
 
     def advance_watermark(self, canon_node, msg_id):
-        VIP_CANONICAL_NODES = {'withyashar', 'alibk3', 'vahidonline', 'iliaen', 'netblocks'}
-        if not canon_node or (canon_node or '').lower() not in VIP_CANONICAL_NODES or not msg_id:
+        if not canon_node or (canon_node or '').lower() not in VIP_CANONICAL_SET or not msg_id:
             return
         try:
             src_int = int(msg_id)

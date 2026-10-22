@@ -53,9 +53,12 @@ VIP_MAP = {
     'vahidonline': 'VahidOnline',
     'iliaen': 'iliaen',
     'alibk3': 'Alibk3',
+    'ali_bk_8': 'Ali_bk_8',
+    'kianmeli1': 'kianmeli1',
     'withyashar': 'withyashar',
     'netblocks': 'netblocks'
 }
+VIP_CANONICAL_SET = set(VIP_MAP.keys())
 
 # --- Strict Canonical Channel Hashtags ---
 CHANNEL_CANONICAL_TAGS = {
