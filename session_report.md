@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 30 minutes
+- **Uptime:** 29 minutes
 - **Messages Processed:** 15
-- **Last Message Text:** ‏نيويورك تايمز: 
-
-أميركا وإسرائيل وضعتا خططا لاستئناف ضرب إيران عقب الانتخابات النصفية، مستهدفة المن...
-- **Last Message Time:** 2026-10-21 23:22:13
+- **Last Message Text:** القوات اليمنية تقترب من الوادي المؤدي إلى منطقة الشط، عاصمة مديرية المضاربة ورأس العارة، في محاولة ل...
+- **Last Message Time:** 2026-10-22 00:11:43
