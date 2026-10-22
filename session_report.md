@@ -1,8 +1,11 @@
 # Sentinel Session Report
 
-- **Uptime:** 31 minutes
-- **Messages Processed:** 41
-- **Last Message Text:** 🔴جنگ با ایران باید مدت‌ها پیش انجام می‌شد
+- **Uptime:** 2 minutes
+- **Messages Processed:** 10
+- **Last Message Text:** 🔴کانال ۱۴ اسراییل
 
-️️رئیس‌جمهور آمریکا دونالد ترامپ مدعی شد که «ایران را در ...
-- **Last Message Time:** 2026-10-22 21:38:15
+اینترنت در ایران به دلیل جنگ میخواهد قطع شود
+
+#کیان_ملی 
+https://t.me/kianmeli1
+- **Last Message Time:** 2026-10-22 21:52:03

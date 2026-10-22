@@ -736,7 +736,7 @@
   },
   "channel_watermarks": {
     "Alibk3": 39735,
-    "withyashar": 26261,
+    "withyashar": 26263,
     "VahidOnline": 78809,
     "netblocks": 1576,
     "iliaen": 4747,
@@ -826,11 +826,11 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 228,
-    "gemini-3.5-flash-lite": 5543,
+    "gemini-3.5-flash-lite": 5544,
     "gemini-2.5-flash": 325,
     "gemini-3-flash-preview": 752,
     "gemini-3.1-flash-lite": 2287,
-    "gemini-3.1-flash-lite-preview": 686,
+    "gemini-3.1-flash-lite-preview": 687,
     "gemini-3.6-flash": 368,
     "gemini-3.7-flash": 205,
     "gemini-flash-lite-latest": 302,
@@ -839,72 +839,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_26227",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26227,
-      "text": "اسکات بسنت، وزیر خزانه‌داری آمریکا: \n«در گذشته: نفتکش‌ها پایانه اصلی بارگیری نفت ایران را پر کرده بودند. اما حالا: هیچ نفتکش حامل نفت خامی در چشم‌انداز دیده نمی‌شود. جزیره خارک اکنون چیزی جز یادبودی از تنها چیزی که رژیم ایران هنوز می‌تواند تولید کند، نیست: شکست. غرور و جنگ‌طلبی رژیم همچنان مردم عادی ایران را مجازات می‌کند. عملیات «طرد اقتصادی» در حال قطع شریان حیاتی نفت رژیم است و منابع مالی آن را برای تأمین مالی تروریسم، تهیه تجهیزات و فناوری هسته‌ای و تأمین سبک زندگی پرزرق‌وبرق نخبگان سپاه محدود می‌کند.» \n@WarRoom",
-      "is_edit": true,
-      "enqueued_at": 1792702540.4170275,
-      "retries": 8,
-      "last_retry_at": 1792705129.947348
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93651",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93651,
-      "text": "🔴تحلیلگر فاکس نیوز: جنگ سوم شبیه هیچ جنگی نیست٫ خاورمیانه در آتش خواهد سوخت\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792702613.7757084,
-      "retries": 7,
-      "last_retry_at": 1792705040.8829465
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39732",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39732,
-      "text": "سُبحانَ اللهِ وَالحَمدُ للهِ وَلا إلهَ إلاّ الله وَاللهُ أكبَرُ، وَلا حَولَ وَلا قُوَّةَ إلاّ بِاللهِ العَليِّ العَظيمِ.\n\nرابط قناة الاحتياط:\nترجمه‌ی فارسی همه‌ی اخبار، اکنون در کانال ما:\nEnglish News? Follow our backup:\nhttps://t.me/Ali_bk_8",
-      "is_edit": true,
-      "enqueued_at": 1792702822.7952404,
-      "retries": 7,
-      "last_retry_at": 1792705059.9053936
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39733",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39733,
-      "text": "قبيل الانتخابات النصفية.. ترامب في البيت الأبيض محاطا بعدد من أساقفة الكنائس الكاثوليكية الذين يدعون له ويباركوه.",
-      "is_edit": false,
-      "enqueued_at": 1792702822.813916,
-      "retries": 7,
-      "last_retry_at": 1792705148.954587
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6550",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6550,
-      "text": "Ahead of the midterm elections, Trump at the White House surrounded by a number of Catholic Church bishops who pray for him and bless him.",
-      "is_edit": false,
-      "enqueued_at": 1792702853.7870884,
-      "retries": 7,
-      "last_retry_at": 1792705150.9574955
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26260",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26260,
-      "text": "خبرنگار: فکر می‌کنید جنگ با ایران چه تأثیری بر رقابت‌های انتخاباتی گذاشته است؟\nدونالد ترامپ: از یک نظر، مردم از آن استقبال می‌کنند، چون من کاری را انجام می‌دهم که رؤسای‌جمهور قبلی باید انجام می‌دادند. از طرف دیگر، شاید هم از آن استقبال نکنند.\nما ضربات سختی به آن‌ها وارد کرده‌ایم و شاید کمی بیشتر هم به آن‌ها ضربه بزنیم.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792702973.7888708,
-      "retries": 6,
-      "last_retry_at": 1792704983.8331046
-    },
-    {
       "id": "vip_multi_agent_Alibk3_39734",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
@@ -912,8 +846,8 @@
       "text": "خلال آخر 24 ساعة، رُصدت 102 طائرة عسكرية في المنطقة، بينها 4 طائرات نقل وصلت من خارجها، منها 3 أميركية وواحدة إيطالية، إضافة إلى 7 طائرات نقل عسكري إقليمي و34 طائرة تزود بالوقود و18 طائرة تجسس و32 طائرة نقل عسكري تنقّلت داخل المنطقة و7 مروحيات عسكرية.",
       "is_edit": false,
       "enqueued_at": 1792703394.8266666,
-      "retries": 6,
-      "last_retry_at": 1792704985.836915
+      "retries": 7,
+      "last_retry_at": 1792705815.8379893
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6551",
@@ -923,8 +857,8 @@
       "text": "Over the past 24 hours, 102 military aircraft were tracked in the region, including 4 transport aircraft that arrived from outside the region, 3 American and one Italian, as well as 7 regional military transport aircraft, 34 refueling aircraft, 18 surveillance aircraft, 32 military transport aircraft that moved within the region, and 7 military helicopters.",
       "is_edit": false,
       "enqueued_at": 1792703405.8149834,
-      "retries": 6,
-      "last_retry_at": 1792705002.8558707
+      "retries": 7,
+      "last_retry_at": 1792705872.381402
     },
     {
       "id": "vip_multi_agent_kianmeli1_93639",
@@ -934,8 +868,8 @@
       "text": "🔴رویترز: جنگ آغاز شود٫ نفت ۱۵۰ دلار میشود چراکه حوثی ها اعلام کرده هیچ چاه نفتی در عربستان نخواهد بود و ایران نیز میخواهد باب المندب را ببندد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792703425.3544166,
-      "retries": 6,
-      "last_retry_at": 1792705061.908919
+      "retries": 7,
+      "last_retry_at": 1792705889.5590365
     },
     {
       "id": "vip_multi_agent_kianmeli1_93640",
@@ -945,8 +879,8 @@
       "text": "🔴در پی فراخوان آخرهفته در سراسر پاریس٫ پلیس به حالت آماده باش در آمد تا رویداد هفته پیش تکرار نشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792703428.8632188,
-      "retries": 5,
-      "last_retry_at": 1792705004.8599172
+      "retries": 6,
+      "last_retry_at": 1792705891.7102063
     },
     {
       "id": "vip_multi_agent_withyashar_26262",
@@ -956,8 +890,8 @@
       "text": "خبرنگار فاکس‌نیوز در پنتاگون: «در ۱۸ سال حضورم در پنتاگون، هرگز شاهد چنین سطح از امنیت عملیاتی نبوده‌ام.\nهیچ‌گونه درزی (افشای اطلاعاتی) وجود ندارد و هیچ‌کس در این باره صحبت نمی‌کرد. در چند روز گذشته، در خصوص ایران، یک خاموشی کامل خبری در پنتاگون حاکم بود.»\nکارتان عالی بود، آقای وزیر دفاع (هگست)!\n@WarRoom 🚨🚨🚨🚨🚨",
       "is_edit": false,
       "enqueued_at": 1792703933.024103,
-      "retries": 5,
-      "last_retry_at": 1792705021.873357
+      "retries": 6,
+      "last_retry_at": 1792705908.8254416
     },
     {
       "id": "vip_multi_agent_withyashar_26263",
@@ -967,8 +901,8 @@
       "text": "آخرین نظرسنجی پیش از انتخابات توسط شبکه ۱۴:\nدر فاصله پنج روز مانده به بیست‌وششمین دوره انتخابات کنست اسرائیل (که روز سه‌شنبه، ۲۷ اکتبر برگزار می‌شود)، آخرین نظرسنجی «نکست دیتا»، نشان می‌دهد که بلوک راست‌گرا ۶۲ کرسی در اختیار دارد؛ تعدادی که برای تشکیل دولت، بدون نیاز به اتکا به احزابِ بلوک رقیب، کافی است.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792704292.2782536,
-      "retries": 5,
-      "last_retry_at": 1792705023.8769543
+      "retries": 6,
+      "last_retry_at": 1792705910.9302866
     },
     {
       "id": "vip_multi_agent_kianmeli1_93652",
@@ -978,8 +912,8 @@
       "text": "🔴صداوسیما: پهپاد جدید شاهد۲۳۸ با سرعت سه برابر شاهد۱۳۶ بزودی خواهید دید\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792704893.0368125,
-      "retries": 3,
-      "last_retry_at": 1792705042.8865106
+      "retries": 4,
+      "last_retry_at": 1792705928.1095412
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6552",
@@ -989,8 +923,8 @@
       "text": "Footage released for the first time showing an Iranian missile striking a U.S. base in the UAE.",
       "is_edit": true,
       "enqueued_at": 1792705073.5010521,
-      "retries": 2,
-      "last_retry_at": 1792705131.9496799
+      "retries": 3,
+      "last_retry_at": 1792705930.2219028
     },
     {
       "id": "vip_multi_agent_Alibk3_39735",
@@ -1000,8 +934,8 @@
       "text": "مشاهد تنشر لأول مرة لاستهداف قاعدة أميركية في الإمارات بصاروخ إيراني.",
       "is_edit": true,
       "enqueued_at": 1792705073.5054078,
-      "retries": 1,
-      "last_retry_at": 1792705080.9183648
+      "retries": 2,
+      "last_retry_at": 1792705947.382832
     },
     {
       "id": "vip_multi_agent_kianmeli1_93653",
@@ -1011,9 +945,152 @@
       "text": "🔴جنگ با ایران باید مدت‌ها پیش انجام می‌شد\n\n️️رئیس‌جمهور آمریکا دونالد ترامپ مدعی شد که «ایران را در هم کوبیده» و جنگ با ایران باید مدت‌ها پیش و توسط روسای جمهور قبلی انجام می‌شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792705085.585974,
-      "retries": 1,
-      "last_retry_at": 1792705097.9236853
+      "retries": 2,
+      "last_retry_at": 1792705949.5149379
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93651",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93651,
+      "text": "🔴تحلیلگر فاکس نیوز: جنگ سوم شبیه هیچ جنگی نیست٫ خاورمیانه در آتش خواهد سوخت\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705869.263281,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93650",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93650,
+      "text": "🔴پدافند شهر ری فعال شد\n\nممکنه برای تست باشه یا بخاطر ریز پرنده \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705872.3506927,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26264",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26264,
+      "text": "اتاق جنگ با یاشار : سامانه‌های چندلایه پدافند هوایی اسرائیل در برابر حملات موشک‌های بالستیک جمهوری‌اسلامی\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792705881.3732884,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93649",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93649,
+      "text": "🔴وارد متفاوت ترین آبان تاریخ معاصر ایران شدیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705882.3729298,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93641",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93641,
+      "text": "🔴وزارت ارتباطات: \n\nدر صورت وقوع جنگ تحمیلی، اینترنت محدود خواهد شد تا سطح تهدیدات دشمن کاهش یابد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705886.8512008,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93654",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93654,
+      "text": "🔴کانال ۱۴ اسراییل\n\nاینترنت در ایران به دلیل جنگ میخواهد قطع شود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705889.6499038,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93642",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93642,
+      "text": "🔴گزارش‌های منتشره حاکی از آن است که ایالات متحده در حال «تخلیه گسترده» اعضای خانواده دیپلمات‌های آمریکایی در کشورهای خاورمیانه است.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705890.3579872,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93643",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93643,
+      "text": "🔴یک مقام ارتش اسرائیل به شبکه ۱۲ گفت: اگر در ایران تدارکاتی برای انجام حمله شناسایی کنیم، وارد عمل خواهیم شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705893.8659992,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93644",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93644,
+      "text": "🔴شمارش معکوس ایدی کوهن معروفترین خبرنگار اسرائیل برای آغاز جنگ.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705897.3767009,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93645",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93645,
+      "text": "🔴هم اکنون در بسیاری از متاطق تهران ایست های بازرسی تشکیل شده است\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705900.8869054,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93646",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93646,
+      "text": "🔴برخی مراکز فرودگاهی در حال تخلیه شدن\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705904.3947082,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93647",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93647,
+      "text": "🔴لحظاتی پیش-ترامپ: \n\nممکن است حملات بیشتری علیه ایران انجام دهیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705907.9035356,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93648",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93648,
+      "text": "🔴تلویزیون عربستان:\nبه ایران حمله بزرگ میشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705911.4100158,
+      "retries": 0,
+      "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-22 21:39:11 UTC"
+  "last_saved": "2026-10-22 21:52:40 UTC"
 }
