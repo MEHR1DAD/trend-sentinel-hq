@@ -736,12 +736,12 @@
   },
   "channel_watermarks": {
     "Alibk3": 39721,
-    "withyashar": 26240,
+    "withyashar": 26245,
     "VahidOnline": 78809,
     "netblocks": 1575,
     "iliaen": 4747,
     "Ali_bk_8": 6539,
-    "kianmeli1": 93622
+    "kianmeli1": 93623
   },
   "vahid_post_time": {},
   "ilia_post_time": {},
@@ -826,62 +826,18 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 228,
-    "gemini-3.5-flash-lite": 5523,
+    "gemini-3.5-flash-lite": 5525,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 733,
+    "gemini-3-flash-preview": 735,
     "gemini-3.1-flash-lite": 2285,
     "gemini-3.1-flash-lite-preview": 678,
     "gemini-3.6-flash": 358,
     "gemini-3.7-flash": 204,
-    "gemini-flash-lite-latest": 297,
-    "gemini-3.5-flash": 309,
+    "gemini-flash-lite-latest": 299,
+    "gemini-3.5-flash": 312,
     "gemini-flash-latest": 38
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_38917",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 38917,
-      "text": "القوات اليمنية تحقق اختراقًا مهمًا في مديرية المضاربة بلحج، وتلتف من الجهة الغربية على القوات الموالية للسعودية في جبهة الأغابرة، محررةً الجبال الاستراتيجية، وسط هروب قوات العمالقة الموالية للسعودية.",
-      "is_edit": true,
-      "enqueued_at": 1792691085.81644,
-      "retries": 7,
-      "last_retry_at": 1792692802.508273
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6542",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6542,
-      "text": "Operations halted again at Dammam Airport in Saudi Arabia.",
-      "is_edit": false,
-      "enqueued_at": 1792691090.2363925,
-      "retries": 7,
-      "last_retry_at": 1792692804.5117917
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39724",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39724,
-      "text": "توقف مطار الدمام في السعودية مجدداً.",
-      "is_edit": false,
-      "enqueued_at": 1792691096.2545059,
-      "retries": 7,
-      "last_retry_at": 1792692838.5320523
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26236",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26236,
-      "text": "کانال ۱۴ اسرائیل : بنیامین نتانیاهو اعلام کرد که او و ترامپ بار دیگر به ایران حمله خواهند کرد و «کار را تمام خواهند کرد.»\n@WarRoom 🚨🚨🚨🚨🚨🚨",
-      "is_edit": true,
-      "enqueued_at": 1792691511.414476,
-      "retries": 6,
-      "last_retry_at": 1792692755.4807432
-    },
     {
       "id": "vip_multi_agent_withyashar_26242",
       "pipeline": "vip_multi_agent",
@@ -890,9 +846,284 @@
       "text": "سنتکام: امروز صدمین روز از زمانی است که نیروهای سنتکام محاصره دریایی «دیوار فولادین» آمریکا علیه ایران را از سر گرفتند. این اقدام به جلوگیری از صادرات دست‌کم ۲۵ میلیارد دلار نفت خام ایران کمک کرده و توان سپاه پاسداران انقلاب اسلامی برای تأمین مالی شبه‌نظامیان نیابتی، شبکه‌های مجرمانه و تروریسم را محدود کرده است. در این مدت، هیچ صادرات یا وارداتی از طریق دریا به ایران انجام نشده است، به‌جز کمک‌های بشردوستانه‌ای که نیروهای آمریکایی اجازه عبور آن‌ها را داده‌اند. @WarRoom",
       "is_edit": false,
       "enqueued_at": 1792692808.4714763,
-      "retries": 2,
-      "last_retry_at": 1792692870.5548022
+      "retries": 12,
+      "last_retry_at": 1792695317.1785247
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39722",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39722,
+      "text": "نتنياهو: \n\n\"يريد النظام في إيران التأثير على الانتخابات - إذا حاول القيام باستفزاز، فسنتحرك بقوة\".",
+      "is_edit": false,
+      "enqueued_at": 1792693425.0209293,
+      "retries": 11,
+      "last_retry_at": 1792695319.1819332
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39723",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39723,
+      "text": "القناة 15 العبرية عن مصدرين دبلوماسيين إقليميين:\n\nإجلاء واسع النطاق لأفراد عائلات الدبلوماسيين الأميركيين من جميع دول الشرق الأوسط، باستثناء عُمان والكيان، في إطار توصية تتجاوز مستوى التحذير الاعتيادي.",
+      "is_edit": false,
+      "enqueued_at": 1792693427.9040737,
+      "retries": 10,
+      "last_retry_at": 1792695146.070827
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93630",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93630,
+      "text": "🔴با بالگرد چندین نفر در تهران جابجا شدن به مناطق امن \n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792693505.928458,
+      "retries": 10,
+      "last_retry_at": 1792695165.0831707
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6540",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6540,
+      "text": "نتانیاهو:\n\n«رژیم ایران می‌خواهد بر انتخابات تأثیر بگذارد؛ اگر تلاش کند اقدامی تحریک‌آمیز انجام دهد، با قدرت وارد عمل خواهیم شد.»\n\nNetanyahu:\n\n\"The regime in Iran wants to influence the elections — if it tries to carry out a provocation, we will act forcefully.\"",
+      "is_edit": false,
+      "enqueued_at": 1792693578.2456517,
+      "retries": 10,
+      "last_retry_at": 1792695167.0864289
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6541",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6541,
+      "text": "شبکه ۱۵ عبری به نقل از دو منبع دیپلماتیک منطقه‌ای:\n\nتخلیه گسترده اعضای خانواده دیپلمات‌های آمریکایی از تمام کشورهای خاورمیانه، به‌استثنای عمان و رژیم صهیونیستی، در چارچوب توصیه‌ای که از سطح هشدار معمول فراتر می‌رود.\n\nHebrew Channel 15, citing two regional diplomatic sources:\n\nA large-scale evacuation of family members of US diplomats from all Middle Eastern countries, except Oman and the Zionist entity, under a recommendation that goes beyond the usual warning level.",
+      "is_edit": false,
+      "enqueued_at": 1792693580.4058206,
+      "retries": 10,
+      "last_retry_at": 1792695184.0916843
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26244",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26244,
+      "text": "وال‌استریت : دونالد ترامپ با ایلان ماسک تماس گرفت و از او خواست محدودیت‌های استارلینک در اوکراین را لغو کند.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792693580.5459936,
+      "retries": 10,
+      "last_retry_at": 1792695186.0934925
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6543",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6543,
+      "text": "5 American refueling aircraft are flying near the Strait of Hormuz.",
+      "is_edit": false,
+      "enqueued_at": 1792693580.5633101,
+      "retries": 10,
+      "last_retry_at": 1792695279.1518643
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26241",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26241,
+      "text": "پست فارسی نتانیاهو : پیام‌های حمایتی شما از سراسر جهان را می‌بینم و از صمیم قلب سپاسگزارم. صدای ایرانیانی را می‌شنوم که دلتنگ میهن، نگران عزیزان و امیدوار به آزادی کشورشان هستند. مردم ایران شایسته آزادی، امنیت و کرامت‌اند؛ والدین باید از سلامت فرزندانشان مطمئن باشند، زنان بدون ترس مسیر زندگی‌شان را انتخاب کنند و جوانان بدون نگرانی از جانشان رؤیاپردازی کنند. در برابر سرکوب و کشتار رژیم آخوندها نباید رنج انسان‌ها را فراموش کنیم. من از آزادی و حقوق مردم ایران دفاع خواهم کرد و همراه رئیس‌جمهور ترامپ برای آینده‌ای بهتر، امن و صلح‌آمیز برای ملت‌هایمان تلاش می‌کنم. امیدوارم کودکان تهران و اورشلیم در صلح بزرگ شوند و از کشورهای یکدیگر دیدن کنند. برای تحقق این آینده هر کاری از دستم برآید انجام می‌دهم و محبت شما باورم را به امکان‌پذیر بودن آن تقویت می‌کند.\nhttps://www.instagram.com/p/DezgRvfsa8q/?carousel_share_child_media_id=4013693649634307882_1638317016&comment_id=18122995318935149\nلینک پست و کامنت من",
+      "is_edit": false,
+      "enqueued_at": 1792693581.3984401,
+      "retries": 9,
+      "last_retry_at": 1792695203.11128
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93631",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93631,
+      "text": "🔴صداوسیما: تاکنون به این حد آماده جنگ نبوده ایم. نظامیان منتظر حمله هستند\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792693582.4048254,
+      "retries": 9,
+      "last_retry_at": 1792695205.1146617
+    },
+    {
+      "id": "vip_multi_agent_netblocks_1576",
+      "pipeline": "vip_multi_agent",
+      "node": "netblocks",
+      "msg_id": 1576,
+      "text": "⚠️ Confirmed: Metrics show a disruption to internet connectivity in Zhytomyr Oblast, #Ukraine, corresponding to the third set of power outages this week as Russia's strategy of drone attacks targeting energy infrastructure during the colder months expands westward",
+      "is_edit": false,
+      "enqueued_at": 1792693583.4068003,
+      "retries": 9,
+      "last_retry_at": 1792695222.1234298
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93632",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93632,
+      "text": "🔴منابع اسراییل: ریزپرنده ها برای فعالیت در ایران از قبل در جاهایی جاساز شده اند\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792693584.409015,
+      "retries": 8,
+      "last_retry_at": 1792695224.1267304
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39725",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39725,
+      "text": "5 طائرات تزويد بالوقود أميركية تُحلق بالقرب من مضيق هرمز.",
+      "is_edit": false,
+      "enqueued_at": 1792693585.413142,
+      "retries": 8,
+      "last_retry_at": 1792695241.1318073
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93633",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93633,
+      "text": "🔴حسین الصافی، روزنامه‌نگار عراقی :\nجنگ آینده خاورمیانه شدید و وحشتناک خواهد بود!\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792693586.4083247,
+      "retries": 8,
+      "last_retry_at": 1792695243.1334043
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93634",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93634,
+      "text": "🔴پرواز دو بالگرد‌ در ‌آسمان تهران\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792693587.4121442,
+      "retries": 8,
+      "last_retry_at": 1792695260.1431136
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93624",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93624,
+      "text": "🔴سپاه اعلام کرد زین پس فقط به کشتی ها حمله نمیکنیم٫ پایگاه های امریکا هم هدف هستند\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792693597.4229639,
+      "retries": 8,
+      "last_retry_at": 1792695262.1464596
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93625",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93625,
+      "text": "🔴حملات موشکی به عربستان\n\nبه نظر می رسد موشک به فرودگاه اصابت کرده\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792693600.931387,
+      "retries": 7,
+      "last_retry_at": 1792695281.1551638
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93626",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93626,
+      "text": "🔴مخبر:‌ اگر نیروگاه یا پتروشیمی ما را بزنند، ما دوباره ۹ کشور را می‌زنیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792693604.4394999,
+      "retries": 7,
+      "last_retry_at": 1792695298.1589742
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93627",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93627,
+      "text": "🔴ریزش شدید بورس چین\n\nاحتمالات از وقوع جنگ باعث شده معاملات فروش بالا برود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792693607.944343,
+      "retries": 7,
+      "last_retry_at": 1792695300.1609528
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93628",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93628,
+      "text": "🔴منابع اسراییل: امشب و فرداشب بیدار بمانیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792693611.4515183,
+      "retries": 5,
+      "last_retry_at": 1792695148.0742075
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93629",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93629,
+      "text": "🔴کارمندان زن برخی سازمان ها به دلیل جنگ احتمالی ،مرخص شده اند\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792693614.9591608,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93635",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93635,
+      "text": "🔴تهدید صابرین نیوز سپاه به شلیک موشک تا اتاق خواب حاکمان منطقه\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792693700.5078778,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26245",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26245,
+      "text": "@WarRoom Starlink",
+      "is_edit": true,
+      "enqueued_at": 1792693702.2014692,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26246",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26246,
+      "text": "کانال ۱۵ اسرائیل : سازمان تروریستی حماس در پیامی به اسرائیل از طریق فرستاده سازمان ملل اعلام کرد: «برای حمله‌ای دیگر در سبک حمله ۷ اکتبر آماده‌ایم.»\nمقام‌های اسرائیلی در واکنش گفتند: «این اظهارات ثابت می‌کند که حماس قصد خلع سلاح ندارد.»\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792694437.4974146,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26247",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26247,
+      "text": "ای۲۴نیوز : همه طرف‌ها خود را برای جنگ آماده می‌کنند: جمهوری اسلامی معتقد است که اگر اولین حمله را خود انجام دهد، این امر استراتژی آمریکا را مختل خواهد کرد\n@WarRoom 🚨🚨🚨",
+      "is_edit": false,
+      "enqueued_at": 1792694540.0393672,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26248",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26248,
+      "text": "پوستر جدید رسانه رسمی رهبر (موشتبی ای‌آی) به نام “ساعت صفر” منتشر شد\nدر این پوستر تصویر نیروگاه هسته ای دیمونا واقع در صحرای نقب به عنوان یکی از اهداف جدید به تصویر کشیده شده است\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792695062.5619574,
+      "retries": 0,
+      "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-22 18:15:25 UTC"
+  "last_saved": "2026-10-22 18:55:23 UTC"
 }
