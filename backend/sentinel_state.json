@@ -739,7 +739,9 @@
     "withyashar": 26192,
     "VahidOnline": 78799,
     "netblocks": 1575,
-    "iliaen": 4747
+    "iliaen": 4747,
+    "Ali_bk_8": 6481,
+    "kianmeli1": 93619
   },
   "vahid_post_time": {},
   "ilia_post_time": {},
@@ -823,41 +825,74 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 219,
-    "gemini-3.5-flash-lite": 4735,
+    "gemini-3.8-flash": 220,
+    "gemini-3.5-flash-lite": 4737,
     "gemini-2.5-flash": 325,
     "gemini-3-flash-preview": 669,
-    "gemini-3.1-flash-lite": 1954,
+    "gemini-3.1-flash-lite": 1959,
     "gemini-3.1-flash-lite-preview": 631,
-    "gemini-3.6-flash": 344,
+    "gemini-3.6-flash": 345,
     "gemini-3.7-flash": 199,
     "gemini-flash-lite-latest": 124,
-    "gemini-3.5-flash": 216,
-    "gemini-flash-latest": 25
+    "gemini-3.5-flash": 219,
+    "gemini-flash-latest": 27
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_iliaen_786",
+      "id": "vip_multi_agent_Ali_bk_8_6478",
       "pipeline": "vip_multi_agent",
-      "node": "iliaen",
-      "msg_id": 786,
-      "text": "هدف از این نظرسنجی، درک تفکر بخشی جامعه است و شما می‌توانید با انتخاب یک گزینه، در نتیجه‌ی نهاییِ این نظرسنجی تاثیر مهمی داشته باشید. آیا موافق حمله‌ی اسرائیل به مراکز نظامی و سران جمهوری اسلامی در خاک ایران هستید؟\nanonymous poll\n\nداخل ایران هستم، موافقم – 8K\n👍👍👍👍👍👍👍 75%\n\nداخل ایران هستم، مخالم – 2K\n👍 16%\n\nخارج از ایران هستم، موافقم – 757\n👍 7%\n\nخارج از ایران هستم، مخالفم – 210\n▫️ 2%\n\n👥 10362 people voted so far.",
-      "is_edit": true,
-      "enqueued_at": 1792640665.5480192,
+      "node": "Ali_bk_8",
+      "msg_id": 6478,
+      "text": "نیویورک تایمز:\n\nجنگنده‌های آمریکایی و اسرائیلی رزمایش‌هایی بر فراز عراق انجام دادند که حمله به ایران را شبیه‌سازی می‌کرد.\n\nآمریکا و اسرائیل طرح‌هایی برای ازسرگیری حملات به ایران پس از انتخابات میان‌دوره‌ای تدوین کرده‌اند که تأسیسات هسته‌ای و سامانه‌های موشکی و احتمالاً زیرساخت‌های انرژی را هدف قرار می‌دهد.\n\nایران درباره واکنش‌های گسترده‌تر، از جمله حمله به تأسیسات نفتی در خلیج فارس و زیرساخت‌های دیجیتال، هشدار داد.\n\nThe New York Times:\n\nUS and Israeli fighter jets conducted exercises over Iraq simulating strikes on Iran.\n\nThe US and Israel have drawn up plans to resume strikes on Iran after the midterm elections, targeting nuclear facilities and missile systems, and possibly energy infrastructure.\n\nIran warned of broader retaliation, including attacks on oil facilities in the Gulf and digital infrastructure.",
+      "is_edit": false,
+      "enqueued_at": 1792646554.6884487,
       "retries": 11,
-      "last_retry_at": 1792642286.5147312
+      "last_retry_at": 1792648216.6044703
     },
     {
-      "id": "vip_multi_agent_Alibk3_39666",
+      "id": "vip_multi_agent_Ali_bk_8_6479",
       "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39666,
-      "text": "توقف حركة الملاحة الجوية في مطار الكويت.",
+      "node": "Ali_bk_8",
+      "msg_id": 6479,
+      "text": "نیروهای یمنی در حال نزدیک شدن به دره منتهی به منطقه الشط، مرکز شهرستان المضاربه و رأس‌العاره هستند و تلاش می‌کنند نیروهای وابسته به عربستان سعودی را در رأس‌العاره و مناطق نزدیک به باب‌المندب محاصره کنند.\n\nYemeni forces are approaching the valley leading to the al-Shatt area, the capital of al-Mudharaba and Ras al-Ara district, in an attempt to encircle Saudi-backed forces in Ras al-Ara and areas near Bab al-Mandab.",
       "is_edit": false,
-      "enqueued_at": 1792640747.8976269,
+      "enqueued_at": 1792646561.5555334,
       "retries": 11,
-      "last_retry_at": 1792642363.5767636
+      "last_retry_at": 1792648218.6066334
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6482",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6482,
+      "text": "فرودگاه جده در عربستان سعودی هم‌اکنون تعطیل شده است.\n\nJeddah Airport in Saudi Arabia has now been shut down.",
+      "is_edit": false,
+      "enqueued_at": 1792646613.812813,
+      "retries": 11,
+      "last_retry_at": 1792648280.6299312
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6483",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6483,
+      "text": "تردد هوایی در فرودگاه کویت متوقف شده است.\n\nAir traffic at Kuwait Airport has been suspended.",
+      "is_edit": false,
+      "enqueued_at": 1792646625.0912304,
+      "retries": 11,
+      "last_retry_at": 1792648282.6333132
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93620",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93620,
+      "text": "🔴ترامپ با عصبانیت از لزوم ادامه جنگ گفت\n\nبهای بسیار ناچیزی است که باید پرداخت شود٫ بزرگ ترین کشور حامی تروریسم در جهان، پلیدترین کشور روی زمین. \nاگر سلاح هسته ای داشتند٫ ظرف یک روز یا حتی یک ساعت از آن استفاده می کردند.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792646629.32671,
+      "retries": 10,
+      "last_retry_at": 1792648124.558435
     }
   ],
-  "last_saved": "2026-10-22 04:13:52 UTC"
+  "last_saved": "2026-10-22 05:51:53 UTC"
 }
