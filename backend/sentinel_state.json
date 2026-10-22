@@ -735,12 +735,12 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39730,
-    "withyashar": 26259,
+    "Alibk3": 39735,
+    "withyashar": 26261,
     "VahidOnline": 78809,
     "netblocks": 1576,
     "iliaen": 4747,
-    "Ali_bk_8": 6548,
+    "Ali_bk_8": 6552,
     "kianmeli1": 93638
   },
   "vahid_post_time": {},
@@ -828,269 +828,16 @@
     "gemini-3.8-flash": 228,
     "gemini-3.5-flash-lite": 5543,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 751,
-    "gemini-3.1-flash-lite": 2286,
-    "gemini-3.1-flash-lite-preview": 684,
-    "gemini-3.6-flash": 367,
+    "gemini-3-flash-preview": 752,
+    "gemini-3.1-flash-lite": 2287,
+    "gemini-3.1-flash-lite-preview": 686,
+    "gemini-3.6-flash": 368,
     "gemini-3.7-flash": 205,
-    "gemini-flash-lite-latest": 301,
-    "gemini-3.5-flash": 325,
+    "gemini-flash-lite-latest": 302,
+    "gemini-3.5-flash": 327,
     "gemini-flash-latest": 38
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_withyashar_26253",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26253,
-      "text": "ترامپ درباره دسترسی اوکراین به استارلینک:\nنمی‌خواهم در این باره اظهار نظر کنم؛ می‌دانید، اینکه من تماس گرفته‌ام یا کس دیگری، هیچ تفاوتی ایجاد نمی‌کند.\nخلاصه کلام اینکه، او (ایلان)سرویس را دوباره برقرار کرد.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792700668.1519735,
-      "retries": 13,
-      "last_retry_at": 1792703148.1991024
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39730",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39730,
-      "text": "ترامب عن إيران:\n\nلقد ضربناهم ضرباً قاسياً، وقد نفعل ذلك أكثر قليلاً.",
-      "is_edit": true,
-      "enqueued_at": 1792700961.9474504,
-      "retries": 11,
-      "last_retry_at": 1792703167.2086587
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6548",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6548,
-      "text": "Trump on Iran:\n\n“We hit them hard, and we may do that a little more.”",
-      "is_edit": true,
-      "enqueued_at": 1792700976.356686,
-      "retries": 11,
-      "last_retry_at": 1792703169.211913
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26254",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26254,
-      "text": "حقیقت یاب اتاق جنگ : تخلیه کامل پایگاه هوایی العدید فیک نیوز است همکنون در همین لحظه یک سوخت‌رسان با کم کردن ارطفاع بهثعد ار پایان مأموریت خود در حال فرود در این پایگاه میباشد !!!!!\n@WarRoom 🤬",
-      "is_edit": false,
-      "enqueued_at": 1792701010.387348,
-      "retries": 11,
-      "last_retry_at": 1792703186.2303202
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26255",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26255,
-      "text": "حقیقت یاب اتاق جنگ : تخلیه کامل پایگاه هوایی العدید فیک نیوز است همکنون در همین لحظه یک سوخت‌رسان با کم کردن ارتقاع بعد از پایان مأموریت خود در حال فرود در این پایگاه میباشد !!!!!\n@WarRoom 🤬",
-      "is_edit": false,
-      "enqueued_at": 1792701134.8146777,
-      "retries": 10,
-      "last_retry_at": 1792703188.3408482
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93646",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93646,
-      "text": "🔴برخی مراکز فرودگاهی در حال تخلیه شدن\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792701276.346598,
-      "retries": 9,
-      "last_retry_at": 1792703205.349517
-    },
-    {
-      "id": "vip_multi_agent_netblocks_1576",
-      "pipeline": "vip_multi_agent",
-      "node": "netblocks",
-      "msg_id": 1576,
-      "text": "⚠️ Confirmed: Metrics show a disruption to internet connectivity in Zhytomyr Oblast, #Ukraine, corresponding to the third set of power outages this week as Russia's strategy of drone attacks targeting energy infrastructure during the colder months expands westward",
-      "is_edit": false,
-      "enqueued_at": 1792701438.8543682,
-      "retries": 6,
-      "last_retry_at": 1792703207.3535175
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93644",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93644,
-      "text": "🔴شمارش معکوس ایدی کوهن معروفترین خبرنگار اسرائیل برای آغاز جنگ.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792701447.7960863,
-      "retries": 6,
-      "last_retry_at": 1792703224.3595257
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93645",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93645,
-      "text": "🔴هم اکنون در بسیاری از متاطق تهران ایست های بازرسی تشکیل شده است\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792701453.30269,
-      "retries": 6,
-      "last_retry_at": 1792703226.3616912
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26256",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26256,
-      "text": "ترامپ درباره ایران: «حسابی دمار از روزگارشان درآورده‌ایم و شاید کمی بیشتر هم این کار را ادامه دهیم.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792701455.8105354,
-      "retries": 5,
-      "last_retry_at": 1792703053.1046004
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93643",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93643,
-      "text": "🔴یک مقام ارتش اسرائیل به شبکه ۱۲ گفت: اگر در ایران تدارکاتی برای انجام حمله شناسایی کنیم، وارد عمل خواهیم شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792701457.135927,
-      "retries": 5,
-      "last_retry_at": 1792703055.108368
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93647",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93647,
-      "text": "🔴لحظاتی پیش-ترامپ: \n\nممکن است حملات بیشتری علیه ایران انجام دهیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792701467.1583316,
-      "retries": 5,
-      "last_retry_at": 1792703072.125096
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6549",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6549,
-      "text": "Yemeni forces liberate Al-Shujuf and the Al-Masbal area and advance toward Mishra'a on Jabal Saber, amid battles south of Taiz city.",
-      "is_edit": false,
-      "enqueued_at": 1792701492.5339777,
-      "retries": 4,
-      "last_retry_at": 1792703074.1293242
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39731",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39731,
-      "text": "القوات اليمنية تحرر الشجوف ومنطقة المسبل وتتقدم باتجاه مشرعة بجبل صبر، وذلك في المعارك التي تدور جنوب مدينة تعز.",
-      "is_edit": false,
-      "enqueued_at": 1792701492.540437,
-      "retries": 4,
-      "last_retry_at": 1792703091.1487145
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93641",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93641,
-      "text": "🔴وزارت ارتباطات: \n\nدر صورت وقوع جنگ تحمیلی، اینترنت محدود خواهد شد تا سطح تهدیدات دشمن کاهش یابد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792701494.9328368,
-      "retries": 4,
-      "last_retry_at": 1792703093.1521347
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93642",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93642,
-      "text": "🔴گزارش‌های منتشره حاکی از آن است که ایالات متحده در حال «تخلیه گسترده» اعضای خانواده دیپلمات‌های آمریکایی در کشورهای خاورمیانه است.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792701498.442537,
-      "retries": 2,
-      "last_retry_at": 1792703110.1565013
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26257",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26257,
-      "text": "ترامپ درباره جنگ ایران: «بسیاری از میهن‌پرستان واقعی، واقعاً از جنگ ایران حمایت می‌کنند این جنگ باید خیلی وقت پیش توسط رئیس جمهور دیگری انجام میشد»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792701509.7395282,
-      "retries": 1,
-      "last_retry_at": 1792703112.1598098
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26246",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26246,
-      "text": "کانال ۱۵ اسرائیل : سازمان تروریستی حماس در پیامی به اسرائیل از طریق فرستاده سازمان ملل اعلام کرد: «برای حمله‌ای دیگر در سبک حمله ۷ اکتبر آماده‌ایم.»\nمقام‌های اسرائیلی در واکنش گفتند: «این اظهارات ثابت می‌کند که حماس قصد خلع سلاح ندارد.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792701519.7171998,
-      "retries": 1,
-      "last_retry_at": 1792703129.1759002
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26247",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26247,
-      "text": "ای۲۴نیوز : همه طرف‌ها خود را برای جنگ آماده می‌کنند: جمهوری اسلامی معتقد است که اگر اولین حمله را خود انجام دهد، این امر استراتژی آمریکا را مختل خواهد کرد\n@WarRoom 🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1792701523.2240071,
-      "retries": 1,
-      "last_retry_at": 1792703131.1797855
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26250",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26250,
-      "text": "نفت برنت ۱۱۳$ \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792701533.7368598,
-      "retries": 1,
-      "last_retry_at": 1792703150.2031121
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93649",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93649,
-      "text": "🔴وارد متفاوت ترین آبان تاریخ معاصر ایران شدیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792701893.7539546,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93648",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93648,
-      "text": "🔴تلویزیون عربستان:\nبه ایران حمله بزرگ میشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792701928.8288028,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93650",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93650,
-      "text": "🔴پدافند شهر ری فعال شد\n\nممکنه برای تست باشه یا بخاطر ریز پرنده \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792702153.2058578,
-      "retries": 0,
-      "last_retry_at": 0
-    },
     {
       "id": "vip_multi_agent_withyashar_26227",
       "pipeline": "vip_multi_agent",
@@ -1099,8 +846,8 @@
       "text": "اسکات بسنت، وزیر خزانه‌داری آمریکا: \n«در گذشته: نفتکش‌ها پایانه اصلی بارگیری نفت ایران را پر کرده بودند. اما حالا: هیچ نفتکش حامل نفت خامی در چشم‌انداز دیده نمی‌شود. جزیره خارک اکنون چیزی جز یادبودی از تنها چیزی که رژیم ایران هنوز می‌تواند تولید کند، نیست: شکست. غرور و جنگ‌طلبی رژیم همچنان مردم عادی ایران را مجازات می‌کند. عملیات «طرد اقتصادی» در حال قطع شریان حیاتی نفت رژیم است و منابع مالی آن را برای تأمین مالی تروریسم، تهیه تجهیزات و فناوری هسته‌ای و تأمین سبک زندگی پرزرق‌وبرق نخبگان سپاه محدود می‌کند.» \n@WarRoom",
       "is_edit": true,
       "enqueued_at": 1792702540.4170275,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 8,
+      "last_retry_at": 1792705129.947348
     },
     {
       "id": "vip_multi_agent_kianmeli1_93651",
@@ -1110,8 +857,8 @@
       "text": "🔴تحلیلگر فاکس نیوز: جنگ سوم شبیه هیچ جنگی نیست٫ خاورمیانه در آتش خواهد سوخت\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792702613.7757084,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 7,
+      "last_retry_at": 1792705040.8829465
     },
     {
       "id": "vip_multi_agent_Alibk3_39732",
@@ -1121,8 +868,8 @@
       "text": "سُبحانَ اللهِ وَالحَمدُ للهِ وَلا إلهَ إلاّ الله وَاللهُ أكبَرُ، وَلا حَولَ وَلا قُوَّةَ إلاّ بِاللهِ العَليِّ العَظيمِ.\n\nرابط قناة الاحتياط:\nترجمه‌ی فارسی همه‌ی اخبار، اکنون در کانال ما:\nEnglish News? Follow our backup:\nhttps://t.me/Ali_bk_8",
       "is_edit": true,
       "enqueued_at": 1792702822.7952404,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 7,
+      "last_retry_at": 1792705059.9053936
     },
     {
       "id": "vip_multi_agent_Alibk3_39733",
@@ -1132,8 +879,8 @@
       "text": "قبيل الانتخابات النصفية.. ترامب في البيت الأبيض محاطا بعدد من أساقفة الكنائس الكاثوليكية الذين يدعون له ويباركوه.",
       "is_edit": false,
       "enqueued_at": 1792702822.813916,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 7,
+      "last_retry_at": 1792705148.954587
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6550",
@@ -1143,8 +890,8 @@
       "text": "Ahead of the midterm elections, Trump at the White House surrounded by a number of Catholic Church bishops who pray for him and bless him.",
       "is_edit": false,
       "enqueued_at": 1792702853.7870884,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 7,
+      "last_retry_at": 1792705150.9574955
     },
     {
       "id": "vip_multi_agent_withyashar_26260",
@@ -1154,9 +901,119 @@
       "text": "خبرنگار: فکر می‌کنید جنگ با ایران چه تأثیری بر رقابت‌های انتخاباتی گذاشته است؟\nدونالد ترامپ: از یک نظر، مردم از آن استقبال می‌کنند، چون من کاری را انجام می‌دهم که رؤسای‌جمهور قبلی باید انجام می‌دادند. از طرف دیگر، شاید هم از آن استقبال نکنند.\nما ضربات سختی به آن‌ها وارد کرده‌ایم و شاید کمی بیشتر هم به آن‌ها ضربه بزنیم.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792702973.7888708,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 6,
+      "last_retry_at": 1792704983.8331046
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39734",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39734,
+      "text": "خلال آخر 24 ساعة، رُصدت 102 طائرة عسكرية في المنطقة، بينها 4 طائرات نقل وصلت من خارجها، منها 3 أميركية وواحدة إيطالية، إضافة إلى 7 طائرات نقل عسكري إقليمي و34 طائرة تزود بالوقود و18 طائرة تجسس و32 طائرة نقل عسكري تنقّلت داخل المنطقة و7 مروحيات عسكرية.",
+      "is_edit": false,
+      "enqueued_at": 1792703394.8266666,
+      "retries": 6,
+      "last_retry_at": 1792704985.836915
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6551",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6551,
+      "text": "Over the past 24 hours, 102 military aircraft were tracked in the region, including 4 transport aircraft that arrived from outside the region, 3 American and one Italian, as well as 7 regional military transport aircraft, 34 refueling aircraft, 18 surveillance aircraft, 32 military transport aircraft that moved within the region, and 7 military helicopters.",
+      "is_edit": false,
+      "enqueued_at": 1792703405.8149834,
+      "retries": 6,
+      "last_retry_at": 1792705002.8558707
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93639",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93639,
+      "text": "🔴رویترز: جنگ آغاز شود٫ نفت ۱۵۰ دلار میشود چراکه حوثی ها اعلام کرده هیچ چاه نفتی در عربستان نخواهد بود و ایران نیز میخواهد باب المندب را ببندد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792703425.3544166,
+      "retries": 6,
+      "last_retry_at": 1792705061.908919
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93640",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93640,
+      "text": "🔴در پی فراخوان آخرهفته در سراسر پاریس٫ پلیس به حالت آماده باش در آمد تا رویداد هفته پیش تکرار نشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792703428.8632188,
+      "retries": 5,
+      "last_retry_at": 1792705004.8599172
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26262",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26262,
+      "text": "خبرنگار فاکس‌نیوز در پنتاگون: «در ۱۸ سال حضورم در پنتاگون، هرگز شاهد چنین سطح از امنیت عملیاتی نبوده‌ام.\nهیچ‌گونه درزی (افشای اطلاعاتی) وجود ندارد و هیچ‌کس در این باره صحبت نمی‌کرد. در چند روز گذشته، در خصوص ایران، یک خاموشی کامل خبری در پنتاگون حاکم بود.»\nکارتان عالی بود، آقای وزیر دفاع (هگست)!\n@WarRoom 🚨🚨🚨🚨🚨",
+      "is_edit": false,
+      "enqueued_at": 1792703933.024103,
+      "retries": 5,
+      "last_retry_at": 1792705021.873357
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26263",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26263,
+      "text": "آخرین نظرسنجی پیش از انتخابات توسط شبکه ۱۴:\nدر فاصله پنج روز مانده به بیست‌وششمین دوره انتخابات کنست اسرائیل (که روز سه‌شنبه، ۲۷ اکتبر برگزار می‌شود)، آخرین نظرسنجی «نکست دیتا»، نشان می‌دهد که بلوک راست‌گرا ۶۲ کرسی در اختیار دارد؛ تعدادی که برای تشکیل دولت، بدون نیاز به اتکا به احزابِ بلوک رقیب، کافی است.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792704292.2782536,
+      "retries": 5,
+      "last_retry_at": 1792705023.8769543
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93652",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93652,
+      "text": "🔴صداوسیما: پهپاد جدید شاهد۲۳۸ با سرعت سه برابر شاهد۱۳۶ بزودی خواهید دید\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792704893.0368125,
+      "retries": 3,
+      "last_retry_at": 1792705042.8865106
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6552",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6552,
+      "text": "Footage released for the first time showing an Iranian missile striking a U.S. base in the UAE.",
+      "is_edit": true,
+      "enqueued_at": 1792705073.5010521,
+      "retries": 2,
+      "last_retry_at": 1792705131.9496799
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39735",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39735,
+      "text": "مشاهد تنشر لأول مرة لاستهداف قاعدة أميركية في الإمارات بصاروخ إيراني.",
+      "is_edit": true,
+      "enqueued_at": 1792705073.5054078,
+      "retries": 1,
+      "last_retry_at": 1792705080.9183648
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93653",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93653,
+      "text": "🔴جنگ با ایران باید مدت‌ها پیش انجام می‌شد\n\n️️رئیس‌جمهور آمریکا دونالد ترامپ مدعی شد که «ایران را در هم کوبیده» و جنگ با ایران باید مدت‌ها پیش و توسط روسای جمهور قبلی انجام می‌شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792705085.585974,
+      "retries": 1,
+      "last_retry_at": 1792705097.9236853
     }
   ],
-  "last_saved": "2026-10-22 21:07:18 UTC"
+  "last_saved": "2026-10-22 21:39:11 UTC"
 }
