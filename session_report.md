@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 29 minutes
-- **Messages Processed:** 10
-- **Last Message Text:** نیویورک‌تایمز گزارش داد ارتش‌های آمریکا و اسرائیل طرح‌هایی برای حملات تازه به ایران پس از انتخابات م...
-- **Last Message Time:** 2026-10-22 00:23:18
+- **Messages Processed:** 15
+- **Last Message Text:** صور الأقمار الصناعية الصينية تُظهر 3 طائرات أميركية CMV-22B Osprey، المستخدمة لنقل القوات والمعدات و...
+- **Last Message Time:** 2026-10-22 01:18:08
