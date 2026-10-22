@@ -826,161 +826,17 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 221,
-    "gemini-3.5-flash-lite": 4748,
+    "gemini-3.5-flash-lite": 4811,
     "gemini-2.5-flash": 325,
     "gemini-3-flash-preview": 669,
     "gemini-3.1-flash-lite": 1961,
     "gemini-3.1-flash-lite-preview": 631,
     "gemini-3.6-flash": 351,
     "gemini-3.7-flash": 200,
-    "gemini-flash-lite-latest": 125,
+    "gemini-flash-lite-latest": 184,
     "gemini-3.5-flash": 228,
     "gemini-flash-latest": 27
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6484",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6484,
-      "text": "Saudi aviation announces that another person was killed in an attack on Dammam Airport.",
-      "is_edit": false,
-      "enqueued_at": 1792651238.6446333,
-      "retries": 15,
-      "last_retry_at": 1792653611.4555502
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39667",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39667,
-      "text": "الطيران السعودي يعلن مقتل شخص آخر نتيجة استهداف مطار الدمام.",
-      "is_edit": false,
-      "enqueued_at": 1792651238.6643305,
-      "retries": 15,
-      "last_retry_at": 1792653630.4765372
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39666",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39666,
-      "text": "توقف حركة الملاحة الجوية في مطار الكويت.",
-      "is_edit": false,
-      "enqueued_at": 1792652045.671605,
-      "retries": 11,
-      "last_retry_at": 1792653649.486685
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26193",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26193,
-      "text": "ترامپ درباره ایران:\n«ما آن‌ها را از نظر نظامی، مالی و از هر جهت دیگری شکست داده‌ایم.» \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792652281.0007317,
-      "retries": 10,
-      "last_retry_at": 1792653736.550326
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26194",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26194,
-      "text": "ترامپ درباره ایران: اکر ببینید ارتش ما بینظیره ، تنگه ترامپ را محاصره کرده‌ایم.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792652477.6104307,
-      "retries": 8,
-      "last_retry_at": 1792653592.4477751
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39668",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39668,
-      "text": "الحرس الثوري: \n\n إصرار النظام الأمريكي المتعجرف على تحريض السفن على المرور عبر الممر المليء بالألغام بشكل غير قانوني قد زاد من حوادث الملاحة البحرية يوماً بعد يوم، وعلى الجيش الأمريكي العدواني أن يعلم أنه إذا استمر هذا التوجه، فإن نطاق المواجهة سيمتد إلى القواعد العدوانية في المنطقة. هذا تحذير خطير.",
-      "is_edit": false,
-      "enqueued_at": 1792652685.76775,
-      "retries": 7,
-      "last_retry_at": 1792653575.4421704
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6485",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6485,
-      "text": "The IRGC:\n\nThe insistence of the arrogant US regime on encouraging ships to illegally pass through the mine-filled passage has increased maritime navigation incidents day by day. The aggressive US military must understand that if this course continues, the scope of the confrontation will extend to the aggressive bases in the region. This is a serious warning.",
-      "is_edit": false,
-      "enqueued_at": 1792652717.6170719,
-      "retries": 7,
-      "last_retry_at": 1792653594.4511316
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26195",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26195,
-      "text": "ترامپ : من هرگز نگفتم که قرار است ونزوئلا را تصرف کنیم. همچنین هرگز نگفتم که مانع دستیابی ایران به سلاح هسته‌ای خواهیم شد ، میدونید که باید این کار رو بکنیم\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792652717.6505704,
-      "retries": 7,
-      "last_retry_at": 1792653632.480551
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26192",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26192,
-      "text": "حقیقت یاب اتاق جنگ : خبر ان‌بی‌سی رو کامل ننوشتن ! این کاملش : \nان‌بی‌سی نیوز: گزارش‌ها درباره خروج کارکنان آمریکایی از خاورمیانه در پی افزایش تنش‌ها\nهم‌زمان با افزایش نگرانی‌ها از ازسرگیری درگیری‌ها با ایران، آمریکا دستور خروج کارکنان غیرضروری سفارت خود در عربستان سعودی و اعضای خانواده‌هایشان را صادر کرده است. همچنین گزارش‌ها حاکی از کاهش موقت نیروهای برخی نمایندگی‌های دیپلماتیک آمریکا در کشورهای خلیج فارس و جابه‌جایی تعدادی از نیروهای نظامی برای دورکردن آن‌ها از مناطق پرخطر است.\nبا این حال، تاکنون گزارشی معتبر مبنی بر تخلیه فوری تمام پایگاه‌های نظامی آمریکا در خاورمیانه منتشر نشده است.\n@WarRoom",
-      "is_edit": true,
-      "enqueued_at": 1792653130.5243113,
-      "retries": 5,
-      "last_retry_at": 1792653651.4898262
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26196",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26196,
-      "text": "وال‌استریت ژورنال: میانجی‌گران منطقه‌ای برای ازسرگیری مذاکرات آمریکا و جمهوری اسلامی تلاش می‌کنند؛ هم‌زمان با افزایش حضور نظامی آمریکا در خاورمیانه و آماده‌سازی گزینه‌های حمله احتمالی به ایران، به احتمال زیاد، تنش‌ها در منطقه به‌سرعت افزایش پیدا می‌کند و از مرزهای جغرافیایی آن فراتر می‌رود. ترامپ گفته پیش از انتخابات میان‌دوره‌ای ۳ نوامبر به ایران حمله نخواهد کرد، اما تهران همچنان بر شروط خود پافشاری می‌کندو مذاکرات را راکد نگه داشته\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792653187.174994,
-      "retries": 5,
-      "last_retry_at": 1792653738.55368
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6486",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6486,
-      "text": "The New York Times, citing sources:\n\nThe United States and Israel drew up detailed plans to wage war on Iran after the U.S. elections.",
-      "is_edit": false,
-      "enqueued_at": 1792653583.536545,
-      "retries": 2,
-      "last_retry_at": 1792653668.5094144
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39669",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39669,
-      "text": "نيويورك تايمز عن مصادر: \n\nالولايات المتحدة وإسرائيل وضعتا خططا مفصلة لشن حرب على إيران بعد الانتخابات الأميركية",
-      "is_edit": false,
-      "enqueued_at": 1792653583.5425255,
-      "retries": 2,
-      "last_retry_at": 1792653719.545126
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26197",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26197,
-      "text": "فارس به نقل از سپاه : اصرار مداوم آمریکا برای اعزام کشتی‌ها به مسیرهای “غیرقانونی” در خلیج فارس، منجر به اقدام علیه پایگاه‌های آمریکایی در منطقه خواهد شد.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792653640.2391117,
-      "retries": 1,
-      "last_retry_at": 1792653687.5275877
-    }
-  ],
-  "last_saved": "2026-10-22 07:22:25 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-22 07:53:36 UTC"
 }
