@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 29 minutes
-- **Messages Processed:** 48
-- **Last Message Text:** بیانیه مهم نیروهای مسلح یمن یک ساعت دیگر برای اعلام چند عملیات نظامی ویژه در عمق خاک عربستان سعودی، ...
-- **Last Message Time:** 2026-10-22 10:57:43
+- **Uptime:** 30 minutes
+- **Messages Processed:** 36
+- **Last Message Text:** ۵ هواپیمای سوخت‌رسان در نزدیکی تنگه هرمز فعالیت می‌کنند.
+
+5 refueling aircraft are operating near th...
+- **Last Message Time:** 2026-10-22 11:28:35
