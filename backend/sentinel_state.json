@@ -737,7 +737,7 @@
   "channel_watermarks": {
     "Alibk3": 39712,
     "withyashar": 26232,
-    "VahidOnline": 78804,
+    "VahidOnline": 78809,
     "netblocks": 1575,
     "iliaen": 4747,
     "Ali_bk_8": 6530,
@@ -826,95 +826,18 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 228,
-    "gemini-3.5-flash-lite": 5518,
+    "gemini-3.5-flash-lite": 5519,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 700,
-    "gemini-3.1-flash-lite": 2265,
+    "gemini-3-flash-preview": 715,
+    "gemini-3.1-flash-lite": 2266,
     "gemini-3.1-flash-lite-preview": 636,
-    "gemini-3.6-flash": 356,
+    "gemini-3.6-flash": 358,
     "gemini-3.7-flash": 204,
-    "gemini-flash-lite-latest": 295,
-    "gemini-3.5-flash": 296,
+    "gemini-flash-lite-latest": 297,
+    "gemini-3.5-flash": 300,
     "gemini-flash-latest": 38
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_withyashar_26225",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26225,
-      "text": "خبرگزاری بلگا بلژیک: «پارلمان بلژیک از نهایی‌کردن دعوت رسمی رضا پهلوی منصرف شد»؛ \nاین تصمیم پس از مخالفت ماکسیم پروو، وزیر امور خارجه بلژیک، با دعوت رسمی اتخاذ شد. او تأکید کرده است که رضا پهلوی تنها نماینده مخالفان جمهوری اسلامی نیست و باید به دیدگاه‌های دیگر جریان‌های اپوزیسیون نیز فرصت داده شود. ملاحظات امنیتی نیز از دلایل مطرح‌شده بوده است.\nبا این حال، حزب لیبرال دعوت خصوصی خود از رضا پهلوی را حفظ کرده و تئو فرانکن، وزیر دفاع بلژیک، نیز او را برای سخنرانی در آکادمی سلطنتی نظامی این کشور در ۶ نوامبر دعوت کرده است.\n@WarRoom\nیاشار : ‏مجاهدین خلق دعوت پارلمان بلژیک از شاهزاده را با نفوذ خود لغو‌کردند",
-      "is_edit": false,
-      "enqueued_at": 1792682409.1796803,
-      "retries": 8,
-      "last_retry_at": 1792684568.9090836
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26222",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26222,
-      "text": "حمله پهپادی به تأسیسات آرامکو در ریاض\nوقوع چندین انفجار شدید در ریاض، پایتخت عربستان سعودی\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792682835.4547877,
-      "retries": 7,
-      "last_retry_at": 1792684462.6239016
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26224",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26224,
-      "text": "ادعای سخنگوی نظامی تروریستی  انصارالله حوثی‌ها: «وزارت دفاع در ریاض، فرودگاه‌های ملک فهد و ابها و تأسیسات شرکت آرامکو در ینبع را هدف قرار دادیم.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792682845.1648812,
-      "retries": 7,
-      "last_retry_at": 1792684489.8106415
-    },
-    {
-      "id": "vip_multi_agent_netblocks_1576",
-      "pipeline": "vip_multi_agent",
-      "node": "netblocks",
-      "msg_id": 1576,
-      "text": "⚠️ Confirmed: Metrics show a disruption to internet connectivity in Zhytomyr Oblast, #Ukraine, corresponding to the third set of power outages this week as Russia's strategy of drone attacks targeting energy infrastructure during the colder months expands westward",
-      "is_edit": false,
-      "enqueued_at": 1792682902.8982368,
-      "retries": 7,
-      "last_retry_at": 1792684517.3253133
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39717",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39717,
-      "text": "مقتل منتحل صفة العقيد، محفوظ الجرادي، ما يسمى أركان حرب اللواء 35، والمكلف بقيادة القوات الموالية للسعودية في جبهة الشقب.",
-      "is_edit": false,
-      "enqueued_at": 1792683382.7259135,
-      "retries": 5,
-      "last_retry_at": 1792684349.4770634
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6535",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6535,
-      "text": "محفوظ الجرادی، که به‌دروغ خود را سرهنگ معرفی می‌کرد و به‌اصطلاح رئیس ستاد تیپ ۳۵ بود و مأموریت فرماندهی نیروهای هم‌پیمان عربستان در جبهه شُقَب را بر عهده داشت، کشته شد.\n\nMahfouz al-Jaradi, who falsely claimed the rank of colonel and served as the so-called chief of staff of the 35th Brigade, and who was tasked with leading Saudi-allied forces on the Shuqab front, has been killed.",
-      "is_edit": true,
-      "enqueued_at": 1792683384.7250173,
-      "retries": 4,
-      "last_retry_at": 1792684416.5702841
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39718",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39718,
-      "text": "هجوم يمني في نجران بالسعودية.",
-      "is_edit": false,
-      "enqueued_at": 1792684060.8809865,
-      "retries": 0,
-      "last_retry_at": 0
-    },
     {
       "id": "vip_multi_agent_Ali_bk_8_6536",
       "pipeline": "vip_multi_agent",
@@ -923,8 +846,8 @@
       "text": "A Yemeni attack in Najran, Saudi Arabia.",
       "is_edit": false,
       "enqueued_at": 1792684074.074959,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 11,
+      "last_retry_at": 1792686659.0749083
     },
     {
       "id": "vip_multi_agent_withyashar_26233",
@@ -934,8 +857,8 @@
       "text": "دونالد ترامپ‌ در‌تروث : «ایران تمام تلاش خود را می‌کند تا پیش از انتخابات میان‌دوره‌ای آمریکا، قیمت نفت را بالا ببرد. آن‌ها حتی حملات، مین‌گذاری‌ها و موارد دیگر را جعل می‌کنند؛ زیرا اکنون حجم نفتی که از تنگه هرمز عبور می‌کند، از میزان آن حتی پیش از آغاز درگیری‌ها نیز بیشتر است. آن‌ها همچنان به کشتن معترضان و هر فرد دیگری که سر راهشان قرار بگیرد، ادامه می‌دهند. این واقعاً یک رژیم شرور است و فقط می‌توانم امیدوار باشم که مردم آمریکا و جهان درک کنند تا چه اندازه شرور هستند! ۷۵ هزار معترض در کمتر از هفت ماه کشته شده‌اند. اینکه جهان و حزب دموکرات ظاهراً اهمیتی به این موضوع نمی‌دهند، تکان‌دهنده است. ایران هرگز نمی‌تواند سلاح هسته‌ای داشته باشد و هرگز هم نخواهد داشت!\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792684205.2731636,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 11,
+      "last_retry_at": 1792686695.0860972
     },
     {
       "id": "vip_multi_agent_kianmeli1_93634",
@@ -945,9 +868,350 @@
       "text": "🔴پرواز دو بالگرد‌ در ‌آسمان تهران\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": true,
       "enqueued_at": 1792684443.5864182,
+      "retries": 11,
+      "last_retry_at": 1792686697.0893304
+    },
+    {
+      "id": "vip_multi_agent_VahidOnline_78806",
+      "pipeline": "vip_multi_agent",
+      "node": "VahidOnline",
+      "msg_id": 78806,
+      "text": "قیمت دلار در بازار آزاد ایران بار دیگر افزایش یافت و به ۲۷۴ هزار تومان رسید. هم‌زمان، بهای طلا و سکه نیز صعود کرد؛ افزایشی که برخلاف روند نزولی قیمت جهانی طلا رخ داده و نشان می‌دهد رشد نرخ ارز همچنان فشار قابل‌توجهی بر بازار طلای ایران وارد می‌کند.\nدر معاملات روز پنجشنبه ۳۰ مهر ۱۴۰۵، قیمت هر دلار آمریکا در بازار آزاد به ۲۷۴ هزار تومان رسید. دلار پیش‌تر در ۱۲مهر از مرز ۲۷۰ هزار تومان عبور کرده بود، اما پس از آن تا حدود ۲۶۰ هزار تومان کاهش یافت.\n@VahidHeadline\n\n📡 @VahidOnline",
+      "is_edit": false,
+      "enqueued_at": 1792684672.9775774,
+      "retries": 10,
+      "last_retry_at": 1792686676.0775738
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93630",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93630,
+      "text": "🔴با بالگرد چندین نفر در تهران جابجا شدن به مناطق امن \n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792684675.0192077,
+      "retries": 10,
+      "last_retry_at": 1792686714.101629
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93631",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93631,
+      "text": "🔴صداوسیما: تاکنون به این حد آماده جنگ نبوده ایم. نظامیان منتظر حمله هستند\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792684675.96153,
+      "retries": 10,
+      "last_retry_at": 1792686716.1049466
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93632",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93632,
+      "text": "🔴منابع اسراییل: ریزپرنده ها برای فعالیت در ایران از قبل در جاهایی جاساز شده اند\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792684688.5861216,
+      "retries": 9,
+      "last_retry_at": 1792686733.1093876
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93633",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93633,
+      "text": "🔴حسین الصافی، روزنامه‌نگار عراقی :\nجنگ آینده خاورمیانه شدید و وحشتناک خواهد بود!\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792684689.0069122,
+      "retries": 9,
+      "last_retry_at": 1792686735.1113977
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39715",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39715,
+      "text": "الإمارات تنقل كميات كبيرة من النفط الخام والمنتجات النفطية من جزيرة داس، في خطوة قد تمثّل إخلاءً استباقياً تحسبًا لتحرك أميركي صهيوني محتمل.",
+      "is_edit": false,
+      "enqueued_at": 1792684691.0346622,
+      "retries": 9,
+      "last_retry_at": 1792686752.1157317
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39716",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39716,
+      "text": "طائرة نقل عسكري أميركي من طراز C-17 تهبط في الإمارات.",
+      "is_edit": false,
+      "enqueued_at": 1792684737.3589613,
+      "retries": 8,
+      "last_retry_at": 1792686581.0266788
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6532",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6532,
+      "text": "تصاویر جدیدی از برخاستن ستون‌های دود در ریاض.\n\nNew footage shows columns of smoke rising in Riyadh.",
+      "is_edit": false,
+      "enqueued_at": 1792684745.8703482,
+      "retries": 8,
+      "last_retry_at": 1792686583.0296304
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6534",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6534,
+      "text": "یک هواپیمای ترابری نظامی C-17 آمریکا در امارات فرود می‌آید.\n\nA US C-17 military transport aircraft lands in the UAE.",
+      "is_edit": false,
+      "enqueued_at": 1792684759.7709646,
+      "retries": 7,
+      "last_retry_at": 1792686600.0422604
+    },
+    {
+      "id": "vip_multi_agent_VahidOnline_78805",
+      "pipeline": "vip_multi_agent",
+      "node": "VahidOnline",
+      "msg_id": 78805,
+      "text": "نیروی دریایی سپاه پاسداران مدعی شد چهار کشتی را هنگام انتقال محموله نفتی در خلیج فارس هدف قرار داده است.\n\nبر اساس اطلاعیه روابط عمومی نیروی دریایی سپاه، هر چهار کشتی همزمان مورد اصابت قرار گرفتند و در آتش می‌سوزند. اطلاعیه افزود این نیرو کشتی‌ها را پس از عبور از «مسیر غیرقانونی» رصد و تعقیب کرده و هنگام انتقال کشتی‌به‌کشتی نفت مورد هدف قرار داد.\n\nسپاه همچنین مدعی شد شب گذشته سه کشتی دیگر در غرب تنگه هرمز با مین برخورد کردند، دچار حریق شدند و متوقف ماندند.\n\nاطلاعیه از «معبر غیرقانونی مین‌گذاری‌شده» نام برد و آمریکا را به «تحریک شناورها» برای عبور از مسیر متهم کرد.\n\nعملیات تجارت دریایی بریتانیا روز سه‌شنبه در هشداری اعلام کرد یک نفتکش در ۳۰ مایل دریایی جنوب شرقی فاو عراق، در شمال خلیج فارس، با «پرتابه‌ای ناشناس» برخورد کرده است.\n\nسپاه ۲۸ مهر در اطلاعیه‌ای جداگانه از آتش گرفتن دو نفتکش بر اثر انفجار مین در جنوب تنگه هرمز خبر داده و از برخورد نفتکش سومی با مین در همین منطقه گفته بود.\n@VahidHeadline\n\n📡 @VahidOnline",
+      "is_edit": false,
+      "enqueued_at": 1792684760.8500457,
+      "retries": 7,
+      "last_retry_at": 1792686602.0458555
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6533",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6533,
+      "text": "امارات متحده عربی در حال انتقال مقادیر زیادی نفت خام و فرآورده‌های نفتی از جزیره داس است؛ اقدامی که ممکن است تخلیه پیشگیرانه در آستانه تحرک احتمالی آمریکا و رژیم صهیونیستی باشد.\n\nThe UAE is moving large quantities of crude oil and petroleum products from Das Island, in a move that could represent a preemptive evacuation in anticipation of a possible American-Zionist action.",
+      "is_edit": false,
+      "enqueued_at": 1792684820.0085115,
+      "retries": 7,
+      "last_retry_at": 1792686619.0510936
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39713",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39713,
+      "text": "مشاهد لتصاعد أعمدة الدخان من العاصمة السعودية الرياض.",
+      "is_edit": false,
+      "enqueued_at": 1792684854.422845,
+      "retries": 6,
+      "last_retry_at": 1792686621.052684
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39714",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39714,
+      "text": "مشاهد جديدة لتصاعد أعمدة الدخان في الرياض",
+      "is_edit": false,
+      "enqueued_at": 1792684857.9287896,
+      "retries": 6,
+      "last_retry_at": 1792686638.0564058
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6531",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6531,
+      "text": "تصاویری از برخاستن ستون‌های دود از پایتخت عربستان سعودی، ریاض.\n\nFootage shows columns of smoke rising from the Saudi capital, Riyadh.",
+      "is_edit": false,
+      "enqueued_at": 1792684913.067351,
+      "retries": 6,
+      "last_retry_at": 1792686640.0595279
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93621",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93621,
+      "text": "🔴رویترز: رزمایش اسراییل، برای ورود همزمان ۱۰۰ جنگنده برای بمباران نقاط خاص ایران است\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792684977.6501372,
+      "retries": 5,
+      "last_retry_at": 1792686678.0798607
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93622",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93622,
+      "text": "🔴ولی نصر، مشاور سابق اوباما: تمام نشانه‌ها حاکی از آن است که آمریکا در مسیر بازگشت به جنگی قرار دارد که ممکن است گسترده‌تر باشد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792684983.961027,
+      "retries": 3,
+      "last_retry_at": 1792686754.1186907
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93623",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93623,
+      "text": "🔴حوثی های یمن ساختمان وزارت دفاع عربستان سعودی در ریاض را هدف قرار دادند\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792684989.6953535,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93624",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93624,
+      "text": "🔴سپاه اعلام کرد زین پس فقط به کشتی ها حمله نمیکنیم٫ پایگاه های امریکا هم هدف هستند\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792684995.6487856,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93625",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93625,
+      "text": "🔴حملات موشکی به عربستان\n\nبه نظر می رسد موشک به فرودگاه اصابت کرده\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792685004.9423091,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93626",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93626,
+      "text": "🔴مخبر:‌ اگر نیروگاه یا پتروشیمی ما را بزنند، ما دوباره ۹ کشور را می‌زنیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792685010.5730364,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93627",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93627,
+      "text": "🔴ریزش شدید بورس چین\n\nاحتمالات از وقوع جنگ باعث شده معاملات فروش بالا برود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792685026.6042364,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93628",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93628,
+      "text": "🔴منابع اسراییل: امشب و فرداشب بیدار بمانیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792685033.071127,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93629",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93629,
+      "text": "🔴کارمندان زن برخی سازمان ها به دلیل جنگ احتمالی ،مرخص شده اند\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792685040.0568345,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_VahidOnline_78807",
+      "pipeline": "vip_multi_agent",
+      "node": "VahidOnline",
+      "msg_id": 78807,
+      "text": "دونالد ترامپ، رئیس‌جمهوری آمریکا، روز پنجشنبه ۳۰ مهرماه، در پیامی در شبکه اجتماعی تروث سوشال نوشت که ایران هر کاری از دستش برمی‌آید انجام می‌دهد تا پیش از برگزاری انتخابات میان‌دوره‌ای ایالات متحده، قیمت نفت را افزایش دهد. او تاکید کرد که ایران حتی خبرهای جعلی درباره حملات، مین‌ها و موارد دیگر منتشر می‌کند، در حالی که اکنون حجم نفت عبوری از تنگه هرمز حتی از میزان آن پیش از آغاز درگیری‌ها نیز بیشتر شده است.\n\nترامپ در ادامه پیام خود با اشاره به سرکوب اعتراضات در ایران نوشت: «آن‌ها همچنان معترضان و هر فرد دیگری را که بر سر راهشان قرار بگیرد، می‌کشند. این واقعاً یک رژیم شرور است و من فقط امیدوارم مردم آمریکا و جهان درک کنند که آن‌ها تا چه اندازه شرور هستند.»\n\nرئیس‌جمهوری آمریکا همچنین اعلام کرد که در کمتر از هفت ماه، ۷۵ هزار معترض کشته شده‌اند و افزود: «تکان‌دهنده است که به نظر می‌رسد جهان و حزب دموکرات اهمیتی به این موضوع نمی‌دهند.» ترامپ در این بخش از پیام خود، نام حزب دموکرات را به شکل تمسخرآمیز «Dumocrat» نوشته است.\n@VahidOOnLine\n\n📡 @VahidOnline",
+      "is_edit": false,
+      "enqueued_at": 1792685166.5407567,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_VahidOnline_78808",
+      "pipeline": "vip_multi_agent",
+      "node": "VahidOnline",
+      "msg_id": 78808,
+      "text": "اسکات بسنت، وزیر خزانه‌داری آمریکا، با انتشار تصاویر ماهواره‌ای قدیمی و جدید از پایانه نفتی جزیرۀ خارگ، در حساب خود در شبکۀ ایکس نوشت که برخلاف گذشته، اکنون هیچ نفتکش حامل نفت خامی در این پایانه دیده نمی‌شود.\n\nاو روز پنج‌شنبه ۳۰ مهر نوشت: «جزیرۀ خارگ اکنون چیزی جز نمادی از تنها چیزی نیست که حکومت ایران هنوز می‌تواند تولید کند: شکست.»\n\nبسنت افزود که عملیات «طرد اقتصادی» آمریکا در حال قطع شریان درآمدهای نفتی جمهوری اسلامی است و منابع مالی مورد استفاده برای حمایت از تروریسم، تأمین تجهیزات برنامۀ هسته‌ای و زندگی تجملی مقام‌های ارشد سپاه پاسداران را محدود می‌کند.\n\nاین اظهارات در ادامۀ سخنان روز سه‌شنبۀ وزیر خزانه‌داری آمریکاست که گفته بود از ماه اوت تاکنون هیچ بارگیری نفتی در تأسیسات جزیرۀ خارگ مشاهده نشده و ایران دیگر محمولۀ نفتی روی آب ندارد.\n\nبسنت پیش‌تر نیز اعلام کرده بود که ایران در ماه سپتامبر حتی یک بشکه نفت خام روی نفتکش‌ها بارگیری نکرده است؛ موضوعی که داده‌های شرکت‌های ردیابی نفتکش نیز آن را تأیید کرده بودند.\n@VahidHeadline\n\n📡 @VahidOnline",
+      "is_edit": true,
+      "enqueued_at": 1792685249.8364687,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26234",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26234,
+      "text": "بیرانوند , یک روز قبل از اعزام به سربازی در  دقیقه ۳ بازی مصدوم شد\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792685760.1702623,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26235",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26235,
+      "text": "ترامپ : من منتظرم دماغ بره سربازی بزنم\n@WarRoom «فان» 😂😂😂👃",
+      "is_edit": false,
+      "enqueued_at": 1792686157.4541378,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6537",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6537,
+      "text": "Bloomberg:\n\nQatar is exploring additional liquefied natural gas supplies to strengthen supply sources from outside the Middle East.\n\nIt was also forced to sharply reduce its supplies amid ongoing disruptions to shipping through the strategic Strait of Hormuz.",
+      "is_edit": false,
+      "enqueued_at": 1792686483.649066,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39719",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39719,
+      "text": "بلومبرغ: \n\nقطر تبحث المزيد من إمدادات الغاز الطبيعي المسال لتعزيز مصادر التوريد من خارج الشرق الأوسط\n\nكما اضطرت إلى خفض إمداداتها بشكل كبير، في ظل استمرار الاضطرابات التي تشهدها حركة الملاحة عبر مضيق هرمز الاستراتيجي.",
+      "is_edit": false,
+      "enqueued_at": 1792686483.6541388,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39720",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39720,
+      "text": "توقف مطار الدمام في السعودية.",
+      "is_edit": false,
+      "enqueued_at": 1792686491.862494,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6538",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6538,
+      "text": "Operations halted at Dammam Airport in Saudi Arabia.",
+      "is_edit": false,
+      "enqueued_at": 1792686499.0660672,
       "retries": 0,
       "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-22 15:56:26 UTC"
+  "last_saved": "2026-10-22 16:32:46 UTC"
 }

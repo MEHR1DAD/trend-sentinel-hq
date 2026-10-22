@@ -1,9 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 37 minutes
-- **Messages Processed:** 57
-- **Last Message Text:** 🔴پرواز دو بالگرد‌ در ‌آسمان تهران
+- **Uptime:** 35 minutes
+- **Messages Processed:** 48
+- **Last Message Text:** بلومبرگ:
 
-#کیان_ملی 
-https://t.me/kianmeli1
-- **Last Message Time:** 2026-10-22 15:53:26
+قطر در حال بررسی تأمین محموله‌های بیشتر گاز طبیعی مایع برای تقویت منابع تأمین از خارج خاور...
+- **Last Message Time:** 2026-10-22 16:29:03
