@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 31 minutes
-- **Messages Processed:** 21
-- **Last Message Text:** الطيران السعودي يعلن وفاة شخص آخر نتيجة استهداف مطار الدمام (ونتيجة الاستمرار بتسيير الرحلات من المط...
-- **Last Message Time:** 2026-10-22 06:45:50
+- **Uptime:** 29 minutes
+- **Messages Processed:** 50
+- **Last Message Text:** فارس به نقل از سپاه : اصرار مداوم آمریکا برای اعزام کشتی‌ها به مسیرهای “غیرقانونی” در خلیج فارس، منج...
+- **Last Message Time:** 2026-10-22 07:20:40
