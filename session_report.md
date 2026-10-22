@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 28 minutes
-- **Messages Processed:** 59
-- **Last Message Text:** نیروهای مسلح یمن:
+- **Uptime:** 33 minutes
+- **Messages Processed:** 66
+- **Last Message Text:** ستون‌های دود در نزدیکی هواپیماها در فرودگاه ریاض به هوا برمی‌خیزند.
 
-طی ۴۸ ساعت گذشته، چهار عملیات نظامی ویژه با تعدادی موشک بالستیک و پهپاد انجام داد...
-- **Last Message Time:** 2026-10-22 12:02:48
+Columns of smoke rise near airc...
+- **Last Message Time:** 2026-10-22 12:34:02

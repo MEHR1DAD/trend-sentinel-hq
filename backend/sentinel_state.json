@@ -735,12 +735,12 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39698,
+    "Alibk3": 39702,
     "withyashar": 26221,
     "VahidOnline": 78804,
     "netblocks": 1575,
     "iliaen": 4747,
-    "Ali_bk_8": 6515,
+    "Ali_bk_8": 6520,
     "kianmeli1": 93620
   },
   "vahid_post_time": {},
@@ -825,18 +825,52 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 221,
-    "gemini-3.5-flash-lite": 5327,
+    "gemini-3.8-flash": 222,
+    "gemini-3.5-flash-lite": 5449,
     "gemini-2.5-flash": 325,
     "gemini-3-flash-preview": 669,
-    "gemini-3.1-flash-lite": 1962,
+    "gemini-3.1-flash-lite": 1969,
     "gemini-3.1-flash-lite-preview": 631,
     "gemini-3.6-flash": 351,
-    "gemini-3.7-flash": 200,
-    "gemini-flash-lite-latest": 280,
-    "gemini-3.5-flash": 229,
+    "gemini-3.7-flash": 201,
+    "gemini-flash-lite-latest": 282,
+    "gemini-3.5-flash": 234,
     "gemini-flash-latest": 27
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-22 12:03:02 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6520",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6520,
+      "text": "Smoke covers the skies over the Saudi capital, Riyadh, after it was targeted in a Yemeni attack.",
+      "is_edit": true,
+      "enqueued_at": 1792672385.6964242,
+      "retries": 1,
+      "last_retry_at": 1792672399.81215
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39703",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39703,
+      "text": "أعمدة الدخان تتصاعد قرب الطائرات في مطار الرياض",
+      "is_edit": false,
+      "enqueued_at": 1792672488.8795266,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6521",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6521,
+      "text": "Columns of smoke rise near aircraft at Riyadh Airport.",
+      "is_edit": false,
+      "enqueued_at": 1792672496.5294247,
+      "retries": 0,
+      "last_retry_at": 0
+    }
+  ],
+  "last_saved": "2026-10-22 12:37:20 UTC"
 }
