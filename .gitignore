@@ -20,3 +20,7 @@ Thumbs.db
 # Scratch & test scripts
 test_pattern*.py
 append_ai.py
+
+# SQLite temporary files
+*.db-shm
+*.db-wal

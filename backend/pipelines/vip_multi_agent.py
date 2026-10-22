@@ -23,7 +23,7 @@ from backend.core.config import (
 
 class VipMultiAgentEditorialPipeline:
     """
-    سیستم تحریریه ۴ لایه تمام‌خودکار چندعامله (Multi-Agent Editorial Pipeline)
+    سیستم تحریریه تمام‌خودکار چندعامله (Multi-Agent Editorial Pipeline)
     برای تمامی کانال‌های VIP:
     - @withyashar
     - @Alibk3
@@ -32,11 +32,12 @@ class VipMultiAgentEditorialPipeline:
     - @netblocks
 
     ساختار سربازها:
-    - سرباز شماره ۰ (Soldier 0): مدیریت استراتژیک پشته مدل‌ها و ماتریس مدل × کلید (پیاده‌سازی شده در GeminiClient)
+    - سرباز شماره ۰ (Soldier 0): مدیریت استراتژیک پشته مدل‌ها و ماتریس مدل × کلید با تست زنده سلامت (در GeminiClient)
     - سرباز شماره ۱+۲ (Soldier 1+2): دروازه‌بان و مسیرساز تک‌ضرب فوق‌سریع دو زبانه (Flash-Lite)
-    - سرباز شماره ۴ (Soldier 4): دیده‌بان رشته‌های فعال کانال در پنجره سخت‌گیرانه (Flash)
-    - سرباز شماره ۳ (Soldier 3): سردبیر و تحلیلگر ارشد حوزه تخصصی (Flash) با ۳ پرسونا (دیده‌بان جنگ، اقتصاد، اعتراضات)
-    - لایه انتشار نهایی: ارسال فوری، برچسب‌های کانونی قطعی، همگام‌سازی درجا و لاگ تفصیلی
+    - سرباز شماره ۴ (Soldier 4): دیده‌بان رشته‌های فعال کانال در پنجره ۶ ساعته (Flash-Lite)
+    - سرباز شماره ۳ (Soldier 3): سردبیر خط مقدم و انتشار فوری زیر ۳ ثانیه (Flash-Lite)
+    - سرباز شماره ۵ (Soldier 5): تحلیلگر و سردبیر ارشد ژئوپلیتیک جهت ارتقا و صیقل تحلیلی پس از انتشار (Flash Stack با ویرایش درجا در تلگرام)
+    - لایه انتشار نهایی: ارسال فوری، برچسب‌های کانونی قطعی، همگام‌سازی درجا و قفل آهنین ضد دابل‌پست
     """
     def __init__(self, sentinel, threads=None):
         self.sentinel = sentinel
@@ -425,7 +426,7 @@ class VipMultiAgentEditorialPipeline:
         }
 
         raw_text, used_model, elapsed = await self.sentinel.gemini.call_soldier_content(
-            payload, tier="flash", timeout=15, soldier_name="Soldier_4_Thread_Watcher"
+            payload, tier="lite", timeout=12, soldier_name="Soldier_4_Thread_Watcher"
         )
         if not raw_text:
             return None
@@ -547,7 +548,7 @@ class VipMultiAgentEditorialPipeline:
         }
 
         raw_text, used_model, elapsed = await self.sentinel.gemini.call_soldier_content(
-            payload, tier="flash", timeout=20, soldier_name=f"Soldier_3_Editor_{target_channel.replace('@','')}"
+            payload, tier="lite", timeout=12, soldier_name=f"Soldier_3_FrontlineEditor_{target_channel.replace('@','')}"
         )
         if not raw_text:
             return None
@@ -568,11 +569,164 @@ class VipMultiAgentEditorialPipeline:
                 print(f"⚠️ [SOLDIER 3] JSON parse error: {e}")
         return None
 
+    # ==============================================================
+    # --- سرباز ۵: تحلیلگر و سردبیر ارشد ژئوپلیتیک و ارتقای تحلیلی (Flash) ---
+    # ==============================================================
+
+    async def soldier_5_analytical_polisher(
+        self,
+        node,
+        msg_id,
+        post_id,
+        target_channel,
+        initial_title,
+        initial_summary,
+        clean_text,
+        urgency_level="BREAKING",
+        is_iran_related=False,
+        territory_scope=None,
+        media_header="",
+        root_icon="📝",
+        tag="",
+        custom_sources=None,
+        relation="NEW_ALERT",
+        reply_to_post_id=None
+    ):
+        """
+        سرباز ۵ (تحلیلگر و سردبیر ارشد ژئوپلیتیک - Flash Stack):
+        - پس از انتشار اولیه زیر ۳ ثانیه‌ای توسط سرباز ۳، به صورت ناهمگام (Background) فراخوانی می‌شود.
+        - با استفاده از مدل قدرتمند Flash، متن خبر را با قلمی فاخر، تحلیلی، مقتدر و اصطلاحات تخصصی صیقل می‌دهد.
+        - پست اولیه منتشر شده در تلگرام را درجا و بدون هیچ اختلالی ویرایش (safe_edit_post) می‌کند.
+        - در صورت عدم دسترسی به مدل Flash یا بروز هرگونه خطا، پست اولیه بدون کوچکترین تغییری باقی می‌ماند.
+        """
+        try:
+            print(f"💎 [SOLDIER 5: POST-PUBLISH POLISH] Starting analytical polish for #{post_id} in {target_channel} with Flash Tier...")
+
+            if target_channel == "@DidebanJang":
+                persona_desc = (
+                    "تو «سرباز شماره ۵ - تحلیلگر و سردبیر ارشد نظامی، دفاعی و ژئوپلیتیک دیده‌بان جنگ» هستی.\n"
+                    "یک خبر فوری لحظاتی پیش در کانال منتشر شده است. وظیفه تو این است که بدون تغییر در واقعیت‌ها و رویدادهای اصلی، چکیده را ارتقا دهی و آن را به یک گزارش تحلیلی، مقتدر، عمیق و آراسته با اصطلاحات دقیق نظامی تبدیل کنی.\n"
+                    "اگر ابعاد میدانی، تسلیحاتی، پدافندی یا ژئوپلیتیک رویداد جای کانتکست‌سازی و ابهام‌زدایی دارد، آن را در چکیده با لحنی فاخر و منسجم تبیین کن."
+                )
+            elif target_channel == "@DidehbanEghtesad":
+                persona_desc = (
+                    "تو «سرباز شماره ۵ - تحلیلگر ارشد مسائل اقتصادی و بازارهای مالی دیده‌بان اقتصاد» هستی.\n"
+                    "وظیفه تو ارتقای چکیده با اصطلاحات دقیق اقتصادی، بررسی اثرات بازار و ابهام‌زدایی از تصمیمات مالی به شکلی تحلیلی و عمیق است."
+                )
+            else:
+                persona_desc = (
+                    "تو «سرباز شماره ۵ - حقوق‌دان و تحلیلگر ارشد مسائل اجتماعی و حقوق بشری دیده‌بان اعتراضات» هستی.\n"
+                    "وظیفه تو ارتقای متن با ادبیات دقیق حقوقی، مستندسازی ابعاد واقعه و بیانی شفاف، منسجم و بی‌طرفانه است."
+                )
+
+            prompt = (
+                f"{persona_desc}\n\n"
+                f"📌 [تیتر فعلی منتشر شده]: {initial_title}\n"
+                f"📌 [چکیده فعلی منتشر شده]: {initial_summary}\n\n"
+                f"📥 [متن اصلی ارسالی از {node}]:\n{clean_text}\n\n"
+                "دستورالعمل صیقل و ارتقای تحلیلی (Post-Publish Polish):\n"
+                "۱. title: اگر تیتر نیاز به فصاحت بیشتر، گزاره جذاب‌تر یا اقتدار ژورنالیستی دارد آن را ارتقا بده (حتماً با فعل کامل)؛ در غیر این صورت همان تیتر مناسب را بازتولید کن.\n"
+                "۲. summary: چکیده‌ای عمیق‌تر، تحلیلی‌تر، دارای شفافیت میدانی و ساختاری فاخر بنویس (بدون طولانی شدن مفرط، حداکثر ۳ الی ۴ جمله منسجم، بدون خیال‌پردازی یا اضافه کردن شایعات).\n\n"
+                "پاسخ را دقیقاً و فقط در قالب شیء JSON زیر بدون هیچ متن اضافی ارسال کن:\n"
+                "{\n"
+                '  "title": "تیتر صیقل‌خورده و رسا با فعل کامل به زبان فارسی",\n'
+                '  "summary": "چکیده تحلیلی ارتقایافته به زبان فارسی"\n'
+                "}"
+            )
+
+            payload = {
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"maxOutputTokens": 650, "temperature": 0.2}
+            }
+
+            raw_text, used_model, elapsed = await self.sentinel.gemini.call_soldier_content(
+                payload, tier="flash", timeout=25, soldier_name=f"Soldier_5_Polisher_{target_channel.replace('@','')}"
+            )
+            if not raw_text:
+                print(f"ℹ️ [SOLDIER 5: POLISH SKIPPED] Flash tier unavailable or empty. Post #{post_id} remains intact with initial Lite version.")
+                return
+
+            res = safe_extract_json(raw_text)
+            if not (res and isinstance(res, dict)):
+                print(f"⚠️ [SOLDIER 5: POLISH SKIPPED] Could not parse JSON from Flash. Post #{post_id} remains intact.")
+                return
+
+            polished_title = str(res.get("title", "")).strip() or initial_title
+            polished_summary = str(res.get("summary", "")).strip() or initial_summary
+
+            if len(polished_summary) < 20:
+                print(f"ℹ️ [SOLDIER 5: POLISH SKIPPED] Polished summary too short. Keeping initial version.")
+                return
+
+            link = f"https://t.me/{node}/{msg_id}"
+            if target_channel == '@DidebanJang':
+                if relation == "THREAD_REPLY":
+                    alert_header = f"⚡️ **گزارش تکمیلی: {polished_title}**{media_header}"
+                else:
+                    tier, icon, alert_type_name, _ = classify_war_urgency(
+                        ai_urgency=urgency_level,
+                        text=polished_summary,
+                        title=polished_title,
+                        is_iran_related=is_iran_related
+                    )
+                    alert_header = f"{icon} **{alert_type_name}: {polished_title}**{media_header}"
+            elif target_channel == '@DidehbanEghtesad':
+                icon = "📈"
+                alert_type_name = "گزارش اقتصادی (تکمیلی)" if relation == "THREAD_REPLY" else "گزارش اقتصادی"
+                alert_header = f"{icon} **{alert_type_name}: {polished_title}**{media_header}"
+            else:
+                is_legal = any(w in polished_title for w in ['اعدام', 'دادگاه', 'حکم', 'حقوق بشری', 'زندان', 'بازداشت'])
+                is_strike = 'اعتصاب' in polished_title
+                icon = "⚖️" if is_legal else ("🛑" if is_strike else "📢")
+                alert_type_name = "گزارش تکمیلی" if relation == "THREAD_REPLY" else ("گزارش حقوق بشری" if is_legal else ("گزارش کارگری و اعتصاب" if is_strike else "گزارش مردمی"))
+                alert_header = f"{icon} **{alert_type_name}: {polished_title}**{media_header}"
+
+            if custom_sources and len(custom_sources) > 1:
+                sources_lines = [f"- [{s.get('node', 'منبع')}]({s.get('link', '')}) {get_media_icon_from_type(s.get('media_type', 'text'))}" for s in custom_sources]
+                source_block = "🔗 **منابع خبر:**\n" + "\n".join(sources_lines)
+            else:
+                source_block = f"🔗 **منبع خبر:**\n- [{node}]({link}) {root_icon}"
+
+            polished_post_text = (
+                f"{alert_header}\n\n"
+                f"📝 **چکیده تحلیلی رویداد:**\n{polished_summary}\n\n"
+                f"{source_block}\n\n"
+                f"{tag}\n{target_channel}"
+            )
+
+            await self.sentinel.safe_edit_post(target_channel, post_id, polished_post_text)
+            print(f"💎 [SOLDIER 5: SUCCESS | Model: {used_model} | {elapsed:.2f}s] In-place polished post #{post_id} in {target_channel} with Flash depth.")
+
+            thread_key = f"{node}_{msg_id}"
+            if thread_key in self.sentinel.thread_alerts:
+                self.sentinel.thread_alerts[thread_key]['title'] = polished_title
+                self.sentinel.thread_alerts[thread_key]['summary'] = polished_summary
+                self.sentinel.thread_alerts[thread_key]['ai_model'] = f"{used_model} (Soldier 5 Flash Polish)"
+
+            msg_key = f"{node}_{msg_id}"
+            if msg_key in self.sentinel.vip_alert_history:
+                self.sentinel.vip_alert_history[msg_key]['text'] = polished_summary
+                self.sentinel.vip_alert_history[msg_key]['ai_model'] = f"{used_model} (Soldier 5 Flash Polish)"
+
+            self.sentinel.save_persisted_state()
+        except Exception as e:
+            print(f"⚠️ [SOLDIER 5: POLISH ERROR] Exception during polish for #{post_id} in {target_channel}: {e}")
+
+    async def schedule_soldier_5_polish(self, **kwargs):
+        """
+        تسک پس‌زمینه با وقفه کوتاه ۵ ثانیه‌ای جهت اطمینان از استقرار اولیه پیام در تلگرام
+        """
+        try:
+            await asyncio.sleep(5)
+            await self.soldier_5_analytical_polisher(**kwargs)
+        except Exception as e:
+            print(f"⚠️ [SOLDIER 5: SCHEDULE ERROR] Polish task exception: {e}")
+
     # ========================================================
     # --- لایه اجرایی و انتشار نهایی (Dispatch & Execute) ---
     # ========================================================
 
-    async def execute_dispatch(self, node, msg_id, route_info, thread_info, editor_info, raw_msg=None, is_edit=False, custom_sources=None):
+    async def execute_dispatch(self, node, msg_id, route_info, thread_info, editor_info, raw_msg=None, is_edit=False, custom_sources=None, clean_text=""):
         """
         اجرای نهایی عملیات (تنها درگاه رسمی انتشار سامانه):
         - در صورت MERGE: ویرایش درجا در تلگرام و به‌روزرسانی تاریخچه و وضعیت.
@@ -774,6 +928,28 @@ class VipMultiAgentEditorialPipeline:
                 disp_type = "THREAD REPLY" if not is_fallback else "THREAD REPLY (STANDALONE FALLBACK)"
                 print(f"💬 [MULTI-AGENT: {disp_type} | Model: {ai_model} | Latency: {latency_str} | Scope: {territory_scope.get('scope')} | {urg_label}] Dispatched alert #{sent.id} to {target_channel} for {node} #{msg_id}:")
                 print(f"   {title}")
+
+                # ارتقا و صیقل تحلیلی در پس‌زمینه توسط سرباز ۵ (Flash Stack)
+                asyncio.create_task(
+                    self.schedule_soldier_5_polish(
+                        node=node,
+                        msg_id=msg_id,
+                        post_id=sent.id,
+                        target_channel=target_channel,
+                        initial_title=title,
+                        initial_summary=summary,
+                        clean_text=clean_text or summary,
+                        urgency_level=urgency_level,
+                        is_iran_related=is_iran_related,
+                        territory_scope=territory_scope,
+                        media_header=media_header,
+                        root_icon=root_icon,
+                        tag=tag,
+                        custom_sources=custom_sources,
+                        relation="THREAD_REPLY",
+                        reply_to_post_id=reply_to_post_id
+                    )
+                )
                 return
 
         # ----------------------------------------------------
@@ -855,6 +1031,27 @@ class VipMultiAgentEditorialPipeline:
                 urg_label = "Alarm/Sound" if not is_silent else "Silent"
                 print(f"✨ [MULTI-AGENT: PUBLISHED | Model: {ai_model} | Latency: {latency_str}] Posted to {target_channel} ({urg_label}) for {node} #{msg_id}:")
                 print(f"   📌 Title: {title}")
+
+                # ارتقا و صیقل تحلیلی در پس‌زمینه توسط سرباز ۵ (Flash Stack)
+                asyncio.create_task(
+                    self.schedule_soldier_5_polish(
+                        node=node,
+                        msg_id=msg_id,
+                        post_id=sent.id,
+                        target_channel=target_channel,
+                        initial_title=title,
+                        initial_summary=summary,
+                        clean_text=clean_text or summary,
+                        urgency_level=urgency_level,
+                        is_iran_related=is_iran_related,
+                        territory_scope=territory_scope,
+                        media_header=media_header,
+                        root_icon=root_icon,
+                        tag=tag,
+                        custom_sources=custom_sources,
+                        relation="NEW_ALERT"
+                    )
+                )
         except Exception as pub_err:
             print(f"❌ Error publishing alert to {target_channel}: {pub_err}")
 
@@ -1034,7 +1231,7 @@ class VipMultiAgentEditorialPipeline:
                 existing_td = thread_info.get('target_thread_data')
 
                 # ----------------------------------------------------
-                # گام ۳: سرباز شماره ۳ (سردبیر حوزه تخصصی - Flash)
+                # گام ۳: سرباز شماره ۳ (سردبیر خط مقدم - Lite)
                 # ----------------------------------------------------
                 editor_info = await self.soldier_3_domain_editor(
                     clean_text, node, target_channel,
@@ -1053,7 +1250,7 @@ class VipMultiAgentEditorialPipeline:
                     return False
 
                 # ----------------------------------------------------
-                # گام ۴: انتشار یا ادغام نهایی
+                # گام ۴: انتشار یا ادغام نهایی و آغاز صیقل تحلیلی سرباز ۵
                 # ----------------------------------------------------
                 await self.execute_dispatch(
                     node=node,
@@ -1062,7 +1259,8 @@ class VipMultiAgentEditorialPipeline:
                     thread_info=thread_info,
                     editor_info=editor_info,
                     raw_msg=raw_msg,
-                    is_edit=is_edit
+                    is_edit=is_edit,
+                    clean_text=clean_text
                 )
                 return True
             finally:
@@ -1104,8 +1302,8 @@ class VipMultiAgentEditorialPipeline:
                     msg_date = getattr(msg, 'date', None)
                     if msg_date:
                         msg_age_sec = now_ts - msg_date.timestamp()
-                        if msg_age_sec > 7200:
-                            # نادیده گرفتن اخبار بیات با قدمت بیش از ۲ ساعت و پیشروی واتر‌مارک
+                        if msg_age_sec > 21600:
+                            # نادیده گرفتن اخبار با قدمت بیش از ۶ ساعت و پیشروی واتر‌مارک
                             self.sentinel.db.advance_watermark(node, msg.id)
                             continue
 
