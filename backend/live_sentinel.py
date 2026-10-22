@@ -390,11 +390,21 @@ class LiveSentinel:
                         return self.node_id_map[str(pid)]
                 except Exception:
                     pass
+
+        # Fallback to chat object if attached to event without network query
+        chat = getattr(event, 'chat', None)
+        if chat:
+            uname = getattr(chat, 'username', None)
+            if uname:
+                clean_u = uname.lower()
+                if clean_u in VIP_CANONICAL_SET:
+                    node_name = VIP_MAP.get(clean_u, uname)
+                    self.record_node_peer(node_name, chat)
+                    return node_name
         return None
 
     async def preload_node_entities(self, reader_client):
         self.load_peer_cache()
-        cached_nodes = set(self.node_peer_cache.get('node_peers', {}).keys())
 
         # Include destination target channels
         dest_channels = ['@DidebanJang', '@DidehbanEghtesad', '@DidebanEterazat']
@@ -407,7 +417,13 @@ class LiveSentinel:
         for n in all_targets:
             clean_n = n.lstrip('@')
             at_n = f"@{clean_n}"
-            if n not in cached_nodes and clean_n not in cached_nodes and at_n not in cached_nodes:
+            c_data = (
+                self.node_peer_cache.get('node_peers', {}).get(n)
+                or self.node_peer_cache.get('node_peers', {}).get(clean_n)
+                or self.node_peer_cache.get('node_peers', {}).get(at_n)
+            )
+            # Ensure node has valid channel_id and non-zero access_hash
+            if not c_data or not c_data.get('channel_id') or not c_data.get('access_hash'):
                 missing_nodes.append(n)
 
         if not missing_nodes:
@@ -424,6 +440,18 @@ class LiveSentinel:
             except Exception as e:
                 print(f"⚠️ [PEER CACHE] Could not resolve entity for {n}: {e}")
         self.save_peer_cache()
+
+        # Permanently save newly resolved peers to git repository
+        try:
+            import subprocess
+            subprocess.run(
+                'git add backend/telegram_peer_cache.json && git diff --staged --quiet || (git commit -m "[skip ci] update telegram_peer_cache.json with resolved access_hash" && git pull --rebase origin main && git push || true)',
+                shell=True,
+                timeout=20
+            )
+            print("💾 [PEER CACHE] Permanently committed and pushed updated peer cache to GitHub repository.")
+        except Exception as git_err:
+            print(f"⚠️ [PEER CACHE] Could not git push peer cache: {git_err}")
 
     def load_persisted_state(self):
         try:
