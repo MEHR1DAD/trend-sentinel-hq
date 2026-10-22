@@ -825,41 +825,30 @@
     "4744": 8
   },
   "gemini_model_stats": {
-    "gemini-3.8-flash": 227,
-    "gemini-3.5-flash-lite": 5460,
+    "gemini-3.8-flash": 228,
+    "gemini-3.5-flash-lite": 5506,
     "gemini-2.5-flash": 325,
     "gemini-3-flash-preview": 669,
-    "gemini-3.1-flash-lite": 2098,
+    "gemini-3.1-flash-lite": 2145,
     "gemini-3.1-flash-lite-preview": 631,
-    "gemini-3.6-flash": 353,
+    "gemini-3.6-flash": 354,
     "gemini-3.7-flash": 204,
-    "gemini-flash-lite-latest": 289,
-    "gemini-3.5-flash": 278,
-    "gemini-flash-latest": 36
+    "gemini-flash-lite-latest": 294,
+    "gemini-3.5-flash": 285,
+    "gemini-flash-latest": 38
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39713",
+      "id": "vip_multi_agent_kianmeli1_93631",
       "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39713,
-      "text": "مشاهد لتصاعد أعمدة الدخان من العاصمة السعودية الرياض.",
-      "is_edit": false,
-      "enqueued_at": 1792677447.3492382,
-      "retries": 1,
-      "last_retry_at": 1792677451.5902774
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6531",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6531,
-      "text": "Footage shows columns of smoke rising from the Saudi capital, Riyadh.",
-      "is_edit": false,
-      "enqueued_at": 1792677459.1869497,
-      "retries": 0,
-      "last_retry_at": 0
+      "node": "kianmeli1",
+      "msg_id": 93631,
+      "text": "🔴صداوسیما: تاکنون به این حد آماده جنگ نبوده ایم. نظامیان منتظر حمله هستند\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": true,
+      "enqueued_at": 1792679833.8326077,
+      "retries": 3,
+      "last_retry_at": 1792679963.157061
     }
   ],
-  "last_saved": "2026-10-22 13:58:29 UTC"
+  "last_saved": "2026-10-22 14:39:33 UTC"
 }
