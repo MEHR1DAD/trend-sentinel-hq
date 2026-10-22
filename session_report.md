@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 30 minutes
-- **Messages Processed:** 34
-- **Last Message Text:** شهرک‌نشینان صهیونیست مانع ورود کامیون‌های کمک‌رسانی به نوار غزه از گذرگاه کرم ابوسالم می‌شوند.
+- **Uptime:** 32 minutes
+- **Messages Processed:** 54
+- **Last Message Text:** حملات هوایی عربستان به جبل صبر در تعز.
 
-Zion...
-- **Last Message Time:** 2026-10-22 07:46:41
+Saudi airstrikes on Jabal Sabir in Taiz.
+- **Last Message Time:** 2026-10-22 09:32:47
