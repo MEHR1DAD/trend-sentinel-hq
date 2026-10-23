@@ -1,8 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 33 minutes
-- **Messages Processed:** 56
-- **Last Message Text:** تظاهراتی در شهر حمص سوریه علیه رژیم صهیونیستی برگزار شد.
-
-Protests in the Syrian city of Homs agains...
-- **Last Message Time:** 2026-10-23 11:20:48
+- **Uptime:** 29 minutes
+- **Messages Processed:** 60
+- **Last Message Text:** نتانیاهو: شهرک‌نشینان قهرمان ما، الگویی برای مردم و کشور اسرائیل هستند. ما زیرساخت‌های تروریستی را ن...
+- **Last Message Time:** 2026-10-23 11:52:10
