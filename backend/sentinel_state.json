@@ -829,8 +829,8 @@
     "gemini-3.5-flash-lite": 6552,
     "gemini-2.5-flash": 325,
     "gemini-3-flash-preview": 823,
-    "gemini-3.1-flash-lite": 2463,
-    "gemini-3.1-flash-lite-preview": 1502,
+    "gemini-3.1-flash-lite": 2473,
+    "gemini-3.1-flash-lite-preview": 1518,
     "gemini-3.6-flash": 399,
     "gemini-3.7-flash": 205,
     "gemini-flash-lite-latest": 576,
@@ -839,116 +839,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_kianmeli1_93696",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93696,
-      "text": "🔴همین الان دو انفجار سنگین «بندر لنگه» و «کنگ» شنیده شد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792791443.7557013,
-      "retries": 31,
-      "last_retry_at": 1792794423.5164583
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6675",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6675,
-      "text": "Two explosions heard in the Strait of Hormuz.",
-      "is_edit": true,
-      "enqueued_at": 1792791550.2769365,
-      "retries": 30,
-      "last_retry_at": 1792794360.4472833
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93697",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93697,
-      "text": "🔴کانال های حامی سپاه: ایران حملات پیشدستانه را شروع کرده است \n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792791956.591735,
-      "retries": 26,
-      "last_retry_at": 1792794402.4866009
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93698",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93698,
-      "text": "🔴یک نفتکش در تنگه هرمز در آتش میسوزد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792791964.8829687,
-      "retries": 25,
-      "last_retry_at": 1792794319.9047294
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93699",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93699,
-      "text": "🔴خبرگزاری امریکایی CNN :\n\nهم اکنون وزارت خارجه آمریکا به سرعت کارکنان سفارت آمریکا در بیروت را تخلیه می‌کند.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792792126.603198,
-      "retries": 23,
-      "last_retry_at": 1792794321.4083552
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26350",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26350,
-      "text": "گزارش شنیده شدن صدای جنگنده از بندر عباس\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792792164.2394528,
-      "retries": 23,
-      "last_retry_at": 1792794322.9103158
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26351",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26351,
-      "text": "گزارشها میگن صدا موتورش صدای خودیه 😂",
-      "is_edit": false,
-      "enqueued_at": 1792792240.1453469,
-      "retries": 22,
-      "last_retry_at": 1792794339.4197824
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26352",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26352,
-      "text": "گزارش‌های بومی میگن روستای بارچاه نزدیک بندر لنگه گویا لانچر زدن\n@WarRoom 🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1792792353.4022474,
-      "retries": 21,
-      "last_retry_at": 1792794340.9231775
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39858",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39858,
-      "text": "القوات اليمنية بعد السيطرة على الوادي، تقترب من منطقة الشطين، عاصمة مديرية المضاربة ورأس العارة، في محاولة لمحاصرة القوات الموالية للسعودية في رأس العارة والمناطق القريبة من باب المندب.",
-      "is_edit": false,
-      "enqueued_at": 1792792404.2431564,
-      "retries": 21,
-      "last_retry_at": 1792794342.4266486
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6676",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6676,
-      "text": "Following its control of the valley, Yemeni forces are approaching the area of al-Shatayn, the capital of al-Mudharaba wa Ras al-Ara district, in an attempt to encircle Saudi-backed forces in Ras al-Ara and areas near Bab al-Mandab.",
-      "is_edit": false,
-      "enqueued_at": 1792792409.9534087,
-      "retries": 20,
-      "last_retry_at": 1792794343.9291334
-    },
-    {
       "id": "vip_multi_agent_withyashar_26353",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
@@ -956,8 +846,8 @@
       "text": "سلام بندر لنگه باز هم یه صدایی شنیده شد و نگهبان های گمرک از داخل اومدن بیرون و ترسید کامل ، یکی کامل داره نگاه تو اسمون میکنه\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792792523.0236905,
-      "retries": 18,
-      "last_retry_at": 1792794361.9507284
+      "retries": 34,
+      "last_retry_at": 1792796193.8931205
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6677",
@@ -967,19 +857,8 @@
       "text": "The occupation army has begun evacuating Palestinians from the al-Jaladah area of Hebron following the launch of a military operation there.",
       "is_edit": true,
       "enqueued_at": 1792792636.4147203,
-      "retries": 17,
-      "last_retry_at": 1792794363.4543214
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39859",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39859,
-      "text": "جيش الاحتلال يبدأ بإخلاء الفلسطينيين من منطقة الجلدة في الخليل، عقب إطلاق عملية عسكرية فيها.",
-      "is_edit": true,
-      "enqueued_at": 1792792636.4187388,
-      "retries": 17,
-      "last_retry_at": 1792794364.9577408
+      "retries": 33,
+      "last_retry_at": 1792796225.413725
     },
     {
       "id": "vip_multi_agent_withyashar_26354",
@@ -989,8 +868,8 @@
       "text": "یاشار جون شبت به خیر ، امروز باشگاهی فیتنس فرست زیر هتل هیلتون فرانکفرت رو تخلیه کردن گفتن که به خاطر این که صاحب اینجا یه ایرانی بوده به نظرم همون انصاری (مسئول خرید مجتبی ) اگه اشتباه نکنم سه هفته بهشون وقت دادن که تمام هرچی که دارن رو ببرن بیرون کل هیلتون و تمام مجموعه هایی که زیر اون ساختمون بودن\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792792775.5945902,
-      "retries": 16,
-      "last_retry_at": 1792794381.4622226
+      "retries": 31,
+      "last_retry_at": 1792796151.7549136
     },
     {
       "id": "vip_multi_agent_withyashar_26355",
@@ -1000,19 +879,8 @@
       "text": "مرد خردمند ، مارک لوین : قراره اینبار با ۵۰۰جنگنده به ایران حمله بشه و بالای هزارتا هدف تو دقایق اول بزنن\n@WarRoom 🚨🚨🚨🚨🚨",
       "is_edit": false,
       "enqueued_at": 1792792850.408465,
-      "retries": 15,
-      "last_retry_at": 1792794382.9648848
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6678",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6678,
-      "text": "ارتش اشغالگر با نیروهای نظامی گسترده به شهر الخلیل یورش می‌برد و برای اجرای عملیاتی نظامی در مقیاس وسیع در داخل شهر آماده می‌شود؛ این اقدام پس از حمله‌ای صورت می‌گیرد که جوانان فلسطینی صبح روز گذشته انجام دادند.\n\nThe occupation army storms the city of Hebron with a large military force, in preparation for carrying out a large-scale military operation inside the city, following the attack carried out by Palestinian youths yesterday morning.",
-      "is_edit": true,
-      "enqueued_at": 1792792850.4156733,
-      "retries": 15,
-      "last_retry_at": 1792794384.4671896
+      "retries": 30,
+      "last_retry_at": 1792796153.2584643
     },
     {
       "id": "vip_multi_agent_Alibk3_39861",
@@ -1022,8 +890,8 @@
       "text": "جيش الاحتلال يقتحم مدينة الخليل بقوات عسكرية كبيرة، تمهيدًا لتنفيذ عملية عسكرية واسعة النطاق داخل المدينة، عقب الهجوم الذي نفذه شبان فلسطينيون صباح أمس.",
       "is_edit": true,
       "enqueued_at": 1792792850.4198859,
-      "retries": 15,
-      "last_retry_at": 1792794385.97113
+      "retries": 29,
+      "last_retry_at": 1792796154.8602493
     },
     {
       "id": "vip_multi_agent_withyashar_26356",
@@ -1033,8 +901,8 @@
       "text": "سلام عمو یاشار بندرعباس صدای ترکیدن  ی چیزی اومد همزمان برق رفت   گلشهر",
       "is_edit": false,
       "enqueued_at": 1792792963.4832838,
-      "retries": 14,
-      "last_retry_at": 1792794403.9898465
+      "retries": 28,
+      "last_retry_at": 1792796156.3639235
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6680",
@@ -1044,8 +912,8 @@
       "text": "Occupation army forces storm several cities in the West Bank, including Hebron and Nablus.",
       "is_edit": true,
       "enqueued_at": 1792793076.6489606,
-      "retries": 13,
-      "last_retry_at": 1792794405.494367
+      "retries": 27,
+      "last_retry_at": 1792796172.8764007
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6683",
@@ -1055,8 +923,8 @@
       "text": "Occupation army forces storm several cities in the West Bank, including Hebron and Nablus.",
       "is_edit": false,
       "enqueued_at": 1792793076.6568651,
-      "retries": 13,
-      "last_retry_at": 1792794406.99772
+      "retries": 27,
+      "last_retry_at": 1792796174.3802004
     },
     {
       "id": "vip_multi_agent_Alibk3_39865",
@@ -1066,19 +934,8 @@
       "text": "قوات جيش الاحتلال تقتحم عدة مدن في الضفة الغربية، بينها الخليل ونابلس.",
       "is_edit": true,
       "enqueued_at": 1792793076.6609335,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39867",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39867,
-      "text": "قوات جيش الاحتلال تهجر العوائل من منازلهم في مناطق بالخليل.",
-      "is_edit": false,
-      "enqueued_at": 1792793710.244073,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 15,
+      "last_retry_at": 1792796132.2308342
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6684",
@@ -1088,9 +945,42 @@
       "text": "نیروهای ارتش اشغالگر خانواده‌ها را از خانه‌هایشان در مناطقی از الخلیل آواره می‌کنند.\n\nOccupation army forces displace families from their homes in areas of Hebron.",
       "is_edit": true,
       "enqueued_at": 1792793755.3976698,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 15,
+      "last_retry_at": 1792796133.7354913
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26358",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26358,
+      "text": "یادش به خیر چقدر نشستیم رسیدن بار نخد کیشمیش نگاه کردیم تا بالاخره شد ۹ اسفند ...\nکاش آدما همه یاد بگیرن برای مسیرشون و اهدافشون عین شما همینقد استمرار داشته باشن و شل نکنن و کم نیارن \nقلبی به خدا قلبی \nقربون انگشتات که اینهمه نوشتی برامون❤️",
+      "is_edit": true,
+      "enqueued_at": 1792795203.3383164,
+      "retries": 12,
+      "last_retry_at": 1792796135.2387054
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6686",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6686,
+      "text": "Dammam Airport in Saudi Arabia’s Eastern Province has shut down again.",
+      "is_edit": false,
+      "enqueued_at": 1792795264.3726723,
+      "retries": 12,
+      "last_retry_at": 1792796175.8838809
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39868",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39868,
+      "text": "توقف مطار الدمام بالمنطقة الشرقية بالسعودية مجددًا.",
+      "is_edit": false,
+      "enqueued_at": 1792795264.3798988,
+      "retries": 10,
+      "last_retry_at": 1792796177.3875937
     }
   ],
-  "last_saved": "2026-10-23 22:27:04 UTC"
+  "last_saved": "2026-10-23 22:57:06 UTC"
 }
