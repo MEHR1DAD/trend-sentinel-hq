@@ -1,6 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 34 minutes
-- **Messages Processed:** 65
-- **Last Message Text:** اتاق جنگ با یاشار : بر اساس تصاویر ماهواره‌ای داغ داغ امروز ، شمار هواپیماهای سوخت‌رسان مستقر در پای...
-- **Last Message Time:** 2026-10-23 17:29:46
+- **Uptime:** 36 minutes
+- **Messages Processed:** 78
+- **Last Message Text:** س: قال سفيركم توم براك بالتأكيد، قد تكون هناك ضربة على إيران نهاية هذا الأسبوع.
+
+ترامب: هل كان ذلك س...
+- **Last Message Time:** 2026-10-23 18:08:00

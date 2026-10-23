@@ -735,13 +735,13 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39837,
-    "withyashar": 26323,
+    "Alibk3": 39842,
+    "withyashar": 26328,
     "VahidOnline": 78820,
     "netblocks": 1576,
     "iliaen": 4747,
-    "Ali_bk_8": 6655,
-    "kianmeli1": 93673
+    "Ali_bk_8": 6661,
+    "kianmeli1": 93675
   },
   "vahid_post_time": {},
   "ilia_post_time": {},
@@ -828,15 +828,49 @@
     "gemini-3.8-flash": 228,
     "gemini-3.5-flash-lite": 6529,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 787,
-    "gemini-3.1-flash-lite": 2333,
-    "gemini-3.1-flash-lite-preview": 1016,
-    "gemini-3.6-flash": 387,
+    "gemini-3-flash-preview": 796,
+    "gemini-3.1-flash-lite": 2350,
+    "gemini-3.1-flash-lite-preview": 1071,
+    "gemini-3.6-flash": 392,
     "gemini-3.7-flash": 205,
     "gemini-flash-lite-latest": 566,
-    "gemini-3.5-flash": 369,
+    "gemini-3.5-flash": 380,
     "gemini-flash-latest": 42
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-23 17:32:33 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Alibk3_39842",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39842,
+      "text": "س: قال سفيركم: بالتأكيد، قد تكون هناك ضربة على إيران في نهاية هذا الأسبوع.\n\n‏ترامب: كان هذا سفيري؟ إنه رجل ذو نفوذ كبير، على ما أعتقد. إذا كان الأمر كذلك، فأنا لا أعرف شيئًا عن ذلك.",
+      "is_edit": true,
+      "enqueued_at": 1792778614.960677,
+      "retries": 4,
+      "last_retry_at": 1792778839.1305912
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6661",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6661,
+      "text": "Q: Your ambassador said: “Certainly, there could be a strike on Iran at the end of this weekend.”\n\nTrump: Was that my ambassador? I think he’s a very influential man. If so, I don’t know anything about that.",
+      "is_edit": true,
+      "enqueued_at": 1792778624.0759985,
+      "retries": 4,
+      "last_retry_at": 1792778842.7481117
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26329",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26329,
+      "text": "اتاق جنگ با یاشار : به نظر میرسد ناو ها یا دست کم یکی از آنها اومده جای قبلی نزدیک ایران بعد از مدتی ، تمام سوخترسان ها برای اولین‌بار بعد از مدتها فرستنده خود را خاموش کرده و فقط یک هواپیمای  P-8 پوسایدون (گشت دریایی و شناسایی   به عنوان بخشی از چتر حفاظتی ناوگروه در حال فعالیت و مراقبت از ناو هواپیمابر است \n@WarRoom 🚨🚨🚨🚨",
+      "is_edit": false,
+      "enqueued_at": 1792778769.975543,
+      "retries": 3,
+      "last_retry_at": 1792778890.7728555
+    }
+  ],
+  "last_saved": "2026-10-23 18:09:43 UTC"
 }
