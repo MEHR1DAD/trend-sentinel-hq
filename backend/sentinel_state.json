@@ -735,12 +735,12 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39771,
-    "withyashar": 26271,
+    "Alibk3": 39776,
+    "withyashar": 26276,
     "VahidOnline": 78810,
     "netblocks": 1576,
     "iliaen": 4747,
-    "Ali_bk_8": 6588,
+    "Ali_bk_8": 6593,
     "kianmeli1": 93658
   },
   "vahid_post_time": {},
@@ -826,260 +826,17 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 228,
-    "gemini-3.5-flash-lite": 5578,
+    "gemini-3.5-flash-lite": 5638,
     "gemini-2.5-flash": 325,
     "gemini-3-flash-preview": 785,
     "gemini-3.1-flash-lite": 2294,
     "gemini-3.1-flash-lite-preview": 706,
     "gemini-3.6-flash": 380,
     "gemini-3.7-flash": 205,
-    "gemini-flash-lite-latest": 312,
+    "gemini-flash-lite-latest": 324,
     "gemini-3.5-flash": 348,
     "gemini-flash-latest": 42
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_kianmeli1_93657",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93657,
-      "text": "🔴سوخت رسانها از ۳ پایگاه خارج شدند/نشانه بزرگ جنگ است.\n\nارتش امریکا بیشتر هواپیماهای سوخت‌رسان و ترابری خود را نه تنها از پایگاه‌های هوایی «العدید» و «الظفره»، بلکه از «عقبه» (شامل هواپیماهای C-17A متعلق به اسکادران ۸۱۶ ترابری هوایی اعزامی) نیز خارج کرده است.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792726255.472925,
-      "retries": 107,
-      "last_retry_at": 1792738936.715081
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39768",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39768,
-      "text": "‏الإمارات تغلق شواطئ ومناطق أم القيوين عقب تسرب نفطي.",
-      "is_edit": false,
-      "enqueued_at": 1792727602.6840868,
-      "retries": 107,
-      "last_retry_at": 1792739000.206379
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26264",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26264,
-      "text": "اتاق جنگ با یاشار : سامانه‌های چندلایه پدافند هوایی اسرائیل در برابر حملات موشک‌های بالستیک جمهوری‌اسلامی\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792727602.7913036,
-      "retries": 105,
-      "last_retry_at": 1792738938.3713803
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26265",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26265,
-      "text": "تنگه دعوا شد  🚨🚨🚨🚨\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792727602.7944913,
-      "retries": 105,
-      "last_retry_at": 1792738939.8749971
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93652",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93652,
-      "text": "🔴صداوسیما: پهپاد جدید شاهد۲۳۸ با سرعت سه برابر شاهد۱۳۶ بزودی خواهید دید\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792727612.6124964,
-      "retries": 104,
-      "last_retry_at": 1792738941.3784037
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93653",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93653,
-      "text": "🔴جنگ با ایران باید مدت‌ها پیش انجام می‌شد\n\n️️رئیس‌جمهور آمریکا دونالد ترامپ مدعی شد که «ایران را در هم کوبیده» و جنگ با ایران باید مدت‌ها پیش و توسط روسای جمهور قبلی انجام می‌شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792727612.6157472,
-      "retries": 102,
-      "last_retry_at": 1792738957.8970492
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93654",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93654,
-      "text": "🔴کانال ۱۴ اسراییل\n\nاینترنت در ایران به دلیل جنگ میخواهد قطع شود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792727612.6188087,
-      "retries": 101,
-      "last_retry_at": 1792738959.5205867
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93655",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93655,
-      "text": "‏🔴چند هواپیمای ترابری روسی در بوشهر نشستند٫ \n‏احتمالأ پرسنل روسی از نیروگاه بوشهر در حال تخلیه هستند\n\n[قبل از حمله ۹ اسفند همین اتفاق افتاد]\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792727612.621643,
-      "retries": 101,
-      "last_retry_at": 1792738961.0239248
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93656",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93656,
-      "text": "🔴طرفداران فلسطین در اروپا فراخوان داده اند تمام برندهای یهودی در سطح شهر غارت میشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792727612.624552,
-      "retries": 100,
-      "last_retry_at": 1792739001.8310282
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26229",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26229,
-      "text": "دیدبان اتاق جنگ : عمو یاشار دارن تجهیزات نظامی یکی یکی جابجا می کنن بهبهان\n@WarRoom",
-      "is_edit": true,
-      "enqueued_at": 1792729444.5022438,
-      "retries": 84,
-      "last_retry_at": 1792738915.568701
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93658",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93658,
-      "text": "🔴قیمت نفت ۱۱۴ دلار\n\nاین گرانی، دست بانک‌ها را برای کاهش نرخ بهره می‌بندد\n\nپیامدها:\n۱-اعتراضات به هزینه‌های زندگی\n۲-اعتصابات در بخش حمل‌ونقل و زنجیره تأمین\n۳-بی‌ثباتی سیاسی در کشورهای در حال توسعه\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792732361.3702636,
-      "retries": 67,
-      "last_retry_at": 1792738917.1940985
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26267",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26267,
-      "text": "آسوشیتدپرس: عربستان سعودی ظرفیت خط لوله شرق به غرب را به حدود هفت میلیون بشکه در روز افزایش داده است تا بخشی از صادرات نفت را بدون عبور از تنگه هرمز منتقل کند. این اقدام در واکنش به تهدیدهای امنیتی علیه مسیرهای صادرات انرژی منطقه انجام شده است.\n@WarRoom",
-      "is_edit": true,
-      "enqueued_at": 1792735044.0766277,
-      "retries": 39,
-      "last_retry_at": 1792738962.5273428
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6587",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6587,
-      "text": "A shooting earlier this morning targeted several occupation army soldiers in Hebron, wounding 5 soldiers, including two seriously.",
-      "is_edit": true,
-      "enqueued_at": 1792735518.306176,
-      "retries": 34,
-      "last_retry_at": 1792738979.0313144
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39770",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39770,
-      "text": "عملية إطلاق نار صباح اليوم استهدفت عددا من جنود جيش الاحتلال في الخليل أدت لإصابة 5 جنود، بينها إصابتان خطيرتان.",
-      "is_edit": true,
-      "enqueued_at": 1792735518.3122747,
-      "retries": 33,
-      "last_retry_at": 1792738980.6803308
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26268",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26268,
-      "text": "gemini \nمیگه فقط یاشار!!!",
-      "is_edit": false,
-      "enqueued_at": 1792735671.2524157,
-      "retries": 33,
-      "last_retry_at": 1792738982.1839554
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26269",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26269,
-      "text": "سلام یاشار قیمت اینترنت ۵۰ درصد گرون شد",
-      "is_edit": false,
-      "enqueued_at": 1792735973.41618,
-      "retries": 30,
-      "last_retry_at": 1792738983.687577
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26270",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26270,
-      "text": "الجزیره: نماینده جمهوری اسلامی در سازمان ملل از دبیرکل و شورای امنیت خواسته است محاصره دریایی بنادر ایران از سوی آمریکا را محکوم کنند.\nتهران این اقدام را تجاوز دانسته\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792736143.4465942,
-      "retries": 27,
-      "last_retry_at": 1792739003.3344295
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26271",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26271,
-      "text": "نفت برنت ۱۱۴.۵ $ \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792736412.8169124,
-      "retries": 24,
-      "last_retry_at": 1792739004.8379588
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6589",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6589,
-      "text": "رویترز:\n\nیک نفتکش حامل 40 هزار تن گازوئیل روسیه پس از توافق پوتین و ترامپ با هدف تلاش برای کاهش قیمت سوخت، عازم نیویورک است.\n\nReuters:\n\nAn oil tanker carrying 40,000 tonnes of Russian diesel is heading to New York following an agreement between Putin and Trump aimed at lowering fuel prices.",
-      "is_edit": true,
-      "enqueued_at": 1792737325.4815905,
-      "retries": 15,
-      "last_retry_at": 1792738918.6977115
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39772",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39772,
-      "text": "رويترز: \n\n ناقلة نفط تحمل 40 ألف طن من الديزل الروسي تتجه إلى نيويورك بعد اتفاق بين بوتين و ترامب لمحاولة خفض أسعار الوقود.",
-      "is_edit": false,
-      "enqueued_at": 1792737327.2513552,
-      "retries": 15,
-      "last_retry_at": 1792738920.2009184
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26272",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26272,
-      "text": "کمی پیش، یک پرواز شرکت اسرائیلی ال عال به مقصد نیویورک در پاریس به دلیل مشکل پزشکی مربوط به یکی از خلبان‌ها فرود اضطراری داشت. این پرواز لغو خواهد شد و مسافران به پروازهای جایگزین منتقل خواهند شد. برخی از مسافران احتمالاً تا پایان هفته در پاریس خواهند ماند تا از سفر در روز شنبه (شبات شالوم) خودداری کنند.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792737779.5053859,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26273",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26273,
-      "text": "مایک پمپئو: تیک‌تاکِ ساعتِ پایان برای رژیم ایران به گوش می‌رسد.\n@WarRoom 🚨🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1792738233.5721023,
-      "retries": 0,
-      "last_retry_at": 0
-    }
-  ],
-  "last_saved": "2026-10-23 07:03:35 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-23 07:32:37 UTC"
 }
