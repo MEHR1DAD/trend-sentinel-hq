@@ -735,13 +735,13 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39852,
+    "Alibk3": 39853,
     "withyashar": 26341,
-    "VahidOnline": 78820,
+    "VahidOnline": 78822,
     "netblocks": 1576,
     "iliaen": 4747,
-    "Ali_bk_8": 6671,
-    "kianmeli1": 93680
+    "Ali_bk_8": 6672,
+    "kianmeli1": 93684
   },
   "vahid_post_time": {},
   "ilia_post_time": {},
@@ -826,17 +826,117 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 228,
-    "gemini-3.5-flash-lite": 6538,
+    "gemini-3.5-flash-lite": 6540,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 799,
-    "gemini-3.1-flash-lite": 2400,
-    "gemini-3.1-flash-lite-preview": 1358,
-    "gemini-3.6-flash": 394,
+    "gemini-3-flash-preview": 808,
+    "gemini-3.1-flash-lite": 2415,
+    "gemini-3.1-flash-lite-preview": 1370,
+    "gemini-3.6-flash": 395,
     "gemini-3.7-flash": 205,
-    "gemini-flash-lite-latest": 568,
-    "gemini-3.5-flash": 389,
+    "gemini-flash-lite-latest": 571,
+    "gemini-3.5-flash": 393,
     "gemini-flash-latest": 42
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-23 20:24:25 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6672",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6672,
+      "text": "حملات هوایی عربستان در شرق استان تعز یمن.\n\nSaudi airstrikes east of Yemen’s Taiz governorate.",
+      "is_edit": true,
+      "enqueued_at": 1792787167.0119088,
+      "retries": 19,
+      "last_retry_at": 1792788906.0915449
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93681",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93681,
+      "text": "🔴بابک زنجانی: از دوشنبه به حساب کشورهای همسایه می رسیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792787218.0056562,
+      "retries": 19,
+      "last_retry_at": 1792788939.119109
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93682",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93682,
+      "text": "🔴بابک زنجانی: بیت کوین را ۲۰ هزار دلار میکنم\nفیبرنوری در تنگه هرمز قطع میشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792787250.0890682,
+      "retries": 18,
+      "last_retry_at": 1792788852.0451474
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39853",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39853,
+      "text": "غارات سعودية تستهدف مناطق شرقي محافظة تعز اليمنية.",
+      "is_edit": true,
+      "enqueued_at": 1792787250.3675015,
+      "retries": 18,
+      "last_retry_at": 1792788885.0767248
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93683",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93683,
+      "text": "🔴ترامپ دقایقی پیش علنا اعلام کرد عملیات خشم حماسی علیه ایران شروع میشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792787253.5966952,
+      "retries": 18,
+      "last_retry_at": 1792788886.580163
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93684",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93684,
+      "text": "🔴رسانه کویتی: ایران میخواهد کویت را بگیرد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792787257.1029499,
+      "retries": 18,
+      "last_retry_at": 1792788888.0833964
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93685",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93685,
+      "text": "🔴صداوسیما با شوخی و طنز: گفتن امشب میزنن خواهیم دید ! \n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792787313.029428,
+      "retries": 17,
+      "last_retry_at": 1792788907.59605
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93686",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93686,
+      "text": "🔴تحلیلگر رویترز: بهترین فرصت حمله امشب است ٫بازار نفت نیز بسته شده\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792787585.9465892,
+      "retries": 15,
+      "last_retry_at": 1792788889.5867016
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26342",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26342,
+      "text": "تام باراک ،سفیر آمریکا در ‌ترکیه درباره ایران:\n«برای یک ایرانی معمولی، زنده ماندن و گذران زندگی بسیار دشوار است… خود ایرانی‌ها می‌توانند رژیمشان را تغییر دهند.\nما خودمان سه بار این کار را کرده‌ایم، درست است؟ ما شاه را روی کار آوردیم؛ در سال ۱۹۷۹ خمینی را روی کار آوردیم و شاه را برداشتیم.»\n@WarRoom ⚠️⚠️⚠️⚠️⚠️",
+      "is_edit": false,
+      "enqueued_at": 1792788413.916661,
+      "retries": 7,
+      "last_retry_at": 1792788853.5479531
+    }
+  ],
+  "last_saved": "2026-10-23 20:55:41 UTC"
 }
