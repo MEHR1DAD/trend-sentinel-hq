@@ -826,51 +826,18 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 228,
-    "gemini-3.5-flash-lite": 5572,
+    "gemini-3.5-flash-lite": 5575,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 779,
-    "gemini-3.1-flash-lite": 2290,
-    "gemini-3.1-flash-lite-preview": 703,
+    "gemini-3-flash-preview": 781,
+    "gemini-3.1-flash-lite": 2293,
+    "gemini-3.1-flash-lite-preview": 704,
     "gemini-3.6-flash": 379,
     "gemini-3.7-flash": 205,
     "gemini-flash-lite-latest": 310,
-    "gemini-3.5-flash": 347,
+    "gemini-3.5-flash": 348,
     "gemini-flash-latest": 42
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_VahidOnline_78806",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78806,
-      "text": "قیمت دلار در بازار آزاد ایران بار دیگر افزایش یافت و به ۲۷۴ هزار تومان رسید. هم‌زمان، بهای طلا و سکه نیز صعود کرد؛ افزایشی که برخلاف روند نزولی قیمت جهانی طلا رخ داده و نشان می‌دهد رشد نرخ ارز همچنان فشار قابل‌توجهی بر بازار طلای ایران وارد می‌کند.\nدر معاملات روز پنجشنبه ۳۰ مهر ۱۴۰۵، قیمت هر دلار آمریکا در بازار آزاد به ۲۷۴ هزار تومان رسید. دلار پیش‌تر در ۱۲مهر از مرز ۲۷۰ هزار تومان عبور کرده بود، اما پس از آن تا حدود ۲۶۰ هزار تومان کاهش یافت.\n@VahidHeadline\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1792726255.472925,
-      "retries": 38,
-      "last_retry_at": 1792731029.534446
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39769",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39769,
-      "text": "صور الأقمار الصناعية ترصد حريقًا في مدينة ينبع الصناعية بالسعودية.",
-      "is_edit": false,
-      "enqueued_at": 1792726255.472925,
-      "retries": 37,
-      "last_retry_at": 1792730973.6785336
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6586",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6586,
-      "text": "Satellite images detect a fire in Saudi Arabia’s Yanbu Industrial City.",
-      "is_edit": false,
-      "enqueued_at": 1792726255.472925,
-      "retries": 37,
-      "last_retry_at": 1792730975.3364732
-    },
     {
       "id": "vip_multi_agent_kianmeli1_93657",
       "pipeline": "vip_multi_agent",
@@ -879,8 +846,8 @@
       "text": "🔴سوخت رسانها از ۳ پایگاه خارج شدند/نشانه بزرگ جنگ است.\n\nارتش امریکا بیشتر هواپیماهای سوخت‌رسان و ترابری خود را نه تنها از پایگاه‌های هوایی «العدید» و «الظفره»، بلکه از «عقبه» (شامل هواپیماهای C-17A متعلق به اسکادران ۸۱۶ ترابری هوایی اعزامی) نیز خارج کرده است.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792726255.472925,
-      "retries": 37,
-      "last_retry_at": 1792730976.839846
+      "retries": 55,
+      "last_retry_at": 1792733751.6217508
     },
     {
       "id": "vip_multi_agent_Alibk3_39768",
@@ -890,8 +857,8 @@
       "text": "‏الإمارات تغلق شواطئ ومناطق أم القيوين عقب تسرب نفطي.",
       "is_edit": false,
       "enqueued_at": 1792727602.6840868,
-      "retries": 37,
-      "last_retry_at": 1792731008.3515117
+      "retries": 55,
+      "last_retry_at": 1792733772.813531
     },
     {
       "id": "vip_multi_agent_withyashar_26264",
@@ -901,8 +868,8 @@
       "text": "اتاق جنگ با یاشار : سامانه‌های چندلایه پدافند هوایی اسرائیل در برابر حملات موشک‌های بالستیک جمهوری‌اسلامی\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792727602.7913036,
-      "retries": 37,
-      "last_retry_at": 1792731010.0188015
+      "retries": 54,
+      "last_retry_at": 1792733730.4399033
     },
     {
       "id": "vip_multi_agent_withyashar_26265",
@@ -912,8 +879,8 @@
       "text": "تنگه دعوا شد  🚨🚨🚨🚨\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792727602.7944913,
-      "retries": 37,
-      "last_retry_at": 1792731011.5239463
+      "retries": 54,
+      "last_retry_at": 1792733732.1021981
     },
     {
       "id": "vip_multi_agent_kianmeli1_93652",
@@ -923,8 +890,8 @@
       "text": "🔴صداوسیما: پهپاد جدید شاهد۲۳۸ با سرعت سه برابر شاهد۱۳۶ بزودی خواهید دید\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792727612.6124964,
-      "retries": 36,
-      "last_retry_at": 1792731013.0279803
+      "retries": 53,
+      "last_retry_at": 1792733733.6056502
     },
     {
       "id": "vip_multi_agent_kianmeli1_93653",
@@ -934,8 +901,8 @@
       "text": "🔴جنگ با ایران باید مدت‌ها پیش انجام می‌شد\n\n️️رئیس‌جمهور آمریکا دونالد ترامپ مدعی شد که «ایران را در هم کوبیده» و جنگ با ایران باید مدت‌ها پیش و توسط روسای جمهور قبلی انجام می‌شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792727612.6157472,
-      "retries": 34,
-      "last_retry_at": 1792730935.9843538
+      "retries": 51,
+      "last_retry_at": 1792733753.287429
     },
     {
       "id": "vip_multi_agent_kianmeli1_93654",
@@ -945,8 +912,8 @@
       "text": "🔴کانال ۱۴ اسراییل\n\nاینترنت در ایران به دلیل جنگ میخواهد قطع شود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792727612.6188087,
-      "retries": 33,
-      "last_retry_at": 1792730937.4876683
+      "retries": 50,
+      "last_retry_at": 1792733754.791206
     },
     {
       "id": "vip_multi_agent_kianmeli1_93655",
@@ -956,8 +923,8 @@
       "text": "‏🔴چند هواپیمای ترابری روسی در بوشهر نشستند٫ \n‏احتمالأ پرسنل روسی از نیروگاه بوشهر در حال تخلیه هستند\n\n[قبل از حمله ۹ اسفند همین اتفاق افتاد]\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792727612.621643,
-      "retries": 33,
-      "last_retry_at": 1792730938.9911103
+      "retries": 50,
+      "last_retry_at": 1792733756.2946632
     },
     {
       "id": "vip_multi_agent_kianmeli1_93656",
@@ -967,8 +934,8 @@
       "text": "🔴طرفداران فلسطین در اروپا فراخوان داده اند تمام برندهای یهودی در سطح شهر غارت میشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792727612.624552,
-      "retries": 32,
-      "last_retry_at": 1792730955.4956737
+      "retries": 49,
+      "last_retry_at": 1792733774.4561965
     },
     {
       "id": "vip_multi_agent_withyashar_26229",
@@ -978,9 +945,20 @@
       "text": "دیدبان اتاق جنگ : عمو یاشار دارن تجهیزات نظامی یکی یکی جابجا می کنن بهبهان\n@WarRoom",
       "is_edit": true,
       "enqueued_at": 1792729444.5022438,
+      "retries": 34,
+      "last_retry_at": 1792733775.9596527
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93658",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93658,
+      "text": "🔴قیمت نفت ۱۱۴ دلار\n\nاین گرانی، دست بانک‌ها را برای کاهش نرخ بهره می‌بندد\n\nپیامدها:\n۱-اعتراضات به هزینه‌های زندگی\n۲-اعتصابات در بخش حمل‌ونقل و زنجیره تأمین\n۳-بی‌ثباتی سیاسی در کشورهای در حال توسعه\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792732361.3702636,
       "retries": 17,
-      "last_retry_at": 1792730957.1730607
+      "last_retry_at": 1792733735.1086748
     }
   ],
-  "last_saved": "2026-10-23 04:50:30 UTC"
+  "last_saved": "2026-10-23 05:36:56 UTC"
 }
