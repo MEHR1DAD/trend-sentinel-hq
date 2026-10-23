@@ -735,13 +735,13 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39856,
-    "withyashar": 26344,
-    "VahidOnline": 78822,
+    "Alibk3": 39859,
+    "withyashar": 26346,
+    "VahidOnline": 78823,
     "netblocks": 1576,
     "iliaen": 4747,
-    "Ali_bk_8": 6674,
-    "kianmeli1": 93690
+    "Ali_bk_8": 6677,
+    "kianmeli1": 93695
   },
   "vahid_post_time": {},
   "ilia_post_time": {},
@@ -826,17 +826,183 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 228,
-    "gemini-3.5-flash-lite": 6542,
+    "gemini-3.5-flash-lite": 6552,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 813,
-    "gemini-3.1-flash-lite": 2447,
-    "gemini-3.1-flash-lite-preview": 1466,
-    "gemini-3.6-flash": 395,
+    "gemini-3-flash-preview": 823,
+    "gemini-3.1-flash-lite": 2459,
+    "gemini-3.1-flash-lite-preview": 1486,
+    "gemini-3.6-flash": 397,
     "gemini-3.7-flash": 205,
-    "gemini-flash-lite-latest": 571,
-    "gemini-3.5-flash": 393,
+    "gemini-flash-lite-latest": 575,
+    "gemini-3.5-flash": 399,
     "gemini-flash-latest": 42
   },
-  "smart_queue": [],
-  "last_saved": "2026-10-23 21:27:58 UTC"
+  "smart_queue": [
+    {
+      "id": "vip_multi_agent_kianmeli1_93696",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93696,
+      "text": "🔴همین الان دو انفجار سنگین «بندر لنگه» و «کنگ» شنیده شد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792791443.7557013,
+      "retries": 14,
+      "last_retry_at": 1792792591.7854264
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26349",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26349,
+      "text": "تنگه هم دعوا شده 🚨🚨🚨🚨\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792791544.38179,
+      "retries": 13,
+      "last_retry_at": 1792792570.7692962
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39857",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39857,
+      "text": "سماع دوي انفجار في مضيق هرمز.",
+      "is_edit": true,
+      "enqueued_at": 1792791547.8898356,
+      "retries": 13,
+      "last_retry_at": 1792792572.2728548
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6675",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6675,
+      "text": "Two explosions heard in the Strait of Hormuz.",
+      "is_edit": true,
+      "enqueued_at": 1792791550.2769365,
+      "retries": 13,
+      "last_retry_at": 1792792573.7764308
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93697",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93697,
+      "text": "🔴کانال های حامی سپاه: ایران حملات پیشدستانه را شروع کرده است \n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792791956.591735,
+      "retries": 9,
+      "last_retry_at": 1792792551.2436883
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93698",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93698,
+      "text": "🔴یک نفتکش در تنگه هرمز در آتش میسوزد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792791964.8829687,
+      "retries": 9,
+      "last_retry_at": 1792792575.2796135
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93699",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93699,
+      "text": "🔴خبرگزاری امریکایی CNN :\n\nهم اکنون وزارت خارجه آمریکا به سرعت کارکنان سفارت آمریکا در بیروت را تخلیه می‌کند.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792792126.603198,
+      "retries": 7,
+      "last_retry_at": 1792792552.7471712
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26350",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26350,
+      "text": "گزارش شنیده شدن صدای جنگنده از بندر عباس\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792792164.2394528,
+      "retries": 7,
+      "last_retry_at": 1792792612.8003695
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26351",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26351,
+      "text": "گزارشها میگن صدا موتورش صدای خودیه 😂",
+      "is_edit": false,
+      "enqueued_at": 1792792240.1453469,
+      "retries": 6,
+      "last_retry_at": 1792792593.288703
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26352",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26352,
+      "text": "گزارش‌های بومی میگن روستای بارچاه نزدیک بندر لنگه گویا لانچر زدن\n@WarRoom 🚨🚨🚨",
+      "is_edit": false,
+      "enqueued_at": 1792792353.4022474,
+      "retries": 5,
+      "last_retry_at": 1792792594.7921808
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39858",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39858,
+      "text": "القوات اليمنية بعد السيطرة على الوادي، تقترب من منطقة الشطين، عاصمة مديرية المضاربة ورأس العارة، في محاولة لمحاصرة القوات الموالية للسعودية في رأس العارة والمناطق القريبة من باب المندب.",
+      "is_edit": false,
+      "enqueued_at": 1792792404.2431564,
+      "retries": 5,
+      "last_retry_at": 1792792630.820145
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6676",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6676,
+      "text": "Following its control of the valley, Yemeni forces are approaching the area of al-Shatayn, the capital of al-Mudharaba wa Ras al-Ara district, in an attempt to encircle Saudi-backed forces in Ras al-Ara and areas near Bab al-Mandab.",
+      "is_edit": false,
+      "enqueued_at": 1792792409.9534087,
+      "retries": 4,
+      "last_retry_at": 1792792596.295617
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26353",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26353,
+      "text": "سلام بندر لنگه باز هم یه صدایی شنیده شد و نگهبان های گمرک از داخل اومدن بیرون و ترسید کامل ، یکی کامل داره نگاه تو اسمون میکنه\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792792523.0236905,
+      "retries": 2,
+      "last_retry_at": 1792792614.3042145
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6677",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6677,
+      "text": "The occupation army has begun evacuating Palestinians from the al-Jaladah area of Hebron following the launch of a military operation there.",
+      "is_edit": true,
+      "enqueued_at": 1792792636.4147203,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39859",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39859,
+      "text": "جيش الاحتلال يبدأ بإخلاء الفلسطينيين من منطقة الجلدة في الخليل، عقب إطلاق عملية عسكرية فيها.",
+      "is_edit": true,
+      "enqueued_at": 1792792636.4187388,
+      "retries": 0,
+      "last_retry_at": 0
+    }
+  ],
+  "last_saved": "2026-10-23 21:57:21 UTC"
 }
