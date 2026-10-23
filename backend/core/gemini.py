@@ -202,12 +202,13 @@ class GeminiClient:
                 m['name'].replace('models/', '').strip()
                 for m in models
                 if "generateContent" in m.get("supportedGenerationMethods", [])
-                and not any(bad in m['name'].lower() for bad in ['tts', 'image', 'audio', 'embed', 'customtools', 'deep-research', 'realtime', 'live', 'vision'])
+                and "gemini" in m['name'].lower()
+                and not any(bad in m['name'].lower() for bad in ['tts', 'image', 'audio', 'embed', 'customtools', 'deep-research', 'realtime', 'live', 'vision', 'lyria', 'banana'])
             ]
 
-            cand_lite = [m for m in valid if 'flash-lite' in m or 'flash_lite' in m or 'lite' in m]
-            cand_pro = [m for m in valid if 'pro' in m and ('lite' not in m and 'flash' not in m)]
-            cand_flash = [m for m in valid if 'flash' in m and ('lite' not in m and 'flash-lite' not in m and 'flash_lite' not in m and 'pro' not in m)]
+            cand_lite = [m for m in valid if 'gemini' in m and ('flash-lite' in m or 'flash_lite' in m or 'lite' in m)]
+            cand_pro = [m for m in valid if 'gemini' in m and 'pro' in m and ('lite' not in m and 'flash' not in m)]
+            cand_flash = [m for m in valid if 'gemini' in m and 'flash' in m and ('lite' not in m and 'flash-lite' not in m and 'flash_lite' not in m and 'pro' not in m)]
 
             cand_lite.sort(key=self.parse_model_version_score, reverse=True)
             cand_flash.sort(key=self.parse_model_version_score, reverse=True)
@@ -215,7 +216,7 @@ class GeminiClient:
 
             # تست زنده سلامت با پینگ ۱ توکنی برای کاندیداها
             async def filter_healthy_candidates(model_list):
-                to_test = model_list[:5]
+                to_test = model_list[:10]
                 tasks = [self._live_ping_model(m, active_key) for m in to_test]
                 results = await asyncio.gather(*tasks, return_exceptions=True)
                 healthy = []
@@ -224,9 +225,6 @@ class GeminiClient:
                         healthy.append(m)
                     else:
                         print(f"🗑️ [SOLDIER 0: ACTIVE HEALTH CHECK] Discarded deprecated/404 model: {m}")
-                for m in model_list[5:]:
-                    if m not in {'gemini-2.5-flash'}:
-                        healthy.append(m)
                 return healthy
 
             healthy_lite = await filter_healthy_candidates(cand_lite)
@@ -306,7 +304,7 @@ class GeminiClient:
                 # پیمایش تمام کلیدهای معتبر برای این مدل
                 for key_idx, cur_key in enumerate(self.api_keys):
                     now = time.time()
-                    # بررسی کول‌داون کلی کلید
+                    # بررسی کول‌داون کلی کلید (فقط برای کلیدهای باطل/403)
                     if self.key_cooldown_until.get(cur_key, 0.0) > now:
                         continue
                     # بررسی کول‌داون تفکیک‌شده این کلید روی این مدل خاص
@@ -330,8 +328,8 @@ class GeminiClient:
                         key_lock = self._get_key_lock(cur_key)
                         async with key_lock:
                             gap = time.time() - self.key_last_call_time.get(cur_key, 0.0)
-                            if gap < 1.0:
-                                await asyncio.sleep(1.0 - gap)
+                            if gap < 0.6:
+                                await asyncio.sleep(0.6 - gap)
                             self.key_last_call_time[cur_key] = time.time()
                             data = await loop.run_in_executor(None, make_req)
 
@@ -352,7 +350,7 @@ class GeminiClient:
                         # خالی بودن محتوا یا بلاک سیفتی
                         finish_reason = candidates[0].get("finishReason", "UNKNOWN") if candidates else "NO_CANDIDATES"
                         print(f"⚠️ [SOLDIER 0 | {soldier_name}] Model {model} returned empty content ({finish_reason}). Key #{key_idx+1}")
-                        self.key_cooldown_until[cur_key] = time.time() + 10
+                        self.key_model_cooldown[(model, cur_key)] = time.time() + 15
                         continue
 
                     except urllib.error.HTTPError as e:
@@ -368,16 +366,16 @@ class GeminiClient:
                             continue
 
                         elif e.code == 429:
-                            # تفکیک دقیق: خطای کوتا منحصراً برای جفت (مدل، کلید) ثبت می‌شود تا کلیدهای بعدی روی همین مدل تست شوند!
+                            # تفکیک قطعی: خطای کوتا منحصراً برای جفت (مدل، کلید) ثبت می‌شود تا این کلید بتواند روی سایر مدل‌های پشته کار کند!
                             is_daily = any(t in err_body.lower() for t in ["day", "daily", "perday", "limit: 20", "limit: 15", "limit: 50"])
-                            if is_daily:
-                                self.key_model_cooldown[(model, cur_key)] = time.time() + 7200  # ۲ ساعت کول‌داون این کلید روی این مدل
-                                print(f"⚠️ [SOLDIER 0 | {soldier_name}] Key #{key_idx+1} hit daily quota 429 on {model}. Isolating (model, key) pair for 2h. Trying NEXT KEY on same model...")
+                            is_exhausted = any(t in err_body.lower() for t in ["resource_exhausted", "check quota", "quota exceeded"])
+                            if is_daily or is_exhausted:
+                                self.key_model_cooldown[(model, cur_key)] = time.time() + 3600  # ۱ ساعت کول‌داون این کلید روی این مدل خاص
+                                print(f"⚠️ [SOLDIER 0 | {soldier_name}] Key #{key_idx+1} quota exhausted (429) on {model}. Isolating (model, key) for 1h. Trying NEXT KEY on same model...")
                             else:
-                                self.key_cooldown_until[cur_key] = time.time() + 15
-                                self.key_model_cooldown[(model, cur_key)] = time.time() + 15
-                                print(f"⚠️ [SOLDIER 0 | {soldier_name}] Key #{key_idx+1} hit RPM limit 429 on {model}. 15s cooldown. Trying NEXT KEY...")
-                            await asyncio.sleep(0.3)
+                                self.key_model_cooldown[(model, cur_key)] = time.time() + 25  # فقط ۲۵ ثانیه کول‌داون روی این مدل
+                                print(f"⚠️ [SOLDIER 0 | {soldier_name}] Key #{key_idx+1} RPM limit (429) on {model}. Isolating (model, key) for 25s. Trying NEXT KEY on same model...")
+                            await asyncio.sleep(0.2)
                             continue  # امتحان کلید بعدی روی همین مدل!
 
                         elif e.code == 404:
@@ -385,22 +383,23 @@ class GeminiClient:
                             self.model_cooldown_until[model] = time.time() + 86400
                             break  # خروج از حلقه کلیدها برای جهش بلافاصله به مدل بعدی در پشته
 
-                        elif e.code in (500, 503):
+                        elif e.code in (500, 502, 503, 504):
                             print(f"⚠️ [SOLDIER 0 | {soldier_name}] Model {model} temporary error ({e.code}). Switching to next model...")
-                            await asyncio.sleep(0.5)
+                            await asyncio.sleep(0.3)
                             break  # جهش به مدل بعدی
 
                         else:
-                            print(f"⚠️ [SOLDIER 0 | {soldier_name}] HTTP {e.code} on {model} (Key #{key_idx+1}): {err_body[:100]}. Rotating key...")
-                            self.key_cooldown_until[cur_key] = time.time() + 10
+                            print(f"⚠️ [SOLDIER 0 | {soldier_name}] HTTP {e.code} on {model} (Key #{key_idx+1}): {err_body[:100]}.")
+                            self.key_model_cooldown[(model, cur_key)] = time.time() + 30
                             continue
 
                     except Exception as e:
-                        print(f"⚠️ [SOLDIER 0 | {soldier_name}] Request error on {model} (Key #{key_idx+1}): {e}. Rotating key...")
-                        self.key_cooldown_until[cur_key] = time.time() + 10
+                        print(f"⚠️ [SOLDIER 0 | {soldier_name}] Request error on {model} (Key #{key_idx+1}): {e}.")
+                        self.key_model_cooldown[(model, cur_key)] = time.time() + 15
                         continue
 
-                # اگر تمام کلیدها روی این مدل ناموفق بودند، سقوط به مدل بعدی پشته
+                # اگر تمام کلیدها روی این مدل ناموفق بودند، این مدل را موقتاً کول‌داون کن تا پیام‌های بعدی رویش گیر نکنند!
+                self.model_cooldown_until[model] = time.time() + 300  # ۵ دقیقه کول‌داون روی این مدل
                 if model_idx < len(stack) - 1:
                     next_cand = stack[model_idx + 1]
                     print(f"📉 [SOLDIER 0: MODEL FALLBACK | {soldier_name}] All keys exhausted for {model}. Falling back to #{model_idx+2}: {next_cand}")

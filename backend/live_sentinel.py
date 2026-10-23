@@ -969,7 +969,7 @@ class LiveSentinel:
 
     async def process_smart_queue_cycle(self):
         now = time.time()
-        ttl_seconds = 2700  # 45 minutes
+        ttl_seconds = 14400  # 4 hours (240 minutes)
 
         async with self.smart_queue_lock:
             if not self.smart_queue:
@@ -981,7 +981,7 @@ class LiveSentinel:
                 item_id = item.get('id', 'unknown')
                 if age > ttl_seconds:
                     age_min = age / 60.0
-                    print(f"⏰ [SMART QUEUE: EXPIRED] Item {item_id} (msg #{item.get('msg_id')} from {item.get('node')}) exceeded TTL of 45m (Age: {age_min:.1f}m). Dropping without publishing.")
+                    print(f"⏰ [SMART QUEUE: EXPIRED] Item {item_id} (msg #{item.get('msg_id')} from {item.get('node')}) exceeded TTL of 4h (Age: {age_min:.1f}m). Dropping without publishing.")
                     self.smart_queue_raw_msgs.pop(item_id, None)
                     continue
                 remaining_items.append(item)
@@ -993,16 +993,16 @@ class LiveSentinel:
             oldest_age_min = (now - min(q.get('enqueued_at', now) for q in self.smart_queue)) / 60.0
             print(f"📊 [SMART QUEUE: STATUS] {len(self.smart_queue)} pending message(s) waiting in queue | Oldest age: {oldest_age_min:.1f}m.")
 
-        # Process pending items (max 2 per cycle with pause to prevent rate limit storms)
+        # Process pending items (max 4 per cycle with pause to prevent rate limit storms)
         items_processed_in_cycle = 0
         for item in list(self.smart_queue):
-            if items_processed_in_cycle >= 2:
+            if items_processed_in_cycle >= 4:
                 break
 
             item_id = item.get('id')
             now = time.time()
             retries = item.get('retries', 0)
-            backoff_delay = min(20 * (2 ** min(retries, 4)), 180)
+            backoff_delay = min(15 * (1.5 ** min(retries, 5)), 90)
             if (now - item.get('last_retry_at', 0)) < backoff_delay:
                 continue
 
@@ -1012,7 +1012,7 @@ class LiveSentinel:
                 item['last_retry_at'] = now
 
             age = now - item.get('enqueued_at', now)
-            print(f"🔄 [SMART QUEUE: RETRYING] Attempt #{item['retries']} for {item_id} (Backoff: {backoff_delay}s | Age: {age:.1f}s / {ttl_seconds}s)...")
+            print(f"🔄 [SMART QUEUE: RETRYING] Attempt #{item['retries']} for {item_id} (Backoff: {backoff_delay:.0f}s | Age: {age:.1f}s / {ttl_seconds}s)...")
 
             raw_msg = self.smart_queue_raw_msgs.get(item_id)
             if not raw_msg and self.client:
@@ -1038,13 +1038,17 @@ class LiveSentinel:
                 async with self.smart_queue_lock:
                     self.smart_queue = [q for q in self.smart_queue if q.get('id') != item_id]
                     self.smart_queue_raw_msgs.pop(item_id, None)
+                node_val = item.get('node')
+                msg_id_val = item.get('msg_id')
+                if node_val and msg_id_val:
+                    self.db.advance_watermark(node_val, msg_id_val)
                 total_wait = time.time() - item.get('enqueued_at', now)
                 print(f"✅ [SMART QUEUE: SUCCESS] Item {item_id} processed successfully after {total_wait:.1f}s in queue ({item['retries']} retries).")
                 self.save_persisted_state()
-                await asyncio.sleep(3.0)
+                await asyncio.sleep(2.0)
             else:
                 print(f"⏳ [SMART QUEUE: REMAINING] Item {item_id} still pending AI availability. Will retry in next worker cycle (attempt #{item.get('retries')}).")
-                await asyncio.sleep(2.0)
+                await asyncio.sleep(1.5)
 
     # --- Central Event Router ---
     async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None):
@@ -1200,7 +1204,7 @@ async def main():
             for node in vip_nodes:
                 try:
                     target_peer = sentinel.get_node_input_peer(node) or node
-                    messages = await client.get_messages(target_peer, limit=5)
+                    messages = await client.get_messages(target_peer, limit=20)
                     if messages:
                         latest_id = messages[0].id
                         wm = sentinel.db.get_watermark(node)

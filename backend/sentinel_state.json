@@ -839,15 +839,26 @@
   },
   "smart_queue": [
     {
+      "id": "vip_multi_agent_VahidOnline_78806",
+      "pipeline": "vip_multi_agent",
+      "node": "VahidOnline",
+      "msg_id": 78806,
+      "text": "قیمت دلار در بازار آزاد ایران بار دیگر افزایش یافت و به ۲۷۴ هزار تومان رسید. هم‌زمان، بهای طلا و سکه نیز صعود کرد؛ افزایشی که برخلاف روند نزولی قیمت جهانی طلا رخ داده و نشان می‌دهد رشد نرخ ارز همچنان فشار قابل‌توجهی بر بازار طلای ایران وارد می‌کند.\nدر معاملات روز پنجشنبه ۳۰ مهر ۱۴۰۵، قیمت هر دلار آمریکا در بازار آزاد به ۲۷۴ هزار تومان رسید. دلار پیش‌تر در ۱۲مهر از مرز ۲۷۰ هزار تومان عبور کرده بود، اما پس از آن تا حدود ۲۶۰ هزار تومان کاهش یافت.\n@VahidHeadline\n\n📡 @VahidOnline",
+      "is_edit": false,
+      "enqueued_at": 1792726255.472925,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
       "id": "vip_multi_agent_Alibk3_39769",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
       "msg_id": 39769,
       "text": "صور الأقمار الصناعية ترصد حريقًا في مدينة ينبع الصناعية بالسعودية.",
       "is_edit": false,
-      "enqueued_at": 1792723622.0846472,
-      "retries": 11,
-      "last_retry_at": 1792726132.7567399
+      "enqueued_at": 1792726255.472925,
+      "retries": 0,
+      "last_retry_at": 0
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6586",
@@ -856,9 +867,9 @@
       "msg_id": 6586,
       "text": "Satellite images detect a fire in Saudi Arabia’s Yanbu Industrial City.",
       "is_edit": false,
-      "enqueued_at": 1792723662.9633296,
-      "retries": 11,
-      "last_retry_at": 1792726134.76042
+      "enqueued_at": 1792726255.472925,
+      "retries": 0,
+      "last_retry_at": 0
     },
     {
       "id": "vip_multi_agent_kianmeli1_93657",
@@ -867,10 +878,10 @@
       "msg_id": 93657,
       "text": "🔴سوخت رسانها از ۳ پایگاه خارج شدند/نشانه بزرگ جنگ است.\n\nارتش امریکا بیشتر هواپیماهای سوخت‌رسان و ترابری خود را نه تنها از پایگاه‌های هوایی «العدید» و «الظفره»، بلکه از «عقبه» (شامل هواپیماهای C-17A متعلق به اسکادران ۸۱۶ ترابری هوایی اعزامی) نیز خارج کرده است.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792724544.570954,
-      "retries": 9,
-      "last_retry_at": 1792726151.7793682
+      "enqueued_at": 1792726255.472925,
+      "retries": 0,
+      "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-23 03:29:25 UTC"
+  "last_saved": "2026-10-23 03:30:55 UTC"
 }

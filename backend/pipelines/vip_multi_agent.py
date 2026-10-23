@@ -855,6 +855,7 @@ class VipMultiAgentEditorialPipeline:
                             self.sentinel.db.record_posted_message(target_channel, sn, sm, alert_msg_id)
                 else:
                     self.sentinel.db.record_posted_message(target_channel, node, msg_id, alert_msg_id)
+                self.sentinel.db.advance_watermark(node, msg_id)
                 self.sentinel.save_persisted_state()
                 return
 
@@ -925,6 +926,7 @@ class VipMultiAgentEditorialPipeline:
                 else:
                     self.sentinel.db.record_posted_message(target_channel, node, msg_id, sent.id)
 
+                self.sentinel.db.advance_watermark(node, msg_id)
                 self.sentinel.save_persisted_state()
                 urg_label = "Alarm/Sound" if not is_silent else "Silent"
                 disp_type = "THREAD REPLY" if not is_fallback else "THREAD REPLY (STANDALONE FALLBACK)"
@@ -998,6 +1000,8 @@ class VipMultiAgentEditorialPipeline:
                             self.sentinel.db.record_posted_message(target_channel, sn, sm, sent.id)
                 else:
                     self.sentinel.db.record_posted_message(target_channel, node, msg_id, sent.id)
+
+                self.sentinel.db.advance_watermark(node, msg_id)
 
                 # ثبت رشته در حافظه سیستم (با افق ۲ ساعته پیوستگی و متادیتا حوزه جغرافیایی)
                 thread_key = f"{node}_{msg_id}"
@@ -1289,7 +1293,7 @@ class VipMultiAgentEditorialPipeline:
             return
         try:
             watermark = self.sentinel.db.get_watermark(node)
-            kwargs = {'limit': 25}
+            kwargs = {'limit': 100}
             if watermark > 0:
                 kwargs['min_id'] = watermark
             recent_msgs = []
@@ -1317,6 +1321,7 @@ class VipMultiAgentEditorialPipeline:
                     if not already_posted:
                         print(f"⚡ [VIP MULTI-AGENT] Catching up missed post #{msg.id} from {node} (watermark: {watermark})...")
                         await self.handle_message(clean_text, node, msg.id, raw_msg=msg, is_edit=False)
+                        self.sentinel.db.advance_watermark(node, msg.id)
                         await asyncio.sleep(3.5)
                 else:
                     self.sentinel.db.advance_watermark(node, msg.id)
