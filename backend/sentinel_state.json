@@ -735,13 +735,13 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39767,
-    "withyashar": 26263,
-    "VahidOnline": 78809,
+    "Alibk3": 39769,
+    "withyashar": 26266,
+    "VahidOnline": 78810,
     "netblocks": 1576,
     "iliaen": 4747,
-    "Ali_bk_8": 6584,
-    "kianmeli1": 93651
+    "Ali_bk_8": 6586,
+    "kianmeli1": 93657
   },
   "vahid_post_time": {},
   "ilia_post_time": {},
@@ -833,7 +833,7 @@
     "gemini-3.1-flash-lite-preview": 703,
     "gemini-3.6-flash": 377,
     "gemini-3.7-flash": 205,
-    "gemini-flash-lite-latest": 308,
+    "gemini-flash-lite-latest": 310,
     "gemini-3.5-flash": 345,
     "gemini-flash-latest": 42
   },
@@ -846,8 +846,8 @@
       "text": "قیمت دلار در بازار آزاد ایران بار دیگر افزایش یافت و به ۲۷۴ هزار تومان رسید. هم‌زمان، بهای طلا و سکه نیز صعود کرد؛ افزایشی که برخلاف روند نزولی قیمت جهانی طلا رخ داده و نشان می‌دهد رشد نرخ ارز همچنان فشار قابل‌توجهی بر بازار طلای ایران وارد می‌کند.\nدر معاملات روز پنجشنبه ۳۰ مهر ۱۴۰۵، قیمت هر دلار آمریکا در بازار آزاد به ۲۷۴ هزار تومان رسید. دلار پیش‌تر در ۱۲مهر از مرز ۲۷۰ هزار تومان عبور کرده بود، اما پس از آن تا حدود ۲۶۰ هزار تومان کاهش یافت.\n@VahidHeadline\n\n📡 @VahidOnline",
       "is_edit": false,
       "enqueued_at": 1792726255.472925,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 20,
+      "last_retry_at": 1792729275.8271651
     },
     {
       "id": "vip_multi_agent_Alibk3_39769",
@@ -857,8 +857,8 @@
       "text": "صور الأقمار الصناعية ترصد حريقًا في مدينة ينبع الصناعية بالسعودية.",
       "is_edit": false,
       "enqueued_at": 1792726255.472925,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 20,
+      "last_retry_at": 1792729292.5253675
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6586",
@@ -868,8 +868,8 @@
       "text": "Satellite images detect a fire in Saudi Arabia’s Yanbu Industrial City.",
       "is_edit": false,
       "enqueued_at": 1792726255.472925,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 20,
+      "last_retry_at": 1792729294.217632
     },
     {
       "id": "vip_multi_agent_kianmeli1_93657",
@@ -879,9 +879,119 @@
       "text": "🔴سوخت رسانها از ۳ پایگاه خارج شدند/نشانه بزرگ جنگ است.\n\nارتش امریکا بیشتر هواپیماهای سوخت‌رسان و ترابری خود را نه تنها از پایگاه‌های هوایی «العدید» و «الظفره»، بلکه از «عقبه» (شامل هواپیماهای C-17A متعلق به اسکادران ۸۱۶ ترابری هوایی اعزامی) نیز خارج کرده است.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792726255.472925,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 20,
+      "last_retry_at": 1792729295.720821
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39768",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39768,
+      "text": "‏الإمارات تغلق شواطئ ومناطق أم القيوين عقب تسرب نفطي.",
+      "is_edit": false,
+      "enqueued_at": 1792727602.6840868,
+      "retries": 20,
+      "last_retry_at": 1792729297.224003
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26264",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26264,
+      "text": "اتاق جنگ با یاشار : سامانه‌های چندلایه پدافند هوایی اسرائیل در برابر حملات موشک‌های بالستیک جمهوری‌اسلامی\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792727602.7913036,
+      "retries": 20,
+      "last_retry_at": 1792729313.730836
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26265",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26265,
+      "text": "تنگه دعوا شد  🚨🚨🚨🚨\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792727602.7944913,
+      "retries": 20,
+      "last_retry_at": 1792729315.4041336
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26266",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26266,
+      "text": "اتاق جنگ با یاشار: تصاویر ماهواره‌ای نشان می‌دهد ساخت‌وساز و بازسازی پایگاه هوایی زیرزمینی «عقاب ۴۴» ایران، با وجود دست‌کم سه دور حمله هوایی در سال جاری، ادامه دارد. باند پرواز پاک‌سازی شده، ساخت مسیر تاکسی جدید پیش می‌رود و ورودی تونل‌های زیرزمینی همچنان پابرجاست. این پایگاه کوهستانی قابلیت نگهداری جنگنده‌ها، پهپادها و احتمالاً موشک‌ها را دارد.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792727602.7973359,
+      "retries": 18,
+      "last_retry_at": 1792729219.9203007
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6585",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6585,
+      "text": "امارات پس از نشت نفت، سواحل و مناطقی از ام‌القوین را تعطیل می‌کند.\n\nThe UAE closes beaches and areas in Umm Al Quwain following an oil spill.",
+      "is_edit": false,
+      "enqueued_at": 1792727606.0784318,
+      "retries": 18,
+      "last_retry_at": 1792729221.4235954
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93652",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93652,
+      "text": "🔴صداوسیما: پهپاد جدید شاهد۲۳۸ با سرعت سه برابر شاهد۱۳۶ بزودی خواهید دید\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792727612.6124964,
+      "retries": 18,
+      "last_retry_at": 1792729259.1238065
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93653",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93653,
+      "text": "🔴جنگ با ایران باید مدت‌ها پیش انجام می‌شد\n\n️️رئیس‌جمهور آمریکا دونالد ترامپ مدعی شد که «ایران را در هم کوبیده» و جنگ با ایران باید مدت‌ها پیش و توسط روسای جمهور قبلی انجام می‌شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792727612.6157472,
+      "retries": 17,
+      "last_retry_at": 1792729237.9421363
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93654",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93654,
+      "text": "🔴کانال ۱۴ اسراییل\n\nاینترنت در ایران به دلیل جنگ میخواهد قطع شود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792727612.6188087,
+      "retries": 17,
+      "last_retry_at": 1792729239.6084595
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93655",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93655,
+      "text": "‏🔴چند هواپیمای ترابری روسی در بوشهر نشستند٫ \n‏احتمالأ پرسنل روسی از نیروگاه بوشهر در حال تخلیه هستند\n\n[قبل از حمله ۹ اسفند همین اتفاق افتاد]\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792727612.621643,
+      "retries": 17,
+      "last_retry_at": 1792729241.1117349
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93656",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93656,
+      "text": "🔴طرفداران فلسطین در اروپا فراخوان داده اند تمام برندهای یهودی در سطح شهر غارت میشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792727612.624552,
+      "retries": 16,
+      "last_retry_at": 1792729242.614918
     }
   ],
-  "last_saved": "2026-10-23 03:30:55 UTC"
+  "last_saved": "2026-10-23 04:21:55 UTC"
 }
