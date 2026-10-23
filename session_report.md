@@ -1,11 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 2 minutes
-- **Messages Processed:** 10
-- **Last Message Text:** 🔴کانال ۱۴ اسراییل
+- **Uptime:** 32 minutes
+- **Messages Processed:** 102
+- **Last Message Text:** فرودگاه جده در عربستان سعودی بار دیگر فعالیت خود را متوقف کرد.
 
-اینترنت در ایران به دلیل جنگ میخواهد قطع شود
-
-#کیان_ملی 
-https://t.me/kianmeli1
-- **Last Message Time:** 2026-10-22 21:52:03
+Jeddah Airport in Saudi Arabia has s...
+- **Last Message Time:** 2026-10-23 00:41:41

@@ -735,12 +735,12 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39735,
+    "Alibk3": 39757,
     "withyashar": 26263,
     "VahidOnline": 78809,
     "netblocks": 1576,
     "iliaen": 4747,
-    "Ali_bk_8": 6552,
+    "Ali_bk_8": 6570,
     "kianmeli1": 93638
   },
   "vahid_post_time": {},
@@ -826,83 +826,83 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 228,
-    "gemini-3.5-flash-lite": 5544,
+    "gemini-3.5-flash-lite": 5551,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 752,
+    "gemini-3-flash-preview": 758,
     "gemini-3.1-flash-lite": 2287,
-    "gemini-3.1-flash-lite-preview": 687,
-    "gemini-3.6-flash": 368,
+    "gemini-3.1-flash-lite-preview": 691,
+    "gemini-3.6-flash": 369,
     "gemini-3.7-flash": 205,
     "gemini-flash-lite-latest": 302,
-    "gemini-3.5-flash": 327,
-    "gemini-flash-latest": 38
+    "gemini-3.5-flash": 332,
+    "gemini-flash-latest": 42
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Alibk3_39734",
+      "id": "vip_multi_agent_Alibk3_39742",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39734,
-      "text": "خلال آخر 24 ساعة، رُصدت 102 طائرة عسكرية في المنطقة، بينها 4 طائرات نقل وصلت من خارجها، منها 3 أميركية وواحدة إيطالية، إضافة إلى 7 طائرات نقل عسكري إقليمي و34 طائرة تزود بالوقود و18 طائرة تجسس و32 طائرة نقل عسكري تنقّلت داخل المنطقة و7 مروحيات عسكرية.",
+      "msg_id": 39742,
+      "text": "القوات الجوية الأميركية تنفّذ حاليًا عملية إجلاء غير معتادة من قاعدة المصنعة الجوية في عُمان. ومن غير الواضح ما إذا كان الإجلاء يشمل موظفي وزارة الخارجية الأميركية أم عسكريين أميركيين.",
       "is_edit": false,
-      "enqueued_at": 1792703394.8266666,
-      "retries": 7,
-      "last_retry_at": 1792705815.8379893
+      "enqueued_at": 1792714770.0463192,
+      "retries": 12,
+      "last_retry_at": 1792716661.7012854
     },
     {
-      "id": "vip_multi_agent_Ali_bk_8_6551",
+      "id": "vip_multi_agent_Ali_bk_8_6561",
       "pipeline": "vip_multi_agent",
       "node": "Ali_bk_8",
-      "msg_id": 6551,
-      "text": "Over the past 24 hours, 102 military aircraft were tracked in the region, including 4 transport aircraft that arrived from outside the region, 3 American and one Italian, as well as 7 regional military transport aircraft, 34 refueling aircraft, 18 surveillance aircraft, 32 military transport aircraft that moved within the region, and 7 military helicopters.",
+      "msg_id": 6561,
+      "text": "حمله‌ای یمنی هم‌اکنون پایتخت عربستان سعودی، ریاض، را هدف قرار داده است.\n\nA Yemeni attack is targeting the Saudi capital, Riyadh, now.",
       "is_edit": false,
-      "enqueued_at": 1792703405.8149834,
-      "retries": 7,
-      "last_retry_at": 1792705872.381402
+      "enqueued_at": 1792714785.8251386,
+      "retries": 11,
+      "last_retry_at": 1792716585.6508632
     },
     {
-      "id": "vip_multi_agent_kianmeli1_93639",
+      "id": "vip_multi_agent_Alibk3_39743",
       "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93639,
-      "text": "🔴رویترز: جنگ آغاز شود٫ نفت ۱۵۰ دلار میشود چراکه حوثی ها اعلام کرده هیچ چاه نفتی در عربستان نخواهد بود و ایران نیز میخواهد باب المندب را ببندد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "node": "Alibk3",
+      "msg_id": 39743,
+      "text": "مطار جدة متوقف مُنذ أكثر من 35 دقيقة حتى الآن، وهناك حوالي 10 طائرات مُعلّقة في الجو.",
       "is_edit": false,
-      "enqueued_at": 1792703425.3544166,
-      "retries": 7,
-      "last_retry_at": 1792705889.5590365
+      "enqueued_at": 1792714788.7468395,
+      "retries": 11,
+      "last_retry_at": 1792716587.6550186
     },
     {
-      "id": "vip_multi_agent_kianmeli1_93640",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93640,
-      "text": "🔴در پی فراخوان آخرهفته در سراسر پاریس٫ پلیس به حالت آماده باش در آمد تا رویداد هفته پیش تکرار نشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792703428.8632188,
-      "retries": 6,
-      "last_retry_at": 1792705891.7102063
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26262",
+      "id": "vip_multi_agent_withyashar_26265",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
-      "msg_id": 26262,
-      "text": "خبرنگار فاکس‌نیوز در پنتاگون: «در ۱۸ سال حضورم در پنتاگون، هرگز شاهد چنین سطح از امنیت عملیاتی نبوده‌ام.\nهیچ‌گونه درزی (افشای اطلاعاتی) وجود ندارد و هیچ‌کس در این باره صحبت نمی‌کرد. در چند روز گذشته، در خصوص ایران، یک خاموشی کامل خبری در پنتاگون حاکم بود.»\nکارتان عالی بود، آقای وزیر دفاع (هگست)!\n@WarRoom 🚨🚨🚨🚨🚨",
+      "msg_id": 26265,
+      "text": "تنگه دعوا شد  🚨🚨🚨🚨\n@WarRoom",
       "is_edit": false,
-      "enqueued_at": 1792703933.024103,
-      "retries": 6,
-      "last_retry_at": 1792705908.8254416
+      "enqueued_at": 1792714793.5241287,
+      "retries": 11,
+      "last_retry_at": 1792716604.6622295
     },
     {
-      "id": "vip_multi_agent_withyashar_26263",
+      "id": "vip_multi_agent_Alibk3_39744",
       "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26263,
-      "text": "آخرین نظرسنجی پیش از انتخابات توسط شبکه ۱۴:\nدر فاصله پنج روز مانده به بیست‌وششمین دوره انتخابات کنست اسرائیل (که روز سه‌شنبه، ۲۷ اکتبر برگزار می‌شود)، آخرین نظرسنجی «نکست دیتا»، نشان می‌دهد که بلوک راست‌گرا ۶۲ کرسی در اختیار دارد؛ تعدادی که برای تشکیل دولت، بدون نیاز به اتکا به احزابِ بلوک رقیب، کافی است.\n@WarRoom",
+      "node": "Alibk3",
+      "msg_id": 39744,
+      "text": "هجوم يمني يستهدف العاصمة السعودية الرياض الآن.",
       "is_edit": false,
-      "enqueued_at": 1792704292.2782536,
-      "retries": 6,
-      "last_retry_at": 1792705910.9302866
+      "enqueued_at": 1792714799.4312122,
+      "retries": 11,
+      "last_retry_at": 1792716623.6789176
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39738",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39738,
+      "text": "القوات اليمنية تستهدف تحشدًا عسكريًا للقوات الموالية للسعودية في طور الباحة بـ 4 صواريخ باليستية.",
+      "is_edit": false,
+      "enqueued_at": 1792714800.1712923,
+      "retries": 11,
+      "last_retry_at": 1792716663.705275
     },
     {
       "id": "vip_multi_agent_kianmeli1_93652",
@@ -911,42 +911,64 @@
       "msg_id": 93652,
       "text": "🔴صداوسیما: پهپاد جدید شاهد۲۳۸ با سرعت سه برابر شاهد۱۳۶ بزودی خواهید دید\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792704893.0368125,
-      "retries": 4,
-      "last_retry_at": 1792705928.1095412
+      "enqueued_at": 1792714839.1326528,
+      "retries": 10,
+      "last_retry_at": 1792716509.6017487
     },
     {
-      "id": "vip_multi_agent_Ali_bk_8_6552",
+      "id": "vip_multi_agent_Ali_bk_8_6562",
       "pipeline": "vip_multi_agent",
       "node": "Ali_bk_8",
-      "msg_id": 6552,
-      "text": "Footage released for the first time showing an Iranian missile striking a U.S. base in the UAE.",
+      "msg_id": 6562,
+      "text": "Missiles over the Saudi capital, Riyadh.",
       "is_edit": true,
-      "enqueued_at": 1792705073.5010521,
-      "retries": 3,
-      "last_retry_at": 1792705930.2219028
+      "enqueued_at": 1792714852.8146086,
+      "retries": 10,
+      "last_retry_at": 1792716528.6162813
     },
     {
-      "id": "vip_multi_agent_Alibk3_39735",
+      "id": "vip_multi_agent_Alibk3_39745",
       "pipeline": "vip_multi_agent",
       "node": "Alibk3",
-      "msg_id": 39735,
-      "text": "مشاهد تنشر لأول مرة لاستهداف قاعدة أميركية في الإمارات بصاروخ إيراني.",
+      "msg_id": 39745,
+      "text": "الصواريخ فوق العاصمة السعودية الرياض.",
       "is_edit": true,
-      "enqueued_at": 1792705073.5054078,
-      "retries": 2,
-      "last_retry_at": 1792705947.382832
+      "enqueued_at": 1792714855.638111,
+      "retries": 10,
+      "last_retry_at": 1792716547.626427
     },
     {
-      "id": "vip_multi_agent_kianmeli1_93653",
+      "id": "vip_multi_agent_Ali_bk_8_6559",
       "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93653,
-      "text": "🔴جنگ با ایران باید مدت‌ها پیش انجام می‌شد\n\n️️رئیس‌جمهور آمریکا دونالد ترامپ مدعی شد که «ایران را در هم کوبیده» و جنگ با ایران باید مدت‌ها پیش و توسط روسای جمهور قبلی انجام می‌شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "node": "Ali_bk_8",
+      "msg_id": 6559,
+      "text": "نیروی هوایی آمریکا در حال حاضر عملیات تخلیه غیرمعمولی را از پایگاه هوایی المصنعه در عمان اجرا می‌کند. مشخص نیست که این تخلیه شامل کارکنان وزارت خارجه آمریکا می‌شود یا نظامیان آمریکایی.\n\nThe U.S. Air Force is currently carrying out an unusual evacuation operation from Al Masnaah Air Base in Oman. It is unclear whether the evacuation involves U.S. State Department personnel or American military personnel.",
       "is_edit": false,
-      "enqueued_at": 1792705085.585974,
-      "retries": 2,
-      "last_retry_at": 1792705949.5149379
+      "enqueued_at": 1792714858.9658613,
+      "retries": 10,
+      "last_retry_at": 1792716606.666247
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6560",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6560,
+      "text": "فرودگاه جده تاکنون بیش از ۳۵ دقیقه است که متوقف شده و حدود ۱۰ هواپیما در آسمان سرگردان هستند.\n\nJeddah Airport has been shut down for more than 35 minutes so far, with around 10 aircraft stuck in the air.",
+      "is_edit": false,
+      "enqueued_at": 1792714861.6374729,
+      "retries": 10,
+      "last_retry_at": 1792716625.6828787
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39737",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39737,
+      "text": "ذا أتلانتيك عن مسؤولين أميركيين: \n\nترمب يدرس إحياء حملته العسكرية ضد إيران من خلال شن ضربات تستمر لعدة أيام.\n\nمن المحتمل أن تحدث الضربات الأمريكية على إيران مباشرة بعد انتخابات التجديد النصفي.",
+      "is_edit": false,
+      "enqueued_at": 1792714868.7486706,
+      "retries": 10,
+      "last_retry_at": 1792716680.723721
     },
     {
       "id": "vip_multi_agent_kianmeli1_93651",
@@ -955,9 +977,9 @@
       "msg_id": 93651,
       "text": "🔴تحلیلگر فاکس نیوز: جنگ سوم شبیه هیچ جنگی نیست٫ خاورمیانه در آتش خواهد سوخت\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792705869.263281,
-      "retries": 0,
-      "last_retry_at": 0
+      "enqueued_at": 1792714926.289466,
+      "retries": 9,
+      "last_retry_at": 1792716511.605876
     },
     {
       "id": "vip_multi_agent_kianmeli1_93650",
@@ -966,29 +988,84 @@
       "msg_id": 93650,
       "text": "🔴پدافند شهر ری فعال شد\n\nممکنه برای تست باشه یا بخاطر ریز پرنده \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792705872.3506927,
-      "retries": 0,
-      "last_retry_at": 0
+      "enqueued_at": 1792714927.2738364,
+      "retries": 9,
+      "last_retry_at": 1792716642.6895607
     },
     {
-      "id": "vip_multi_agent_withyashar_26264",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26264,
-      "text": "اتاق جنگ با یاشار : سامانه‌های چندلایه پدافند هوایی اسرائیل در برابر حملات موشک‌های بالستیک جمهوری‌اسلامی\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792705881.3732884,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93649",
+      "id": "vip_multi_agent_kianmeli1_93654",
       "pipeline": "vip_multi_agent",
       "node": "kianmeli1",
-      "msg_id": 93649,
-      "text": "🔴وارد متفاوت ترین آبان تاریخ معاصر ایران شدیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "msg_id": 93654,
+      "text": "🔴کانال ۱۴ اسراییل\n\nاینترنت در ایران به دلیل جنگ میخواهد قطع شود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792705882.3729298,
+      "enqueued_at": 1792714928.2526674,
+      "retries": 9,
+      "last_retry_at": 1792716644.6934233
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6555",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6555,
+      "text": "نیروهای یمنی تجمع نظامی نیروهای همسو با عربستان در طور الباحه را با ۴ موشک بالستیک هدف قرار دادند.\n\nYemeni forces target a military gathering of Saudi-aligned forces in Tur al-Bahah with 4 ballistic missiles.",
+      "is_edit": false,
+      "enqueued_at": 1792714929.2586854,
+      "retries": 8,
+      "last_retry_at": 1792716682.7278278
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93653",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93653,
+      "text": "🔴جنگ با ایران باید مدت‌ها پیش انجام می‌شد\n\n️️رئیس‌جمهور آمریکا دونالد ترامپ مدعی شد که «ایران را در هم کوبیده» و جنگ با ایران باید مدت‌ها پیش و توسط روسای جمهور قبلی انجام می‌شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792714932.2599475,
+      "retries": 7,
+      "last_retry_at": 1792716530.620276
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39741",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39741,
+      "text": "توقف حركة الملاحة الجوية في مطار جدة",
+      "is_edit": false,
+      "enqueued_at": 1792714933.2686799,
+      "retries": 6,
+      "last_retry_at": 1792716549.6305318
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6558",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6558,
+      "text": "تردد هوایی در فرودگاه جده متوقف شده است.\n\nAir traffic at Jeddah Airport has been suspended.",
+      "is_edit": false,
+      "enqueued_at": 1792714934.2722578,
+      "retries": 6,
+      "last_retry_at": 1792716566.6376529
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93639",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93639,
+      "text": "🔴رویترز: جنگ آغاز شود٫ نفت ۱۵۰ دلار میشود چراکه حوثی ها اعلام کرده هیچ چاه نفتی در عربستان نخواهد بود و ایران نیز میخواهد باب المندب را ببندد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792714948.1452963,
+      "retries": 6,
+      "last_retry_at": 1792716568.6416507
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93640",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93640,
+      "text": "🔴در پی فراخوان آخرهفته در سراسر پاریس٫ پلیس به حالت آماده باش در آمد تا رویداد هفته پیش تکرار نشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792714951.6521993,
       "retries": 0,
       "last_retry_at": 0
     },
@@ -999,18 +1076,7 @@
       "msg_id": 93641,
       "text": "🔴وزارت ارتباطات: \n\nدر صورت وقوع جنگ تحمیلی، اینترنت محدود خواهد شد تا سطح تهدیدات دشمن کاهش یابد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792705886.8512008,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93654",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93654,
-      "text": "🔴کانال ۱۴ اسراییل\n\nاینترنت در ایران به دلیل جنگ میخواهد قطع شود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792705889.6499038,
+      "enqueued_at": 1792714955.158865,
       "retries": 0,
       "last_retry_at": 0
     },
@@ -1021,7 +1087,7 @@
       "msg_id": 93642,
       "text": "🔴گزارش‌های منتشره حاکی از آن است که ایالات متحده در حال «تخلیه گسترده» اعضای خانواده دیپلمات‌های آمریکایی در کشورهای خاورمیانه است.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792705890.3579872,
+      "enqueued_at": 1792714958.6655924,
       "retries": 0,
       "last_retry_at": 0
     },
@@ -1032,7 +1098,7 @@
       "msg_id": 93643,
       "text": "🔴یک مقام ارتش اسرائیل به شبکه ۱۲ گفت: اگر در ایران تدارکاتی برای انجام حمله شناسایی کنیم، وارد عمل خواهیم شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792705893.8659992,
+      "enqueued_at": 1792714962.1735096,
       "retries": 0,
       "last_retry_at": 0
     },
@@ -1043,7 +1109,7 @@
       "msg_id": 93644,
       "text": "🔴شمارش معکوس ایدی کوهن معروفترین خبرنگار اسرائیل برای آغاز جنگ.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792705897.3767009,
+      "enqueued_at": 1792714965.68259,
       "retries": 0,
       "last_retry_at": 0
     },
@@ -1054,7 +1120,7 @@
       "msg_id": 93645,
       "text": "🔴هم اکنون در بسیاری از متاطق تهران ایست های بازرسی تشکیل شده است\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792705900.8869054,
+      "enqueued_at": 1792714969.1912186,
       "retries": 0,
       "last_retry_at": 0
     },
@@ -1065,7 +1131,7 @@
       "msg_id": 93646,
       "text": "🔴برخی مراکز فرودگاهی در حال تخلیه شدن\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792705904.3947082,
+      "enqueued_at": 1792714972.6982293,
       "retries": 0,
       "last_retry_at": 0
     },
@@ -1076,7 +1142,7 @@
       "msg_id": 93647,
       "text": "🔴لحظاتی پیش-ترامپ: \n\nممکن است حملات بیشتری علیه ایران انجام دهیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792705907.9035356,
+      "enqueued_at": 1792714976.2075374,
       "retries": 0,
       "last_retry_at": 0
     },
@@ -1087,10 +1153,230 @@
       "msg_id": 93648,
       "text": "🔴تلویزیون عربستان:\nبه ایران حمله بزرگ میشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
-      "enqueued_at": 1792705911.4100158,
+      "enqueued_at": 1792714979.7165296,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93649",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93649,
+      "text": "🔴وارد متفاوت ترین آبان تاریخ معاصر ایران شدیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792714983.2262664,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6563",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6563,
+      "text": "3 powerful explosions heard in Riyadh.",
+      "is_edit": false,
+      "enqueued_at": 1792715004.3877792,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39746",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39746,
+      "text": "دوي 3 انفجارات عنيفة في الرياض.",
+      "is_edit": false,
+      "enqueued_at": 1792715004.4085207,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26264",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26264,
+      "text": "اتاق جنگ با یاشار : سامانه‌های چندلایه پدافند هوایی اسرائیل در برابر حملات موشک‌های بالستیک جمهوری‌اسلامی\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792715004.4625494,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26266",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26266,
+      "text": "اتاق جنگ با یاشار: تصاویر ماهواره‌ای نشان می‌دهد ساخت‌وساز و بازسازی پایگاه هوایی زیرزمینی «عقاب ۴۴» ایران، با وجود دست‌کم سه دور حمله هوایی در سال جاری، ادامه دارد. باند پرواز پاک‌سازی شده، ساخت مسیر تاکسی جدید پیش می‌رود و ورودی تونل‌های زیرزمینی همچنان پابرجاست. این پایگاه کوهستانی قابلیت نگهداری جنگنده‌ها، پهپادها و احتمالاً موشک‌ها را دارد.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1792715011.4728649,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39749",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39749,
+      "text": "مدونين سعوديين يتحدثون عن سقوط صواريخ بشكل مباشر في الرياض.",
+      "is_edit": true,
+      "enqueued_at": 1792715201.8048062,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6564",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6564,
+      "text": "وبلاگ‌نویسان سعودی از اصابت مستقیم موشک‌ها به ریاض صحبت می‌کنند.\n\nSaudi bloggers are talking about missiles directly hitting Riyadh.",
+      "is_edit": true,
+      "enqueued_at": 1792715201.8191495,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6567",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6567,
+      "text": "Intense Yemeni attacks in Riyadh",
+      "is_edit": false,
+      "enqueued_at": 1792715381.8260288,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39750",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39750,
+      "text": "هجمات يمنية عنيفة في الرياض",
+      "is_edit": false,
+      "enqueued_at": 1792715381.8350992,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6568",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6568,
+      "text": "و حالا\n\nAnd now",
+      "is_edit": true,
+      "enqueued_at": 1792715501.8089886,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6569",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6569,
+      "text": "ریاض\n\nRiyadh",
+      "is_edit": true,
+      "enqueued_at": 1792715681.8348544,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6570",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6570,
+      "text": "ریاض\n\nRiyadh",
+      "is_edit": true,
+      "enqueued_at": 1792715854.414106,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6571",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6571,
+      "text": "Yemeni missiles in the skies over Riyadh.",
+      "is_edit": false,
+      "enqueued_at": 1792715911.1418486,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39754",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39754,
+      "text": "الصواريخ اليمنية في سماء الرياض.",
+      "is_edit": false,
+      "enqueued_at": 1792715911.1507487,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39755",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39755,
+      "text": "سماء الرياض.",
+      "is_edit": false,
+      "enqueued_at": 1792715967.9981596,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39756",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39756,
+      "text": "لحظة تفعيل الدفاعات الجوية في الرياض",
+      "is_edit": false,
+      "enqueued_at": 1792715968.002687,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6572",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6572,
+      "text": "The skies over Riyadh.",
+      "is_edit": false,
+      "enqueued_at": 1792715968.0146844,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6573",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6573,
+      "text": "The moment air defenses were activated in Riyadh",
+      "is_edit": false,
+      "enqueued_at": 1792715968.0200586,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6574",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6574,
+      "text": "Jeddah Airport",
+      "is_edit": false,
+      "enqueued_at": 1792716074.9589868,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39757",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39757,
+      "text": "توقف مطار جدة في السعودية مجدداً.",
+      "is_edit": true,
+      "enqueued_at": 1792716074.9667745,
       "retries": 0,
       "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-22 21:52:40 UTC"
+  "last_saved": "2026-10-23 00:51:35 UTC"
 }
