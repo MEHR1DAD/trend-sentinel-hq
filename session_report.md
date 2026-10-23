@@ -1,8 +1,7 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 30
-- **Last Message Text:** تصاویری از نشت نفت از یک نفتکش که در نزدیکی سواحل امارات هدف قرار گرفت.
-
-Footage of oil leaking from...
-- **Last Message Time:** 2026-10-23 12:47:46
+- **Messages Processed:** 36
+- **Last Message Text:** پیام روشن اتاق جنگ امریکا , در جواب ویدیو کارخانه پهپاد جمهوری اسلامی : صدای هگست ، وزیر جنگ : 
+برای...
+- **Last Message Time:** 2026-10-23 13:13:33
