@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 44
-- **Last Message Text:** یک جنگنده آمریکایی از نوع F-35 بر فراز امارات کد اضطراری 7700 را ارسال می‌کند.
+- **Messages Processed:** 33
+- **Last Message Text:** دستیار امور سیاسی سپاه پاسداران:
 
-A U.S. F-35 fighter ...
-- **Last Message Time:** 2026-10-23 18:38:15
+«وقتی نیروهای آمریکایی در برخی مناطق و پایگاه‌های منطقه با محدودیت...
+- **Last Message Time:** 2026-10-23 19:00:13
