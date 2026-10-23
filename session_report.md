@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 30 minutes
-- **Messages Processed:** 26
-- **Last Message Text:** تصاویر ماهواره‌ای وقوع آتش‌سوزی در شهر صنعتی ینبع عربستان سعودی را ثبت کرده‌اند.
+- **Uptime:** 31 minutes
+- **Messages Processed:** 16
+- **Last Message Text:** 🔴سوخت رسانها از ۳ پایگاه خارج شدند/نشانه بزرگ جنگ است.
 
-Satellite images d...
-- **Last Message Time:** 2026-10-23 02:48:44
+ارتش امریکا بیشتر هواپیماهای سوخت‌رسان و ترا...
+- **Last Message Time:** 2026-10-23 03:03:08

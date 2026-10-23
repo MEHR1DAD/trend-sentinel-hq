@@ -741,7 +741,7 @@
     "netblocks": 1576,
     "iliaen": 4747,
     "Ali_bk_8": 6584,
-    "kianmeli1": 93645
+    "kianmeli1": 93651
   },
   "vahid_post_time": {},
   "ilia_post_time": {},
@@ -826,205 +826,18 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 228,
-    "gemini-3.5-flash-lite": 5568,
+    "gemini-3.5-flash-lite": 5569,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 772,
+    "gemini-3-flash-preview": 776,
     "gemini-3.1-flash-lite": 2289,
-    "gemini-3.1-flash-lite-preview": 701,
-    "gemini-3.6-flash": 375,
+    "gemini-3.1-flash-lite-preview": 703,
+    "gemini-3.6-flash": 377,
     "gemini-3.7-flash": 205,
-    "gemini-flash-lite-latest": 307,
+    "gemini-flash-lite-latest": 308,
     "gemini-3.5-flash": 345,
     "gemini-flash-latest": 42
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_kianmeli1_93654",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93654,
-      "text": "🔴کانال ۱۴ اسراییل\n\nاینترنت در ایران به دلیل جنگ میخواهد قطع شود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792722448.133497,
-      "retries": 11,
-      "last_retry_at": 1792724220.1774385
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26264",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26264,
-      "text": "اتاق جنگ با یاشار : سامانه‌های چندلایه پدافند هوایی اسرائیل در برابر حملات موشک‌های بالستیک جمهوری‌اسلامی\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792722526.7003257,
-      "retries": 10,
-      "last_retry_at": 1792724146.1271603
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26265",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26265,
-      "text": "تنگه دعوا شد  🚨🚨🚨🚨\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792722527.7220438,
-      "retries": 10,
-      "last_retry_at": 1792724163.133885
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26266",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26266,
-      "text": "اتاق جنگ با یاشار: تصاویر ماهواره‌ای نشان می‌دهد ساخت‌وساز و بازسازی پایگاه هوایی زیرزمینی «عقاب ۴۴» ایران، با وجود دست‌کم سه دور حمله هوایی در سال جاری، ادامه دارد. باند پرواز پاک‌سازی شده، ساخت مسیر تاکسی جدید پیش می‌رود و ورودی تونل‌های زیرزمینی همچنان پابرجاست. این پایگاه کوهستانی قابلیت نگهداری جنگنده‌ها، پهپادها و احتمالاً موشک‌ها را دارد.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792722528.689354,
-      "retries": 10,
-      "last_retry_at": 1792724165.1380923
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93655",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93655,
-      "text": "‏🔴چند هواپیمای ترابری روسی در بوشهر نشستند٫ \n‏احتمالأ پرسنل روسی از نیروگاه بوشهر در حال تخلیه هستند\n\n[قبل از حمله ۹ اسفند همین اتفاق افتاد]\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792722529.7290857,
-      "retries": 9,
-      "last_retry_at": 1792724182.143423
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93656",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93656,
-      "text": "🔴طرفداران فلسطین در اروپا فراخوان داده اند تمام برندهای یهودی در سطح شهر غارت میشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792722530.7201612,
-      "retries": 9,
-      "last_retry_at": 1792724184.147351
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93646",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93646,
-      "text": "🔴برخی مراکز فرودگاهی در حال تخلیه شدن\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792722532.7070022,
-      "retries": 9,
-      "last_retry_at": 1792724201.1665
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93652",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93652,
-      "text": "🔴صداوسیما: پهپاد جدید شاهد۲۳۸ با سرعت سه برابر شاهد۱۳۶ بزودی خواهید دید\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792722533.6956851,
-      "retries": 8,
-      "last_retry_at": 1792724203.170387
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93653",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93653,
-      "text": "🔴جنگ با ایران باید مدت‌ها پیش انجام می‌شد\n\n️️رئیس‌جمهور آمریکا دونالد ترامپ مدعی شد که «ایران را در هم کوبیده» و جنگ با ایران باید مدت‌ها پیش و توسط روسای جمهور قبلی انجام می‌شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792722534.7026389,
-      "retries": 8,
-      "last_retry_at": 1792724222.180009
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93647",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93647,
-      "text": "🔴لحظاتی پیش-ترامپ: \n\nممکن است حملات بیشتری علیه ایران انجام دهیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792722539.694296,
-      "retries": 8,
-      "last_retry_at": 1792724239.186271
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93648",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93648,
-      "text": "🔴تلویزیون عربستان:\nبه ایران حمله بزرگ میشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792722543.667156,
-      "retries": 8,
-      "last_retry_at": 1792724241.1903465
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93649",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93649,
-      "text": "🔴وارد متفاوت ترین آبان تاریخ معاصر ایران شدیم\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792722547.1746087,
-      "retries": 5,
-      "last_retry_at": 1792724258.209618
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93650",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93650,
-      "text": "🔴پدافند شهر ری فعال شد\n\nممکنه برای تست باشه یا بخاطر ریز پرنده \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792722550.6831927,
-      "retries": 5,
-      "last_retry_at": 1792724260.2136173
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93651",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93651,
-      "text": "🔴تحلیلگر فاکس نیوز: جنگ سوم شبیه هیچ جنگی نیست٫ خاورمیانه در آتش خواهد سوخت\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1792722554.190134,
-      "retries": 4,
-      "last_retry_at": 1792724089.078477
-    },
-    {
-      "id": "vip_multi_agent_VahidOnline_78810",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78810,
-      "text": "دونالد ترامپ، رئیس‌جمهوری آمریکا، در ادامه حضور در کارزارهای انتخاباتی جمهوری‌خواهان پیش از انتخابات میان‌دوره‌ای، بار دیگر گفت درگیری با ایران به‌زودی پایان خواهد یافت و پس از آن قیمت نفت و بنزین کاهش می‌یابد.\nترامپ در سخنرانی انتخاباتی جمهوری‌خواهان در کارولینای جنوبی گفت: «کار ایران هم خیلی زود تمام خواهد شد؛ به هر طریقی که باشد. برای من تقریبا اهمیتی ندارد که این اتفاق از چه راهی بیفتد، اما به هر حال، این موضوع خیلی زود به پایان خواهد رسید. بعد از آن، قیمت بنزین و نفت شما به‌شدت کاهش خواهد یافت.»\n@VahidOOnLine\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1792722704.0083182,
-      "retries": 4,
-      "last_retry_at": 1792724091.0826018
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39768",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39768,
-      "text": "‏الإمارات تغلق شواطئ ومناطق أم القيوين عقب تسرب نفطي.",
-      "is_edit": false,
-      "enqueued_at": 1792722987.7856371,
-      "retries": 3,
-      "last_retry_at": 1792724108.0934212
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6585",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6585,
-      "text": "The UAE closes beaches and areas in Umm Al Quwain following an oil spill.",
-      "is_edit": false,
-      "enqueued_at": 1792722992.6380637,
-      "retries": 2,
-      "last_retry_at": 1792724110.0974932
-    },
     {
       "id": "vip_multi_agent_Alibk3_39769",
       "pipeline": "vip_multi_agent",
@@ -1033,8 +846,8 @@
       "text": "صور الأقمار الصناعية ترصد حريقًا في مدينة ينبع الصناعية بالسعودية.",
       "is_edit": false,
       "enqueued_at": 1792723622.0846472,
-      "retries": 2,
-      "last_retry_at": 1792724127.1036165
+      "retries": 11,
+      "last_retry_at": 1792726132.7567399
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6586",
@@ -1044,9 +857,20 @@
       "text": "Satellite images detect a fire in Saudi Arabia’s Yanbu Industrial City.",
       "is_edit": false,
       "enqueued_at": 1792723662.9633296,
-      "retries": 2,
-      "last_retry_at": 1792724129.1076105
+      "retries": 11,
+      "last_retry_at": 1792726134.76042
+    },
+    {
+      "id": "vip_multi_agent_kianmeli1_93657",
+      "pipeline": "vip_multi_agent",
+      "node": "kianmeli1",
+      "msg_id": 93657,
+      "text": "🔴سوخت رسانها از ۳ پایگاه خارج شدند/نشانه بزرگ جنگ است.\n\nارتش امریکا بیشتر هواپیماهای سوخت‌رسان و ترابری خود را نه تنها از پایگاه‌های هوایی «العدید» و «الظفره»، بلکه از «عقبه» (شامل هواپیماهای C-17A متعلق به اسکادران ۸۱۶ ترابری هوایی اعزامی) نیز خارج کرده است.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
+      "is_edit": false,
+      "enqueued_at": 1792724544.570954,
+      "retries": 9,
+      "last_retry_at": 1792726151.7793682
     }
   ],
-  "last_saved": "2026-10-23 02:57:46 UTC"
+  "last_saved": "2026-10-23 03:29:25 UTC"
 }
