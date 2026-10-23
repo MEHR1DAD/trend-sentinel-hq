@@ -735,13 +735,13 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39769,
+    "Alibk3": 39771,
     "withyashar": 26266,
     "VahidOnline": 78810,
     "netblocks": 1576,
     "iliaen": 4747,
-    "Ali_bk_8": 6586,
-    "kianmeli1": 93657
+    "Ali_bk_8": 6588,
+    "kianmeli1": 93658
   },
   "vahid_post_time": {},
   "ilia_post_time": {},
@@ -828,12 +828,12 @@
     "gemini-3.8-flash": 228,
     "gemini-3.5-flash-lite": 5575,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 781,
+    "gemini-3-flash-preview": 783,
     "gemini-3.1-flash-lite": 2293,
-    "gemini-3.1-flash-lite-preview": 704,
+    "gemini-3.1-flash-lite-preview": 705,
     "gemini-3.6-flash": 379,
     "gemini-3.7-flash": 205,
-    "gemini-flash-lite-latest": 310,
+    "gemini-flash-lite-latest": 311,
     "gemini-3.5-flash": 348,
     "gemini-flash-latest": 42
   },
@@ -846,8 +846,8 @@
       "text": "🔴سوخت رسانها از ۳ پایگاه خارج شدند/نشانه بزرگ جنگ است.\n\nارتش امریکا بیشتر هواپیماهای سوخت‌رسان و ترابری خود را نه تنها از پایگاه‌های هوایی «العدید» و «الظفره»، بلکه از «عقبه» (شامل هواپیماهای C-17A متعلق به اسکادران ۸۱۶ ترابری هوایی اعزامی) نیز خارج کرده است.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792726255.472925,
-      "retries": 55,
-      "last_retry_at": 1792733751.6217508
+      "retries": 74,
+      "last_retry_at": 1792735531.3073819
     },
     {
       "id": "vip_multi_agent_Alibk3_39768",
@@ -857,8 +857,8 @@
       "text": "‏الإمارات تغلق شواطئ ومناطق أم القيوين عقب تسرب نفطي.",
       "is_edit": false,
       "enqueued_at": 1792727602.6840868,
-      "retries": 55,
-      "last_retry_at": 1792733772.813531
+      "retries": 73,
+      "last_retry_at": 1792735469.2748818
     },
     {
       "id": "vip_multi_agent_withyashar_26264",
@@ -868,8 +868,8 @@
       "text": "اتاق جنگ با یاشار : سامانه‌های چندلایه پدافند هوایی اسرائیل در برابر حملات موشک‌های بالستیک جمهوری‌اسلامی\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792727602.7913036,
-      "retries": 54,
-      "last_retry_at": 1792733730.4399033
+      "retries": 72,
+      "last_retry_at": 1792735470.934459
     },
     {
       "id": "vip_multi_agent_withyashar_26265",
@@ -879,8 +879,8 @@
       "text": "تنگه دعوا شد  🚨🚨🚨🚨\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792727602.7944913,
-      "retries": 54,
-      "last_retry_at": 1792733732.1021981
+      "retries": 72,
+      "last_retry_at": 1792735472.437023
     },
     {
       "id": "vip_multi_agent_kianmeli1_93652",
@@ -890,8 +890,8 @@
       "text": "🔴صداوسیما: پهپاد جدید شاهد۲۳۸ با سرعت سه برابر شاهد۱۳۶ بزودی خواهید دید\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792727612.6124964,
-      "retries": 53,
-      "last_retry_at": 1792733733.6056502
+      "retries": 71,
+      "last_retry_at": 1792735490.4569297
     },
     {
       "id": "vip_multi_agent_kianmeli1_93653",
@@ -901,8 +901,8 @@
       "text": "🔴جنگ با ایران باید مدت‌ها پیش انجام می‌شد\n\n️️رئیس‌جمهور آمریکا دونالد ترامپ مدعی شد که «ایران را در هم کوبیده» و جنگ با ایران باید مدت‌ها پیش و توسط روسای جمهور قبلی انجام می‌شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792727612.6157472,
-      "retries": 51,
-      "last_retry_at": 1792733753.287429
+      "retries": 69,
+      "last_retry_at": 1792735492.1147716
     },
     {
       "id": "vip_multi_agent_kianmeli1_93654",
@@ -912,8 +912,8 @@
       "text": "🔴کانال ۱۴ اسراییل\n\nاینترنت در ایران به دلیل جنگ میخواهد قطع شود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792727612.6188087,
-      "retries": 50,
-      "last_retry_at": 1792733754.791206
+      "retries": 68,
+      "last_retry_at": 1792735493.6172063
     },
     {
       "id": "vip_multi_agent_kianmeli1_93655",
@@ -923,8 +923,8 @@
       "text": "‏🔴چند هواپیمای ترابری روسی در بوشهر نشستند٫ \n‏احتمالأ پرسنل روسی از نیروگاه بوشهر در حال تخلیه هستند\n\n[قبل از حمله ۹ اسفند همین اتفاق افتاد]\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792727612.621643,
-      "retries": 50,
-      "last_retry_at": 1792733756.2946632
+      "retries": 68,
+      "last_retry_at": 1792735495.119665
     },
     {
       "id": "vip_multi_agent_kianmeli1_93656",
@@ -934,8 +934,8 @@
       "text": "🔴طرفداران فلسطین در اروپا فراخوان داده اند تمام برندهای یهودی در سطح شهر غارت میشود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792727612.624552,
-      "retries": 49,
-      "last_retry_at": 1792733774.4561965
+      "retries": 67,
+      "last_retry_at": 1792735511.6234272
     },
     {
       "id": "vip_multi_agent_withyashar_26229",
@@ -945,8 +945,8 @@
       "text": "دیدبان اتاق جنگ : عمو یاشار دارن تجهیزات نظامی یکی یکی جابجا می کنن بهبهان\n@WarRoom",
       "is_edit": true,
       "enqueued_at": 1792729444.5022438,
-      "retries": 34,
-      "last_retry_at": 1792733775.9596527
+      "retries": 52,
+      "last_retry_at": 1792735513.3002944
     },
     {
       "id": "vip_multi_agent_kianmeli1_93658",
@@ -956,9 +956,42 @@
       "text": "🔴قیمت نفت ۱۱۴ دلار\n\nاین گرانی، دست بانک‌ها را برای کاهش نرخ بهره می‌بندد\n\nپیامدها:\n۱-اعتراضات به هزینه‌های زندگی\n۲-اعتصابات در بخش حمل‌ونقل و زنجیره تأمین\n۳-بی‌ثباتی سیاسی در کشورهای در حال توسعه\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792732361.3702636,
-      "retries": 17,
-      "last_retry_at": 1792733735.1086748
+      "retries": 35,
+      "last_retry_at": 1792735514.8027668
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26267",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26267,
+      "text": "آسوشیتدپرس: عربستان سعودی ظرفیت خط لوله شرق به غرب را به حدود هفت میلیون بشکه در روز افزایش داده است تا بخشی از صادرات نفت را بدون عبور از تنگه هرمز منتقل کند. این اقدام در واکنش به تهدیدهای امنیتی علیه مسیرهای صادرات انرژی منطقه انجام شده است.\n@WarRoom",
+      "is_edit": true,
+      "enqueued_at": 1792735044.0766277,
+      "retries": 7,
+      "last_retry_at": 1792735473.940293
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6587",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6587,
+      "text": "A shooting earlier this morning targeted several occupation army soldiers in Hebron, wounding 5 soldiers, including two seriously.",
+      "is_edit": true,
+      "enqueued_at": 1792735518.306176,
+      "retries": 1,
+      "last_retry_at": 1792735532.9645782
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39770",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39770,
+      "text": "عملية إطلاق نار صباح اليوم استهدفت عددا من جنود جيش الاحتلال في الخليل أدت لإصابة 5 جنود، بينها إصابتان خطيرتان.",
+      "is_edit": true,
+      "enqueued_at": 1792735518.3122747,
+      "retries": 1,
+      "last_retry_at": 1792735534.467004
     }
   ],
-  "last_saved": "2026-10-23 05:36:56 UTC"
+  "last_saved": "2026-10-23 06:05:48 UTC"
 }
