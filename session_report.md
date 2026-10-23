@@ -1,6 +1,9 @@
 # Sentinel Session Report
 
-- **Uptime:** 37 minutes
-- **Messages Processed:** 71
-- **Last Message Text:** اتاق جنگ با یاشار : خطاب به مادران عزیز کشورم که نگران در دایرکت پشت هم پیغام میدند ، هیچ چیز ارزش ح...
-- **Last Message Time:** 2026-10-23 16:24:27
+- **Uptime:** 28 minutes
+- **Messages Processed:** 34
+- **Last Message Text:** 🔴بسیاری از خانواده های سلطنتی از کویت و امارات و عربستان خارج شده اند
+
+#کیان_ملی 
+https://t.me/kianm...
+- **Last Message Time:** 2026-10-23 16:57:04
