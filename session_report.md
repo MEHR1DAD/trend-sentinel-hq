@@ -1,7 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 34 minutes
-- **Messages Processed:** 49
-- **Last Message Text:** نفت تخت گاز کرده به سمت ۱۱۶$ 
-@WarRoom ⚠️⚠️⚠️⚠️
-- **Last Message Time:** 2026-10-23 13:54:16
+- **Uptime:** 29 minutes
+- **Messages Processed:** 47
+- **Last Message Text:** الناشط الصهيوني دانيال عمرام:
+
+كونوا بالقرب من الملاجئ خلال عطلة نهاية الأسبوع.
+- **Last Message Time:** 2026-10-23 14:24:52
