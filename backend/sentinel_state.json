@@ -735,13 +735,13 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39845,
-    "withyashar": 26334,
+    "Alibk3": 39852,
+    "withyashar": 26337,
     "VahidOnline": 78820,
     "netblocks": 1576,
     "iliaen": 4747,
-    "Ali_bk_8": 6666,
-    "kianmeli1": 93675
+    "Ali_bk_8": 6671,
+    "kianmeli1": 93677
   },
   "vahid_post_time": {},
   "ilia_post_time": {},
@@ -829,14 +829,14 @@
     "gemini-3.5-flash-lite": 6537,
     "gemini-2.5-flash": 325,
     "gemini-3-flash-preview": 799,
-    "gemini-3.1-flash-lite": 2376,
-    "gemini-3.1-flash-lite-preview": 1185,
+    "gemini-3.1-flash-lite": 2396,
+    "gemini-3.1-flash-lite-preview": 1317,
     "gemini-3.6-flash": 394,
     "gemini-3.7-flash": 205,
     "gemini-flash-lite-latest": 568,
-    "gemini-3.5-flash": 387,
+    "gemini-3.5-flash": 389,
     "gemini-flash-latest": 42
   },
   "smart_queue": [],
-  "last_saved": "2026-10-23 19:07:50 UTC"
+  "last_saved": "2026-10-23 19:55:04 UTC"
 }
