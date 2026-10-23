@@ -441,17 +441,23 @@ class LiveSentinel:
                 print(f"⚠️ [PEER CACHE] Could not resolve entity for {n}: {e}")
         self.save_peer_cache()
 
-        # Permanently save newly resolved peers to git repository
+        # Permanently save newly resolved peers to git repository asynchronously in background
         try:
-            import subprocess
-            subprocess.run(
-                'git add backend/telegram_peer_cache.json && git diff --staged --quiet || (git commit -m "[skip ci] update telegram_peer_cache.json with resolved access_hash" && git pull --rebase origin main && git push || true)',
-                shell=True,
-                timeout=20
-            )
-            print("💾 [PEER CACHE] Permanently committed and pushed updated peer cache to GitHub repository.")
-        except Exception as git_err:
-            print(f"⚠️ [PEER CACHE] Could not git push peer cache: {git_err}")
+            loop = asyncio.get_running_loop()
+            def do_git_push():
+                try:
+                    import subprocess
+                    subprocess.run(
+                        'git add backend/telegram_peer_cache.json && git diff --staged --quiet || (git commit -m "[skip ci] update telegram_peer_cache.json with resolved access_hash" && git pull --rebase origin main && git push || true)',
+                        shell=True,
+                        timeout=20
+                    )
+                    print("💾 [PEER CACHE] Permanently committed and pushed updated peer cache to GitHub repository.")
+                except Exception as git_err:
+                    print(f"⚠️ [PEER CACHE] Could not git push peer cache: {git_err}")
+            asyncio.create_task(loop.run_in_executor(None, do_git_push))
+        except Exception as bg_err:
+            print(f"⚠️ [PEER CACHE] Could not schedule git push task: {bg_err}")
 
     def load_persisted_state(self):
         try:
@@ -531,8 +537,8 @@ class LiveSentinel:
 
                 raw_queue = data.get('smart_queue', [])
                 now = time.time()
-                self.smart_queue = [q for q in raw_queue if isinstance(q, dict) and (now - q.get('enqueued_at', 0)) <= 2700]
-                queue_log = f", {len(self.smart_queue)} queued items (45m TTL)" if self.smart_queue else ""
+                self.smart_queue = [q for q in raw_queue if isinstance(q, dict) and (now - q.get('enqueued_at', 0)) <= 14400]
+                queue_log = f", {len(self.smart_queue)} queued items (4h TTL)" if self.smart_queue else ""
                 
                 print(f"📦 Loaded persistent state: {len(self.alerted_msg_patterns)} alerted msg keys, {len(self.vip_alert_history)} VIP alerts, {len(self.alibk_posted_map)} Alibk alerts, {len(self.mirror_posted_map['VahidOnline'])} Vahid AI, {len(self.mirror_posted_map['iliaen'])} Ilia AI, {len(self.db.channel_watermarks)} VIP watermarks{queue_log}.")
         except Exception as e:
@@ -563,7 +569,7 @@ class LiveSentinel:
             if len(clean_alibk) < 50:
                 clean_alibk = dict(list(self.alibk_posted_map.items())[-150:])
 
-            clean_queue = [q for q in self.smart_queue if isinstance(q, dict) and (now - q.get('enqueued_at', 0)) <= 2700]
+            clean_queue = [q for q in self.smart_queue if isinstance(q, dict) and (now - q.get('enqueued_at', 0)) <= 14400]
 
             # هرس الگوهای پیام برای سبک‌سازی شدید sentinel_state.json از ۶۵۰ کیلوبایت به زیر ۸۰ کیلوبایت
             active_keys = set(clean_vip.keys()) | set(clean_threads.keys())
@@ -615,6 +621,7 @@ class LiveSentinel:
         1. Message object directly (msg_obj.edit)
         2. Bot client (self.bot.edit_message)
         3. User client (reader_client.edit_message or self.client.edit_message)
+        Includes automatic fallback to plain text if Markdown entity parsing fails.
         """
         target_peer = self.get_node_input_peer(channel) or channel
         if msg_obj and getattr(msg_obj, 'out', False):
@@ -622,7 +629,16 @@ class LiveSentinel:
                 await msg_obj.edit(new_text, link_preview=False)
                 print(f"✅ Successfully edited {channel} msg {msg_id} via Message object.")
                 return True
+            except errors.rpcerrorlist.MessageNotModifiedError:
+                return True
             except Exception as e_obj:
+                if "parse" in str(e_obj).lower() or "entity" in str(e_obj).lower() or "character" in str(e_obj).lower():
+                    try:
+                        await msg_obj.edit(new_text, parse_mode=None, link_preview=False)
+                        print(f"✅ Successfully edited {channel} msg {msg_id} via Message object (plain-text fallback).")
+                        return True
+                    except Exception:
+                        pass
                 print(f"⚠️ Message object edit failed for {channel}/{msg_id}: {e_obj}")
 
         if self.bot:
@@ -630,7 +646,16 @@ class LiveSentinel:
                 await self.bot.edit_message(target_peer, msg_id, new_text, link_preview=False)
                 print(f"✅ Successfully edited {channel} msg {msg_id} via Bot client.")
                 return True
+            except errors.rpcerrorlist.MessageNotModifiedError:
+                return True
             except Exception as e_bot:
+                if "parse" in str(e_bot).lower() or "entity" in str(e_bot).lower() or "character" in str(e_bot).lower():
+                    try:
+                        await self.bot.edit_message(target_peer, msg_id, new_text, parse_mode=None, link_preview=False)
+                        print(f"✅ Successfully edited {channel} msg {msg_id} via Bot client (plain-text fallback).")
+                        return True
+                    except Exception:
+                        pass
                 print(f"⚠️ Bot edit failed for {channel}/{msg_id}: {e_bot}")
 
         u_client = reader_client or self.client
@@ -639,7 +664,16 @@ class LiveSentinel:
                 await u_client.edit_message(target_peer, msg_id, new_text, link_preview=False)
                 print(f"✅ Successfully edited {channel} msg {msg_id} via User client.")
                 return True
+            except errors.rpcerrorlist.MessageNotModifiedError:
+                return True
             except Exception as e_user:
+                if "parse" in str(e_user).lower() or "entity" in str(e_user).lower() or "character" in str(e_user).lower():
+                    try:
+                        await u_client.edit_message(target_peer, msg_id, new_text, parse_mode=None, link_preview=False)
+                        print(f"✅ Successfully edited {channel} msg {msg_id} via User client (plain-text fallback).")
+                        return True
+                    except Exception:
+                        pass
                 print(f"⚠️ User client edit failed for {channel}/{msg_id}: {e_user}")
 
         return False
@@ -952,11 +986,11 @@ class LiveSentinel:
             self.smart_queue.append(item)
             if raw_msg:
                 self.smart_queue_raw_msgs[item_id] = raw_msg
-            print(f"📥 [SMART QUEUE: ENQUEUED] Added {item_id} to queue (Queue size: {len(self.smart_queue)}, TTL: 45m / 2700s). Waiting for API availability...")
+            print(f"📥 [SMART QUEUE: ENQUEUED] Added {item_id} to queue (Queue size: {len(self.smart_queue)}, TTL: 4h / 14400s). Waiting for API availability...")
             self.save_persisted_state()
 
     async def run_smart_queue_worker(self):
-        print("🚀 [SMART QUEUE] Background Retry Worker started (TTL: 45m / 2700s, Check Interval: 15s).")
+        print("🚀 [SMART QUEUE] Background Retry Worker started (TTL: 4h / 14400s, Check Interval: 15s).")
         while True:
             try:
                 await asyncio.sleep(15)
@@ -1028,7 +1062,7 @@ class LiveSentinel:
 
             success = False
             try:
-                if item.get('pipeline') in ('vip_multi_agent', 'vip', 'yashar', 'alibk'):
+                if item.get('pipeline') in ('vip_multi_agent', 'vip', 'yashar', 'alibk', 'vahid', 'ilia', 'mirror'):
                     success = await self.vip_pipeline.process_queue_item(item, raw_msg=raw_msg)
             except Exception as proc_err:
                 print(f"⚠️ [SMART QUEUE: ERROR] Processing failed for {item_id}: {proc_err}")
@@ -1051,22 +1085,26 @@ class LiveSentinel:
                 await asyncio.sleep(1.5)
 
     # --- Central Event Router ---
-    async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None):
+    async def process_message(self, text, node, msg_id, is_edit=False, msg_date=None, raw_msg=None, wait=False):
         async with self.lock:
             canon = (node or '').lower()
             canon_node = VIP_MAP.get(canon)
             if not canon_node:
                 # Strictly drop any non-VIP message immediately
-                return
+                return None
 
             self.total_msgs_processed += 1
             self.last_msg_text = (text[:100] + "...") if text and len(text) > 100 else (text or "")
             self.last_msg_time = time.strftime("%Y-%m-%d %H:%M:%S")
 
-            # VIP Channels: 5-Soldier Multi-Agent Pipeline (withyashar, Alibk3, VahidOnline, iliaen, netblocks)
-            task = asyncio.create_task(self.vip_pipeline.handle_message(text, canon_node, msg_id, raw_msg=raw_msg, is_edit=is_edit))
-            self.active_tasks.add(task)
-            task.add_done_callback(self.active_tasks.discard)
+            if wait:
+                return await self.vip_pipeline.handle_message(text, canon_node, msg_id, raw_msg=raw_msg, is_edit=is_edit)
+            else:
+                # VIP Channels: 5-Soldier Multi-Agent Pipeline (withyashar, Alibk3, VahidOnline, iliaen, netblocks)
+                task = asyncio.create_task(self.vip_pipeline.handle_message(text, canon_node, msg_id, raw_msg=raw_msg, is_edit=is_edit))
+                self.active_tasks.add(task)
+                task.add_done_callback(self.active_tasks.discard)
+                return task
 
 
 async def main():
@@ -1215,13 +1253,15 @@ async def main():
                             new_msgs = [m for m in messages if m.id > last_ids[node]]
                             new_msgs.reverse()
                             for m in new_msgs:
-                                await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m)
+                                await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m, wait=True)
+                                last_ids[node] = max(last_ids[node], m.id)
                             last_ids[node] = max(last_ids[node], latest_id)
                         else:
                             new_msgs = [m for m in messages if m.id > effective_last_id]
                             new_msgs.reverse()
                             for m in new_msgs:
-                                await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m)
+                                await sentinel.process_message(m.message, node, m.id, msg_date=m.date, raw_msg=m, wait=True)
+                                last_ids[node] = max(last_ids.get(node, effective_last_id), m.id)
                             last_ids[node] = max(effective_last_id, latest_id)
                 except errors.FloodWaitError as fwe:
                     print(f"⚠️ [POLLER: FLOOD WAIT] Telegram requested {fwe.seconds}s pause on node {node}. Sleeping...")
@@ -1241,10 +1281,22 @@ async def main():
                 
                 if client and not client.is_connected():
                     print("⚠️ Telethon client disconnected detected in heartbeat! Reconnecting...")
-                    await client.connect()
+                    try:
+                        await client.connect()
+                    except errors.FloodWaitError as fwe:
+                        print(f"⚠️ [HEARTBEAT FLOOD WAIT] Telethon client flood wait: {fwe.seconds}s.")
+                        await asyncio.sleep(fwe.seconds + 2)
+                    except Exception as rc_err:
+                        print(f"⚠️ Telethon client reconnect error: {rc_err}")
                 if bot and not bot.is_connected():
                     print("⚠️ Telethon bot disconnected detected in heartbeat! Reconnecting...")
-                    await bot.connect()
+                    try:
+                        await bot.connect()
+                    except errors.FloodWaitError as fwe:
+                        print(f"⚠️ [HEARTBEAT FLOOD WAIT] Telethon bot flood wait: {fwe.seconds}s.")
+                        await asyncio.sleep(fwe.seconds + 2)
+                    except Exception as rb_err:
+                        print(f"⚠️ Telethon bot reconnect error: {rb_err}")
             except Exception as e:
                 print(f"⚠️ Heartbeat monitor error: {e}")
         

@@ -398,11 +398,16 @@ class GeminiClient:
                         self.key_model_cooldown[(model, cur_key)] = time.time() + 15
                         continue
 
-                # اگر تمام کلیدها روی این مدل ناموفق بودند، این مدل را موقتاً کول‌داون کن تا پیام‌های بعدی رویش گیر نکنند!
-                self.model_cooldown_until[model] = time.time() + 300  # ۵ دقیقه کول‌داون روی این مدل
+                # اگر تمام کلیدها روی این مدل ناموفق بودند، زمان کول‌داون مدل را برابر با نزدیک‌ترین زمان آزادسازی کلیدها قرار بده
+                now = time.time()
+                key_cooldowns = [self.key_model_cooldown.get((model, k), now) for k in self.api_keys]
+                earliest_key_ready = min(key_cooldowns) if key_cooldowns else (now + 15)
+                calculated_model_cd = max(earliest_key_ready, now + 15)
+                self.model_cooldown_until[model] = calculated_model_cd
+                cd_sec = calculated_model_cd - now
                 if model_idx < len(stack) - 1:
                     next_cand = stack[model_idx + 1]
-                    print(f"📉 [SOLDIER 0: MODEL FALLBACK | {soldier_name}] All keys exhausted for {model}. Falling back to #{model_idx+2}: {next_cand}")
+                    print(f"📉 [SOLDIER 0: MODEL FALLBACK | {soldier_name}] All keys exhausted for {model} (cooldown: {cd_sec:.0f}s). Falling back to #{model_idx+2}: {next_cand}")
 
             # اگر کل این پشته تمام شد، لاگ آبشاری به پشته بعدی
             print(f"📉 [SOLDIER 0: TIER CASCADE | {soldier_name}] Tier '{current_tier_name}' fully exhausted. Cascading to next available tier...")

@@ -14,7 +14,7 @@ class DatabaseManager:
 
     def init_posted_db(self):
         try:
-            con = sqlite3.connect(self.db_file)
+            con = sqlite3.connect(self.db_file, timeout=30.0)
             cur = con.cursor()
             cur.execute("PRAGMA journal_mode = WAL;")
             cur.execute("PRAGMA synchronous = NORMAL;")
@@ -82,7 +82,7 @@ class DatabaseManager:
                 return self.recent_posted_map[(target_channel, canon, src_int)]
 
             # 2. Durable SQLite fallback
-            con = sqlite3.connect(self.db_file)
+            con = sqlite3.connect(self.db_file, timeout=30.0)
             cur = con.cursor()
             cur.execute(
                 "SELECT posted_msg_id FROM posted_sources WHERE target_channel = ? AND source_node = ? AND source_msg_id = ?",
@@ -104,7 +104,7 @@ class DatabaseManager:
 
     def _sync_delete_posted(self, target_channel, source_node, src_int):
         try:
-            con = sqlite3.connect(self.db_file)
+            con = sqlite3.connect(self.db_file, timeout=30.0)
             cur = con.cursor()
             cur.execute(
                 "DELETE FROM posted_sources WHERE target_channel = ? AND source_node = ? AND source_msg_id = ?",
@@ -131,7 +131,7 @@ class DatabaseManager:
 
     def _sync_insert_posted(self, target_channel, source_node, src_int, dst_int, ts):
         try:
-            con = sqlite3.connect(self.db_file)
+            con = sqlite3.connect(self.db_file, timeout=30.0)
             cur = con.cursor()
             cur.execute("""
                 INSERT OR REPLACE INTO posted_sources (target_channel, source_node, source_msg_id, posted_msg_id, created_at)
@@ -168,7 +168,7 @@ class DatabaseManager:
 
     def _sync_update_watermark(self, canon_node, new_val, ts):
         try:
-            con = sqlite3.connect(self.db_file)
+            con = sqlite3.connect(self.db_file, timeout=30.0)
             cur = con.cursor()
             cur.execute("""
                 INSERT INTO channel_watermarks (canon_node, last_seen_msg_id, updated_at)
@@ -200,7 +200,7 @@ class DatabaseManager:
 
     def optimize(self):
         try:
-            con = sqlite3.connect(self.db_file)
+            con = sqlite3.connect(self.db_file, timeout=30.0)
             cur = con.cursor()
             cur.execute("PRAGMA optimize;")
             con.commit()

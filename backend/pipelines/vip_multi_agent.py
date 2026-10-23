@@ -877,8 +877,8 @@ class VipMultiAgentEditorialPipeline:
 
             sent = None
             is_fallback = False
+            target_peer = self.sentinel.get_node_input_peer(target_channel) or target_channel
             try:
-                target_peer = self.sentinel.get_node_input_peer(target_channel) or target_channel
                 sent = await self.sentinel.bot.send_message(
                     target_peer,
                     alert_text,
@@ -887,18 +887,35 @@ class VipMultiAgentEditorialPipeline:
                     reply_to=reply_to_post_id
                 )
             except Exception as reply_err:
-                print(f"⚠️ [REPLY FALLBACK] Could not reply to #{reply_to_post_id} in {target_channel} ({reply_err}). Falling back to standalone post...")
-                try:
-                    sent = await self.sentinel.bot.send_message(
-                        target_peer,
-                        alert_text,
-                        link_preview=False,
-                        silent=is_silent
-                    )
-                    is_fallback = True
-                except Exception as fallback_err:
-                    print(f"❌ [DISPATCH ERROR] Both reply and standalone fallback failed for {target_channel}: {fallback_err}")
-                    return
+                if "parse" in str(reply_err).lower() or "entity" in str(reply_err).lower() or "character" in str(reply_err).lower():
+                    try:
+                        sent = await self.sentinel.bot.send_message(
+                            target_peer, alert_text, parse_mode=None, link_preview=False, silent=is_silent, reply_to=reply_to_post_id
+                        )
+                    except Exception:
+                        pass
+                if not sent:
+                    print(f"⚠️ [REPLY FALLBACK] Could not reply to #{reply_to_post_id} in {target_channel} ({reply_err}). Falling back to standalone post...")
+                    try:
+                        sent = await self.sentinel.bot.send_message(
+                            target_peer,
+                            alert_text,
+                            link_preview=False,
+                            silent=is_silent
+                        )
+                        is_fallback = True
+                    except Exception as fallback_err:
+                        if "parse" in str(fallback_err).lower() or "entity" in str(fallback_err).lower() or "character" in str(fallback_err).lower():
+                            try:
+                                sent = await self.sentinel.bot.send_message(
+                                    target_peer, alert_text, parse_mode=None, link_preview=False, silent=is_silent
+                                )
+                                is_fallback = True
+                            except Exception:
+                                pass
+                        if not sent:
+                            print(f"❌ [DISPATCH ERROR] Both reply and standalone fallback failed for {target_channel}: {fallback_err}")
+                            return
 
             if sent:
                 target_td['updated_at'] = time.time()
@@ -973,7 +990,17 @@ class VipMultiAgentEditorialPipeline:
 
         try:
             target_peer = self.sentinel.get_node_input_peer(target_channel) or target_channel
-            sent = await self.sentinel.bot.send_message(target_peer, alert_text, link_preview=False, silent=is_silent)
+            sent = None
+            try:
+                sent = await self.sentinel.bot.send_message(target_peer, alert_text, link_preview=False, silent=is_silent)
+            except Exception as send_err:
+                if "parse" in str(send_err).lower() or "entity" in str(send_err).lower() or "character" in str(send_err).lower():
+                    try:
+                        sent = await self.sentinel.bot.send_message(target_peer, alert_text, parse_mode=None, link_preview=False, silent=is_silent)
+                    except Exception:
+                        pass
+                if not sent:
+                    raise send_err
             if sent:
                 # چتر نجات: اطمینان مضاعف از عدم ارسال دابل‌پست همزمان
                 existing_ch, prev_id = self.find_existing_posted_alert(node, msg_id, target_channel=target_channel)
@@ -1077,10 +1104,14 @@ class VipMultiAgentEditorialPipeline:
         7. انتشار یا ادغام امن درجا
         8. در صورت قطعی هر مرحله: ارسال مستقیم به صف هوشمند ۴۵ دقیقه‌ای (بدون انتشار خام)
         """
-        # جلوگیری از رشد نامحدود حافظه در قفل‌ها
+        # جلوگیری از رشد نامحدود حافظه در قفل‌ها (هرس ایمن تنها برای قفل‌های آزاد و غیرفعال)
         if len(self.msg_locks) > 500:
-            for old_k in list(self.msg_locks.keys())[:100]:
-                self.msg_locks.pop(old_k, None)
+            for old_k in list(self.msg_locks.keys()):
+                lock_obj = self.msg_locks.get(old_k)
+                if lock_obj and not lock_obj.locked():
+                    self.msg_locks.pop(old_k, None)
+                if len(self.msg_locks) <= 300:
+                    break
 
         # ----------------------------------------------------
         # مدیریت هوشمند آلبوم‌ها و مدیاگروپ‌ها (Telegram Media Groups Buffer)
