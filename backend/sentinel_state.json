@@ -735,12 +735,12 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39867,
-    "withyashar": 26357,
+    "Alibk3": 39868,
+    "withyashar": 26358,
     "VahidOnline": 78823,
     "netblocks": 1576,
     "iliaen": 4747,
-    "Ali_bk_8": 6685,
+    "Ali_bk_8": 6686,
     "kianmeli1": 93699
   },
   "vahid_post_time": {},
@@ -826,15 +826,15 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 228,
-    "gemini-3.5-flash-lite": 6552,
+    "gemini-3.5-flash-lite": 6558,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 823,
-    "gemini-3.1-flash-lite": 2473,
-    "gemini-3.1-flash-lite-preview": 1518,
+    "gemini-3-flash-preview": 827,
+    "gemini-3.1-flash-lite": 2474,
+    "gemini-3.1-flash-lite-preview": 1522,
     "gemini-3.6-flash": 399,
     "gemini-3.7-flash": 205,
-    "gemini-flash-lite-latest": 576,
-    "gemini-3.5-flash": 399,
+    "gemini-flash-lite-latest": 577,
+    "gemini-3.5-flash": 404,
     "gemini-flash-latest": 42
   },
   "smart_queue": [
@@ -846,8 +846,8 @@
       "text": "سلام بندر لنگه باز هم یه صدایی شنیده شد و نگهبان های گمرک از داخل اومدن بیرون و ترسید کامل ، یکی کامل داره نگاه تو اسمون میکنه\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792792523.0236905,
-      "retries": 34,
-      "last_retry_at": 1792796193.8931205
+      "retries": 52,
+      "last_retry_at": 1792797948.4175715
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6677",
@@ -857,19 +857,8 @@
       "text": "The occupation army has begun evacuating Palestinians from the al-Jaladah area of Hebron following the launch of a military operation there.",
       "is_edit": true,
       "enqueued_at": 1792792636.4147203,
-      "retries": 33,
-      "last_retry_at": 1792796225.413725
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26354",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26354,
-      "text": "یاشار جون شبت به خیر ، امروز باشگاهی فیتنس فرست زیر هتل هیلتون فرانکفرت رو تخلیه کردن گفتن که به خاطر این که صاحب اینجا یه ایرانی بوده به نظرم همون انصاری (مسئول خرید مجتبی ) اگه اشتباه نکنم سه هفته بهشون وقت دادن که تمام هرچی که دارن رو ببرن بیرون کل هیلتون و تمام مجموعه هایی که زیر اون ساختمون بودن\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792792775.5945902,
-      "retries": 31,
-      "last_retry_at": 1792796151.7549136
+      "retries": 51,
+      "last_retry_at": 1792797949.9207144
     },
     {
       "id": "vip_multi_agent_withyashar_26355",
@@ -879,8 +868,8 @@
       "text": "مرد خردمند ، مارک لوین : قراره اینبار با ۵۰۰جنگنده به ایران حمله بشه و بالای هزارتا هدف تو دقایق اول بزنن\n@WarRoom 🚨🚨🚨🚨🚨",
       "is_edit": false,
       "enqueued_at": 1792792850.408465,
-      "retries": 30,
-      "last_retry_at": 1792796153.2584643
+      "retries": 48,
+      "last_retry_at": 1792797951.4238358
     },
     {
       "id": "vip_multi_agent_Alibk3_39861",
@@ -890,8 +879,8 @@
       "text": "جيش الاحتلال يقتحم مدينة الخليل بقوات عسكرية كبيرة، تمهيدًا لتنفيذ عملية عسكرية واسعة النطاق داخل المدينة، عقب الهجوم الذي نفذه شبان فلسطينيون صباح أمس.",
       "is_edit": true,
       "enqueued_at": 1792792850.4198859,
-      "retries": 29,
-      "last_retry_at": 1792796154.8602493
+      "retries": 47,
+      "last_retry_at": 1792797953.0695102
     },
     {
       "id": "vip_multi_agent_withyashar_26356",
@@ -901,8 +890,8 @@
       "text": "سلام عمو یاشار بندرعباس صدای ترکیدن  ی چیزی اومد همزمان برق رفت   گلشهر",
       "is_edit": false,
       "enqueued_at": 1792792963.4832838,
-      "retries": 28,
-      "last_retry_at": 1792796156.3639235
+      "retries": 45,
+      "last_retry_at": 1792797874.8536313
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6680",
@@ -912,8 +901,8 @@
       "text": "Occupation army forces storm several cities in the West Bank, including Hebron and Nablus.",
       "is_edit": true,
       "enqueued_at": 1792793076.6489606,
-      "retries": 27,
-      "last_retry_at": 1792796172.8764007
+      "retries": 44,
+      "last_retry_at": 1792797895.8719904
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6683",
@@ -923,8 +912,8 @@
       "text": "Occupation army forces storm several cities in the West Bank, including Hebron and Nablus.",
       "is_edit": false,
       "enqueued_at": 1792793076.6568651,
-      "retries": 27,
-      "last_retry_at": 1792796174.3802004
+      "retries": 44,
+      "last_retry_at": 1792797916.8997736
     },
     {
       "id": "vip_multi_agent_Alibk3_39865",
@@ -934,8 +923,8 @@
       "text": "قوات جيش الاحتلال تقتحم عدة مدن في الضفة الغربية، بينها الخليل ونابلس.",
       "is_edit": true,
       "enqueued_at": 1792793076.6609335,
-      "retries": 15,
-      "last_retry_at": 1792796132.2308342
+      "retries": 31,
+      "last_retry_at": 1792797876.356705
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6684",
@@ -945,8 +934,8 @@
       "text": "نیروهای ارتش اشغالگر خانواده‌ها را از خانه‌هایشان در مناطقی از الخلیل آواره می‌کنند.\n\nOccupation army forces displace families from their homes in areas of Hebron.",
       "is_edit": true,
       "enqueued_at": 1792793755.3976698,
-      "retries": 15,
-      "last_retry_at": 1792796133.7354913
+      "retries": 31,
+      "last_retry_at": 1792797877.85918
     },
     {
       "id": "vip_multi_agent_withyashar_26358",
@@ -956,8 +945,8 @@
       "text": "یادش به خیر چقدر نشستیم رسیدن بار نخد کیشمیش نگاه کردیم تا بالاخره شد ۹ اسفند ...\nکاش آدما همه یاد بگیرن برای مسیرشون و اهدافشون عین شما همینقد استمرار داشته باشن و شل نکنن و کم نیارن \nقلبی به خدا قلبی \nقربون انگشتات که اینهمه نوشتی برامون❤️",
       "is_edit": true,
       "enqueued_at": 1792795203.3383164,
-      "retries": 12,
-      "last_retry_at": 1792796135.2387054
+      "retries": 28,
+      "last_retry_at": 1792797879.3618143
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6686",
@@ -967,8 +956,8 @@
       "text": "Dammam Airport in Saudi Arabia’s Eastern Province has shut down again.",
       "is_edit": false,
       "enqueued_at": 1792795264.3726723,
-      "retries": 12,
-      "last_retry_at": 1792796175.8838809
+      "retries": 28,
+      "last_retry_at": 1792797897.375069
     },
     {
       "id": "vip_multi_agent_Alibk3_39868",
@@ -978,9 +967,20 @@
       "text": "توقف مطار الدمام بالمنطقة الشرقية بالسعودية مجددًا.",
       "is_edit": false,
       "enqueued_at": 1792795264.3798988,
-      "retries": 10,
-      "last_retry_at": 1792796177.3875937
+      "retries": 26,
+      "last_retry_at": 1792797898.8782122
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26359",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26359,
+      "text": "پل هوایی تره بار نظامی آمریکا شامل بار جدید نخود و کشمش جدید از ۳۰ساعت پیش تا همین لحظه\n@WarRoom 🚨🚨🚨🚨🚨",
+      "is_edit": false,
+      "enqueued_at": 1792796505.8260465,
+      "retries": 16,
+      "last_retry_at": 1792797900.3813446
     }
   ],
-  "last_saved": "2026-10-23 22:57:06 UTC"
+  "last_saved": "2026-10-23 23:26:01 UTC"
 }
