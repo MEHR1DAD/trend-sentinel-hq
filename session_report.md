@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 36 minutes
-- **Messages Processed:** 78
-- **Last Message Text:** س: قال سفيركم توم براك بالتأكيد، قد تكون هناك ضربة على إيران نهاية هذا الأسبوع.
+- **Uptime:** 28 minutes
+- **Messages Processed:** 44
+- **Last Message Text:** یک جنگنده آمریکایی از نوع F-35 بر فراز امارات کد اضطراری 7700 را ارسال می‌کند.
 
-ترامب: هل كان ذلك س...
-- **Last Message Time:** 2026-10-23 18:08:00
+A U.S. F-35 fighter ...
+- **Last Message Time:** 2026-10-23 18:38:15
