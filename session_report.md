@@ -1,9 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 28 minutes
-- **Messages Processed:** 34
-- **Last Message Text:** 🔴بسیاری از خانواده های سلطنتی از کویت و امارات و عربستان خارج شده اند
-
-#کیان_ملی 
-https://t.me/kianm...
-- **Last Message Time:** 2026-10-23 16:57:04
+- **Uptime:** 34 minutes
+- **Messages Processed:** 65
+- **Last Message Text:** اتاق جنگ با یاشار : بر اساس تصاویر ماهواره‌ای داغ داغ امروز ، شمار هواپیماهای سوخت‌رسان مستقر در پای...
+- **Last Message Time:** 2026-10-23 17:29:46
