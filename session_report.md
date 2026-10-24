@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 29 minutes
-- **Messages Processed:** 61
-- **Last Message Text:** سفارت روسیه در ایران شایعات مربوط به تخلیه دیپلمات‌ها و کارشناسان شاغل در نیروگاه هسته‌ای بوشهر را ت...
-- **Last Message Time:** 2026-10-24 10:38:53
+- **Uptime:** 28 minutes
+- **Messages Processed:** 32
+- **Last Message Text:** 🔴مقامات اطلاعاتی ایالات متحده می‌گویند ایران تلاش‌های خود را برای هدف قرار دادن دیپلمات‌ها و مقامات ...
+- **Last Message Time:** 2026-10-24 11:09:28
