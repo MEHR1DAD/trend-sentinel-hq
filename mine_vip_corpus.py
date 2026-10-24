@@ -169,6 +169,27 @@ def extract_ngrams_from_text(text: str):
     return all_unigrams, all_bigrams, all_trigrams
 
 
+def get_input_peer_for_channel(channel_name: str):
+    """Loads exact InputPeerChannel with access_hash from peer cache to bypass username resolution issues."""
+    cache_path = os.path.join(os.path.dirname(__file__), "backend", "telegram_peer_cache.json")
+    if os.path.exists(cache_path):
+        try:
+            with open(cache_path, "r", encoding="utf-8") as f:
+                cdata = json.load(f)
+            node_peers = cdata.get("node_peers", {})
+            clean_target = channel_name.lstrip('@').lower()
+            for key, val in node_peers.items():
+                if key.lstrip('@').lower() == clean_target:
+                    cid = val.get("channel_id")
+                    ah = val.get("access_hash")
+                    if cid and ah:
+                        from telethon.tl.types import InputPeerChannel
+                        return InputPeerChannel(channel_id=int(cid), access_hash=int(ah))
+        except Exception as e:
+            print(f"⚠️ Error reading peer cache for {channel_name}: {e}")
+    return None
+
+
 async def mine_channel(client: TelegramClient, channel_name: str, max_days: int):
     """
     Safely iterates through channel history up to max_days,
@@ -197,14 +218,21 @@ async def mine_channel(client: TelegramClient, channel_name: str, max_days: int)
         for w in WINDOWS.keys()
     }
 
-    try:
-        entity = await client.get_entity(channel_name)
-    except (ChannelPrivateError, UsernameInvalidError) as e:
-        print(f"❌ Cannot access @{channel_name}: {e}")
-        return None
-    except Exception as e:
-        print(f"⚠️ Error resolving entity for @{channel_name}: {e}")
-        return None
+    entity = get_input_peer_for_channel(channel_name)
+    if entity:
+        print(f"🎯 Using cached InputPeerChannel for @{channel_name}")
+    else:
+        try:
+            entity = await client.get_entity(channel_name)
+        except (ChannelPrivateError, UsernameInvalidError) as e:
+            try:
+                entity = await client.get_entity(f"@{channel_name.lstrip('@')}")
+            except Exception:
+                print(f"❌ Cannot access @{channel_name}: {e}")
+                return None
+        except Exception as e:
+            print(f"⚠️ Error resolving entity for @{channel_name}: {e}")
+            return None
 
     count = 0
     skipped_count = 0
@@ -368,6 +396,24 @@ async def main():
 
     print("🔐 Telegram client successfully authorized.")
 
+    try:
+        print("📥 Pre-populating entity cache from account dialogs...")
+        await client.get_dialogs(limit=100)
+    except Exception as e:
+        print(f"⚠️ Dialogs prefetch note: {e}")
+
+    # Load existing results if available
+    json_path = os.path.join(OUTPUT_DIR, "vip_frequency_analysis.json")
+    existing_channels_data = {}
+    if os.path.exists(json_path):
+        try:
+            with open(json_path, "r", encoding="utf-8") as f:
+                existing_json = json.load(f)
+                existing_channels_data = existing_json.get("channels", {})
+                print(f"📂 Found existing results for {list(existing_channels_data.keys())}. Preserving unless re-mined.")
+        except Exception as e:
+            print(f"⚠️ Error reading existing JSON: {e}")
+
     all_results = {}
     global_stats = {
         w: {
@@ -412,15 +458,17 @@ async def main():
             "top_trigrams": global_stats[w]["trigrams"].most_common(100)
         }
 
+    final_channels = existing_channels_data.copy()
     for ch, ch_data in all_results.items():
-        json_export["channels"][ch] = {}
+        final_channels[ch] = {}
         for w in WINDOWS.keys():
-            json_export["channels"][ch][w] = {
+            final_channels[ch][w] = {
                 "message_count": ch_data[w]["message_count"],
                 "top_unigrams": ch_data[w]["unigrams"].most_common(100),
                 "top_bigrams": ch_data[w]["bigrams"].most_common(100),
                 "top_trigrams": ch_data[w]["trigrams"].most_common(60)
             }
+    json_export["channels"] = final_channels
 
     json_path = os.path.join(OUTPUT_DIR, "vip_frequency_analysis.json")
     with open(json_path, "w", encoding="utf-8") as f:
