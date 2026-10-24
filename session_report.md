@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
-- **Uptime:** 28 minutes
-- **Messages Processed:** 40
-- **Last Message Text:** وزارت امور خارجه آمریکا نسبت به افزایش تهدیدهای منطقه‌ای در منطقه هشدار می‌دهد.
+- **Uptime:** 30 minutes
+- **Messages Processed:** 30
+- **Last Message Text:** تصاویری از رزمایش موشکی سپاه پاسداران که هم‌اکنون در جریان است.
 
-The US State Depart...
-- **Last Message Time:** 2026-10-24 12:33:29
+Footage of the IRGC’s missile drill...
+- **Last Message Time:** 2026-10-24 13:02:28
