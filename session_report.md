@@ -1,6 +1,6 @@
 # Sentinel Session Report
 
-- **Uptime:** 29 minutes
-- **Messages Processed:** 23
-- **Last Message Text:** الإعلان عن قتيل وجريح من تنظيم كوملة الكردي الإيراني المعارض، باستهداف إيراني لسيارتهم في السليمانية...
-- **Last Message Time:** 2026-10-24 09:35:54
+- **Uptime:** 28 minutes
+- **Messages Processed:** 40
+- **Last Message Text:** ‏الخارجية الأميركية تحذر من هجمات محتملة قد تستهدف الأميركيين في العراق، ‏داعية إياهم لإعداد خطة مغا...
+- **Last Message Time:** 2026-10-24 10:05:43
