@@ -826,84 +826,18 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 229,
-    "gemini-3.5-flash-lite": 6567,
+    "gemini-3.5-flash-lite": 6572,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 849,
+    "gemini-3-flash-preview": 855,
     "gemini-3.1-flash-lite": 2483,
-    "gemini-3.1-flash-lite-preview": 1532,
-    "gemini-3.6-flash": 403,
+    "gemini-3.1-flash-lite-preview": 1539,
+    "gemini-3.6-flash": 404,
     "gemini-3.7-flash": 206,
-    "gemini-flash-lite-latest": 580,
-    "gemini-3.5-flash": 418,
-    "gemini-flash-latest": 42
+    "gemini-flash-lite-latest": 581,
+    "gemini-3.5-flash": 421,
+    "gemini-flash-latest": 47
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_withyashar_26359",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26359,
-      "text": "پل هوایی تره بار نظامی آمریکا شامل بار جدید نخود و کشمش جدید از ۳۰ساعت پیش تا همین لحظه\n@WarRoom 🚨🚨🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1792796505.8260465,
-      "retries": 128,
-      "last_retry_at": 1792810335.480535
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26360",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26360,
-      "text": "رسانه‌ها به نقل از عباس عراقچی، وزیر امور خارجه ایران، گزارش دادند که مسعود پزشکیان هفته آینده به روسیه سفر می‌کند تا با ولادیمیر پوتین دیدار و گفت‌وگو کند.\n@WarRoom\nامشب رفته سر قبر موشلی هفته دیگه هم میره کرملین دخیل ببنده 😂",
-      "is_edit": false,
-      "enqueued_at": 1792798897.8543398,
-      "retries": 105,
-      "last_retry_at": 1792810356.5094764
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6687",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6687,
-      "text": "وال‌استریت ژورنال:\n\nپاکستان در اجرای تحریم‌های آمریکا، مانع عبور کامیون‌های ورودی از ایران شد.\n\nThe Wall Street Journal:\n\nPakistan has barred trucks arriving from Iran from passing through, in compliance with U.S. sanctions.",
-      "is_edit": false,
-      "enqueued_at": 1792799734.775042,
-      "retries": 97,
-      "last_retry_at": 1792810358.0132606
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26362",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26362,
-      "text": "ارسالی : یاشار داداش ما لب ساحل بودیم بندر کنگ موشک شلیک شد 30ثانیه بعدش لانچر و منفجر کردن دود آتش دیدیم امبولانس میرفت جسد بیاره بدجوری زدن\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792799743.9024348,
-      "retries": 97,
-      "last_retry_at": 1792810398.6633992
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26363",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26363,
-      "text": "فیلم ارسالی از زدن لانچر امشب حدود ساعت ۱ ، بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1792799949.996432,
-      "retries": 95,
-      "last_retry_at": 1792810400.1667018
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26364",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26364,
-      "text": "ارسالی : من تو بیمارستانم الان یه سپاهی آوردن توی پایگاه امام حسین پیش لانچر بوده آوردن انداختنش مث سگ  دونفر همراهش بودن مث سگ میلرزیدن از ترس ریده بودن تو خودشون اصلا عشق کردم این صحنه رو دیدم سپاهیه داشت جون میداد گوششم کر شده بود از شدت موج انفجار\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1792800240.0044956,
-      "retries": 93,
-      "last_retry_at": 1792810401.6701424
-    },
     {
       "id": "vip_multi_agent_kianmeli1_93700",
       "pipeline": "vip_multi_agent",
@@ -912,19 +846,8 @@
       "text": "🔴گزارش‌هایی وجود دارد مبنی بر اینکه ایالات متحده به بندر لنگه در ایران حمله کرده است.\n\nهدف آن‌ها یک پرتابگر موشک ضدکشتی بوده است.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1792801088.6387296,
-      "retries": 83,
-      "last_retry_at": 1792810403.1735008
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39870",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39870,
-      "text": "أكسيوس:\n\nمذكرة استخباراتية أميركية عاجلة تحذر من مؤامرات إيرانية \"متقدمة\" لاستهداف مسؤولين في الخارج.",
-      "is_edit": false,
-      "enqueued_at": 1792801093.5505288,
-      "retries": 82,
-      "last_retry_at": 1792810359.5167055
+      "retries": 99,
+      "last_retry_at": 1792812079.4644203
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6688",
@@ -934,8 +857,8 @@
       "text": "Axios:\n\nAn urgent U.S. intelligence memo warns of “advanced” Iranian plots to target officials abroad.",
       "is_edit": false,
       "enqueued_at": 1792801098.4487548,
-      "retries": 81,
-      "last_retry_at": 1792810361.02017
+      "retries": 97,
+      "last_retry_at": 1792812100.4793797
     },
     {
       "id": "vip_multi_agent_Alibk3_39871",
@@ -945,8 +868,8 @@
       "text": "الاستخبارات الأميركية للخارجية الأميركية:\n\nبات واضحًا أن بعض المعلومات والتحليلات الاستخباراتية المتعلقة بالجهود الإيرانية لاستهداف مسؤولين حكوميين أمريكيين في الشرق الأوسط ومناطق أخرى، تهم عددًا أكبر من الأشخاص مقارنة بمن يملكون حاليًا التصريح الأمني اللازم للاطلاع عليها.\n\nعلى وجه التحديد، تلقّينا عبر قنوات مختلفة معلومات استخباراتية تفيد بأن إيران كثّفت بشكل كبير جهودها لاستهداف أفراد أمريكيين. وقد وصلت المخططات الإيرانية لتنفيذ عمليات قاتلة ضد مواطنين أمريكيين إلى مراحل متقدمة، سواء في الشرق الأوسط أو في بعض الدول الأخرى.",
       "is_edit": false,
       "enqueued_at": 1792801579.1311462,
-      "retries": 32,
-      "last_retry_at": 1792810377.5249376
+      "retries": 48,
+      "last_retry_at": 1792812121.4956315
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6690",
@@ -956,8 +879,8 @@
       "text": "اطلاعات آمریکا خطاب به وزارت خارجه آمریکا:\n\nروشن شده است که برخی اطلاعات و تحلیل‌های اطلاعاتی مربوط به تلاش‌های ایران برای هدف قرار دادن مقام‌های دولتی آمریکا در خاورمیانه و مناطق دیگر، برای شمار بیشتری از افراد اهمیت دارد؛ افرادی بیش از کسانی که در حال حاضر مجوز امنیتی لازم برای دسترسی به آن‌ها را دارند.\n\nبه‌طور مشخص، از طریق کانال‌های مختلف اطلاعاتی دریافت کرده‌ایم که نشان می‌دهد ایران تلاش‌های خود را برای هدف قرار دادن کارکنان آمریکایی به‌طور چشمگیری افزایش داده است. طرح‌های ایران برای انجام عملیات مرگبار علیه شهروندان آمریکایی، هم در خاورمیانه و هم در برخی کشورهای دیگر، به مراحل پیشرفته‌ای رسیده‌اند.",
       "is_edit": false,
       "enqueued_at": 1792801581.9527168,
-      "retries": 31,
-      "last_retry_at": 1792810379.0283318
+      "retries": 46,
+      "last_retry_at": 1792812017.708859
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6689",
@@ -967,8 +890,8 @@
       "text": "U.S. intelligence to the U.S. State Department:\n\nWe have received intelligence through various channels indicating that Iran has significantly intensified its efforts to target American personnel. Iranian plots to carry out lethal operations against American citizens have reached advanced stages, both in the Middle East and in some other countries.",
       "is_edit": true,
       "enqueued_at": 1792801584.6325402,
-      "retries": 30,
-      "last_retry_at": 1792810380.6411471
+      "retries": 45,
+      "last_retry_at": 1792812058.4347742
     },
     {
       "id": "vip_multi_agent_Alibk3_39872",
@@ -978,8 +901,8 @@
       "text": "أكسيوس عن مسؤول أميركي بعد تحذير الاستخبارات الأميركية:\n\nالخارجية الأميركية أمرت يوم الجمعة بتقليص عدد الموظفين الدبلوماسيين والحكوميين الأميركيين في السفارات في الإمارات المتحدة ولبنان وقطر والأردن.",
       "is_edit": false,
       "enqueued_at": 1792801613.7175405,
-      "retries": 29,
-      "last_retry_at": 1792810382.1445706
+      "retries": 44,
+      "last_retry_at": 1792812101.981426
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6691",
@@ -989,8 +912,8 @@
       "text": "Axios, citing a U.S. official, following the U.S. intelligence warning:\n\nOn Friday, the U.S. State Department ordered a reduction in the number of American diplomatic and government personnel at embassies in the UAE, Lebanon, Qatar and Jordan.",
       "is_edit": false,
       "enqueued_at": 1792801619.2797744,
-      "retries": 26,
-      "last_retry_at": 1792810314.4550805
+      "retries": 41,
+      "last_retry_at": 1792812103.4849076
     },
     {
       "id": "vip_multi_agent_netblocks_1577",
@@ -1000,8 +923,8 @@
       "text": "⚠️ Confirmed: Network data show internet connectivity has been knocked out in occupied Crimea, amid power outages following Ukrainian drone attacks targeting energy infrastructure 🔌",
       "is_edit": false,
       "enqueued_at": 1792802207.2819173,
-      "retries": 26,
-      "last_retry_at": 1792810315.9588737
+      "retries": 40,
+      "last_retry_at": 1792812037.4230044
     },
     {
       "id": "vip_multi_agent_withyashar_26365",
@@ -1011,8 +934,8 @@
       "text": "آکسیوس: مدیر اطلاعات ملی آمریکا در یادداشتی محرمانه خارج شده که امروز منتشر شده، درباره تلاش‌های ایران برای ترور دیپلمات‌ها و مقام‌های آمریکایی در خاورمیانه و مناطق دیگر هشدار داده. این اطلاعات و نگرانی از تشدید حملات حوثی‌ها، از دلایل خروج کارکنان و خانواده‌های دیپلمات‌های آمریکایی از چند کشور منطقه خلیج فارس عنوان شده است. در این یادداشت، اهداف مشخص اعلام نشده‌اند.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1792802388.2542715,
-      "retries": 25,
-      "last_retry_at": 1792810317.4613426
+      "retries": 39,
+      "last_retry_at": 1792812038.9260752
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6692",
@@ -1022,8 +945,8 @@
       "text": "حمله یمنی در پایتخت عربستان سعودی، ریاض\n\nA Yemeni attack in the Saudi capital, Riyadh",
       "is_edit": true,
       "enqueued_at": 1792803478.8331902,
-      "retries": 20,
-      "last_retry_at": 1792810318.96418
+      "retries": 34,
+      "last_retry_at": 1792812059.938971
     },
     {
       "id": "vip_multi_agent_Alibk3_39873",
@@ -1033,8 +956,8 @@
       "text": "هجوم يمني في العاصمة السعودية الرياض",
       "is_edit": false,
       "enqueued_at": 1792803478.8382294,
-      "retries": 7,
-      "last_retry_at": 1792810336.9838302
+      "retries": 21,
+      "last_retry_at": 1792812061.4423015
     },
     {
       "id": "vip_multi_agent_Alibk3_39874",
@@ -1044,8 +967,8 @@
       "text": "هجوم يمني في وادي الدواسر بالسعودية.",
       "is_edit": false,
       "enqueued_at": 1792803645.2621489,
-      "retries": 7,
-      "last_retry_at": 1792810338.4872482
+      "retries": 21,
+      "last_retry_at": 1792812062.9456906
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6693",
@@ -1055,8 +978,8 @@
       "text": "A Yemeni attack in Wadi al-Dawasir, Saudi Arabia.",
       "is_edit": false,
       "enqueued_at": 1792803650.1623423,
-      "retries": 7,
-      "last_retry_at": 1792810339.9906723
+      "retries": 21,
+      "last_retry_at": 1792812080.9677336
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6694",
@@ -1066,8 +989,8 @@
       "text": "The moment air defenses were activated in Riyadh",
       "is_edit": false,
       "enqueued_at": 1792803894.0740592,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 16,
+      "last_retry_at": 1792812082.4711108
     },
     {
       "id": "vip_multi_agent_Alibk3_39875",
@@ -1077,8 +1000,8 @@
       "text": "لحظة تفعيل الدفاعات الجوية في الرياض",
       "is_edit": false,
       "enqueued_at": 1792803894.0829124,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 15,
+      "last_retry_at": 1792812019.4145384
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6695",
@@ -1088,8 +1011,8 @@
       "text": "Riyadh just now",
       "is_edit": false,
       "enqueued_at": 1792803984.159311,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 15,
+      "last_retry_at": 1792812083.974431
     },
     {
       "id": "vip_multi_agent_Alibk3_39876",
@@ -1099,8 +1022,8 @@
       "text": "الرياض قبل قليل",
       "is_edit": false,
       "enqueued_at": 1792803984.1674244,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 14,
+      "last_retry_at": 1792812104.9884558
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6696",
@@ -1110,8 +1033,8 @@
       "text": "Saudi air defenses attempt to intercept Yemeni missiles in Riyadh.",
       "is_edit": false,
       "enqueued_at": 1792804040.6946535,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 12,
+      "last_retry_at": 1792812020.9178839
     },
     {
       "id": "vip_multi_agent_Alibk3_39877",
@@ -1121,8 +1044,8 @@
       "text": "محاولات الدفاعات الجوية السعودية للتصدي للصواريخ اليمنية في الرياض.",
       "is_edit": false,
       "enqueued_at": 1792804040.7007737,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 11,
+      "last_retry_at": 1792812040.4288685
     },
     {
       "id": "vip_multi_agent_VahidOnline_78824",
@@ -1132,9 +1055,20 @@
       "text": "به گزارش «آکسیوس» و بر اساس یک یادداشت اطلاعاتی «غیرمحرمانه» به تاریخ اول آبان‌ماه (۲۳ اکتبر) که خطاب به مارکو روبیو، وزیر امور خارجه و مشاور امنیت ملی آمریکا نگاشته شده است، جی کلیتون، مدیر اطلاعات ملی، نسبت به «پیشرفت چشمگیر» طرح‌های ایران برای ترور مقام‌ها و شهروندان آمریکایی در خاورمیانه و برخی مناطق دیگر هشدار داد. در این سند تأکید شده است که اطلاعات مربوط به این تهدیدات باید به دست طیف گسترده‌تری از کارکنان در معرض خطر برسد و به همین منظور، کلیتون پیشنهاد کرده است تا سطح محرمانگی این اسناد کاهش یابد. همزمان با انتشار این هشدار، «سی‌ان‌ان» گزارش داد که وزارت امور خارجه آمریکا در پی تهدیدات ناشی از توطئه‌های ایران و حملات حوثی‌ها، دستور کاهش کادر دیپلماتیک و خروج اعضای خانواده و کارکنان غیرضروری از سفارتخانه‌ها و کنسولگری‌های خود در عربستان سعودی (ریاض، جده و ظهران)، امارات متحده عربی، لبنان، قطر و اردن را صادر کرد.\n@VahidOOnLine\n\n📡 @VahidOnline",
       "is_edit": false,
       "enqueued_at": 1792807214.3880734,
+      "retries": 11,
+      "last_retry_at": 1792812041.9309757
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26349",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26349,
+      "text": "تنگه هم دعوا شده 🚨🚨🚨🚨\n@WarRoom",
+      "is_edit": true,
+      "enqueued_at": 1792810882.4859526,
       "retries": 0,
       "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-24 02:53:32 UTC"
+  "last_saved": "2026-10-24 03:22:01 UTC"
 }
