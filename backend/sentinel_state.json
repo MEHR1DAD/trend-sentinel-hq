@@ -735,12 +735,12 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39880,
+    "Alibk3": 39882,
     "withyashar": 26365,
     "VahidOnline": 78824,
     "netblocks": 1577,
     "iliaen": 4747,
-    "Ali_bk_8": 6699,
+    "Ali_bk_8": 6701,
     "kianmeli1": 93700
   },
   "vahid_post_time": {},
@@ -826,29 +826,18 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 229,
-    "gemini-3.5-flash-lite": 6577,
+    "gemini-3.5-flash-lite": 6578,
     "gemini-2.5-flash": 325,
-    "gemini-3-flash-preview": 867,
-    "gemini-3.1-flash-lite": 2483,
-    "gemini-3.1-flash-lite-preview": 1550,
-    "gemini-3.6-flash": 407,
+    "gemini-3-flash-preview": 868,
+    "gemini-3.1-flash-lite": 2484,
+    "gemini-3.1-flash-lite-preview": 1551,
+    "gemini-3.6-flash": 408,
     "gemini-3.7-flash": 206,
     "gemini-flash-lite-latest": 583,
     "gemini-3.5-flash": 429,
     "gemini-flash-latest": 47
   },
   "smart_queue": [
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6697",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6697,
-      "text": "A Pakistani Il-78MP aircraft and a C-130H aircraft land at King Abdulaziz Air Base, southeast of the Dhahran camp belonging to Saudi Aramco.",
-      "is_edit": true,
-      "enqueued_at": 1792821658.2986856,
-      "retries": 13,
-      "last_retry_at": 1792822656.5346704
-    },
     {
       "id": "vip_multi_agent_Alibk3_39880",
       "pipeline": "vip_multi_agent",
@@ -857,8 +846,8 @@
       "text": "زيلينسكي:\n\nخلال الأيام الأولى من الحرب في الشرق الأوسط، استخدمت الدول حوالي 2000 صاروخ في أول 84 ساعة، لقد تلقيت من شريكنا  24 صاروخًا خلال 90 يومًا.\n\nنحن لا نبكي ولا نصرخ، ولكن هذا أمر مهم جدًا. أنا أحاول فقط أن أقول إن كل صاروخ مهم.",
       "is_edit": true,
       "enqueued_at": 1792821940.524857,
-      "retries": 10,
-      "last_retry_at": 1792822637.0137775
+      "retries": 28,
+      "last_retry_at": 1792824409.8828104
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6699",
@@ -868,8 +857,8 @@
       "text": "زلنسکی:\n\nدر روزهای نخست جنگ در خاورمیانه، کشورها طی 84 ساعت اول حدود 2000 موشک استفاده کردند. من طی 90 روز، 24 موشک از شریکمان دریافت کردم. ما گریه نمی‌کنیم و فریاد نمی‌زنیم، اما فقط سعی دارم بگویم که هر موشک اهمیت دارد.\n\nZelenskyy:\n\nDuring the first days of the war in the Middle East, countries used around 2000 missiles in the first 84 hours. I received 24 missiles from our partner over 90 days. We are not crying or shouting, but I am just trying to say that every missile matters.",
       "is_edit": true,
       "enqueued_at": 1792821944.1404786,
-      "retries": 10,
-      "last_retry_at": 1792822638.5173259
+      "retries": 27,
+      "last_retry_at": 1792824340.831314
     },
     {
       "id": "vip_multi_agent_Alibk3_39879",
@@ -879,9 +868,53 @@
       "text": "طائرة من طراز Il-78MP وطائرة من طراز C-130H باكستانية تهبط في قاعدة الملك عبدالعزيز الجوية، جنوب شرق معسكر الظهران التابع لشركة أرامكو السعودية.",
       "is_edit": true,
       "enqueued_at": 1792821947.1656442,
+      "retries": 27,
+      "last_retry_at": 1792824342.3343067
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6700",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6700,
+      "text": "ادامه آزمایش‌های موشکی سپاه پاسداران انقلاب اسلامی ایران\n\nIran’s Islamic Revolutionary Guard Corps continues missile tests.",
+      "is_edit": true,
+      "enqueued_at": 1792823696.479333,
       "retries": 10,
-      "last_retry_at": 1792822640.0207574
+      "last_retry_at": 1792824411.38622
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39881",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39881,
+      "text": "استمرار التجارب الصاروخية للحرس الثوري الإسلامي في إيران",
+      "is_edit": true,
+      "enqueued_at": 1792823696.4846318,
+      "retries": 10,
+      "last_retry_at": 1792824412.889663
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6702",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6702,
+      "text": "Channel 12 (Hebrew):\n\nU.S. intelligence agencies warn that Iran may have “significantly intensified” efforts to harm American diplomats and officials in the Middle East and other parts of the world, and that plans to assassinate them have reached “advanced stages.”",
+      "is_edit": false,
+      "enqueued_at": 1792824332.9397483,
+      "retries": 3,
+      "last_retry_at": 1792824414.3930652
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_39883",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 39883,
+      "text": "القناة 12 العبرية:\n\n‏ أجهزة الاستخبارات الأميركية تُحذر من أن إيران قد \"كثفت بشكل ملحوظ\" جهودها لإلحاق الأذى بالدبلوماسيين والمسؤولين الأميركيين في الشرق الأوسط ومناطق أخرى من العالم، وأن خطط اغتيالهم قد وصلت إلى \"مراحل متقدمة\".",
+      "is_edit": false,
+      "enqueued_at": 1792824332.9517822,
+      "retries": 2,
+      "last_retry_at": 1792824378.3692918
     }
   ],
-  "last_saved": "2026-10-24 06:18:28 UTC"
+  "last_saved": "2026-10-24 06:46:59 UTC"
 }
