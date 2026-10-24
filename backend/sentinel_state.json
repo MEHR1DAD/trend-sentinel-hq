@@ -839,116 +839,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_Ali_bk_8_6692",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6692,
-      "text": "حمله یمنی در پایتخت عربستان سعودی، ریاض\n\nA Yemeni attack in the Saudi capital, Riyadh",
-      "is_edit": true,
-      "enqueued_at": 1792803478.8331902,
-      "retries": 82,
-      "last_retry_at": 1792817172.439923
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39873",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39873,
-      "text": "هجوم يمني في العاصمة السعودية الرياض",
-      "is_edit": false,
-      "enqueued_at": 1792803478.8382294,
-      "retries": 69,
-      "last_retry_at": 1792817173.9423838
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39874",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39874,
-      "text": "هجوم يمني في وادي الدواسر بالسعودية.",
-      "is_edit": false,
-      "enqueued_at": 1792803645.2621489,
-      "retries": 69,
-      "last_retry_at": 1792817190.4463162
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6693",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6693,
-      "text": "A Yemeni attack in Wadi al-Dawasir, Saudi Arabia.",
-      "is_edit": false,
-      "enqueued_at": 1792803650.1623423,
-      "retries": 69,
-      "last_retry_at": 1792817191.9494004
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6694",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6694,
-      "text": "The moment air defenses were activated in Riyadh",
-      "is_edit": false,
-      "enqueued_at": 1792803894.0740592,
-      "retries": 64,
-      "last_retry_at": 1792817193.4526577
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39875",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39875,
-      "text": "لحظة تفعيل الدفاعات الجوية في الرياض",
-      "is_edit": false,
-      "enqueued_at": 1792803894.0829124,
-      "retries": 63,
-      "last_retry_at": 1792817194.9556062
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6695",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6695,
-      "text": "Riyadh just now",
-      "is_edit": false,
-      "enqueued_at": 1792803984.159311,
-      "retries": 62,
-      "last_retry_at": 1792817211.4734733
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39876",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39876,
-      "text": "الرياض قبل قليل",
-      "is_edit": false,
-      "enqueued_at": 1792803984.1674244,
-      "retries": 61,
-      "last_retry_at": 1792817212.9766598
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6696",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6696,
-      "text": "Saudi air defenses attempt to intercept Yemeni missiles in Riyadh.",
-      "is_edit": false,
-      "enqueued_at": 1792804040.6946535,
-      "retries": 59,
-      "last_retry_at": 1792817214.479676
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39877",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39877,
-      "text": "محاولات الدفاعات الجوية السعودية للتصدي للصواريخ اليمنية في الرياض.",
-      "is_edit": false,
-      "enqueued_at": 1792804040.7007737,
-      "retries": 58,
-      "last_retry_at": 1792817215.9832103
-    },
-    {
       "id": "vip_multi_agent_VahidOnline_78824",
       "pipeline": "vip_multi_agent",
       "node": "VahidOnline",
@@ -956,8 +846,8 @@
       "text": "به گزارش «آکسیوس» و بر اساس یک یادداشت اطلاعاتی «غیرمحرمانه» به تاریخ اول آبان‌ماه (۲۳ اکتبر) که خطاب به مارکو روبیو، وزیر امور خارجه و مشاور امنیت ملی آمریکا نگاشته شده است، جی کلیتون، مدیر اطلاعات ملی، نسبت به «پیشرفت چشمگیر» طرح‌های ایران برای ترور مقام‌ها و شهروندان آمریکایی در خاورمیانه و برخی مناطق دیگر هشدار داد. در این سند تأکید شده است که اطلاعات مربوط به این تهدیدات باید به دست طیف گسترده‌تری از کارکنان در معرض خطر برسد و به همین منظور، کلیتون پیشنهاد کرده است تا سطح محرمانگی این اسناد کاهش یابد. همزمان با انتشار این هشدار، «سی‌ان‌ان» گزارش داد که وزارت امور خارجه آمریکا در پی تهدیدات ناشی از توطئه‌های ایران و حملات حوثی‌ها، دستور کاهش کادر دیپلماتیک و خروج اعضای خانواده و کارکنان غیرضروری از سفارتخانه‌ها و کنسولگری‌های خود در عربستان سعودی (ریاض، جده و ظهران)، امارات متحده عربی، لبنان، قطر و اردن را صادر کرد.\n@VahidOOnLine\n\n📡 @VahidOnline",
       "is_edit": false,
       "enqueued_at": 1792807214.3880734,
-      "retries": 58,
-      "last_retry_at": 1792817232.4873152
+      "retries": 75,
+      "last_retry_at": 1792818878.3095183
     },
     {
       "id": "vip_multi_agent_withyashar_26349",
@@ -967,9 +857,9 @@
       "text": "تنگه هم دعوا شده 🚨🚨🚨🚨\n@WarRoom",
       "is_edit": true,
       "enqueued_at": 1792810882.4859526,
-      "retries": 47,
-      "last_retry_at": 1792817233.9892027
+      "retries": 64,
+      "last_retry_at": 1792818879.8113086
     }
   ],
-  "last_saved": "2026-10-24 04:47:39 UTC"
+  "last_saved": "2026-10-24 05:16:10 UTC"
 }
