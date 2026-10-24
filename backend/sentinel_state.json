@@ -735,12 +735,12 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 39883,
-    "withyashar": 26365,
+    "Alibk3": 39884,
+    "withyashar": 26366,
     "VahidOnline": 78824,
     "netblocks": 1577,
     "iliaen": 4747,
-    "Ali_bk_8": 6702,
+    "Ali_bk_8": 6703,
     "kianmeli1": 93700
   },
   "vahid_post_time": {},
@@ -826,7 +826,7 @@
   },
   "gemini_model_stats": {
     "gemini-3.8-flash": 229,
-    "gemini-3.5-flash-lite": 6579,
+    "gemini-3.5-flash-lite": 6611,
     "gemini-2.5-flash": 325,
     "gemini-3-flash-preview": 871,
     "gemini-3.1-flash-lite": 2484,
@@ -837,106 +837,6 @@
     "gemini-3.5-flash": 434,
     "gemini-flash-latest": 47
   },
-  "smart_queue": [
-    {
-      "id": "vip_multi_agent_Alibk3_39880",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39880,
-      "text": "زيلينسكي:\n\nخلال الأيام الأولى من الحرب في الشرق الأوسط، استخدمت الدول حوالي 2000 صاروخ في أول 84 ساعة، لقد تلقيت من شريكنا  24 صاروخًا خلال 90 يومًا.\n\nنحن لا نبكي ولا نصرخ، ولكن هذا أمر مهم جدًا. أنا أحاول فقط أن أقول إن كل صاروخ مهم.",
-      "is_edit": true,
-      "enqueued_at": 1792821940.524857,
-      "retries": 44,
-      "last_retry_at": 1792826077.229355
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6699",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6699,
-      "text": "زلنسکی:\n\nدر روزهای نخست جنگ در خاورمیانه، کشورها طی 84 ساعت اول حدود 2000 موشک استفاده کردند. من طی 90 روز، 24 موشک از شریکمان دریافت کردم. ما گریه نمی‌کنیم و فریاد نمی‌زنیم، اما فقط سعی دارم بگویم که هر موشک اهمیت دارد.\n\nZelenskyy:\n\nDuring the first days of the war in the Middle East, countries used around 2000 missiles in the first 84 hours. I received 24 missiles from our partner over 90 days. We are not crying or shouting, but I am just trying to say that every missile matters.",
-      "is_edit": true,
-      "enqueued_at": 1792821944.1404786,
-      "retries": 44,
-      "last_retry_at": 1792826096.741157
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39879",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39879,
-      "text": "طائرة من طراز Il-78MP وطائرة من طراز C-130H باكستانية تهبط في قاعدة الملك عبدالعزيز الجوية، جنوب شرق معسكر الظهران التابع لشركة أرامكو السعودية.",
-      "is_edit": true,
-      "enqueued_at": 1792821947.1656442,
-      "retries": 44,
-      "last_retry_at": 1792826098.2433922
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6700",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6700,
-      "text": "ادامه آزمایش‌های موشکی سپاه پاسداران انقلاب اسلامی ایران\n\nIran’s Islamic Revolutionary Guard Corps continues missile tests.",
-      "is_edit": true,
-      "enqueued_at": 1792823696.479333,
-      "retries": 27,
-      "last_retry_at": 1792826099.7471657
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39881",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39881,
-      "text": "استمرار التجارب الصاروخية للحرس الثوري الإسلامي في إيران",
-      "is_edit": true,
-      "enqueued_at": 1792823696.4846318,
-      "retries": 27,
-      "last_retry_at": 1792826134.2659473
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6702",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6702,
-      "text": "Channel 12 (Hebrew):\n\nU.S. intelligence agencies warn that Iran may have “significantly intensified” efforts to harm American diplomats and officials in the Middle East and other parts of the world, and that plans to assassinate them have reached “advanced stages.”",
-      "is_edit": false,
-      "enqueued_at": 1792824332.9397483,
-      "retries": 19,
-      "last_retry_at": 1792826117.760904
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39883",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39883,
-      "text": "القناة 12 العبرية:\n\n‏ أجهزة الاستخبارات الأميركية تُحذر من أن إيران قد \"كثفت بشكل ملحوظ\" جهودها لإلحاق الأذى بالدبلوماسيين والمسؤولين الأميركيين في الشرق الأوسط ومناطق أخرى من العالم، وأن خطط اغتيالهم قد وصلت إلى \"مراحل متقدمة\".",
-      "is_edit": false,
-      "enqueued_at": 1792824332.9517822,
-      "retries": 18,
-      "last_retry_at": 1792826078.732911
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_39884",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 39884,
-      "text": "5 طائرات تزويد بالوقود تُحلق يالقرب من مضيق هرمز.",
-      "is_edit": false,
-      "enqueued_at": 1792825862.691338,
-      "retries": 5,
-      "last_retry_at": 1792826080.2364204
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6703",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6703,
-      "text": "5 refueling aircraft are flying near the Strait of Hormuz.",
-      "is_edit": false,
-      "enqueued_at": 1792825866.0688796,
-      "retries": 5,
-      "last_retry_at": 1792826101.2506807
-    }
-  ],
-  "last_saved": "2026-10-24 07:16:18 UTC"
+  "smart_queue": [],
+  "last_saved": "2026-10-24 07:45:52 UTC"
 }
