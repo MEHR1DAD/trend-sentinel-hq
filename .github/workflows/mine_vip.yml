@@ -51,8 +51,8 @@ jobs:
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           TELEGRAM_SESSION_GENERAL: ${{ secrets.TELEGRAM_SESSION_GENERAL }}
-          TARGET_CHANNEL: ${{ inputs.target_channel || 'ALL' }}
-          MAX_DAYS: ${{ inputs.max_days || '730' }}
+          TARGET_CHANNEL: ${{ inputs.target_channel }}
+          MAX_DAYS: ${{ inputs.max_days }}
         run: |
           python mine_vip_corpus.py
 

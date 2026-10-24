@@ -34,9 +34,16 @@ API_ID = os.environ.get("TELEGRAM_API_ID")
 API_HASH = os.environ.get("TELEGRAM_API_HASH")
 SESSION_STRING = os.environ.get("TELEGRAM_SESSION_GENERAL")
 
-TARGET_CHANNEL_ARG = os.environ.get("TARGET_CHANNEL", "ALL").strip()
-MAX_DAYS_ARG = int(os.environ.get("MAX_DAYS", "730"))
-OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "analytics_results")
+raw_target = os.environ.get("TARGET_CHANNEL", "ALL").strip()
+TARGET_CHANNEL_ARG = "ALL" if raw_target.lower() in ("true", "false", "", "none", "all") else raw_target
+
+raw_days = os.environ.get("MAX_DAYS", "730").strip()
+try:
+    MAX_DAYS_ARG = int(raw_days)
+except (ValueError, TypeError):
+    MAX_DAYS_ARG = 730
+
+OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "analytics_results").strip() or "analytics_results"
 
 ALL_VIP_CHANNELS = [
     "withyashar",
