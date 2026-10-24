@@ -47,11 +47,12 @@ jobs:
 
       - name: Execute Corpus Frequency Miner
         env:
+          PYTHONUNBUFFERED: "1"
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           TELEGRAM_SESSION_GENERAL: ${{ secrets.TELEGRAM_SESSION_GENERAL }}
-          TARGET_CHANNEL: ${{ github.event.inputs.target_channel || 'ALL' }}
-          MAX_DAYS: ${{ github.event.inputs.max_days || '730' }}
+          TARGET_CHANNEL: ${{ inputs.target_channel || 'ALL' }}
+          MAX_DAYS: ${{ inputs.max_days || '730' }}
         run: |
           python mine_vip_corpus.py
 
@@ -62,7 +63,7 @@ jobs:
           git pull --rebase origin main || true
           git add analytics_results/
           git commit -m "📊 Analytics: Update VIP corpus frequency clouds [skip ci]" || echo "No changes to commit"
-          git push origin main
+          git push origin main || (git pull --rebase origin main && git push origin main)
 
       - name: Upload Analytics Artifacts
         uses: actions/upload-artifact@v4

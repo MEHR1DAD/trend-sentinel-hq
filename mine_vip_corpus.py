@@ -218,21 +218,22 @@ async def mine_channel(client: TelegramClient, channel_name: str, max_days: int)
         for w in WINDOWS.keys()
     }
 
-    entity = get_input_peer_for_channel(channel_name)
-    if entity:
-        print(f"🎯 Using cached InputPeerChannel for @{channel_name}")
-    else:
+    entity = None
+    # 1. Try public username
+    try:
+        entity = await client.get_entity(channel_name)
+    except Exception as e1:
+        # 2. Try @username format
         try:
-            entity = await client.get_entity(channel_name)
-        except (ChannelPrivateError, UsernameInvalidError) as e:
-            try:
-                entity = await client.get_entity(f"@{channel_name.lstrip('@')}")
-            except Exception:
-                print(f"❌ Cannot access @{channel_name}: {e}")
+            entity = await client.get_entity(f"@{channel_name.lstrip('@')}")
+        except Exception as e2:
+            # 3. Fallback to cached InputPeerChannel
+            entity = get_input_peer_for_channel(channel_name)
+            if entity:
+                print(f"🎯 Using cached InputPeerChannel for @{channel_name}")
+            else:
+                print(f"❌ Cannot resolve entity for @{channel_name} (Err: {e1})")
                 return None
-        except Exception as e:
-            print(f"⚠️ Error resolving entity for @{channel_name}: {e}")
-            return None
 
     count = 0
     skipped_count = 0
@@ -483,4 +484,12 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except SystemExit as se:
+        sys.exit(se.code)
+    except Exception as e:
+        import traceback
+        print(f"\n❌ FATAL UNHANDLED EXCEPTION IN MAIN: {e}")
+        traceback.print_exc()
+        sys.exit(1)
