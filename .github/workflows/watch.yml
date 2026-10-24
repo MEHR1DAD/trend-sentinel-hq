@@ -46,7 +46,7 @@ jobs:
           python -u backend/live_sentinel.py
 
       - name: Auto-Restart on Exit
-        if: always()
+        if: always() && !cancelled()
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
