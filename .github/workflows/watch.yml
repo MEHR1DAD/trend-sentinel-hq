@@ -6,6 +6,11 @@ on:
   workflow_dispatch:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - 'mine_vip_corpus.py'
+      - '.github/workflows/mine_vip.yml'
+      - 'analytics_results/**'
+      - 'docs/**'
 
 permissions:
   contents: write

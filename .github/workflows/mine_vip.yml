@@ -27,7 +27,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: sentinel-live
+  group: sentinel-miner
   cancel-in-progress: true
 
 jobs:
@@ -49,6 +49,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install telethon
 
+      - name: Pause Live Sentinel Watcher
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Checking for running live watcher to avoid Telegram AuthKeyDuplicatedError..."
+          ACTIVE_RUN=$(gh run list --workflow=watch.yml --status=in_progress --json databaseId --jq '.[0].databaseId' || echo "")
+          if [ -n "$ACTIVE_RUN" ] && [ "$ACTIVE_RUN" != "null" ]; then
+            echo "Cancelling active watcher run $ACTIVE_RUN for exclusive miner session..."
+            gh run cancel "$ACTIVE_RUN" || true
+            sleep 12
+          else
+            echo "No active watcher running. Ready to mine."
+            sleep 3
+          fi
+
       - name: Execute Corpus Frequency Miner
         env:
           PYTHONUNBUFFERED: "1"
@@ -58,8 +73,6 @@ jobs:
           TARGET_CHANNEL: ${{ inputs.target_channel }}
           MAX_DAYS: ${{ inputs.max_days }}
         run: |
-          echo "Waiting 10s for previous session handover..."
-          sleep 10
           python mine_vip_corpus.py
 
       - name: Commit & Push Analytics Results
