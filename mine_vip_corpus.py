@@ -395,7 +395,19 @@ async def main():
     print("==================================================")
 
     client = TelegramClient(StringSession(SESSION_STRING), int(API_ID), API_HASH)
-    await client.connect()
+    
+    for attempt in range(1, 4):
+        try:
+            print(f"🔄 Connecting to Telegram MTProto (Attempt {attempt}/3)...")
+            await client.connect()
+            break
+        except Exception as conn_err:
+            print(f"⚠️ Telegram connect attempt {attempt} failed: {conn_err}")
+            if attempt < 3:
+                print("⏳ Waiting 8s for Telegram session key release...")
+                await asyncio.sleep(8)
+            else:
+                raise
 
     if not await client.is_user_authorized():
         print("❌ Error: Telegram session string is not authorized. Please check your credentials.")

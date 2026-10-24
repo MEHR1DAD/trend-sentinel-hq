@@ -26,6 +26,10 @@ permissions:
   contents: write
   actions: write
 
+concurrency:
+  group: sentinel-live
+  cancel-in-progress: true
+
 jobs:
   mine-vip:
     runs-on: ubuntu-latest
@@ -54,6 +58,8 @@ jobs:
           TARGET_CHANNEL: ${{ inputs.target_channel }}
           MAX_DAYS: ${{ inputs.max_days }}
         run: |
+          echo "Waiting 10s for previous session handover..."
+          sleep 10
           python mine_vip_corpus.py
 
       - name: Commit & Push Analytics Results
@@ -71,3 +77,11 @@ jobs:
         with:
           name: vip-corpus-analytics
           path: analytics_results/
+
+      - name: Resume Sentinel Watch
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Resuming Sentinel Live Watcher..."
+          gh workflow run watch.yml --ref main || true
