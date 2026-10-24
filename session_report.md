@@ -1,8 +1,8 @@
 # Sentinel Session Report
 
 - **Uptime:** 29 minutes
-- **Messages Processed:** 42
-- **Last Message Text:** تلاش پدافند هوایی عربستان برای رهگیری موشک‌های یمنی در ریاض.
+- **Messages Processed:** 12
+- **Last Message Text:** ریاض، همین چند لحظه پیش
 
-Saudi air defenses attempt to intercep...
-- **Last Message Time:** 2026-10-24 01:15:32
+Riyadh just now
+- **Last Message Time:** 2026-10-24 01:45:37
