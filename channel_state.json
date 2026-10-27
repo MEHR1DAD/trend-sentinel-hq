@@ -28,5 +28,16 @@
   "last_urgent_alert": {
     "@DidebanJang": 1793099097.6367776
   },
-  "updated_at": "2026-10-27T13:09:22.890418+00:00"
+  "sent_alerts_map": {
+    "kianmeli1_200": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 2002,
+      "sent_timestamp": 1793106285.6223302,
+      "status_icon": "🚨🔕",
+      "source_node": "kianmeli1",
+      "msg_id": 200,
+      "last_edit_timestamp": 1793107485.623072
+    }
+  },
+  "updated_at": "2026-10-27T13:24:45.625585+00:00"
 }

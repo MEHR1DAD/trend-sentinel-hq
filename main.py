@@ -40,8 +40,9 @@ class TrendSentinelV4:
         # Load posted registry (Deduplication)
         self.posted_registry = self._load_registry()
 
-        # Load channel state & urgent alert cooldowns
-        self.channel_state, self.urgent_alert_state = self._load_channel_state()
+        # Load channel state, urgent alert cooldowns & 60m sent alerts map
+        self.channel_state, self.urgent_alert_state, self.sent_alerts_map = self._load_channel_state()
+        self.alerts_edited = 0
 
         # Anti-spam cooldown: 15 minutes between loud urgent alerts per channel
         self.URGENT_COOLDOWN_SEC = 15 * 60
@@ -86,17 +87,33 @@ class TrendSentinelV4:
             try:
                 with open(config.CHANNEL_STATE_PATH, "r", encoding="utf-8") as f:
                     data = json.load(f)
-                    return data.get("channels", {}), data.get("last_urgent_alert", {})
+                    return (
+                        data.get("channels", {}),
+                        data.get("last_urgent_alert", {}),
+                        data.get("sent_alerts_map", {})
+                    )
             except Exception as e:
                 print(f"⚠️ Error reading channel state: {e}")
-        return {}, {}
+        return {}, {}, {}
+
+    def _prune_sent_alerts(self):
+        """Prunes alerts older than 60 minutes (3600s) to keep state lean and enforce 60m edit window."""
+        now = time.time()
+        pruned = {}
+        for key, val in self.sent_alerts_map.items():
+            ts = float(val.get("sent_timestamp", 0))
+            if now - ts <= 3600:
+                pruned[key] = val
+        self.sent_alerts_map = pruned
 
     def _save_channel_state(self):
         try:
+            self._prune_sent_alerts()
             with open(config.CHANNEL_STATE_PATH, "w", encoding="utf-8") as f:
                 json.dump({
                     "channels": self.channel_state,
                     "last_urgent_alert": self.urgent_alert_state,
+                    "sent_alerts_map": self.sent_alerts_map,
                     "updated_at": datetime.now(timezone.utc).isoformat()
                 }, f, ensure_ascii=False, indent=2)
         except Exception as e:
@@ -162,18 +179,30 @@ class TrendSentinelV4:
             else:
                 urgent_status_lines.append(f"- `{dch}`: No loud alert yet")
 
+        edit_watcher_lines = []
+        now = time.time()
+        for k, v in self.sent_alerts_map.items():
+            mins_ago = int((now - float(v.get("sent_timestamp", now))) / 60)
+            edit_watcher_lines.append(f"- `{k}` -> `{v.get('target_channel')}` (bot msg #{v.get('bot_msg_id')}, {mins_ago}m ago)")
+
+        if not edit_watcher_lines:
+            edit_watcher_lines = ["- *(No active posts in 60m edit window)*"]
+
         report_content = (
             f"# Sentinel Session Report (v4 Clean Engine)\n\n"
             f"- **Uptime:** {uptime_min} minutes\n"
             f"- **Messages Processed:** {self.messages_processed}\n"
             f"- **Alerts Dispatched:** {self.alerts_dispatched}\n"
+            f"- **Alerts Edited:** {self.alerts_edited}\n"
             f"- **Active VIP Nodes:** {len(config.VIP_CHANNELS)} channels\n"
             f"- **Last Message Text:** {self.last_msg_text[:120]}\n"
             f"- **Last Message Time:** {self.last_msg_time}\n\n"
             f"### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):\n"
             + "\n".join(cursor_lines) + "\n\n"
             f"### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):\n"
-            + "\n".join(urgent_status_lines) + "\n"
+            + "\n".join(urgent_status_lines) + "\n\n"
+            f"### 🔄 پیام‌های تحت پایش برای ویرایش (Active 60m Edit Watchers):\n"
+            + "\n".join(edit_watcher_lines) + "\n"
         )
         try:
             with open(config.SESSION_REPORT_PATH, "w", encoding="utf-8") as f:
@@ -259,11 +288,11 @@ class TrendSentinelV4:
 
         return f"{body_text}\n\n{footer}"
 
-    def send_bot_alert(self, target_channel: str, html_text: str, disable_notif: bool) -> bool:
-        """Dispatches formatted alert to destination Telegram channel via Bot API."""
+    def send_bot_alert(self, target_channel: str, html_text: str, disable_notif: bool):
+        """Dispatches formatted alert to destination Telegram channel via Bot API. Returns bot_msg_id or None."""
         if not config.BOT_TOKEN:
             print("⚠️ TELEGRAM_BOT_TOKEN is not configured!")
-            return False
+            return None
 
         url = f"https://api.telegram.org/bot{config.BOT_TOKEN}/sendMessage"
         payload = {
@@ -279,7 +308,8 @@ class TrendSentinelV4:
             req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
             with urllib.request.urlopen(req, timeout=10) as response:
                 if response.status == 200:
-                    return True
+                    resp_json = json.loads(response.read().decode("utf-8"))
+                    return resp_json.get("result", {}).get("message_id")
         except Exception as e:
             # Fallback: if HTML parsing failed, strip HTML tags and retry with plain text
             print(f"⚠️ HTML send failed: {e}. Retrying without parse_mode...")
@@ -291,10 +321,121 @@ class TrendSentinelV4:
                 req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
                 with urllib.request.urlopen(req, timeout=10) as response:
                     if response.status == 200:
-                        return True
+                        resp_json = json.loads(response.read().decode("utf-8"))
+                        return resp_json.get("result", {}).get("message_id")
             except Exception as e2:
                 print(f"❌ Failed fallback alert to {target_channel}: {e2}")
+        return None
+
+    def edit_bot_alert(self, target_channel: str, bot_msg_id: int, html_text: str) -> bool:
+        """
+        Updates an already dispatched alert in the target channel via Telegram Bot API editMessageText.
+        Edits are always silent.
+        """
+        if not config.BOT_TOKEN:
+            print("⚠️ TELEGRAM_BOT_TOKEN is not configured!")
+            return False
+
+        url = f"https://api.telegram.org/bot{config.BOT_TOKEN}/editMessageText"
+        payload = {
+            "chat_id": target_channel,
+            "message_id": bot_msg_id,
+            "text": html_text,
+            "parse_mode": "HTML",
+            "disable_web_page_preview": True
+        }
+
+        try:
+            data = json.dumps(payload).encode("utf-8")
+            req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=10) as response:
+                if response.status == 200:
+                    return True
+        except urllib.error.HTTPError as e:
+            err_body = e.read().decode("utf-8", errors="ignore")
+            # If content hasn't changed or matches exactly, Telegram returns 400 'message is not modified'
+            if "message is not modified" in err_body:
+                print(f"ℹ️ Message {bot_msg_id} in {target_channel} is already up to date.")
+                return True
+            print(f"⚠️ HTML edit failed: {e} ({err_body}). Retrying without parse_mode...")
+            try:
+                plain_text = re.sub(r'<[^>]+>', '', html_text)
+                payload["text"] = plain_text
+                del payload["parse_mode"]
+                data = json.dumps(payload).encode("utf-8")
+                req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+                with urllib.request.urlopen(req, timeout=10) as response:
+                    if response.status == 200:
+                        return True
+            except urllib.error.HTTPError as e2:
+                err_body2 = e2.read().decode("utf-8", errors="ignore")
+                if "message is not modified" in err_body2:
+                    return True
+                print(f"❌ Failed fallback edit to {target_channel}: {e2} ({err_body2})")
+            except Exception as e2:
+                print(f"❌ Failed fallback edit to {target_channel}: {e2}")
+        except Exception as e:
+            print(f"⚠️ Edit request error: {e}")
         return False
+
+    async def handle_edited_message(self, msg, source_node: str):
+        """
+        Handles edited messages from VIP sources.
+        Rule: If an alert was sent to Sentinel channels within the last 60 minutes,
+        synchronize the edit to the destination channel in silence.
+        """
+        msg_id = msg.id
+        dedup_key = f"{source_node}_{msg_id}"
+
+        if dedup_key not in self.sent_alerts_map:
+            # Not an alert we dispatched, or dispatched >60m ago
+            return
+
+        alert_info = self.sent_alerts_map[dedup_key]
+        now = time.time()
+        elapsed = now - alert_info["sent_timestamp"]
+
+        if elapsed > 3600:
+            # Older than 60 minutes: ignore edit as per rule
+            print(f"⏳ [EDIT IGNORED] @{source_node} #{msg_id} was dispatched {int(elapsed/60)}m ago (>60m).")
+            return
+
+        msg_text = getattr(msg, "raw_text", None) or msg.text or ""
+        if not msg_text or not msg_text.strip():
+            return
+
+        # Determine icon (edits are always in silence)
+        eval_res = self.engine.process_message(msg_text, source_node)
+        orig_icon = alert_info.get("status_icon", "🔕")
+
+        if eval_res:
+            if eval_res.get("severity") == "URGENT":
+                status_icon = "🚨" if orig_icon == "🚨" else "🚨🔕"
+            else:
+                status_icon = "🔕"
+        else:
+            status_icon = orig_icon
+
+        formatted_text = self.sanitize_and_format_alert(msg_text, source_node, msg_id, status_icon)
+        if not formatted_text:
+            return
+
+        target_ch = alert_info["target_channel"]
+        bot_msg_id = alert_info["bot_msg_id"]
+
+        print(f"🔄 [EDIT SYNC] Syncing edited post to {target_ch} (bot_msg_id: {bot_msg_id}, source: @{source_node}/#{msg_id})")
+        success = self.edit_bot_alert(target_ch, bot_msg_id, formatted_text)
+        if success:
+            edit_date = getattr(msg, "edit_date", None)
+            if edit_date:
+                edit_ts = edit_date.replace(tzinfo=timezone.utc).timestamp() if not edit_date.tzinfo else edit_date.timestamp()
+            else:
+                edit_ts = now
+            alert_info["last_edit_timestamp"] = edit_ts
+            alert_info["status_icon"] = status_icon
+            self.alerts_edited += 1
+            self._save_channel_state()
+            self.update_session_report()
 
     async def handle_new_message(self, event_or_msg, source_node: str):
         """Processes an incoming message through the 3-step engine and dispatches if matched."""
@@ -332,11 +473,21 @@ class TrendSentinelV4:
         mode_str = f"[{status_icon}] (notif={'OFF' if disable_notif else 'ON'})"
         print(f"🚀 [DISPATCH] {mode_str} -> {target_ch} (Source: @{source_node} | Msg: {msg_id})")
 
-        success = self.send_bot_alert(target_ch, alert_body, disable_notif)
-        if success:
+        bot_msg_id = self.send_bot_alert(target_ch, alert_body, disable_notif)
+        if bot_msg_id:
             self.alerts_dispatched += 1
             self.posted_registry.add(dedup_key)
             self._save_registry()
+            # Register in sent_alerts_map for 60-minute edit synchronization
+            self.sent_alerts_map[dedup_key] = {
+                "target_channel": target_ch,
+                "bot_msg_id": bot_msg_id,
+                "sent_timestamp": time.time(),
+                "status_icon": status_icon,
+                "source_node": source_node,
+                "msg_id": msg_id
+            }
+            self._save_channel_state()
             self.update_session_report()
 
     async def run(self):
@@ -398,6 +549,29 @@ class TrendSentinelV4:
                 except Exception as e:
                     print(f"⚠️ Catch-up note on @{node}: {e}")
 
+        # Catch-up recent edits on active tracked alerts (within 60m)
+        if self.sent_alerts_map:
+            print("🔄 Checking active tracked alerts for edits during handover...")
+            for key, alert_info in list(self.sent_alerts_map.items()):
+                now = time.time()
+                if now - alert_info.get("sent_timestamp", 0) > 3600:
+                    continue
+                node = alert_info.get("source_node")
+                msg_id = alert_info.get("msg_id")
+                entity = source_entities.get(node)
+                if not entity or not msg_id:
+                    continue
+                try:
+                    fetched_msg = await self.client.get_messages(entity, ids=msg_id)
+                    if fetched_msg and fetched_msg.edit_date:
+                        edit_ts = fetched_msg.edit_date.replace(tzinfo=timezone.utc).timestamp() if not fetched_msg.edit_date.tzinfo else fetched_msg.edit_date.timestamp()
+                        last_seen_edit = alert_info.get("last_edit_timestamp", alert_info["sent_timestamp"])
+                        if edit_ts > last_seen_edit:
+                            print(f"🔄 Detected edit during handover for @{node}/#{msg_id}")
+                            await self.handle_edited_message(fetched_msg, node)
+                except Exception as e:
+                    print(f"⚠️ Edit check note on @{node}/#{msg_id}: {e}")
+
         self.update_session_report()
 
         # 4. Event Listener for Live Streaming
@@ -412,7 +586,7 @@ class TrendSentinelV4:
 
         @self.client.on(events.NewMessage(chats=entity_list))
         async def event_handler(event):
-            sender_id = getattr(event.chat, "id", None)
+            sender_id = getattr(event.chat, "id", None) or getattr(event, "chat_id", None)
             clean_id = int(str(sender_id).replace("-100", "")) if sender_id else 0
             node_name = id_to_node_map.get(clean_id) or id_to_node_map.get(sender_id) or "VIP"
 
@@ -424,6 +598,13 @@ class TrendSentinelV4:
 
             self.update_last_read_id(node_name, msg_id, event.message.date)
             await self.handle_new_message(event.message, node_name)
+
+        @self.client.on(events.MessageEdited(chats=entity_list))
+        async def edit_event_handler(event):
+            sender_id = getattr(event.chat, "id", None) or getattr(event, "chat_id", None)
+            clean_id = int(str(sender_id).replace("-100", "")) if sender_id else 0
+            node_name = id_to_node_map.get(clean_id) or id_to_node_map.get(sender_id) or "VIP"
+            await self.handle_edited_message(event.message, node_name)
 
         # 5. Controlled Execution Loop with Graceful Handoff
         while time.time() - self.start_time < config.MAX_RUNTIME_SEC:
