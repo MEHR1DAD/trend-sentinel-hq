@@ -40,6 +40,9 @@ class TrendSentinelV4:
         # Load posted registry (Deduplication)
         self.posted_registry = self._load_registry()
 
+        # Load channel state (Last read post cursor per channel)
+        self.channel_state = self._load_channel_state()
+
         # Telethon client
         self.client = TelegramClient(
             StringSession(config.SESSION_STRING),
@@ -75,8 +78,53 @@ class TrendSentinelV4:
         except Exception as e:
             print(f"⚠️ Error saving posted registry: {e}")
 
+    def _load_channel_state(self) -> dict:
+        if os.path.exists(config.CHANNEL_STATE_PATH):
+            try:
+                with open(config.CHANNEL_STATE_PATH, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    return data.get("channels", {})
+            except Exception as e:
+                print(f"⚠️ Error reading channel state: {e}")
+        return {}
+
+    def _save_channel_state(self):
+        try:
+            with open(config.CHANNEL_STATE_PATH, "w", encoding="utf-8") as f:
+                json.dump({
+                    "channels": self.channel_state,
+                    "updated_at": datetime.now(timezone.utc).isoformat()
+                }, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"⚠️ Error saving channel state: {e}")
+
+    def get_last_read_id(self, node_name: str) -> int:
+        clean_node = node_name.lstrip('@')
+        ch_info = self.channel_state.get(clean_node, {})
+        return int(ch_info.get("last_read_id", 0))
+
+    def update_last_read_id(self, node_name: str, msg_id: int, date=None):
+        clean_node = node_name.lstrip('@')
+        current = self.get_last_read_id(clean_node)
+        new_id = max(current, msg_id)
+        date_str = date.strftime("%Y-%m-%d %H:%M:%S UTC") if date else datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+
+        self.channel_state[clean_node] = {
+            "last_read_id": new_id,
+            "last_read_time": date_str
+        }
+        self._save_channel_state()
+
     def update_session_report(self):
         uptime_min = int((time.time() - self.start_time) / 60)
+
+        cursor_lines = []
+        for ch in config.VIP_CHANNELS:
+            st = self.channel_state.get(ch, {})
+            lid = st.get("last_read_id", "None")
+            ltime = st.get("last_read_time", "None")
+            cursor_lines.append(f"- `@{ch}`: #{lid} ({ltime})")
+
         report_content = (
             f"# Sentinel Session Report (v4 Clean Engine)\n\n"
             f"- **Uptime:** {uptime_min} minutes\n"
@@ -84,7 +132,9 @@ class TrendSentinelV4:
             f"- **Alerts Dispatched:** {self.alerts_dispatched}\n"
             f"- **Active VIP Nodes:** {len(config.VIP_CHANNELS)} channels\n"
             f"- **Last Message Text:** {self.last_msg_text[:120]}\n"
-            f"- **Last Message Time:** {self.last_msg_time}\n"
+            f"- **Last Message Time:** {self.last_msg_time}\n\n"
+            f"### 📌 آخرین پیام خوانده‌شده در هر کانال (Channel Last Read Memory):\n"
+            + "\n".join(cursor_lines) + "\n"
         )
         try:
             with open(config.SESSION_REPORT_PATH, "w", encoding="utf-8") as f:
@@ -281,15 +331,31 @@ class TrendSentinelV4:
                 except Exception as e:
                     print(f"⚠️ Could not resolve @{node}: {e}")
 
-        # 3. Catch-up scan for missed messages during transition
-        print("📥 Scanning last 3 messages per node for catch-up...")
+        # 3. Channel Cursor Sync & Catch-up
+        print("📥 Synchronizing channel cursors and scanning for new messages...")
         for node, entity in source_entities.items():
-            try:
-                async for msg in self.client.iter_messages(entity, limit=3):
-                    if msg.text:
-                        await self.handle_new_message(msg, node)
-            except Exception as e:
-                print(f"⚠️ Catch-up note on @{node}: {e}")
+            last_id = self.get_last_read_id(node)
+            if last_id == 0:
+                # First run: set cursor to latest post to avoid replaying history
+                try:
+                    async for msg in self.client.iter_messages(entity, limit=1):
+                        self.update_last_read_id(node, msg.id, msg.date)
+                        print(f"📌 Initialized cursor for @{node} at #{msg.id}")
+                except Exception as e:
+                    print(f"⚠️ Cursor init note on @{node}: {e}")
+            else:
+                # Catch-up: iterate only messages with id > last_id in forward chronological order!
+                new_count = 0
+                try:
+                    async for msg in self.client.iter_messages(entity, min_id=last_id, reverse=True):
+                        self.update_last_read_id(node, msg.id, msg.date)
+                        if msg.text:
+                            await self.handle_new_message(msg, node)
+                        new_count += 1
+                    if new_count:
+                        print(f"📥 Caught up {new_count} new messages from @{node} (cursor advanced to #{self.get_last_read_id(node)})")
+                except Exception as e:
+                    print(f"⚠️ Catch-up note on @{node}: {e}")
 
         self.update_session_report()
 
@@ -306,9 +372,16 @@ class TrendSentinelV4:
         @self.client.on(events.NewMessage(chats=entity_list))
         async def event_handler(event):
             sender_id = getattr(event.chat, "id", None)
-            # Normalize channel IDs (-100... vs raw)
             clean_id = int(str(sender_id).replace("-100", "")) if sender_id else 0
             node_name = id_to_node_map.get(clean_id) or id_to_node_map.get(sender_id) or "VIP"
+
+            msg_id = event.message.id
+            last_id = self.get_last_read_id(node_name)
+            if msg_id <= last_id:
+                # Already read/processed
+                return
+
+            self.update_last_read_id(node_name, msg_id, event.message.date)
             await self.handle_new_message(event.message, node_name)
 
         # 5. Controlled Execution Loop with Graceful Handoff

@@ -9,6 +9,7 @@ on:
     paths-ignore:
       - 'session_report.md'
       - 'posted_registry.json'
+      - 'channel_state.json'
       - 'analytics_results/**'
       - 'README.md'
       - '.gitignore'
@@ -57,7 +58,7 @@ jobs:
           git config --global user.name "Sentinel Watcher"
           git config --global user.email "sentinel@sentinel.hq"
           git pull --rebase origin main || true
-          git add session_report.md posted_registry.json
+          git add session_report.md posted_registry.json channel_state.json
           git commit -m "📊 [skip ci] update sentinel v4 state" || echo "No changes"
           git push origin main || true
 
