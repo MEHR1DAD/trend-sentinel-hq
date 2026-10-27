@@ -1,5 +1,30 @@
 {
-  "channels": {},
+  "channels": {
+    "withyashar": {
+      "last_read_id": 26647,
+      "last_read_time": "2026-10-27 10:58:44 UTC"
+    },
+    "Ali_bk_8": {
+      "last_read_id": 6974,
+      "last_read_time": "2026-10-27 10:39:53 UTC"
+    },
+    "VahidOnline": {
+      "last_read_id": 78856,
+      "last_read_time": "2026-10-27 04:02:08 UTC"
+    },
+    "iliaen": {
+      "last_read_id": 4752,
+      "last_read_time": "2026-10-25 21:52:40 UTC"
+    },
+    "netblocks": {
+      "last_read_id": 1578,
+      "last_read_time": "2026-10-24 14:55:57 UTC"
+    },
+    "kianmeli1": {
+      "last_read_id": 93782,
+      "last_read_time": "2026-10-27 09:24:18 UTC"
+    }
+  },
   "last_urgent_alert": {},
-  "updated_at": "2026-10-27T10:33:00Z"
+  "updated_at": "2026-10-27T10:59:30.374129+00:00"
 }
