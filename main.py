@@ -156,14 +156,10 @@ class TrendSentinelV4:
         if not paragraphs:
             return ""
 
-        # 4. Prefix status icon on the first paragraph/headline
+        # 4. Prefix status icon on the first paragraph/headline (ONLY 🔕 or 🚨)
         icon = "🔕" if disable_notif else "🚨"
-        first_p = paragraphs[0]
-
-        if re.match(r'^[🔴⚠️⚡️🚨💥📢📌]', first_p):
-            formatted_first_p = f"{icon}{first_p}"
-        else:
-            formatted_first_p = f"{icon} {first_p}"
+        first_p = paragraphs[0].strip()
+        formatted_first_p = f"{icon} {first_p}"
 
         all_body = [formatted_first_p] + paragraphs[1:]
         body_text = "\n\n".join(all_body)
