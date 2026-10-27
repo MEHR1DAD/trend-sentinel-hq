@@ -40,8 +40,11 @@ class TrendSentinelV4:
         # Load posted registry (Deduplication)
         self.posted_registry = self._load_registry()
 
-        # Load channel state (Last read post cursor per channel)
-        self.channel_state = self._load_channel_state()
+        # Load channel state & urgent alert cooldowns
+        self.channel_state, self.urgent_alert_state = self._load_channel_state()
+
+        # Anti-spam cooldown: 15 minutes between loud urgent alerts per channel
+        self.URGENT_COOLDOWN_SEC = 15 * 60
 
         # Telethon client
         self.client = TelegramClient(
@@ -78,25 +81,50 @@ class TrendSentinelV4:
         except Exception as e:
             print(f"⚠️ Error saving posted registry: {e}")
 
-    def _load_channel_state(self) -> dict:
+    def _load_channel_state(self) -> tuple:
         if os.path.exists(config.CHANNEL_STATE_PATH):
             try:
                 with open(config.CHANNEL_STATE_PATH, "r", encoding="utf-8") as f:
                     data = json.load(f)
-                    return data.get("channels", {})
+                    return data.get("channels", {}), data.get("last_urgent_alert", {})
             except Exception as e:
                 print(f"⚠️ Error reading channel state: {e}")
-        return {}
+        return {}, {}
 
     def _save_channel_state(self):
         try:
             with open(config.CHANNEL_STATE_PATH, "w", encoding="utf-8") as f:
                 json.dump({
                     "channels": self.channel_state,
+                    "last_urgent_alert": self.urgent_alert_state,
                     "updated_at": datetime.now(timezone.utc).isoformat()
                 }, f, ensure_ascii=False, indent=2)
         except Exception as e:
             print(f"⚠️ Error saving channel state: {e}")
+
+    def resolve_alert_mode_and_icon(self, target_channel: str, is_engine_urgent: bool) -> tuple:
+        """
+        Anti-Spam 15-Minute Rule:
+        - In each channel, an URGENT alert can only be sent loud once every 15 minutes.
+        - Subsequent urgent alerts within 15 minutes are downgraded to SILENT and use the combined icon: 🚨🔕
+        - Normal silent alerts use: 🔕
+        Returns: (disable_notification: bool, status_icon: str)
+        """
+        if not is_engine_urgent:
+            return True, "🔕"
+
+        now = time.time()
+        last_urgent_ts = float(self.urgent_alert_state.get(target_channel, 0))
+        elapsed = now - last_urgent_ts
+
+        if elapsed >= self.URGENT_COOLDOWN_SEC:
+            # Cooldown passed: Allow loud alert with 🚨
+            self.urgent_alert_state[target_channel] = now
+            self._save_channel_state()
+            return False, "🚨"
+        else:
+            # Within 15-min cooldown: Downgrade sound and use combined icon 🚨🔕
+            return True, "🚨🔕"
 
     def get_last_read_id(self, node_name: str) -> int:
         clean_node = node_name.lstrip('@')
@@ -125,6 +153,15 @@ class TrendSentinelV4:
             ltime = st.get("last_read_time", "None")
             cursor_lines.append(f"- `@{ch}`: #{lid} ({ltime})")
 
+        urgent_status_lines = []
+        for dch in config.CHANNELS.values():
+            lts = float(self.urgent_alert_state.get(dch, 0))
+            if lts:
+                elapsed_min = int((time.time() - lts) / 60)
+                urgent_status_lines.append(f"- `{dch}`: Last loud alert {elapsed_min}m ago")
+            else:
+                urgent_status_lines.append(f"- `{dch}`: No loud alert yet")
+
         report_content = (
             f"# Sentinel Session Report (v4 Clean Engine)\n\n"
             f"- **Uptime:** {uptime_min} minutes\n"
@@ -133,8 +170,10 @@ class TrendSentinelV4:
             f"- **Active VIP Nodes:** {len(config.VIP_CHANNELS)} channels\n"
             f"- **Last Message Text:** {self.last_msg_text[:120]}\n"
             f"- **Last Message Time:** {self.last_msg_time}\n\n"
-            f"### 📌 آخرین پیام خوانده‌شده در هر کانال (Channel Last Read Memory):\n"
-            + "\n".join(cursor_lines) + "\n"
+            f"### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):\n"
+            + "\n".join(cursor_lines) + "\n\n"
+            f"### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):\n"
+            + "\n".join(urgent_status_lines) + "\n"
         )
         try:
             with open(config.SESSION_REPORT_PATH, "w", encoding="utf-8") as f:
@@ -154,7 +193,7 @@ class TrendSentinelV4:
         return None
 
     @staticmethod
-    def sanitize_and_format_alert(raw_text: str, source_node: str, msg_id: int, disable_notif: bool) -> str:
+    def sanitize_and_format_alert(raw_text: str, source_node: str, msg_id: int, status_icon: str) -> str:
         """
         Sanitizes raw text, removes asterisks & trailing promotional watermarks,
         and formats with clean inline status icon and hyperlinked source attribution.
@@ -206,10 +245,9 @@ class TrendSentinelV4:
         if not paragraphs:
             return ""
 
-        # 4. Prefix status icon on the first paragraph/headline (ONLY 🔕 or 🚨)
-        icon = "🔕" if disable_notif else "🚨"
+        # 4. Prefix status icon on the first paragraph/headline
         first_p = paragraphs[0].strip()
-        formatted_first_p = f"{icon} {first_p}"
+        formatted_first_p = f"{status_icon} {first_p}"
 
         all_body = [formatted_first_p] + paragraphs[1:]
         body_text = "\n\n".join(all_body)
@@ -281,14 +319,17 @@ class TrendSentinelV4:
             return
 
         target_ch = eval_res["target_channel"]
-        disable_notif = eval_res["disable_notification"]
+        is_engine_urgent = (eval_res.get("severity") == "URGENT")
+
+        # Anti-Spam 15-Minute Rule: resolve sound and icon (🚨, 🚨🔕, or 🔕)
+        disable_notif, status_icon = self.resolve_alert_mode_and_icon(target_ch, is_engine_urgent)
 
         # Format Final Alert using the exact user-specified typographic template
-        alert_body = self.sanitize_and_format_alert(msg_text, source_node, msg_id, disable_notif)
+        alert_body = self.sanitize_and_format_alert(msg_text, source_node, msg_id, status_icon)
         if not alert_body:
             return
 
-        mode_str = "🔕 SILENT" if disable_notif else "🚨 URGENT"
+        mode_str = f"[{status_icon}] (notif={'OFF' if disable_notif else 'ON'})"
         print(f"🚀 [DISPATCH] {mode_str} -> {target_ch} (Source: @{source_node} | Msg: {msg_id})")
 
         success = self.send_bot_alert(target_ch, alert_body, disable_notif)
