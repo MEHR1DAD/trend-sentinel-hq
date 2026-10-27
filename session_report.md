@@ -1,7 +1,6 @@
 # Sentinel Session Report
 
 - **Uptime:** 28 minutes
-- **Messages Processed:** 25
-- **Last Message Text:** نیویورک تایمز : اسرائیل در انتخاباتی رأی می‌دهد که نوعی همه‌پرسی درباره نتانیاهو تلقی می‌شود
-این نخس...
-- **Last Message Time:** 2026-10-27 05:53:28
+- **Messages Processed:** 15
+- **Last Message Text:** رویترز: حتی پس از بسته شدن صندوق‌ها، ممکن است نتیجه سیاسی فوراً روشن نشود. احزاب باید از حدنصاب ۳٫۲۵...
+- **Last Message Time:** 2026-10-27 06:17:56
