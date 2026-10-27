@@ -153,13 +153,11 @@ class SentinelEngine:
         
         # Scenario A: War Channel (@DidebanJang)
         if target_channel == config.CHANNELS["WAR"]:
-            if has_iran:
-                # Any war/explosion/air defense incident in Iranian airspace/cities is strictly URGENT
-                return "URGENT", False
-            elif is_kinetic and not has_region and ("حمله به ایران" in norm_text or "پایگاه" in norm_text):
+            # Strict Rule: Only kinetic war incidents on Iranian territorial soil/airspace are URGENT
+            if has_iran and is_kinetic:
                 return "URGENT", False
             else:
-                # Pure regional skirmishes (Hebron, South Lebanon, Haifa, Red Sea) -> SILENT
+                # All regional conflicts (Lebanon, Gaza, Israel, Yemen, Syria), statements, threats -> SILENT
                 return "SILENT", True
 
         # Scenario B: Protest & Infrastructure Channel (@DidebanEterazat)
