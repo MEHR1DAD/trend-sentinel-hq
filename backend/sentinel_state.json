@@ -736,7 +736,7 @@
   },
   "channel_watermarks": {
     "Alibk3": 40143,
-    "withyashar": 26635,
+    "withyashar": 26638,
     "VahidOnline": 78856,
     "netblocks": 1578,
     "iliaen": 4752,
@@ -839,39 +839,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_kianmeli1_93780",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93780,
-      "text": "🔴سعید لیلاز: \nایران چاره‌ای جز اتمی‌شدن ندارد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793075478.1962385,
-      "retries": 14,
-      "last_retry_at": 1793089149.963371
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93781",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93781,
-      "text": "🔴کانال ۱۴ اسراییل\n\nحزب‌الله با بهره‌گیری از ده‌ها میلیون دلار بودجه جدید از سوی ایران، بی‌سروصدا در حال آماده‌سازی خود برای جنگی منطقه‌ای و تازه با اسرائیل است.\n\nبه گفته منابع، این گروه با وجود ناکامی‌های تاکتیکی اخیر، از وقفه ایجادشده در درگیری‌ها استفاده می‌کند تا ساختارهای فرماندهی خود را بازسازی کرده، پهپادهای انفجاری تولید کند و زرادخانه‌اش را دوباره تجهیز نماید.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793075704.0115116,
-      "retries": 13,
-      "last_retry_at": 1793089152.1453164
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26590",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26590,
-      "text": "سازمان عملیات تجارت دریایی انگلیس (UKMTO) اعلام کرد که از طریق چند منبع ثالث گزارش‌هایی درباره آتش‌سوزی یک شناور در ۶۳ مایل دریایی جنوب شرقی «فاو» عراق دریافت کرده است.\n@WarRoom",
-      "is_edit": true,
-      "enqueued_at": 1793076189.4770298,
-      "retries": 12,
-      "last_retry_at": 1793089072.9851074
-    },
-    {
       "id": "vip_multi_agent_withyashar_26613",
       "pipeline": "vip_multi_agent",
       "node": "withyashar",
@@ -879,8 +846,8 @@
       "text": "اورژانس: انفجار شدید یک منزل مسکونی در پی برخورد بیل مکانیکی با لوله گاز در کرمانشاه؛ موج انفجار به ۶ ساختمان همجوار هم آسیب وارد کرد,  ۱۱ مصدوم از زیر آوار بیرون کشیده شدند , تاکنون ۴ نفر جان خود را از دست داده‌اند، امکان افزایش آمار جان‌باختگان یا مصدومان وجود دارد\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793077680.5145693,
-      "retries": 12,
-      "last_retry_at": 1793089074.5845466
+      "retries": 28,
+      "last_retry_at": 1793090766.332836
     },
     {
       "id": "vip_multi_agent_Alibk3_40135",
@@ -890,8 +857,8 @@
       "text": "افتتاح صناديق الاقتراع في الاراضي المحتلة لبدءِ الانتخابات",
       "is_edit": false,
       "enqueued_at": 1793078067.656851,
-      "retries": 12,
-      "last_retry_at": 1793089076.1609
+      "retries": 28,
+      "last_retry_at": 1793090770.3060906
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6958",
@@ -901,8 +868,8 @@
       "text": "Polling stations have opened in the occupied territories for the start of the elections.",
       "is_edit": false,
       "enqueued_at": 1793078068.2537742,
-      "retries": 11,
-      "last_retry_at": 1793089084.3567216
+      "retries": 27,
+      "last_retry_at": 1793090773.067462
     },
     {
       "id": "vip_multi_agent_withyashar_26614",
@@ -912,8 +879,8 @@
       "text": "ترامپ: ایران اکنون موشکی دارد که به اروپا رسیده است! قرار نبود این اتفاق بیفتد. ما گفتیم: \"اینها از کجا این موشک را به دست آورده‌اند؟\"آنها می‌توانستند سن دیگو، لس‌آنجلس و شهرهای ما را نیز هدف قرار دهند. بنابراین، کسی باید این کار را انجام می‌داد و این کار باید به سرعت انجام می‌شد، زیرا آنها دو هفته [فاصله] با دستیابی به سلاح هسته‌ای داشتند.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793078068.8592308,
-      "retries": 11,
-      "last_retry_at": 1793089100.9051733
+      "retries": 27,
+      "last_retry_at": 1793090791.779317
     },
     {
       "id": "vip_multi_agent_withyashar_26615",
@@ -923,8 +890,8 @@
       "text": "ترامپ درباره ایران:\n«ما جنگ با ایران را آغاز نکردیم. ایران جنگ با ما را آغاز کرد.»\nاشکالی ندارد اگر این جمله را از‌کس‌دیگری کپی کنم؟\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793078252.7408574,
-      "retries": 11,
-      "last_retry_at": 1793089102.4437642
+      "retries": 27,
+      "last_retry_at": 1793090794.548275
     },
     {
       "id": "vip_multi_agent_withyashar_26616",
@@ -934,8 +901,8 @@
       "text": "ترامپ درباره ایران:\nایرانی‌ها سلاح‌های فوق‌العاده‌ای می‌سازند. آن‌ها آدم‌های بسیار باهوشی هستند، اما ما حسابی دهنشونو سرویس می‌کنیم.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793078342.364809,
-      "retries": 11,
-      "last_retry_at": 1793089103.98597
+      "retries": 27,
+      "last_retry_at": 1793090796.0767093
     },
     {
       "id": "vip_multi_agent_withyashar_26617",
@@ -945,8 +912,8 @@
       "text": "ترامپ درباره ایران:\nما یک آتش‌بس مختصر برقرار کردیم که من هیچ‌وقت خیلی از آن خوشم نمی‌آمد. به نظرم تلف کردن وقت بود.\nآن آتش‌بس صرفاً هدر دادن وقت بود.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793078489.3836038,
-      "retries": 10,
-      "last_retry_at": 1793089105.564229
+      "retries": 26,
+      "last_retry_at": 1793090797.6071494
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6959",
@@ -956,8 +923,8 @@
       "text": "به نظر می‌رسد یک کشتی هدف قرار گرفته است\n\nوقوع آتش‌سوزی در آب‌های دریای عمان در نزدیکی شهر صحار رصد شده است\n\nA vessel appears to have been targeted\n\nA fire has been detected in the waters of the Gulf of Oman near the city of Sohar",
       "is_edit": true,
       "enqueued_at": 1793078929.572105,
-      "retries": 10,
-      "last_retry_at": 1793089122.1479857
+      "retries": 26,
+      "last_retry_at": 1793090816.588099
     },
     {
       "id": "vip_multi_agent_withyashar_26618",
@@ -967,8 +934,8 @@
       "text": "ساعتی پیش کرج روبرو انبار نفت\n@WarRoom",
       "is_edit": true,
       "enqueued_at": 1793079275.1776962,
-      "retries": 10,
-      "last_retry_at": 1793089130.3399565
+      "retries": 26,
+      "last_retry_at": 1793090821.1525962
     },
     {
       "id": "vip_multi_agent_withyashar_26619",
@@ -978,8 +945,8 @@
       "text": "ترامپ درباره ایران:\nفکر می‌کردم قیمت نفت خیلی خیلی بالاتر خواهد رفت و من کاملاً آماده بودم که آن کار را انجام دهم.\nواقعاً چاره‌ای نداشتیم.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793079829.5449095,
-      "retries": 9,
-      "last_retry_at": 1793089131.8793054
+      "retries": 25,
+      "last_retry_at": 1793090841.9713123
     },
     {
       "id": "vip_multi_agent_withyashar_26620",
@@ -989,8 +956,8 @@
       "text": "نیویورک تایمز : اسرائیل در انتخاباتی رأی می‌دهد که نوعی همه‌پرسی درباره نتانیاهو تلقی می‌شود\nاین نخستین انتخابات در اسرائیل پس از حملات ۷ اکتبر ۲۰۲۳ است. ائتلاف راست به رهبری بنیامین نتانیاهو، نخست‌وزیر، در برابر احزاب مخالفی قرار گرفته که به‌طور غیررسمی توسط یک فرمانده نظامی پیشین هدایت می‌شوند؛ کسی که پسرش در جنگ غزه کشته شده است.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793080413.5581634,
-      "retries": 8,
-      "last_retry_at": 1793089133.4206133
+      "retries": 24,
+      "last_retry_at": 1793090845.9358866
     },
     {
       "id": "vip_multi_agent_withyashar_26621",
@@ -1000,8 +967,8 @@
       "text": "تایمز آو اسرائیل: نتانیاهو ممکن است در صورت تشکیل دولت بعدی، ایال زامیر، رئیس ستاد ارتش، را برکنار کند. گزارش می‌گوید اختلاف بر سر آمادگی نظامی مرتبط با ایران عمیق شده؛ \nدفتر نتانیاهو این گزارش را «خبر جعلی» خوانده است. \n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793081479.4303908,
-      "retries": 1,
-      "last_retry_at": 1793089054.6987567
+      "retries": 17,
+      "last_retry_at": 1793090847.4657118
     },
     {
       "id": "vip_multi_agent_withyashar_26622",
@@ -1011,8 +978,8 @@
       "text": "جروزالم پست: ارتش اسرائیل در واکنش به موج گزارش‌ها درباره اختلاف نتانیاهو و زامیر، بیانیه‌ای منتشر کرد؛ با این حال، بیانیه به‌جای تأیید یا رد جزئیات ادعاشده، به ابهامات درباره اختلافات داخلی پرداخت. \n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793081589.5649402,
-      "retries": 1,
-      "last_retry_at": 1793089056.342105
+      "retries": 17,
+      "last_retry_at": 1793090852.0320241
     },
     {
       "id": "vip_multi_agent_withyashar_26623",
@@ -1022,8 +989,8 @@
       "text": "وای‌نت: نتانیاهو در کارزار پایانی انتخاباتی خود ادعا کرد ایران برنامه هسته‌ای خود را از سر گرفته و قصد دارد اسرائیل را نابود کند. این سخنان در چارچوب هشدارهای انتخاباتی او مطرح شد\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793081647.2587018,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 10,
+      "last_retry_at": 1793090822.6780567
     },
     {
       "id": "vip_multi_agent_withyashar_26624",
@@ -1033,8 +1000,8 @@
       "text": "رویترز: حتی پس از بسته شدن صندوق‌ها، ممکن است نتیجه سیاسی فوراً روشن نشود. احزاب باید از حدنصاب ۳٫۲۵ درصد عبور کنند و رئیس‌جمهور اسحاق هرتزوگ پس از نهایی شدن نتایج با رهبران احزاب مشورت خواهد کرد تا فردی را مأمور تشکیل دولت کند. \n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793081876.5379179,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 7,
+      "last_retry_at": 1793090825.4403408
     },
     {
       "id": "vip_multi_agent_withyashar_26625",
@@ -1044,8 +1011,8 @@
       "text": "چرا خبری از انتخابات اسرائیل نیست",
       "is_edit": false,
       "enqueued_at": 1793083039.8506706,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 2,
+      "last_retry_at": 1793090775.2192802
     },
     {
       "id": "vip_multi_agent_withyashar_26626",
@@ -1233,7 +1200,62 @@
       "enqueued_at": 1793088885.722288,
       "retries": 0,
       "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26636",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26636,
+      "text": "خبر های زرد زیادی ممکنه بیاد تا لحظه ای که نخست‌وزیر انتخاب نشده خونسردی خودتون رو حفظ کنید\n@WarRoom ⚠️⚠️⚠️⚠️⚠️",
+      "is_edit": false,
+      "enqueued_at": 1793089579.6337912,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_40144",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 40144,
+      "text": "الحكومة الأردنية: \n\nعمليتنا جنوب سوريا جاءت بعد نفاد صبرنا إزاء تحركات التنظيمات الإرهابية واستهداف أمننا الوطني",
+      "is_edit": false,
+      "enqueued_at": 1793089894.9462488,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6967",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6967,
+      "text": "دولت اردن:\n\nعملیات ما در جنوب سوریه پس از پایان یافتن صبرمان در برابر تحرکات گروه‌های تروریستی و هدف قرار دادن امنیت ملی‌مان انجام شد.\n\nJordanian government:\n\nOur operation in southern Syria came after we ran out of patience with the movements of terrorist groups and their targeting of our national security.",
+      "is_edit": true,
+      "enqueued_at": 1793089905.1764264,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Alibk3_40145",
+      "pipeline": "vip_multi_agent",
+      "node": "Alibk3",
+      "msg_id": 40145,
+      "text": "طائرة عمانية خاصة تهبط في العاصمة السعودية الرياض ومن المحتمل أنها تتعلق بموضوع خفض التصعيد مع اليمن",
+      "is_edit": false,
+      "enqueued_at": 1793090716.15666,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_Ali_bk_8_6968",
+      "pipeline": "vip_multi_agent",
+      "node": "Ali_bk_8",
+      "msg_id": 6968,
+      "text": "An Omani private aircraft lands in the Saudi capital, Riyadh, possibly in connection with de-escalation efforts with Yemen.",
+      "is_edit": false,
+      "enqueued_at": 1793090717.809095,
+      "retries": 0,
+      "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-27 08:19:13 UTC"
+  "last_saved": "2026-10-27 08:47:41 UTC"
 }
