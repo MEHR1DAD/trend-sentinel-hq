@@ -11,6 +11,8 @@ import os
 import sys
 import json
 import time
+import html
+import re
 import asyncio
 import urllib.request
 import urllib.parse
@@ -101,7 +103,79 @@ class TrendSentinelV4:
                     return InputPeerChannel(channel_id=int(cid), access_hash=int(ah))
         return None
 
-    def send_bot_alert(self, target_channel: str, text: str, disable_notif: bool) -> bool:
+    @staticmethod
+    def sanitize_and_format_alert(raw_text: str, source_node: str, msg_id: int, disable_notif: bool) -> str:
+        """
+        Sanitizes raw text, removes asterisks & trailing promotional watermarks,
+        and formats with clean inline status icon and hyperlinked source attribution.
+        """
+        lines = [l.strip() for l in raw_text.split('\n')]
+
+        # 1. Strip raw asterisks from each line
+        cleaned_lines = []
+        for line in lines:
+            c_line = re.sub(r'\*+', '', line).strip()
+            cleaned_lines.append(c_line)
+
+        # 2. Pop watermarks and promotional links from the bottom
+        while cleaned_lines:
+            last = cleaned_lines[-1]
+            if not last:
+                cleaned_lines.pop()
+                continue
+            is_watermark = (
+                re.match(r'^#[a-zA-Z0-9_\u0600-\u06FF]+(\s+#[a-zA-Z0-9_\u0600-\u06FF]+)*$', last) or
+                re.match(r'^https?://t\.me/[\w/]+$', last) or
+                re.match(r'^@[\w_]+$', last) or
+                't.me/' in last or
+                'عضویت در کانال' in last or
+                'کانال تلگرام' in last or
+                'لینک کانال' in last
+            )
+            if is_watermark:
+                cleaned_lines.pop()
+            else:
+                break
+
+        if not cleaned_lines:
+            return ""
+
+        # 3. Group into clean paragraphs with HTML escaping
+        paragraphs = []
+        current_p = []
+        for line in cleaned_lines:
+            if line:
+                current_p.append(html.escape(line))
+            else:
+                if current_p:
+                    paragraphs.append(' '.join(current_p))
+                    current_p = []
+        if current_p:
+            paragraphs.append(' '.join(current_p))
+
+        if not paragraphs:
+            return ""
+
+        # 4. Prefix status icon on the first paragraph/headline
+        icon = "🔕" if disable_notif else "🚨"
+        first_p = paragraphs[0]
+
+        if re.match(r'^[🔴⚠️⚡️🚨💥📢📌]', first_p):
+            formatted_first_p = f"{icon}{first_p}"
+        else:
+            formatted_first_p = f"{icon} {first_p}"
+
+        all_body = [formatted_first_p] + paragraphs[1:]
+        body_text = "\n\n".join(all_body)
+
+        # 5. Clean single-line hyperlinked source footer
+        clean_node = source_node.lstrip('@')
+        source_url = f"https://t.me/{clean_node}/{msg_id}"
+        footer = f'📡 منبع: <a href="{source_url}">@{clean_node}</a>'
+
+        return f"{body_text}\n\n{footer}"
+
+    def send_bot_alert(self, target_channel: str, html_text: str, disable_notif: bool) -> bool:
         """Dispatches formatted alert to destination Telegram channel via Bot API."""
         if not config.BOT_TOKEN:
             print("⚠️ TELEGRAM_BOT_TOKEN is not configured!")
@@ -110,8 +184,9 @@ class TrendSentinelV4:
         url = f"https://api.telegram.org/bot{config.BOT_TOKEN}/sendMessage"
         payload = {
             "chat_id": target_channel,
-            "text": text,
-            "disable_web_page_preview": False,
+            "text": html_text,
+            "parse_mode": "HTML",
+            "disable_web_page_preview": True,
             "disable_notification": disable_notif
         }
 
@@ -122,12 +197,25 @@ class TrendSentinelV4:
                 if response.status == 200:
                     return True
         except Exception as e:
-            print(f"❌ Failed to dispatch bot alert to {target_channel}: {e}")
+            # Fallback: if HTML parsing failed, strip HTML tags and retry with plain text
+            print(f"⚠️ HTML send failed: {e}. Retrying without parse_mode...")
+            try:
+                plain_text = re.sub(r'<[^>]+>', '', html_text)
+                payload["text"] = plain_text
+                del payload["parse_mode"]
+                data = json.dumps(payload).encode("utf-8")
+                req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+                with urllib.request.urlopen(req, timeout=10) as response:
+                    if response.status == 200:
+                        return True
+            except Exception as e2:
+                print(f"❌ Failed fallback alert to {target_channel}: {e2}")
         return False
 
     async def handle_new_message(self, event_or_msg, source_node: str):
         """Processes an incoming message through the 3-step engine and dispatches if matched."""
-        msg_text = event_or_msg.text or ""
+        # Use raw_text to bypass Telethon's markdown asterisks, or text as fallback
+        msg_text = getattr(event_or_msg, "raw_text", None) or event_or_msg.text or ""
         msg_id = event_or_msg.id
         msg_date = event_or_msg.date
 
@@ -147,18 +235,12 @@ class TrendSentinelV4:
             return
 
         target_ch = eval_res["target_channel"]
-        tag = eval_res["tag"]
-        severity = eval_res["severity"]
         disable_notif = eval_res["disable_notification"]
 
-        # Format Final Alert
-        post_link = f"https://t.me/{source_node.lstrip('@')}/{msg_id}"
-        alert_body = (
-            f"{tag}\n\n"
-            f"{msg_text}\n\n"
-            f"📡 منبع: @{source_node.lstrip('@')}\n"
-            f"🔗 {post_link}"
-        )
+        # Format Final Alert using the exact user-specified typographic template
+        alert_body = self.sanitize_and_format_alert(msg_text, source_node, msg_id, disable_notif)
+        if not alert_body:
+            return
 
         mode_str = "🔕 SILENT" if disable_notif else "🚨 URGENT"
         print(f"🚀 [DISPATCH] {mode_str} -> {target_ch} (Source: @{source_node} | Msg: {msg_id})")
