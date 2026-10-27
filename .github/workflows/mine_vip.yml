@@ -96,5 +96,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
-          echo "Resuming Sentinel Live Watcher..."
+          echo "Re-enabling and resuming Sentinel Live Watcher..."
+          gh workflow enable watch.yml || true
           gh workflow run watch.yml --ref main || true
