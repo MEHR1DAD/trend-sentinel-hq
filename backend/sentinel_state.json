@@ -735,12 +735,12 @@
     "@iliaenAI": 7
   },
   "channel_watermarks": {
-    "Alibk3": 40142,
-    "withyashar": 26630,
+    "Alibk3": 40143,
+    "withyashar": 26635,
     "VahidOnline": 78856,
     "netblocks": 1578,
     "iliaen": 4752,
-    "Ali_bk_8": 6965,
+    "Ali_bk_8": 6966,
     "kianmeli1": 93781
   },
   "vahid_post_time": {},
@@ -839,831 +839,6 @@
   },
   "smart_queue": [
     {
-      "id": "vip_multi_agent_withyashar_26593",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26593,
-      "text": "دو جت هیئت پاکستانی ( عاصم منیر ) تهران رو ترک کردن \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073509.6208253,
-      "retries": 136,
-      "last_retry_at": 1793087382.153737
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26594",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26594,
-      "text": "رسانه‌های عبری : آی۲۴: به درخواست بنیامین نتانیاهو، مقام‌های اسرائیلی اخیراً درباره آمادگی برای حمله به ایران گفت‌وگو کرده‌اند. با این حال، فرماندهان نظامی هشدار داده‌اند که آشکار شدن آمادگی‌های نظامی ممکن است تهران را به این نتیجه برساند که حمله قریب‌الوقوع است و در نتیجه، ایران برای حمله پیش‌دستانه اقدام کند. ایال زامیر، رئیس ستاد کل ارتش اسرائیل، و فرماندهان ارشد با اقدام نظامی علیه ایران موافق‌اند، اما با اجرای آن در مقطع کنونی و درست پیش از انتخابات اسرائیل مخالفت دارند.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073509.651052,
-      "retries": 136,
-      "last_retry_at": 1793087387.365268
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26595",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26595,
-      "text": "پست جدید، اتاق جنگ با یاشار : انتخاب ، برام کامنت کنید که آیا فردا بی بی نتانیاهو به نظر شما فردا موفق میشه ؟ دلیلشم بگید، کارای اداری یادتون نره \n\nhttps://www.instagram.com/reel/De9_tJ8RMoM/?exln=OWx1a3ZmdHliZnhi",
-      "is_edit": false,
-      "enqueued_at": 1793073509.6822042,
-      "retries": 135,
-      "last_retry_at": 1793087332.9082532
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26596",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26596,
-      "text": "انفجار منزل مسکونی در میناب \nآتشنشانی علت انفجار رو انفجار گاز عنوان کردن\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073509.7107174,
-      "retries": 135,
-      "last_retry_at": 1793087334.4684734
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26597",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26597,
-      "text": "گوینده کانال ۱۴ اسرائیل: اگر بروید و رأی بدید، شما سربازان حمله به ایران هستین. رأی شما یعنی حمله به ایران .پس برید رأی بدید\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073509.7459853,
-      "retries": 135,
-      "last_retry_at": 1793087388.9745157
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26598",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26598,
-      "text": "ترامپ: به هر کسی که در مورد تقلب انتخاباتی در انتخابات‌های گذشته یا انتخابات میان‌دوره‌ای پیشِ رو در سال ۲۰۲۶ گزارش دهد، در صورت دستگیری و محکومیتِ عاملانِ آن تقلب، مبلغ یک میلیون دلار پرداخت خواهد شد!\n@WarRoom 🚨🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1793073509.7744656,
-      "retries": 135,
-      "last_retry_at": 1793087393.6019506
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26599",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26599,
-      "text": "میناب ساختمان ساندویچی شباب ، کپسول گاز ترکیده ، خیلی زیر آورن\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073509.8034816,
-      "retries": 135,
-      "last_retry_at": 1793087410.1574585
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26600",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26600,
-      "text": "دونالد ترامپ درباره بنیامین نتانیاهو: نتانیاهو در شرایط بسیار دشوار، به‌عنوان نخست‌وزیر عملکرد بسیار خوبی داشته است. \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073509.831915,
-      "retries": 135,
-      "last_retry_at": 1793087411.7114213
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26601",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26601,
-      "text": "اسکات بسنت، وزیر خزانه‌داری آمریکا، درباره ایران: ۴۷ سال پیش، اقتصاد ایران بزرگ‌تر از اقتصاد ترکیه بود؛ اما اکنون اقتصاد ترکیه سه‌ونیم تا چهار برابر بزرگ‌تر از اقتصاد ایران است. اقتصاد ایران در طول ۴۷ سال گذشته درجا زده و این وضعیت، نتیجه تصمیمات همین رژیم است. \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073509.860578,
-      "retries": 133,
-      "last_retry_at": 1793087413.2546663
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26602",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26602,
-      "text": "اسکات بسنت، وزیر خزانه‌داری آمریکا، درباره ایران: معتقدم رهبران جمهوری اسلامی اکنون ارزش واقعی ریال را پنهان می‌کنند. به باور من، نرخ دلار از ۳ میلیون ریال عبور کرده و به همین دلیل، آن‌ها دیگر نرخ ارز را اعلام نمی‌کنند. پیش‌بینی می‌کنم اقتصاد ایران از مارس ۲۰۲۶ تا مارس ۲۰۲۷ بیش از ۲۵ درصد کوچک شود؛ انقباضی شدیدتر از افت اقتصادی اتحاد جماهیر شوروی پس از فروپاشی آن. \n@WarRoom 🚨🚨🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1793073509.8912015,
-      "retries": 132,
-      "last_retry_at": 1793087316.349291
-    },
-    {
-      "id": "vip_multi_agent_VahidOnline_78855",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78855,
-      "text": "دونالد ترامپ در گردهمایی انتخاباتی در ایالت می‌سی‌سی‌پی با اشاره به درگیری‌ها با جمهوری اسلامی ایران و برقراری یک دوره توقف در درگیری‌ها گفت: «ما یک آتش‌بس کوچک برقرار کردیم که من هرگز چندان از آن خوشم نیامد و آن را نوعی اتلاف وقت دانستم. البته آدم مایل است به حرف افراد متخصص گوش کند، اما یک آتش‌بس کوچک دادیم تا اجازه دهیم چند کشتی وارد شوند چون می‌خواستیم لطف کنیم، اما تا جایی که به من مربوط می‌شود فقط هدر دادن زمان بود.» او با اشاره به اینکه «ما جنگ با ایران را شروع نکردیم، بلکه ایران جنگ با ما را آغاز کرد»، تأکید کرد: «ایران سال‌ها است این اقدامات را علیه ما انجام می‌دهد؛ آن‌ها سلاح‌های پیشرفته می‌سازند و افراد بسیار باهوشی هستند، اما ما ضربات سنگینی به آن‌ها وارد کردیم.» ترامپ همچنین با اشاره به توان موشکی حکومت ایران افزود: «آن‌ها موشکی داشتند که به اروپا می‌رسید و اگر اقدامی نمی‌شد شهرهای ما را هم هدف قرار می‌دادند؛ سن‌دیه‌گو و لس‌آنجلس را می‌زدند؛ بنابراین یک نفر باید دست به کار می‌شد و این کار باید به سرعت انجام می‌گرفت».\n@VahidOOnLine\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1793073510.2224538,
-      "retries": 129,
-      "last_retry_at": 1793087336.0243363
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26605",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26605,
-      "text": "اسکات بسنت، وزیر خزانه‌داری آمریکا، درباره ایران:«بسیاری از فرماندهان سپاه پاسداران انقلاب اسلامی مانند موش‌هایی در لوله‌های فاضلاب هستند؛ آن‌ها مخفی شده‌اند.آن‌ها در مکان‌های عمیق و تاریک پنهان شده‌اند و نمی‌بینند که چه اتفاقی برای مردم ایران در حال رخ دادن است.\nآیت‌الله به‌شدت منزوی شده است.\nبسیاری از این رهبران درک نمی‌کنند که چه اتفاقی برای مردم ایران می‌افتد.»\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073511.4312158,
-      "retries": 127,
-      "last_retry_at": 1793087340.652996
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26606",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26606,
-      "text": "فیلم جدید از لحظه برخورد یک موشک کروز آمریکایی تاماهاوک به کوه‌ی در ایران، در جریان جنگ آمریکا و اسرائیل علیه ایران در اوایل سال ۲۰۲۶ (اواخر ۱۴۰۴).\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073511.4614527,
-      "retries": 126,
-      "last_retry_at": 1793087357.2858577
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26607",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26607,
-      "text": "زرشکیان به مسکو رسید\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073511.4984314,
-      "retries": 126,
-      "last_retry_at": 1793087362.5044506
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26608",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26608,
-      "text": "رسانه های اسرائیلی: ترامپ در حال بررسی امکان انجام عملیات نظامی در ایران بلافاصله پس از پایان انتخابات میان‌دوره‌ای هفته آینده کنگرهٔ آمریکا است.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073511.5269287,
-      "retries": 126,
-      "last_retry_at": 1793087364.0506856
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26609",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26609,
-      "text": "خبرنگار CNN به نقل از دو مقام آمریکایی مدعی شد : جنگی بزرگ با ایران در راه است.\n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073511.557032,
-      "retries": 124,
-      "last_retry_at": 1793087365.6042888
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26610",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26610,
-      "text": "نیویورک‌تایمز: میانجی‌های قطری در حال تلاش برای دستیابی به توافقی پنج‌روزه میان ایران و آمریکا هستند. بر اساس این طرح، ایران تنگه هرمز را به روی کشتیرانی تجاری باز می‌کند و آمریکا محاصره دریایی بنادر ایران را لغو خواهد کرد. دو دیپلمات مطلع گفته‌اند اختلاف اصلی بر سر زمان‌بندی اجرای امتیازهاست و میانجی‌ها از تهران می‌خواهند در مراحل ابتدایی توافق، درباره برنامه هسته‌ای خود نیز انعطاف نشان دهد. هم‌زمان، دیدار مقام‌های ارشد عربستان، پاکستان و ترکیه با مقام‌های ایرانی در تهران در راستای حمایت از تلاش‌های دیپلماتیک قطر و پاکستان ارزیابی شده است. تاکنون توافق نهایی اعلام نشده است. \n@WarRoom",
-      "is_edit": false,
-      "enqueued_at": 1793073511.581775,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_withyashar_26611",
-      "pipeline": "vip_multi_agent",
-      "node": "withyashar",
-      "msg_id": 26611,
-      "text": "پرواز پهپاد شناسایی امریکایی/اسرائیلی هم اکنون در شیراز\n@WarRoom 🚨🚨🚨🚨",
-      "is_edit": false,
-      "enqueued_at": 1793073511.6068819,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40118",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40118,
-      "text": "ارتقاء مسنة 90 عامًا لطفية العلي في الغارات الأردنية بريف درعا السورية.\n\nالطفل ياسين السليم 10سنوات\nالطفل أسامة السليم 8 سنوات\nالطفلة لميس السليم 6 سنوات\nالشاب زاهر سعود السليم 18 عام\nالحاجة لطفية العلي 90",
-      "is_edit": false,
-      "enqueued_at": 1793073515.738122,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40116",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40116,
-      "text": "صور الأقمار الصناعية تُظهر أن قاعدة سلاح الجو البريطاني فيرفورد خالية من الطائرات العسكرية الأميركية، بما في ذلك B-1 قاذفات استراتيجية، اعتبارًا من أوائل أكتوبر حيث سحبت الولايات المتحدة القاذفات بعد مخاوف من وجود مخطط لمهاجمة القاعدة",
-      "is_edit": false,
-      "enqueued_at": 1793073515.7444491,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40119",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40119,
-      "text": "عقب معارك ضارية خلال الأيام الماضية، تمكنت القوات اليمنية من السيطرة على مناطق حجيجة وأمحرِيم والمحجبة وأصبح، فيما انسحبت القوات الموالية للسعودية \"العمالقة\" باتجاه مناطق الدراد والشطين وأمنابيه.\n\nوباتت القوات اليمنية على بُعد نحو 15 كيلومتراً من الوصول إلى الساحل الجنوبي الغربي، وذلك بعد إحكام سيطرتها على سلسلة جبال كهبوب وتأمين محيطها.\n\nالقوات الموالية للسعودية التي تقدمت نحو باب المندب ومطار ذو باب إما ستحاصر أو تنسحب.",
-      "is_edit": false,
-      "enqueued_at": 1793073515.7761307,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40120",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40120,
-      "text": "توتر أمني في معبر نصيب الحدودي بين سوريا والأردن، وسط اعتداءات على سائقي الشاحنات الأردنية.",
-      "is_edit": false,
-      "enqueued_at": 1793073515.8082933,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40121",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40121,
-      "text": "ترامب حول الحرب مع إيران: \n\nالمشكلة هي أنه بمجرد أن تتوقف عن مهاجمتهم، يبدأون في إعادة البناء مرة أخرى.",
-      "is_edit": false,
-      "enqueued_at": 1793073515.8385794,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40122",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40122,
-      "text": "ترامب:\n\nإيران الآن لديها صاروخ وصل بشكل أساسي إلى أوروبا.\n\nلم يكن من المفترض أن يكون لديها هذا الصاروخ. سألنا: \"من أين حصلوا عليه؟\"\n\nيمكنهم أن يضربوا سان دييغو، ويمكنهم أن يضربوا لوس أنجلوس، ويمكنهم أن يضربوا مدننا أيضًا. لذلك، كان على شخص ما أن يفعل ذلك، وكان يجب أن يتم ذلك بسرعة لأنهم كانوا على بعد أسبوعين [فقط] من امتلاك سلاح نووي.",
-      "is_edit": false,
-      "enqueued_at": 1793073515.866908,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40123",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40123,
-      "text": "ترامب:\n\nلقد أعلنا هدنة قصيرة، وهو أمر لم يعجبني كثيرًا. اعتبرتها مضيعة للوقت.",
-      "is_edit": false,
-      "enqueued_at": 1793073515.896757,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40124",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40124,
-      "text": "هجوم في المنطقة الشرقية بالسعودية.",
-      "is_edit": false,
-      "enqueued_at": 1793073515.9252408,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40125",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40125,
-      "text": "هجوم يمني في محافظة الخرج في السعودية.",
-      "is_edit": false,
-      "enqueued_at": 1793073515.9522378,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40126",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40126,
-      "text": "رشقات صاروخية يمنية تنطلق الآن نحو السعودية.",
-      "is_edit": false,
-      "enqueued_at": 1793073515.9863539,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40127",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40127,
-      "text": "صور الأقمار الصناعية ترصد حريقًا غير اعتيادي في حقل الغوار النفطي السعودي، أكبر حقل نفطي بري في العالم.",
-      "is_edit": false,
-      "enqueued_at": 1793073516.0136375,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40128",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40128,
-      "text": "توقف مطار الدمام بالمنطقة الشرقية بالسعودية بالتزامن مع الهجوم اليمني.",
-      "is_edit": false,
-      "enqueued_at": 1793073516.0473526,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40129",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40129,
-      "text": "سقوط صواريخ يمنية بشكل مباشر في المنطقة الشرقية بالسعودية.",
-      "is_edit": false,
-      "enqueued_at": 1793073516.0781682,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40130",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40130,
-      "text": "لحظة وصول الصواريخ اليمنية فوق المنطقة الشرقية بالسعودية.",
-      "is_edit": false,
-      "enqueued_at": 1793073516.1068432,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40131",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40131,
-      "text": "الحريق في حقل الغوار النفطي السعودي يتصاعد ويصل في الذروة لـ171 ميغاواط.",
-      "is_edit": false,
-      "enqueued_at": 1793073516.1339843,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40132",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40132,
-      "text": "صور الأقمار الصناعية ترصد حريقًا غير اعتيادي في مصفاة راس تنورة شرق السعودية بدأ في الساعة 3:9 فجرًا عقب دوي صفارات الإنذار في المنطقة الشرقية بالسعودية بـ 9 دقائق.",
-      "is_edit": false,
-      "enqueued_at": 1793073517.6686926,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6936",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6936,
-      "text": "تصاویر ماهواره‌ای نشان می‌دهند که پایگاه نیروی هوایی سلطنتی بریتانیا در فرفورد از اوایل اکتبر از هواپیماهای نظامی آمریکا، از جمله بمب‌افکن‌های راهبردی B-1، خالی شده است؛ زیرا آمریکا پس از نگرانی‌ها درباره وجود طرحی برای حمله به این پایگاه، بمب‌افکن‌ها را خارج کرد.",
-      "is_edit": false,
-      "enqueued_at": 1793073519.3345423,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6937",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6937,
-      "text": "تصاویر ماهواره‌ای نشان می‌دهند که پایگاه نیروی هوایی سلطنتی بریتانیا در فرفورد از اوایل اکتبر خالی از هواپیماهای نظامی آمریکا، از جمله بمب‌افکن‌های راهبردی B-1، بوده است؛ زیرا ایالات متحده پس از نگرانی‌ها درباره وجود طرحی برای حمله به این پایگاه، بمب‌افکن‌ها را خارج کرد.",
-      "is_edit": false,
-      "enqueued_at": 1793073519.3690543,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6938",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6938,
-      "text": "تصاویر ماهواره‌ای نشان می‌دهند که پایگاه نیروی هوایی سلطنتی بریتانیا در فیرفورد، از اوایل ماه اکتبر تاکنون از هواپیماهای نظامی آمریکا، از جمله بمب‌افکن‌های راهبردی B-1، تخلیه شده است. این اقدام پس از آن صورت گرفت که ایالات متحده در پی نگرانی‌ها درباره طرحی برای حمله به این پایگاه، بمب‌افکن‌های خود را از آن خارج کرد.\n\nSatellite images show that the British RAF Fairford base has been cleared of US military aircraft, including B-1 strategic bombers, since early October, after the United States withdrew the bombers amid concerns about a plot to attack the base.",
-      "is_edit": false,
-      "enqueued_at": 1793073520.9014995,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6940",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6940,
-      "text": "شهادت لطفیه العلی، زن سالمند 90 ساله، در حمله‌های هوایی اردن به مناطق روستایی درعای سوریه.\n\nکودک یاسین السلیم 10 ساله\nکودک اسامه السلیم 8 ساله\nدختر لمیس السلیم 6 ساله\nجوان زاهر سعود السلیم 18 ساله\nحاجیه لطفیه العلی 90 ساله\n\nThe martyrdom of 90-year-old Lutfiya al-Ali in the Jordanian airstrikes in the Syrian Daraa countryside.\n\nThe child Yassin al-Salim 10 years old\nThe child Osama al-Salim 8 years old\nThe girl Lamis al-Salim 6 years old\nThe young man Zaher Saud al-Salim 18 years old\nHajja Lutfiya al-Ali 90",
-      "is_edit": false,
-      "enqueued_at": 1793073520.9330978,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6941",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6941,
-      "text": "پس از نبردهای شدیدی که طی روزهای گذشته جریان داشت، نیروهای یمنی موفق شدند کنترل مناطق حجیه، امحریم، المحجبه و أصبح را به دست بگیرند؛ در حالی که نیروهای «العمالقه» وابسته به عربستان به سمت مناطق الدراد، الشطین و امنابیه عقب‌نشینی کردند.\n\nنیروهای یمنی اکنون پس از تسلط کامل بر رشته‌کوه کَهبوب و تأمین امنیت مناطق پیرامونی آن، در فاصله حدود 15 کیلومتری از رسیدن به ساحل جنوب‌غربی قرار دارند.\n\nنیروهای وابسته به عربستان که به سمت باب‌المندب و فرودگاه ذوباب پیشروی کرده بودند، یا محاصره خواهند شد یا عقب‌نشینی خواهند کرد.\n\nAfter fierce battles over the past few days, Yemeni forces managed to take control of the areas of Hajijah, Amharim, Al-Mahjaba and Asbah, while Saudi-backed forces of the “Giants Brigades” withdrew toward the areas of Al-Dirad, Al-Shatayn and Amnabiya.\n\nYemeni forces are now about 15 kilometres away from reaching the southwestern coast, after consolidating their control over the Kahbub mountain range and securing its surroundings.\n\nSaudi-backed forces that advanced toward Bab al-Mandab and Dhubab Airport will either be besieged or withdraw.",
-      "is_edit": false,
-      "enqueued_at": 1793073520.9656181,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6943",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6943,
-      "text": "تنش‌های امنیتی در گذرگاه مرزی نصیب بین سوریه و اردن، در پی حمله به رانندگان کامیون‌های اردنی.\n\nSecurity tensions at the Nasib border crossing between Syria and Jordan, amid attacks on Jordanian truck drivers.",
-      "is_edit": false,
-      "enqueued_at": 1793073520.9949906,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6944",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6944,
-      "text": "ترامپ درباره جنگ با ایران:\n\nمشکل این است که به‌محض اینکه حمله به آن‌ها را متوقف می‌کنید، دوباره شروع به بازسازی می‌کنند.\n\nTrump on the war with Iran:\n\nThe problem is that as soon as you stop attacking them, they start rebuilding again.",
-      "is_edit": false,
-      "enqueued_at": 1793073521.0254776,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6945",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6945,
-      "text": "ترامپ:\n\nایران اکنون موشکی دارد که اساساً به اروپا رسیده است.\n\nقرار نبود چنین موشکی داشته باشند. پرسیدیم: «این موشک را از کجا آورده‌اند؟»\n\nآن‌ها می‌توانند سن‌دیگو را هدف قرار دهند، می‌توانند لس‌آنجلس را هدف قرار دهند و می‌توانند شهرهای ما را هم هدف قرار دهند. بنابراین، کسی باید این کار را انجام می‌داد و باید سریع انجام می‌شد، چون آن‌ها فقط دو هفته با داشتن سلاح هسته‌ای فاصله داشتند.\n\nTrump:\n\nIran now has a missile that has essentially reached Europe.\n\nThey were not supposed to have this missile. We asked, \"Where did they get it?\"\n\nThey can hit San Diego, they can hit Los Angeles, and they can hit our cities too. So someone had to do it, and it had to be done quickly because they were only two weeks away from having a nuclear weapon.",
-      "is_edit": false,
-      "enqueued_at": 1793073521.0535762,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6946",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6946,
-      "text": "ترامپ:\n\nما یک آتش‌بس کوتاه اعلام کردیم که چندان از آن خوشم نیامد. آن را اتلاف وقت می‌دانستم.\n\nTrump:\n\nWe announced a short truce, which I didn't particularly like. I considered it a waste of time.",
-      "is_edit": false,
-      "enqueued_at": 1793073521.0859983,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6947",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6947,
-      "text": "هجوم در منطقه شرقی عربستان سعودی.\n\nA stampede in Saudi Arabia’s Eastern Province.",
-      "is_edit": false,
-      "enqueued_at": 1793073521.1187544,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6948",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6948,
-      "text": "حمله یمنی‌ها در استان الخرج عربستان سعودی.\n\nA Yemeni attack in Saudi Arabia’s Al-Kharj Governorate.",
-      "is_edit": false,
-      "enqueued_at": 1793073521.1517785,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6949",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6949,
-      "text": "موج‌های موشکی یمن هم‌اکنون به سمت عربستان سعودی شلیک می‌شوند.\n\nYemeni missile salvos are being launched toward Saudi Arabia now.",
-      "is_edit": false,
-      "enqueued_at": 1793073521.182236,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6950",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6950,
-      "text": "تصاویر ماهواره‌ای آتش‌سوزی غیرمعمولی را در میدان نفتی غوار عربستان سعودی، بزرگترین میدان نفتی خشکی جهان، نشان می‌دهد.\n\nSatellite images detect an unusual fire at Saudi Arabia’s Ghawar oil field, the world’s largest onshore oil field.",
-      "is_edit": false,
-      "enqueued_at": 1793073521.2126346,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6951",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6951,
-      "text": "فرودگاه دمام در منطقه شرقی عربستان سعودی هم‌زمان با حمله یمن فعالیت خود را متوقف کرد.\n\nDammam Airport in Saudi Arabia’s Eastern Province has halted operations amid the Yemeni attack.",
-      "is_edit": false,
-      "enqueued_at": 1793073521.2444706,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6952",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6952,
-      "text": "اصابت مستقیم موشک‌های یمنی به منطقه شرقی عربستان سعودی.\n\nYemeni missiles have directly struck Saudi Arabia’s Eastern Province.",
-      "is_edit": false,
-      "enqueued_at": 1793073521.2758744,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6953",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6953,
-      "text": "لحظه رسیدن موشک‌های یمنی به آسمان منطقه شرقی عربستان سعودی.\n\nThe moment Yemeni missiles arrive over Saudi Arabia’s Eastern Province.",
-      "is_edit": false,
-      "enqueued_at": 1793073521.3076236,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6954",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6954,
-      "text": "آتش‌سوزی در میدان نفتی غوار عربستان سعودی در حال تشدید است و در اوج خود به 171 مگاوات می‌رسد.\n\nThe fire at Saudi Arabia’s Ghawar oil field is intensifying, reaching a peak of 171 megawatts.",
-      "is_edit": false,
-      "enqueued_at": 1793073521.340619,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6955",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6955,
-      "text": "تصاویر ماهواره‌ای آتش‌سوزی غیرعادی در پالایشگاه رأس تنوره در شرق عربستان سعودی را ثبت کرده‌اند که ساعت 3:9 بامداد، 9 دقیقه پس از به صدا درآمدن آژیرهای هشدار در منطقه شرقی عربستان سعودی آغاز شد.\n\nSatellite images show an unusual fire at the Ras Tanura refinery in eastern Saudi Arabia, which began at 3:9 a.m., 9 minutes after sirens sounded in Saudi Arabia’s Eastern Province.",
-      "is_edit": false,
-      "enqueued_at": 1793073522.8712125,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_netblocks_1578",
-      "pipeline": "vip_multi_agent",
-      "node": "netblocks",
-      "msg_id": 1578,
-      "text": "⚠️ Update: Crimea remains largely offline more than 16 hours after Ukrainian drone attacks target Taman substation in Krasnodar Krai, Russia, disrupting the supply of electricity to the occupied peninsula.",
-      "is_edit": false,
-      "enqueued_at": 1793073527.818072,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93760",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93760,
-      "text": "🔴درود کیان الان رد شدم خیابان آیت بعد از پدرثانی چندتا ماشین و یه طبقه خونه منفجر شده معلوم نیس چه خبره\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073530.1119514,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93761",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93761,
-      "text": "🔴وضعیت بعد از انفجار-نارمک\n\n#کیان_ملی\nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073531.6413567,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93763",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93763,
-      "text": "🔴قبل انفجار صدای پهپاد شنیده شده اما جمهوری اسلامی میگه نشت گاز بود\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073531.6743631,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93764",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93764,
-      "text": "🔴انفجار یه واحد اپارتمان در منطقه کوروش اهواز \n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073531.703597,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93765",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93765,
-      "text": "🔴درود کیان٫ یه اتیش سوزی بزرگ خیابون بهشتی تقاطع اندیشه رخ داده که خیلیا مصدوم شدن٫ چندتا موتور سوخته\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073531.7353954,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93766",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93766,
-      "text": "🔴انفجار منزل مسکونی در محله جعفرآباد کرمانشاه ۱۰ مصدوم برجای گذاشت\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073531.763693,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93767",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93767,
-      "text": "🔴مقامات آمریکایی \n\nآغاز عملیات‌های جدید علیه ایران صرفاً مسئله زمان است، نه یک احتمال؛ این عملیات‌های احتمالی علیه ایران بسیار گسترده‌تر از گذشته خواهد بود و تنها به هدف قرار دادن رادارها و پرتابگرهای موشکی محدود نخواهد شد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073531.789145,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93768",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93768,
-      "text": "🔴آخرین بار که به ایران آمد٫ جنگ ۱۲ روزه شروع شد\n\nورود هیئت عربستانی به ایران برای کنترل بازار نفت است\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073531.852972,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93769",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93769,
-      "text": "🔴گزارشاتی از شنیده شدن صدای انفجار در تنگه هرمز\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073531.8824012,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93770",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93770,
-      "text": "🔴منابع اسراییل-قرار بود نیروی هوایی و فضایی اسرائیل صبح دیروز حمله‌ای هوایی و گسترده را علیه تأسیسات تولید موشک‌های بالستیک، سایت‌های هسته‌ای و پایگاه‌های موشکی ایران انجام دهد؛ اما دولت ایالات متحده، چند روز پیش از زمان مقرر برای اجرای عملیات، با ممانعت از ارائه پشتیبانی‌هایی نظیر سوخت‌رسانی هوایی، جمع‌آوری اطلاعات چندمنظوره و عملیات جست‌وجو و نجات رزمی (CSAR) توسط فرماندهی مرکزی ایالات متحده (سنتکام)، با این اقدام مخالفت کرد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073531.908869,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93771",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93771,
-      "text": "🔴نتانیاهو درباره ایران: شما با این نئونازی‌ها چه توافقی می‌توانید به دست آورید؟\n\nآیا روزولت و چرچیل گفتند که می‌توانند با هیتلر به توافق برسند؟ خیر\nآنها به سراغ آن رژیم رفتند و آن را نابود کردند\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073531.9360054,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93772",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93772,
-      "text": "🔴بنا بر گزارش‌ها، وزیر دفاع عربستان سعودی به ایران سفر کرده است تا در خصوص پرداخت یک میلیارد دلار به حوثی‌ها در ازای برقراری آتش‌بس مذاکره کند.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073531.9634264,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93773",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93773,
-      "text": "🔴معاریو\n\nرئیس موساد از موضع نتانیاهو برای آغاز حمله به ایران پیش از انتخابات حمایت کرده است.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073531.9954906,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93774",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93774,
-      "text": "🔴وقوع انفجار یک خانه در میناب\n\nمشخص نیست نشت گاز بوده یا حمله \n\n#کیان_ملی \n https://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073532.0222871,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93775",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93775,
-      "text": "🔴تخلیه بخشی از مرکز آموزشی نیروی دریایی در سیرجان کرمان!\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073532.053701,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93776",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93776,
-      "text": "🔴پدافند «بندرعباس» امشب فعال شد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073532.0834918,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93777",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93777,
-      "text": "‏🔴بسنت وزیرخزانه داری آمریکا:\n‏نکته دیگری که می‌خواهم به مردم ایران بگویم این است که هر چیزی را که برای زمستان نیاز دارید، بهتر است همین حالا تهیه کنید، بروید سوخت ذخیره کنید چون قرار است با کمبود شدید سوخت گرمایشی در زمستان مواجه شوید.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073532.1126704,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93778",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93778,
-      "text": "🔴رأی‌گیری انتخابات کنست اسرائیل سه‌شنبه از ۸:۳۰ به وقت ایران آغاز و تا ۲۳:۳۰ ادامه دارد \n\n-نتایج نهایی حدود دوازده فرداشب منتشر می‌شود \n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073532.1435175,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_kianmeli1_93779",
-      "pipeline": "vip_multi_agent",
-      "node": "kianmeli1",
-      "msg_id": 93779,
-      "text": "‏🔴حمله موشکی بالستیک حوثی ها به تعدادی از مناطق عربستان سعودی\n\nحوثی ها چمدان یک میلیارد دلاری عربستان را قبول نکرد و حملات ادامه پیدا کرد\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
-      "is_edit": false,
-      "enqueued_at": 1793073532.1704235,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_VahidOnline_78856",
-      "pipeline": "vip_multi_agent",
-      "node": "VahidOnline",
-      "msg_id": 78856,
-      "text": "نیویورک‌تایمز به نقل از دو دیپلمات آگاه از مذاکرات نوشت قطر در حال تدوین طرحی برای توافق پنج‌روزه میان جمهوری اسلامی و آمریکا است که شامل بازگشایی تنگه هرمز، رفع محاصره بنادر ایران و دریافت امتیاز هسته‌ای از تهران می‌شود. اختلاف بر سر زمان اجرای تعهدات، مانع اصلی توافق است.\n\nاین روزنامه دوشنبه چهارم آبان نوشت بر اساس طرح پیشنهادیِ میانجی‌های قطری، تهران و واشینگتن طی یک دوره پنج‌روزه مجموعه‌ای از امتیازها را به یکدیگر خواهند داد.\n\nبه گفته این دو دیپلمات، جمهوری اسلامی در چارچوب این توافق، تنگه هرمز را به روی کشتی‌های تجاری باز خواهد کرد و آمریکا نیز در مقابل، محاصره دریایی بنادر ایران را که بحران اقتصادی این کشور را تشدید کرده است، برمی‌دارد.\n\nاین دو دیپلمات گفتند مهم‌ترین مانع دستیابی به توافق، اختلاف بر سر زمان اجرای تعهدات هر یک از طرف‌هاست.\n\nبه گفته آن‌ها، میانجی‌ها همچنین در تلاش‌اند جمهوری اسلامی را متقاعد کنند در مرحله نخست توافق، امتیازی در زمینه برنامه هسته‌ای خود بدهد.\n@VahidOOnLine\n\n📡 @VahidOnline",
-      "is_edit": false,
-      "enqueued_at": 1793073734.9745834,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Ali_bk_8_6957",
-      "pipeline": "vip_multi_agent",
-      "node": "Ali_bk_8",
-      "msg_id": 6957,
-      "text": "Satellite images are now showing a fire in the Gulf of Oman off the Omani coast; a noncompliant vessel appears to have been targeted.",
-      "is_edit": false,
-      "enqueued_at": 1793074550.2317078,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40134",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40134,
-      "text": "صور الأقمار الصناعية ترصد الآن حريق في خليج عُمان قبالة السواحل العُمانية، يبدو تم استهداف سفينة مخالفة.",
-      "is_edit": false,
-      "enqueued_at": 1793074551.4332638,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
       "id": "vip_multi_agent_kianmeli1_93780",
       "pipeline": "vip_multi_agent",
       "node": "kianmeli1",
@@ -1671,8 +846,8 @@
       "text": "🔴سعید لیلاز: \nایران چاره‌ای جز اتمی‌شدن ندارد.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1793075478.1962385,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 14,
+      "last_retry_at": 1793089149.963371
     },
     {
       "id": "vip_multi_agent_kianmeli1_93781",
@@ -1682,8 +857,8 @@
       "text": "🔴کانال ۱۴ اسراییل\n\nحزب‌الله با بهره‌گیری از ده‌ها میلیون دلار بودجه جدید از سوی ایران، بی‌سروصدا در حال آماده‌سازی خود برای جنگی منطقه‌ای و تازه با اسرائیل است.\n\nبه گفته منابع، این گروه با وجود ناکامی‌های تاکتیکی اخیر، از وقفه ایجادشده در درگیری‌ها استفاده می‌کند تا ساختارهای فرماندهی خود را بازسازی کرده، پهپادهای انفجاری تولید کند و زرادخانه‌اش را دوباره تجهیز نماید.\n\n#کیان_ملی \nhttps://t.me/kianmeli1",
       "is_edit": false,
       "enqueued_at": 1793075704.0115116,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 13,
+      "last_retry_at": 1793089152.1453164
     },
     {
       "id": "vip_multi_agent_withyashar_26590",
@@ -1693,8 +868,8 @@
       "text": "سازمان عملیات تجارت دریایی انگلیس (UKMTO) اعلام کرد که از طریق چند منبع ثالث گزارش‌هایی درباره آتش‌سوزی یک شناور در ۶۳ مایل دریایی جنوب شرقی «فاو» عراق دریافت کرده است.\n@WarRoom",
       "is_edit": true,
       "enqueued_at": 1793076189.4770298,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 12,
+      "last_retry_at": 1793089072.9851074
     },
     {
       "id": "vip_multi_agent_withyashar_26613",
@@ -1704,8 +879,8 @@
       "text": "اورژانس: انفجار شدید یک منزل مسکونی در پی برخورد بیل مکانیکی با لوله گاز در کرمانشاه؛ موج انفجار به ۶ ساختمان همجوار هم آسیب وارد کرد,  ۱۱ مصدوم از زیر آوار بیرون کشیده شدند , تاکنون ۴ نفر جان خود را از دست داده‌اند، امکان افزایش آمار جان‌باختگان یا مصدومان وجود دارد\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793077680.5145693,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 12,
+      "last_retry_at": 1793089074.5845466
     },
     {
       "id": "vip_multi_agent_Alibk3_40135",
@@ -1715,8 +890,8 @@
       "text": "افتتاح صناديق الاقتراع في الاراضي المحتلة لبدءِ الانتخابات",
       "is_edit": false,
       "enqueued_at": 1793078067.656851,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 12,
+      "last_retry_at": 1793089076.1609
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6958",
@@ -1726,8 +901,8 @@
       "text": "Polling stations have opened in the occupied territories for the start of the elections.",
       "is_edit": false,
       "enqueued_at": 1793078068.2537742,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 11,
+      "last_retry_at": 1793089084.3567216
     },
     {
       "id": "vip_multi_agent_withyashar_26614",
@@ -1737,8 +912,8 @@
       "text": "ترامپ: ایران اکنون موشکی دارد که به اروپا رسیده است! قرار نبود این اتفاق بیفتد. ما گفتیم: \"اینها از کجا این موشک را به دست آورده‌اند؟\"آنها می‌توانستند سن دیگو، لس‌آنجلس و شهرهای ما را نیز هدف قرار دهند. بنابراین، کسی باید این کار را انجام می‌داد و این کار باید به سرعت انجام می‌شد، زیرا آنها دو هفته [فاصله] با دستیابی به سلاح هسته‌ای داشتند.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793078068.8592308,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 11,
+      "last_retry_at": 1793089100.9051733
     },
     {
       "id": "vip_multi_agent_withyashar_26615",
@@ -1748,8 +923,8 @@
       "text": "ترامپ درباره ایران:\n«ما جنگ با ایران را آغاز نکردیم. ایران جنگ با ما را آغاز کرد.»\nاشکالی ندارد اگر این جمله را از‌کس‌دیگری کپی کنم؟\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793078252.7408574,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 11,
+      "last_retry_at": 1793089102.4437642
     },
     {
       "id": "vip_multi_agent_withyashar_26616",
@@ -1759,8 +934,8 @@
       "text": "ترامپ درباره ایران:\nایرانی‌ها سلاح‌های فوق‌العاده‌ای می‌سازند. آن‌ها آدم‌های بسیار باهوشی هستند، اما ما حسابی دهنشونو سرویس می‌کنیم.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793078342.364809,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 11,
+      "last_retry_at": 1793089103.98597
     },
     {
       "id": "vip_multi_agent_withyashar_26617",
@@ -1770,19 +945,8 @@
       "text": "ترامپ درباره ایران:\nما یک آتش‌بس مختصر برقرار کردیم که من هیچ‌وقت خیلی از آن خوشم نمی‌آمد. به نظرم تلف کردن وقت بود.\nآن آتش‌بس صرفاً هدر دادن وقت بود.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793078489.3836038,
-      "retries": 0,
-      "last_retry_at": 0
-    },
-    {
-      "id": "vip_multi_agent_Alibk3_40137",
-      "pipeline": "vip_multi_agent",
-      "node": "Alibk3",
-      "msg_id": 40137,
-      "text": "يبدو أنه تم استهداف سفينة \n\nرصد اندلاع حريق في مياه خليج عمان بالقرب من مدينة صحار",
-      "is_edit": false,
-      "enqueued_at": 1793078891.362025,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 10,
+      "last_retry_at": 1793089105.564229
     },
     {
       "id": "vip_multi_agent_Ali_bk_8_6959",
@@ -1792,8 +956,8 @@
       "text": "به نظر می‌رسد یک کشتی هدف قرار گرفته است\n\nوقوع آتش‌سوزی در آب‌های دریای عمان در نزدیکی شهر صحار رصد شده است\n\nA vessel appears to have been targeted\n\nA fire has been detected in the waters of the Gulf of Oman near the city of Sohar",
       "is_edit": true,
       "enqueued_at": 1793078929.572105,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 10,
+      "last_retry_at": 1793089122.1479857
     },
     {
       "id": "vip_multi_agent_withyashar_26618",
@@ -1803,8 +967,8 @@
       "text": "ساعتی پیش کرج روبرو انبار نفت\n@WarRoom",
       "is_edit": true,
       "enqueued_at": 1793079275.1776962,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 10,
+      "last_retry_at": 1793089130.3399565
     },
     {
       "id": "vip_multi_agent_withyashar_26619",
@@ -1814,8 +978,8 @@
       "text": "ترامپ درباره ایران:\nفکر می‌کردم قیمت نفت خیلی خیلی بالاتر خواهد رفت و من کاملاً آماده بودم که آن کار را انجام دهم.\nواقعاً چاره‌ای نداشتیم.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793079829.5449095,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 9,
+      "last_retry_at": 1793089131.8793054
     },
     {
       "id": "vip_multi_agent_withyashar_26620",
@@ -1825,8 +989,8 @@
       "text": "نیویورک تایمز : اسرائیل در انتخاباتی رأی می‌دهد که نوعی همه‌پرسی درباره نتانیاهو تلقی می‌شود\nاین نخستین انتخابات در اسرائیل پس از حملات ۷ اکتبر ۲۰۲۳ است. ائتلاف راست به رهبری بنیامین نتانیاهو، نخست‌وزیر، در برابر احزاب مخالفی قرار گرفته که به‌طور غیررسمی توسط یک فرمانده نظامی پیشین هدایت می‌شوند؛ کسی که پسرش در جنگ غزه کشته شده است.\n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793080413.5581634,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 8,
+      "last_retry_at": 1793089133.4206133
     },
     {
       "id": "vip_multi_agent_withyashar_26621",
@@ -1836,8 +1000,8 @@
       "text": "تایمز آو اسرائیل: نتانیاهو ممکن است در صورت تشکیل دولت بعدی، ایال زامیر، رئیس ستاد ارتش، را برکنار کند. گزارش می‌گوید اختلاف بر سر آمادگی نظامی مرتبط با ایران عمیق شده؛ \nدفتر نتانیاهو این گزارش را «خبر جعلی» خوانده است. \n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793081479.4303908,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 1,
+      "last_retry_at": 1793089054.6987567
     },
     {
       "id": "vip_multi_agent_withyashar_26622",
@@ -1847,8 +1011,8 @@
       "text": "جروزالم پست: ارتش اسرائیل در واکنش به موج گزارش‌ها درباره اختلاف نتانیاهو و زامیر، بیانیه‌ای منتشر کرد؛ با این حال، بیانیه به‌جای تأیید یا رد جزئیات ادعاشده، به ابهامات درباره اختلافات داخلی پرداخت. \n@WarRoom",
       "is_edit": false,
       "enqueued_at": 1793081589.5649402,
-      "retries": 0,
-      "last_retry_at": 0
+      "retries": 1,
+      "last_retry_at": 1793089056.342105
     },
     {
       "id": "vip_multi_agent_withyashar_26623",
@@ -2047,7 +1211,29 @@
       "enqueued_at": 1793087318.9161613,
       "retries": 0,
       "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26633",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26633,
+      "text": "مارلک لوین در باره این خبر نوشت : قطرِ شرور، باز هم شروع کرد …\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1793088709.461754,
+      "retries": 0,
+      "last_retry_at": 0
+    },
+    {
+      "id": "vip_multi_agent_withyashar_26634",
+      "pipeline": "vip_multi_agent",
+      "node": "withyashar",
+      "msg_id": 26634,
+      "text": "‏هم‌اکنون کشف پاکت‌های پول نقد و برگه‌های رأی حزب رعام؛ ظن خرید رأی در انتخابات اسرائیل\n‏پلیس اسرائیل در مناطق بادیه‌نشین‌نشین پاکت‌هایی حاوی پول نقد و برگه‌های رأی حزب رعام را کشف و ضبط کرد. به گزارش لیران تمری، ظن آن می‌رود که این پاکت‌ها برای توزیع میان رأی‌دهندگان در ازای رأی دادن به حزب رعام آماده شده بودند. پلیس در حال بررسی این موضوع است که آیا این اقدام بخشی از تلاشی سازمان‌یافته برای دستکاری در روند انتخابات بوده است یا خیر.\n@WarRoom",
+      "is_edit": false,
+      "enqueued_at": 1793088885.722288,
+      "retries": 0,
+      "last_retry_at": 0
     }
   ],
-  "last_saved": "2026-10-27 07:50:18 UTC"
+  "last_saved": "2026-10-27 08:19:13 UTC"
 }
