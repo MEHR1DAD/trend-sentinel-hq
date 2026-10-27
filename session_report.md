@@ -1,6 +1,8 @@
-# Sentinel Session Report
+# Sentinel Session Report (v4 Clean Engine)
 
-- **Uptime:** 28 minutes
-- **Messages Processed:** 26
-- **Last Message Text:** طائرة عمانية خاصة تهبط في العاصمة السعودية الرياض ومن المحتمل أنها تتعلق بموضوع خفض التصعيد مع اليمن
-- **Last Message Time:** 2026-10-27 08:45:39
+- **Uptime:** 0 minutes
+- **Messages Processed:** 0
+- **Alerts Dispatched:** 0
+- **Active VIP Nodes:** 6 channels
+- **Last Message Text:** Initialized
+- **Last Message Time:** None

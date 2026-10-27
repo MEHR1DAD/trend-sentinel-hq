@@ -1,0 +1,247 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+main.py - Trend Sentinel v4
+Autonomous, Real-time Telegram Listener & Zero-AI Dispatcher.
+Listens to 6 VIP news sources, filters through the 3-Step Deterministic Engine,
+and dispatches instantaneous alerts to @DidebanJang, @DidehbanEghtesad, and @DidebanEterazat.
+"""
+
+import os
+import sys
+import json
+import time
+import asyncio
+import urllib.request
+import urllib.parse
+from datetime import datetime, timezone
+from telethon import TelegramClient, events
+from telethon.sessions import StringSession
+from telethon.tl.types import InputPeerChannel
+from telethon.errors import FloodWaitError
+
+import config
+from engine import SentinelEngine
+
+class TrendSentinelV4:
+    def __init__(self):
+        self.engine = SentinelEngine()
+        self.start_time = time.time()
+        self.messages_processed = 0
+        self.alerts_dispatched = 0
+        self.last_msg_text = "None"
+        self.last_msg_time = "None"
+
+        # Load peer cache
+        self.peer_cache = self._load_peer_cache()
+
+        # Load posted registry (Deduplication)
+        self.posted_registry = self._load_registry()
+
+        # Telethon client
+        self.client = TelegramClient(
+            StringSession(config.SESSION_STRING),
+            config.API_ID,
+            config.API_HASH
+        )
+
+    def _load_peer_cache(self) -> dict:
+        if os.path.exists(config.PEER_CACHE_PATH):
+            try:
+                with open(config.PEER_CACHE_PATH, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception as e:
+                print(f"⚠️ Error reading peer cache: {e}")
+        return {"node_peers": {}, "id_to_node": {}}
+
+    def _load_registry(self) -> set:
+        if os.path.exists(config.POSTED_REGISTRY_PATH):
+            try:
+                with open(config.POSTED_REGISTRY_PATH, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    return set(data.get("posted_keys", []))
+            except Exception as e:
+                print(f"⚠️ Error reading posted registry: {e}")
+        return set()
+
+    def _save_registry(self):
+        try:
+            # Keep only the latest 2500 entries to prevent file bloat
+            recent_keys = list(self.posted_registry)[-2500:]
+            with open(config.POSTED_REGISTRY_PATH, "w", encoding="utf-8") as f:
+                json.dump({"posted_keys": recent_keys, "updated_at": datetime.now(timezone.utc).isoformat()}, f, indent=2)
+        except Exception as e:
+            print(f"⚠️ Error saving posted registry: {e}")
+
+    def update_session_report(self):
+        uptime_min = int((time.time() - self.start_time) / 60)
+        report_content = (
+            f"# Sentinel Session Report (v4 Clean Engine)\n\n"
+            f"- **Uptime:** {uptime_min} minutes\n"
+            f"- **Messages Processed:** {self.messages_processed}\n"
+            f"- **Alerts Dispatched:** {self.alerts_dispatched}\n"
+            f"- **Active VIP Nodes:** {len(config.VIP_CHANNELS)} channels\n"
+            f"- **Last Message Text:** {self.last_msg_text[:120]}\n"
+            f"- **Last Message Time:** {self.last_msg_time}\n"
+        )
+        try:
+            with open(config.SESSION_REPORT_PATH, "w", encoding="utf-8") as f:
+                f.write(report_content)
+        except Exception as e:
+            print(f"⚠️ Error updating session report: {e}")
+
+    def get_input_peer(self, node_name: str):
+        clean_name = node_name.lstrip('@')
+        peers = self.peer_cache.get("node_peers", {})
+        for key, val in peers.items():
+            if key.lstrip('@').lower() == clean_name.lower():
+                cid = val.get("channel_id")
+                ah = val.get("access_hash")
+                if cid and ah:
+                    return InputPeerChannel(channel_id=int(cid), access_hash=int(ah))
+        return None
+
+    def send_bot_alert(self, target_channel: str, text: str, disable_notif: bool) -> bool:
+        """Dispatches formatted alert to destination Telegram channel via Bot API."""
+        if not config.BOT_TOKEN:
+            print("⚠️ TELEGRAM_BOT_TOKEN is not configured!")
+            return False
+
+        url = f"https://api.telegram.org/bot{config.BOT_TOKEN}/sendMessage"
+        payload = {
+            "chat_id": target_channel,
+            "text": text,
+            "disable_web_page_preview": False,
+            "disable_notification": disable_notif
+        }
+
+        try:
+            data = json.dumps(payload).encode("utf-8")
+            req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=10) as response:
+                if response.status == 200:
+                    return True
+        except Exception as e:
+            print(f"❌ Failed to dispatch bot alert to {target_channel}: {e}")
+        return False
+
+    async def handle_new_message(self, event_or_msg, source_node: str):
+        """Processes an incoming message through the 3-step engine and dispatches if matched."""
+        msg_text = event_or_msg.text or ""
+        msg_id = event_or_msg.id
+        msg_date = event_or_msg.date
+
+        self.messages_processed += 1
+        self.last_msg_text = msg_text.replace("\n", " ").strip()
+        self.last_msg_time = msg_date.strftime("%Y-%m-%d %H:%M:%S UTC") if msg_date else "now"
+
+        # Unique deduplication key
+        dedup_key = f"{source_node}_{msg_id}"
+        if dedup_key in self.posted_registry:
+            return
+
+        # 3-Step Pure Engine Evaluation
+        eval_res = self.engine.process_message(msg_text, source_node)
+        if not eval_res:
+            # Dropped by Sieve (Noise/Irrelevant)
+            return
+
+        target_ch = eval_res["target_channel"]
+        tag = eval_res["tag"]
+        severity = eval_res["severity"]
+        disable_notif = eval_res["disable_notification"]
+
+        # Format Final Alert
+        post_link = f"https://t.me/{source_node.lstrip('@')}/{msg_id}"
+        alert_body = (
+            f"{tag}\n\n"
+            f"{msg_text}\n\n"
+            f"📡 منبع: @{source_node.lstrip('@')}\n"
+            f"🔗 {post_link}"
+        )
+
+        mode_str = "🔕 SILENT" if disable_notif else "🚨 URGENT"
+        print(f"🚀 [DISPATCH] {mode_str} -> {target_ch} (Source: @{source_node} | Msg: {msg_id})")
+
+        success = self.send_bot_alert(target_ch, alert_body, disable_notif)
+        if success:
+            self.alerts_dispatched += 1
+            self.posted_registry.add(dedup_key)
+            self._save_registry()
+            self.update_session_report()
+
+    async def run(self):
+        print("==================================================")
+        print("🛰️ TREND SENTINEL V4 (DETERMINISTIC BYPASS ENGINE)")
+        print(f"Target Nodes: {config.VIP_CHANNELS}")
+        print(f"Destinations: {list(config.CHANNELS.values())}")
+        print(f"Max Runtime: {config.MAX_RUNTIME_SEC}s")
+        print("==================================================")
+
+        # 1. Connect MTProto Client
+        await self.client.connect()
+        if not await self.client.is_user_authorized():
+            print("❌ Error: Telegram session string is not authorized.")
+            await self.client.disconnect()
+            sys.exit(1)
+
+        me = await self.client.get_me()
+        print(f"🔐 Authenticated as: {me.first_name} (ID: {me.id})")
+
+        # 2. Resolve VIP Entities
+        source_entities = {}
+        for node in config.VIP_CHANNELS:
+            peer = self.get_input_peer(node)
+            if peer:
+                source_entities[node] = peer
+                print(f"🎯 Resolved @{node} via cached InputPeerChannel")
+            else:
+                try:
+                    entity = await self.client.get_entity(node)
+                    source_entities[node] = entity
+                    print(f"✅ Resolved @{node} directly")
+                except Exception as e:
+                    print(f"⚠️ Could not resolve @{node}: {e}")
+
+        # 3. Catch-up scan for missed messages during transition
+        print("📥 Scanning last 3 messages per node for catch-up...")
+        for node, entity in source_entities.items():
+            try:
+                async for msg in self.client.iter_messages(entity, limit=3):
+                    if msg.text:
+                        await self.handle_new_message(msg, node)
+            except Exception as e:
+                print(f"⚠️ Catch-up note on @{node}: {e}")
+
+        self.update_session_report()
+
+        # 4. Event Listener for Live Streaming
+        print("👁️ Listening for live events across VIP channels...")
+
+        entity_list = list(source_entities.values())
+        id_to_node_map = {}
+        for node, ent in source_entities.items():
+            ent_id = getattr(ent, "channel_id", getattr(ent, "id", None))
+            if ent_id:
+                id_to_node_map[ent_id] = node
+
+        @self.client.on(events.NewMessage(chats=entity_list))
+        async def event_handler(event):
+            sender_id = getattr(event.chat, "id", None)
+            # Normalize channel IDs (-100... vs raw)
+            clean_id = int(str(sender_id).replace("-100", "")) if sender_id else 0
+            node_name = id_to_node_map.get(clean_id) or id_to_node_map.get(sender_id) or "VIP"
+            await self.handle_new_message(event.message, node_name)
+
+        # 5. Controlled Execution Loop with Graceful Handoff
+        while time.time() - self.start_time < config.MAX_RUNTIME_SEC:
+            await asyncio.sleep(config.POLL_INTERVAL_SEC)
+
+        print("\n⏱️ Max runtime reached. Gracefully rotating session for next runner...")
+        self.update_session_report()
+        await self.client.disconnect()
+        print("🔒 Clean shutdown completed.")
+
+if __name__ == "__main__":
+    sentinel = TrendSentinelV4()
+    asyncio.run(sentinel.run())

@@ -1,16 +1,17 @@
-name: Sentinel Watch (Live API)
+name: Sentinel Watch (v4 Pure Engine)
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Every 30 minutes (Reliable cron rotation & safety net)
+    - cron: '*/30 * * * *' # Every 30 minutes cron rotation & safety net
   workflow_dispatch:
   push:
     branches: [ "main" ]
     paths-ignore:
-      - 'mine_vip_corpus.py'
-      - '.github/workflows/mine_vip.yml'
+      - 'session_report.md'
+      - 'posted_registry.json'
       - 'analytics_results/**'
-      - 'docs/**'
+      - 'README.md'
+      - '.gitignore'
 
 permissions:
   contents: write
@@ -18,45 +19,52 @@ permissions:
 
 concurrency:
   group: sentinel-live
-  cancel-in-progress: true # Seamless handover to the new runner
+  cancel-in-progress: true
 
 jobs:
   live_watch:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 45
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Setup Python 3.10
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
       - name: Install Dependencies
-        run: pip install telethon requests
+        run: pip install telethon
 
-      - name: Run Live Sentinel
+      - name: Run Sentinel v4 Live Engine
         env:
+          PYTHONUNBUFFERED: "1"
           PYTHONPATH: .
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           TELEGRAM_SESSION_GENERAL: ${{ secrets.TELEGRAM_SESSION_GENERAL }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MAX_RUNTIME_SEC: "1740" # 29 minutes
         run: |
-          echo "Starting Live Sentinel with 3-second safety margin..."
+          echo "🚀 Starting Trend Sentinel v4 Pure-Python Engine..."
           sleep 3
-          python -u backend/live_sentinel.py
+          python -u main.py
+
+      - name: Persist Session State
+        if: always() && !cancelled()
+        run: |
+          git config --global user.name "Sentinel Watcher"
+          git config --global user.email "sentinel@sentinel.hq"
+          git pull --rebase origin main || true
+          git add session_report.md posted_registry.json
+          git commit -m "📊 [skip ci] update sentinel v4 state" || echo "No changes"
+          git push origin main || true
 
       - name: Auto-Restart on Exit
         if: always() && !cancelled()
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
-          echo "Triggering next live sentinel runner..."
-          for i in 1 2 3; do
-            echo "Attempt $i: Dispatching watch.yml on main..."
-            gh workflow run watch.yml --ref main && break || sleep 5
-          done || true
+          echo "Handing over to next runner cycle..."
+          gh workflow run watch.yml --ref main || true

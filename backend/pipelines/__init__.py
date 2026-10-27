@@ -1,1 +1,0 @@
-# Pipelines for Trend Sentinel
