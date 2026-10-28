@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 26767,
-      "last_read_time": "2026-10-28 11:45:21 UTC"
+      "last_read_id": 26770,
+      "last_read_time": "2026-10-28 12:12:28 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 7044,
-      "last_read_time": "2026-10-28 11:06:48 UTC"
+      "last_read_id": 7046,
+      "last_read_time": "2026-10-28 12:11:19 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 78866,
-      "last_read_time": "2026-10-28 11:53:18 UTC"
+      "last_read_id": 78867,
+      "last_read_time": "2026-10-28 12:02:42 UTC"
     },
     "iliaen": {
       "last_read_id": 4752,
@@ -45,7 +45,16 @@
       "status_icon": "🔕",
       "source_node": "VahidOnline",
       "msg_id": 78865
+    },
+    "Ali_bk_8_7046": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 263,
+      "sent_timestamp": 1793189492.5300121,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 7046,
+      "last_edit_timestamp": 1793189870.0
     }
   },
-  "updated_at": "2026-10-28T11:54:08.124563+00:00"
+  "updated_at": "2026-10-28T12:18:32.044734+00:00"
 }
