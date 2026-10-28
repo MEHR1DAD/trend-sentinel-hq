@@ -1,25 +1,26 @@
 # Sentinel Session Report (v4 Clean Engine)
 
 - **Uptime:** 29 minutes
-- **Messages Processed:** 11
+- **Messages Processed:** 14
 - **Alerts Dispatched:** 1
 - **Alerts Edited:** 1
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** نتانیاهو: لیکود بزرگترین حزب در اسرائیل است. شما به یاد دارید که چگونه رسانه‌های تبلیغاتی با نظرسنجی‌هایی که نشان‌دهنده 
-- **Last Message Time:** 2026-10-28 01:20:15 UTC
+- **Last Message Text:** وای نت : آمریکا از کشورهای خلیج فارس خواسته است تا خود را برای یک عملیات نظامی پس از انتخابات میان‌دوره‌ای آماده کنند. @
+- **Last Message Time:** 2026-10-28 01:45:51 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #26724 (2026-10-28 01:20:15 UTC)
-- `@Ali_bk_8`: #7030 (2026-10-28 01:05:37 UTC)
+- `@withyashar`: #26735 (2026-10-28 01:45:51 UTC)
+- `@Ali_bk_8`: #7031 (2026-10-28 01:37:53 UTC)
 - `@VahidOnline`: #78862 (2026-10-27 20:30:34 UTC)
 - `@iliaen`: #4752 (2026-10-25 21:52:40 UTC)
 - `@netblocks`: #1578 (2026-10-24 14:55:57 UTC)
-- `@kianmeli1`: #93788 (2026-10-27 21:44:15 UTC)
+- `@kianmeli1`: #93790 (2026-10-28 01:27:45 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 493m ago
+- `@DidebanJang`: Last loud alert 522m ago
 - `@DidehbanEghtesad`: No loud alert yet
 - `@DidebanEterazat`: No loud alert yet
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش (Active 60m Edit Watchers):
-- `withyashar_26719` -> `@DidebanJang` (bot msg #252, 10m ago)
+- `withyashar_26719` -> `@DidebanJang` (bot msg #252, 39m ago)
+- `withyashar_26735` -> `@DidebanJang` (bot msg #253, 3m ago)
