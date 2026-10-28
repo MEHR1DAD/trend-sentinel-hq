@@ -326,5 +326,9 @@
     "blackout",
     "network disruption",
     "قطعی اینترنت"
+  ],
+  "ignored_show_titles": [
+    "اتاق جنگ با یاشار",
+    "اتاق جنگ یاشار"
   ]
 }

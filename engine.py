@@ -27,6 +27,7 @@ class SentinelEngine:
         self.geo_iran = self.patterns.get("geo_iran", [])
         self.geo_region = self.patterns.get("geo_region", [])
         self.kinetic_triggers = self.patterns.get("kinetic_triggers", [])
+        self.ignored_show_titles = self.patterns.get("ignored_show_titles", ["اتاق جنگ با یاشار", "اتاق جنگ یاشار"])
 
     def _load_patterns(self) -> dict:
         if not os.path.exists(self.pattern_path):
@@ -49,6 +50,18 @@ class SentinelEngine:
         text = re.sub(r"\s+", " ", text).strip()
         return text
 
+    def clean_for_matching(self, norm_text: str) -> str:
+        """
+        Masks show titles / branding (e.g. 'اتاق جنگ با یاشار')
+        so they do not trigger false positive war or news patterns.
+        """
+        clean = norm_text
+        for show in self.ignored_show_titles:
+            norm_show = self.normalize_text(show)
+            if norm_show in clean:
+                clean = clean.replace(norm_show, " ")
+        return re.sub(r"\s+", " ", clean).strip()
+
     # =========================================================================
     # STEP 1: SIEVE / FILTER (الک کردن)
     # =========================================================================
@@ -61,16 +74,17 @@ class SentinelEngine:
             return False, ""
 
         norm_text = self.normalize_text(raw_text)
+        match_text = self.clean_for_matching(norm_text)
 
         # Check for matching patterns in any domain
         for p in self.war_patterns:
-            if p.lower() in norm_text:
+            if p.lower() in match_text:
                 return True, norm_text
         for p in self.economy_patterns:
-            if p.lower() in norm_text:
+            if p.lower() in match_text:
                 return True, norm_text
         for p in self.protest_patterns:
-            if p.lower() in norm_text:
+            if p.lower() in match_text:
                 return True, norm_text
 
         # No pattern matched: Discard (Drop)
@@ -90,6 +104,8 @@ class SentinelEngine:
             # Netblocks is predominantly connectivity & censorship
             return config.CHANNELS["PROTEST"]
 
+        match_text = self.clean_for_matching(norm_text)
+
         # Calculate lexical match scores
         war_score = 0
         economy_score = 0
@@ -100,20 +116,20 @@ class SentinelEngine:
         matched_protest = []
 
         for p in self.war_patterns:
-            if p.lower() in norm_text:
+            if p.lower() in match_text:
                 # 2-grams and 3-grams have triple weight over single words
                 weight = 3 if " " in p else 1
                 war_score += weight
                 matched_war.append(p)
 
         for p in self.economy_patterns:
-            if p.lower() in norm_text:
+            if p.lower() in match_text:
                 weight = 3 if " " in p else 1
                 economy_score += weight
                 matched_economy.append(p)
 
         for p in self.protest_patterns:
-            if p.lower() in norm_text:
+            if p.lower() in match_text:
                 weight = 3 if " " in p else 1
                 protest_score += weight
                 matched_protest.append(p)
@@ -142,12 +158,14 @@ class SentinelEngine:
           - Regional Middle East / analytical news -> SILENT (Silent / Notification OFF)
         Returns: (severity_label, disable_notification)
         """
+        match_text = self.clean_for_matching(norm_text)
+
         # 1. Geographic scoping
-        has_iran = any(loc.lower() in norm_text for loc in self.geo_iran)
-        has_region = any(loc.lower() in norm_text for loc in self.geo_region)
+        has_iran = any(loc.lower() in match_text for loc in self.geo_iran)
+        has_region = any(loc.lower() in match_text for loc in self.geo_region)
 
         # 2. Kinetic event detection
-        is_kinetic = any(trig.lower() in norm_text for trig in self.kinetic_triggers)
+        is_kinetic = any(trig.lower() in match_text for trig in self.kinetic_triggers)
 
         # --- Decision Tree ---
         
