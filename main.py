@@ -224,36 +224,48 @@ class TrendSentinelV4:
     @staticmethod
     def sanitize_and_format_alert(raw_text: str, source_node: str, msg_id: int, status_icon: str) -> str:
         """
-        Sanitizes raw text, removes asterisks & trailing promotional watermarks,
+        Sanitizes raw text, removes asterisks, strips inline & trailing promotional watermarks
+        (including @VahidHeadline, @VahidOOnLine, and '📡 @VahidOnline'),
         and formats with clean inline status icon and hyperlinked source attribution.
         """
         lines = [l.strip() for l in raw_text.split('\n')]
 
-        # 1. Strip raw asterisks from each line
-        cleaned_lines = []
-        for line in lines:
-            c_line = re.sub(r'\*+', '', line).strip()
-            cleaned_lines.append(c_line)
-
-        # 2. Pop watermarks and promotional links from the bottom
-        while cleaned_lines:
-            last = cleaned_lines[-1]
+        # 1. Pop watermarks and promotional links from the bottom
+        while lines:
+            last = lines[-1]
             if not last:
-                cleaned_lines.pop()
+                lines.pop()
                 continue
             is_watermark = (
                 re.match(r'^#[a-zA-Z0-9_\u0600-\u06FF]+(\s+#[a-zA-Z0-9_\u0600-\u06FF]+)*$', last) or
                 re.match(r'^https?://t\.me/[\w/]+$', last) or
-                re.match(r'^@[\w_]+$', last) or
+                re.match(r'^📡?\s*@[\w_]+(\s+@[\w_]+)*$', last) or
+                re.match(r'^📡?\s*منبع:?.*$', last) or
+                last in ["📡", "🔗", "📌", "📢"] or
                 't.me/' in last or
                 'عضویت در کانال' in last or
                 'کانال تلگرام' in last or
                 'لینک کانال' in last
             )
             if is_watermark:
-                cleaned_lines.pop()
+                lines.pop()
             else:
                 break
+
+        # 2. Strip raw asterisks and inline source watermarks (@VahidHeadline, @VahidOOnLine, etc.)
+        inline_watermarks_pattern = re.compile(
+            r'\s*@(VahidHeadline|VahidOOnLine|VahidOnline|withyashar|Ali_bk_8|iliaen|kianmeli1|netblocks)\b',
+            re.IGNORECASE
+        )
+        cleaned_lines = []
+        for line in lines:
+            c_line = re.sub(r'\*+', '', line).strip()
+            c_line = inline_watermarks_pattern.sub('', c_line).strip()
+            cleaned_lines.append(c_line)
+
+        # Pop any trailing empty lines again
+        while cleaned_lines and not cleaned_lines[-1]:
+            cleaned_lines.pop()
 
         if not cleaned_lines:
             return ""

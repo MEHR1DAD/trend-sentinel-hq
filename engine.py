@@ -62,6 +62,44 @@ class SentinelEngine:
                 clean = clean.replace(norm_show, " ")
         return re.sub(r"\s+", " ", clean).strip()
 
+    def is_domestic_iran_protest(self, match_text: str, source_node: str = "") -> bool:
+        """
+        Enforces the Iran Geographic Rule for @DidebanEterazat:
+        Only events taking place inside Iran (protests, labor strikes, civil actions,
+        domestic Iranian courts/executions, Iranian prisons, and internet disruptions)
+        are eligible for the Protest channel.
+        Foreign/regional country events (e.g. Kuwait, Saudi, Iraq courts) are disqualified.
+        """
+        if source_node == "netblocks":
+            return True
+
+        # Internet disruptions
+        if any(term in match_text for term in ["قطعی اینترنت", "اختلال اینترنت", "فیلترینگ", "blackout", "connectivity", "telecom outage", "disruption to internet"]):
+            return True
+
+        # Check if foreign/regional country is mentioned
+        has_foreign_country = any(loc.lower() in match_text for loc in self.geo_region)
+
+        domestic_iran_indicators = [
+            "اوین", "قزلحصار", "قزل حصار", "رجایی شهر", "رجایی‌شهر", "دادگاه انقلاب", "دیوان عالی کشور",
+            "زندانی سیاسی", "زندانیان سیاسی", "زندان تهران بزرگ", "فشافویه", "گشت ارشاد", "حجاب اجباری",
+            "بازنشستگان", "هفت تپه", "هفت‌تپه", "شورای هماهنگی", "کارگران", "معلمان", "دانشجویان",
+            "اعتصاب سراسری", "تجمع اعتراضی", "تجمعات اعتراضی", "اعتصاب کارگران", "اعتصاب بازاریان",
+            "تعطیلی بازار", "شعار شبانه", "درگیری با معترضان", "بازداشت معترضان", "تیراندازی به معترضان",
+            "قوه قضائیه", "سپاه ثارالله", "اطلاعات سپاه", "وزارت اطلاعات"
+        ]
+        has_domestic_indicator = any(term in match_text for term in domestic_iran_indicators)
+
+        iran_cities = [loc.lower() for loc in self.geo_iran if loc not in ["ایران", "خلیج فارس", "تنگه هرمز"]]
+        has_iran_city = any(city in match_text for city in iran_cities)
+
+        if has_foreign_country:
+            # If foreign country is present, require explicit Iranian city or domestic institution
+            return has_iran_city or has_domestic_indicator
+
+        has_iran = any(loc.lower() in match_text for loc in self.geo_iran)
+        return has_iran or has_domestic_indicator
+
     # =========================================================================
     # STEP 1: SIEVE / FILTER (الک کردن)
     # =========================================================================
@@ -83,9 +121,10 @@ class SentinelEngine:
         for p in self.economy_patterns:
             if p.lower() in match_text:
                 return True, norm_text
-        for p in self.protest_patterns:
-            if p.lower() in match_text:
-                return True, norm_text
+        if self.is_domestic_iran_protest(match_text):
+            for p in self.protest_patterns:
+                if p.lower() in match_text:
+                    return True, norm_text
 
         # No pattern matched: Discard (Drop)
         return False, norm_text
@@ -128,11 +167,13 @@ class SentinelEngine:
                 economy_score += weight
                 matched_economy.append(p)
 
-        for p in self.protest_patterns:
-            if p.lower() in match_text:
-                weight = 3 if " " in p else 1
-                protest_score += weight
-                matched_protest.append(p)
+        # Score protest patterns only if domestic Iran rule is satisfied
+        if self.is_domestic_iran_protest(match_text, source_node):
+            for p in self.protest_patterns:
+                if p.lower() in match_text:
+                    weight = 3 if " " in p else 1
+                    protest_score += weight
+                    matched_protest.append(p)
 
         # Score resolution
         scores = {
