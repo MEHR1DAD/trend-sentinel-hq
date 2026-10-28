@@ -46,20 +46,20 @@ jobs:
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           TELEGRAM_SESSION_GENERAL: ${{ secrets.TELEGRAM_SESSION_GENERAL }}
-          MAX_RUNTIME_SEC: "1740" # 29 minutes
+          MAX_RUNTIME_SEC: "1560" # 26 minutes (clean handoff before 30-min cron)
         run: |
           echo "🚀 Starting Trend Sentinel v4 Pure-Python Engine..."
           sleep 3
           python -u main.py
 
       - name: Persist Session State
-        if: always() && !cancelled()
+        if: always()
         run: |
           git config --global user.name "Sentinel Watcher"
           git config --global user.email "sentinel@sentinel.hq"
-          git pull --rebase origin main || true
           git add session_report.md posted_registry.json channel_state.json
           git commit -m "📊 [skip ci] update sentinel v4 state" || echo "No changes"
+          git pull --rebase origin main || true
           git push origin main || true
 
       - name: Auto-Restart on Exit

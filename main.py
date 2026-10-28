@@ -13,6 +13,7 @@ import json
 import time
 import html
 import re
+import signal
 import asyncio
 import urllib.request
 import urllib.parse
@@ -618,14 +619,30 @@ class TrendSentinelV4:
             node_name = id_to_node_map.get(clean_id) or id_to_node_map.get(sender_id) or "VIP"
             await self.handle_edited_message(event.message, node_name)
 
-        # 5. Controlled Execution Loop with Graceful Handoff
-        while time.time() - self.start_time < config.MAX_RUNTIME_SEC:
-            await asyncio.sleep(config.POLL_INTERVAL_SEC)
+        # 5. Controlled Execution Loop with Graceful Handoff & Signal Trapping
+        def sig_handler(signum, frame):
+            print(f"\n⚠️ Received signal {signum}, initiating graceful shutdown...")
+            raise KeyboardInterrupt
 
-        print("\n⏱️ Max runtime reached. Gracefully rotating session for next runner...")
-        self.update_session_report()
-        await self.client.disconnect()
-        print("🔒 Clean shutdown completed.")
+        try:
+            signal.signal(signal.SIGTERM, sig_handler)
+            signal.signal(signal.SIGINT, sig_handler)
+        except Exception:
+            pass
+
+        try:
+            while time.time() - self.start_time < config.MAX_RUNTIME_SEC:
+                await asyncio.sleep(config.POLL_INTERVAL_SEC)
+            print("\n⏱️ Max runtime reached. Gracefully rotating session for next runner...")
+        except (asyncio.CancelledError, KeyboardInterrupt):
+            print("\n⚠️ Received interrupt/cancellation signal...")
+        finally:
+            self._save_channel_state()
+            self._save_registry()
+            self.update_session_report()
+            if self.client.is_connected():
+                await self.client.disconnect()
+            print("🔒 Clean shutdown completed.")
 
 if __name__ == "__main__":
     sentinel = TrendSentinelV4()

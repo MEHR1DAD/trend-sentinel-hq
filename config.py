@@ -37,7 +37,7 @@ CHANNEL_TAGS = {
 }
 
 # --- Operational Settings ---
-MAX_RUNTIME_SEC = int(os.environ.get("MAX_RUNTIME_SEC", 30 * 60))  # 30-minute graceful handoff
+MAX_RUNTIME_SEC = int(os.environ.get("MAX_RUNTIME_SEC", 26 * 60))  # 26-minute graceful handoff (avoids 30m cron collision)
 POLL_INTERVAL_SEC = 2.0  # Fast polling interval
 
 # --- File Paths ---
