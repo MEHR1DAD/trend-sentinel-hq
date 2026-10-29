@@ -1,6 +1,6 @@
 # Sentinel Session Report (v4 Clean Engine)
 
-- **Uptime:** 26 minutes
+- **Uptime:** 0 minutes
 - **Messages Processed:** 0
 - **Alerts Dispatched:** 0
 - **Alerts Edited:** 0
