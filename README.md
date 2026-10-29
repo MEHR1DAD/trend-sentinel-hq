@@ -28,13 +28,16 @@ Trend Sentinel v4 is an autonomous, ultra-low-latency OSINT monitoring and alert
 ## 📁 Repository Structure
 ```text
 trend-sentinel-hq/
+├── VERSION                   # Semantic version tracking file
 ├── config.py                 # Source nodes, channel IDs, settings
 ├── pattern_matrix.json       # Curated n-gram patterns mined from 107k messages
 ├── engine.py                 # 3-Step Pure-Python Deterministic Engine
 ├── main.py                   # Real-time Telethon listener & Bot dispatcher
 ├── posted_registry.json      # Deduplication history
+├── channel_state.json        # Channel cursors and active edit tracking
 ├── session_report.md         # Uptime and heartbeat health report
 ├── telegram_peer_cache.json  # InputPeerChannel access cache
 └── .github/workflows/
-    └── watch.yml             # 24/7 autonomous runner with seamless handoff
+    ├── watch.yml             # 24/7 autonomous runner with seamless handoff
+    └── watchdog.yml          # Smart non-intrusive 10m health watchdog
 ```
