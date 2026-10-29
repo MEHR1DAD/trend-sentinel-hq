@@ -1,0 +1,57 @@
+name: Sentinel Smart Watchdog (Zero-Collision Rescue)
+
+on:
+  schedule:
+    # Fast war-time heartbeat check every 10 minutes
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: sentinel-watchdog
+  cancel-in-progress: true
+
+jobs:
+  check_sentinel_health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Inspect Sentinel Engine Live Status
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          python3 - << 'EOF'
+          import urllib.request, json, os, subprocess, sys
+
+          token = os.environ.get("GH_TOKEN")
+          repo = os.environ.get("REPO")
+          url = f"https://api.github.com/repos/{repo}/actions/workflows/watch.yml/runs?per_page=5"
+
+          headers = {
+              "Authorization": f"Bearer {token}",
+              "Accept": "application/vnd.github.v3+json",
+              "User-Agent": "Sentinel-Watchdog-v4.3"
+          }
+
+          req = urllib.request.Request(url, headers=headers)
+          try:
+              with urllib.request.urlopen(req, timeout=15) as resp:
+                  data = json.loads(resp.read().decode())
+                  active = [r for r in data.get("workflow_runs", []) if r.get("status") in ("in_progress", "queued", "pending", "waiting")]
+                  if active:
+                      top = active[0]
+                      print(f"✅ Sentinel is actively running (Run #{top['run_number']}, ID {top['id']}, status: {top['status']}).")
+                      print("🛡️ Watchdog standing down. Live engine is 100% operational.")
+                      sys.exit(0)
+          except Exception as e:
+              print(f"⚠️ Warning querying Sentinel workflow status: {e}")
+
+          print("🚨 Alert: No active Sentinel runner detected! Initiating emergency rescue...")
+          res = subprocess.run(["gh", "workflow", "run", "watch.yml", "--ref", "main"], capture_output=True, text=True)
+          print(f"Rescue Dispatch Output: {res.stdout.strip()} | {res.stderr.strip()}")
+          print("🚀 Sentinel rescue trigger dispatched successfully.")
+          EOF

@@ -1,8 +1,6 @@
 name: Sentinel Watch (v4 Pure Engine)
 
 on:
-  schedule:
-    - cron: '0 */2 * * *' # Fallback safety net every 2 hours (avoids mid-flight collisions)
   workflow_dispatch:
   push:
     branches: [ "main" ]
@@ -13,6 +11,7 @@ on:
       - 'analytics_results/**'
       - 'README.md'
       - '.gitignore'
+      - '.github/workflows/watchdog.yml'
 
 permissions:
   contents: write
