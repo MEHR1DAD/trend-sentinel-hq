@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 26863,
-      "last_read_time": "2026-10-29 18:08:03 UTC"
+      "last_read_id": 26867,
+      "last_read_time": "2026-10-29 18:36:20 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 7132,
-      "last_read_time": "2026-10-29 18:03:51 UTC"
+      "last_read_id": 7134,
+      "last_read_time": "2026-10-29 18:28:48 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 78898,
-      "last_read_time": "2026-10-29 18:10:30 UTC"
+      "last_read_id": 78899,
+      "last_read_time": "2026-10-29 18:29:48 UTC"
     },
     "iliaen": {
       "last_read_id": 4752,
@@ -29,33 +29,6 @@
     "@DidebanJang": 1793297326.5141919
   },
   "sent_alerts_map": {
-    "Ali_bk_8_7126": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 325,
-      "sent_timestamp": 1793294783.506591,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7126,
-      "last_edit_timestamp": 1793294750.0
-    },
-    "Ali_bk_8_7127": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 326,
-      "sent_timestamp": 1793294785.4029896,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7127,
-      "last_edit_timestamp": 1793294902.0
-    },
-    "Ali_bk_8_7128": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 327,
-      "sent_timestamp": 1793295263.9832106,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7128,
-      "last_edit_timestamp": 1793295273.0
-    },
     "withyashar_26860": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 328,
@@ -81,7 +54,16 @@
       "status_icon": "🚨🔕",
       "source_node": "VahidOnline",
       "msg_id": 78898
+    },
+    "Ali_bk_8_7134": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 331,
+      "sent_timestamp": 1793298553.4457011,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 7134,
+      "last_edit_timestamp": 1793299023.0
     }
   },
-  "updated_at": "2026-10-29T18:11:46.472964+00:00"
+  "updated_at": "2026-10-29T18:38:12.609150+00:00"
 }
