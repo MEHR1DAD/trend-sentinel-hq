@@ -190,7 +190,7 @@ class TrendSentinelV4:
             edit_watcher_lines = ["- *(No active posts in 60m edit window)*"]
 
         report_content = (
-            f"# Sentinel Session Report (v4 Clean Engine)\n\n"
+            f"# Sentinel Session Report (v{config.VERSION} Zero-Race Engine)\n\n"
             f"- **Uptime:** {uptime_min} minutes\n"
             f"- **Messages Processed:** {self.messages_processed}\n"
             f"- **Alerts Dispatched:** {self.alerts_dispatched}\n"
@@ -505,7 +505,7 @@ class TrendSentinelV4:
 
     async def run(self):
         print("==================================================")
-        print("🛰️ TREND SENTINEL V4 (DETERMINISTIC BYPASS ENGINE)")
+        print(f"🛰️ TREND SENTINEL V{config.VERSION} (ZERO-RACE & DUAL-SYNC ENGINE)")
         print(f"Target Nodes: {config.VIP_CHANNELS}")
         print(f"Destinations: {list(config.CHANNELS.values())}")
         print(f"Max Runtime: {config.MAX_RUNTIME_SEC}s")

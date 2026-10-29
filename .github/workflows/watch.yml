@@ -2,7 +2,7 @@ name: Sentinel Watch (v4 Pure Engine)
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Every 30 minutes cron rotation & safety net
+    - cron: '0 */2 * * *' # Fallback safety net every 2 hours (avoids mid-flight collisions)
   workflow_dispatch:
   push:
     branches: [ "main" ]
@@ -48,8 +48,10 @@ jobs:
           TELEGRAM_SESSION_GENERAL: ${{ secrets.TELEGRAM_SESSION_GENERAL }}
           MAX_RUNTIME_SEC: "1560" # 26 minutes (clean handoff before 30-min cron)
         run: |
+          echo "🔄 Synchronizing latest persistent state from origin/main..."
+          git pull origin main || true
           echo "🚀 Starting Trend Sentinel v4 Pure-Python Engine..."
-          sleep 3
+          sleep 2
           python -u main.py
 
       - name: Persist Session State
