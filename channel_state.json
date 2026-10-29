@@ -9,8 +9,8 @@
       "last_read_time": "2026-10-29 13:20:49 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 78892,
-      "last_read_time": "2026-10-29 12:50:47 UTC"
+      "last_read_id": 78894,
+      "last_read_time": "2026-10-29 13:58:23 UTC"
     },
     "iliaen": {
       "last_read_id": 4752,
@@ -29,39 +29,6 @@
     "@DidebanJang": 1793278494.7156684
   },
   "sent_alerts_map": {
-    "withyashar_26836": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 309,
-      "sent_timestamp": 1793278495.1365285,
-      "status_icon": "🚨",
-      "source_node": "withyashar",
-      "msg_id": 26836
-    },
-    "withyashar_26838": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 310,
-      "sent_timestamp": 1793278495.5450544,
-      "status_icon": "🚨🔕",
-      "source_node": "withyashar",
-      "msg_id": 26838
-    },
-    "Ali_bk_8_7108": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 311,
-      "sent_timestamp": 1793278496.2946155,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7108
-    },
-    "withyashar_26841": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 312,
-      "sent_timestamp": 1793278975.086854,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 26841,
-      "last_edit_timestamp": 1793278933.0
-    },
     "withyashar_26843": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 313,
@@ -78,7 +45,7 @@
       "status_icon": "🔕",
       "source_node": "Ali_bk_8",
       "msg_id": 7110,
-      "last_edit_timestamp": 1793280064.0
+      "last_edit_timestamp": 1793282501.0
     },
     "withyashar_26844": {
       "target_channel": "@DidebanJang",
@@ -88,7 +55,15 @@
       "source_node": "withyashar",
       "msg_id": 26844,
       "last_edit_timestamp": 1793280313.0
+    },
+    "VahidOnline_78894": {
+      "target_channel": "@DidebanEterazat",
+      "bot_msg_id": 24,
+      "sent_timestamp": 1793282326.8508766,
+      "status_icon": "🔕",
+      "source_node": "VahidOnline",
+      "msg_id": 78894
     }
   },
-  "updated_at": "2026-10-29T13:47:22.010200+00:00"
+  "updated_at": "2026-10-29T14:13:46.010793+00:00"
 }
