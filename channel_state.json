@@ -28,16 +28,6 @@
   "last_urgent_alert": {
     "@DidebanJang": 1793224767.3397396
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_7089": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 292,
-      "sent_timestamp": 1793235144.114715,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7089,
-      "last_edit_timestamp": 1793235182.0
-    }
-  },
-  "updated_at": "2026-10-29T00:53:23.910114+00:00"
+  "sent_alerts_map": {},
+  "updated_at": "2026-10-29T01:59:27.437194+00:00"
 }
