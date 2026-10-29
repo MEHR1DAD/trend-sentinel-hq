@@ -5,12 +5,12 @@
       "last_read_time": "2026-10-29 11:29:08 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 7105,
-      "last_read_time": "2026-10-29 10:55:13 UTC"
+      "last_read_id": 7107,
+      "last_read_time": "2026-10-29 11:42:04 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 78876,
-      "last_read_time": "2026-10-28 21:48:45 UTC"
+      "last_read_id": 78883,
+      "last_read_time": "2026-10-29 11:51:17 UTC"
     },
     "iliaen": {
       "last_read_id": 4752,
@@ -26,17 +26,9 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1793273395.3553832
+    "@DidebanJang": 1793274619.7943594
   },
   "sent_alerts_map": {
-    "withyashar_26830": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 302,
-      "sent_timestamp": 1793270370.4519465,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 26830
-    },
     "withyashar_26831": {
       "target_channel": "@DidebanEterazat",
       "bot_msg_id": 23,
@@ -54,7 +46,50 @@
       "source_node": "withyashar",
       "msg_id": 26832,
       "last_edit_timestamp": 1793273362.0
+    },
+    "VahidOnline_78878": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 304,
+      "sent_timestamp": 1793274319.8750045,
+      "status_icon": "🔕",
+      "source_node": "VahidOnline",
+      "msg_id": 78878,
+      "last_edit_timestamp": 1793274309.0
+    },
+    "VahidOnline_78879": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 305,
+      "sent_timestamp": 1793274439.9344666,
+      "status_icon": "🔕",
+      "source_node": "VahidOnline",
+      "msg_id": 78879
+    },
+    "VahidOnline_78880": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 306,
+      "sent_timestamp": 1793274499.7736979,
+      "status_icon": "🔕",
+      "source_node": "VahidOnline",
+      "msg_id": 78880,
+      "last_edit_timestamp": 1793274570.0
+    },
+    "VahidOnline_78881": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 307,
+      "sent_timestamp": 1793274620.374606,
+      "status_icon": "🚨",
+      "source_node": "VahidOnline",
+      "msg_id": 78881
+    },
+    "VahidOnline_78882": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 308,
+      "sent_timestamp": 1793274679.8835368,
+      "status_icon": "🔕",
+      "source_node": "VahidOnline",
+      "msg_id": 78882,
+      "last_edit_timestamp": 1793274640.0
     }
   },
-  "updated_at": "2026-10-29T11:31:55.822055+00:00"
+  "updated_at": "2026-10-29T11:58:20.327662+00:00"
 }
