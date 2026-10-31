@@ -27,7 +27,7 @@ class SentinelEngine:
         self.geo_iran = self.patterns.get("geo_iran", [])
         self.geo_region = self.patterns.get("geo_region", [])
         self.kinetic_triggers = self.patterns.get("kinetic_triggers", [])
-        self.ignored_show_titles = self.patterns.get("ignored_show_titles", ["اتاق جنگ با یاشار", "اتاق جنگ یاشار"])
+        self.ignored_show_titles = self.patterns.get("ignored_show_titles", ["اتاق جنگ با یاشار", "اتاق جنگ یاشار", "warroom", "@warroom"])
 
     def _load_patterns(self) -> dict:
         if not os.path.exists(self.pattern_path):

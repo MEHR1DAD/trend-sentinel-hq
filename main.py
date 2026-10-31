@@ -253,14 +253,21 @@ class TrendSentinelV4:
             else:
                 break
 
-        # 2. Strip raw asterisks and inline source watermarks (@VahidHeadline, @VahidOOnLine, etc.)
+        # 2. Strip raw asterisks, trailing and inline channel watermarks
+        # Strips @WarRoom, @withyashar, @VahidOnline, @VahidHeadline, etc. (including links and brackets)
+        watermark_channels = r'WarRoom|War_Room|withyashar|VahidHeadline|VahidOOnLine|VahidOnline|Ali_bk_8|iliaen|kianmeli1|netblocks'
+        trailing_watermark_pattern = re.compile(
+            rf'\s*[\(\[]?\s*(?:https?://)?(?:t\.me/|@)(?:{watermark_channels})\b\s*[\)\]]?\s*$',
+            re.IGNORECASE
+        )
         inline_watermarks_pattern = re.compile(
-            r'\s*@(VahidHeadline|VahidOOnLine|VahidOnline|withyashar|Ali_bk_8|iliaen|kianmeli1|netblocks)\b',
+            rf'\s*[\(\[]?\s*(?:https?://)?(?:t\.me/|@)(?:{watermark_channels})\b\s*[\)\]]?',
             re.IGNORECASE
         )
         cleaned_lines = []
         for line in lines:
             c_line = re.sub(r'\*+', '', line).strip()
+            c_line = trailing_watermark_pattern.sub('', c_line).strip()
             c_line = inline_watermarks_pattern.sub('', c_line).strip()
             cleaned_lines.append(c_line)
 
