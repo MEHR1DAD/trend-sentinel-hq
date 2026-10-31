@@ -8,7 +8,7 @@ Central configuration module for source nodes, destination channels, credentials
 import os
 
 # --- System Version ---
-VERSION = "4.3.1"
+VERSION = "4.4.0"
 
 # --- Credentials ---
 API_ID = int(os.environ.get("TELEGRAM_API_ID", "24738417"))
@@ -41,6 +41,7 @@ CHANNEL_TAGS = {
 
 # --- Operational Settings ---
 MAX_RUNTIME_SEC = int(os.environ.get("MAX_RUNTIME_SEC", 26 * 60))  # 26-minute graceful handoff (avoids 30m cron collision)
+MAX_MESSAGE_AGE_SEC = int(os.environ.get("MAX_MESSAGE_AGE_SEC", 60 * 60))  # 60-minute window: drop older messages to prevent stale news
 POLL_INTERVAL_SEC = 2.0  # Fast polling interval
 
 # --- File Paths ---

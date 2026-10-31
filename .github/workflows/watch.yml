@@ -1,6 +1,8 @@
 name: Sentinel Watch (v4 Pure Engine)
 
 on:
+  schedule:
+    - cron: '0 */3 * * *' # Fallback dead-man safety net every 3 hours
   workflow_dispatch:
   push:
     branches: [ "main" ]
@@ -69,4 +71,4 @@ jobs:
           GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           echo "Handing over to next runner cycle..."
-          gh workflow run watch.yml --ref main || true
+          gh workflow run watch.yml --repo ${{ github.repository }} --ref main || true

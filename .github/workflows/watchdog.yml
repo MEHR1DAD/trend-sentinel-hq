@@ -2,7 +2,7 @@ name: Sentinel Smart Watchdog (Zero-Collision Rescue)
 
 on:
   schedule:
-    # Fast war-time heartbeat check every 10 minutes
+    # War-time heartbeat check every 10 minutes
     - cron: '*/10 * * * *'
   workflow_dispatch:
 
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Inspect Sentinel Engine Live Status
+      - name: Inspect Sentinel Engine Live Status & Rescue if Down
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
@@ -29,12 +29,15 @@ jobs:
 
           token = os.environ.get("GH_TOKEN")
           repo = os.environ.get("REPO")
-          url = f"https://api.github.com/repos/{repo}/actions/workflows/watch.yml/runs?per_page=5"
+          if not token or not repo:
+              print("❌ Missing GH_TOKEN or REPO environment variable.")
+              sys.exit(1)
 
+          url = f"https://api.github.com/repos/{repo}/actions/workflows/watch.yml/runs?per_page=5"
           headers = {
               "Authorization": f"Bearer {token}",
               "Accept": "application/vnd.github.v3+json",
-              "User-Agent": "Sentinel-Watchdog-v4.3"
+              "User-Agent": "Sentinel-Watchdog-v4.4"
           }
 
           req = urllib.request.Request(url, headers=headers)
@@ -51,7 +54,28 @@ jobs:
               print(f"⚠️ Warning querying Sentinel workflow status: {e}")
 
           print("🚨 Alert: No active Sentinel runner detected! Initiating emergency rescue...")
-          res = subprocess.run(["gh", "workflow", "run", "watch.yml", "--ref", "main"], capture_output=True, text=True)
-          print(f"Rescue Dispatch Output: {res.stdout.strip()} | {res.stderr.strip()}")
-          print("🚀 Sentinel rescue trigger dispatched successfully.")
+          
+          # Method 1: Direct GitHub REST API dispatch (pure Python, zero git dependency)
+          dispatch_url = f"https://api.github.com/repos/{repo}/actions/workflows/watch.yml/dispatches"
+          payload = json.dumps({"ref": "main"}).encode("utf-8")
+          dispatch_req = urllib.request.Request(dispatch_url, data=payload, headers=headers, method="POST")
+          try:
+              with urllib.request.urlopen(dispatch_req, timeout=15) as resp:
+                  if resp.status in (200, 204):
+                      print(f"🚀 Sentinel rescue trigger dispatched successfully via API (HTTP {resp.status}).")
+                      sys.exit(0)
+                  else:
+                      print(f"⚠️ API dispatch returned HTTP {resp.status}, attempting CLI fallback...")
+          except Exception as err:
+              print(f"⚠️ API dispatch error: {err}. Attempting CLI fallback...")
+
+          # Method 2: GitHub CLI with explicit --repo parameter
+          res = subprocess.run(["gh", "workflow", "run", "watch.yml", "--repo", repo, "--ref", "main"], capture_output=True, text=True)
+          print(f"Fallback CLI Output: {res.stdout.strip()} | {res.stderr.strip()}")
+          if res.returncode == 0:
+              print("🚀 Sentinel rescue trigger dispatched successfully via CLI fallback.")
+              sys.exit(0)
+          else:
+              print("❌ All rescue dispatch methods failed.")
+              sys.exit(1)
           EOF

@@ -466,6 +466,14 @@ class TrendSentinelV4:
         if dedup_key in self.posted_registry:
             return
 
+        # 60-Minute Stale Message Guard: Only process news from the last 60 minutes
+        if msg_date:
+            msg_ts = msg_date.replace(tzinfo=timezone.utc).timestamp() if not msg_date.tzinfo else msg_date.timestamp()
+            age_sec = time.time() - msg_ts
+            if age_sec > config.MAX_MESSAGE_AGE_SEC:
+                print(f"⏳ [STALE DROP] @{source_node}/#{msg_id} is {int(age_sec / 60)}m old (>60m limit) - alert skipped.")
+                return
+
         # 3-Step Pure Engine Evaluation
         eval_res = self.engine.process_message(msg_text, source_node)
         if not eval_res:
