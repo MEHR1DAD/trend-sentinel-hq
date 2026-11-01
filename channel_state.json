@@ -30,16 +30,6 @@
     "@DidehbanEghtesad": 1793359238.2149794,
     "@DidebanEterazat": 1793461319.5246005
   },
-  "sent_alerts_map": {
-    "VahidOnline_78938": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 406,
-      "sent_timestamp": 1793502562.9939961,
-      "status_icon": "🔕",
-      "source_node": "VahidOnline",
-      "msg_id": 78938,
-      "last_edit_timestamp": 1793502559.0
-    }
-  },
-  "updated_at": "2026-11-01T03:57:46.098097+00:00"
+  "sent_alerts_map": {},
+  "updated_at": "2026-11-01T04:24:09.978965+00:00"
 }
