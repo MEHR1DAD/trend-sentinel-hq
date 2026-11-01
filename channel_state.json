@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27065,
-      "last_read_time": "2026-11-01 18:15:04 UTC"
+      "last_read_id": 27068,
+      "last_read_time": "2026-11-01 18:39:34 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 7365,
-      "last_read_time": "2026-11-01 18:13:54 UTC"
+      "last_read_id": 7367,
+      "last_read_time": "2026-11-01 18:40:46 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 78949,
-      "last_read_time": "2026-11-01 16:14:53 UTC"
+      "last_read_id": 78951,
+      "last_read_time": "2026-11-01 18:46:50 UTC"
     },
     "iliaen": {
       "last_read_id": 4752,
@@ -31,15 +31,40 @@
     "@DidebanEterazat": 1793461319.5246005
   },
   "sent_alerts_map": {
-    "withyashar_27060": {
+    "withyashar_27066": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 428,
-      "sent_timestamp": 1793554979.9157686,
+      "bot_msg_id": 429,
+      "sent_timestamp": 1793557363.9119785,
       "status_icon": "🔕",
       "source_node": "withyashar",
-      "msg_id": 27060,
-      "last_edit_timestamp": 1793554932.0
+      "msg_id": 27066,
+      "last_edit_timestamp": 1793557338.0
+    },
+    "withyashar_27067": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 430,
+      "sent_timestamp": 1793557603.9858663,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27067,
+      "last_edit_timestamp": 1793557563.0
+    },
+    "VahidOnline_78950": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 431,
+      "sent_timestamp": 1793557903.9978533,
+      "status_icon": "🔕",
+      "source_node": "VahidOnline",
+      "msg_id": 78950
+    },
+    "VahidOnline_78951": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 36,
+      "sent_timestamp": 1793558863.9513001,
+      "status_icon": "🔕",
+      "source_node": "VahidOnline",
+      "msg_id": 78951
     }
   },
-  "updated_at": "2026-11-01T18:21:21.107769+00:00"
+  "updated_at": "2026-11-01T18:47:43.952154+00:00"
 }
