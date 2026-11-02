@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27086,
-      "last_read_time": "2026-11-01 23:17:55 UTC"
+      "last_read_id": 27088,
+      "last_read_time": "2026-11-02 04:45:25 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 7391,
-      "last_read_time": "2026-11-02 04:00:35 UTC"
+      "last_read_id": 7392,
+      "last_read_time": "2026-11-02 04:09:54 UTC"
     },
     "VahidOnline": {
       "last_read_id": 78957,
@@ -30,6 +30,24 @@
     "@DidehbanEghtesad": 1793359238.2149794,
     "@DidebanEterazat": 1793461319.5246005
   },
-  "sent_alerts_map": {},
-  "updated_at": "2026-11-02T04:29:08.131310+00:00"
+  "sent_alerts_map": {
+    "Ali_bk_8_7392": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 445,
+      "sent_timestamp": 1793593772.312124,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 7392
+    },
+    "withyashar_27087": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 446,
+      "sent_timestamp": 1793593892.0332592,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27087,
+      "last_edit_timestamp": 1793593864.0
+    }
+  },
+  "updated_at": "2026-11-02T04:55:31.158840+00:00"
 }
