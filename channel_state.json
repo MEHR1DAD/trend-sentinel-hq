@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27202,
-      "last_read_time": "2026-11-02 21:54:43 UTC"
+      "last_read_id": 27207,
+      "last_read_time": "2026-11-02 22:28:49 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 7455,
@@ -31,51 +31,24 @@
     "@DidebanEterazat": 1793461319.5246005
   },
   "sent_alerts_map": {
-    "withyashar_27189": {
+    "withyashar_27204": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 494,
-      "sent_timestamp": 1793653783.6435091,
-      "status_icon": "🚨",
-      "source_node": "withyashar",
-      "msg_id": 27189,
-      "last_edit_timestamp": 1793653785.0
-    },
-    "withyashar_27190": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 495,
-      "sent_timestamp": 1793653903.792326,
-      "status_icon": "🚨🔕",
-      "source_node": "withyashar",
-      "msg_id": 27190,
-      "last_edit_timestamp": 1793653855.0
-    },
-    "withyashar_27193": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 496,
-      "sent_timestamp": 1793654323.776052,
+      "bot_msg_id": 499,
+      "sent_timestamp": 1793657487.4510167,
       "status_icon": "🔕",
       "source_node": "withyashar",
-      "msg_id": 27193,
-      "last_edit_timestamp": 1793654288.0
+      "msg_id": 27204,
+      "last_edit_timestamp": 1793657481.0
     },
-    "withyashar_27194": {
+    "withyashar_27206": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 497,
-      "sent_timestamp": 1793654324.8847868,
+      "bot_msg_id": 500,
+      "sent_timestamp": 1793658327.7160137,
       "status_icon": "🔕",
       "source_node": "withyashar",
-      "msg_id": 27194,
-      "last_edit_timestamp": 1793654297.0
-    },
-    "withyashar_27196": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 498,
-      "sent_timestamp": 1793655056.0875657,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27196,
-      "last_edit_timestamp": 1793655008.0
+      "msg_id": 27206,
+      "last_edit_timestamp": 1793658319.0
     }
   },
-  "updated_at": "2026-11-02T22:05:50.783975+00:00"
+  "updated_at": "2026-11-02T22:32:28.168352+00:00"
 }
