@@ -31,15 +31,6 @@
     "@DidebanEterazat": 1793732858.7380104
   },
   "sent_alerts_map": {
-    "Ali_bk_8_7533": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 532,
-      "sent_timestamp": 1793744194.7814267,
-      "status_icon": "🚨",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7533,
-      "last_edit_timestamp": 1793744165.0
-    },
     "Ali_bk_8_7534": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 533,
@@ -49,5 +40,5 @@
       "msg_id": 7534
     }
   },
-  "updated_at": "2026-11-03T23:02:30.903183+00:00"
+  "updated_at": "2026-11-03T23:34:31.383288+00:00"
 }
