@@ -2,28 +2,26 @@
 
 - **Uptime:** 26 minutes
 - **Messages Processed:** 6
-- **Alerts Dispatched:** 1
-- **Alerts Edited:** 0
+- **Alerts Dispatched:** 2
+- **Alerts Edited:** 1
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** محسن رضایی، دبیر شورای عالی امنیت ملی در جمهوری اسلامی روز سه‌شنبه ۱۲ آبان اعلام کرد که پاسخ آمریکا به «حقوق و مطالبات ا
-- **Last Message Time:** 2026-11-03 14:49:30 UTC
+- **Last Message Text:** 
+- **Last Message Time:** 2026-11-03 15:23:27 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #27250 (2026-11-03 14:50:12 UTC)
-- `@Ali_bk_8`: #7500 (2026-11-03 14:45:33 UTC)
+- `@withyashar`: #27253 (2026-11-03 15:23:27 UTC)
+- `@Ali_bk_8`: #7501 (2026-11-03 15:12:43 UTC)
 - `@VahidOnline`: #78984 (2026-11-03 14:49:30 UTC)
 - `@iliaen`: #4753 (2026-11-02 10:53:12 UTC)
-- `@netblocks`: #1580 (2026-11-02 23:33:14 UTC)
+- `@netblocks`: #1582 (2026-11-03 15:19:44 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 52m ago
-- `@DidehbanEghtesad`: Last loud alert 5980m ago
-- `@DidebanEterazat`: Last loud alert 149m ago
+- `@DidebanJang`: Last loud alert 78m ago
+- `@DidehbanEghtesad`: Last loud alert 6007m ago
+- `@DidebanEterazat`: Last loud alert 175m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش (Active 60m Edit Watchers):
-- `withyashar_27240` -> `@DidebanJang` (bot msg #519, 52m ago)
-- `Ali_bk_8_7492` -> `@DidebanJang` (bot msg #520, 52m ago)
-- `VahidOnline_78982` -> `@DidebanJang` (bot msg #521, 52m ago)
-- `VahidOnline_78983` -> `@DidebanJang` (bot msg #522, 52m ago)
-- `VahidOnline_78984` -> `@DidebanJang` (bot msg #523, 10m ago)
+- `VahidOnline_78984` -> `@DidebanJang` (bot msg #523, 37m ago)
+- `netblocks_1581` -> `@DidebanEterazat` (bot msg #40, 25m ago)
+- `netblocks_1582` -> `@DidebanEterazat` (bot msg #41, 7m ago)
