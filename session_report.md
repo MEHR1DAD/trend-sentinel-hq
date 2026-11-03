@@ -1,6 +1,6 @@
 # Sentinel Session Report (v4.4.1 Zero-Race Engine)
 
-- **Uptime:** 26 minutes
+- **Uptime:** 0 minutes
 - **Messages Processed:** 0
 - **Alerts Dispatched:** 0
 - **Alerts Edited:** 0
@@ -17,9 +17,9 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 128m ago
+- `@DidebanJang`: Last loud alert 129m ago
 - `@DidehbanEghtesad`: Last loud alert 5441m ago
-- `@DidebanEterazat`: Last loud alert 3739m ago
+- `@DidebanEterazat`: Last loud alert 3740m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش (Active 60m Edit Watchers):
 - *(No active posts in 60m edit window)*
