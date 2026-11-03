@@ -1,15 +1,15 @@
 # Sentinel Session Report (v4.4.1 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 1
-- **Alerts Dispatched:** 0
-- **Alerts Edited:** 0
+- **Messages Processed:** 2
+- **Alerts Dispatched:** 1
+- **Alerts Edited:** 1
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** جام ملت‌های آسیا که قرار بود در عربستان سعودی برگزار شود، به‌دلیل جنگ میان عربستان و یمن به 23 دسامبر 2027 موکول شد.  Th
-- **Last Message Time:** 2026-11-03 06:42:17 UTC
+- **Last Message Text:** دونالد ترامپ در گفت‌وگوی تلفنی با شبکه فاکس‌نیوز درباره ایران گفت: «ممکن است مجبور شویم به کوه پیک‌اکس حمله کنیم، اما مس
+- **Last Message Time:** 2026-11-03 07:06:50 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #27211 (2026-11-03 01:00:37 UTC)
+- `@withyashar`: #27213 (2026-11-03 07:06:50 UTC)
 - `@Ali_bk_8`: #7463 (2026-11-03 06:42:17 UTC)
 - `@VahidOnline`: #78976 (2026-11-03 03:52:17 UTC)
 - `@iliaen`: #4753 (2026-11-02 10:53:12 UTC)
@@ -17,9 +17,9 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 169m ago
-- `@DidehbanEghtesad`: Last loud alert 5481m ago
-- `@DidebanEterazat`: Last loud alert 3780m ago
+- `@DidebanJang`: Last loud alert 195m ago
+- `@DidehbanEghtesad`: Last loud alert 5508m ago
+- `@DidebanEterazat`: Last loud alert 3806m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش (Active 60m Edit Watchers):
-- *(No active posts in 60m edit window)*
+- `withyashar_27212` -> `@DidebanEterazat` (bot msg #38, 15m ago)
