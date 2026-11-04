@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-04 20:43:23 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 7624,
-      "last_read_time": "2026-11-04 20:15:57 UTC"
+      "last_read_id": 7625,
+      "last_read_time": "2026-11-04 21:01:08 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79000,
@@ -37,7 +37,8 @@
       "sent_timestamp": 1793823947.0424469,
       "status_icon": "🚨",
       "source_node": "withyashar",
-      "msg_id": 27331
+      "msg_id": 27331,
+      "last_edit_timestamp": 1793825734.0
     },
     "withyashar_27333": {
       "target_channel": "@DidebanJang",
@@ -49,5 +50,5 @@
       "last_edit_timestamp": 1793825015.0
     }
   },
-  "updated_at": "2026-11-04T20:51:46.117325+00:00"
+  "updated_at": "2026-11-04T21:01:12.426897+00:00"
 }
