@@ -1,26 +1,26 @@
 # Sentinel Session Report (v4.4.1 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 1
+- **Messages Processed:** 3
 - **Alerts Dispatched:** 1
-- **Alerts Edited:** 2
+- **Alerts Edited:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** تجاوز سعودی جبهه المقاطره را هدف قرار داده و درگیری‌های شدیدی هم‌اکنون میان نیروهای مورد حمایت عربستان و نیروهای یمنی در
-- **Last Message Time:** 2026-11-04 21:19:52 UTC
+- **Last Message Text:** 
+- **Last Message Time:** 2026-11-04 22:04:13 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #27333 (2026-11-04 20:43:23 UTC)
-- `@Ali_bk_8`: #7626 (2026-11-04 21:19:52 UTC)
+- `@withyashar`: #27335 (2026-11-04 22:04:13 UTC)
+- `@Ali_bk_8`: #7627 (2026-11-04 21:49:58 UTC)
 - `@VahidOnline`: #79000 (2026-11-04 19:15:03 UTC)
 - `@iliaen`: #4753 (2026-11-02 10:53:12 UTC)
 - `@netblocks`: #1582 (2026-11-03 15:19:44 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 74m ago
-- `@DidehbanEghtesad`: Last loud alert 7819m ago
-- `@DidebanEterazat`: Last loud alert 1592m ago
+- `@DidebanJang`: Last loud alert 100m ago
+- `@DidehbanEghtesad`: Last loud alert 7845m ago
+- `@DidebanEterazat`: Last loud alert 1618m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش (Active 60m Edit Watchers):
-- `withyashar_27333` -> `@DidebanJang` (bot msg #574, 56m ago)
-- `Ali_bk_8_7626` -> `@DidebanJang` (bot msg #575, 19m ago)
+- `Ali_bk_8_7626` -> `@DidebanJang` (bot msg #575, 45m ago)
+- `Ali_bk_8_7627` -> `@DidebanJang` (bot msg #576, 15m ago)
