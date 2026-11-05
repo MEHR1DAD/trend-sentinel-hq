@@ -3,7 +3,7 @@
 - **Uptime:** 26 minutes
 - **Messages Processed:** 0
 - **Alerts Dispatched:** 0
-- **Alerts Edited:** 1
+- **Alerts Edited:** 0
 - **Active VIP Nodes:** 6 channels
 - **Last Message Text:** None
 - **Last Message Time:** None
@@ -17,10 +17,9 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 73m ago
-- `@DidehbanEghtesad`: Last loud alert 8773m ago
-- `@DidebanEterazat`: Last loud alert 2546m ago
+- `@DidebanJang`: Last loud alert 100m ago
+- `@DidehbanEghtesad`: Last loud alert 8799m ago
+- `@DidebanEterazat`: Last loud alert 2572m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش (Active 60m Edit Watchers):
-- `VahidOnline_79009` -> `@DidebanEterazat` (bot msg #46, 59m ago)
-- `Ali_bk_8_7664` -> `@DidebanJang` (bot msg #590, 32m ago)
+- `Ali_bk_8_7664` -> `@DidebanJang` (bot msg #590, 58m ago)

@@ -31,14 +31,6 @@
     "@DidebanEterazat": 1793732858.7380104
   },
   "sent_alerts_map": {
-    "VahidOnline_79009": {
-      "target_channel": "@DidebanEterazat",
-      "bot_msg_id": 46,
-      "sent_timestamp": 1793882063.5952497,
-      "status_icon": "🔕",
-      "source_node": "VahidOnline",
-      "msg_id": 79009
-    },
     "Ali_bk_8_7664": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 590,
@@ -49,5 +41,5 @@
       "last_edit_timestamp": 1793885483.0
     }
   },
-  "updated_at": "2026-11-05T13:34:14.316448+00:00"
+  "updated_at": "2026-11-05T14:00:37.884455+00:00"
 }
