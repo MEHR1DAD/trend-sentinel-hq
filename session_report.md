@@ -5,11 +5,11 @@
 - **Alerts Dispatched:** 0
 - **Alerts Edited:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** وای‌نت: هرتزوگ برای انتخاب نامزد تشکیل دولت با احزاب اسرائیلی رایزنی می‌کند  رئیس‌جمهور اسرائیل در پنجم نوامبر رایزنی‌ها
-- **Last Message Time:** 2026-11-05 06:54:17 UTC
+- **Last Message Text:** بک هواپیمای دولتی جمهوری اسلامی دقایقی پیش در مسکو به زمین نشست @WarRoom
+- **Last Message Time:** 2026-11-05 07:12:31 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #27345 (2026-11-05 06:54:17 UTC)
+- `@withyashar`: #27346 (2026-11-05 07:12:31 UTC)
 - `@Ali_bk_8`: #7638 (2026-11-05 06:24:38 UTC)
 - `@VahidOnline`: #79000 (2026-11-04 19:15:03 UTC)
 - `@iliaen`: #4753 (2026-11-02 10:53:12 UTC)
@@ -17,10 +17,9 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 640m ago
-- `@DidehbanEghtesad`: Last loud alert 8385m ago
-- `@DidebanEterazat`: Last loud alert 2158m ago
+- `@DidebanJang`: Last loud alert 667m ago
+- `@DidehbanEghtesad`: Last loud alert 8412m ago
+- `@DidebanEterazat`: Last loud alert 2185m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش (Active 60m Edit Watchers):
-- `withyashar_27341` -> `@DidebanJang` (bot msg #579, 54m ago)
-- `withyashar_27342` -> `@DidehbanEghtesad` (bot msg #53, 49m ago)
+- *(No active posts in 60m edit window)*
