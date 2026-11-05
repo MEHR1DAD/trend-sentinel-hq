@@ -2,24 +2,24 @@
 
 - **Uptime:** 26 minutes
 - **Messages Processed:** 3
-- **Alerts Dispatched:** 1
-- **Alerts Edited:** 1
+- **Alerts Dispatched:** 0
+- **Alerts Edited:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** در پی حمله هوایی عربستان به استان صعده یمن، 13 غیرنظامی شهید و زخمی شدند که شماری از آن‌ها از امدادگران بودند.  13 civil
-- **Last Message Time:** 2026-11-05 09:34:19 UTC
+- **Last Message Text:** وزارت خزانه‌داری آمریکا شرکت ترکیه‌ای «فوگو گراند سرویسز» (Fugo Ground Services) را به دلیل همکاری با شرکت‌های هواپیمایی
+- **Last Message Time:** 2026-11-05 10:05:40 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #27349 (2026-11-05 09:27:50 UTC)
-- `@Ali_bk_8`: #7649 (2026-11-05 09:34:19 UTC)
+- `@withyashar`: #27350 (2026-11-05 10:05:40 UTC)
+- `@Ali_bk_8`: #7654 (2026-11-05 10:04:41 UTC)
 - `@VahidOnline`: #79000 (2026-11-04 19:15:03 UTC)
 - `@iliaen`: #4753 (2026-11-02 10:53:12 UTC)
 - `@netblocks`: #1582 (2026-11-03 15:19:44 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 799m ago
-- `@DidehbanEghtesad`: Last loud alert 8544m ago
-- `@DidebanEterazat`: Last loud alert 2317m ago
+- `@DidebanJang`: Last loud alert 825m ago
+- `@DidehbanEghtesad`: Last loud alert 8570m ago
+- `@DidebanEterazat`: Last loud alert 2343m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش (Active 60m Edit Watchers):
-- `Ali_bk_8_7649` -> `@DidebanJang` (bot msg #581, 9m ago)
+- `Ali_bk_8_7649` -> `@DidebanJang` (bot msg #581, 36m ago)
