@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27410,
-      "last_read_time": "2026-11-06 08:07:53 UTC"
+      "last_read_id": 27417,
+      "last_read_time": "2026-11-06 08:44:17 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 7715,
-      "last_read_time": "2026-11-06 07:49:55 UTC"
+      "last_read_id": 7716,
+      "last_read_time": "2026-11-06 08:42:54 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79016,
@@ -31,24 +31,6 @@
     "@DidebanEterazat": 1793732858.7380104
   },
   "sent_alerts_map": {
-    "withyashar_27403": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 605,
-      "sent_timestamp": 1793951001.4363403,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27403,
-      "last_edit_timestamp": 1793950955.0
-    },
-    "withyashar_27404": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 606,
-      "sent_timestamp": 1793951121.275668,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27404,
-      "last_edit_timestamp": 1793951120.0
-    },
     "withyashar_27406": {
       "target_channel": "@DidehbanEghtesad",
       "bot_msg_id": 59,
@@ -73,7 +55,33 @@
       "status_icon": "🚨",
       "source_node": "withyashar",
       "msg_id": 27410
+    },
+    "withyashar_27412": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 608,
+      "sent_timestamp": 1793953687.7357469,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27412,
+      "last_edit_timestamp": 1793953656.0
+    },
+    "withyashar_27416": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 609,
+      "sent_timestamp": 1793954707.7245889,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27416
+    },
+    "withyashar_27417": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 610,
+      "sent_timestamp": 1793954708.2044766,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27417,
+      "last_edit_timestamp": 1793954677.0
     }
   },
-  "updated_at": "2026-11-06T08:19:41.821557+00:00"
+  "updated_at": "2026-11-06T08:46:07.173519+00:00"
 }
