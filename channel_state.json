@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27474,
-      "last_read_time": "2026-11-06 22:53:46 UTC"
+      "last_read_id": 27475,
+      "last_read_time": "2026-11-06 22:56:05 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 7761,
-      "last_read_time": "2026-11-06 22:55:35 UTC"
+      "last_read_id": 7766,
+      "last_read_time": "2026-11-06 23:14:23 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79020,
@@ -31,42 +31,6 @@
     "@DidebanEterazat": 1793732858.7380104
   },
   "sent_alerts_map": {
-    "Ali_bk_8_7754": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 631,
-      "sent_timestamp": 1794002348.1892393,
-      "status_icon": "🚨🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7754,
-      "last_edit_timestamp": 1794002337.0
-    },
-    "VahidOnline_79020": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 632,
-      "sent_timestamp": 1794002528.1651053,
-      "status_icon": "🚨🔕",
-      "source_node": "VahidOnline",
-      "msg_id": 79020,
-      "last_edit_timestamp": 1794002878.0
-    },
-    "Ali_bk_8_7756": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 633,
-      "sent_timestamp": 1794002588.2465289,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7756,
-      "last_edit_timestamp": 1794002630.0
-    },
-    "Ali_bk_8_7757": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 634,
-      "sent_timestamp": 1794003188.553017,
-      "status_icon": "🚨🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7757,
-      "last_edit_timestamp": 1794003330.0
-    },
     "Ali_bk_8_7758": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 635,
@@ -101,8 +65,16 @@
       "status_icon": "🚨🔕",
       "source_node": "withyashar",
       "msg_id": 27472,
-      "last_edit_timestamp": 1794004903.0
+      "last_edit_timestamp": 1794005752.0
+    },
+    "withyashar_27475": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 640,
+      "sent_timestamp": 1794005837.120535,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27475
     }
   },
-  "updated_at": "2026-11-06T22:55:54.002046+00:00"
+  "updated_at": "2026-11-06T23:23:15.758506+00:00"
 }
