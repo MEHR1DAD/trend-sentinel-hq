@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27551,
-      "last_read_time": "2026-11-07 21:15:40 UTC"
+      "last_read_id": 27552,
+      "last_read_time": "2026-11-07 22:17:08 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 7825,
-      "last_read_time": "2026-11-07 21:44:57 UTC"
+      "last_read_id": 7828,
+      "last_read_time": "2026-11-07 22:15:37 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79031,
-      "last_read_time": "2026-11-07 20:59:37 UTC"
+      "last_read_id": 79032,
+      "last_read_time": "2026-11-07 22:08:29 UTC"
     },
     "iliaen": {
       "last_read_id": 4753,
@@ -31,23 +31,6 @@
     "@DidebanEterazat": 1793732858.7380104
   },
   "sent_alerts_map": {
-    "VahidOnline_79031": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 677,
-      "sent_timestamp": 1794085218.376024,
-      "status_icon": "🔕",
-      "source_node": "VahidOnline",
-      "msg_id": 79031
-    },
-    "withyashar_27550": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 678,
-      "sent_timestamp": 1794085338.466616,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27550,
-      "last_edit_timestamp": 1794085342.0
-    },
     "Ali_bk_8_7823": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 679,
@@ -72,7 +55,24 @@
       "source_node": "Ali_bk_8",
       "msg_id": 7825,
       "last_edit_timestamp": 1794087948.0
+    },
+    "VahidOnline_79032": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 682,
+      "sent_timestamp": 1794089373.4036686,
+      "status_icon": "🔕",
+      "source_node": "VahidOnline",
+      "msg_id": 79032
+    },
+    "withyashar_27552": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 683,
+      "sent_timestamp": 1794089853.4619617,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27552,
+      "last_edit_timestamp": 1794089838.0
     }
   },
-  "updated_at": "2026-11-07T21:58:09.335915+00:00"
+  "updated_at": "2026-11-07T22:24:32.365038+00:00"
 }
