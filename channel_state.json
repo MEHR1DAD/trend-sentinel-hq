@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27528,
-      "last_read_time": "2026-11-07 18:44:32 UTC"
+      "last_read_id": 27530,
+      "last_read_time": "2026-11-07 19:18:40 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 7808,
-      "last_read_time": "2026-11-07 18:19:18 UTC"
+      "last_read_id": 7811,
+      "last_read_time": "2026-11-07 19:18:07 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79028,
-      "last_read_time": "2026-11-07 16:52:35 UTC"
+      "last_read_id": 79029,
+      "last_read_time": "2026-11-07 19:17:30 UTC"
     },
     "iliaen": {
       "last_read_id": 4753,
@@ -31,32 +31,6 @@
     "@DidebanEterazat": 1793732858.7380104
   },
   "sent_alerts_map": {
-    "Ali_bk_8_7806": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 664,
-      "sent_timestamp": 1794074685.087258,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7806
-    },
-    "Ali_bk_8_7807": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 665,
-      "sent_timestamp": 1794074984.8139045,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7807,
-      "last_edit_timestamp": 1794074993.0
-    },
-    "withyashar_27525": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 666,
-      "sent_timestamp": 1794075405.0014472,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27525,
-      "last_edit_timestamp": 1794076781.0
-    },
     "Ali_bk_8_7808": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 667,
@@ -64,7 +38,16 @@
       "status_icon": "🔕",
       "source_node": "Ali_bk_8",
       "msg_id": 7808
+    },
+    "Ali_bk_8_7811": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 668,
+      "sent_timestamp": 1794079110.8818023,
+      "status_icon": "🚨🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 7811,
+      "last_edit_timestamp": 1794079167.0
     }
   },
-  "updated_at": "2026-11-07T18:57:07.878144+00:00"
+  "updated_at": "2026-11-07T19:19:31.033088+00:00"
 }
