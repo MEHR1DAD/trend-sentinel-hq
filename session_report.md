@@ -1,33 +1,32 @@
 # Sentinel Session Report (v4.4.1 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 7
-- **Alerts Dispatched:** 2
-- **Alerts Edited:** 7
+- **Messages Processed:** 11
+- **Alerts Dispatched:** 4
+- **Alerts Edited:** 5
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** از چنل هایی که با تگ میزارن ولی حمایت کنید و بهشون انرژی بدید ، اونایی هم ‌که پاک میکنن رو هم بی آبرو کنید 😂✌🏼🫱🏼‍🫲🏽
-- **Last Message Time:** 2026-11-08 20:02:04 UTC
+- **Last Message Text:** همزمان با شنیده شدن صدای چند انفجار در جنوب ایران، تسنیم، خبرگزاری وابسته به سپاه پاسداران، یکشنبه‌شب به نقل از «یک منبع
+- **Last Message Time:** 2026-11-08 20:27:40 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #27616 (2026-11-08 20:02:04 UTC)
-- `@Ali_bk_8`: #7906 (2026-11-08 20:00:26 UTC)
-- `@VahidOnline`: #79040 (2026-11-08 19:16:47 UTC)
+- `@withyashar`: #27621 (2026-11-08 20:21:08 UTC)
+- `@Ali_bk_8`: #7913 (2026-11-08 20:25:40 UTC)
+- `@VahidOnline`: #79041 (2026-11-08 20:27:40 UTC)
 - `@iliaen`: #4753 (2026-11-02 10:53:12 UTC)
 - `@netblocks`: #1582 (2026-11-03 15:19:44 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 33m ago
-- `@DidehbanEghtesad`: Last loud alert 13482m ago
-- `@DidebanEterazat`: Last loud alert 442m ago
+- `@DidebanJang`: Last loud alert 14m ago
+- `@DidehbanEghtesad`: Last loud alert 13509m ago
+- `@DidebanEterazat`: Last loud alert 468m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش (Active 60m Edit Watchers):
-- `withyashar_27600` -> `@DidebanJang` (bot msg #705, 58m ago)
-- `VahidOnline_79039` -> `@DidebanJang` (bot msg #706, 57m ago)
-- `Ali_bk_8_7900` -> `@DidebanJang` (bot msg #707, 57m ago)
-- `VahidOnline_79040` -> `@DidebanJang` (bot msg #708, 46m ago)
-- `withyashar_27608` -> `@DidebanJang` (bot msg #709, 46m ago)
-- `Ali_bk_8_7902` -> `@DidebanJang` (bot msg #710, 33m ago)
-- `withyashar_27611` -> `@DidebanJang` (bot msg #711, 31m ago)
-- `withyashar_27614` -> `@DidebanJang` (bot msg #712, 16m ago)
-- `withyashar_27615` -> `@DidebanJang` (bot msg #713, 3m ago)
+- `Ali_bk_8_7902` -> `@DidebanJang` (bot msg #710, 59m ago)
+- `withyashar_27611` -> `@DidebanJang` (bot msg #711, 57m ago)
+- `withyashar_27614` -> `@DidebanJang` (bot msg #712, 42m ago)
+- `withyashar_27615` -> `@DidebanJang` (bot msg #713, 29m ago)
+- `Ali_bk_8_7908` -> `@DidebanJang` (bot msg #714, 14m ago)
+- `Ali_bk_8_7911` -> `@DidebanJang` (bot msg #715, 6m ago)
+- `Ali_bk_8_7913` -> `@DidebanJang` (bot msg #716, 3m ago)
+- `VahidOnline_79041` -> `@DidebanJang` (bot msg #717, 0m ago)
