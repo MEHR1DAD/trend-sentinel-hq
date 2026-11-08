@@ -5,11 +5,11 @@
 - **Alerts Dispatched:** 0
 - **Alerts Edited:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** ران دسنتیس، فرماندار فلوریدا، درباره جنگ با ایران: «تمام کسانی که در اعتراضات ماه ژانویه شرکت کرده بودند، تا زمان آغاز ح
-- **Last Message Time:** 2026-11-07 23:32:17 UTC
+- **Last Message Text:** مرد خردمند، مارک لوین: «یعنی سیاست اول آمریکا این است که اگر کشوری شما را با سلاح هسته‌ای تهدید کرد، دست روی دست بگذارید
+- **Last Message Time:** 2026-11-08 00:03:45 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #27554 (2026-11-07 23:32:17 UTC)
+- `@withyashar`: #27555 (2026-11-08 00:03:45 UTC)
 - `@Ali_bk_8`: #7830 (2026-11-07 22:42:52 UTC)
 - `@VahidOnline`: #79032 (2026-11-07 22:08:29 UTC)
 - `@iliaen`: #4753 (2026-11-02 10:53:12 UTC)
@@ -17,9 +17,9 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 118m ago
-- `@DidehbanEghtesad`: Last loud alert 12263m ago
-- `@DidebanEterazat`: Last loud alert 6036m ago
+- `@DidebanJang`: Last loud alert 144m ago
+- `@DidehbanEghtesad`: Last loud alert 12289m ago
+- `@DidebanEterazat`: Last loud alert 6062m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش (Active 60m Edit Watchers):
 - *(No active posts in 60m edit window)*
