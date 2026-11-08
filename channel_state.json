@@ -5,12 +5,12 @@
       "last_read_time": "2026-11-08 21:06:37 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 7927,
-      "last_read_time": "2026-11-08 21:16:01 UTC"
+      "last_read_id": 7928,
+      "last_read_time": "2026-11-08 21:28:57 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79041,
-      "last_read_time": "2026-11-08 20:27:40 UTC"
+      "last_read_id": 79042,
+      "last_read_time": "2026-11-08 21:24:25 UTC"
     },
     "iliaen": {
       "last_read_id": 4753,
@@ -30,52 +30,6 @@
     "@DidehbanEghtesad": 1793359238.2149794,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_7911": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 715,
-      "sent_timestamp": 1794169365.287352,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7911,
-      "last_edit_timestamp": 1794169418.0
-    },
-    "Ali_bk_8_7913": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 716,
-      "sent_timestamp": 1794169545.3060162,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7913,
-      "last_edit_timestamp": 1794169580.0
-    },
-    "VahidOnline_79041": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 717,
-      "sent_timestamp": 1794169725.3500168,
-      "status_icon": "🚨🔕",
-      "source_node": "VahidOnline",
-      "msg_id": 79041,
-      "last_edit_timestamp": 1794169711.0
-    },
-    "withyashar_27622": {
-      "target_channel": "@DidehbanEghtesad",
-      "bot_msg_id": 65,
-      "sent_timestamp": 1794170468.161152,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27622,
-      "last_edit_timestamp": 1794170472.0
-    },
-    "Ali_bk_8_7920": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 718,
-      "sent_timestamp": 1794170647.9824219,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7920,
-      "last_edit_timestamp": 1794170619.0
-    }
-  },
-  "updated_at": "2026-11-08T21:22:30.153383+00:00"
+  "sent_alerts_map": {},
+  "updated_at": "2026-11-08T21:48:53.434415+00:00"
 }
