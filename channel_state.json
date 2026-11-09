@@ -9,8 +9,8 @@
       "last_read_time": "2026-11-09 01:09:52 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79042,
-      "last_read_time": "2026-11-08 21:24:25 UTC"
+      "last_read_id": 79044,
+      "last_read_time": "2026-11-09 03:04:10 UTC"
     },
     "iliaen": {
       "last_read_id": 4753,
@@ -30,6 +30,15 @@
     "@DidehbanEghtesad": 1793359238.2149794,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
-  "updated_at": "2026-11-09T02:45:00.609048+00:00"
+  "sent_alerts_map": {
+    "VahidOnline_79044": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 723,
+      "sent_timestamp": 1794193465.1480792,
+      "status_icon": "🔕",
+      "source_node": "VahidOnline",
+      "msg_id": 79044
+    }
+  },
+  "updated_at": "2026-11-09T03:11:24.759487+00:00"
 }
