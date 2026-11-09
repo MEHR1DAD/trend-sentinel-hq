@@ -30,16 +30,6 @@
     "@DidehbanEghtesad": 1793359238.2149794,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_7959": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 726,
-      "sent_timestamp": 1794209646.6030722,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 7959,
-      "last_edit_timestamp": 1794209724.0
-    }
-  },
-  "updated_at": "2026-11-09T08:29:13.612411+00:00"
+  "sent_alerts_map": {},
+  "updated_at": "2026-11-09T08:55:40.147033+00:00"
 }
