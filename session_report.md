@@ -1,9 +1,10 @@
-# Sentinel Session Report (v4.4.1 Zero-Race Engine)
+# Sentinel Session Report (v4.5.0 Zero-Race Engine)
 
 - **Uptime:** 0 minutes
 - **Messages Processed:** 0
 - **Alerts Dispatched:** 0
 - **Alerts Edited:** 0
+- **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
 - **Last Message Text:** None
 - **Last Message Time:** None
@@ -17,15 +18,15 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 101m ago
-- `@DidehbanEghtesad`: Last loud alert 101m ago
-- `@DidebanEterazat`: Last loud alert 3035m ago
+- `@DidebanJang`: Last loud alert 107m ago
+- `@DidehbanEghtesad`: Last loud alert 107m ago
+- `@DidebanEterazat`: Last loud alert 3041m ago
 
-### 🔄 پیام‌های تحت پایش برای ویرایش (Active 60m Edit Watchers):
-- `withyashar_27751` -> `@DidehbanEghtesad` (bot msg #68, 26m ago)
-- `withyashar_27753` -> `@DidebanJang` (bot msg #773, 26m ago)
-- `withyashar_27755` -> `@DidebanJang` (bot msg #774, 26m ago)
-- `withyashar_27756` -> `@DidebanJang` (bot msg #775, 26m ago)
-- `withyashar_27757` -> `@DidebanJang` (bot msg #776, 26m ago)
-- `Ali_bk_8_8050` -> `@DidebanJang` (bot msg #777, 26m ago)
-- `Ali_bk_8_8051` -> `@DidebanJang` (bot msg #778, 26m ago)
+### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
+- `withyashar_27751` -> `@DidehbanEghtesad` (bot msg #68, 32m ago)
+- `withyashar_27753` -> `@DidebanJang` (bot msg #773, 32m ago)
+- `withyashar_27755` -> `@DidebanJang` (bot msg #774, 32m ago)
+- `withyashar_27756` -> `@DidebanJang` (bot msg #775, 32m ago)
+- `withyashar_27757` -> `@DidebanJang` (bot msg #776, 32m ago)
+- `Ali_bk_8_8050` -> `@DidebanJang` (bot msg #777, 32m ago)
+- `Ali_bk_8_8051` -> `@DidebanJang` (bot msg #778, 32m ago)
