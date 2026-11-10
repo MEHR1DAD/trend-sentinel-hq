@@ -22,6 +22,7 @@ from datetime import datetime, timezone
 from typing import Optional
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
+from telethon.tl import types
 from telethon.tl.types import InputPeerChannel
 from telethon.errors import FloodWaitError
 
@@ -29,6 +30,9 @@ import config
 from engine import SentinelEngine
 
 class TrendSentinelV4:
+    ICON_ORDER = ("📷", "🎥", "🔊", "📎", "📊", "📍", "👤")
+    TEXT_ICON = "📝"
+
     def __init__(self):
         self.engine = SentinelEngine()
         self.start_time = time.time()
@@ -47,6 +51,7 @@ class TrendSentinelV4:
         self.channel_state, self.urgent_alert_state, self.sent_alerts_map = self._load_channel_state()
         self.alerts_edited = 0
         self.alerts_deleted = 0
+        self.album_cache = {}  # Bounded cache keyed by f"{source_node}_{grouped_id}" -> {msg_id: Message}
 
         # Anti-spam cooldown: 15 minutes between loud urgent alerts per channel
         self.URGENT_COOLDOWN_SEC = 15 * 60
@@ -187,7 +192,8 @@ class TrendSentinelV4:
         now = time.time()
         for k, v in self.sent_alerts_map.items():
             mins_ago = int((now - float(v.get("sent_timestamp", now))) / 60)
-            edit_watcher_lines.append(f"- `{k}` -> `{v.get('target_channel')}` (bot msg #{v.get('bot_msg_id')}, {mins_ago}m ago)")
+            icons = v.get("media_icons", self.TEXT_ICON)
+            edit_watcher_lines.append(f"- `{k}` -> `{v.get('target_channel')}` (bot msg #{v.get('bot_msg_id')}, {icons}, {mins_ago}m ago)")
 
         if not edit_watcher_lines:
             edit_watcher_lines = ["- *(No active posts in 60m edit/delete window)*"]
@@ -226,8 +232,90 @@ class TrendSentinelV4:
                     return InputPeerChannel(channel_id=int(cid), access_hash=int(ah))
         return None
 
+    @classmethod
+    def detect_media_icons(cls, messages) -> str:
+        """
+        Inspects Telegram Message objects (single message or album siblings) and returns
+        source content icon(s): 📷 photo, 🎥 video/GIF, 🔊 voice/audio, 📎 file/document,
+        📊 poll, 📍 location, 👤 contact. Returns 📝 only for text-only posts (including
+        URL web previews) when no media attachment is present.
+        """
+        if messages is None:
+            messages = []
+        elif not isinstance(messages, (list, tuple)):
+            messages = [messages]
+
+        found = set()
+        for msg in messages:
+            media = getattr(msg, "media", None)
+            if not media or isinstance(media, (types.MessageMediaEmpty, types.MessageMediaWebPage)):
+                continue
+
+            if isinstance(media, types.MessageMediaPhoto):
+                found.add("📷")
+            elif isinstance(media, types.MessageMediaDocument):
+                doc = getattr(media, "document", None)
+                attrs = getattr(doc, "attributes", None) or []
+                mime = (getattr(doc, "mime_type", "") or "").lower()
+
+                has_video = any(isinstance(a, types.DocumentAttributeVideo) for a in attrs)
+                has_animated = any(isinstance(a, types.DocumentAttributeAnimated) for a in attrs)
+                has_audio = any(isinstance(a, types.DocumentAttributeAudio) for a in attrs)
+                has_sticker = any(isinstance(a, types.DocumentAttributeSticker) for a in attrs)
+
+                if has_video or has_animated or mime.startswith("video/"):
+                    found.add("🎥")
+                elif has_audio or mime.startswith("audio/"):
+                    found.add("🔊")
+                elif not has_sticker:
+                    found.add("📎")
+            elif isinstance(media, types.MessageMediaPoll):
+                found.add("📊")
+            elif isinstance(media, (types.MessageMediaGeo, types.MessageMediaGeoLive, types.MessageMediaVenue)):
+                found.add("📍")
+            elif isinstance(media, types.MessageMediaContact):
+                found.add("👤")
+            elif isinstance(media, types.MessageMediaPaidMedia):
+                ext = getattr(media, "extended_media", None) or []
+                paid_matched = False
+                for item in ext:
+                    sub = getattr(item, "media", None)
+                    if isinstance(sub, types.MessageMediaPhoto):
+                        found.add("📷")
+                        paid_matched = True
+                    elif isinstance(sub, types.MessageMediaDocument):
+                        found.add("🎥")
+                        paid_matched = True
+                if not paid_matched:
+                    found.add("📎")
+
+        ordered = [icon for icon in cls.ICON_ORDER if icon in found]
+        return "".join(ordered) if ordered else cls.TEXT_ICON
+
+    def _record_album_message(self, source_node: str, msg) -> Optional[str]:
+        """Caches album sibling messages by (source_node, grouped_id) and returns cache key if grouped."""
+        grouped_id = getattr(msg, "grouped_id", None)
+        if not grouped_id:
+            return None
+        cache_key = f"{source_node}_{grouped_id}"
+        group_dict = self.album_cache.setdefault(cache_key, {})
+        group_dict[msg.id] = msg
+        if len(self.album_cache) > 200:
+            oldest_key = next(iter(self.album_cache))
+            self.album_cache.pop(oldest_key, None)
+        return cache_key
+
+    def _find_alert_by_group(self, source_node: str, grouped_id) -> Optional[tuple]:
+        """Finds an active (<60m) dispatched alert entry matching (source_node, grouped_id)."""
+        if not grouped_id:
+            return None
+        for key, info in self.sent_alerts_map.items():
+            if info.get("source_node") == source_node and info.get("grouped_id") == grouped_id:
+                return key, info
+        return None
+
     @staticmethod
-    def sanitize_and_format_alert(raw_text: str, source_node: str, msg_id: int, status_icon: str) -> str:
+    def sanitize_and_format_alert(raw_text: str, source_node: str, msg_id: int, status_icon: str, media_icons: str = "📝") -> str:
         """
         Sanitizes raw text, removes asterisks, strips inline & trailing promotional watermarks
         (including @VahidHeadline, @VahidOOnLine, and '📡 @VahidOnline'),
@@ -305,10 +393,11 @@ class TrendSentinelV4:
         all_body = [formatted_first_p] + paragraphs[1:]
         body_text = "\n\n".join(all_body)
 
-        # 5. Clean single-line hyperlinked source footer
+        # 5. Clean single-line hyperlinked source footer with source content icon(s)
         clean_node = source_node.lstrip('@')
         source_url = f"https://t.me/{clean_node}/{msg_id}"
-        footer = f'📡 منبع: <a href="{source_url}">@{clean_node}</a>'
+        icons_prefix = media_icons or "📝"
+        footer = f'{icons_prefix} منبع: <a href="{source_url}">@{clean_node}</a>'
 
         return f"{body_text}\n\n{footer}"
 
@@ -432,31 +521,95 @@ class TrendSentinelV4:
             print(f"⚠️ Delete request error for {target_channel} (#{bot_msg_id}): {e}")
         return False
 
-    async def handle_edited_message(self, msg, source_node: str):
+    def _resolve_msgs_for_post(self, msg, source_node: str, album_msgs: Optional[list] = None) -> list:
+        """Returns the list of Telegram Message objects representing a post (single or album siblings)."""
+        if album_msgs is not None:
+            return list(album_msgs)
+        cache_key = self._record_album_message(source_node, msg)
+        if cache_key and cache_key in self.album_cache:
+            return list(self.album_cache[cache_key].values())
+        return [msg]
+
+    async def _sync_grouped_media_if_dispatched(self, source_node: str, grouped_id) -> bool:
         """
-        Handles edited messages from VIP sources.
+        If an alert for this (source_node, grouped_id) has already been dispatched within 60m,
+        recalculates combined media icons across all cached album items and silently updates the alert.
+        Returns True if the group already has an active alert, False otherwise.
+        """
+        match = self._find_alert_by_group(source_node, grouped_id)
+        if not match:
+            return False
+
+        dedup_key, alert_info = match
+        now = time.time()
+        elapsed = now - float(alert_info.get("sent_timestamp", 0))
+        if elapsed > config.EDIT_DELETE_WINDOW_SEC:
+            return True
+
+        album_msgs = list(self.album_cache.get(f"{source_node}_{grouped_id}", {}).values())
+        if not album_msgs:
+            return True
+
+        new_icons = self.detect_media_icons(album_msgs)
+        raw_text = alert_info.get("raw_text") or next(
+            ((getattr(m, "raw_text", None) or getattr(m, "text", None) or "") for m in album_msgs if getattr(m, "raw_text", None) or getattr(m, "text", None)),
+            ""
+        )
+        if not raw_text:
+            return True
+
+        status_icon = alert_info.get("status_icon", "🔕")
+        primary_msg_id = int(alert_info.get("msg_id"))
+        formatted_text = self.sanitize_and_format_alert(raw_text, source_node, primary_msg_id, status_icon, media_icons=new_icons)
+        if not formatted_text or formatted_text == alert_info.get("last_formatted_text"):
+            return True
+
+        target_ch = alert_info["target_channel"]
+        bot_msg_id = alert_info["bot_msg_id"]
+        print(f"🖼️ [MEDIA SYNC] Updating album icons ({new_icons}) on {target_ch} (bot_msg_id: {bot_msg_id})")
+        if self.edit_bot_alert(target_ch, bot_msg_id, formatted_text):
+            alert_info["media_icons"] = new_icons
+            alert_info["last_formatted_text"] = formatted_text
+            self.alerts_edited += 1
+            self._save_channel_state()
+            self.update_session_report()
+        return True
+
+    async def handle_edited_message(self, msg, source_node: str, album_msgs: Optional[list] = None):
+        """
+        Handles edited messages (including media attachment/removal edits) from VIP sources.
         Rule: If an alert was sent to Sentinel channels within the last 60 minutes,
-        synchronize the edit to the destination channel in silence.
+        synchronize both text and media icons to the destination channel in silence.
         """
-        msg_id = msg.id
-        dedup_key = f"{source_node}_{msg_id}"
-
+        dedup_key = f"{source_node}_{msg.id}"
         if dedup_key not in self.sent_alerts_map:
-            # Not an alert we dispatched, or dispatched >60m ago
-            return
+            grouped_id = getattr(msg, "grouped_id", None)
+            match = self._find_alert_by_group(source_node, grouped_id) if grouped_id else None
+            if not match:
+                return
+            self._record_album_message(source_node, msg)
+            dedup_key, alert_info = match
+        else:
+            alert_info = self.sent_alerts_map[dedup_key]
 
-        alert_info = self.sent_alerts_map[dedup_key]
+        primary_msg_id = int(alert_info.get("msg_id", msg.id))
         now = time.time()
         elapsed = now - float(alert_info.get("sent_timestamp", 0))
 
         if elapsed > config.EDIT_DELETE_WINDOW_SEC:
             # Older than 60 minutes: ignore edit as per rule
-            print(f"⏳ [EDIT IGNORED] @{source_node} #{msg_id} was dispatched {int(elapsed/60)}m ago (>60m).")
+            print(f"⏳ [EDIT IGNORED] @{source_node} #{primary_msg_id} was dispatched {int(elapsed/60)}m ago (>60m).")
             return
 
-        msg_text = getattr(msg, "raw_text", None) or msg.text or ""
+        msg_text = getattr(msg, "raw_text", None) or getattr(msg, "text", None) or ""
+        if (not msg_text or not msg_text.strip()) and msg.id != primary_msg_id:
+            # Captionless album sibling updated (e.g. photo/video swapped): preserve primary caption
+            msg_text = alert_info.get("raw_text", "")
         if not msg_text or not msg_text.strip():
             return
+
+        msgs_for_media = self._resolve_msgs_for_post(msg, source_node, album_msgs)
+        media_icons = self.detect_media_icons(msgs_for_media)
 
         # Determine icon (edits are always in silence)
         eval_res = self.engine.process_message(msg_text, source_node)
@@ -470,14 +623,21 @@ class TrendSentinelV4:
         else:
             status_icon = orig_icon
 
-        formatted_text = self.sanitize_and_format_alert(msg_text, source_node, msg_id, status_icon)
+        formatted_text = self.sanitize_and_format_alert(msg_text, source_node, primary_msg_id, status_icon, media_icons=media_icons)
         if not formatted_text:
+            return
+
+        if alert_info.get("last_formatted_text") == formatted_text:
+            edit_date = getattr(msg, "edit_date", None)
+            if edit_date:
+                edit_ts = edit_date.replace(tzinfo=timezone.utc).timestamp() if not edit_date.tzinfo else edit_date.timestamp()
+                alert_info["last_edit_timestamp"] = max(float(alert_info.get("last_edit_timestamp", 0)), edit_ts)
             return
 
         target_ch = alert_info["target_channel"]
         bot_msg_id = alert_info["bot_msg_id"]
 
-        print(f"🔄 [EDIT SYNC] Syncing edited post to {target_ch} (bot_msg_id: {bot_msg_id}, source: @{source_node}/#{msg_id})")
+        print(f"🔄 [EDIT SYNC] Syncing edited post to {target_ch} (bot_msg_id: {bot_msg_id}, source: @{source_node}/#{primary_msg_id}, icons: {media_icons})")
         success = self.edit_bot_alert(target_ch, bot_msg_id, formatted_text)
         if success:
             edit_date = getattr(msg, "edit_date", None)
@@ -485,8 +645,11 @@ class TrendSentinelV4:
                 edit_ts = edit_date.replace(tzinfo=timezone.utc).timestamp() if not edit_date.tzinfo else edit_date.timestamp()
             else:
                 edit_ts = now
-            alert_info["last_edit_timestamp"] = edit_ts
+            alert_info["last_edit_timestamp"] = max(float(alert_info.get("last_edit_timestamp", 0)), edit_ts)
             alert_info["status_icon"] = status_icon
+            alert_info["media_icons"] = media_icons
+            alert_info["raw_text"] = msg_text
+            alert_info["last_formatted_text"] = formatted_text
             self.alerts_edited += 1
             self._save_channel_state()
             self.update_session_report()
@@ -524,7 +687,7 @@ class TrendSentinelV4:
     async def sync_active_tracked_alerts(self, source_entities: dict):
         """
         Verifies active tracked alerts (within 60m window) against VIP source channels in batched RPCs.
-        Catches both missed edits and deletions (during handover or if MTProto drops delete updates).
+        Catches missed edits, media attachment changes, album modifications, and deletions.
         """
         if not self.sent_alerts_map or not self.client.is_connected():
             return
@@ -542,11 +705,18 @@ class TrendSentinelV4:
 
         for node, items in alerts_by_node.items():
             entity = source_entities.get(node)
-            msg_ids = [m_id for m_id, _ in items]
-            if not entity or not msg_ids:
+            if not entity or not items:
                 continue
+
+            ids_to_fetch = set()
+            for msg_id, alert_info in items:
+                if alert_info.get("grouped_id"):
+                    ids_to_fetch.update(range(max(1, msg_id - 9), msg_id + 10))
+                else:
+                    ids_to_fetch.add(msg_id)
+
             try:
-                fetched_msgs = await self.client.get_messages(entity, ids=msg_ids)
+                fetched_msgs = await self.client.get_messages(entity, ids=sorted(ids_to_fetch))
                 if fetched_msgs is None:
                     fetched_msgs = []
                 elif not isinstance(fetched_msgs, list):
@@ -559,16 +729,38 @@ class TrendSentinelV4:
                     if fetched_msg is None:
                         print(f"🗑️ [SYNC] Source post @{node}/#{msg_id} deleted -> syncing removal")
                         await self.handle_deleted_message(msg_id, node)
-                    elif fetched_msg.edit_date:
-                        edit_ts = (
-                            fetched_msg.edit_date.replace(tzinfo=timezone.utc).timestamp()
-                            if not fetched_msg.edit_date.tzinfo
-                            else fetched_msg.edit_date.timestamp()
-                        )
-                        last_seen_edit = float(alert_info.get("last_edit_timestamp", alert_info["sent_timestamp"]))
-                        if edit_ts > last_seen_edit:
-                            print(f"🔄 [SYNC] Detected edit on @{node}/#{msg_id}")
-                            await self.handle_edited_message(fetched_msg, node)
+                        continue
+
+                    grouped_id = alert_info.get("grouped_id")
+                    if grouped_id:
+                        album_msgs = [
+                            m for m in fetched_msgs
+                            if m is not None and getattr(m, "grouped_id", None) == grouped_id
+                        ]
+                        if not album_msgs:
+                            album_msgs = [fetched_msg]
+                        self.album_cache[f"{node}_{grouped_id}"] = {m.id: m for m in album_msgs}
+                    else:
+                        album_msgs = [fetched_msg]
+
+                    current_icons = self.detect_media_icons(album_msgs)
+                    stored_icons = alert_info.get("media_icons")
+                    icons_changed = (stored_icons is not None and current_icons != stored_icons)
+
+                    latest_edit_ts = 0.0
+                    for m in album_msgs:
+                        ed = getattr(m, "edit_date", None)
+                        if ed:
+                            ts = ed.replace(tzinfo=timezone.utc).timestamp() if not ed.tzinfo else ed.timestamp()
+                            if ts > latest_edit_ts:
+                                latest_edit_ts = ts
+
+                    last_seen_edit = float(alert_info.get("last_edit_timestamp", alert_info["sent_timestamp"]))
+                    edited_since_seen = (latest_edit_ts > last_seen_edit)
+
+                    if icons_changed or edited_since_seen:
+                        print(f"🔄 [SYNC] Detected update on @{node}/#{msg_id} (edit={edited_since_seen}, icons_changed={icons_changed} -> {current_icons})")
+                        await self.handle_edited_message(fetched_msg, node, album_msgs=album_msgs)
             except FloodWaitError as e:
                 print(f"⏳ FloodWait during sync on @{node}: wait {e.seconds}s")
             except Exception as e:
@@ -584,20 +776,23 @@ class TrendSentinelV4:
         clean_id = int(str(sender_id).removeprefix("-100"))
         return id_to_node_map.get(clean_id) or id_to_node_map.get(sender_id)
 
-    async def handle_new_message(self, event_or_msg, source_node: str):
+    async def handle_new_message(self, event_or_msg, source_node: str, album_msgs: Optional[list] = None):
         """Processes an incoming message through the 3-step engine and dispatches if matched."""
         # Use raw_text to bypass Telethon's markdown asterisks, or text as fallback
         msg_text = getattr(event_or_msg, "raw_text", None) or event_or_msg.text or ""
         msg_id = event_or_msg.id
         msg_date = event_or_msg.date
+        grouped_id = getattr(event_or_msg, "grouped_id", None)
 
         self.messages_processed += 1
         self.last_msg_text = msg_text.replace("\n", " ").strip()
         self.last_msg_time = msg_date.strftime("%Y-%m-%d %H:%M:%S UTC") if msg_date else "now"
 
-        # Unique deduplication key
+        # Unique deduplication key & album guard
         dedup_key = f"{source_node}_{msg_id}"
         if dedup_key in self.posted_registry:
+            return
+        if grouped_id and self._find_alert_by_group(source_node, grouped_id):
             return
 
         # 60-Minute Stale Message Guard: Only process news from the last 60 minutes
@@ -620,12 +815,16 @@ class TrendSentinelV4:
         # Anti-Spam 15-Minute Rule: resolve sound and icon (🚨, 🚨🔕, or 🔕)
         disable_notif, status_icon = self.resolve_alert_mode_and_icon(target_ch, is_engine_urgent)
 
+        # Detect source content media icons across single message or album siblings
+        msgs_for_media = self._resolve_msgs_for_post(event_or_msg, source_node, album_msgs)
+        media_icons = self.detect_media_icons(msgs_for_media)
+
         # Format Final Alert using the exact user-specified typographic template
-        alert_body = self.sanitize_and_format_alert(msg_text, source_node, msg_id, status_icon)
+        alert_body = self.sanitize_and_format_alert(msg_text, source_node, msg_id, status_icon, media_icons=media_icons)
         if not alert_body:
             return
 
-        mode_str = f"[{status_icon}] (notif={'OFF' if disable_notif else 'ON'})"
+        mode_str = f"[{status_icon}] ({media_icons}, notif={'OFF' if disable_notif else 'ON'})"
         print(f"🚀 [DISPATCH] {mode_str} -> {target_ch} (Source: @{source_node} | Msg: {msg_id})")
 
         bot_msg_id = self.send_bot_alert(target_ch, alert_body, disable_notif)
@@ -633,14 +832,18 @@ class TrendSentinelV4:
             self.alerts_dispatched += 1
             self.posted_registry.add(dedup_key)
             self._save_registry()
-            # Register in sent_alerts_map for 60-minute edit synchronization
+            # Register in sent_alerts_map for 60-minute edit & delete synchronization
             self.sent_alerts_map[dedup_key] = {
                 "target_channel": target_ch,
                 "bot_msg_id": bot_msg_id,
                 "sent_timestamp": time.time(),
                 "status_icon": status_icon,
                 "source_node": source_node,
-                "msg_id": msg_id
+                "msg_id": msg_id,
+                "media_icons": media_icons,
+                "grouped_id": grouped_id,
+                "raw_text": msg_text,
+                "last_formatted_text": alert_body,
             }
             self._save_channel_state()
             self.update_session_report()
@@ -694,10 +897,15 @@ class TrendSentinelV4:
                 # Catch-up: iterate only messages with id > last_id in forward chronological order!
                 new_count = 0
                 try:
-                    async for msg in self.client.iter_messages(entity, min_id=last_id, reverse=True):
+                    caught_msgs = [msg async for msg in self.client.iter_messages(entity, min_id=last_id, reverse=True)]
+                    for msg in caught_msgs:
                         self.update_last_read_id(node, msg.id, msg.date)
+                        self._record_album_message(node, msg)
+                    for msg in caught_msgs:
                         if msg.text:
                             await self.handle_new_message(msg, node)
+                        elif getattr(msg, "grouped_id", None):
+                            await self._sync_grouped_media_if_dispatched(node, msg.grouped_id)
                         new_count += 1
                     if new_count:
                         print(f"📥 Caught up {new_count} new messages from @{node} (cursor advanced to #{self.get_last_read_id(node)})")
@@ -734,7 +942,19 @@ class TrendSentinelV4:
                 return
 
             self.update_last_read_id(node_name, msg_id, event.message.date)
-            await self.handle_new_message(event.message, node_name)
+            grouped_id = getattr(event.message, "grouped_id", None)
+            if grouped_id:
+                self._record_album_message(node_name, event.message)
+                if await self._sync_grouped_media_if_dispatched(node_name, grouped_id):
+                    return
+                if not event.message.text:
+                    return
+                await asyncio.sleep(config.ALBUM_DEBOUNCE_SEC)
+                if await self._sync_grouped_media_if_dispatched(node_name, grouped_id):
+                    return
+                await self.handle_new_message(event.message, node_name)
+            else:
+                await self.handle_new_message(event.message, node_name)
 
         @self.client.on(events.MessageEdited(chats=entity_list))
         async def edit_event_handler(event):

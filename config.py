@@ -8,7 +8,7 @@ Central configuration module for source nodes, destination channels, credentials
 import os
 
 # --- System Version ---
-VERSION = "4.5.0"
+VERSION = "4.6.0"
 
 # --- Credentials ---
 API_ID = int(os.environ.get("TELEGRAM_API_ID", "24738417"))
@@ -45,6 +45,7 @@ MAX_MESSAGE_AGE_SEC = int(os.environ.get("MAX_MESSAGE_AGE_SEC", 60 * 60))  # 60-
 EDIT_DELETE_WINDOW_SEC = int(os.environ.get("EDIT_DELETE_WINDOW_SEC", 60 * 60))  # 60-minute window for edit & delete sync
 POLL_INTERVAL_SEC = 2.0  # Fast polling interval
 SYNC_INTERVAL_SEC = float(os.environ.get("SYNC_INTERVAL_SEC", 30.0))  # Periodic fallback sync interval for edit/delete checks
+ALBUM_DEBOUNCE_SEC = float(os.environ.get("ALBUM_DEBOUNCE_SEC", 1.2))  # Brief wait to collect album siblings for multi-media icons
 
 # --- File Paths ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
