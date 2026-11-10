@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27787,
-      "last_read_time": "2026-11-10 20:48:14 UTC"
+      "last_read_id": 27790,
+      "last_read_time": "2026-11-10 20:58:42 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8077,
-      "last_read_time": "2026-11-10 20:43:00 UTC"
+      "last_read_id": 8078,
+      "last_read_time": "2026-11-10 21:01:08 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79064,
@@ -31,31 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27782": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 792,
-      "sent_timestamp": 1794340878.1216605,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27782,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "شبکه ۱۶ تلویزیون اسرائیل گزارش داد که یک مقام ارشد فرماندهی مرکزی آمریکا (سنتکام) طی ۲۴ ساعت گذشته به تل‌آویو سفر کرده است تا درباره مسئله ایران با مقامات اسرائیلی گفت‌وگو کند.\n@WarRoom",
-      "last_formatted_text": "🔕 شبکه ۱۶ تلویزیون اسرائیل گزارش داد که یک مقام ارشد فرماندهی مرکزی آمریکا (سنتکام) طی ۲۴ ساعت گذشته به تل‌آویو سفر کرده است تا درباره مسئله ایران با مقامات اسرائیلی گفت‌وگو کند.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27782\">@withyashar</a>"
-    },
-    "Ali_bk_8_8073": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 793,
-      "sent_timestamp": 1794341090.6353476,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8073,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "Iraqi Al-Nujaba Movement:\n\nWe reaffirm the message of His Eminence, Leader Ayatollah Sayyed Mojtaba Khamenei (may his shadow endure), in which he praised the unity of the fronts and the steadfastness of the Islamic resistance in all countries. We pledge to remain steadfast alongside him, following the path of the revered martyr leader: the path of resistance, pride, dignity and freedom. We are fully prepared for all developments in this phase.\n\nBy the blessing of the martyrs' blood, we are today in our strongest position. Neither discord nor yellow winds will shake us. All of this is by God's grace and kindness. To Him belong all praise, thanks and glory, for He has strengthened His soldiers, granted victory to His servant and defeated the confederates alone. Our final prayer is: Praise be to God, Lord of the Worlds.",
-      "last_formatted_text": "🔕 Iraqi Al-Nujaba Movement:\n\nWe reaffirm the message of His Eminence, Leader Ayatollah Sayyed Mojtaba Khamenei (may his shadow endure), in which he praised the unity of the fronts and the steadfastness of the Islamic resistance in all countries. We pledge to remain steadfast alongside him, following the path of the revered martyr leader: the path of resistance, pride, dignity and freedom. We are fully prepared for all developments in this phase.\n\nBy the blessing of the martyrs&#x27; blood, we are today in our strongest position. Neither discord nor yellow winds will shake us. All of this is by God&#x27;s grace and kindness. To Him belong all praise, thanks and glory, for He has strengthened His soldiers, granted victory to His servant and defeated the confederates alone. Our final prayer is: Praise be to God, Lord of the Worlds.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8073\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794341132.0
-    },
     "VahidOnline_79063": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 794,
@@ -96,5 +71,5 @@
       "last_edit_timestamp": 1794343398.0
     }
   },
-  "updated_at": "2026-11-10T20:53:41.431681+00:00"
+  "updated_at": "2026-11-10T21:20:08.294308+00:00"
 }
