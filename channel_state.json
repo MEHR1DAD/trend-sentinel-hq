@@ -31,19 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27795": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 798,
-      "sent_timestamp": 1794348899.3122575,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27795,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "حقیقت‌یاب اتاق جنگ : خبر گی شدن تام کروز فیکه ! اقا فیکه !! اینای که مفرستن بلاک میکنم چون برن تو همون فیک نیوز ها بعدم جیبشونو بزنند چون حرف گوش‌نمیدن! \n@WarRoom ⚠️⚠️⚠️⚠️",
-      "last_formatted_text": "🔕 حقیقت‌یاب اتاق جنگ : خبر گی شدن تام کروز فیکه ! اقا فیکه !! اینای که مفرستن بلاک میکنم چون برن تو همون فیک نیوز ها بعدم جیبشونو بزنند چون حرف گوش‌نمیدن! ⚠️⚠️⚠️⚠️\n\n📝 منبع: <a href=\"https://t.me/withyashar/27795\">@withyashar</a>",
-      "last_edit_timestamp": 1794348881.0
-    },
     "withyashar_27797": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 799,
@@ -71,5 +58,5 @@
       "last_edit_timestamp": 1794351710.0
     }
   },
-  "updated_at": "2026-11-10T23:05:54.768297+00:00"
+  "updated_at": "2026-11-10T23:32:18.930078+00:00"
 }
