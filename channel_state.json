@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27798,
-      "last_read_time": "2026-11-10 23:01:20 UTC"
+      "last_read_id": 27799,
+      "last_read_time": "2026-11-10 23:51:50 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8079,
       "last_read_time": "2026-11-10 21:44:19 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79064,
-      "last_read_time": "2026-11-10 20:35:25 UTC"
+      "last_read_id": 79065,
+      "last_read_time": "2026-11-10 23:54:36 UTC"
     },
     "iliaen": {
       "last_read_id": 4753,
@@ -31,19 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27797": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 799,
-      "sent_timestamp": 1794350909.476129,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27797,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "اینجا دقیق گفتم ناو کی میرسه تا ۲-۳ روز دیگه میرسه ابتدای منطقه سنتکام !!! نه موقعیت عملیاتی !!!",
-      "last_formatted_text": "🔕 اینجا دقیق گفتم ناو کی میرسه تا ۲-۳ روز دیگه میرسه ابتدای منطقه سنتکام !!! نه موقعیت عملیاتی !!!\n\n📝 منبع: <a href=\"https://t.me/withyashar/27797\">@withyashar</a>",
-      "last_edit_timestamp": 1794350904.0
-    },
     "withyashar_27798": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 800,
@@ -58,5 +45,5 @@
       "last_edit_timestamp": 1794351710.0
     }
   },
-  "updated_at": "2026-11-10T23:32:18.930078+00:00"
+  "updated_at": "2026-11-10T23:58:43.064611+00:00"
 }
