@@ -30,16 +30,6 @@
     "@DidehbanEghtesad": 1793359238.2149794,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "withyashar_27712": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 753,
-      "sent_timestamp": 1794287694.5407312,
-      "status_icon": "🚨",
-      "source_node": "withyashar",
-      "msg_id": 27712,
-      "last_edit_timestamp": 1794287642.0
-    }
-  },
-  "updated_at": "2026-11-10T05:49:16.162935+00:00"
+  "sent_alerts_map": {},
+  "updated_at": "2026-11-10T06:15:40.193598+00:00"
 }
