@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27766,
-      "last_read_time": "2026-11-10 17:21:31 UTC"
+      "last_read_id": 27768,
+      "last_read_time": "2026-11-10 18:00:51 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8062,
@@ -31,32 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8058": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 781,
-      "sent_timestamp": 1794329808.398585,
-      "status_icon": "🚨",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8058,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "هم‌اکنون صدای دو انفجار در تنگه هرمز شنیده شد\n\nTwo explosions heard in the Strait of Hormuz now",
-      "last_formatted_text": "🚨 هم‌اکنون صدای دو انفجار در تنگه هرمز شنیده شد\n\nTwo explosions heard in the Strait of Hormuz now\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8058\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794329832.0
-    },
-    "withyashar_27765": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 782,
-      "sent_timestamp": 1794330726.5428588,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27765,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "سنتکام : امروز ملوانان آمریکایی در حال یک عملیات تدارکاتی هستند و اقلام مورد نیاز را از کشتی «یو‌اس‌ان‌اس آلن شپرد» (T-AKE 3) به ناو هواپیمابر «یو‌اس‌اس جورج واشنگتن» (CVN 73) منتقل می‌کنند.\n@WarRoom",
-      "last_formatted_text": "🔕 سنتکام : امروز ملوانان آمریکایی در حال یک عملیات تدارکاتی هستند و اقلام مورد نیاز را از کشتی «یو‌اس‌ان‌اس آلن شپرد» (T-AKE 3) به ناو هواپیمابر «یو‌اس‌اس جورج واشنگتن» (CVN 73) منتقل می‌کنند.\n\n🎥 منبع: <a href=\"https://t.me/withyashar/27765\">@withyashar</a>",
-      "last_edit_timestamp": 1794330728.0
-    },
     "withyashar_27766": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 783,
@@ -81,7 +55,7 @@
       "grouped_id": null,
       "raw_text": "سخنگوی سپاه پاسداران:\n\nحتی جنگنده‌های آمریکایی از نوع F-35 نیز نتوانستند به نفتکش‌های متخلف برای عبور کمک کنند.\n\nتجهیزات کمک‌ناوبری آمریکا در جنوب تنگه هرمز به‌طور کامل منهدم شد.\n\nIRGC spokesman:\n\nEven US F-35 fighter jets were unable to help non-compliant oil tankers pass through.\n\nUS navigational assistance equipment in the southern Strait of Hormuz was completely destroyed.",
       "last_formatted_text": "🚨🔕 سخنگوی سپاه پاسداران:\n\nحتی جنگنده‌های آمریکایی از نوع F-35 نیز نتوانستند به نفتکش‌های متخلف برای عبور کمک کنند.\n\nتجهیزات کمک‌ناوبری آمریکا در جنوب تنگه هرمز به‌طور کامل منهدم شد.\n\nIRGC spokesman:\n\nEven US F-35 fighter jets were unable to help non-compliant oil tankers pass through.\n\nUS navigational assistance equipment in the southern Strait of Hormuz was completely destroyed.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8060\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794331997.0
+      "last_edit_timestamp": 1794334233.0
     },
     "Ali_bk_8_8062": {
       "target_channel": "@DidebanJang",
@@ -107,7 +81,20 @@
       "grouped_id": null,
       "raw_text": "سازمان عملیات تجارت دریایی بریتانیا (UKMTO) روز سه‌شنبه ۱۹ آبان اعلام کرد گزارشی دریافت کرده است که نشان می‌دهد یک نفتکش در حدود ۱۹ مایل دریایی (حدود ۳۵ کیلومتر) شمال‌شرقی منطقه «لیما» در عمان، هدف اصابت یک پرتابه ناشناس قرار گرفته است.\n\nاین سازمان اعلام کرد که خدمه کشتی در سلامت کامل به سر می‌برند و تا این لحظه هیچ‌گونه گزارشی مبنی بر خسارات زیست‌محیطی منتشر نشده است. همچنین کاپیتان کشتی قصد دارد در نخستین ساعات روز آینده به ارزیابی خسارات وارده بپردازد. این حادثه در ادامه سلسله مخاطرات امنیتی دریایی در آب‌های منطقه رخ داده و رصد وضعیت تردد نفتکش‌ها را دوچندان حساس کرده است.\n\nخبرگزاری ایسنا به نقل از نیروی دریایی سپاه پاسداران، این حادثه را ناشی از «برخورد با مین در مسیر غیرمجاز» دانست. به گفته ایسنا، این نفتکش در حال سوختن است.\n@VahidOOnLine\n\n📡 @VahidOnline",
       "last_formatted_text": "🔕 سازمان عملیات تجارت دریایی بریتانیا (UKMTO) روز سه‌شنبه ۱۹ آبان اعلام کرد گزارشی دریافت کرده است که نشان می‌دهد یک نفتکش در حدود ۱۹ مایل دریایی (حدود ۳۵ کیلومتر) شمال‌شرقی منطقه «لیما» در عمان، هدف اصابت یک پرتابه ناشناس قرار گرفته است.\n\nاین سازمان اعلام کرد که خدمه کشتی در سلامت کامل به سر می‌برند و تا این لحظه هیچ‌گونه گزارشی مبنی بر خسارات زیست‌محیطی منتشر نشده است. همچنین کاپیتان کشتی قصد دارد در نخستین ساعات روز آینده به ارزیابی خسارات وارده بپردازد. این حادثه در ادامه سلسله مخاطرات امنیتی دریایی در آب‌های منطقه رخ داده و رصد وضعیت تردد نفتکش‌ها را دوچندان حساس کرده است.\n\nخبرگزاری ایسنا به نقل از نیروی دریایی سپاه پاسداران، این حادثه را ناشی از «برخورد با مین در مسیر غیرمجاز» دانست. به گفته ایسنا، این نفتکش در حال سوختن است.\n\n📷 منبع: <a href=\"https://t.me/VahidOnline/79061\">@VahidOnline</a>"
+    },
+    "withyashar_27767": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 787,
+      "sent_timestamp": 1794333244.6284864,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27767,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "‏ نماینده‌های عرب کنست اسرائیل سالن رو ترک کردن تا موقع پخش سرود ملی اسرائیل، «هاتیکوا»، مجبور نشن به احترامش از جاشون بلند بشن\nاستاد بزرگ شطرنج در یک حرکت زوگ‌تسوانگی گفت : شرم‌آور است! نباید دولتی خطرناک با حامیان تروریسمِ حزب «رعم» و فهرست مشترک عربی تشکیل داد!\n@WarRoom 🚨🚨🚨",
+      "last_formatted_text": "🔕 ‏ نماینده‌های عرب کنست اسرائیل سالن رو ترک کردن تا موقع پخش سرود ملی اسرائیل، «هاتیکوا»، مجبور نشن به احترامش از جاشون بلند بشن استاد بزرگ شطرنج در یک حرکت زوگ‌تسوانگی گفت : شرم‌آور است! نباید دولتی خطرناک با حامیان تروریسمِ حزب «رعم» و فهرست مشترک عربی تشکیل داد! 🚨🚨🚨\n\n🎥 منبع: <a href=\"https://t.me/withyashar/27767\">@withyashar</a>",
+      "last_edit_timestamp": 1794333242.0
     }
   },
-  "updated_at": "2026-11-10T17:48:43.086749+00:00"
+  "updated_at": "2026-11-10T18:15:05.153365+00:00"
 }
