@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27742,
-      "last_read_time": "2026-11-10 11:21:41 UTC"
+      "last_read_id": 27743,
+      "last_read_time": "2026-11-10 11:22:07 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8040,
-      "last_read_time": "2026-11-10 10:57:34 UTC"
+      "last_read_id": 8044,
+      "last_read_time": "2026-11-10 11:44:15 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79053,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27725": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 762,
-      "sent_timestamp": 1794306839.6152818,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27725,
-      "last_edit_timestamp": 1794306835.0
-    },
-    "withyashar_27727": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 763,
-      "sent_timestamp": 1794307199.6533847,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27727,
-      "last_edit_timestamp": 1794307182.0
-    },
-    "withyashar_27728": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 764,
-      "sent_timestamp": 1794307223.1806846,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27728,
-      "last_edit_timestamp": 1794307220.0
-    },
-    "Ali_bk_8_8029": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 765,
-      "sent_timestamp": 1794307224.3264923,
-      "status_icon": "🚨",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8029
-    },
     "withyashar_27730": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 766,
@@ -83,7 +48,25 @@
       "source_node": "withyashar",
       "msg_id": 27742,
       "last_edit_timestamp": 1794309709.0
+    },
+    "Ali_bk_8_8041": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 768,
+      "sent_timestamp": 1794309853.4228473,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8041,
+      "last_edit_timestamp": 1794310361.0
+    },
+    "Ali_bk_8_8042": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 769,
+      "sent_timestamp": 1794309913.3281794,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8042,
+      "last_edit_timestamp": 1794310002.0
     }
   },
-  "updated_at": "2026-11-10T11:22:49.419656+00:00"
+  "updated_at": "2026-11-10T11:49:12.706454+00:00"
 }
