@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27781,
-      "last_read_time": "2026-11-10 19:53:03 UTC"
+      "last_read_id": 27782,
+      "last_read_time": "2026-11-10 20:01:05 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8070,
-      "last_read_time": "2026-11-10 19:38:44 UTC"
+      "last_read_id": 8074,
+      "last_read_time": "2026-11-10 20:27:06 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79061,
@@ -31,19 +31,31 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27777": {
+    "withyashar_27782": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 791,
-      "sent_timestamp": 1794338042.360078,
-      "status_icon": "🚨🔕",
+      "bot_msg_id": 792,
+      "sent_timestamp": 1794340878.1216605,
+      "status_icon": "🔕",
       "source_node": "withyashar",
-      "msg_id": 27777,
-      "media_icons": "📷",
-      "grouped_id": 14354704169685924,
-      "raw_text": "اتاق جنگ با یاشار : تصاویر منتشرشده امروز از شهر موشکی زیرزمینی «قزوین»، علی عبداللهی، رئیس ستاد کل نیروهای مسلح و مجید موسوی، فرمانده نیروی هوافضای سپاه را نشان می‌دهد. نکته قابل توجه اینکه آخرین رونمایی یک شهر موشکی در ۵ فروردین ۱۴۰۴ نیز محمد باقری و امیرعلی حاجی‌زاده در بازدیدی مشابه حضور داشتند؛ هر دو نفر در حملات اسرائیل در ۲۳ خرداد ۱۴۰۴ ثانیه اول کشته شدند.\nتاریخ داره تکرار میشه ؟!\n@WarRoom",
-      "last_formatted_text": "🚨🔕 اتاق جنگ با یاشار : تصاویر منتشرشده امروز از شهر موشکی زیرزمینی «قزوین»، علی عبداللهی، رئیس ستاد کل نیروهای مسلح و مجید موسوی، فرمانده نیروی هوافضای سپاه را نشان می‌دهد. نکته قابل توجه اینکه آخرین رونمایی یک شهر موشکی در ۵ فروردین ۱۴۰۴ نیز محمد باقری و امیرعلی حاجی‌زاده در بازدیدی مشابه حضور داشتند؛ هر دو نفر در حملات اسرائیل در ۲۳ خرداد ۱۴۰۴ ثانیه اول کشته شدند. تاریخ داره تکرار میشه ؟!\n\n📷 منبع: <a href=\"https://t.me/withyashar/27777\">@withyashar</a>",
-      "last_edit_timestamp": 1794338409.0
+      "msg_id": 27782,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "شبکه ۱۶ تلویزیون اسرائیل گزارش داد که یک مقام ارشد فرماندهی مرکزی آمریکا (سنتکام) طی ۲۴ ساعت گذشته به تل‌آویو سفر کرده است تا درباره مسئله ایران با مقامات اسرائیلی گفت‌وگو کند.\n@WarRoom",
+      "last_formatted_text": "🔕 شبکه ۱۶ تلویزیون اسرائیل گزارش داد که یک مقام ارشد فرماندهی مرکزی آمریکا (سنتکام) طی ۲۴ ساعت گذشته به تل‌آویو سفر کرده است تا درباره مسئله ایران با مقامات اسرائیلی گفت‌وگو کند.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27782\">@withyashar</a>"
+    },
+    "Ali_bk_8_8073": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 793,
+      "sent_timestamp": 1794341090.6353476,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8073,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "Iraqi Al-Nujaba Movement:\n\nWe reaffirm the message of His Eminence, Leader Ayatollah Sayyed Mojtaba Khamenei (may his shadow endure), in which he praised the unity of the fronts and the steadfastness of the Islamic resistance in all countries. We pledge to remain steadfast alongside him, following the path of the revered martyr leader: the path of resistance, pride, dignity and freedom. We are fully prepared for all developments in this phase.\n\nBy the blessing of the martyrs' blood, we are today in our strongest position. Neither discord nor yellow winds will shake us. All of this is by God's grace and kindness. To Him belong all praise, thanks and glory, for He has strengthened His soldiers, granted victory to His servant and defeated the confederates alone. Our final prayer is: Praise be to God, Lord of the Worlds.",
+      "last_formatted_text": "🔕 Iraqi Al-Nujaba Movement:\n\nWe reaffirm the message of His Eminence, Leader Ayatollah Sayyed Mojtaba Khamenei (may his shadow endure), in which he praised the unity of the fronts and the steadfastness of the Islamic resistance in all countries. We pledge to remain steadfast alongside him, following the path of the revered martyr leader: the path of resistance, pride, dignity and freedom. We are fully prepared for all developments in this phase.\n\nBy the blessing of the martyrs&#x27; blood, we are today in our strongest position. Neither discord nor yellow winds will shake us. All of this is by God&#x27;s grace and kindness. To Him belong all praise, thanks and glory, for He has strengthened His soldiers, granted victory to His servant and defeated the confederates alone. Our final prayer is: Praise be to God, Lord of the Worlds.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8073\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794341132.0
     }
   },
-  "updated_at": "2026-11-10T20:00:51.537000+00:00"
+  "updated_at": "2026-11-10T20:27:16.572941+00:00"
 }
