@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-10 23:51:50 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8079,
-      "last_read_time": "2026-11-10 21:44:19 UTC"
+      "last_read_id": 8080,
+      "last_read_time": "2026-11-11 01:01:02 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79065,
@@ -30,6 +30,20 @@
     "@DidehbanEghtesad": 1794317696.829226,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
-  "updated_at": "2026-11-11T00:51:34.073388+00:00"
+  "sent_alerts_map": {
+    "Ali_bk_8_8080": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 801,
+      "sent_timestamp": 1794358919.7449253,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8080,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "نیویورک تایمز:\n\nاسکات بسنت، وزیر خزانه‌داری آمریکا، به‌دلیل نگرانی از تهدیدهای ایران، برای اقامت به یک پایگاه نظامی منتقل شده است.\n\nThe New York Times:\n\nUS Treasury Secretary Scott Bessent has moved to live at a military base amid fears of Iranian threats.",
+      "last_formatted_text": "🔕 نیویورک تایمز:\n\nاسکات بسنت، وزیر خزانه‌داری آمریکا، به‌دلیل نگرانی از تهدیدهای ایران، برای اقامت به یک پایگاه نظامی منتقل شده است.\n\nThe New York Times:\n\nUS Treasury Secretary Scott Bessent has moved to live at a military base amid fears of Iranian threats.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8080\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794359371.0
+    }
+  },
+  "updated_at": "2026-11-11T01:09:33.123691+00:00"
 }
