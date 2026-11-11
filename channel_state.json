@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27853,
-      "last_read_time": "2026-11-11 19:27:46 UTC"
+      "last_read_id": 27854,
+      "last_read_time": "2026-11-11 19:36:41 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8119,
-      "last_read_time": "2026-11-11 19:13:48 UTC"
+      "last_read_id": 8121,
+      "last_read_time": "2026-11-11 19:46:57 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79081,
@@ -26,76 +26,11 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794420733.2923653,
+    "@DidebanJang": 1794425816.1814694,
     "@DidehbanEghtesad": 1794317696.829226,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8114": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 839,
-      "sent_timestamp": 1794422296.5716426,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8114,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "سرتیپ یحیی سریع:\n\nنیروهای مسلح یمن با یک پهپاد ایستگاه پمپاژ شماره 11 در منطقه ینبع را هدف قرار دادند و این عملیات به لطف خدا به هدف خود رسید. آنچه دشمن سعودی درباره رهگیری یک پهپاد در آسمان مکه ادعا می‌کند، دروغ‌پردازی تازه و ادامه سقوط اخلاقی آن است. دیگر هیچ‌کس در جهان این افتراها و دروغ‌ها را باور نمی‌کند. عملیات ما تأسیسات نفتی و پایگاه‌های نظامی آن را هدف قرار می‌دهد.\n\nBrigadier General Yahya Saree:\n\nThe Yemeni armed forces targeted pumping station No. 11 in the Yanbu area with a drone. The operation achieved its objective, thanks to God. Saudi Arabia's claim that it intercepted a drone in the skies over Mecca is yet another fabrication and a continuing moral collapse. No one in the world believes these fabrications and lies anymore. Our operations target its oil facilities and military bases.",
-      "last_formatted_text": "🔕 سرتیپ یحیی سریع:\n\nنیروهای مسلح یمن با یک پهپاد ایستگاه پمپاژ شماره 11 در منطقه ینبع را هدف قرار دادند و این عملیات به لطف خدا به هدف خود رسید. آنچه دشمن سعودی درباره رهگیری یک پهپاد در آسمان مکه ادعا می‌کند، دروغ‌پردازی تازه و ادامه سقوط اخلاقی آن است. دیگر هیچ‌کس در جهان این افتراها و دروغ‌ها را باور نمی‌کند. عملیات ما تأسیسات نفتی و پایگاه‌های نظامی آن را هدف قرار می‌دهد.\n\nBrigadier General Yahya Saree:\n\nThe Yemeni armed forces targeted pumping station No. 11 in the Yanbu area with a drone. The operation achieved its objective, thanks to God. Saudi Arabia&#x27;s claim that it intercepted a drone in the skies over Mecca is yet another fabrication and a continuing moral collapse. No one in the world believes these fabrications and lies anymore. Our operations target its oil facilities and military bases.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8114\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794422334.0
-    },
-    "withyashar_27850": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 840,
-      "sent_timestamp": 1794422779.9400375,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27850,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "‏سنتکام اعلام کرد که در عملیات باز نگه داشتن تنگه هرمز به روی کشتی‌های تجاری و همزمان محاصره بنادر ایران، حدود ۴ هزار کشتی با حمایت نیروهایی آمریکایی از تنگه هرمز عبور کرده‌اند.\n@WarRoom",
-      "last_formatted_text": "🔕 ‏سنتکام اعلام کرد که در عملیات باز نگه داشتن تنگه هرمز به روی کشتی‌های تجاری و همزمان محاصره بنادر ایران، حدود ۴ هزار کشتی با حمایت نیروهایی آمریکایی از تنگه هرمز عبور کرده‌اند.\n\n🎥 منبع: <a href=\"https://t.me/withyashar/27850\">@withyashar</a>",
-      "last_edit_timestamp": 1794422772.0
-    },
-    "withyashar_27851": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 841,
-      "sent_timestamp": 1794422978.8145561,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27851,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "سنتکام : ما همچنین با اجرای سخت‌گیرانه محاصره دریایی ایران و همکاری با نهادهای مختلف دولت آمریکا برای جلوگیری از انتقال سامانه‌های تسلیحاتی پیشرفته، فناوری‌های دومنظوره، مواد تحریم‌شده و درآمدهای غیرقانونی جمهوری اسلامی از طریق مسیرهای زمینی و دریای خزر تلاش می‌کنیم و مانع استفاده سپاه پاسداران از این مسیرها برای جابه‌جایی تجهیزات و منابع یادشده خواهیم شد. \n@WarRoom 🚨🚨🚨🚨🚨",
-      "last_formatted_text": "🔕 سنتکام : ما همچنین با اجرای سخت‌گیرانه محاصره دریایی ایران و همکاری با نهادهای مختلف دولت آمریکا برای جلوگیری از انتقال سامانه‌های تسلیحاتی پیشرفته، فناوری‌های دومنظوره، مواد تحریم‌شده و درآمدهای غیرقانونی جمهوری اسلامی از طریق مسیرهای زمینی و دریای خزر تلاش می‌کنیم و مانع استفاده سپاه پاسداران از این مسیرها برای جابه‌جایی تجهیزات و منابع یادشده خواهیم شد. 🚨🚨🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27851\">@withyashar</a>",
-      "last_edit_timestamp": 1794422970.0
-    },
-    "Ali_bk_8_8116": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 842,
-      "sent_timestamp": 1794423064.8677335,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8116,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "شنیده شدن صدای انفجارهای شدیدی در عدن، در جنوب یمن.\n\nLoud explosions heard in Aden, southern Yemen.",
-      "last_formatted_text": "🔕 شنیده شدن صدای انفجارهای شدیدی در عدن، در جنوب یمن.\n\nLoud explosions heard in Aden, southern Yemen.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8116\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794423087.0
-    },
-    "Ali_bk_8_8117": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 843,
-      "sent_timestamp": 1794423218.8128386,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8117,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند موفق شدند تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی بدر الحربی در اردوگاه خراز و رأس العاره قرار داشتند، با چندین موشک بالستیک هدف قرار دهند و شمار زیادی کشته و زخمی در صفوف آن‌ها برجای بگذارند.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nThanks to God, our armed forces successfully targeted Saudi enemy troop concentrations overseen by Saudi officer Badr al-Harbi at the Kharaz camp and Ras al-Arah with several ballistic missiles, leaving a large number of dead and wounded in their ranks.",
-      "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند موفق شدند تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی بدر الحربی در اردوگاه خراز و رأس العاره قرار داشتند، با چندین موشک بالستیک هدف قرار دهند و شمار زیادی کشته و زخمی در صفوف آن‌ها برجای بگذارند.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nThanks to God, our armed forces successfully targeted Saudi enemy troop concentrations overseen by Saudi officer Badr al-Harbi at the Kharaz camp and Ras al-Arah with several ballistic missiles, leaving a large number of dead and wounded in their ranks.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8117\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794423428.0
-    },
     "withyashar_27852": {
       "target_channel": "@DidebanEterazat",
       "bot_msg_id": 56,
@@ -121,7 +56,20 @@
       "raw_text": "سرتیپ یحیی سریع:\n\nنیروهای مسلح ما دو عملیات نظامی انجام دادند و تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی فارس الشمری در شرق استان جوف و شرق شهرستان رغوان در استان مأرب قرار داشتند، با دو موشک بالستیک هدف قرار دادند. این حملات به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی در میان نیروهای دشمن سعودی برجای گذاشتند.\n\nBrigadier General Yahya Saree:\n\nOur armed forces carried out two military operations targeting Saudi enemy troop concentrations overseen by Saudi officer Fares al-Shammari east of Al Jawf province and east of Raghwan district in Marib province, using two ballistic missiles. The strikes scored direct hits, thanks to God, leaving dozens killed and wounded among the Saudi enemy forces.",
       "last_formatted_text": "🔕 سرتیپ یحیی سریع:\n\nنیروهای مسلح ما دو عملیات نظامی انجام دادند و تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی فارس الشمری در شرق استان جوف و شرق شهرستان رغوان در استان مأرب قرار داشتند، با دو موشک بالستیک هدف قرار دادند. این حملات به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی در میان نیروهای دشمن سعودی برجای گذاشتند.\n\nBrigadier General Yahya Saree:\n\nOur armed forces carried out two military operations targeting Saudi enemy troop concentrations overseen by Saudi officer Fares al-Shammari east of Al Jawf province and east of Raghwan district in Marib province, using two ballistic missiles. The strikes scored direct hits, thanks to God, leaving dozens killed and wounded among the Saudi enemy forces.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8119\">@Ali_bk_8</a>",
       "last_edit_timestamp": 1794424496.0
+    },
+    "withyashar_27854": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 845,
+      "sent_timestamp": 1794425816.6579633,
+      "status_icon": "🚨",
+      "source_node": "withyashar",
+      "msg_id": 27854,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "واشینگتن‌پست: دونالد ترامپ، رئیس‌جمهور آمریکا، در مراسم روز کهنه‌سربازان در روز چهارشنبه، از یکی از بازماندگان بمب‌گذاری سال ۱۹۸۳ در پادگان تفنگداران دریایی آمریکا در بیروت تجلیل کرد و با یادآوری این حمله تروریستی، از جنگ دولت خود علیه ایران دفاع کرد. در این حمله که حزب‌الله تحت حمایت ایران مسئول آن شناخته شد، ۲۴۱ نظامی آمریکایی کشته شدند.\n@WarRoom",
+      "last_formatted_text": "🚨 واشینگتن‌پست: دونالد ترامپ، رئیس‌جمهور آمریکا، در مراسم روز کهنه‌سربازان در روز چهارشنبه، از یکی از بازماندگان بمب‌گذاری سال ۱۹۸۳ در پادگان تفنگداران دریایی آمریکا در بیروت تجلیل کرد و با یادآوری این حمله تروریستی، از جنگ دولت خود علیه ایران دفاع کرد. در این حمله که حزب‌الله تحت حمایت ایران مسئول آن شناخته شد، ۲۴۱ نظامی آمریکایی کشته شدند.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27854\">@withyashar</a>",
+      "last_edit_timestamp": 1794425813.0
     }
   },
-  "updated_at": "2026-11-11T19:28:04.987572+00:00"
+  "updated_at": "2026-11-11T19:54:57.339470+00:00"
 }
