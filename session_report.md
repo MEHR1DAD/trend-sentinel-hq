@@ -1,29 +1,31 @@
 # Sentinel Session Report (v4.6.0 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 4
-- **Alerts Dispatched:** 1
-- **Alerts Edited:** 0
+- **Messages Processed:** 6
+- **Alerts Dispatched:** 4
+- **Alerts Edited:** 2
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:  حتی یک ذره از مواد هسته‌ای غنی‌شده را هم از ایران خارج نخواهیم کرد.  به 
-- **Last Message Time:** 2026-11-11 09:57:11 UTC
+- **Last Message Text:** عباس چپقچی، وزیر خارجه، در واکنش به اظهارات مارکو روبیو، همتای آمریکایی خود، درباره تشدید فشار اقتصادی بر تهران، اعلام ک
+- **Last Message Time:** 2026-11-11 10:23:03 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #27818 (2026-11-11 09:36:53 UTC)
-- `@Ali_bk_8`: #8094 (2026-11-11 09:57:11 UTC)
+- `@withyashar`: #27822 (2026-11-11 10:23:03 UTC)
+- `@Ali_bk_8`: #8097 (2026-11-11 10:11:10 UTC)
 - `@VahidOnline`: #79069 (2026-11-11 04:04:38 UTC)
 - `@iliaen`: #4753 (2026-11-02 10:53:12 UTC)
 - `@netblocks`: #1582 (2026-11-03 15:19:44 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 210m ago
-- `@DidehbanEghtesad`: Last loud alert 1223m ago
-- `@DidebanEterazat`: Last loud alert 4157m ago
+- `@DidebanJang`: Last loud alert 237m ago
+- `@DidehbanEghtesad`: Last loud alert 1250m ago
+- `@DidebanEterazat`: Last loud alert 4183m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- `Ali_bk_8_8090` -> `@DidebanJang` (bot msg #815, 📝, 52m ago)
-- `Ali_bk_8_8091` -> `@DidebanJang` (bot msg #816, 📝, 49m ago)
-- `Ali_bk_8_8092` -> `@DidehbanEghtesad` (bot msg #69, 📷, 27m ago)
-- `Ali_bk_8_8093` -> `@DidebanJang` (bot msg #817, 📝, 8m ago)
+- `Ali_bk_8_8092` -> `@DidehbanEghtesad` (bot msg #69, 📷, 54m ago)
+- `Ali_bk_8_8093` -> `@DidebanJang` (bot msg #817, 📝, 35m ago)
+- `Ali_bk_8_8095` -> `@DidebanJang` (bot msg #818, 🎥, 25m ago)
+- `withyashar_27819` -> `@DidebanJang` (bot msg #819, 📷, 23m ago)
+- `Ali_bk_8_8097` -> `@DidebanJang` (bot msg #820, 🎥, 13m ago)
+- `withyashar_27821` -> `@DidebanJang` (bot msg #821, 📝, 4m ago)

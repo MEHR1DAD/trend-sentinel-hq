@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27818,
-      "last_read_time": "2026-11-11 09:36:53 UTC"
+      "last_read_id": 27822,
+      "last_read_time": "2026-11-11 10:23:03 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8094,
-      "last_read_time": "2026-11-11 09:57:11 UTC"
+      "last_read_id": 8097,
+      "last_read_time": "2026-11-11 10:11:10 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79069,
@@ -31,31 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8090": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 815,
-      "sent_timestamp": 1794387976.772623,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8090,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "دبیر شورای عالی امنیت ملی ایران، ژنرال محسن رضایی:\n\nهرگونه حمله جدید آمریکا با هدف قرار دادن پایگاه‌های نظامی دوردست آمریکا نیز پاسخ داده خواهد شد. پایان جنگ در تمام جبهه‌های غرب آسیا یکی از شروط اساسی ماست.\n\nحتی یک ذره از مواد هسته‌ای غنی‌شده را از ایران خارج نخواهیم کرد. به دوستان روس خود اطلاع داده‌ایم که مواد غنی‌شده در ایران باقی خواهد ماند و خودمان از آن برای طراحی کشتی‌ها و زیردریایی‌های با نیروی محرکه هسته‌ای استفاده خواهیم کرد.\n\nSecretary of Iran's Supreme National Security Council, General Mohsen Rezaei:\n\nAny new US attack will also be met with strikes on distant US military bases. Ending the war on all fronts across West Asia is one of our key conditions.\n\nWe will not remove a single particle of enriched nuclear material from Iran. We have informed our Russian friends that the enriched material will remain in Iran, and we will use it ourselves to design nuclear-powered ships and submarines.",
-      "last_formatted_text": "🔕 دبیر شورای عالی امنیت ملی ایران، ژنرال محسن رضایی:\n\nهرگونه حمله جدید آمریکا با هدف قرار دادن پایگاه‌های نظامی دوردست آمریکا نیز پاسخ داده خواهد شد. پایان جنگ در تمام جبهه‌های غرب آسیا یکی از شروط اساسی ماست.\n\nحتی یک ذره از مواد هسته‌ای غنی‌شده را از ایران خارج نخواهیم کرد. به دوستان روس خود اطلاع داده‌ایم که مواد غنی‌شده در ایران باقی خواهد ماند و خودمان از آن برای طراحی کشتی‌ها و زیردریایی‌های با نیروی محرکه هسته‌ای استفاده خواهیم کرد.\n\nSecretary of Iran&#x27;s Supreme National Security Council, General Mohsen Rezaei:\n\nAny new US attack will also be met with strikes on distant US military bases. Ending the war on all fronts across West Asia is one of our key conditions.\n\nWe will not remove a single particle of enriched nuclear material from Iran. We have informed our Russian friends that the enriched material will remain in Iran, and we will use it ourselves to design nuclear-powered ships and submarines.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8090\">@Ali_bk_8</a>"
-    },
-    "Ali_bk_8_8091": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 816,
-      "sent_timestamp": 1794388129.2345011,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8091,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "سخنگوی نیروهای مسلح یمن:\n\nنیروهای مسلح ما لحظاتی پیش موفق شدند با یک آرایش جنگی از جنگنده‌های سعودی F-15 مقابله کنند، مانع ورود آن به حریم هوایی پایتخت شوند و به لطف خدا آن را وادار به ترک منطقه کنند.\n\nSpokesman for the Yemeni Armed Forces:\n\nOur armed forces managed moments ago to confront a Saudi F-15 fighter formation, prevent it from entering the capital's airspace and force it to leave, thanks to God.",
-      "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن:\n\nنیروهای مسلح ما لحظاتی پیش موفق شدند با یک آرایش جنگی از جنگنده‌های سعودی F-15 مقابله کنند، مانع ورود آن به حریم هوایی پایتخت شوند و به لطف خدا آن را وادار به ترک منطقه کنند.\n\nSpokesman for the Yemeni Armed Forces:\n\nOur armed forces managed moments ago to confront a Saudi F-15 fighter formation, prevent it from entering the capital&#x27;s airspace and force it to leave, thanks to God.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8091\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794388148.0
-    },
     "Ali_bk_8_8092": {
       "target_channel": "@DidehbanEghtesad",
       "bot_msg_id": 69,
@@ -81,7 +56,59 @@
       "raw_text": "رسانه‌های دشمن:\n\nیک خودرو در ایست بازرسی آریل در کرانه باختری به سوی یک شهرک‌نشین تیراندازی کرد.\n\nEnemy media:\n\nA car opened fire on a settler at the Ariel checkpoint in the West Bank.",
       "last_formatted_text": "🔕 رسانه‌های دشمن:\n\nیک خودرو در ایست بازرسی آریل در کرانه باختری به سوی یک شهرک‌نشین تیراندازی کرد.\n\nEnemy media:\n\nA car opened fire on a settler at the Ariel checkpoint in the West Bank.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8093\">@Ali_bk_8</a>",
       "last_edit_timestamp": 1794390592.0
+    },
+    "Ali_bk_8_8095": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 818,
+      "sent_timestamp": 1794391149.4460113,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8095,
+      "media_icons": "🎥",
+      "grouped_id": 14355129147894978,
+      "raw_text": "تصاویر منتشرشده، حمله اشتباهی جنگنده‌های سعودی به نیروهای جنوبی وابسته به خودشان را نشان می‌دهد.\n\nCirculating footage shows Saudi warplanes mistakenly targeting their own southern forces.",
+      "last_formatted_text": "🔕 تصاویر منتشرشده، حمله اشتباهی جنگنده‌های سعودی به نیروهای جنوبی وابسته به خودشان را نشان می‌دهد.\n\nCirculating footage shows Saudi warplanes mistakenly targeting their own southern forces.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8095\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794391172.0
+    },
+    "withyashar_27819": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 819,
+      "sent_timestamp": 1794391301.268207,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27819,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "اتاق جنگ با یاشار: یک فروند بمب‌افکن B-52H آمریکا با شماره ثبت 60-0015، پس از برخاستن از جیبوتی، در آخرین موقعیت ثبت‌شده در نزدیکی عمان مشاهده شده است. این هواپیمای باسابقه در عملیات نظامی آمریکا علیه عراق در سال ۲۰۰۳ مشارکت داشته است. جیبوتی میزبان پایگاه راهبردی کمپ لیمونیه، مهم‌ترین پایگاه دائمی نظامی آمریکا در آفریقا و نزدیک به باب‌المندب و خلیج عدن است. مقصد و مأموریت این پرواز هنوز مشخص نیست.\n@WarRoom 🚨🚨🚨🚨🚨",
+      "last_formatted_text": "🔕 اتاق جنگ با یاشار: یک فروند بمب‌افکن B-52H آمریکا با شماره ثبت 60-0015، پس از برخاستن از جیبوتی، در آخرین موقعیت ثبت‌شده در نزدیکی عمان مشاهده شده است. این هواپیمای باسابقه در عملیات نظامی آمریکا علیه عراق در سال ۲۰۰۳ مشارکت داشته است. جیبوتی میزبان پایگاه راهبردی کمپ لیمونیه، مهم‌ترین پایگاه دائمی نظامی آمریکا در آفریقا و نزدیک به باب‌المندب و خلیج عدن است. مقصد و مأموریت این پرواز هنوز مشخص نیست. 🚨🚨🚨🚨🚨\n\n📷 منبع: <a href=\"https://t.me/withyashar/27819\">@withyashar</a>",
+      "last_edit_timestamp": 1794391296.0
+    },
+    "Ali_bk_8_8097": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 820,
+      "sent_timestamp": 1794391876.9909046,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8097,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "نیروی دریایی سپاه پاسداران:\n\nدو مین دریایی شامگاه دیروز دو نفتکش را هنگام تلاش برای خروج مخفیانه از طریق مسیری غیرمجاز و ناامن در تنگه هرمز هدف قرار دادند.\n\nIRGC Navy:\n\nTwo naval mines struck two oil tankers yesterday evening as they attempted to secretly exit through an unauthorized and unsafe route in the Strait of Hormuz.",
+      "last_formatted_text": "🔕 نیروی دریایی سپاه پاسداران:\n\nدو مین دریایی شامگاه دیروز دو نفتکش را هنگام تلاش برای خروج مخفیانه از طریق مسیری غیرمجاز و ناامن در تنگه هرمز هدف قرار دادند.\n\nIRGC Navy:\n\nTwo naval mines struck two oil tankers yesterday evening as they attempted to secretly exit through an unauthorized and unsafe route in the Strait of Hormuz.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8097\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794392660.0
+    },
+    "withyashar_27821": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 821,
+      "sent_timestamp": 1794392422.5038538,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27821,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "وال‌استریت ژورنال: ایران در واکنش به حملات به جزیره قشم، جزیره عمانی «دیدامار» در نزدیکی تنگه هرمز را هدف قرار داد. این جزیره به دلیل برخورداری از تجهیزات راداری، ارتباطی، چراغ دریایی و سامانه‌های ناوبری، نقش مهمی در هدایت کشتی‌های ورودی و خروجی به خلیج فارس دارد. ایران مدعی شده تجهیزات مستقر در این جزیره برای تسهیل قاچاق نفت توسط دشمن استفاده می‌شدند.\n@WarRoom",
+      "last_formatted_text": "🔕 وال‌استریت ژورنال: ایران در واکنش به حملات به جزیره قشم، جزیره عمانی «دیدامار» در نزدیکی تنگه هرمز را هدف قرار داد. این جزیره به دلیل برخورداری از تجهیزات راداری، ارتباطی، چراغ دریایی و سامانه‌های ناوبری، نقش مهمی در هدایت کشتی‌های ورودی و خروجی به خلیج فارس دارد. ایران مدعی شده تجهیزات مستقر در این جزیره برای تسهیل قاچاق نفت توسط دشمن استفاده می‌شدند.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27821\">@withyashar</a>",
+      "last_edit_timestamp": 1794392411.0
     }
   },
-  "updated_at": "2026-11-11T09:58:42.405484+00:00"
+  "updated_at": "2026-11-11T10:25:07.870891+00:00"
 }
