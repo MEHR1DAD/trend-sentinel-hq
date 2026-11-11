@@ -31,32 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8081": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 802,
-      "sent_timestamp": 1794359507.1604784,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8081,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "نیروهای یمنی کنترل تقاطع صریح را در فاصله 20 کیلومتری از دریا به دست گرفتند.\n\nYemeni forces have taken control of the Sarih junction, 20 kilometers from the sea.",
-      "last_formatted_text": "🔕 نیروهای یمنی کنترل تقاطع صریح را در فاصله 20 کیلومتری از دریا به دست گرفتند.\n\nYemeni forces have taken control of the Sarih junction, 20 kilometers from the sea.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8081\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794359615.0
-    },
-    "Ali_bk_8_8082": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 803,
-      "sent_timestamp": 1794359961.1599631,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8082,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "نیروهای یمنی پیشروی میدانی مهمی داشته‌اند و به جبل خرز رسیده و به خور عمیره نزدیک شده‌اند. این پیشروی نیروهای هم‌پیمان عربستان در مناطق باب‌المندب و ذوباب و همچنین نیروهای باقی‌مانده در المضاربه را در معرض خطر محاصره قرار می‌دهد.\n\nYemeni forces have made significant gains on the ground, reaching Jabal Kharaz and approaching Khawr Umayrah. This places Saudi-aligned forces in the Bab al-Mandab and Dhubab areas, as well as those remaining in al-Mudharabah, at risk of encirclement.",
-      "last_formatted_text": "🔕 نیروهای یمنی پیشروی میدانی مهمی داشته‌اند و به جبل خرز رسیده و به خور عمیره نزدیک شده‌اند. این پیشروی نیروهای هم‌پیمان عربستان در مناطق باب‌المندب و ذوباب و همچنین نیروهای باقی‌مانده در المضاربه را در معرض خطر محاصره قرار می‌دهد.\n\nYemeni forces have made significant gains on the ground, reaching Jabal Kharaz and approaching Khawr Umayrah. This places Saudi-aligned forces in the Bab al-Mandab and Dhubab areas, as well as those remaining in al-Mudharabah, at risk of encirclement.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8082\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794360429.0
-    },
     "VahidOnline_79066": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 804,
@@ -82,5 +56,5 @@
       "last_formatted_text": "🔕 نیویورک‌تایمز به نقل از سه فرد آگاه گزارش داد اسکات بسنت، وزیر خزانه‌داری آمریکا، که هدایت کارزار فشار اقتصادی علیه ایران را بر عهده دارد، به دلیل نگرانی‌های امنیتی از خانه خود به یک پایگاه نظامی منتقل شده است. طبق این گزارش، مقام‌های آمریکایی در هفته‌های اخیر به این نتیجه رسیده‌اند که طرح‌ریزی جمهوری اسلامی برای هدف قرار دادن مقام‌های کنونی و پیشین آمریکا به مرحله پیشرفته‌تری رسیده است. میزان جدی بودن تهدیدها علیه بسنت مشخص نیست. مقام‌های آمریکایی خاطرنشان کرده‌اند که توانایی حکومت ایران برای اجرای حملات گسترده در خاک آمریکا و دیگر مناطق خارج از کشور محدود است. به گفته دو مقام که به‌طور مستقیم از اطلاعات موجود آگاهی دارند، ارزیابی‌های اطلاعاتی آمریکا نشان می‌دهد که رهبران تندرو جمهوری اسلامی مصمم‌اند تقریبا به هر قیمتی قدرت را حفظ کنند. این ارزیابی نشان می‌دهد که فشار اقتصادی به‌تنهایی ممکن است به تغییر حکومت منجر نشود.\n\n📷 منبع: <a href=\"https://t.me/VahidOnline/79067\">@VahidOnline</a>"
     }
   },
-  "updated_at": "2026-11-11T02:03:11.883199+00:00"
+  "updated_at": "2026-11-11T02:29:37.928390+00:00"
 }
