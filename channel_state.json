@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27849,
-      "last_read_time": "2026-11-11 18:11:36 UTC"
+      "last_read_id": 27851,
+      "last_read_time": "2026-11-11 18:49:15 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8112,
-      "last_read_time": "2026-11-11 18:12:03 UTC"
+      "last_read_id": 8115,
+      "last_read_time": "2026-11-11 18:47:57 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79080,
@@ -31,19 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27844": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 837,
-      "sent_timestamp": 1794418637.0303736,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27844,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "دیدبان اتاق جنگ : یاشار جان خوبی. من الان جزیره لاوانم. امروز قرار بود دریایی بریم تا نخیلو بعد از اونجا هرکسی برای مرخصی به شهر هاشون برن. ولی یهو اعلام کردن بخاطر شرایط بد جوی اب و هوا و دریایی رفتنمون عقب افتاده و کنسل شده و منتظریم تا اعلام کنن که بریم.\n@WarRoom",
-      "last_formatted_text": "🔕 دیدبان اتاق جنگ : یاشار جان خوبی. من الان جزیره لاوانم. امروز قرار بود دریایی بریم تا نخیلو بعد از اونجا هرکسی برای مرخصی به شهر هاشون برن. ولی یهو اعلام کردن بخاطر شرایط بد جوی اب و هوا و دریایی رفتنمون عقب افتاده و کنسل شده و منتظریم تا اعلام کنن که بریم.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27844\">@withyashar</a>",
-      "last_edit_timestamp": 1794418637.0
-    },
     "Ali_bk_8_8112": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 838,
@@ -56,7 +43,46 @@
       "raw_text": "شلیک موشک به سمت تنگه هرمز.\n\nA missile launched toward the Strait of Hormuz.",
       "last_formatted_text": "🚨 شلیک موشک به سمت تنگه هرمز.\n\nA missile launched toward the Strait of Hormuz.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8112\">@Ali_bk_8</a>",
       "last_edit_timestamp": 1794420755.0
+    },
+    "Ali_bk_8_8114": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 839,
+      "sent_timestamp": 1794422296.5716426,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8114,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "سرتیپ یحیی سریع:\n\nنیروهای مسلح یمن با یک پهپاد ایستگاه پمپاژ شماره 11 در منطقه ینبع را هدف قرار دادند و این عملیات به لطف خدا به هدف خود رسید. آنچه دشمن سعودی درباره رهگیری یک پهپاد در آسمان مکه ادعا می‌کند، دروغ‌پردازی تازه و ادامه سقوط اخلاقی آن است. دیگر هیچ‌کس در جهان این افتراها و دروغ‌ها را باور نمی‌کند. عملیات ما تأسیسات نفتی و پایگاه‌های نظامی آن را هدف قرار می‌دهد.\n\nBrigadier General Yahya Saree:\n\nThe Yemeni armed forces targeted pumping station No. 11 in the Yanbu area with a drone. The operation achieved its objective, thanks to God. Saudi Arabia's claim that it intercepted a drone in the skies over Mecca is yet another fabrication and a continuing moral collapse. No one in the world believes these fabrications and lies anymore. Our operations target its oil facilities and military bases.",
+      "last_formatted_text": "🔕 سرتیپ یحیی سریع:\n\nنیروهای مسلح یمن با یک پهپاد ایستگاه پمپاژ شماره 11 در منطقه ینبع را هدف قرار دادند و این عملیات به لطف خدا به هدف خود رسید. آنچه دشمن سعودی درباره رهگیری یک پهپاد در آسمان مکه ادعا می‌کند، دروغ‌پردازی تازه و ادامه سقوط اخلاقی آن است. دیگر هیچ‌کس در جهان این افتراها و دروغ‌ها را باور نمی‌کند. عملیات ما تأسیسات نفتی و پایگاه‌های نظامی آن را هدف قرار می‌دهد.\n\nBrigadier General Yahya Saree:\n\nThe Yemeni armed forces targeted pumping station No. 11 in the Yanbu area with a drone. The operation achieved its objective, thanks to God. Saudi Arabia&#x27;s claim that it intercepted a drone in the skies over Mecca is yet another fabrication and a continuing moral collapse. No one in the world believes these fabrications and lies anymore. Our operations target its oil facilities and military bases.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8114\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794422334.0
+    },
+    "withyashar_27850": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 840,
+      "sent_timestamp": 1794422779.9400375,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27850,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "‏سنتکام اعلام کرد که در عملیات باز نگه داشتن تنگه هرمز به روی کشتی‌های تجاری و همزمان محاصره بنادر ایران، حدود ۴ هزار کشتی با حمایت نیروهایی آمریکایی از تنگه هرمز عبور کرده‌اند.\n@WarRoom",
+      "last_formatted_text": "🔕 ‏سنتکام اعلام کرد که در عملیات باز نگه داشتن تنگه هرمز به روی کشتی‌های تجاری و همزمان محاصره بنادر ایران، حدود ۴ هزار کشتی با حمایت نیروهایی آمریکایی از تنگه هرمز عبور کرده‌اند.\n\n🎥 منبع: <a href=\"https://t.me/withyashar/27850\">@withyashar</a>",
+      "last_edit_timestamp": 1794422772.0
+    },
+    "withyashar_27851": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 841,
+      "sent_timestamp": 1794422978.8145561,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27851,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "سنتکام : ما همچنین با اجرای سخت‌گیرانه محاصره دریایی ایران و همکاری با نهادهای مختلف دولت آمریکا برای جلوگیری از انتقال سامانه‌های تسلیحاتی پیشرفته، فناوری‌های دومنظوره، مواد تحریم‌شده و درآمدهای غیرقانونی جمهوری اسلامی از طریق مسیرهای زمینی و دریای خزر تلاش می‌کنیم و مانع استفاده سپاه پاسداران از این مسیرها برای جابه‌جایی تجهیزات و منابع یادشده خواهیم شد. \n@WarRoom 🚨🚨🚨🚨🚨",
+      "last_formatted_text": "🔕 سنتکام : ما همچنین با اجرای سخت‌گیرانه محاصره دریایی ایران و همکاری با نهادهای مختلف دولت آمریکا برای جلوگیری از انتقال سامانه‌های تسلیحاتی پیشرفته، فناوری‌های دومنظوره، مواد تحریم‌شده و درآمدهای غیرقانونی جمهوری اسلامی از طریق مسیرهای زمینی و دریای خزر تلاش می‌کنیم و مانع استفاده سپاه پاسداران از این مسیرها برای جابه‌جایی تجهیزات و منابع یادشده خواهیم شد. 🚨🚨🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27851\">@withyashar</a>",
+      "last_edit_timestamp": 1794422970.0
     }
   },
-  "updated_at": "2026-11-11T18:24:13.418503+00:00"
+  "updated_at": "2026-11-11T18:50:38.066769+00:00"
 }
