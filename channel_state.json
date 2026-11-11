@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27799,
-      "last_read_time": "2026-11-10 23:51:50 UTC"
+      "last_read_id": 27800,
+      "last_read_time": "2026-11-11 06:22:31 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8088,
@@ -31,19 +31,19 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8088": {
+    "withyashar_27800": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 809,
-      "sent_timestamp": 1794373861.7493794,
+      "bot_msg_id": 810,
+      "sent_timestamp": 1794378203.8542655,
       "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8088,
-      "media_icons": "🎥",
+      "source_node": "withyashar",
+      "msg_id": 27800,
+      "media_icons": "📝",
       "grouped_id": null,
-      "raw_text": "تصاویر بیشتری از داخل یک کشتی اماراتی متخلف که سپاه پاسداران در تنگه هرمز هدف قرار داد.\n\nMore footage from inside a noncompliant Emirati vessel targeted by the IRGC in the Strait of Hormuz.",
-      "last_formatted_text": "🔕 تصاویر بیشتری از داخل یک کشتی اماراتی متخلف که سپاه پاسداران در تنگه هرمز هدف قرار داد.\n\nMore footage from inside a noncompliant Emirati vessel targeted by the IRGC in the Strait of Hormuz.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8088\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794373877.0
+      "raw_text": "نیویورک‌تایمز: اسکات بسنت، وزیر خزانه‌داری آمریکا، در پی تهدیدهای منتسب به ایران علیه جانش، محل سکونت خود در واشینگتن را ترک کرده و به یک پایگاه نظامی منتقل شده است. مقام‌های اطلاعاتی آمریکا همچنین هشدار داده‌اند که طرح‌های ایران برای هدف قرار دادن مقام‌های فعلی و سابق آمریکایی وارد مراحل پیشرفته‌تری شده است.\n@WarRoom",
+      "last_formatted_text": "🔕 نیویورک‌تایمز: اسکات بسنت، وزیر خزانه‌داری آمریکا، در پی تهدیدهای منتسب به ایران علیه جانش، محل سکونت خود در واشینگتن را ترک کرده و به یک پایگاه نظامی منتقل شده است. مقام‌های اطلاعاتی آمریکا همچنین هشدار داده‌اند که طرح‌های ایران برای هدف قرار دادن مقام‌های فعلی و سابق آمریکایی وارد مراحل پیشرفته‌تری شده است.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27800\">@withyashar</a>",
+      "last_edit_timestamp": 1794378163.0
     }
   },
-  "updated_at": "2026-11-11T06:00:54.373054+00:00"
+  "updated_at": "2026-11-11T06:27:22.416002+00:00"
 }
