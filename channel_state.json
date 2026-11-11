@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-11 10:41:22 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8097,
-      "last_read_time": "2026-11-11 10:11:10 UTC"
+      "last_read_id": 8100,
+      "last_read_time": "2026-11-11 11:29:36 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79069,
@@ -30,33 +30,6 @@
     "@DidehbanEghtesad": 1794317696.829226,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8097": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 820,
-      "sent_timestamp": 1794391876.9909046,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8097,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "نیروی دریایی سپاه پاسداران:\n\nدو مین دریایی شامگاه دیروز دو نفتکش را هنگام تلاش برای خروج مخفیانه از طریق مسیری غیرمجاز و ناامن در تنگه هرمز هدف قرار دادند.\n\nIRGC Navy:\n\nTwo naval mines struck two oil tankers yesterday evening as they attempted to secretly exit through an unauthorized and unsafe route in the Strait of Hormuz.",
-      "last_formatted_text": "🔕 نیروی دریایی سپاه پاسداران:\n\nدو مین دریایی شامگاه دیروز دو نفتکش را هنگام تلاش برای خروج مخفیانه از طریق مسیری غیرمجاز و ناامن در تنگه هرمز هدف قرار دادند.\n\nIRGC Navy:\n\nTwo naval mines struck two oil tankers yesterday evening as they attempted to secretly exit through an unauthorized and unsafe route in the Strait of Hormuz.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8097\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794392660.0
-    },
-    "withyashar_27821": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 821,
-      "sent_timestamp": 1794392422.5038538,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27821,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "وال‌استریت ژورنال: ایران در واکنش به حملات به جزیره قشم، جزیره عمانی «دیدامار» در نزدیکی تنگه هرمز را هدف قرار داد. این جزیره به دلیل برخورداری از تجهیزات راداری، ارتباطی، چراغ دریایی و سامانه‌های ناوبری، نقش مهمی در هدایت کشتی‌های ورودی و خروجی به خلیج فارس دارد. ایران مدعی شده تجهیزات مستقر در این جزیره برای تسهیل قاچاق نفت توسط دشمن استفاده می‌شدند.\n@WarRoom",
-      "last_formatted_text": "🔕 وال‌استریت ژورنال: ایران در واکنش به حملات به جزیره قشم، جزیره عمانی «دیدامار» در نزدیکی تنگه هرمز را هدف قرار داد. این جزیره به دلیل برخورداری از تجهیزات راداری، ارتباطی، چراغ دریایی و سامانه‌های ناوبری، نقش مهمی در هدایت کشتی‌های ورودی و خروجی به خلیج فارس دارد. ایران مدعی شده تجهیزات مستقر در این جزیره برای تسهیل قاچاق نفت توسط دشمن استفاده می‌شدند.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27821\">@withyashar</a>",
-      "last_edit_timestamp": 1794392411.0
-    }
-  },
-  "updated_at": "2026-11-11T11:04:20.538710+00:00"
+  "sent_alerts_map": {},
+  "updated_at": "2026-11-11T11:30:44.785668+00:00"
 }
