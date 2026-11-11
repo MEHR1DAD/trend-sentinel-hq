@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-11 19:36:41 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8121,
-      "last_read_time": "2026-11-11 19:46:57 UTC"
+      "last_read_id": 8123,
+      "last_read_time": "2026-11-11 20:13:35 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79081,
@@ -31,32 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27852": {
-      "target_channel": "@DidebanEterazat",
-      "bot_msg_id": 56,
-      "sent_timestamp": 1794423663.516085,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27852,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "مارکو روبیو، وزیر امور خارجه آمریکا در گفت‌وگو با خبرنگاران در پاریس گفت:\n«ایران خواهان توافق است، اما مشکل اینجاست که شروطی که همچنان مطرح می‌کند غیرمنطقی و غیرجدی هستند. بااین‌حال، این وضعیت ممکن است تغییر کند. بالاخره مردم باید غذا بخورند و حکومت باید بتواند هزینه نیروهای نظامی و نیروهای امنیتی خود را تأمین کند. واقعیت‌های اقتصادی سرانجام حتی بر ذهن سرسخت‌ترین افراد افراطی نیز تأثیر می‌گذارد.»\n@WarRoom",
-      "last_formatted_text": "🔕 مارکو روبیو، وزیر امور خارجه آمریکا در گفت‌وگو با خبرنگاران در پاریس گفت: «ایران خواهان توافق است، اما مشکل اینجاست که شروطی که همچنان مطرح می‌کند غیرمنطقی و غیرجدی هستند. بااین‌حال، این وضعیت ممکن است تغییر کند. بالاخره مردم باید غذا بخورند و حکومت باید بتواند هزینه نیروهای نظامی و نیروهای امنیتی خود را تأمین کند. واقعیت‌های اقتصادی سرانجام حتی بر ذهن سرسخت‌ترین افراد افراطی نیز تأثیر می‌گذارد.»\n\n📝 منبع: <a href=\"https://t.me/withyashar/27852\">@withyashar</a>",
-      "last_edit_timestamp": 1794425049.0
-    },
-    "Ali_bk_8_8119": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 844,
-      "sent_timestamp": 1794424436.7952335,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8119,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "سرتیپ یحیی سریع:\n\nنیروهای مسلح ما دو عملیات نظامی انجام دادند و تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی فارس الشمری در شرق استان جوف و شرق شهرستان رغوان در استان مأرب قرار داشتند، با دو موشک بالستیک هدف قرار دادند. این حملات به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی در میان نیروهای دشمن سعودی برجای گذاشتند.\n\nBrigadier General Yahya Saree:\n\nOur armed forces carried out two military operations targeting Saudi enemy troop concentrations overseen by Saudi officer Fares al-Shammari east of Al Jawf province and east of Raghwan district in Marib province, using two ballistic missiles. The strikes scored direct hits, thanks to God, leaving dozens killed and wounded among the Saudi enemy forces.",
-      "last_formatted_text": "🔕 سرتیپ یحیی سریع:\n\nنیروهای مسلح ما دو عملیات نظامی انجام دادند و تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی فارس الشمری در شرق استان جوف و شرق شهرستان رغوان در استان مأرب قرار داشتند، با دو موشک بالستیک هدف قرار دادند. این حملات به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی در میان نیروهای دشمن سعودی برجای گذاشتند.\n\nBrigadier General Yahya Saree:\n\nOur armed forces carried out two military operations targeting Saudi enemy troop concentrations overseen by Saudi officer Fares al-Shammari east of Al Jawf province and east of Raghwan district in Marib province, using two ballistic missiles. The strikes scored direct hits, thanks to God, leaving dozens killed and wounded among the Saudi enemy forces.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8119\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794424496.0
-    },
     "withyashar_27854": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 845,
@@ -69,7 +43,33 @@
       "raw_text": "واشینگتن‌پست: دونالد ترامپ، رئیس‌جمهور آمریکا، در مراسم روز کهنه‌سربازان در روز چهارشنبه، از یکی از بازماندگان بمب‌گذاری سال ۱۹۸۳ در پادگان تفنگداران دریایی آمریکا در بیروت تجلیل کرد و با یادآوری این حمله تروریستی، از جنگ دولت خود علیه ایران دفاع کرد. در این حمله که حزب‌الله تحت حمایت ایران مسئول آن شناخته شد، ۲۴۱ نظامی آمریکایی کشته شدند.\n@WarRoom",
       "last_formatted_text": "🚨 واشینگتن‌پست: دونالد ترامپ، رئیس‌جمهور آمریکا، در مراسم روز کهنه‌سربازان در روز چهارشنبه، از یکی از بازماندگان بمب‌گذاری سال ۱۹۸۳ در پادگان تفنگداران دریایی آمریکا در بیروت تجلیل کرد و با یادآوری این حمله تروریستی، از جنگ دولت خود علیه ایران دفاع کرد. در این حمله که حزب‌الله تحت حمایت ایران مسئول آن شناخته شد، ۲۴۱ نظامی آمریکایی کشته شدند.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27854\">@withyashar</a>",
       "last_edit_timestamp": 1794425813.0
+    },
+    "Ali_bk_8_8122": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 846,
+      "sent_timestamp": 1794427256.868168,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8122,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "رسانه‌های دشمن:\n\nعملیات تیراندازی در تل‌آویو رخ داده و مجروحانی وجود دارد.\n\nEnemy media:\n\nShooting attack in Tel Aviv, with casualties.",
+      "last_formatted_text": "🔕 رسانه‌های دشمن:\n\nعملیات تیراندازی در تل‌آویو رخ داده و مجروحانی وجود دارد.\n\nEnemy media:\n\nShooting attack in Tel Aviv, with casualties.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8122\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794427377.0
+    },
+    "Ali_bk_8_8123": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 847,
+      "sent_timestamp": 1794428049.6067896,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8123,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند متعال موفق شدند مقر فرماندهی دشمن سعودی و اتاق عملیات آن را در منطقه البریقه هدف قرار دهند؛ مرکزی که تجمعات نظامی عربستان را در تمامی جبهه‌های درگیر در لحج، الضالع، تعز و دیگر استان‌ها مدیریت و نظارت می‌کند. این حمله با چندین موشک بالستیک انجام شد و به لطف خدا اصابت دقیق بود.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces, thanks to Almighty God, successfully targeted the Saudi enemy command headquarters and operations room in the al-Buraiqah area, which directs and oversees Saudi military build-ups across all active fronts in Lahij, Al-Dhalea, Taiz and other governorates. The attack was carried out with several ballistic missiles, scoring a direct hit, thanks to God.",
+      "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند متعال موفق شدند مقر فرماندهی دشمن سعودی و اتاق عملیات آن را در منطقه البریقه هدف قرار دهند؛ مرکزی که تجمعات نظامی عربستان را در تمامی جبهه‌های درگیر در لحج، الضالع، تعز و دیگر استان‌ها مدیریت و نظارت می‌کند. این حمله با چندین موشک بالستیک انجام شد و به لطف خدا اصابت دقیق بود.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces, thanks to Almighty God, successfully targeted the Saudi enemy command headquarters and operations room in the al-Buraiqah area, which directs and oversees Saudi military build-ups across all active fronts in Lahij, Al-Dhalea, Taiz and other governorates. The attack was carried out with several ballistic missiles, scoring a direct hit, thanks to God.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8123\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794428030.0
     }
   },
-  "updated_at": "2026-11-11T19:54:57.339470+00:00"
+  "updated_at": "2026-11-11T20:21:20.998318+00:00"
 }
