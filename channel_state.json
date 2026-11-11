@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27803,
-      "last_read_time": "2026-11-11 06:42:38 UTC"
+      "last_read_id": 27807,
+      "last_read_time": "2026-11-11 07:15:15 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8088,
-      "last_read_time": "2026-11-11 05:10:33 UTC"
+      "last_read_id": 8089,
+      "last_read_time": "2026-11-11 06:53:45 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79069,
@@ -56,7 +56,20 @@
       "raw_text": "وزارت امور خارجه جمهوری اسلامی : در واکنش به اقدام دولت آرژانتین در تروریستی اعلام کردن سپاه، ایران بر اساس اصل اقدام متقابل و مطابق قانون مصوب سال ۲۰۱۹، نیروی دریایی و نیروی هوایی آرژانتین را سازمان‌های تروریستی اعلام می‌کند. این اقدام مغایر اصول بنیادین حقوق بین‌الملل است و تأکید کرده میکنیم دولت آرژانتین مسئول تمامی پیامدهای منفی ناشی از این تصمیم خواهد بود. این بیانیه شامل ارتش زمینی آرژانتین نمی‌شود.\n@WarRoom",
       "last_formatted_text": "🚨 وزارت امور خارجه جمهوری اسلامی : در واکنش به اقدام دولت آرژانتین در تروریستی اعلام کردن سپاه، ایران بر اساس اصل اقدام متقابل و مطابق قانون مصوب سال ۲۰۱۹، نیروی دریایی و نیروی هوایی آرژانتین را سازمان‌های تروریستی اعلام می‌کند. این اقدام مغایر اصول بنیادین حقوق بین‌الملل است و تأکید کرده میکنیم دولت آرژانتین مسئول تمامی پیامدهای منفی ناشی از این تصمیم خواهد بود. این بیانیه شامل ارتش زمینی آرژانتین نمی‌شود.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27801\">@withyashar</a>",
       "last_edit_timestamp": 1794378821.0
+    },
+    "Ali_bk_8_8089": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 812,
+      "sent_timestamp": 1794380050.5457566,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8089,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "ارتش ایران از آتش‌گرفتن یک کشتی در تنگه هرمز پس از تلاش آن برای عبور غیرقانونی از این تنگه خبر داد.\n\nThe Iranian army announces that a vessel caught fire in the Strait of Hormuz after attempting to cross the strait illegally.",
+      "last_formatted_text": "🔕 ارتش ایران از آتش‌گرفتن یک کشتی در تنگه هرمز پس از تلاش آن برای عبور غیرقانونی از این تنگه خبر داد.\n\nThe Iranian army announces that a vessel caught fire in the Strait of Hormuz after attempting to cross the strait illegally.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8089\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794380063.0
     }
   },
-  "updated_at": "2026-11-11T06:53:45.124846+00:00"
+  "updated_at": "2026-11-11T07:20:08.195199+00:00"
 }
