@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27843,
-      "last_read_time": "2026-11-11 17:27:52 UTC"
+      "last_read_id": 27846,
+      "last_read_time": "2026-11-11 17:52:44 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8111,
@@ -43,7 +43,20 @@
       "raw_text": "شلیک موشک‌های یمنی به‌سوی اهداف دشمن.\n\nYemeni missiles launched toward enemy targets.",
       "last_formatted_text": "🔕 شلیک موشک‌های یمنی به‌سوی اهداف دشمن.\n\nYemeni missiles launched toward enemy targets.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8109\">@Ali_bk_8</a>",
       "last_edit_timestamp": 1794417105.0
+    },
+    "withyashar_27844": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 837,
+      "sent_timestamp": 1794418637.0303736,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27844,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "دیدبان اتاق جنگ : یاشار جان خوبی. من الان جزیره لاوانم. امروز قرار بود دریایی بریم تا نخیلو بعد از اونجا هرکسی برای مرخصی به شهر هاشون برن. ولی یهو اعلام کردن بخاطر شرایط بد جوی اب و هوا و دریایی رفتنمون عقب افتاده و کنسل شده و منتظریم تا اعلام کنن که بریم.\n@WarRoom",
+      "last_formatted_text": "🔕 دیدبان اتاق جنگ : یاشار جان خوبی. من الان جزیره لاوانم. امروز قرار بود دریایی بریم تا نخیلو بعد از اونجا هرکسی برای مرخصی به شهر هاشون برن. ولی یهو اعلام کردن بخاطر شرایط بد جوی اب و هوا و دریایی رفتنمون عقب افتاده و کنسل شده و منتظریم تا اعلام کنن که بریم.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27844\">@withyashar</a>",
+      "last_edit_timestamp": 1794418637.0
     }
   },
-  "updated_at": "2026-11-11T17:31:18.590688+00:00"
+  "updated_at": "2026-11-11T17:57:43.594603+00:00"
 }
