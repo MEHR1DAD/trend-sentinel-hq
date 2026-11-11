@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27827,
-      "last_read_time": "2026-11-11 11:58:40 UTC"
+      "last_read_id": 27832,
+      "last_read_time": "2026-11-11 13:03:12 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8100,
-      "last_read_time": "2026-11-11 11:29:36 UTC"
+      "last_read_id": 8102,
+      "last_read_time": "2026-11-11 13:08:13 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79069,
@@ -26,10 +26,49 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794378466.6076226,
+    "@DidebanJang": 1794402501.0166624,
     "@DidehbanEghtesad": 1794317696.829226,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
-  "updated_at": "2026-11-11T12:49:55.794208+00:00"
+  "sent_alerts_map": {
+    "withyashar_27828": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 822,
+      "sent_timestamp": 1794401422.7673154,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27828,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "دیدبان اتاق جنگ : یاشار سمت جزیره لاوان بندرنخیلو یک چیزی منفجر شده ۴۰ نفر سوختن پر آمبولانسه\n@WarRoom 🚨🚨🚨🚨",
+      "last_formatted_text": "🔕 دیدبان اتاق جنگ : یاشار سمت جزیره لاوان بندرنخیلو یک چیزی منفجر شده ۴۰ نفر سوختن پر آمبولانسه 🚨🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27828\">@withyashar</a>"
+    },
+    "Ali_bk_8_8101": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 823,
+      "sent_timestamp": 1794402119.4972186,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8101,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "مقاومت اسلامی، گردان‌های حزب‌الله عراق:\n\nدر دفاع از منافع ملت عراق حتی به اندازه یک وجب کوتاه نخواهیم آمد و اجازه نخواهیم داد دشمنان، جمهوری اسلامی ایران را تنها بگذارند؛ چرا که این کشور سپر مستحکم امت است. تا آخرین نفس در کنار آرمان فلسطین و برادرانمان در یمن و لبنان خواهیم ماند.\n\nThe Islamic Resistance, Iraqi Hezbollah Brigades:\n\nWe will not yield even an inch in defending the interests of the Iraqi people, and we will not allow the enemies to isolate the Islamic Republic of Iran, for it is the الأمة's impregnable shield. We will remain committed to the Palestinian cause and stand with our brothers in Yemen and Lebanon until our last breath.",
+      "last_formatted_text": "🔕 مقاومت اسلامی، گردان‌های حزب‌الله عراق:\n\nدر دفاع از منافع ملت عراق حتی به اندازه یک وجب کوتاه نخواهیم آمد و اجازه نخواهیم داد دشمنان، جمهوری اسلامی ایران را تنها بگذارند؛ چرا که این کشور سپر مستحکم امت است. تا آخرین نفس در کنار آرمان فلسطین و برادرانمان در یمن و لبنان خواهیم ماند.\n\nThe Islamic Resistance, Iraqi Hezbollah Brigades:\n\nWe will not yield even an inch in defending the interests of the Iraqi people, and we will not allow the enemies to isolate the Islamic Republic of Iran, for it is the الأمة&#x27;s impregnable shield. We will remain committed to the Palestinian cause and stand with our brothers in Yemen and Lebanon until our last breath.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8101\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794402337.0
+    },
+    "Ali_bk_8_8102": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 824,
+      "sent_timestamp": 1794402501.6000805,
+      "status_icon": "🚨",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8102,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "شلیک موشک به سمت تنگه هرمز.\n\nMissiles launched toward the Strait of Hormuz.",
+      "last_formatted_text": "🚨 شلیک موشک به سمت تنگه هرمز.\n\nMissiles launched toward the Strait of Hormuz.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8102\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794402514.0
+    }
+  },
+  "updated_at": "2026-11-11T13:16:20.879518+00:00"
 }
