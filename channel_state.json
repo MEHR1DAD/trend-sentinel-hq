@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27877,
-      "last_read_time": "2026-11-12 09:48:36 UTC"
+      "last_read_id": 27878,
+      "last_read_time": "2026-11-12 09:57:29 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8143,
@@ -31,19 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27874": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 852,
-      "sent_timestamp": 1794474331.9219933,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27874,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "المصريون: طی ۴۸ ساعت آینده، ناوهای آمریکایی وارد ابتدای حوزه عملیاتی فرماندهی مرکزی ایالات متحده (سنتکام) خواهند شد. به گفته این منابع، حجم تسلیحات و تجهیزات نظامی آمریکا در منطقه حدود ۱۰ برابر بیشتر از جنگ قبلی خواهد بود. همچنین ادعا شده است که بیش از ۲۰۰ فروند هواپیمای سوخت‌رسان آمریکایی در اطراف ایران مستقر شده‌اند؛ رقمی قابل‌توجه که می‌تواند نشان‌دهنده تدارکات گسترده برای پشتیبانی از عملیات هوایی باشد.\n@WarRoom",
-      "last_formatted_text": "🔕 المصريون: طی ۴۸ ساعت آینده، ناوهای آمریکایی وارد ابتدای حوزه عملیاتی فرماندهی مرکزی ایالات متحده (سنتکام) خواهند شد. به گفته این منابع، حجم تسلیحات و تجهیزات نظامی آمریکا در منطقه حدود ۱۰ برابر بیشتر از جنگ قبلی خواهد بود. همچنین ادعا شده است که بیش از ۲۰۰ فروند هواپیمای سوخت‌رسان آمریکایی در اطراف ایران مستقر شده‌اند؛ رقمی قابل‌توجه که می‌تواند نشان‌دهنده تدارکات گسترده برای پشتیبانی از عملیات هوایی باشد.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27874\">@withyashar</a>",
-      "last_edit_timestamp": 1794474326.0
-    },
     "Ali_bk_8_8143": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 853,
@@ -55,7 +42,15 @@
       "grouped_id": null,
       "raw_text": "تأیید آنچه منتشر کردیم:\n\nنیروی دریایی بریتانیا اعلام کرد یک کشتی در فاصله 14 مایلی رأس‌الخیمه در امارات هدف قرار گرفته است.\n\nConfirming what we published:\n\nThe British Navy announces that a ship was hit 14 miles off Ras Al Khaimah in the UAE.",
       "last_formatted_text": "🔕 تأیید آنچه منتشر کردیم:\n\nنیروی دریایی بریتانیا اعلام کرد یک کشتی در فاصله 14 مایلی رأس‌الخیمه در امارات هدف قرار گرفته است.\n\nConfirming what we published:\n\nThe British Navy announces that a ship was hit 14 miles off Ras Al Khaimah in the UAE.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8143\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794476844.0
+      "last_edit_timestamp": 1794476844.0,
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 853,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تأیید آنچه منتشر کردیم:\n\nنیروی دریایی بریتانیا اعلام کرد یک کشتی در فاصله 14 مایلی رأس‌الخیمه در امارات هدف قرار گرفته است.\n\nConfirming what we published:\n\nThe British Navy announces that a ship was hit 14 miles off Ras Al Khaimah in the UAE.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8143\">@Ali_bk_8</a>"
+        }
+      ]
     },
     "withyashar_27877": {
       "target_channel": "@DidebanJang",
@@ -68,8 +63,17 @@
       "grouped_id": null,
       "raw_text": "نقطه‌زنی جلسه نظامی اعضای حماس در مجتمع بیمارستان ناصر ، خان‌یونس در حمله دقیق ارتش اسرائیل . بر اساس گزارش‌ها، تاکنون ۶ عضو حماس به هلاکت رسیدند\n@WarRoom",
       "last_formatted_text": "🔕 نقطه‌زنی جلسه نظامی اعضای حماس در مجتمع بیمارستان ناصر ، خان‌یونس در حمله دقیق ارتش اسرائیل . بر اساس گزارش‌ها، تاکنون ۶ عضو حماس به هلاکت رسیدند\n\n📷 منبع: <a href=\"https://t.me/withyashar/27877\">@withyashar</a>",
-      "last_edit_timestamp": 1794476994.0
+      "last_edit_timestamp": 1794476994.0,
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 854,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 نقطه‌زنی جلسه نظامی اعضای حماس در مجتمع بیمارستان ناصر ، خان‌یونس در حمله دقیق ارتش اسرائیل . بر اساس گزارش‌ها، تاکنون ۶ عضو حماس به هلاکت رسیدند\n\n📷 منبع: <a href=\"https://t.me/withyashar/27877\">@withyashar</a>"
+        }
+      ]
     }
   },
-  "updated_at": "2026-11-12T09:49:56.282626+00:00"
+  "pending_translations": {},
+  "updated_at": "2026-11-12T10:18:04.997063+00:00"
 }
