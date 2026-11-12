@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27890,
-      "last_read_time": "2026-11-12 12:32:37 UTC"
+      "last_read_id": 27893,
+      "last_read_time": "2026-11-12 12:57:34 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8148,
-      "last_read_time": "2026-11-12 12:20:19 UTC"
+      "last_read_id": 8149,
+      "last_read_time": "2026-11-12 12:40:46 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79081,
@@ -31,28 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8146": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 856,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 کارزار نسل‌کشی در غزه ادامه دارد..\n\nهواپیماهای ارتش اشغالگر خودرویی را در اطراف مجتمع پزشکی الشفا در غرب شهر غزه هدف قرار دادند و مردم برای بیرون کشیدن شهدا و زخمی‌ها شتافتند.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8146\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 856,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 کارزار نسل‌کشی در غزه ادامه دارد..\n\nهواپیماهای ارتش اشغالگر خودرویی را در اطراف مجتمع پزشکی الشفا در غرب شهر غزه هدف قرار دادند و مردم برای بیرون کشیدن شهدا و زخمی‌ها شتافتند.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8146\">@Ali_bk_8</a>"
-        }
-      ],
-      "sent_timestamp": 1794484459.9172554,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8146,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "کارزار نسل‌کشی در غزه ادامه دارد..\n\nهواپیماهای ارتش اشغالگر خودرویی را در اطراف مجتمع پزشکی الشفا در غرب شهر غزه هدف قرار دادند و مردم برای بیرون کشیدن شهدا و زخمی‌ها شتافتند.\n\nThe genocide campaign continues in Gaza..\n\nOccupation army aircraft target a car near the Al-Shifa Medical Complex, west of Gaza City, as people rush to pull out the martyrs and wounded.",
-      "output_text": "کارزار نسل‌کشی در غزه ادامه دارد..\n\nهواپیماهای ارتش اشغالگر خودرویی را در اطراف مجتمع پزشکی الشفا در غرب شهر غزه هدف قرار دادند و مردم برای بیرون کشیدن شهدا و زخمی‌ها شتافتند.",
-      "last_edit_timestamp": 1794484461.0
-    },
     "withyashar_27888": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 857,
@@ -139,8 +117,30 @@
       "raw_text": "هانگ کائو، سرپرست وزارت نیروی دریایی آمریکا، نیز از خانواده‌ها خواسته خود را برای بدترین سناریوی احتمالی آماده کنند. او مدعی شده توقف ایران برای جلوگیری از تبدیل شدن این کشور به یک قدرت هسته‌ای ضروری است و کار نمیتواند نیمه تمام بماند\n@WarRoom 🚨🚨🚨🚨🚨",
       "output_text": "هانگ کائو، سرپرست وزارت نیروی دریایی آمریکا، نیز از خانواده‌ها خواسته خود را برای بدترین سناریوی احتمالی آماده کنند. او مدعی شده توقف ایران برای جلوگیری از تبدیل شدن این کشور به یک قدرت هسته‌ای ضروری است و کار نمیتواند نیمه تمام بماند\n@WarRoom 🚨🚨🚨🚨🚨",
       "last_edit_timestamp": 1794486770.0
+    },
+    "Ali_bk_8_8150": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 861,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 رسانه جنگی یمن تصاویری از هدف قرار دادن نیروهای کمکی سعودی به فرماندهی فارس الشمری، افسر سعودی، و انهدام شماری از خودروهای زرهی و تجهیزات نظامی آن‌ها در شرق شهرستان مدغل در مأرب منتشر کرد.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8150\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 861,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 رسانه جنگی یمن تصاویری از هدف قرار دادن نیروهای کمکی سعودی به فرماندهی فارس الشمری، افسر سعودی، و انهدام شماری از خودروهای زرهی و تجهیزات نظامی آن‌ها در شرق شهرستان مدغل در مأرب منتشر کرد.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8150\">@Ali_bk_8</a>"
+        }
+      ],
+      "sent_timestamp": 1794488540.302489,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8150,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "رسانه جنگی یمن تصاویری از هدف قرار دادن نیروهای کمکی سعودی به فرماندهی فارس الشمری، افسر سعودی، و انهدام شماری از خودروهای زرهی و تجهیزات نظامی آن‌ها در شرق شهرستان مدغل در مأرب منتشر کرد.\n\nYemeni Military Media releases footage of an attack on Saudi reinforcements led by Saudi officer Fares al-Shammari, and the destruction of several of their armored vehicles and military vehicles east of Madghal District in Marib.",
+      "output_text": "رسانه جنگی یمن تصاویری از هدف قرار دادن نیروهای کمکی سعودی به فرماندهی فارس الشمری، افسر سعودی، و انهدام شماری از خودروهای زرهی و تجهیزات نظامی آن‌ها در شرق شهرستان مدغل در مأرب منتشر کرد.",
+      "last_edit_timestamp": 1794488523.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-12T12:36:08.343671+00:00"
+  "updated_at": "2026-11-12T13:02:32.452206+00:00"
 }
