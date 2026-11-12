@@ -99,6 +99,10 @@ class SentinelEngine:
         self.dedup_specific_locations = [
             self._dedup_norm(loc) for loc in self.patterns.get("dedup_specific_locations", []) if loc
         ]
+        self._dedup_location_patterns = [
+            (loc, re.compile(rf"(?<![\u0600-\u06FFa-z0-9_]){re.escape(loc)}(?![\u0600-\u06FFa-z0-9_])"))
+            for loc in self.dedup_specific_locations
+        ]
 
     def _load_patterns(self) -> dict:
         if not os.path.exists(self.pattern_path):
@@ -727,8 +731,8 @@ class SentinelEngine:
                 norm = norm.replace(phrase_src, phrase_dst)
 
         specific_locations = set()
-        for loc in self.dedup_specific_locations:
-            if re.search(rf"(?<![\u0600-\u06FFa-z0-9_]){re.escape(loc)}(?![\u0600-\u06FFa-z0-9_])", norm):
+        for loc, pat in self._dedup_location_patterns:
+            if pat.search(norm):
                 specific_locations.add(loc)
 
         token_weights: Dict[str, int] = {}
@@ -824,6 +828,16 @@ class SentinelEngine:
         # Guard against a massive omnibus roundup (e.g. 16-min speech summary) swallowing a 1-line breaking alert
         if weight_ratio > 4.5 and weighted_overlap < 0.85:
             return False
+
+        # Complementary Rule: breaking news sharing a specific location + incident/kinetic event
+        shared_locs = locs1 & locs2
+        if shared_locs and weight_ratio <= 3.5:
+            incident_tokens = {
+                "انفجار", "حمله", "شلیک", "برخورد", "موشک", "پهپاد", "پدافند",
+                "اتش", "سقوط", "اصابت", "پرتاب", "تیراندازی", "توقیف", "کشته", "زخمی", "تلفات"
+            }
+            if (shared_tokens & incident_tokens) and weighted_overlap >= 0.45 and len(shared_anchors) >= 1:
+                return True
 
         if weighted_overlap >= 0.55 and len(shared_anchors) >= 3:
             return True
