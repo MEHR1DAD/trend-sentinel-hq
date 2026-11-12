@@ -1,20 +1,20 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27942,
-      "last_read_time": "2026-11-12 21:26:54 UTC"
+      "last_read_id": 27948,
+      "last_read_time": "2026-11-12 21:48:15 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8198,
-      "last_read_time": "2026-11-12 21:15:39 UTC"
+      "last_read_id": 8201,
+      "last_read_time": "2026-11-12 21:43:57 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79091,
-      "last_read_time": "2026-11-12 20:58:54 UTC"
+      "last_read_id": 79092,
+      "last_read_time": "2026-11-12 21:51:06 UTC"
     },
     "iliaen": {
-      "last_read_id": 4753,
-      "last_read_time": "2026-11-02 10:53:12 UTC"
+      "last_read_id": 4754,
+      "last_read_time": "2026-11-12 21:35:21 UTC"
     },
     "netblocks": {
       "last_read_id": 1583,
@@ -26,45 +26,11 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794511236.1133504,
+    "@DidebanJang": 1794519405.673982,
     "@DidehbanEghtesad": 1794513097.8797176,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8190": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 899,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 نیروهای یمنی امروز به بیمارستان سعودی در المضاربة، لحج رسیدند.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8190\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 899,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 نیروهای یمنی امروز به بیمارستان سعودی در المضاربة، لحج رسیدند.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8190\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8190,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "نیروهای یمنی امروز به بیمارستان سعودی در المضاربة، لحج رسیدند.\n\nYemeni forces reached the Saudi Hospital in al-Mudharaba, Lahij, today.",
-          "output_text": "نیروهای یمنی امروز به بیمارستان سعودی در المضاربة، لحج رسیدند.",
-          "last_edit_timestamp": 1794515652.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8190",
-      "sent_timestamp": 1794515517.6484666,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8190,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "نیروهای یمنی امروز به بیمارستان سعودی در المضاربة، لحج رسیدند.\n\nYemeni forces reached the Saudi Hospital in al-Mudharaba, Lahij, today.",
-      "output_text": "نیروهای یمنی امروز به بیمارستان سعودی در المضاربة، لحج رسیدند.",
-      "last_edit_timestamp": 1794515652.0
-    },
     "VahidOnline_79091": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 900,
@@ -136,13 +102,13 @@
       "target_channel": "@DidebanJang",
       "bot_msg_id": 902,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 سیریک بندر کوهستک , پهپاد آمریکایی !! 🚨🚨🚨🚨🚨\n\n🎥 منبع: <a href=\"https://t.me/withyashar/27942\">@withyashar</a>",
+      "last_formatted_text": "🔕 عرزشی ها با کلاشینکف در سیریک بندر کوهستک درگیر شدن با پهپاد آمریکایی !! 🚨🚨🚨🚨🚨\n\nمنبع: 🎥 <a href=\"https://t.me/withyashar/27942\">@withyashar</a> | 🎥 <a href=\"https://t.me/withyashar/27943\">@withyashar</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
           "bot_msg_id": 902,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 سیریک بندر کوهستک , پهپاد آمریکایی !! 🚨🚨🚨🚨🚨\n\n🎥 منبع: <a href=\"https://t.me/withyashar/27942\">@withyashar</a>"
+          "last_formatted_text": "🔕 عرزشی ها با کلاشینکف در سیریک بندر کوهستک درگیر شدن با پهپاد آمریکایی !! 🚨🚨🚨🚨🚨\n\nمنبع: 🎥 <a href=\"https://t.me/withyashar/27942\">@withyashar</a> | 🎥 <a href=\"https://t.me/withyashar/27943\">@withyashar</a>"
         }
       ],
       "sources": [
@@ -154,19 +120,139 @@
           "raw_text": "سیریک بندر کوهستک , پهپاد آمریکایی !!\n@WarRoom 🚨🚨🚨🚨🚨",
           "output_text": "سیریک بندر کوهستک , پهپاد آمریکایی !!\n@WarRoom 🚨🚨🚨🚨🚨",
           "last_edit_timestamp": 1794518826.0
+        },
+        {
+          "source_node": "withyashar",
+          "msg_id": 27943,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "عرزشی ها با کلاشینکف در سیریک بندر کوهستک درگیر شدن با پهپاد آمریکایی !!\n@WarRoom 🚨🚨🚨🚨🚨",
+          "output_text": "عرزشی ها با کلاشینکف در سیریک بندر کوهستک درگیر شدن با پهپاد آمریکایی !!\n@WarRoom 🚨🚨🚨🚨🚨",
+          "last_edit_timestamp": 1794519250.4185123
         }
       ],
-      "active_text_source": "withyashar_27942",
+      "active_text_source": "withyashar_27943",
       "sent_timestamp": 1794518826.3703184,
       "source_node": "withyashar",
       "msg_id": 27942,
       "media_icons": "🎥",
       "grouped_id": null,
-      "raw_text": "سیریک بندر کوهستک , پهپاد آمریکایی !!\n@WarRoom 🚨🚨🚨🚨🚨",
-      "output_text": "سیریک بندر کوهستک , پهپاد آمریکایی !!\n@WarRoom 🚨🚨🚨🚨🚨",
-      "last_edit_timestamp": 1794518826.0
+      "raw_text": "عرزشی ها با کلاشینکف در سیریک بندر کوهستک درگیر شدن با پهپاد آمریکایی !!\n@WarRoom 🚨🚨🚨🚨🚨",
+      "output_text": "عرزشی ها با کلاشینکف در سیریک بندر کوهستک درگیر شدن با پهپاد آمریکایی !!\n@WarRoom 🚨🚨🚨🚨🚨",
+      "last_edit_timestamp": 1794519242.0
+    },
+    "iliaen_4754": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 903,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 ساعت حدود ۰۰:۳۰ بامداد جمعه؛ یک پهپاد آمریکایی درحال پرواز مداوم و هدف قرار دادن نقاط نظامی در خط ساحلی جنوب هرمزگان است و در نبود ضد هوایی، نیروهای سپاه تلاش می‌کنند با شلیک اسلحه آن را منهدم کند.\n\n🎥 منبع: <a href=\"https://t.me/iliaen/4754\">@iliaen</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 903,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 ساعت حدود ۰۰:۳۰ بامداد جمعه؛ یک پهپاد آمریکایی درحال پرواز مداوم و هدف قرار دادن نقاط نظامی در خط ساحلی جنوب هرمزگان است و در نبود ضد هوایی، نیروهای سپاه تلاش می‌کنند با شلیک اسلحه آن را منهدم کند.\n\n🎥 منبع: <a href=\"https://t.me/iliaen/4754\">@iliaen</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "iliaen",
+          "msg_id": 4754,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "ساعت حدود ۰۰:۳۰ بامداد جمعه؛ یک پهپاد آمریکایی درحال پرواز مداوم و هدف قرار دادن نقاط نظامی در خط ساحلی جنوب هرمزگان است و در نبود ضد هوایی، نیروهای سپاه تلاش می‌کنند با شلیک اسلحه آن را منهدم کند.\n\n@iliaen",
+          "output_text": "ساعت حدود ۰۰:۳۰ بامداد جمعه؛ یک پهپاد آمریکایی درحال پرواز مداوم و هدف قرار دادن نقاط نظامی در خط ساحلی جنوب هرمزگان است و در نبود ضد هوایی، نیروهای سپاه تلاش می‌کنند با شلیک اسلحه آن را منهدم کند.\n\n@iliaen",
+          "last_edit_timestamp": 1794519344.4023015
+        }
+      ],
+      "active_text_source": "iliaen_4754",
+      "sent_timestamp": 1794519344.788267,
+      "source_node": "iliaen",
+      "msg_id": 4754,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "ساعت حدود ۰۰:۳۰ بامداد جمعه؛ یک پهپاد آمریکایی درحال پرواز مداوم و هدف قرار دادن نقاط نظامی در خط ساحلی جنوب هرمزگان است و در نبود ضد هوایی، نیروهای سپاه تلاش می‌کنند با شلیک اسلحه آن را منهدم کند.\n\n@iliaen",
+      "output_text": "ساعت حدود ۰۰:۳۰ بامداد جمعه؛ یک پهپاد آمریکایی درحال پرواز مداوم و هدف قرار دادن نقاط نظامی در خط ساحلی جنوب هرمزگان است و در نبود ضد هوایی، نیروهای سپاه تلاش می‌کنند با شلیک اسلحه آن را منهدم کند.\n\n@iliaen",
+      "last_edit_timestamp": 1794519335.0
+    },
+    "withyashar_27944": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 904,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 گزارش انفجار سیریک 🚨🚨🚨🚨\n\nمنبع: 📝 <a href=\"https://t.me/withyashar/27944\">@withyashar</a> | 📝 <a href=\"https://t.me/Ali_bk_8/8199\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 904,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 گزارش انفجار سیریک 🚨🚨🚨🚨\n\nمنبع: 📝 <a href=\"https://t.me/withyashar/27944\">@withyashar</a> | 📝 <a href=\"https://t.me/Ali_bk_8/8199\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 27944,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "گزارش انفجار سیریک 🚨🚨🚨🚨\n@WarRoom",
+          "output_text": "گزارش انفجار سیریک 🚨🚨🚨🚨\n@WarRoom",
+          "last_edit_timestamp": 1794519405.6739788
+        },
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8199,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "صدای انفجار در سیریک ایران شنیده شد.\n\nAn explosion was heard in Iran's Sirik.",
+          "output_text": "صدای انفجار در سیریک ایران شنیده شد.",
+          "last_edit_timestamp": 1794519476.0
+        }
+      ],
+      "active_text_source": "withyashar_27944",
+      "sent_timestamp": 1794519406.0793393,
+      "source_node": "withyashar",
+      "msg_id": 27944,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "گزارش انفجار سیریک 🚨🚨🚨🚨\n@WarRoom",
+      "output_text": "گزارش انفجار سیریک 🚨🚨🚨🚨\n@WarRoom",
+      "last_edit_timestamp": 1794519476.0
+    },
+    "Ali_bk_8_8200": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 905,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تصاویری در حال انتشار از پرواز یک پهپاد آمریکایی بر فراز جنوب استان هرمزگان ایران.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8200\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 905,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تصاویری در حال انتشار از پرواز یک پهپاد آمریکایی بر فراز جنوب استان هرمزگان ایران.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8200\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8200,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "تصاویری در حال انتشار از پرواز یک پهپاد آمریکایی بر فراز جنوب استان هرمزگان ایران.\n\nCirculating footage shows a U.S. drone flying over southern Hormozgan province in Iran.",
+          "output_text": "تصاویری در حال انتشار از پرواز یک پهپاد آمریکایی بر فراز جنوب استان هرمزگان ایران.",
+          "last_edit_timestamp": 1794519679.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8200",
+      "sent_timestamp": 1794519670.6262834,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8200,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "تصاویری در حال انتشار از پرواز یک پهپاد آمریکایی بر فراز جنوب استان هرمزگان ایران.\n\nCirculating footage shows a U.S. drone flying over southern Hormozgan province in Iran.",
+      "output_text": "تصاویری در حال انتشار از پرواز یک پهپاد آمریکایی بر فراز جنوب استان هرمزگان ایران.",
+      "last_edit_timestamp": 1794519679.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-12T21:31:46.520348+00:00"
+  "updated_at": "2026-11-12T21:58:09.724040+00:00"
 }
