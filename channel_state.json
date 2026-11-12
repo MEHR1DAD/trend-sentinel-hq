@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-12 02:19:06 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8138,
-      "last_read_time": "2026-11-12 03:16:42 UTC"
+      "last_read_id": 8139,
+      "last_read_time": "2026-11-12 05:58:15 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79081,
@@ -30,6 +30,20 @@
     "@DidehbanEghtesad": 1794317696.829226,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
-  "updated_at": "2026-11-12T05:41:52.455601+00:00"
+  "sent_alerts_map": {
+    "Ali_bk_8_8139": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 849,
+      "sent_timestamp": 1794463096.3926983,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8139,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "تصاویر ماهواره‌ای هم‌اکنون وقوع آتش‌سوزی در تنگه هرمز را در پی حمله احتمالی به یک کشتی نشان می‌دهند.\n\nSatellite images show a fire in the Strait of Hormuz now following a possible strike on a ship.",
+      "last_formatted_text": "🔕 تصاویر ماهواره‌ای هم‌اکنون وقوع آتش‌سوزی در تنگه هرمز را در پی حمله احتمالی به یک کشتی نشان می‌دهند.\n\nSatellite images show a fire in the Strait of Hormuz now following a possible strike on a ship.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8139\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794463241.0
+    }
+  },
+  "updated_at": "2026-11-12T06:08:15.153066+00:00"
 }
