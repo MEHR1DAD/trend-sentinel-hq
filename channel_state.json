@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27875,
-      "last_read_time": "2026-11-12 09:08:36 UTC"
+      "last_read_id": 27877,
+      "last_read_time": "2026-11-12 09:48:36 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8142,
-      "last_read_time": "2026-11-12 08:31:42 UTC"
+      "last_read_id": 8143,
+      "last_read_time": "2026-11-12 09:46:50 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79081,
@@ -43,7 +43,33 @@
       "raw_text": "المصريون: طی ۴۸ ساعت آینده، ناوهای آمریکایی وارد ابتدای حوزه عملیاتی فرماندهی مرکزی ایالات متحده (سنتکام) خواهند شد. به گفته این منابع، حجم تسلیحات و تجهیزات نظامی آمریکا در منطقه حدود ۱۰ برابر بیشتر از جنگ قبلی خواهد بود. همچنین ادعا شده است که بیش از ۲۰۰ فروند هواپیمای سوخت‌رسان آمریکایی در اطراف ایران مستقر شده‌اند؛ رقمی قابل‌توجه که می‌تواند نشان‌دهنده تدارکات گسترده برای پشتیبانی از عملیات هوایی باشد.\n@WarRoom",
       "last_formatted_text": "🔕 المصريون: طی ۴۸ ساعت آینده، ناوهای آمریکایی وارد ابتدای حوزه عملیاتی فرماندهی مرکزی ایالات متحده (سنتکام) خواهند شد. به گفته این منابع، حجم تسلیحات و تجهیزات نظامی آمریکا در منطقه حدود ۱۰ برابر بیشتر از جنگ قبلی خواهد بود. همچنین ادعا شده است که بیش از ۲۰۰ فروند هواپیمای سوخت‌رسان آمریکایی در اطراف ایران مستقر شده‌اند؛ رقمی قابل‌توجه که می‌تواند نشان‌دهنده تدارکات گسترده برای پشتیبانی از عملیات هوایی باشد.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27874\">@withyashar</a>",
       "last_edit_timestamp": 1794474326.0
+    },
+    "Ali_bk_8_8143": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 853,
+      "sent_timestamp": 1794476814.2981665,
+      "status_icon": "🔕",
+      "source_node": "Ali_bk_8",
+      "msg_id": 8143,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "تأیید آنچه منتشر کردیم:\n\nنیروی دریایی بریتانیا اعلام کرد یک کشتی در فاصله 14 مایلی رأس‌الخیمه در امارات هدف قرار گرفته است.\n\nConfirming what we published:\n\nThe British Navy announces that a ship was hit 14 miles off Ras Al Khaimah in the UAE.",
+      "last_formatted_text": "🔕 تأیید آنچه منتشر کردیم:\n\nنیروی دریایی بریتانیا اعلام کرد یک کشتی در فاصله 14 مایلی رأس‌الخیمه در امارات هدف قرار گرفته است.\n\nConfirming what we published:\n\nThe British Navy announces that a ship was hit 14 miles off Ras Al Khaimah in the UAE.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8143\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794476844.0
+    },
+    "withyashar_27877": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 854,
+      "sent_timestamp": 1794476931.0114694,
+      "status_icon": "🔕",
+      "source_node": "withyashar",
+      "msg_id": 27877,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "نقطه‌زنی جلسه نظامی اعضای حماس در مجتمع بیمارستان ناصر ، خان‌یونس در حمله دقیق ارتش اسرائیل . بر اساس گزارش‌ها، تاکنون ۶ عضو حماس به هلاکت رسیدند\n@WarRoom",
+      "last_formatted_text": "🔕 نقطه‌زنی جلسه نظامی اعضای حماس در مجتمع بیمارستان ناصر ، خان‌یونس در حمله دقیق ارتش اسرائیل . بر اساس گزارش‌ها، تاکنون ۶ عضو حماس به هلاکت رسیدند\n\n📷 منبع: <a href=\"https://t.me/withyashar/27877\">@withyashar</a>",
+      "last_edit_timestamp": 1794476994.0
     }
   },
-  "updated_at": "2026-11-12T09:39:28.222414+00:00"
+  "updated_at": "2026-11-12T09:49:56.282626+00:00"
 }
