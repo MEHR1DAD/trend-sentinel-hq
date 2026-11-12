@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27906,
-      "last_read_time": "2026-11-12 15:39:57 UTC"
+      "last_read_id": 27909,
+      "last_read_time": "2026-11-12 15:55:06 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8159,
-      "last_read_time": "2026-11-12 15:39:19 UTC"
+      "last_read_id": 8160,
+      "last_read_time": "2026-11-12 15:48:20 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79083,
@@ -26,176 +26,11 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794425816.1814694,
+    "@DidebanJang": 1794498920.8668911,
     "@DidehbanEghtesad": 1794317696.829226,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27900": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 866,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 پرتاب سه موشک از بیدنگه در کنار هم 🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27900\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 866,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 پرتاب سه موشک از بیدنگه در کنار هم 🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27900\">@withyashar</a>"
-        }
-      ],
-      "sent_timestamp": 1794495997.0384657,
-      "source_node": "withyashar",
-      "msg_id": 27900,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "پرتاب سه موشک از بیدنگه در کنار هم \n@WarRoom 🚨🚨🚨",
-      "output_text": "پرتاب سه موشک از بیدنگه در کنار هم \n@WarRoom 🚨🚨🚨",
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 27900,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "پرتاب سه موشک از بیدنگه در کنار هم \n@WarRoom 🚨🚨🚨",
-          "output_text": "پرتاب سه موشک از بیدنگه در کنار هم \n@WarRoom 🚨🚨🚨",
-          "last_edit_timestamp": 1794495997.0384657
-        }
-      ],
-      "active_text_source": "withyashar_27900"
-    },
-    "withyashar_27903": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 867,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n\n🎥 منبع: <a href=\"https://t.me/withyashar/27903\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 867,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n\n🎥 منبع: <a href=\"https://t.me/withyashar/27903\">@withyashar</a>"
-        }
-      ],
-      "sent_timestamp": 1794495997.4482775,
-      "source_node": "withyashar",
-      "msg_id": 27903,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n@WarRoom",
-      "output_text": "فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n@WarRoom",
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 27903,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n@WarRoom",
-          "output_text": "فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n@WarRoom",
-          "last_edit_timestamp": 1794495997.4482775
-        }
-      ],
-      "active_text_source": "withyashar_27903"
-    },
-    "Ali_bk_8_8156": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 868,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8156\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 868,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8156\">@Ali_bk_8</a>"
-        }
-      ],
-      "sent_timestamp": 1794495998.9919055,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8156,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\nOngoing missile tests by Iran's IRGC.",
-      "output_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.",
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8156,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\nOngoing missile tests by Iran's IRGC.",
-          "output_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.",
-          "last_edit_timestamp": 1794495998.9919055
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8156"
-    },
-    "Ali_bk_8_8157": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 869,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8157\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 869,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8157\">@Ali_bk_8</a>"
-        }
-      ],
-      "sent_timestamp": 1794495999.4107926,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8157,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.\n\nThe Iranian Army:\n\nEarly today, two noncompliant oil tankers caught fire after entering a prohibited and unsafe area in the eastern Strait of Hormuz.",
-      "output_text": "ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.",
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8157,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.\n\nThe Iranian Army:\n\nEarly today, two noncompliant oil tankers caught fire after entering a prohibited and unsafe area in the eastern Strait of Hormuz.",
-          "output_text": "ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.",
-          "last_edit_timestamp": 1794495999.4107926
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8157"
-    },
-    "Ali_bk_8_8158": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 870,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8158\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 870,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8158\">@Ali_bk_8</a>"
-        }
-      ],
-      "sent_timestamp": 1794495999.8672764,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8158,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.\n\nThe British Navy issues an update to yesterday's report No. 202 (not a new incident), confirming that a vessel was hit by a missile.",
-      "output_text": "نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.",
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8158,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.\n\nThe British Navy issues an update to yesterday's report No. 202 (not a new incident), confirming that a vessel was hit by a missile.",
-          "output_text": "نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.",
-          "last_edit_timestamp": 1794495999.8672764
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8158"
-    },
     "withyashar_27905": {
       "target_channel": "@DidehbanEghtesad",
       "bot_msg_id": 72,
@@ -263,8 +98,76 @@
       "raw_text": "در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.\n\nOne person was killed and 4 others wounded in a shooting in the Logan Circle neighborhood of Washington, D.C.",
       "output_text": "در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.",
       "last_edit_timestamp": 1794498278.0
+    },
+    "Ali_bk_8_8160": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 872,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:\n\nنیروی هوافضای سپاه پاسداران امروز، دستورات و رهنمودهای حکیمانه فرمانده کل قوا را در صدر اولویت‌های خود قرار داده و با هوشمندی برای ارتقای آمادگی رزمی خود و اجرای راهبرد پاسخ فوری، مؤثر و متناسب به هرگونه تهدید، در هر مکانی و بدون محدودیت جغرافیایی تلاش می‌کند.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8160\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 872,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:\n\nنیروی هوافضای سپاه پاسداران امروز، دستورات و رهنمودهای حکیمانه فرمانده کل قوا را در صدر اولویت‌های خود قرار داده و با هوشمندی برای ارتقای آمادگی رزمی خود و اجرای راهبرد پاسخ فوری، مؤثر و متناسب به هرگونه تهدید، در هر مکانی و بدون محدودیت جغرافیایی تلاش می‌کند.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8160\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8160,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:\n\nنیروی هوافضای سپاه پاسداران امروز، دستورات و رهنمودهای حکیمانه فرمانده کل قوا را در صدر اولویت‌های خود قرار داده و با هوشمندی برای ارتقای آمادگی رزمی خود و اجرای راهبرد پاسخ فوری، مؤثر و متناسب به هرگونه تهدید، در هر مکانی و بدون محدودیت جغرافیایی تلاش می‌کند.\n\nSecretary of Iran's Supreme National Security Council, Major General Rezaei:\n\nToday, the IRGC Aerospace Force places the wise orders and directives of the Commander-in-Chief of the Armed Forces at the top of its priorities. It is working intelligently to enhance its combat readiness and implement a strategy of immediate, effective and proportionate retaliation against any threat, anywhere and without geographical restrictions.",
+          "output_text": "دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:\n\nنیروی هوافضای سپاه پاسداران امروز، دستورات و رهنمودهای حکیمانه فرمانده کل قوا را در صدر اولویت‌های خود قرار داده و با هوشمندی برای ارتقای آمادگی رزمی خود و اجرای راهبرد پاسخ فوری، مؤثر و متناسب به هرگونه تهدید، در هر مکانی و بدون محدودیت جغرافیایی تلاش می‌کند.",
+          "last_edit_timestamp": 1794499056.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8160",
+      "sent_timestamp": 1794498505.0983202,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8160,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:\n\nنیروی هوافضای سپاه پاسداران امروز، دستورات و رهنمودهای حکیمانه فرمانده کل قوا را در صدر اولویت‌های خود قرار داده و با هوشمندی برای ارتقای آمادگی رزمی خود و اجرای راهبرد پاسخ فوری، مؤثر و متناسب به هرگونه تهدید، در هر مکانی و بدون محدودیت جغرافیایی تلاش می‌کند.\n\nSecretary of Iran's Supreme National Security Council, Major General Rezaei:\n\nToday, the IRGC Aerospace Force places the wise orders and directives of the Commander-in-Chief of the Armed Forces at the top of its priorities. It is working intelligently to enhance its combat readiness and implement a strategy of immediate, effective and proportionate retaliation against any threat, anywhere and without geographical restrictions.",
+      "output_text": "دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:\n\nنیروی هوافضای سپاه پاسداران امروز، دستورات و رهنمودهای حکیمانه فرمانده کل قوا را در صدر اولویت‌های خود قرار داده و با هوشمندی برای ارتقای آمادگی رزمی خود و اجرای راهبرد پاسخ فوری، مؤثر و متناسب به هرگونه تهدید، در هر مکانی و بدون محدودیت جغرافیایی تلاش می‌کند.",
+      "last_edit_timestamp": 1794499056.0
+    },
+    "withyashar_27909": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 873,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد 🚨🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27909\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 873,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد 🚨🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27909\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 27909,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد\n@WarRoom 🚨🚨🚨🚨",
+          "output_text": "رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد\n@WarRoom 🚨🚨🚨🚨",
+          "last_edit_timestamp": 1794499380.0
+        }
+      ],
+      "active_text_source": "withyashar_27909",
+      "sent_timestamp": 1794498921.2322998,
+      "source_node": "withyashar",
+      "msg_id": 27909,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد\n@WarRoom 🚨🚨🚨🚨",
+      "output_text": "رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد\n@WarRoom 🚨🚨🚨🚨",
+      "last_edit_timestamp": 1794499380.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-12T15:44:55.910040+00:00"
+  "updated_at": "2026-11-12T16:11:20.815097+00:00"
 }
