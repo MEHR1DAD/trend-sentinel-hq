@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27915,
-      "last_read_time": "2026-11-12 16:50:57 UTC"
+      "last_read_id": 27917,
+      "last_read_time": "2026-11-12 17:23:02 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8166,
-      "last_read_time": "2026-11-12 16:56:19 UTC"
+      "last_read_id": 8172,
+      "last_read_time": "2026-11-12 17:21:55 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79089,
@@ -31,74 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27911": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 874,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سنتکام : ما اینجاییم ! جنگنده‌های رادارگریز F-35A لایتنینگ ۲ نیروی هوایی ایالات متحده بر فراز آسمان خاورمیانه گشت‌زنی می‌کنند. 🚨🚨\n\n📷 منبع: <a href=\"https://t.me/withyashar/27911\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 874,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سنتکام : ما اینجاییم ! جنگنده‌های رادارگریز F-35A لایتنینگ ۲ نیروی هوایی ایالات متحده بر فراز آسمان خاورمیانه گشت‌زنی می‌کنند. 🚨🚨\n\n📷 منبع: <a href=\"https://t.me/withyashar/27911\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 27911,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "سنتکام : ما اینجاییم !\nجنگنده‌های رادارگریز F-35A لایتنینگ ۲ نیروی هوایی ایالات متحده بر فراز آسمان خاورمیانه گشت‌زنی می‌کنند.\n@WarRoom 🚨🚨",
-          "output_text": "سنتکام : ما اینجاییم !\nجنگنده‌های رادارگریز F-35A لایتنینگ ۲ نیروی هوایی ایالات متحده بر فراز آسمان خاورمیانه گشت‌زنی می‌کنند.\n@WarRoom 🚨🚨",
-          "last_edit_timestamp": 1794500765.9917274
-        }
-      ],
-      "active_text_source": "withyashar_27911",
-      "sent_timestamp": 1794500766.4461684,
-      "source_node": "withyashar",
-      "msg_id": 27911,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "سنتکام : ما اینجاییم !\nجنگنده‌های رادارگریز F-35A لایتنینگ ۲ نیروی هوایی ایالات متحده بر فراز آسمان خاورمیانه گشت‌زنی می‌کنند.\n@WarRoom 🚨🚨",
-      "output_text": "سنتکام : ما اینجاییم !\nجنگنده‌های رادارگریز F-35A لایتنینگ ۲ نیروی هوایی ایالات متحده بر فراز آسمان خاورمیانه گشت‌زنی می‌کنند.\n@WarRoom 🚨🚨",
-      "last_edit_timestamp": 1794500761.0
-    },
-    "Ali_bk_8_8162": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 875,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 شلیک موشک به‌سوی کشتی‌های متخلف در تنگه هرمز.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8162\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 875,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 شلیک موشک به‌سوی کشتی‌های متخلف در تنگه هرمز.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8162\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8162,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "شلیک موشک به‌سوی کشتی‌های متخلف در تنگه هرمز.\n\nMissiles launched toward noncompliant vessels in the Strait of Hormuz.",
-          "output_text": "شلیک موشک به‌سوی کشتی‌های متخلف در تنگه هرمز.",
-          "last_edit_timestamp": 1794500965.1013138
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8162",
-      "sent_timestamp": 1794500965.4606395,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8162,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "شلیک موشک به‌سوی کشتی‌های متخلف در تنگه هرمز.\n\nMissiles launched toward noncompliant vessels in the Strait of Hormuz.",
-      "output_text": "شلیک موشک به‌سوی کشتی‌های متخلف در تنگه هرمز.",
-      "last_edit_timestamp": 1794500962.0
-    },
     "withyashar_27913": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 876,
@@ -267,8 +199,110 @@
       "grouped_id": 14356023657686649,
       "raw_text": "تصاویر دریافتی از شهروندان با شرح پرتاب سه موشک از سمت بیدگنه\n+\nخبرگزاری مهر، وابسته به سازمان تبلیغات اسلامی، روز پنج‌شنبه ۲۱ آبان ۱۴۰۵ ویدیویی از آسمان تهران منتشر  و اعلام کرد که نیروهای مسلح جمهوری اسلامی «موشک‌های جدید» را در غرب پایتخت ایران آزمایش کرده‌اند.\n@VahidHeadline\n\n📡 @VahidOnline",
       "output_text": "تصاویر دریافتی از شهروندان با شرح پرتاب سه موشک از سمت بیدگنه\n+\nخبرگزاری مهر، وابسته به سازمان تبلیغات اسلامی، روز پنج‌شنبه ۲۱ آبان ۱۴۰۵ ویدیویی از آسمان تهران منتشر  و اعلام کرد که نیروهای مسلح جمهوری اسلامی «موشک‌های جدید» را در غرب پایتخت ایران آزمایش کرده‌اند.\n@VahidHeadline\n\n📡 @VahidOnline"
+    },
+    "withyashar_27916": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 882,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 گزارش در انفجار سرخور طاهروئی ۶ کیلومتری سیریک 🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27916\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 882,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 گزارش در انفجار سرخور طاهروئی ۶ کیلومتری سیریک 🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27916\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 27916,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "گزارش در انفجار سرخور طاهروئی ۶ کیلومتری سیریک \n@WarRoom 🚨🚨🚨",
+          "output_text": "گزارش در انفجار سرخور طاهروئی ۶ کیلومتری سیریک \n@WarRoom 🚨🚨🚨",
+          "last_edit_timestamp": 1794503677.7166662
+        }
+      ],
+      "active_text_source": "withyashar_27916",
+      "sent_timestamp": 1794503678.3224616,
+      "source_node": "withyashar",
+      "msg_id": 27916,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "گزارش در انفجار سرخور طاهروئی ۶ کیلومتری سیریک \n@WarRoom 🚨🚨🚨",
+      "output_text": "گزارش در انفجار سرخور طاهروئی ۶ کیلومتری سیریک \n@WarRoom 🚨🚨🚨",
+      "last_edit_timestamp": 1794503668.0
+    },
+    "Ali_bk_8_8171": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 883,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 صدای انفجار در نزدیکی سیریک ایران شنیده شد.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8171\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 883,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 صدای انفجار در نزدیکی سیریک ایران شنیده شد.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8171\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8171,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "صدای انفجار در نزدیکی سیریک ایران شنیده شد.\n\nAn explosion was heard near Iran's Sirik.",
+          "output_text": "صدای انفجار در نزدیکی سیریک ایران شنیده شد.",
+          "last_edit_timestamp": 1794503854.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8171",
+      "sent_timestamp": 1794503752.7088468,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8171,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "صدای انفجار در نزدیکی سیریک ایران شنیده شد.\n\nAn explosion was heard near Iran's Sirik.",
+      "output_text": "صدای انفجار در نزدیکی سیریک ایران شنیده شد.",
+      "last_edit_timestamp": 1794503854.0
+    },
+    "Ali_bk_8_8172": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 884,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح یمن یک هواپیمای ترابری نظامی را در فرودگاه شروره با استفاده از یک پهپاد هدف قرار دادند و به لطف خدا عملیات با موفقیت به هدف خود رسید. در عملیاتی دیگر، پایگاه هوایی خمیس مشیط با یک موشک بالستیک هدف قرار گرفت و به لطف خدا اصابت مستقیم بود.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8172\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 884,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح یمن یک هواپیمای ترابری نظامی را در فرودگاه شروره با استفاده از یک پهپاد هدف قرار دادند و به لطف خدا عملیات با موفقیت به هدف خود رسید. در عملیاتی دیگر، پایگاه هوایی خمیس مشیط با یک موشک بالستیک هدف قرار گرفت و به لطف خدا اصابت مستقیم بود.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8172\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8172,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح یمن یک هواپیمای ترابری نظامی را در فرودگاه شروره با استفاده از یک پهپاد هدف قرار دادند و به لطف خدا عملیات با موفقیت به هدف خود رسید. در عملیاتی دیگر، پایگاه هوایی خمیس مشیط با یک موشک بالستیک هدف قرار گرفت و به لطف خدا اصابت مستقیم بود.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nThe Yemeni Armed Forces targeted a military cargo aircraft at Sharurah Airport using a drone. The operation successfully achieved its objective, thanks to God. In a separate operation, they targeted Khamis Mushait Air Base with a ballistic missile, scoring a direct hit, thanks to God.",
+          "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح یمن یک هواپیمای ترابری نظامی را در فرودگاه شروره با استفاده از یک پهپاد هدف قرار دادند و به لطف خدا عملیات با موفقیت به هدف خود رسید. در عملیاتی دیگر، پایگاه هوایی خمیس مشیط با یک موشک بالستیک هدف قرار گرفت و به لطف خدا اصابت مستقیم بود.",
+          "last_edit_timestamp": 1794504176.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8172",
+      "sent_timestamp": 1794504120.3074338,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8172,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح یمن یک هواپیمای ترابری نظامی را در فرودگاه شروره با استفاده از یک پهپاد هدف قرار دادند و به لطف خدا عملیات با موفقیت به هدف خود رسید. در عملیاتی دیگر، پایگاه هوایی خمیس مشیط با یک موشک بالستیک هدف قرار گرفت و به لطف خدا اصابت مستقیم بود.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nThe Yemeni Armed Forces targeted a military cargo aircraft at Sharurah Airport using a drone. The operation successfully achieved its objective, thanks to God. In a separate operation, they targeted Khamis Mushait Air Base with a ballistic missile, scoring a direct hit, thanks to God.",
+      "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح یمن یک هواپیمای ترابری نظامی را در فرودگاه شروره با استفاده از یک پهپاد هدف قرار دادند و به لطف خدا عملیات با موفقیت به هدف خود رسید. در عملیاتی دیگر، پایگاه هوایی خمیس مشیط با یک موشک بالستیک هدف قرار گرفت و به لطف خدا اصابت مستقیم بود.",
+      "last_edit_timestamp": 1794504176.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-12T17:04:09.399781+00:00"
+  "updated_at": "2026-11-12T17:30:37.527278+00:00"
 }
