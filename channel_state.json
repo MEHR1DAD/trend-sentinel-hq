@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27909,
-      "last_read_time": "2026-11-12 15:55:06 UTC"
+      "last_read_id": 27913,
+      "last_read_time": "2026-11-12 16:33:34 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8160,
-      "last_read_time": "2026-11-12 15:48:20 UTC"
+      "last_read_id": 8163,
+      "last_read_time": "2026-11-12 16:35:11 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79083,
@@ -31,40 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27905": {
-      "target_channel": "@DidehbanEghtesad",
-      "bot_msg_id": 72,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 بیلاخ تتر به بابی اسکمرجانی : ۲۷۱،۰۰۰ تومان\n\n📝 منبع: <a href=\"https://t.me/withyashar/27905\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidehbanEghtesad",
-          "bot_msg_id": 72,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 بیلاخ تتر به بابی اسکمرجانی : ۲۷۱،۰۰۰ تومان\n\n📝 منبع: <a href=\"https://t.me/withyashar/27905\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 27905,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "بیلاخ تتر به بابی اسکمرجانی : ۲۷۱،۰۰۰ تومان\n@WarRoom",
-          "output_text": "بیلاخ تتر به بابی اسکمرجانی : ۲۷۱،۰۰۰ تومان\n@WarRoom",
-          "last_edit_timestamp": 1794496827.9634302
-        }
-      ],
-      "active_text_source": "withyashar_27905",
-      "sent_timestamp": 1794496828.4033175,
-      "source_node": "withyashar",
-      "msg_id": 27905,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "بیلاخ تتر به بابی اسکمرجانی : ۲۷۱،۰۰۰ تومان\n@WarRoom",
-      "output_text": "بیلاخ تتر به بابی اسکمرجانی : ۲۷۱،۰۰۰ تومان\n@WarRoom",
-      "last_edit_timestamp": 1794496804.0
-    },
     "Ali_bk_8_8159": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 871,
@@ -166,8 +132,144 @@
       "raw_text": "رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد\n@WarRoom 🚨🚨🚨🚨",
       "output_text": "رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد\n@WarRoom 🚨🚨🚨🚨",
       "last_edit_timestamp": 1794499380.0
+    },
+    "withyashar_27911": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 874,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سنتکام : ما اینجاییم ! جنگنده‌های رادارگریز F-35A لایتنینگ ۲ نیروی هوایی ایالات متحده بر فراز آسمان خاورمیانه گشت‌زنی می‌کنند. 🚨🚨\n\n📷 منبع: <a href=\"https://t.me/withyashar/27911\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 874,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سنتکام : ما اینجاییم ! جنگنده‌های رادارگریز F-35A لایتنینگ ۲ نیروی هوایی ایالات متحده بر فراز آسمان خاورمیانه گشت‌زنی می‌کنند. 🚨🚨\n\n📷 منبع: <a href=\"https://t.me/withyashar/27911\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 27911,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "سنتکام : ما اینجاییم !\nجنگنده‌های رادارگریز F-35A لایتنینگ ۲ نیروی هوایی ایالات متحده بر فراز آسمان خاورمیانه گشت‌زنی می‌کنند.\n@WarRoom 🚨🚨",
+          "output_text": "سنتکام : ما اینجاییم !\nجنگنده‌های رادارگریز F-35A لایتنینگ ۲ نیروی هوایی ایالات متحده بر فراز آسمان خاورمیانه گشت‌زنی می‌کنند.\n@WarRoom 🚨🚨",
+          "last_edit_timestamp": 1794500765.9917274
+        }
+      ],
+      "active_text_source": "withyashar_27911",
+      "sent_timestamp": 1794500766.4461684,
+      "source_node": "withyashar",
+      "msg_id": 27911,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "سنتکام : ما اینجاییم !\nجنگنده‌های رادارگریز F-35A لایتنینگ ۲ نیروی هوایی ایالات متحده بر فراز آسمان خاورمیانه گشت‌زنی می‌کنند.\n@WarRoom 🚨🚨",
+      "output_text": "سنتکام : ما اینجاییم !\nجنگنده‌های رادارگریز F-35A لایتنینگ ۲ نیروی هوایی ایالات متحده بر فراز آسمان خاورمیانه گشت‌زنی می‌کنند.\n@WarRoom 🚨🚨",
+      "last_edit_timestamp": 1794500761.0
+    },
+    "Ali_bk_8_8162": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 875,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 شلیک موشک به‌سوی کشتی‌های متخلف در تنگه هرمز.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8162\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 875,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 شلیک موشک به‌سوی کشتی‌های متخلف در تنگه هرمز.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8162\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8162,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "شلیک موشک به‌سوی کشتی‌های متخلف در تنگه هرمز.\n\nMissiles launched toward noncompliant vessels in the Strait of Hormuz.",
+          "output_text": "شلیک موشک به‌سوی کشتی‌های متخلف در تنگه هرمز.",
+          "last_edit_timestamp": 1794500965.1013138
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8162",
+      "sent_timestamp": 1794500965.4606395,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8162,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "شلیک موشک به‌سوی کشتی‌های متخلف در تنگه هرمز.\n\nMissiles launched toward noncompliant vessels in the Strait of Hormuz.",
+      "output_text": "شلیک موشک به‌سوی کشتی‌های متخلف در تنگه هرمز.",
+      "last_edit_timestamp": 1794500962.0
+    },
+    "withyashar_27913": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 876,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 حقیقت‌یاب اتاق جنگ : خبر تعطیلی گسترده برای انتشار GTA 6 در روسیه توسط پوتین فیکنیوز ادمین های زرد میباشد ! فقط مدیر چند کارخانه در روسیه گفتن هر کسی پی‌اس۵ داره و  ثابت کنه بازی رو هم خریده میتونه بازی کنه مرخصی میدیم ⚠️⚠️⚠️\n\n📝 منبع: <a href=\"https://t.me/withyashar/27913\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 876,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 حقیقت‌یاب اتاق جنگ : خبر تعطیلی گسترده برای انتشار GTA 6 در روسیه توسط پوتین فیکنیوز ادمین های زرد میباشد ! فقط مدیر چند کارخانه در روسیه گفتن هر کسی پی‌اس۵ داره و  ثابت کنه بازی رو هم خریده میتونه بازی کنه مرخصی میدیم ⚠️⚠️⚠️\n\n📝 منبع: <a href=\"https://t.me/withyashar/27913\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 27913,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "حقیقت‌یاب اتاق جنگ : خبر تعطیلی گسترده برای انتشار GTA 6 در روسیه توسط پوتین فیکنیوز ادمین های زرد میباشد !\nفقط مدیر چند کارخانه در روسیه گفتن هر کسی پی‌اس۵ داره و  ثابت کنه بازی رو هم خریده میتونه بازی کنه مرخصی میدیم\n@WarRoom ⚠️⚠️⚠️",
+          "output_text": "حقیقت‌یاب اتاق جنگ : خبر تعطیلی گسترده برای انتشار GTA 6 در روسیه توسط پوتین فیکنیوز ادمین های زرد میباشد !\nفقط مدیر چند کارخانه در روسیه گفتن هر کسی پی‌اس۵ داره و  ثابت کنه بازی رو هم خریده میتونه بازی کنه مرخصی میدیم\n@WarRoom ⚠️⚠️⚠️",
+          "last_edit_timestamp": 1794501224.4266655
+        }
+      ],
+      "active_text_source": "withyashar_27913",
+      "sent_timestamp": 1794501224.8441346,
+      "source_node": "withyashar",
+      "msg_id": 27913,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "حقیقت‌یاب اتاق جنگ : خبر تعطیلی گسترده برای انتشار GTA 6 در روسیه توسط پوتین فیکنیوز ادمین های زرد میباشد !\nفقط مدیر چند کارخانه در روسیه گفتن هر کسی پی‌اس۵ داره و  ثابت کنه بازی رو هم خریده میتونه بازی کنه مرخصی میدیم\n@WarRoom ⚠️⚠️⚠️",
+      "output_text": "حقیقت‌یاب اتاق جنگ : خبر تعطیلی گسترده برای انتشار GTA 6 در روسیه توسط پوتین فیکنیوز ادمین های زرد میباشد !\nفقط مدیر چند کارخانه در روسیه گفتن هر کسی پی‌اس۵ داره و  ثابت کنه بازی رو هم خریده میتونه بازی کنه مرخصی میدیم\n@WarRoom ⚠️⚠️⚠️",
+      "last_edit_timestamp": 1794501223.0
+    },
+    "Ali_bk_8_8163": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 877,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8163\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 877,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8163\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8163,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.\n\nYemeni Armed Forces spokesman Brig. Gen. Yahya Saree:\n\nOur armed forces, by the grace of God, carried out six strikes targeting the Saudi enemy's reinforcements overseen by Saudi officer Badr al-Harbi at the Kharaz camp and other positions in Ras al-Arah and Kharaz in Lahij governorate, using six ballistic missiles. The strikes scored direct hits, by the grace of God, leaving dozens killed and wounded.",
+          "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.",
+          "last_edit_timestamp": 1794501338.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8163",
+      "sent_timestamp": 1794501330.1984425,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8163,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.\n\nYemeni Armed Forces spokesman Brig. Gen. Yahya Saree:\n\nOur armed forces, by the grace of God, carried out six strikes targeting the Saudi enemy's reinforcements overseen by Saudi officer Badr al-Harbi at the Kharaz camp and other positions in Ras al-Arah and Kharaz in Lahij governorate, using six ballistic missiles. The strikes scored direct hits, by the grace of God, leaving dozens killed and wounded.",
+      "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.",
+      "last_edit_timestamp": 1794501338.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-12T16:11:20.815097+00:00"
+  "updated_at": "2026-11-12T16:37:45.422087+00:00"
 }
