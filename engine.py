@@ -73,6 +73,33 @@ class SentinelEngine:
             "ignored_show_titles", ["اتاق جنگ با یاشار", "اتاق جنگ یاشار", "دیدبان اتاق جنگ"]
         )
 
+        # Cross-source event deduplication lexicons (v6)
+        self.dedup_phrase_replacements = sorted(
+            [
+                (self._dedup_norm(k), self._dedup_norm(v))
+                for k, v in self.patterns.get("dedup_phrase_replacements", {}).items()
+                if k and v
+            ],
+            key=lambda kv: len(kv[0]),
+            reverse=True,
+        )
+        self.dedup_synonyms = {
+            self._dedup_norm(k): self._dedup_norm(v)
+            for k, v in self.patterns.get("dedup_synonyms", {}).items()
+            if k and v
+        }
+        self.dedup_stopwords = {
+            self._dedup_norm(w) for w in self.patterns.get("dedup_stopwords", []) if w
+        }
+        self.dedup_low_weight_terms = {
+            self._stem_persian_token(self._dedup_norm(w))
+            for w in self.patterns.get("dedup_low_weight_terms", [])
+            if w
+        }
+        self.dedup_specific_locations = [
+            self._dedup_norm(loc) for loc in self.patterns.get("dedup_specific_locations", []) if loc
+        ]
+
     def _load_patterns(self) -> dict:
         if not os.path.exists(self.pattern_path):
             raise FileNotFoundError(f"Pattern matrix file not found at: {self.pattern_path}")
@@ -646,3 +673,176 @@ class SentinelEngine:
             "output_text": output_raw_text,
             "is_iran_internet": is_iran_internet,
         }
+
+    # =========================================================================
+    # CROSS-SOURCE EVENT DEDUPLICATION & FINGERPRINTING (v6)
+    # =========================================================================
+    @classmethod
+    def _dedup_norm(cls, text: str) -> str:
+        """Normalizes Persian/Arabic alef variants, strips all Arabic/Latin punctuation, and normalizes whitespace."""
+        norm = cls.normalize_text(text)
+        norm = norm.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا").replace("ؤ", "و").replace("ئ", "ی")
+        # Strip Arabic/Persian punctuation (U+060C comma, U+061B semicolon, U+061F ?, U+0640 tatweel, etc.) & symbols
+        norm = re.sub(r"[\u060C\u061B\u061F\u066B\u066C\u06D4\u0640«»\"'`.,:;!?@#$%^&*()\[\]{}<>/\\|~+=_-]+", " ", norm)
+        norm = re.sub(r"[^\w\s\u0600-\u06FF]", " ", norm)
+        return re.sub(r"\s+", " ", norm).strip()
+
+    @staticmethod
+    def _stem_persian_token(token: str) -> str:
+        """Safe plural suffix stripping (preserves roots like ایران / سازمان / تولید / تصمیم)."""
+        if len(token) > 4:
+            stemmed = re.sub(r"(?:هایی|های|ها)$", "", token)
+            if len(stemmed) >= 3:
+                return stemmed
+        return token
+
+    @staticmethod
+    def strip_promotional_noise(raw_text: str) -> str:
+        """Removes @mentions, URLs, hashtags, and footer watermarks for clean length/fingerprint comparison."""
+        if not raw_text:
+            return ""
+        text = re.sub(r"https?://\S+", " ", raw_text)
+        text = re.sub(r"@[\w_]+", " ", text)
+        text = re.sub(r"#[a-zA-Z0-9_\u0600-\u06FF]+", " ", text)
+        text = re.sub(r"\*+", "", text)
+        return re.sub(r"\s+", " ", text).strip()
+
+    def build_event_fingerprint(self, raw_text: str, source_node: str = "") -> Dict:
+        """
+        Builds a pure-Python weighted event fingerprint containing:
+          - token_weights: distinctive entity/number anchors (weight 3) vs boilerplate terms (weight 1)
+          - anchors: set of weight-3 tokens
+          - specific_locations: extracted sub-national cities, bases, islands, fronts
+        """
+        clean_node = (source_node or "").lstrip("@").lower()
+        body = raw_text or ""
+        if clean_node == "ali_bk_8" and self.has_persian_text(body):
+            body = self.extract_persian_text(body) or body
+
+        stripped = self.strip_promotional_noise(body)
+        norm = self._dedup_norm(self.clean_for_matching(self.normalize_text(stripped)))
+
+        for phrase_src, phrase_dst in self.dedup_phrase_replacements:
+            if phrase_src in norm:
+                norm = norm.replace(phrase_src, phrase_dst)
+
+        specific_locations = set()
+        for loc in self.dedup_specific_locations:
+            if re.search(rf"(?<![\u0600-\u06FFa-z0-9_]){re.escape(loc)}(?![\u0600-\u06FFa-z0-9_])", norm):
+                specific_locations.add(loc)
+
+        token_weights: Dict[str, int] = {}
+        anchors = set()
+        numbers = set()
+
+        for raw_tok in norm.split():
+            tok = raw_tok.strip("_")
+            if not tok:
+                continue
+            is_num = tok.isdigit()
+            if len(tok) <= 1 and not is_num:
+                continue
+            if tok in self.dedup_stopwords:
+                continue
+
+            if not is_num:
+                tok = self.dedup_synonyms.get(tok, tok)
+                tok = self._stem_persian_token(tok)
+                tok = self.dedup_synonyms.get(tok, tok)
+                if len(tok) <= 1 or tok in self.dedup_stopwords:
+                    continue
+
+            if is_num:
+                if tok in {"0", "1"}:
+                    continue
+                weight = 3
+                numbers.add(tok)
+                anchors.add(tok)
+            elif tok in self.dedup_low_weight_terms:
+                weight = 1
+            else:
+                weight = 3
+                anchors.add(tok)
+
+            if token_weights.get(tok, 0) < weight:
+                token_weights[tok] = weight
+
+        return {
+            "source_node": clean_node,
+            "is_english_netblocks": (clean_node == "netblocks"),
+            "token_weights": token_weights,
+            "anchors": anchors,
+            "numbers": numbers,
+            "specific_locations": specific_locations,
+            "char_len": len(stripped),
+        }
+
+    def is_duplicate_event(self, new_fp: Dict, existing_fp: Dict) -> bool:
+        """
+        Determines whether two news posts describe the same real-world event using
+        rare-entity weighted overlap + specific-location conflict veto.
+        """
+        if not new_fp or not existing_fp:
+            return False
+
+        # Never merge/drop @netblocks English reports against Persian posts
+        if new_fp.get("is_english_netblocks") != existing_fp.get("is_english_netblocks"):
+            return False
+
+        w1 = new_fp.get("token_weights") or {}
+        w2 = existing_fp.get("token_weights") or {}
+        if not w1 or not w2:
+            return False
+
+        locs1 = new_fp.get("specific_locations") or set()
+        locs2 = existing_fp.get("specific_locations") or set()
+        if locs1 and locs2 and not (locs1 & locs2):
+            return False
+
+        shared_tokens = set(w1.keys()) & set(w2.keys())
+        if not shared_tokens:
+            return False
+
+        shared_weight = sum(min(w1[t], w2[t]) for t in shared_tokens)
+        total1 = sum(w1.values())
+        total2 = sum(w2.values())
+        min_total_weight = min(total1, total2)
+        max_total_weight = max(total1, total2)
+        if min_total_weight <= 0:
+            return False
+
+        weighted_overlap = shared_weight / min_total_weight
+        weight_ratio = max_total_weight / min_total_weight
+        shared_anchors = (new_fp.get("anchors") or set()) & (existing_fp.get("anchors") or set())
+
+        src1 = new_fp.get("source_node", "")
+        src2 = existing_fp.get("source_node", "")
+        if src1 and src1 == src2:
+            # Same-source: block only near-exact duplicates, preserve follow-up dispatches
+            return weighted_overlap >= 0.88 and weight_ratio <= 2.0 and len(shared_anchors) >= 3
+
+        # Guard against a massive omnibus roundup (e.g. 16-min speech summary) swallowing a 1-line breaking alert
+        if weight_ratio > 4.5 and weighted_overlap < 0.85:
+            return False
+
+        if weighted_overlap >= 0.55 and len(shared_anchors) >= 3:
+            return True
+        if weighted_overlap >= 0.65 and len(shared_anchors) >= 2:
+            return True
+        if weight_ratio <= 4.0 and weighted_overlap >= 0.40 and len(shared_anchors) >= 7:
+            return True
+        if weight_ratio <= 2.5 and weighted_overlap >= 0.34 and len(shared_anchors) >= 11:
+            return True
+        return False
+
+    def should_upgrade_text(self, current_text: str, candidate_text: str) -> bool:
+        """Returns True if candidate_text is meaningfully richer/longer than current_text."""
+        cur_clean = self.strip_promotional_noise(current_text)
+        cand_clean = self.strip_promotional_noise(candidate_text)
+        cur_len = len(cur_clean)
+        cand_len = len(cand_clean)
+        if cand_len <= cur_len:
+            return False
+        if cur_len < 120 and (cand_len - cur_len) >= 30:
+            return True
+        return cand_len >= cur_len * 1.25 and (cand_len - cur_len) >= 40

@@ -156,6 +156,146 @@ class TrendSentinelV4:
             return synthesized
         return []
 
+    def _get_sources(self, alert_info: dict) -> list:
+        """
+        Normalizes sent_alerts_map entries into a list of contributing source dicts (v6)
+        for seamless backward compatibility with v4/v5 single-source entries.
+        """
+        sources = alert_info.get("sources")
+        if isinstance(sources, list) and sources:
+            return sources
+        node = alert_info.get("source_node", "")
+        msg_id = alert_info.get("msg_id")
+        if node and msg_id is not None:
+            synthesized = [{
+                "source_node": node,
+                "msg_id": int(msg_id),
+                "media_icons": alert_info.get("media_icons", self.TEXT_ICON),
+                "grouped_id": alert_info.get("grouped_id"),
+                "raw_text": alert_info.get("raw_text", ""),
+                "output_text": alert_info.get("output_text", ""),
+                "last_edit_timestamp": float(alert_info.get("last_edit_timestamp", alert_info.get("sent_timestamp", 0))),
+            }]
+            alert_info["sources"] = synthesized
+            alert_info.setdefault("active_text_source", f"{node}_{int(msg_id)}")
+            return synthesized
+        return []
+
+    def _find_alert_by_source(self, source_node: str, msg_id: int) -> Optional[tuple]:
+        """Finds `(entry_key, alert_info, source_item)` for an active tracked source message."""
+        direct_key = f"{source_node}_{msg_id}"
+        if direct_key in self.sent_alerts_map:
+            info = self.sent_alerts_map[direct_key]
+            for src in self._get_sources(info):
+                if src.get("source_node") == source_node and int(src.get("msg_id", 0)) == int(msg_id):
+                    return direct_key, info, src
+            return direct_key, info, (self._get_sources(info)[0] if self._get_sources(info) else None)
+
+        for key, info in self.sent_alerts_map.items():
+            for src in self._get_sources(info):
+                if src.get("source_node") == source_node and int(src.get("msg_id", 0)) == int(msg_id):
+                    return key, info, src
+        return None
+
+    def _pick_richest_source(self, sources: list) -> Optional[dict]:
+        """Returns the contributing source with the richest meaningful body text."""
+        if not sources:
+            return None
+        return max(
+            sources,
+            key=lambda s: len(self.engine.strip_promotional_noise(s.get("output_text") or s.get("raw_text") or "")),
+        )
+
+    def _rerender_alert_entry(
+        self,
+        alert_info: dict,
+        meta_by_ch: Optional[dict] = None,
+        eval_res: Optional[dict] = None,
+    ) -> bool:
+        """
+        Re-renders alert text & per-source footer across all target dispatches using current
+        active text and contributing sources, calling editMessageText only when text changed.
+        """
+        sources = self._get_sources(alert_info)
+        if not sources:
+            return False
+
+        primary = sources[0]
+        display_text = alert_info.get("output_text") or alert_info.get("raw_text") or primary.get("output_text") or primary.get("raw_text") or ""
+        if not display_text:
+            return False
+
+        dispatches = self._get_dispatches(alert_info)
+        any_edited = False
+        for d in dispatches:
+            target_ch = d["target_channel"]
+            bot_msg_id = d["bot_msg_id"]
+            orig_icon = d.get("status_icon", alert_info.get("status_icon", "🔕"))
+            status_icon = orig_icon
+
+            if meta_by_ch is not None or eval_res is not None:
+                if meta_by_ch and target_ch in meta_by_ch:
+                    if meta_by_ch[target_ch].get("severity") == "URGENT":
+                        status_icon = "🚨" if orig_icon == "🚨" else "🚨🔕"
+                elif eval_res and eval_res.get("status") == "MATCHED" and eval_res.get("severity") == "URGENT":
+                    status_icon = "🚨" if orig_icon == "🚨" else "🚨🔕"
+
+            formatted_text = self.sanitize_and_format_alert(
+                display_text,
+                primary.get("source_node", ""),
+                int(primary.get("msg_id", 0)),
+                status_icon,
+                media_icons=primary.get("media_icons", self.TEXT_ICON),
+                sources=sources,
+            )
+            if not formatted_text or formatted_text == d.get("last_formatted_text"):
+                continue
+
+            if self.edit_bot_alert(target_ch, bot_msg_id, formatted_text):
+                d["status_icon"] = status_icon
+                d["last_formatted_text"] = formatted_text
+                self.alerts_edited += 1
+                any_edited = True
+
+        # Keep legacy top-level fields synchronized
+        alert_info["source_node"] = primary.get("source_node", alert_info.get("source_node", ""))
+        alert_info["msg_id"] = int(primary.get("msg_id", alert_info.get("msg_id", 0)))
+        alert_info["media_icons"] = primary.get("media_icons", self.TEXT_ICON)
+        alert_info["grouped_id"] = primary.get("grouped_id")
+        if dispatches:
+            alert_info["status_icon"] = dispatches[0].get("status_icon", alert_info.get("status_icon", "🔕"))
+            alert_info["last_formatted_text"] = dispatches[0].get("last_formatted_text", "")
+        return any_edited
+
+    def _find_duplicate_alert(self, display_text: str, source_node: str, msg_id: int, target_channels: list) -> Optional[tuple]:
+        """
+        Searches active (<60m) alerts sharing at least one destination channel for an equivalent
+        real-world event using the v6 3-signal deduplicator.
+        """
+        new_fp = self.engine.build_event_fingerprint(display_text, source_node)
+        now = time.time()
+        target_set = set(target_channels)
+
+        for entry_key, info in self.sent_alerts_map.items():
+            sent_ts = float(info.get("sent_timestamp", 0))
+            if now - sent_ts > config.EDIT_DELETE_WINDOW_SEC:
+                continue
+
+            existing_channels = {d.get("target_channel") for d in self._get_dispatches(info) if d.get("target_channel")}
+            if not (existing_channels & target_set):
+                continue
+
+            sources = self._get_sources(info)
+            if any(s.get("source_node") == source_node and int(s.get("msg_id", 0)) == int(msg_id) for s in sources):
+                continue
+
+            for src in sources:
+                src_text = src.get("output_text") or src.get("raw_text") or ""
+                existing_fp = self.engine.build_event_fingerprint(src_text, src.get("source_node", ""))
+                if self.engine.is_duplicate_event(new_fp, existing_fp):
+                    return entry_key, info
+        return None
+
     def resolve_alert_mode_and_icon(self, target_channel: str, is_engine_urgent: bool) -> tuple:
         """
         Anti-Spam 15-Minute Rule:
@@ -220,7 +360,10 @@ class TrendSentinelV4:
         now = time.time()
         for k, v in self.sent_alerts_map.items():
             mins_ago = int((now - float(v.get("sent_timestamp", now))) / 60)
-            icons = v.get("media_icons", self.TEXT_ICON)
+            sources = self._get_sources(v)
+            icons = " | ".join(
+                f"{s.get('media_icons', self.TEXT_ICON)} @{s.get('source_node')}" for s in sources
+            ) if len(sources) > 1 else v.get("media_icons", self.TEXT_ICON)
             dispatches = self._get_dispatches(v)
             dest_summary = ", ".join(f"{d.get('target_channel')} (#{d.get('bot_msg_id')})" for d in dispatches)
             edit_watcher_lines.append(f"- `{k}` -> {dest_summary} ({icons}, {mins_ago}m ago)")
@@ -336,16 +479,24 @@ class TrendSentinelV4:
         return cache_key
 
     def _find_alert_by_group(self, source_node: str, grouped_id) -> Optional[tuple]:
-        """Finds an active (<60m) dispatched alert entry matching (source_node, grouped_id)."""
+        """Finds an active (<60m) dispatched alert entry matching (source_node, grouped_id) across all merged sources."""
         if not grouped_id:
             return None
         for key, info in self.sent_alerts_map.items():
-            if info.get("source_node") == source_node and info.get("grouped_id") == grouped_id:
-                return key, info
+            for src in self._get_sources(info):
+                if src.get("source_node") == source_node and src.get("grouped_id") == grouped_id:
+                    return key, info
         return None
 
     @staticmethod
-    def sanitize_and_format_alert(raw_text: str, source_node: str, msg_id: int, status_icon: str, media_icons: str = "📝") -> str:
+    def sanitize_and_format_alert(
+        raw_text: str,
+        source_node: str,
+        msg_id: int,
+        status_icon: str,
+        media_icons: str = "📝",
+        sources: Optional[list] = None,
+    ) -> str:
         """
         Sanitizes raw text, removes asterisks, strips inline & trailing promotional watermarks
         (including @VahidHeadline, @VahidOOnLine, and '📡 @VahidOnline'),
@@ -423,11 +574,23 @@ class TrendSentinelV4:
         all_body = [formatted_first_p] + paragraphs[1:]
         body_text = "\n\n".join(all_body)
 
-        # 5. Clean single-line hyperlinked source footer with source content icon(s)
-        clean_node = source_node.lstrip('@')
-        source_url = f"https://t.me/{clean_node}/{msg_id}"
-        icons_prefix = media_icons or "📝"
-        footer = f'{icons_prefix} منبع: <a href="{source_url}">@{clean_node}</a>'
+        # 5. Clean single-line hyperlinked source footer with per-source content icon(s)
+        if sources and len(sources) >= 2:
+            src_links = []
+            for src in sources:
+                clean_src = str(src.get("source_node", "")).lstrip('@')
+                src_id = src.get("msg_id")
+                src_icons = src.get("media_icons") or "📝"
+                src_url = f"https://t.me/{clean_src}/{src_id}"
+                src_links.append(f'{src_icons} <a href="{src_url}">@{clean_src}</a>')
+            footer = "منبع: " + " | ".join(src_links)
+        else:
+            primary_src = sources[0] if sources else None
+            clean_node = (primary_src.get("source_node", source_node) if primary_src else source_node).lstrip('@')
+            primary_id = primary_src.get("msg_id", msg_id) if primary_src else msg_id
+            icons_prefix = (primary_src.get("media_icons") if primary_src else media_icons) or "📝"
+            source_url = f"https://t.me/{clean_node}/{primary_id}"
+            footer = f'{icons_prefix} منبع: <a href="{source_url}">@{clean_node}</a>'
 
         return f"{body_text}\n\n{footer}"
 
@@ -562,15 +725,15 @@ class TrendSentinelV4:
 
     async def _sync_grouped_media_if_dispatched(self, source_node: str, grouped_id) -> bool:
         """
-        If an alert for this (source_node, grouped_id) has already been dispatched within 60m,
-        recalculates combined media icons across all cached album items and silently updates the alert.
+        If an alert containing (source_node, grouped_id) has already been dispatched within 60m,
+        recalculates that source's combined media icons across all cached album items and silently updates the alert.
         Returns True if the group already has an active alert, False otherwise.
         """
         match = self._find_alert_by_group(source_node, grouped_id)
         if not match:
             return False
 
-        dedup_key, alert_info = match
+        _, alert_info = match
         now = time.time()
         elapsed = now - float(alert_info.get("sent_timestamp", 0))
         if elapsed > config.EDIT_DELETE_WINDOW_SEC:
@@ -581,52 +744,44 @@ class TrendSentinelV4:
             return True
 
         new_icons = self.detect_media_icons(album_msgs)
-        display_text = alert_info.get("output_text") or alert_info.get("raw_text") or next(
-            ((getattr(m, "raw_text", None) or getattr(m, "text", None) or "") for m in album_msgs if getattr(m, "raw_text", None) or getattr(m, "text", None)),
-            ""
+        sources = self._get_sources(alert_info)
+        target_src = next(
+            (s for s in sources if s.get("source_node") == source_node and s.get("grouped_id") == grouped_id),
+            None,
         )
-        if not display_text:
+        if not target_src or new_icons == target_src.get("media_icons"):
             return True
 
-        primary_msg_id = int(alert_info.get("msg_id"))
-        dispatches = self._get_dispatches(alert_info)
-        changed = False
-        for d in dispatches:
-            target_ch = d["target_channel"]
-            bot_msg_id = d["bot_msg_id"]
-            status_icon = d.get("status_icon", alert_info.get("status_icon", "🔕"))
-            formatted_text = self.sanitize_and_format_alert(display_text, source_node, primary_msg_id, status_icon, media_icons=new_icons)
-            if not formatted_text or formatted_text == d.get("last_formatted_text"):
-                continue
-            print(f"🖼️ [MEDIA SYNC] Updating album icons ({new_icons}) on {target_ch} (bot_msg_id: {bot_msg_id})")
-            if self.edit_bot_alert(target_ch, bot_msg_id, formatted_text):
-                d["last_formatted_text"] = formatted_text
-                self.alerts_edited += 1
-                changed = True
+        target_src["media_icons"] = new_icons
+        if not alert_info.get("output_text") and not alert_info.get("raw_text"):
+            fallback_txt = next(
+                ((getattr(m, "raw_text", None) or getattr(m, "text", None) or "") for m in album_msgs if getattr(m, "raw_text", None) or getattr(m, "text", None)),
+                "",
+            )
+            if fallback_txt:
+                target_src["raw_text"] = fallback_txt
+                target_src["output_text"] = fallback_txt
+                alert_info["raw_text"] = fallback_txt
+                alert_info["output_text"] = fallback_txt
 
-        if changed:
-            alert_info["media_icons"] = new_icons
-            if dispatches:
-                alert_info["last_formatted_text"] = dispatches[0].get("last_formatted_text", "")
+        print(f"🖼️ [MEDIA SYNC] Updating album icons ({new_icons}) for @{source_node}")
+        if self._rerender_alert_entry(alert_info):
             self._save_channel_state()
             self.update_session_report()
         return True
 
     async def handle_edited_message(self, msg, source_node: str, album_msgs: Optional[list] = None):
         """
-        Handles edited messages (including media changes & late Persian translations on @Ali_bk_8).
-        Rule:
-          1. If an untranslated pending post receives its Persian translation within 60m,
-             evaluate and dispatch it immediately as a fresh alert.
-          2. If an alert was already dispatched within the last 60m, synchronize text,
-             severity icon, and media icons across all target channels in silence.
+        Handles edited messages (including media changes, late Persian translations on @Ali_bk_8,
+        and edits on any secondary merged source within 60m).
         """
         dedup_key = f"{source_node}_{msg.id}"
-        if dedup_key not in self.sent_alerts_map:
+        found = self._find_alert_by_source(source_node, msg.id)
+        source_item = None
+        if not found:
             grouped_id = getattr(msg, "grouped_id", None)
-            match = self._find_alert_by_group(source_node, grouped_id) if grouped_id else None
-            if not match:
-                # Late translation check for pending @Ali_bk_8 posts or unposted fresh edits within 60m
+            grp_match = self._find_alert_by_group(source_node, grouped_id) if grouped_id else None
+            if not grp_match:
                 is_pending = dedup_key in self.pending_translations
                 if (is_pending or source_node == "Ali_bk_8") and dedup_key not in self.posted_registry:
                     msg_text = getattr(msg, "raw_text", None) or getattr(msg, "text", None) or ""
@@ -640,21 +795,28 @@ class TrendSentinelV4:
                             self._save_channel_state()
                 return
             self._record_album_message(source_node, msg)
-            dedup_key, alert_info = match
+            _, alert_info = grp_match
+            source_item = next(
+                (s for s in self._get_sources(alert_info) if s.get("source_node") == source_node and s.get("grouped_id") == grouped_id),
+                None,
+            )
         else:
-            alert_info = self.sent_alerts_map[dedup_key]
+            _, alert_info, source_item = found
 
-        primary_msg_id = int(alert_info.get("msg_id", msg.id))
+        if source_item is None:
+            source_item = self._get_sources(alert_info)[0]
+
+        src_msg_id = int(source_item.get("msg_id", msg.id))
         now = time.time()
         elapsed = now - float(alert_info.get("sent_timestamp", 0))
 
         if elapsed > config.EDIT_DELETE_WINDOW_SEC:
-            print(f"⏳ [EDIT IGNORED] @{source_node} #{primary_msg_id} was dispatched {int(elapsed/60)}m ago (>60m).")
+            print(f"⏳ [EDIT IGNORED] @{source_node} #{src_msg_id} was dispatched {int(elapsed/60)}m ago (>60m).")
             return
 
         msg_text = getattr(msg, "raw_text", None) or getattr(msg, "text", None) or ""
-        if (not msg_text or not msg_text.strip()) and msg.id != primary_msg_id:
-            msg_text = alert_info.get("raw_text", "")
+        if (not msg_text or not msg_text.strip()) and msg.id != src_msg_id:
+            msg_text = source_item.get("raw_text") or alert_info.get("raw_text", "")
         if not msg_text or not msg_text.strip():
             return
 
@@ -669,51 +831,29 @@ class TrendSentinelV4:
             if source_node == "Ali_bk_8" and self.engine.has_persian_text(msg_text):
                 display_text = self.engine.extract_persian_text(msg_text)
             else:
-                display_text = alert_info.get("output_text") or msg_text
+                display_text = source_item.get("output_text") or msg_text
             meta_by_ch = {}
 
-        dispatches = self._get_dispatches(alert_info)
-        any_edited = False
-        for d in dispatches:
-            target_ch = d["target_channel"]
-            bot_msg_id = d["bot_msg_id"]
-            orig_icon = d.get("status_icon", alert_info.get("status_icon", "🔕"))
-
-            if target_ch in meta_by_ch:
-                if meta_by_ch[target_ch].get("severity") == "URGENT":
-                    status_icon = "🚨" if orig_icon == "🚨" else "🚨🔕"
-                else:
-                    status_icon = "🔕"
-            elif eval_res and eval_res.get("status") == "MATCHED":
-                if eval_res.get("severity") == "URGENT":
-                    status_icon = "🚨" if orig_icon == "🚨" else "🚨🔕"
-                else:
-                    status_icon = "🔕"
-            else:
-                status_icon = orig_icon
-
-            formatted_text = self.sanitize_and_format_alert(display_text, source_node, primary_msg_id, status_icon, media_icons=media_icons)
-            if not formatted_text or d.get("last_formatted_text") == formatted_text:
-                continue
-
-            print(f"🔄 [EDIT SYNC] Syncing edited post to {target_ch} (bot_msg_id: {bot_msg_id}, source: @{source_node}/#{primary_msg_id}, icons: {media_icons})")
-            if self.edit_bot_alert(target_ch, bot_msg_id, formatted_text):
-                d["status_icon"] = status_icon
-                d["last_formatted_text"] = formatted_text
-                self.alerts_edited += 1
-                any_edited = True
+        src_key = f"{source_node}_{src_msg_id}"
+        source_item["media_icons"] = media_icons
+        source_item["raw_text"] = msg_text
+        source_item["output_text"] = display_text
 
         edit_date = getattr(msg, "edit_date", None)
         edit_ts = (edit_date.replace(tzinfo=timezone.utc).timestamp() if not edit_date.tzinfo else edit_date.timestamp()) if edit_date else now
+        source_item["last_edit_timestamp"] = max(float(source_item.get("last_edit_timestamp", 0)), edit_ts)
 
-        if any_edited:
-            alert_info["last_edit_timestamp"] = max(float(alert_info.get("last_edit_timestamp", 0)), edit_ts)
-            alert_info["media_icons"] = media_icons
+        active_key = alert_info.get("active_text_source")
+        current_active_text = alert_info.get("output_text") or alert_info.get("raw_text") or ""
+        if (not active_key) or (active_key == src_key) or self.engine.should_upgrade_text(current_active_text, display_text):
+            alert_info["active_text_source"] = src_key
             alert_info["raw_text"] = msg_text
             alert_info["output_text"] = display_text
-            if dispatches:
-                alert_info["status_icon"] = dispatches[0].get("status_icon", "🔕")
-                alert_info["last_formatted_text"] = dispatches[0].get("last_formatted_text", "")
+
+        any_edited = self._rerender_alert_entry(alert_info, meta_by_ch=meta_by_ch, eval_res=eval_res)
+        if any_edited:
+            print(f"🔄 [EDIT SYNC] Synced edit from @{source_node}/#{src_msg_id} (icons: {media_icons})")
+            alert_info["last_edit_timestamp"] = max(float(alert_info.get("last_edit_timestamp", 0)), edit_ts)
             self._save_channel_state()
             self.update_session_report()
         elif edit_date:
@@ -721,24 +861,55 @@ class TrendSentinelV4:
 
     async def handle_deleted_message(self, msg_id: int, source_node: str):
         """
-        Handles deleted messages from VIP sources.
-        Rule: If an alert was sent to Sentinel channels within the last 60 minutes,
-        delete all corresponding alerts from destination channels immediately.
+        Handles deleted messages from VIP sources within the 60-minute window.
+        Supports Partial Delete Sync:
+          - If other merged source(s) remain live, removes ONLY the deleted source from
+            the footer (and switches body text to a surviving source if needed).
+          - Deletes from Dideban only when the sole/last contributing source is deleted.
         """
         dedup_key = f"{source_node}_{msg_id}"
         if dedup_key in self.pending_translations:
             self.pending_translations.pop(dedup_key, None)
             self._save_channel_state()
 
-        if dedup_key not in self.sent_alerts_map:
+        found = self._find_alert_by_source(source_node, msg_id)
+        if not found:
             return
 
-        alert_info = self.sent_alerts_map[dedup_key]
+        entry_key, alert_info, _ = found
         now = time.time()
         elapsed = now - float(alert_info.get("sent_timestamp", 0))
 
         if elapsed > config.EDIT_DELETE_WINDOW_SEC:
             print(f"⏳ [DELETE IGNORED] @{source_node} #{msg_id} was dispatched {int(elapsed/60)}m ago (>60m).")
+            return
+
+        sources = self._get_sources(alert_info)
+        remaining = [
+            s for s in sources
+            if not (s.get("source_node") == source_node and int(s.get("msg_id", 0)) == int(msg_id))
+        ]
+
+        if remaining:
+            # Partial Delete Sync: keep alert alive with remaining source(s)
+            alert_info["sources"] = remaining
+            if alert_info.get("active_text_source") == dedup_key or len(remaining) == 1:
+                best_src = self._pick_richest_source(remaining)
+                if best_src:
+                    alert_info["active_text_source"] = f"{best_src['source_node']}_{best_src['msg_id']}"
+                    alert_info["raw_text"] = best_src.get("raw_text", "")
+                    alert_info["output_text"] = best_src.get("output_text") or best_src.get("raw_text", "")
+
+            if entry_key == dedup_key:
+                new_primary = remaining[0]
+                new_key = f"{new_primary['source_node']}_{new_primary['msg_id']}"
+                self.sent_alerts_map.pop(entry_key, None)
+                self.sent_alerts_map[new_key] = alert_info
+
+            print(f"🩹 [PARTIAL DELETE SYNC] Removed deleted @{source_node}/#{msg_id}; kept {len(remaining)} live source(s)")
+            self._rerender_alert_entry(alert_info)
+            self._save_channel_state()
+            self.update_session_report()
             return
 
         dispatches = self._get_dispatches(alert_info)
@@ -753,7 +924,7 @@ class TrendSentinelV4:
                 all_deleted = False
 
         if all_deleted or dispatches:
-            self.sent_alerts_map.pop(dedup_key, None)
+            self.sent_alerts_map.pop(entry_key, None)
             self._save_channel_state()
             self.update_session_report()
 
@@ -774,10 +945,11 @@ class TrendSentinelV4:
             sent_ts = float(alert_info.get("sent_timestamp", 0))
             if now - sent_ts > config.EDIT_DELETE_WINDOW_SEC:
                 continue
-            node = alert_info.get("source_node")
-            msg_id = alert_info.get("msg_id")
-            if node and msg_id and node in source_entities:
-                alerts_by_node.setdefault(node, []).append((int(msg_id), alert_info))
+            for src in self._get_sources(alert_info):
+                node = src.get("source_node")
+                msg_id = src.get("msg_id")
+                if node and msg_id and node in source_entities:
+                    alerts_by_node.setdefault(node, []).append((int(msg_id), alert_info, src))
 
         for p_key, p_info in list(self.pending_translations.items()):
             ts = float(p_info.get("timestamp", 0))
@@ -798,8 +970,8 @@ class TrendSentinelV4:
             p_items = pending_by_node.get(node, [])
 
             ids_to_fetch = set()
-            for msg_id, alert_info in items:
-                if alert_info.get("grouped_id"):
+            for msg_id, _, src in items:
+                if src.get("grouped_id"):
                     ids_to_fetch.update(range(max(1, msg_id - 9), msg_id + 10))
                 else:
                     ids_to_fetch.add(msg_id)
@@ -837,15 +1009,15 @@ class TrendSentinelV4:
                         self.album_cache[f"{node}_{grouped_id}"] = {m.id: m for m in album_msgs}
                     await self.handle_edited_message(fetched_msg, node, album_msgs=album_msgs)
 
-                # Check already dispatched tracked alerts
-                for msg_id, alert_info in items:
+                # Check already dispatched tracked source items (including secondary merged sources)
+                for msg_id, alert_info, src in items:
                     fetched_msg = existing_by_id.get(msg_id)
                     if fetched_msg is None:
                         print(f"🗑️ [SYNC] Source post @{node}/#{msg_id} deleted -> syncing removal")
                         await self.handle_deleted_message(msg_id, node)
                         continue
 
-                    grouped_id = alert_info.get("grouped_id")
+                    grouped_id = src.get("grouped_id")
                     if grouped_id:
                         album_msgs = [
                             m for m in fetched_msgs
@@ -858,7 +1030,7 @@ class TrendSentinelV4:
                         album_msgs = [fetched_msg]
 
                     current_icons = self.detect_media_icons(album_msgs)
-                    stored_icons = alert_info.get("media_icons")
+                    stored_icons = src.get("media_icons")
                     icons_changed = (stored_icons is not None and current_icons != stored_icons)
 
                     latest_edit_ts = 0.0
@@ -869,7 +1041,7 @@ class TrendSentinelV4:
                             if ts > latest_edit_ts:
                                 latest_edit_ts = ts
 
-                    last_seen_edit = float(alert_info.get("last_edit_timestamp", alert_info["sent_timestamp"]))
+                    last_seen_edit = float(src.get("last_edit_timestamp", alert_info.get("last_edit_timestamp", alert_info["sent_timestamp"])))
                     edited_since_seen = (latest_edit_ts > last_seen_edit)
 
                     if icons_changed or edited_since_seen:
@@ -945,6 +1117,51 @@ class TrendSentinelV4:
             "target_channel": eval_res["target_channel"],
             "severity": eval_res.get("severity", "SILENT"),
         }]
+        target_channels = [m["target_channel"] for m in dispatches_meta]
+
+        # Option C Cross-Source Event Deduplication (60-min window)
+        dup_match = self._find_duplicate_alert(display_text, source_node, msg_id, target_channels)
+        if dup_match:
+            entry_key, existing_info = dup_match
+            sources = self._get_sources(existing_info)
+            new_source_entry = {
+                "source_node": source_node,
+                "msg_id": msg_id,
+                "media_icons": media_icons,
+                "grouped_id": grouped_id,
+                "raw_text": msg_text,
+                "output_text": display_text,
+                "last_edit_timestamp": time.time(),
+            }
+            sources.append(new_source_entry)
+            existing_info["sources"] = sources
+
+            upgraded = False
+            current_active = existing_info.get("output_text") or existing_info.get("raw_text") or ""
+            if self.engine.should_upgrade_text(current_active, display_text):
+                existing_info["active_text_source"] = dedup_key
+                existing_info["raw_text"] = msg_text
+                existing_info["output_text"] = display_text
+                upgraded = True
+
+            meta_by_ch = {m["target_channel"]: m for m in dispatches_meta}
+            self._rerender_alert_entry(existing_info, meta_by_ch=meta_by_ch, eval_res=eval_res)
+            self.posted_registry.add(dedup_key)
+            self._save_registry()
+            self._save_channel_state()
+            self.update_session_report()
+            print(f"🔗 [DEDUP MERGE] Merged @{source_node}/#{msg_id} ({media_icons}) into {entry_key} (upgraded={upgraded}, total_sources={len(sources)})")
+            return
+
+        new_source_item = {
+            "source_node": source_node,
+            "msg_id": msg_id,
+            "media_icons": media_icons,
+            "grouped_id": grouped_id,
+            "raw_text": msg_text,
+            "output_text": display_text,
+            "last_edit_timestamp": time.time(),
+        }
 
         sent_dispatches = []
         for meta in dispatches_meta:
@@ -955,7 +1172,14 @@ class TrendSentinelV4:
             disable_notif, status_icon = self.resolve_alert_mode_and_icon(target_ch, is_engine_urgent)
 
             # Format Final Alert using the exact user-specified typographic template
-            alert_body = self.sanitize_and_format_alert(display_text, source_node, msg_id, status_icon, media_icons=media_icons)
+            alert_body = self.sanitize_and_format_alert(
+                display_text,
+                source_node,
+                msg_id,
+                status_icon,
+                media_icons=media_icons,
+                sources=[new_source_item],
+            )
             if not alert_body:
                 continue
 
@@ -976,13 +1200,15 @@ class TrendSentinelV4:
             self.posted_registry.add(dedup_key)
             self._save_registry()
             primary = sent_dispatches[0]
-            # Register in sent_alerts_map for 60-minute edit & delete synchronization across all targets
+            # Register in sent_alerts_map for 60-minute edit, merge, & delete synchronization across all targets
             self.sent_alerts_map[dedup_key] = {
                 "target_channel": primary["target_channel"],
                 "bot_msg_id": primary["bot_msg_id"],
                 "status_icon": primary["status_icon"],
                 "last_formatted_text": primary["last_formatted_text"],
                 "dispatches": sent_dispatches,
+                "sources": [new_source_item],
+                "active_text_source": dedup_key,
                 "sent_timestamp": time.time(),
                 "source_node": source_node,
                 "msg_id": msg_id,
