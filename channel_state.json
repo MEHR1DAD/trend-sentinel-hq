@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27898,
-      "last_read_time": "2026-11-12 13:58:24 UTC"
+      "last_read_id": 27904,
+      "last_read_time": "2026-11-12 15:17:12 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8155,
-      "last_read_time": "2026-11-12 13:32:11 UTC"
+      "last_read_id": 8158,
+      "last_read_time": "2026-11-12 14:54:11 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79083,
@@ -31,29 +31,112 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8153": {
+    "withyashar_27900": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 865,
+      "bot_msg_id": 866,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 نیروی دریایی بریتانیا از اصابت به دومین کشتی در نزدیکی سواحل امارات و آتش‌سوزی در آن پس از هدف قرار گرفتن اتاق موتور خبر داد.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8153\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 پرتاب سه موشک از بیدنگه در کنار هم 🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27900\">@withyashar</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 865,
+          "bot_msg_id": 866,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 نیروی دریایی بریتانیا از اصابت به دومین کشتی در نزدیکی سواحل امارات و آتش‌سوزی در آن پس از هدف قرار گرفتن اتاق موتور خبر داد.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8153\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 پرتاب سه موشک از بیدنگه در کنار هم 🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27900\">@withyashar</a>"
         }
       ],
-      "sent_timestamp": 1794489758.2638206,
+      "sent_timestamp": 1794495997.0384657,
+      "source_node": "withyashar",
+      "msg_id": 27900,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "پرتاب سه موشک از بیدنگه در کنار هم \n@WarRoom 🚨🚨🚨",
+      "output_text": "پرتاب سه موشک از بیدنگه در کنار هم \n@WarRoom 🚨🚨🚨"
+    },
+    "withyashar_27903": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 867,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n\n🎥 منبع: <a href=\"https://t.me/withyashar/27903\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 867,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n\n🎥 منبع: <a href=\"https://t.me/withyashar/27903\">@withyashar</a>"
+        }
+      ],
+      "sent_timestamp": 1794495997.4482775,
+      "source_node": "withyashar",
+      "msg_id": 27903,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n@WarRoom",
+      "output_text": "فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n@WarRoom"
+    },
+    "Ali_bk_8_8156": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 868,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8156\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 868,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8156\">@Ali_bk_8</a>"
+        }
+      ],
+      "sent_timestamp": 1794495998.9919055,
       "source_node": "Ali_bk_8",
-      "msg_id": 8153,
+      "msg_id": 8156,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\nOngoing missile tests by Iran's IRGC.",
+      "output_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد."
+    },
+    "Ali_bk_8_8157": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 869,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8157\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 869,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8157\">@Ali_bk_8</a>"
+        }
+      ],
+      "sent_timestamp": 1794495999.4107926,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8157,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.\n\nThe Iranian Army:\n\nEarly today, two noncompliant oil tankers caught fire after entering a prohibited and unsafe area in the eastern Strait of Hormuz.",
+      "output_text": "ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند."
+    },
+    "Ali_bk_8_8158": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 870,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8158\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 870,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8158\">@Ali_bk_8</a>"
+        }
+      ],
+      "sent_timestamp": 1794495999.8672764,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8158,
       "media_icons": "📷",
       "grouped_id": null,
-      "raw_text": "نیروی دریایی بریتانیا از اصابت به دومین کشتی در نزدیکی سواحل امارات و آتش‌سوزی در آن پس از هدف قرار گرفتن اتاق موتور خبر داد.\n\nThe British Navy announces that a second vessel has been hit off the UAE coast, with a fire breaking out on board after the engine room was struck.",
-      "output_text": "نیروی دریایی بریتانیا از اصابت به دومین کشتی در نزدیکی سواحل امارات و آتش‌سوزی در آن پس از هدف قرار گرفتن اتاق موتور خبر داد.",
-      "last_edit_timestamp": 1794489759.0
+      "raw_text": "نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.\n\nThe British Navy issues an update to yesterday's report No. 202 (not a new incident), confirming that a vessel was hit by a missile.",
+      "output_text": "نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است."
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-12T14:21:44.827481+00:00"
+  "updated_at": "2026-11-12T15:17:35.306276+00:00"
 }
