@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-12 02:19:06 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8140,
-      "last_read_time": "2026-11-12 06:12:40 UTC"
+      "last_read_id": 8141,
+      "last_read_time": "2026-11-12 06:52:06 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79081,
@@ -31,19 +31,19 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8139": {
+    "Ali_bk_8_8141": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 849,
-      "sent_timestamp": 1794463096.3926983,
+      "bot_msg_id": 850,
+      "sent_timestamp": 1794466354.6043932,
       "status_icon": "🔕",
       "source_node": "Ali_bk_8",
-      "msg_id": 8139,
-      "media_icons": "🎥",
+      "msg_id": 8141,
+      "media_icons": "📝",
       "grouped_id": null,
-      "raw_text": "تصاویر ماهواره‌ای هم‌اکنون وقوع آتش‌سوزی در تنگه هرمز را در پی حمله احتمالی به یک کشتی نشان می‌دهند.\n\nSatellite images show a fire in the Strait of Hormuz now following a possible strike on a ship.",
-      "last_formatted_text": "🔕 تصاویر ماهواره‌ای هم‌اکنون وقوع آتش‌سوزی در تنگه هرمز را در پی حمله احتمالی به یک کشتی نشان می‌دهند.\n\nSatellite images show a fire in the Strait of Hormuz now following a possible strike on a ship.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8139\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794463241.0
+      "raw_text": "نیروی دریایی سپاه پاسداران:\n\nدو نفتکش غول‌پیکر حامل بیش از 4 میلیون بشکه نفت، شب گذشته پس از تلاش برای عبور از تنگه هرمز از مسیر جنوبی غیرمجاز، دچار حادثه شدند.\n\nIRGC Navy:\n\nTwo supertankers carrying more than 4 million barrels of oil were involved in an incident in the Strait of Hormuz last night after attempting to cross the strait via the unauthorized southern route.",
+      "last_formatted_text": "🔕 نیروی دریایی سپاه پاسداران:\n\nدو نفتکش غول‌پیکر حامل بیش از 4 میلیون بشکه نفت، شب گذشته پس از تلاش برای عبور از تنگه هرمز از مسیر جنوبی غیرمجاز، دچار حادثه شدند.\n\nIRGC Navy:\n\nTwo supertankers carrying more than 4 million barrels of oil were involved in an incident in the Strait of Hormuz last night after attempting to cross the strait via the unauthorized southern route.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8141\">@Ali_bk_8</a>",
+      "last_edit_timestamp": 1794466483.0
     }
   },
-  "updated_at": "2026-11-12T06:34:35.628525+00:00"
+  "updated_at": "2026-11-12T07:00:59.074692+00:00"
 }
