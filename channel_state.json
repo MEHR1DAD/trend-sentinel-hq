@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27859,
-      "last_read_time": "2026-11-12 02:19:06 UTC"
+      "last_read_id": 27863,
+      "last_read_time": "2026-11-12 07:52:06 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8141,
@@ -31,19 +31,19 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8141": {
+    "withyashar_27862": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 850,
-      "sent_timestamp": 1794466354.6043932,
+      "bot_msg_id": 851,
+      "sent_timestamp": 1794469712.2198205,
       "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8141,
+      "source_node": "withyashar",
+      "msg_id": 27862,
       "media_icons": "📝",
       "grouped_id": null,
-      "raw_text": "نیروی دریایی سپاه پاسداران:\n\nدو نفتکش غول‌پیکر حامل بیش از 4 میلیون بشکه نفت، شب گذشته پس از تلاش برای عبور از تنگه هرمز از مسیر جنوبی غیرمجاز، دچار حادثه شدند.\n\nIRGC Navy:\n\nTwo supertankers carrying more than 4 million barrels of oil were involved in an incident in the Strait of Hormuz last night after attempting to cross the strait via the unauthorized southern route.",
-      "last_formatted_text": "🔕 نیروی دریایی سپاه پاسداران:\n\nدو نفتکش غول‌پیکر حامل بیش از 4 میلیون بشکه نفت، شب گذشته پس از تلاش برای عبور از تنگه هرمز از مسیر جنوبی غیرمجاز، دچار حادثه شدند.\n\nIRGC Navy:\n\nTwo supertankers carrying more than 4 million barrels of oil were involved in an incident in the Strait of Hormuz last night after attempting to cross the strait via the unauthorized southern route.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8141\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794466483.0
+      "raw_text": "ارتش اسرائیل و شین‌بت اعلام کردند در حمله به بیمارستان ناصر در خان‌یونس، یک فرمانده ارشد حماس و شماری دیگر از اعضای این گروه را هدف قرار داده‌اند. مقام‌های نظامی اسرائیل مدعی شدند حماس از این مجتمع برای فعالیت‌های نظامی استفاده می‌کرد؛ \nیاشار: قبلا فیلم مخفیگاه حماس را در اینبیمارستان برایتان قرار داده بودم\n@WarRoom 🚨🚨🚨",
+      "last_formatted_text": "🔕 ارتش اسرائیل و شین‌بت اعلام کردند در حمله به بیمارستان ناصر در خان‌یونس، یک فرمانده ارشد حماس و شماری دیگر از اعضای این گروه را هدف قرار داده‌اند. مقام‌های نظامی اسرائیل مدعی شدند حماس از این مجتمع برای فعالیت‌های نظامی استفاده می‌کرد؛ یاشار: قبلا فیلم مخفیگاه حماس را در اینبیمارستان برایتان قرار داده بودم 🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27862\">@withyashar</a>",
+      "last_edit_timestamp": 1794469698.0
     }
   },
-  "updated_at": "2026-11-12T07:27:21.181265+00:00"
+  "updated_at": "2026-11-12T07:53:54.740989+00:00"
 }
