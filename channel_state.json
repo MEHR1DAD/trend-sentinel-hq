@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27913,
-      "last_read_time": "2026-11-12 16:33:34 UTC"
+      "last_read_id": 27915,
+      "last_read_time": "2026-11-12 16:50:57 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8163,
-      "last_read_time": "2026-11-12 16:35:11 UTC"
+      "last_read_id": 8166,
+      "last_read_time": "2026-11-12 16:56:19 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79083,
-      "last_read_time": "2026-11-12 13:13:24 UTC"
+      "last_read_id": 79089,
+      "last_read_time": "2026-11-12 17:02:37 UTC"
     },
     "iliaen": {
       "last_read_id": 4753,
@@ -31,108 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8159": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 871,
-      "status_icon": "🚨🔕",
-      "last_formatted_text": "🚨🔕 در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8159\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 871,
-          "status_icon": "🚨🔕",
-          "last_formatted_text": "🚨🔕 در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8159\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8159,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.\n\nOne person was killed and 4 others wounded in a shooting in the Logan Circle neighborhood of Washington, D.C.",
-          "output_text": "در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.",
-          "last_edit_timestamp": 1794498278.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8159",
-      "sent_timestamp": 1794497981.76545,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8159,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.\n\nOne person was killed and 4 others wounded in a shooting in the Logan Circle neighborhood of Washington, D.C.",
-      "output_text": "در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.",
-      "last_edit_timestamp": 1794498278.0
-    },
-    "Ali_bk_8_8160": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 872,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:\n\nنیروی هوافضای سپاه پاسداران امروز، دستورات و رهنمودهای حکیمانه فرمانده کل قوا را در صدر اولویت‌های خود قرار داده و با هوشمندی برای ارتقای آمادگی رزمی خود و اجرای راهبرد پاسخ فوری، مؤثر و متناسب به هرگونه تهدید، در هر مکانی و بدون محدودیت جغرافیایی تلاش می‌کند.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8160\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 872,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:\n\nنیروی هوافضای سپاه پاسداران امروز، دستورات و رهنمودهای حکیمانه فرمانده کل قوا را در صدر اولویت‌های خود قرار داده و با هوشمندی برای ارتقای آمادگی رزمی خود و اجرای راهبرد پاسخ فوری، مؤثر و متناسب به هرگونه تهدید، در هر مکانی و بدون محدودیت جغرافیایی تلاش می‌کند.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8160\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8160,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:\n\nنیروی هوافضای سپاه پاسداران امروز، دستورات و رهنمودهای حکیمانه فرمانده کل قوا را در صدر اولویت‌های خود قرار داده و با هوشمندی برای ارتقای آمادگی رزمی خود و اجرای راهبرد پاسخ فوری، مؤثر و متناسب به هرگونه تهدید، در هر مکانی و بدون محدودیت جغرافیایی تلاش می‌کند.\n\nSecretary of Iran's Supreme National Security Council, Major General Rezaei:\n\nToday, the IRGC Aerospace Force places the wise orders and directives of the Commander-in-Chief of the Armed Forces at the top of its priorities. It is working intelligently to enhance its combat readiness and implement a strategy of immediate, effective and proportionate retaliation against any threat, anywhere and without geographical restrictions.",
-          "output_text": "دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:\n\nنیروی هوافضای سپاه پاسداران امروز، دستورات و رهنمودهای حکیمانه فرمانده کل قوا را در صدر اولویت‌های خود قرار داده و با هوشمندی برای ارتقای آمادگی رزمی خود و اجرای راهبرد پاسخ فوری، مؤثر و متناسب به هرگونه تهدید، در هر مکانی و بدون محدودیت جغرافیایی تلاش می‌کند.",
-          "last_edit_timestamp": 1794499056.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8160",
-      "sent_timestamp": 1794498505.0983202,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8160,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:\n\nنیروی هوافضای سپاه پاسداران امروز، دستورات و رهنمودهای حکیمانه فرمانده کل قوا را در صدر اولویت‌های خود قرار داده و با هوشمندی برای ارتقای آمادگی رزمی خود و اجرای راهبرد پاسخ فوری، مؤثر و متناسب به هرگونه تهدید، در هر مکانی و بدون محدودیت جغرافیایی تلاش می‌کند.\n\nSecretary of Iran's Supreme National Security Council, Major General Rezaei:\n\nToday, the IRGC Aerospace Force places the wise orders and directives of the Commander-in-Chief of the Armed Forces at the top of its priorities. It is working intelligently to enhance its combat readiness and implement a strategy of immediate, effective and proportionate retaliation against any threat, anywhere and without geographical restrictions.",
-      "output_text": "دبیر شورای عالی امنیت ملی ایران، سرلشکر رضایی:\n\nنیروی هوافضای سپاه پاسداران امروز، دستورات و رهنمودهای حکیمانه فرمانده کل قوا را در صدر اولویت‌های خود قرار داده و با هوشمندی برای ارتقای آمادگی رزمی خود و اجرای راهبرد پاسخ فوری، مؤثر و متناسب به هرگونه تهدید، در هر مکانی و بدون محدودیت جغرافیایی تلاش می‌کند.",
-      "last_edit_timestamp": 1794499056.0
-    },
-    "withyashar_27909": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 873,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد 🚨🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27909\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 873,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد 🚨🚨🚨🚨\n\n📝 منبع: <a href=\"https://t.me/withyashar/27909\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 27909,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد\n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد\n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1794499380.0
-        }
-      ],
-      "active_text_source": "withyashar_27909",
-      "sent_timestamp": 1794498921.2322998,
-      "source_node": "withyashar",
-      "msg_id": 27909,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد\n@WarRoom 🚨🚨🚨🚨",
-      "output_text": "رادیو اسرائیل: نتانیاهو قصد حمله به ایران را دارد\n@WarRoom 🚨🚨🚨🚨",
-      "last_edit_timestamp": 1794499380.0
-    },
     "withyashar_27911": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 874,
@@ -268,8 +166,109 @@
       "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.\n\nYemeni Armed Forces spokesman Brig. Gen. Yahya Saree:\n\nOur armed forces, by the grace of God, carried out six strikes targeting the Saudi enemy's reinforcements overseen by Saudi officer Badr al-Harbi at the Kharaz camp and other positions in Ras al-Arah and Kharaz in Lahij governorate, using six ballistic missiles. The strikes scored direct hits, by the grace of God, leaving dozens killed and wounded.",
       "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.",
       "last_edit_timestamp": 1794501338.0
+    },
+    "Ali_bk_8_8164": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 878,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 نیروهای یمنی شماری از عناصر نیروهای هم‌پیمان عربستان را در جبهه المضاربه در استان لحج به اسارت گرفتند.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8164\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 878,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 نیروهای یمنی شماری از عناصر نیروهای هم‌پیمان عربستان را در جبهه المضاربه در استان لحج به اسارت گرفتند.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8164\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8164,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "نیروهای یمنی شماری از عناصر نیروهای هم‌پیمان عربستان را در جبهه المضاربه در استان لحج به اسارت گرفتند.\n\nYemeni forces capture members of Saudi-allied forces on the Mudharaba front in Lahij.",
+          "output_text": "نیروهای یمنی شماری از عناصر نیروهای هم‌پیمان عربستان را در جبهه المضاربه در استان لحج به اسارت گرفتند.",
+          "last_edit_timestamp": 1794501804.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8164",
+      "sent_timestamp": 1794501736.0727925,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8164,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "نیروهای یمنی شماری از عناصر نیروهای هم‌پیمان عربستان را در جبهه المضاربه در استان لحج به اسارت گرفتند.\n\nYemeni forces capture members of Saudi-allied forces on the Mudharaba front in Lahij.",
+      "output_text": "نیروهای یمنی شماری از عناصر نیروهای هم‌پیمان عربستان را در جبهه المضاربه در استان لحج به اسارت گرفتند.",
+      "last_edit_timestamp": 1794501804.0
+    },
+    "Ali_bk_8_8166": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 880,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 در تأیید آنچه منتشر کرده بودیم...\n\nسخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما با یاری خداوند متعال دو عملیات نظامی انجام دادند. در عملیات نخست، ایستگاه پمپاژ شماره هفت در خط لوله شرق به غرب با استفاده از یک پهپاد هدف قرار گرفت و به لطف خدا با موفقیت به هدف خود رسید. در عملیات دوم نیز تأسیسات نفتی ینبع هدف قرار گرفت و به لطف خدا به هدف خود رسید.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8166\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 880,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 در تأیید آنچه منتشر کرده بودیم...\n\nسخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما با یاری خداوند متعال دو عملیات نظامی انجام دادند. در عملیات نخست، ایستگاه پمپاژ شماره هفت در خط لوله شرق به غرب با استفاده از یک پهپاد هدف قرار گرفت و به لطف خدا با موفقیت به هدف خود رسید. در عملیات دوم نیز تأسیسات نفتی ینبع هدف قرار گرفت و به لطف خدا به هدف خود رسید.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8166\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8166,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "در تأیید آنچه منتشر کرده بودیم...\n\nسخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما با یاری خداوند متعال دو عملیات نظامی انجام دادند. در عملیات نخست، ایستگاه پمپاژ شماره هفت در خط لوله شرق به غرب با استفاده از یک پهپاد هدف قرار گرفت و به لطف خدا با موفقیت به هدف خود رسید. در عملیات دوم نیز تأسیسات نفتی ینبع هدف قرار گرفت و به لطف خدا به هدف خود رسید.\n\nConfirming what we published...\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces, with the help of Almighty God, carried out two military operations. The first targeted pumping station No. 7 on the East-West Pipeline using a drone and successfully achieved its objective, thanks to God. The second targeted the Yanbu oil facility and achieved its objective, thanks to God.",
+          "output_text": "در تأیید آنچه منتشر کرده بودیم...\n\nسخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما با یاری خداوند متعال دو عملیات نظامی انجام دادند. در عملیات نخست، ایستگاه پمپاژ شماره هفت در خط لوله شرق به غرب با استفاده از یک پهپاد هدف قرار گرفت و به لطف خدا با موفقیت به هدف خود رسید. در عملیات دوم نیز تأسیسات نفتی ینبع هدف قرار گرفت و به لطف خدا به هدف خود رسید.",
+          "last_edit_timestamp": 1794502626.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8166",
+      "sent_timestamp": 1794502589.6816638,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8166,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "در تأیید آنچه منتشر کرده بودیم...\n\nسخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما با یاری خداوند متعال دو عملیات نظامی انجام دادند. در عملیات نخست، ایستگاه پمپاژ شماره هفت در خط لوله شرق به غرب با استفاده از یک پهپاد هدف قرار گرفت و به لطف خدا با موفقیت به هدف خود رسید. در عملیات دوم نیز تأسیسات نفتی ینبع هدف قرار گرفت و به لطف خدا به هدف خود رسید.\n\nConfirming what we published...\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces, with the help of Almighty God, carried out two military operations. The first targeted pumping station No. 7 on the East-West Pipeline using a drone and successfully achieved its objective, thanks to God. The second targeted the Yanbu oil facility and achieved its objective, thanks to God.",
+      "output_text": "در تأیید آنچه منتشر کرده بودیم...\n\nسخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما با یاری خداوند متعال دو عملیات نظامی انجام دادند. در عملیات نخست، ایستگاه پمپاژ شماره هفت در خط لوله شرق به غرب با استفاده از یک پهپاد هدف قرار گرفت و به لطف خدا با موفقیت به هدف خود رسید. در عملیات دوم نیز تأسیسات نفتی ینبع هدف قرار گرفت و به لطف خدا به هدف خود رسید.",
+      "last_edit_timestamp": 1794502626.0
+    },
+    "VahidOnline_79084": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 881,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تصاویر دریافتی از شهروندان با شرح پرتاب سه موشک از سمت بیدگنه + خبرگزاری مهر، وابسته به سازمان تبلیغات اسلامی، روز پنج‌شنبه ۲۱ آبان ۱۴۰۵ ویدیویی از آسمان تهران منتشر  و اعلام کرد که نیروهای مسلح جمهوری اسلامی «موشک‌های جدید» را در غرب پایتخت ایران آزمایش کرده‌اند.\n\n📷🎥 منبع: <a href=\"https://t.me/VahidOnline/79084\">@VahidOnline</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 881,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تصاویر دریافتی از شهروندان با شرح پرتاب سه موشک از سمت بیدگنه + خبرگزاری مهر، وابسته به سازمان تبلیغات اسلامی، روز پنج‌شنبه ۲۱ آبان ۱۴۰۵ ویدیویی از آسمان تهران منتشر  و اعلام کرد که نیروهای مسلح جمهوری اسلامی «موشک‌های جدید» را در غرب پایتخت ایران آزمایش کرده‌اند.\n\n📷🎥 منبع: <a href=\"https://t.me/VahidOnline/79084\">@VahidOnline</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "VahidOnline",
+          "msg_id": 79084,
+          "media_icons": "📷🎥",
+          "grouped_id": 14356023657686649,
+          "raw_text": "تصاویر دریافتی از شهروندان با شرح پرتاب سه موشک از سمت بیدگنه\n+\nخبرگزاری مهر، وابسته به سازمان تبلیغات اسلامی، روز پنج‌شنبه ۲۱ آبان ۱۴۰۵ ویدیویی از آسمان تهران منتشر  و اعلام کرد که نیروهای مسلح جمهوری اسلامی «موشک‌های جدید» را در غرب پایتخت ایران آزمایش کرده‌اند.\n@VahidHeadline\n\n📡 @VahidOnline",
+          "output_text": "تصاویر دریافتی از شهروندان با شرح پرتاب سه موشک از سمت بیدگنه\n+\nخبرگزاری مهر، وابسته به سازمان تبلیغات اسلامی، روز پنج‌شنبه ۲۱ آبان ۱۴۰۵ ویدیویی از آسمان تهران منتشر  و اعلام کرد که نیروهای مسلح جمهوری اسلامی «موشک‌های جدید» را در غرب پایتخت ایران آزمایش کرده‌اند.\n@VahidHeadline\n\n📡 @VahidOnline",
+          "last_edit_timestamp": 1794502987.1201377
+        }
+      ],
+      "active_text_source": "VahidOnline_79084",
+      "sent_timestamp": 1794502987.8587499,
+      "source_node": "VahidOnline",
+      "msg_id": 79084,
+      "media_icons": "📷🎥",
+      "grouped_id": 14356023657686649,
+      "raw_text": "تصاویر دریافتی از شهروندان با شرح پرتاب سه موشک از سمت بیدگنه\n+\nخبرگزاری مهر، وابسته به سازمان تبلیغات اسلامی، روز پنج‌شنبه ۲۱ آبان ۱۴۰۵ ویدیویی از آسمان تهران منتشر  و اعلام کرد که نیروهای مسلح جمهوری اسلامی «موشک‌های جدید» را در غرب پایتخت ایران آزمایش کرده‌اند.\n@VahidHeadline\n\n📡 @VahidOnline",
+      "output_text": "تصاویر دریافتی از شهروندان با شرح پرتاب سه موشک از سمت بیدگنه\n+\nخبرگزاری مهر، وابسته به سازمان تبلیغات اسلامی، روز پنج‌شنبه ۲۱ آبان ۱۴۰۵ ویدیویی از آسمان تهران منتشر  و اعلام کرد که نیروهای مسلح جمهوری اسلامی «موشک‌های جدید» را در غرب پایتخت ایران آزمایش کرده‌اند.\n@VahidHeadline\n\n📡 @VahidOnline"
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-12T16:37:45.422087+00:00"
+  "updated_at": "2026-11-12T17:04:09.399781+00:00"
 }
