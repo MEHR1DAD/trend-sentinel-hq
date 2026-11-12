@@ -30,20 +30,6 @@
     "@DidehbanEghtesad": 1794317696.829226,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8138": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 848,
-      "sent_timestamp": 1794453416.135987,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8138,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "گروه‌هایی از نیروهای وابسته به عربستان در جبهه ساحل جنوبی خود را تسلیم نیروهای یمنی می‌کنند.\n\nGroups of Saudi-backed forces are surrendering to Yemeni forces on the southern coastal front.",
-      "last_formatted_text": "🔕 گروه‌هایی از نیروهای وابسته به عربستان در جبهه ساحل جنوبی خود را تسلیم نیروهای یمنی می‌کنند.\n\nGroups of Saudi-backed forces are surrendering to Yemeni forces on the southern coastal front.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8138\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794453423.0
-    }
-  },
-  "updated_at": "2026-11-12T03:56:18.543321+00:00"
+  "sent_alerts_map": {},
+  "updated_at": "2026-11-12T04:22:45.286074+00:00"
 }
