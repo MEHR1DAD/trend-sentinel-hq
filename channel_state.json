@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27883,
-      "last_read_time": "2026-11-12 10:37:10 UTC"
+      "last_read_id": 27884,
+      "last_read_time": "2026-11-12 10:58:09 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8144,
@@ -31,49 +31,29 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8143": {
+    "withyashar_27884": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 853,
-      "sent_timestamp": 1794476814.2981665,
+      "bot_msg_id": 855,
       "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8143,
+      "last_formatted_text": "🔕 ‏نیویورک‌تایمز گزارش داد دولت اوکراین مجموعه‌ای شامل بیش از پنج میلیون ویدیوی نظارتی و حملات پهپادی در میدان نبرد را در اختیار شرکت‌های دفاعی داخلی و کشورهای متحد قرار می‌دهد تا از آنها برای آموزش سامانه‌های تسلیحاتی مبتنی بر هوش مصنوعی استفاده کنند.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27884\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 855,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 ‏نیویورک‌تایمز گزارش داد دولت اوکراین مجموعه‌ای شامل بیش از پنج میلیون ویدیوی نظارتی و حملات پهپادی در میدان نبرد را در اختیار شرکت‌های دفاعی داخلی و کشورهای متحد قرار می‌دهد تا از آنها برای آموزش سامانه‌های تسلیحاتی مبتنی بر هوش مصنوعی استفاده کنند.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27884\">@withyashar</a>"
+        }
+      ],
+      "sent_timestamp": 1794481138.6428628,
+      "source_node": "withyashar",
+      "msg_id": 27884,
       "media_icons": "📝",
       "grouped_id": null,
-      "raw_text": "تأیید آنچه منتشر کردیم:\n\nنیروی دریایی بریتانیا اعلام کرد یک کشتی در فاصله 14 مایلی رأس‌الخیمه در امارات هدف قرار گرفته است.\n\nConfirming what we published:\n\nThe British Navy announces that a ship was hit 14 miles off Ras Al Khaimah in the UAE.",
-      "last_formatted_text": "🔕 تأیید آنچه منتشر کردیم:\n\nنیروی دریایی بریتانیا اعلام کرد یک کشتی در فاصله 14 مایلی رأس‌الخیمه در امارات هدف قرار گرفته است.\n\nConfirming what we published:\n\nThe British Navy announces that a ship was hit 14 miles off Ras Al Khaimah in the UAE.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8143\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794476844.0,
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 853,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تأیید آنچه منتشر کردیم:\n\nنیروی دریایی بریتانیا اعلام کرد یک کشتی در فاصله 14 مایلی رأس‌الخیمه در امارات هدف قرار گرفته است.\n\nConfirming what we published:\n\nThe British Navy announces that a ship was hit 14 miles off Ras Al Khaimah in the UAE.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8143\">@Ali_bk_8</a>"
-        }
-      ]
-    },
-    "withyashar_27877": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 854,
-      "sent_timestamp": 1794476931.0114694,
-      "status_icon": "🔕",
-      "source_node": "withyashar",
-      "msg_id": 27877,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "نقطه‌زنی جلسه نظامی اعضای حماس در مجتمع بیمارستان ناصر ، خان‌یونس در حمله دقیق ارتش اسرائیل . بر اساس گزارش‌ها، تاکنون ۶ عضو حماس به هلاکت رسیدند\n@WarRoom",
-      "last_formatted_text": "🔕 نقطه‌زنی جلسه نظامی اعضای حماس در مجتمع بیمارستان ناصر ، خان‌یونس در حمله دقیق ارتش اسرائیل . بر اساس گزارش‌ها، تاکنون ۶ عضو حماس به هلاکت رسیدند\n\n📷 منبع: <a href=\"https://t.me/withyashar/27877\">@withyashar</a>",
-      "last_edit_timestamp": 1794476994.0,
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 854,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 نقطه‌زنی جلسه نظامی اعضای حماس در مجتمع بیمارستان ناصر ، خان‌یونس در حمله دقیق ارتش اسرائیل . بر اساس گزارش‌ها، تاکنون ۶ عضو حماس به هلاکت رسیدند\n\n📷 منبع: <a href=\"https://t.me/withyashar/27877\">@withyashar</a>"
-        }
-      ]
+      "raw_text": "‏نیویورک‌تایمز گزارش داد دولت اوکراین مجموعه‌ای شامل بیش از پنج میلیون ویدیوی نظارتی و حملات پهپادی در میدان نبرد را در اختیار شرکت‌های دفاعی داخلی و کشورهای متحد قرار می‌دهد تا از آنها برای آموزش سامانه‌های تسلیحاتی مبتنی بر هوش مصنوعی استفاده کنند.\n@WarRoom",
+      "output_text": "‏نیویورک‌تایمز گزارش داد دولت اوکراین مجموعه‌ای شامل بیش از پنج میلیون ویدیوی نظارتی و حملات پهپادی در میدان نبرد را در اختیار شرکت‌های دفاعی داخلی و کشورهای متحد قرار می‌دهد تا از آنها برای آموزش سامانه‌های تسلیحاتی مبتنی بر هوش مصنوعی استفاده کنند.\n@WarRoom",
+      "last_edit_timestamp": 1794481097.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-12T10:46:52.668394+00:00"
+  "updated_at": "2026-11-12T11:16:59.034879+00:00"
 }
