@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27904,
-      "last_read_time": "2026-11-12 15:17:12 UTC"
+      "last_read_id": 27906,
+      "last_read_time": "2026-11-12 15:39:57 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8158,
-      "last_read_time": "2026-11-12 14:54:11 UTC"
+      "last_read_id": 8159,
+      "last_read_time": "2026-11-12 15:39:19 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79083,
@@ -50,7 +50,19 @@
       "media_icons": "📝",
       "grouped_id": null,
       "raw_text": "پرتاب سه موشک از بیدنگه در کنار هم \n@WarRoom 🚨🚨🚨",
-      "output_text": "پرتاب سه موشک از بیدنگه در کنار هم \n@WarRoom 🚨🚨🚨"
+      "output_text": "پرتاب سه موشک از بیدنگه در کنار هم \n@WarRoom 🚨🚨🚨",
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 27900,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "پرتاب سه موشک از بیدنگه در کنار هم \n@WarRoom 🚨🚨🚨",
+          "output_text": "پرتاب سه موشک از بیدنگه در کنار هم \n@WarRoom 🚨🚨🚨",
+          "last_edit_timestamp": 1794495997.0384657
+        }
+      ],
+      "active_text_source": "withyashar_27900"
     },
     "withyashar_27903": {
       "target_channel": "@DidebanJang",
@@ -71,7 +83,19 @@
       "media_icons": "🎥",
       "grouped_id": null,
       "raw_text": "فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n@WarRoom",
-      "output_text": "فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n@WarRoom"
+      "output_text": "فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n@WarRoom",
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 27903,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n@WarRoom",
+          "output_text": "فیلم پر ریزون از پرتاب ۳ موشک از ملارد توسط دیدبان اتاق جنگ ، پر انرژییییی , همه بالا\n@WarRoom",
+          "last_edit_timestamp": 1794495997.4482775
+        }
+      ],
+      "active_text_source": "withyashar_27903"
     },
     "Ali_bk_8_8156": {
       "target_channel": "@DidebanJang",
@@ -92,7 +116,19 @@
       "media_icons": "🎥",
       "grouped_id": null,
       "raw_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\nOngoing missile tests by Iran's IRGC.",
-      "output_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد."
+      "output_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.",
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8156,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\nOngoing missile tests by Iran's IRGC.",
+          "output_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.",
+          "last_edit_timestamp": 1794495998.9919055
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8156"
     },
     "Ali_bk_8_8157": {
       "target_channel": "@DidebanJang",
@@ -113,7 +149,19 @@
       "media_icons": "📝",
       "grouped_id": null,
       "raw_text": "ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.\n\nThe Iranian Army:\n\nEarly today, two noncompliant oil tankers caught fire after entering a prohibited and unsafe area in the eastern Strait of Hormuz.",
-      "output_text": "ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند."
+      "output_text": "ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.",
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8157,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.\n\nThe Iranian Army:\n\nEarly today, two noncompliant oil tankers caught fire after entering a prohibited and unsafe area in the eastern Strait of Hormuz.",
+          "output_text": "ارتش ایران:\n\nامروز در ساعات اولیه، دو نفتکش متخلف پس از ورود به منطقه‌ای ممنوعه و ناامن در بخش شرقی تنگه هرمز دچار آتش‌سوزی شدند.",
+          "last_edit_timestamp": 1794495999.4107926
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8157"
     },
     "Ali_bk_8_8158": {
       "target_channel": "@DidebanJang",
@@ -134,9 +182,89 @@
       "media_icons": "📷",
       "grouped_id": null,
       "raw_text": "نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.\n\nThe British Navy issues an update to yesterday's report No. 202 (not a new incident), confirming that a vessel was hit by a missile.",
-      "output_text": "نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است."
+      "output_text": "نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.",
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8158,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.\n\nThe British Navy issues an update to yesterday's report No. 202 (not a new incident), confirming that a vessel was hit by a missile.",
+          "output_text": "نیروی دریایی بریتانیا به‌روزرسانی گزارش شماره 202 روز گذشته را منتشر کرد (این یک حادثه جدید نیست) و تأیید کرد که یک کشتی با موشک هدف قرار گرفته است.",
+          "last_edit_timestamp": 1794495999.8672764
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8158"
+    },
+    "withyashar_27905": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 72,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 بیلاخ تتر به بابی اسکمرجانی : ۲۷۱،۰۰۰ تومان\n\n📝 منبع: <a href=\"https://t.me/withyashar/27905\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 72,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 بیلاخ تتر به بابی اسکمرجانی : ۲۷۱،۰۰۰ تومان\n\n📝 منبع: <a href=\"https://t.me/withyashar/27905\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 27905,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "بیلاخ تتر به بابی اسکمرجانی : ۲۷۱،۰۰۰ تومان\n@WarRoom",
+          "output_text": "بیلاخ تتر به بابی اسکمرجانی : ۲۷۱،۰۰۰ تومان\n@WarRoom",
+          "last_edit_timestamp": 1794496827.9634302
+        }
+      ],
+      "active_text_source": "withyashar_27905",
+      "sent_timestamp": 1794496828.4033175,
+      "source_node": "withyashar",
+      "msg_id": 27905,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "بیلاخ تتر به بابی اسکمرجانی : ۲۷۱،۰۰۰ تومان\n@WarRoom",
+      "output_text": "بیلاخ تتر به بابی اسکمرجانی : ۲۷۱،۰۰۰ تومان\n@WarRoom",
+      "last_edit_timestamp": 1794496804.0
+    },
+    "Ali_bk_8_8159": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 871,
+      "status_icon": "🚨🔕",
+      "last_formatted_text": "🚨🔕 در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8159\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 871,
+          "status_icon": "🚨🔕",
+          "last_formatted_text": "🚨🔕 در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8159\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8159,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.\n\nOne person was killed and 4 others wounded in a shooting in the Logan Circle neighborhood of Washington, D.C.",
+          "output_text": "در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.",
+          "last_edit_timestamp": 1794498278.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8159",
+      "sent_timestamp": 1794497981.76545,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8159,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.\n\nOne person was killed and 4 others wounded in a shooting in the Logan Circle neighborhood of Washington, D.C.",
+      "output_text": "در حادثه تیراندازی در محله لوگان سرکل در واشنگتن، پایتخت آمریکا، یک نفر کشته و 4 نفر دیگر زخمی شدند.",
+      "last_edit_timestamp": 1794498278.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-12T15:17:35.306276+00:00"
+  "updated_at": "2026-11-12T15:44:55.910040+00:00"
 }
