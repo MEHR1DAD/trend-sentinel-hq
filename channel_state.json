@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-11 19:36:41 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8123,
-      "last_read_time": "2026-11-11 20:13:35 UTC"
+      "last_read_id": 8135,
+      "last_read_time": "2026-11-11 23:49:19 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79081,
@@ -17,8 +17,8 @@
       "last_read_time": "2026-11-02 10:53:12 UTC"
     },
     "netblocks": {
-      "last_read_id": 1582,
-      "last_read_time": "2026-11-03 15:19:44 UTC"
+      "last_read_id": 1583,
+      "last_read_time": "2026-11-11 21:41:59 UTC"
     },
     "kianmeli1": {
       "last_read_id": 93820,
@@ -30,46 +30,6 @@
     "@DidehbanEghtesad": 1794317696.829226,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "withyashar_27854": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 845,
-      "sent_timestamp": 1794425816.6579633,
-      "status_icon": "🚨",
-      "source_node": "withyashar",
-      "msg_id": 27854,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "واشینگتن‌پست: دونالد ترامپ، رئیس‌جمهور آمریکا، در مراسم روز کهنه‌سربازان در روز چهارشنبه، از یکی از بازماندگان بمب‌گذاری سال ۱۹۸۳ در پادگان تفنگداران دریایی آمریکا در بیروت تجلیل کرد و با یادآوری این حمله تروریستی، از جنگ دولت خود علیه ایران دفاع کرد. در این حمله که حزب‌الله تحت حمایت ایران مسئول آن شناخته شد، ۲۴۱ نظامی آمریکایی کشته شدند.\n@WarRoom",
-      "last_formatted_text": "🚨 واشینگتن‌پست: دونالد ترامپ، رئیس‌جمهور آمریکا، در مراسم روز کهنه‌سربازان در روز چهارشنبه، از یکی از بازماندگان بمب‌گذاری سال ۱۹۸۳ در پادگان تفنگداران دریایی آمریکا در بیروت تجلیل کرد و با یادآوری این حمله تروریستی، از جنگ دولت خود علیه ایران دفاع کرد. در این حمله که حزب‌الله تحت حمایت ایران مسئول آن شناخته شد، ۲۴۱ نظامی آمریکایی کشته شدند.\n\n📝 منبع: <a href=\"https://t.me/withyashar/27854\">@withyashar</a>",
-      "last_edit_timestamp": 1794425813.0
-    },
-    "Ali_bk_8_8122": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 846,
-      "sent_timestamp": 1794427256.868168,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8122,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "رسانه‌های دشمن:\n\nعملیات تیراندازی در تل‌آویو رخ داده و مجروحانی وجود دارد.\n\nEnemy media:\n\nShooting attack in Tel Aviv, with casualties.",
-      "last_formatted_text": "🔕 رسانه‌های دشمن:\n\nعملیات تیراندازی در تل‌آویو رخ داده و مجروحانی وجود دارد.\n\nEnemy media:\n\nShooting attack in Tel Aviv, with casualties.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8122\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794427377.0
-    },
-    "Ali_bk_8_8123": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 847,
-      "sent_timestamp": 1794428049.6067896,
-      "status_icon": "🔕",
-      "source_node": "Ali_bk_8",
-      "msg_id": 8123,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند متعال موفق شدند مقر فرماندهی دشمن سعودی و اتاق عملیات آن را در منطقه البریقه هدف قرار دهند؛ مرکزی که تجمعات نظامی عربستان را در تمامی جبهه‌های درگیر در لحج، الضالع، تعز و دیگر استان‌ها مدیریت و نظارت می‌کند. این حمله با چندین موشک بالستیک انجام شد و به لطف خدا اصابت دقیق بود.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces, thanks to Almighty God, successfully targeted the Saudi enemy command headquarters and operations room in the al-Buraiqah area, which directs and oversees Saudi military build-ups across all active fronts in Lahij, Al-Dhalea, Taiz and other governorates. The attack was carried out with several ballistic missiles, scoring a direct hit, thanks to God.",
-      "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند متعال موفق شدند مقر فرماندهی دشمن سعودی و اتاق عملیات آن را در منطقه البریقه هدف قرار دهند؛ مرکزی که تجمعات نظامی عربستان را در تمامی جبهه‌های درگیر در لحج، الضالع، تعز و دیگر استان‌ها مدیریت و نظارت می‌کند. این حمله با چندین موشک بالستیک انجام شد و به لطف خدا اصابت دقیق بود.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces, thanks to Almighty God, successfully targeted the Saudi enemy command headquarters and operations room in the al-Buraiqah area, which directs and oversees Saudi military build-ups across all active fronts in Lahij, Al-Dhalea, Taiz and other governorates. The attack was carried out with several ballistic missiles, scoring a direct hit, thanks to God.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8123\">@Ali_bk_8</a>",
-      "last_edit_timestamp": 1794428030.0
-    }
-  },
-  "updated_at": "2026-11-11T20:21:20.998318+00:00"
+  "sent_alerts_map": {},
+  "updated_at": "2026-11-12T00:56:13.652466+00:00"
 }
