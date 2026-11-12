@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27929,
-      "last_read_time": "2026-11-12 19:34:27 UTC"
+      "last_read_id": 27931,
+      "last_read_time": "2026-11-12 19:50:48 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8184,
-      "last_read_time": "2026-11-12 19:26:14 UTC"
+      "last_read_id": 8189,
+      "last_read_time": "2026-11-12 20:06:37 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79090,
@@ -27,44 +27,10 @@
   },
   "last_urgent_alert": {
     "@DidebanJang": 1794511236.1133504,
-    "@DidehbanEghtesad": 1794317696.829226,
+    "@DidehbanEghtesad": 1794513097.8797176,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8182": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 892,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 تجاوز آمریکا، سیریک ایران را هدف قرار داد.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8182\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 892,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 تجاوز آمریکا، سیریک ایران را هدف قرار داد.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8182\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8182,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "تجاوز آمریکا، سیریک ایران را هدف قرار داد.\n\nA U.S. attack targeted Iran's Sirik.",
-          "output_text": "تجاوز آمریکا، سیریک ایران را هدف قرار داد.",
-          "last_edit_timestamp": 1794510302.4096859
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8182",
-      "sent_timestamp": 1794510303.069246,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8182,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "تجاوز آمریکا، سیریک ایران را هدف قرار داد.\n\nA U.S. attack targeted Iran's Sirik.",
-      "output_text": "تجاوز آمریکا، سیریک ایران را هدف قرار داد.",
-      "last_edit_timestamp": 1794510285.0
-    },
     "VahidOnline_79090": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 893,
@@ -98,8 +64,177 @@
       "raw_text": "خبرگزاری فارس پنجشنبه‌شب ۲۱ آبان‌ماه گزارش داد که ساکنان شهرستان سیریک در شرق استان هرمزگان طی ساعات گذشته در چند نوبت صدای انفجار شنیده‌اند.\n\nاین خبرگزاری در گزارش اولیه خود اعلام کرد که ماهیت و علت این صداها هنوز مشخص نیست، اما برخی منابع احتمال داده‌اند که صداها ناشی از شلیک هشدار به سمت کشتی‌های متخلف بوده باشد.\n\nپس از انتشار این گزارش، \nخبرگزاری ایرنا به نقل از منابع رسمی اعلام کرد که سیریک هدف حمله قرار گرفته است.\n ایرنا با انتشار خبری با عنوان «تایید تجاوز دشمن به سیریک هرمزگان» نوشت که اصابت صورت‌گرفته ماهیت نظامی دارد.\n@VahidOOnLine\n\n📡 @VahidOnline",
       "output_text": "خبرگزاری فارس پنجشنبه‌شب ۲۱ آبان‌ماه گزارش داد که ساکنان شهرستان سیریک در شرق استان هرمزگان طی ساعات گذشته در چند نوبت صدای انفجار شنیده‌اند.\n\nاین خبرگزاری در گزارش اولیه خود اعلام کرد که ماهیت و علت این صداها هنوز مشخص نیست، اما برخی منابع احتمال داده‌اند که صداها ناشی از شلیک هشدار به سمت کشتی‌های متخلف بوده باشد.\n\nپس از انتشار این گزارش، \nخبرگزاری ایرنا به نقل از منابع رسمی اعلام کرد که سیریک هدف حمله قرار گرفته است.\n ایرنا با انتشار خبری با عنوان «تایید تجاوز دشمن به سیریک هرمزگان» نوشت که اصابت صورت‌گرفته ماهیت نظامی دارد.\n@VahidOOnLine\n\n📡 @VahidOnline",
       "last_edit_timestamp": 1794511267.0
+    },
+    "withyashar_27930": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 894,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 کانال 15 عبری: اسرائیل نسبت به ادامه تسلیح ایران با موشک‌های بالیستیک و احیای برنامه هسته‌ای این کشور هشدار داد و تأکید کرد که در صورت لزوم، مجبور خواهد شد به طور نظامی با رژیم ایران مقابله کند، چه با حمایت آمریکا و چه بدون آن. 🚨🚨🚨\n\n🎥 منبع: <a href=\"https://t.me/withyashar/27930\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 894,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 کانال 15 عبری: اسرائیل نسبت به ادامه تسلیح ایران با موشک‌های بالیستیک و احیای برنامه هسته‌ای این کشور هشدار داد و تأکید کرد که در صورت لزوم، مجبور خواهد شد به طور نظامی با رژیم ایران مقابله کند، چه با حمایت آمریکا و چه بدون آن. 🚨🚨🚨\n\n🎥 منبع: <a href=\"https://t.me/withyashar/27930\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 27930,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "کانال 15 عبری: اسرائیل نسبت به ادامه تسلیح ایران با موشک‌های بالیستیک و احیای برنامه هسته‌ای این کشور هشدار داد و تأکید کرد که در صورت لزوم، مجبور خواهد شد به طور نظامی با رژیم ایران مقابله کند، چه با حمایت آمریکا و چه بدون آن.\n@WarRoom 🚨🚨🚨",
+          "output_text": "کانال 15 عبری: اسرائیل نسبت به ادامه تسلیح ایران با موشک‌های بالیستیک و احیای برنامه هسته‌ای این کشور هشدار داد و تأکید کرد که در صورت لزوم، مجبور خواهد شد به طور نظامی با رژیم ایران مقابله کند، چه با حمایت آمریکا و چه بدون آن.\n@WarRoom 🚨🚨🚨",
+          "last_edit_timestamp": 1794512851.629237
+        }
+      ],
+      "active_text_source": "withyashar_27930",
+      "sent_timestamp": 1794512852.1849072,
+      "source_node": "withyashar",
+      "msg_id": 27930,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "کانال 15 عبری: اسرائیل نسبت به ادامه تسلیح ایران با موشک‌های بالیستیک و احیای برنامه هسته‌ای این کشور هشدار داد و تأکید کرد که در صورت لزوم، مجبور خواهد شد به طور نظامی با رژیم ایران مقابله کند، چه با حمایت آمریکا و چه بدون آن.\n@WarRoom 🚨🚨🚨",
+      "output_text": "کانال 15 عبری: اسرائیل نسبت به ادامه تسلیح ایران با موشک‌های بالیستیک و احیای برنامه هسته‌ای این کشور هشدار داد و تأکید کرد که در صورت لزوم، مجبور خواهد شد به طور نظامی با رژیم ایران مقابله کند، چه با حمایت آمریکا و چه بدون آن.\n@WarRoom 🚨🚨🚨",
+      "last_edit_timestamp": 1794512830.0
+    },
+    "Ali_bk_8_8185": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 73,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 قیمت نفت خام برنت به 96 دلار در هر بشکه جهش کرد.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8185\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 73,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 قیمت نفت خام برنت به 96 دلار در هر بشکه جهش کرد.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8185\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8185,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "قیمت نفت خام برنت به 96 دلار در هر بشکه جهش کرد.\n\nBrent crude jumps to $96 per barrel.",
+          "output_text": "قیمت نفت خام برنت به 96 دلار در هر بشکه جهش کرد.",
+          "last_edit_timestamp": 1794513115.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8185",
+      "sent_timestamp": 1794513098.4358046,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8185,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "قیمت نفت خام برنت به 96 دلار در هر بشکه جهش کرد.\n\nBrent crude jumps to $96 per barrel.",
+      "output_text": "قیمت نفت خام برنت به 96 دلار در هر بشکه جهش کرد.",
+      "last_edit_timestamp": 1794513115.0
+    },
+    "Ali_bk_8_8186": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 895,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سپاه پاسداران موشک‌های «خیبر» را در میدان انقلاب تهران، پایتخت ایران، به نمایش گذاشت.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8186\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 895,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سپاه پاسداران موشک‌های «خیبر» را در میدان انقلاب تهران، پایتخت ایران، به نمایش گذاشت.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8186\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8186,
+          "media_icons": "🎥",
+          "grouped_id": 14356107974892810,
+          "raw_text": "سپاه پاسداران موشک‌های «خیبر» را در میدان انقلاب تهران، پایتخت ایران، به نمایش گذاشت.\n\nThe IRGC displays “Kheibar” missiles in Revolution Square in the Iranian capital, Tehran.",
+          "output_text": "سپاه پاسداران موشک‌های «خیبر» را در میدان انقلاب تهران، پایتخت ایران، به نمایش گذاشت.",
+          "last_edit_timestamp": 1794513511.040084
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8186",
+      "sent_timestamp": 1794513511.7651992,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8186,
+      "media_icons": "🎥",
+      "grouped_id": 14356107974892810,
+      "raw_text": "سپاه پاسداران موشک‌های «خیبر» را در میدان انقلاب تهران، پایتخت ایران، به نمایش گذاشت.\n\nThe IRGC displays “Kheibar” missiles in Revolution Square in the Iranian capital, Tehran.",
+      "output_text": "سپاه پاسداران موشک‌های «خیبر» را در میدان انقلاب تهران، پایتخت ایران، به نمایش گذاشت."
+    },
+    "Ali_bk_8_8188": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 896,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 پهپاد «شاهد-۱۳۶» در تجمعات شبانه مردم ایران.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8188\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 896,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 پهپاد «شاهد-۱۳۶» در تجمعات شبانه مردم ایران.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8188\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8188,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "پهپاد «شاهد-۱۳۶» در تجمعات شبانه مردم ایران.\n\nThe \"Shahed-136\" drone at nighttime gatherings of the Iranian people.",
+          "output_text": "پهپاد «شاهد-۱۳۶» در تجمعات شبانه مردم ایران.",
+          "last_edit_timestamp": 1794513784.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8188",
+      "sent_timestamp": 1794513772.47219,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8188,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "پهپاد «شاهد-۱۳۶» در تجمعات شبانه مردم ایران.\n\nThe \"Shahed-136\" drone at nighttime gatherings of the Iranian people.",
+      "output_text": "پهپاد «شاهد-۱۳۶» در تجمعات شبانه مردم ایران.",
+      "last_edit_timestamp": 1794513784.0
+    },
+    "Ali_bk_8_8189": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 897,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سپاه پاسداران موشک خرمشهر را در میدان تجریش تهران به نمایش گذاشت.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8189\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 897,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سپاه پاسداران موشک خرمشهر را در میدان تجریش تهران به نمایش گذاشت.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8189\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8189,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "سپاه پاسداران موشک خرمشهر را در میدان تجریش تهران به نمایش گذاشت.\n\nThe IRGC displays a Khorramshahr missile in Tajrish Square in Tehran.",
+          "output_text": "سپاه پاسداران موشک خرمشهر را در میدان تجریش تهران به نمایش گذاشت.",
+          "last_edit_timestamp": 1794514025.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8189",
+      "sent_timestamp": 1794513999.2138636,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8189,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "سپاه پاسداران موشک خرمشهر را در میدان تجریش تهران به نمایش گذاشت.\n\nThe IRGC displays a Khorramshahr missile in Tajrish Square in Tehran.",
+      "output_text": "سپاه پاسداران موشک خرمشهر را در میدان تجریش تهران به نمایش گذاشت.",
+      "last_edit_timestamp": 1794514025.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-12T19:35:00.145301+00:00"
+  "updated_at": "2026-11-12T20:12:31.664969+00:00"
 }
