@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27917,
-      "last_read_time": "2026-11-12 17:23:02 UTC"
+      "last_read_id": 27918,
+      "last_read_time": "2026-11-12 17:51:43 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8172,
-      "last_read_time": "2026-11-12 17:21:55 UTC"
+      "last_read_id": 8174,
+      "last_read_time": "2026-11-12 17:52:50 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79089,
@@ -31,142 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27913": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 876,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 حقیقت‌یاب اتاق جنگ : خبر تعطیلی گسترده برای انتشار GTA 6 در روسیه توسط پوتین فیکنیوز ادمین های زرد میباشد ! فقط مدیر چند کارخانه در روسیه گفتن هر کسی پی‌اس۵ داره و  ثابت کنه بازی رو هم خریده میتونه بازی کنه مرخصی میدیم ⚠️⚠️⚠️\n\n📝 منبع: <a href=\"https://t.me/withyashar/27913\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 876,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 حقیقت‌یاب اتاق جنگ : خبر تعطیلی گسترده برای انتشار GTA 6 در روسیه توسط پوتین فیکنیوز ادمین های زرد میباشد ! فقط مدیر چند کارخانه در روسیه گفتن هر کسی پی‌اس۵ داره و  ثابت کنه بازی رو هم خریده میتونه بازی کنه مرخصی میدیم ⚠️⚠️⚠️\n\n📝 منبع: <a href=\"https://t.me/withyashar/27913\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 27913,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "حقیقت‌یاب اتاق جنگ : خبر تعطیلی گسترده برای انتشار GTA 6 در روسیه توسط پوتین فیکنیوز ادمین های زرد میباشد !\nفقط مدیر چند کارخانه در روسیه گفتن هر کسی پی‌اس۵ داره و  ثابت کنه بازی رو هم خریده میتونه بازی کنه مرخصی میدیم\n@WarRoom ⚠️⚠️⚠️",
-          "output_text": "حقیقت‌یاب اتاق جنگ : خبر تعطیلی گسترده برای انتشار GTA 6 در روسیه توسط پوتین فیکنیوز ادمین های زرد میباشد !\nفقط مدیر چند کارخانه در روسیه گفتن هر کسی پی‌اس۵ داره و  ثابت کنه بازی رو هم خریده میتونه بازی کنه مرخصی میدیم\n@WarRoom ⚠️⚠️⚠️",
-          "last_edit_timestamp": 1794501224.4266655
-        }
-      ],
-      "active_text_source": "withyashar_27913",
-      "sent_timestamp": 1794501224.8441346,
-      "source_node": "withyashar",
-      "msg_id": 27913,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "حقیقت‌یاب اتاق جنگ : خبر تعطیلی گسترده برای انتشار GTA 6 در روسیه توسط پوتین فیکنیوز ادمین های زرد میباشد !\nفقط مدیر چند کارخانه در روسیه گفتن هر کسی پی‌اس۵ داره و  ثابت کنه بازی رو هم خریده میتونه بازی کنه مرخصی میدیم\n@WarRoom ⚠️⚠️⚠️",
-      "output_text": "حقیقت‌یاب اتاق جنگ : خبر تعطیلی گسترده برای انتشار GTA 6 در روسیه توسط پوتین فیکنیوز ادمین های زرد میباشد !\nفقط مدیر چند کارخانه در روسیه گفتن هر کسی پی‌اس۵ داره و  ثابت کنه بازی رو هم خریده میتونه بازی کنه مرخصی میدیم\n@WarRoom ⚠️⚠️⚠️",
-      "last_edit_timestamp": 1794501223.0
-    },
-    "Ali_bk_8_8163": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 877,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8163\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 877,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8163\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8163,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.\n\nYemeni Armed Forces spokesman Brig. Gen. Yahya Saree:\n\nOur armed forces, by the grace of God, carried out six strikes targeting the Saudi enemy's reinforcements overseen by Saudi officer Badr al-Harbi at the Kharaz camp and other positions in Ras al-Arah and Kharaz in Lahij governorate, using six ballistic missiles. The strikes scored direct hits, by the grace of God, leaving dozens killed and wounded.",
-          "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.",
-          "last_edit_timestamp": 1794501338.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8163",
-      "sent_timestamp": 1794501330.1984425,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8163,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.\n\nYemeni Armed Forces spokesman Brig. Gen. Yahya Saree:\n\nOur armed forces, by the grace of God, carried out six strikes targeting the Saudi enemy's reinforcements overseen by Saudi officer Badr al-Harbi at the Kharaz camp and other positions in Ras al-Arah and Kharaz in Lahij governorate, using six ballistic missiles. The strikes scored direct hits, by the grace of God, leaving dozens killed and wounded.",
-      "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند شش عملیات علیه تجمعات نیروهای دشمن سعودی را که تحت نظارت افسر سعودی، بدر الحربی، در اردوگاه خَرَز و مواضع دیگری در رأس العاره و خَرَز در استان لحج قرار داشتند، با شش موشک بالستیک انجام دادند. موشک‌ها به لطف خداوند مستقیماً به اهداف اصابت کردند و ده‌ها کشته و زخمی بر جای گذاشتند.",
-      "last_edit_timestamp": 1794501338.0
-    },
-    "Ali_bk_8_8164": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 878,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 نیروهای یمنی شماری از عناصر نیروهای هم‌پیمان عربستان را در جبهه المضاربه در استان لحج به اسارت گرفتند.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8164\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 878,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 نیروهای یمنی شماری از عناصر نیروهای هم‌پیمان عربستان را در جبهه المضاربه در استان لحج به اسارت گرفتند.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8164\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8164,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "نیروهای یمنی شماری از عناصر نیروهای هم‌پیمان عربستان را در جبهه المضاربه در استان لحج به اسارت گرفتند.\n\nYemeni forces capture members of Saudi-allied forces on the Mudharaba front in Lahij.",
-          "output_text": "نیروهای یمنی شماری از عناصر نیروهای هم‌پیمان عربستان را در جبهه المضاربه در استان لحج به اسارت گرفتند.",
-          "last_edit_timestamp": 1794501804.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8164",
-      "sent_timestamp": 1794501736.0727925,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8164,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "نیروهای یمنی شماری از عناصر نیروهای هم‌پیمان عربستان را در جبهه المضاربه در استان لحج به اسارت گرفتند.\n\nYemeni forces capture members of Saudi-allied forces on the Mudharaba front in Lahij.",
-      "output_text": "نیروهای یمنی شماری از عناصر نیروهای هم‌پیمان عربستان را در جبهه المضاربه در استان لحج به اسارت گرفتند.",
-      "last_edit_timestamp": 1794501804.0
-    },
-    "Ali_bk_8_8166": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 880,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 در تأیید آنچه منتشر کرده بودیم...\n\nسخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما با یاری خداوند متعال دو عملیات نظامی انجام دادند. در عملیات نخست، ایستگاه پمپاژ شماره هفت در خط لوله شرق به غرب با استفاده از یک پهپاد هدف قرار گرفت و به لطف خدا با موفقیت به هدف خود رسید. در عملیات دوم نیز تأسیسات نفتی ینبع هدف قرار گرفت و به لطف خدا به هدف خود رسید.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8166\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 880,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 در تأیید آنچه منتشر کرده بودیم...\n\nسخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما با یاری خداوند متعال دو عملیات نظامی انجام دادند. در عملیات نخست، ایستگاه پمپاژ شماره هفت در خط لوله شرق به غرب با استفاده از یک پهپاد هدف قرار گرفت و به لطف خدا با موفقیت به هدف خود رسید. در عملیات دوم نیز تأسیسات نفتی ینبع هدف قرار گرفت و به لطف خدا به هدف خود رسید.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8166\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8166,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "در تأیید آنچه منتشر کرده بودیم...\n\nسخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما با یاری خداوند متعال دو عملیات نظامی انجام دادند. در عملیات نخست، ایستگاه پمپاژ شماره هفت در خط لوله شرق به غرب با استفاده از یک پهپاد هدف قرار گرفت و به لطف خدا با موفقیت به هدف خود رسید. در عملیات دوم نیز تأسیسات نفتی ینبع هدف قرار گرفت و به لطف خدا به هدف خود رسید.\n\nConfirming what we published...\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces, with the help of Almighty God, carried out two military operations. The first targeted pumping station No. 7 on the East-West Pipeline using a drone and successfully achieved its objective, thanks to God. The second targeted the Yanbu oil facility and achieved its objective, thanks to God.",
-          "output_text": "در تأیید آنچه منتشر کرده بودیم...\n\nسخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما با یاری خداوند متعال دو عملیات نظامی انجام دادند. در عملیات نخست، ایستگاه پمپاژ شماره هفت در خط لوله شرق به غرب با استفاده از یک پهپاد هدف قرار گرفت و به لطف خدا با موفقیت به هدف خود رسید. در عملیات دوم نیز تأسیسات نفتی ینبع هدف قرار گرفت و به لطف خدا به هدف خود رسید.",
-          "last_edit_timestamp": 1794502626.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8166",
-      "sent_timestamp": 1794502589.6816638,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8166,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "در تأیید آنچه منتشر کرده بودیم...\n\nسخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما با یاری خداوند متعال دو عملیات نظامی انجام دادند. در عملیات نخست، ایستگاه پمپاژ شماره هفت در خط لوله شرق به غرب با استفاده از یک پهپاد هدف قرار گرفت و به لطف خدا با موفقیت به هدف خود رسید. در عملیات دوم نیز تأسیسات نفتی ینبع هدف قرار گرفت و به لطف خدا به هدف خود رسید.\n\nConfirming what we published...\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces, with the help of Almighty God, carried out two military operations. The first targeted pumping station No. 7 on the East-West Pipeline using a drone and successfully achieved its objective, thanks to God. The second targeted the Yanbu oil facility and achieved its objective, thanks to God.",
-      "output_text": "در تأیید آنچه منتشر کرده بودیم...\n\nسخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما با یاری خداوند متعال دو عملیات نظامی انجام دادند. در عملیات نخست، ایستگاه پمپاژ شماره هفت در خط لوله شرق به غرب با استفاده از یک پهپاد هدف قرار گرفت و به لطف خدا با موفقیت به هدف خود رسید. در عملیات دوم نیز تأسیسات نفتی ینبع هدف قرار گرفت و به لطف خدا به هدف خود رسید.",
-      "last_edit_timestamp": 1794502626.0
-    },
     "VahidOnline_79084": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 881,
@@ -301,8 +165,76 @@
       "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح یمن یک هواپیمای ترابری نظامی را در فرودگاه شروره با استفاده از یک پهپاد هدف قرار دادند و به لطف خدا عملیات با موفقیت به هدف خود رسید. در عملیاتی دیگر، پایگاه هوایی خمیس مشیط با یک موشک بالستیک هدف قرار گرفت و به لطف خدا اصابت مستقیم بود.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nThe Yemeni Armed Forces targeted a military cargo aircraft at Sharurah Airport using a drone. The operation successfully achieved its objective, thanks to God. In a separate operation, they targeted Khamis Mushait Air Base with a ballistic missile, scoring a direct hit, thanks to God.",
       "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح یمن یک هواپیمای ترابری نظامی را در فرودگاه شروره با استفاده از یک پهپاد هدف قرار دادند و به لطف خدا عملیات با موفقیت به هدف خود رسید. در عملیاتی دیگر، پایگاه هوایی خمیس مشیط با یک موشک بالستیک هدف قرار گرفت و به لطف خدا اصابت مستقیم بود.",
       "last_edit_timestamp": 1794504176.0
+    },
+    "Ali_bk_8_8173": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 885,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 هم‌اکنون موشک‌هایی به سمت تنگه هرمز شلیک شده و یک کشتی مستقیماً هدف قرار گرفته که در پی آن آتش‌سوزی در آن رخ داده است.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8173\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 885,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 هم‌اکنون موشک‌هایی به سمت تنگه هرمز شلیک شده و یک کشتی مستقیماً هدف قرار گرفته که در پی آن آتش‌سوزی در آن رخ داده است.\n\n📷 منبع: <a href=\"https://t.me/Ali_bk_8/8173\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8173,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "هم‌اکنون موشک‌هایی به سمت تنگه هرمز شلیک شده و یک کشتی مستقیماً هدف قرار گرفته که در پی آن آتش‌سوزی در آن رخ داده است.\n\nMissiles have been launched toward the Strait of Hormuz, and a ship has been directly hit, causing a fire to break out on board.",
+          "output_text": "هم‌اکنون موشک‌هایی به سمت تنگه هرمز شلیک شده و یک کشتی مستقیماً هدف قرار گرفته که در پی آن آتش‌سوزی در آن رخ داده است.",
+          "last_edit_timestamp": 1794505270.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8173",
+      "sent_timestamp": 1794505267.4833899,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8173,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "هم‌اکنون موشک‌هایی به سمت تنگه هرمز شلیک شده و یک کشتی مستقیماً هدف قرار گرفته که در پی آن آتش‌سوزی در آن رخ داده است.\n\nMissiles have been launched toward the Strait of Hormuz, and a ship has been directly hit, causing a fire to break out on board.",
+      "output_text": "هم‌اکنون موشک‌هایی به سمت تنگه هرمز شلیک شده و یک کشتی مستقیماً هدف قرار گرفته که در پی آن آتش‌سوزی در آن رخ داده است.",
+      "last_edit_timestamp": 1794505270.0
+    },
+    "Ali_bk_8_8174": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 886,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 میزان خساراتی که در جریان جنگ بر اثر بمباران موشکی به شهرهای ما وارد شده، چقدر است؟\n\nیکی از فرماندهان مسئول شلیک موشک‌های ایران:\n\nبیشترین کاری که توانستند انجام دهند، انداختن یک بمب در ورودی تونل بود.\n\nاما خدا را شکر، به لطف تلاش‌ها و تدابیری که از پیش اتخاذ شده بود و به رحمت خداوند، هیچ آسیبی به تونل‌ها و موشک‌ها وارد نشد. الحمدلله.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8174\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 886,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 میزان خساراتی که در جریان جنگ بر اثر بمباران موشکی به شهرهای ما وارد شده، چقدر است؟\n\nیکی از فرماندهان مسئول شلیک موشک‌های ایران:\n\nبیشترین کاری که توانستند انجام دهند، انداختن یک بمب در ورودی تونل بود.\n\nاما خدا را شکر، به لطف تلاش‌ها و تدابیری که از پیش اتخاذ شده بود و به رحمت خداوند، هیچ آسیبی به تونل‌ها و موشک‌ها وارد نشد. الحمدلله.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8174\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8174,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "میزان خساراتی که در جریان جنگ بر اثر بمباران موشکی به شهرهای ما وارد شده، چقدر است؟\n\nیکی از فرماندهان مسئول شلیک موشک‌های ایران:\n\nبیشترین کاری که توانستند انجام دهند، انداختن یک بمب در ورودی تونل بود.\n\nاما خدا را شکر، به لطف تلاش‌ها و تدابیری که از پیش اتخاذ شده بود و به رحمت خداوند، هیچ آسیبی به تونل‌ها و موشک‌ها وارد نشد. الحمدلله.\n\nWhat is the extent of the damage to our cities from the missile bombardment during the war?\n\nOne of the commanders responsible for launching Iranian missiles:\n\nThe most they managed to do was drop a bomb at the entrance to the tunnel.\n\nBut thank God, thanks to the efforts and measures taken in advance, and by God's mercy, no damage was done to the tunnels or the missiles. Praise be to God.",
+          "output_text": "میزان خساراتی که در جریان جنگ بر اثر بمباران موشکی به شهرهای ما وارد شده، چقدر است؟\n\nیکی از فرماندهان مسئول شلیک موشک‌های ایران:\n\nبیشترین کاری که توانستند انجام دهند، انداختن یک بمب در ورودی تونل بود.\n\nاما خدا را شکر، به لطف تلاش‌ها و تدابیری که از پیش اتخاذ شده بود و به رحمت خداوند، هیچ آسیبی به تونل‌ها و موشک‌ها وارد نشد. الحمدلله.",
+          "last_edit_timestamp": 1794506068.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8174",
+      "sent_timestamp": 1794505979.1826625,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8174,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "میزان خساراتی که در جریان جنگ بر اثر بمباران موشکی به شهرهای ما وارد شده، چقدر است؟\n\nیکی از فرماندهان مسئول شلیک موشک‌های ایران:\n\nبیشترین کاری که توانستند انجام دهند، انداختن یک بمب در ورودی تونل بود.\n\nاما خدا را شکر، به لطف تلاش‌ها و تدابیری که از پیش اتخاذ شده بود و به رحمت خداوند، هیچ آسیبی به تونل‌ها و موشک‌ها وارد نشد. الحمدلله.\n\nWhat is the extent of the damage to our cities from the missile bombardment during the war?\n\nOne of the commanders responsible for launching Iranian missiles:\n\nThe most they managed to do was drop a bomb at the entrance to the tunnel.\n\nBut thank God, thanks to the efforts and measures taken in advance, and by God's mercy, no damage was done to the tunnels or the missiles. Praise be to God.",
+      "output_text": "میزان خساراتی که در جریان جنگ بر اثر بمباران موشکی به شهرهای ما وارد شده، چقدر است؟\n\nیکی از فرماندهان مسئول شلیک موشک‌های ایران:\n\nبیشترین کاری که توانستند انجام دهند، انداختن یک بمب در ورودی تونل بود.\n\nاما خدا را شکر، به لطف تلاش‌ها و تدابیری که از پیش اتخاذ شده بود و به رحمت خداوند، هیچ آسیبی به تونل‌ها و موشک‌ها وارد نشد. الحمدلله.",
+      "last_edit_timestamp": 1794506068.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-12T17:30:37.527278+00:00"
+  "updated_at": "2026-11-12T17:57:06.919545+00:00"
 }
