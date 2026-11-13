@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27984,
-      "last_read_time": "2026-11-13 12:25:48 UTC"
+      "last_read_id": 27985,
+      "last_read_time": "2026-11-13 13:17:42 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8224,
-      "last_read_time": "2026-11-13 12:49:43 UTC"
+      "last_read_id": 8225,
+      "last_read_time": "2026-11-13 13:03:49 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79093,
@@ -26,45 +26,11 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794571490.2299998,
+    "@DidebanJang": 1794575882.1485,
     "@DidehbanEghtesad": 1794513097.8797176,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27982": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 923,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 گزارش انفجار در جاسک 🚨🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/27982\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 923,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 گزارش انفجار در جاسک 🚨🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/27982\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 27982,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "گزارش انفجار در جاسک\n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "گزارش انفجار در جاسک\n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1794571490.2299976
-        }
-      ],
-      "active_text_source": "withyashar_27982",
-      "sent_timestamp": 1794571491.8816805,
-      "source_node": "withyashar",
-      "msg_id": 27982,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "گزارش انفجار در جاسک\n@WarRoom 🚨🚨🚨🚨",
-      "output_text": "گزارش انفجار در جاسک\n@WarRoom 🚨🚨🚨🚨",
-      "last_edit_timestamp": 1794571486.0
-    },
     "Ali_bk_8_8224": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 924,
@@ -98,8 +64,76 @@
       "raw_text": "نیروی دریایی آمریکا در ازای پرداخت پاداش، از مردم می‌خواهد تهدیدها و فعالیت‌های سپاه پاسداران در دریا را گزارش دهند.\n\nThe US Navy is asking people to report threats and IRGC activities at sea in exchange for a reward.",
       "output_text": "نیروی دریایی آمریکا در ازای پرداخت پاداش، از مردم می‌خواهد تهدیدها و فعالیت‌های سپاه پاسداران در دریا را گزارش دهند.",
       "last_edit_timestamp": 1794574204.1903565
+    },
+    "Ali_bk_8_8225": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 925,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 یک منبع نظامی یمنی:\n\nبا یاری خداوند، تجمعی از افسران سعودی در جبل حدید در استان عدن هدف قرار گرفت.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8225\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 925,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 یک منبع نظامی یمنی:\n\nبا یاری خداوند، تجمعی از افسران سعودی در جبل حدید در استان عدن هدف قرار گرفت.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8225\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8225,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "یک منبع نظامی یمنی:\n\nبا یاری خداوند، تجمعی از افسران سعودی در جبل حدید در استان عدن هدف قرار گرفت.\n\nA Yemeni military source:\n\nA gathering of Saudi officers at Jabal Hadid in Aden province was targeted with God's help.",
+          "output_text": "یک منبع نظامی یمنی:\n\nبا یاری خداوند، تجمعی از افسران سعودی در جبل حدید در استان عدن هدف قرار گرفت.",
+          "last_edit_timestamp": 1794575226.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8225",
+      "sent_timestamp": 1794575037.8418276,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8225,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "یک منبع نظامی یمنی:\n\nبا یاری خداوند، تجمعی از افسران سعودی در جبل حدید در استان عدن هدف قرار گرفت.\n\nA Yemeni military source:\n\nA gathering of Saudi officers at Jabal Hadid in Aden province was targeted with God's help.",
+      "output_text": "یک منبع نظامی یمنی:\n\nبا یاری خداوند، تجمعی از افسران سعودی در جبل حدید در استان عدن هدف قرار گرفت.",
+      "last_edit_timestamp": 1794575226.0
+    },
+    "withyashar_27985": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 926,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 حقیقت‌یاب سنتکام: ادعا: امروز سپاه پاسداران انقلاب اسلامی ایران (IRGC) اعلام کرد که یک «رادار هشدار زودهنگام آمریکا» در بحرین را هدف قرار داده است. واقعیت: سپاه دو فروند پهپاد انتحاری به سمت بحرین پرتاب کرد که هر دو توسط نیروهای آمریکایی رهگیری و منهدم شدند. هیچ‌گونه تلفات جانی یا خسارت مالی گزارش نشده است.\n\n📝 <a href=\"https://t.me/withyashar/27985\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 926,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 حقیقت‌یاب سنتکام: ادعا: امروز سپاه پاسداران انقلاب اسلامی ایران (IRGC) اعلام کرد که یک «رادار هشدار زودهنگام آمریکا» در بحرین را هدف قرار داده است. واقعیت: سپاه دو فروند پهپاد انتحاری به سمت بحرین پرتاب کرد که هر دو توسط نیروهای آمریکایی رهگیری و منهدم شدند. هیچ‌گونه تلفات جانی یا خسارت مالی گزارش نشده است.\n\n📝 <a href=\"https://t.me/withyashar/27985\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 27985,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "حقیقت‌یاب سنتکام: ادعا: امروز سپاه پاسداران انقلاب اسلامی ایران (IRGC) اعلام کرد که یک «رادار هشدار زودهنگام آمریکا» در بحرین را هدف قرار داده است.\nواقعیت: سپاه دو فروند پهپاد انتحاری به سمت بحرین پرتاب کرد که هر دو توسط نیروهای آمریکایی رهگیری و منهدم شدند. هیچ‌گونه تلفات جانی یا خسارت مالی گزارش نشده است.\n@WarRoom",
+          "output_text": "حقیقت‌یاب سنتکام: ادعا: امروز سپاه پاسداران انقلاب اسلامی ایران (IRGC) اعلام کرد که یک «رادار هشدار زودهنگام آمریکا» در بحرین را هدف قرار داده است.\nواقعیت: سپاه دو فروند پهپاد انتحاری به سمت بحرین پرتاب کرد که هر دو توسط نیروهای آمریکایی رهگیری و منهدم شدند. هیچ‌گونه تلفات جانی یا خسارت مالی گزارش نشده است.\n@WarRoom",
+          "last_edit_timestamp": 1794575882.1484976
+        }
+      ],
+      "active_text_source": "withyashar_27985",
+      "sent_timestamp": 1794575882.6015668,
+      "source_node": "withyashar",
+      "msg_id": 27985,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "حقیقت‌یاب سنتکام: ادعا: امروز سپاه پاسداران انقلاب اسلامی ایران (IRGC) اعلام کرد که یک «رادار هشدار زودهنگام آمریکا» در بحرین را هدف قرار داده است.\nواقعیت: سپاه دو فروند پهپاد انتحاری به سمت بحرین پرتاب کرد که هر دو توسط نیروهای آمریکایی رهگیری و منهدم شدند. هیچ‌گونه تلفات جانی یا خسارت مالی گزارش نشده است.\n@WarRoom",
+      "output_text": "حقیقت‌یاب سنتکام: ادعا: امروز سپاه پاسداران انقلاب اسلامی ایران (IRGC) اعلام کرد که یک «رادار هشدار زودهنگام آمریکا» در بحرین را هدف قرار داده است.\nواقعیت: سپاه دو فروند پهپاد انتحاری به سمت بحرین پرتاب کرد که هر دو توسط نیروهای آمریکایی رهگیری و منهدم شدند. هیچ‌گونه تلفات جانی یا خسارت مالی گزارش نشده است.\n@WarRoom",
+      "last_edit_timestamp": 1794575874.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-13T12:58:54.793015+00:00"
+  "updated_at": "2026-11-13T13:25:24.095065+00:00"
 }
