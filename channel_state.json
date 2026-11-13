@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27980,
-      "last_read_time": "2026-11-13 11:07:20 UTC"
+      "last_read_id": 27981,
+      "last_read_time": "2026-11-13 11:18:36 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8221,
-      "last_read_time": "2026-11-13 11:07:30 UTC"
+      "last_read_id": 8222,
+      "last_read_time": "2026-11-13 11:14:57 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79093,
@@ -31,40 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8220": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 922,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 فرمانده سپاه پاسداران، سرلشکر وحیدی:\n\nتهدیدهای دشمن چیزی جز آرزوهای بربادرفته آن درباره ایران نیست. نیروهای مسلح ما در بهترین وضعیت خود قرار دارند و دشمن را در عمق مواضعش هدف قرار خواهند داد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8220\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 922,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 فرمانده سپاه پاسداران، سرلشکر وحیدی:\n\nتهدیدهای دشمن چیزی جز آرزوهای بربادرفته آن درباره ایران نیست. نیروهای مسلح ما در بهترین وضعیت خود قرار دارند و دشمن را در عمق مواضعش هدف قرار خواهند داد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8220\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8220,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "فرمانده سپاه پاسداران، سرلشکر وحیدی:\n\nتهدیدهای دشمن چیزی جز آرزوهای بربادرفته آن درباره ایران نیست. نیروهای مسلح ما در بهترین وضعیت خود قرار دارند و دشمن را در عمق مواضعش هدف قرار خواهند داد.\n\nIRGC Commander Major General Vahidi:\n\nThe enemy's threats are nothing more than its wishful thinking about Iran. Our armed forces are in their best shape and will target the enemy deep inside its positions.",
-          "output_text": "فرمانده سپاه پاسداران، سرلشکر وحیدی:\n\nتهدیدهای دشمن چیزی جز آرزوهای بربادرفته آن درباره ایران نیست. نیروهای مسلح ما در بهترین وضعیت خود قرار دارند و دشمن را در عمق مواضعش هدف قرار خواهند داد.",
-          "last_edit_timestamp": 1794565403.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8220",
-      "sent_timestamp": 1794565379.2845645,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8220,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "فرمانده سپاه پاسداران، سرلشکر وحیدی:\n\nتهدیدهای دشمن چیزی جز آرزوهای بربادرفته آن درباره ایران نیست. نیروهای مسلح ما در بهترین وضعیت خود قرار دارند و دشمن را در عمق مواضعش هدف قرار خواهند داد.\n\nIRGC Commander Major General Vahidi:\n\nThe enemy's threats are nothing more than its wishful thinking about Iran. Our armed forces are in their best shape and will target the enemy deep inside its positions.",
-      "output_text": "فرمانده سپاه پاسداران، سرلشکر وحیدی:\n\nتهدیدهای دشمن چیزی جز آرزوهای بربادرفته آن درباره ایران نیست. نیروهای مسلح ما در بهترین وضعیت خود قرار دارند و دشمن را در عمق مواضعش هدف قرار خواهند داد.",
-      "last_edit_timestamp": 1794565403.0
-    },
     "withyashar_27979": {
       "target_channel": "@DidehbanEghtesad",
       "bot_msg_id": 74,
@@ -135,5 +101,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-13T11:13:07.788840+00:00"
+  "updated_at": "2026-11-13T11:39:29.096706+00:00"
 }
