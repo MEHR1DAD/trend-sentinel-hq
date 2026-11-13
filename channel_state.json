@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28003,
-      "last_read_time": "2026-11-13 17:57:40 UTC"
+      "last_read_id": 28004,
+      "last_read_time": "2026-11-13 18:00:51 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8231,
-      "last_read_time": "2026-11-13 16:45:18 UTC"
+      "last_read_id": 8232,
+      "last_read_time": "2026-11-13 17:39:36 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79100,
-      "last_read_time": "2026-11-13 16:07:08 UTC"
+      "last_read_id": 79101,
+      "last_read_time": "2026-11-13 18:23:11 UTC"
     },
     "iliaen": {
       "last_read_id": 4754,
@@ -30,7 +30,42 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_8233": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 934,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 شبکه ۱۵ اسرائیل:\n\nرئیس موساد به مقام‌های آمریکایی اطلاع خواهد داد که ایران همچنان روی برنامه هسته‌ای و برنامه موشک‌های دوربرد خود کار می‌کند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8233\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 934,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 شبکه ۱۵ اسرائیل:\n\nرئیس موساد به مقام‌های آمریکایی اطلاع خواهد داد که ایران همچنان روی برنامه هسته‌ای و برنامه موشک‌های دوربرد خود کار می‌کند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8233\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8233,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "شبکه ۱۵ اسرائیل:\n\nرئیس موساد به مقام‌های آمریکایی اطلاع خواهد داد که ایران همچنان روی برنامه هسته‌ای و برنامه موشک‌های دوربرد خود کار می‌کند.\n\nIsrael's Channel 15:\n\nThe Mossad chief will inform US officials that Iran continues to work on its nuclear program and long-range missile program.",
+          "output_text": "شبکه ۱۵ اسرائیل:\n\nرئیس موساد به مقام‌های آمریکایی اطلاع خواهد داد که ایران همچنان روی برنامه هسته‌ای و برنامه موشک‌های دوربرد خود کار می‌کند.",
+          "last_edit_timestamp": 1794593761.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8233",
+      "sent_timestamp": 1794593546.6867993,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8233,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "شبکه ۱۵ اسرائیل:\n\nرئیس موساد به مقام‌های آمریکایی اطلاع خواهد داد که ایران همچنان روی برنامه هسته‌ای و برنامه موشک‌های دوربرد خود کار می‌کند.\n\nIsrael's Channel 15:\n\nThe Mossad chief will inform US officials that Iran continues to work on its nuclear program and long-range missile program.",
+      "output_text": "شبکه ۱۵ اسرائیل:\n\nرئیس موساد به مقام‌های آمریکایی اطلاع خواهد داد که ایران همچنان روی برنامه هسته‌ای و برنامه موشک‌های دوربرد خود کار می‌کند.",
+      "last_edit_timestamp": 1794593761.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-13T17:58:59.331171+00:00"
+  "updated_at": "2026-11-13T18:25:25.825233+00:00"
 }
