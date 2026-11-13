@@ -1,6 +1,6 @@
 # Sentinel Session Report (v6.1.0 Zero-Race Engine)
 
-- **Uptime:** 26 minutes
+- **Uptime:** 0 minutes
 - **Messages Processed:** 0
 - **Alerts Dispatched:** 0
 - **Alerts Edited:** 0
@@ -19,7 +19,7 @@
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
 - `@DidebanJang`: Last loud alert 232m ago
-- `@DidehbanEghtesad`: Last loud alert 337m ago
+- `@DidehbanEghtesad`: Last loud alert 338m ago
 - `@DidebanEterazat`: Last loud alert 6528m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
