@@ -5,12 +5,12 @@
       "last_read_time": "2026-11-13 20:03:12 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8250,
-      "last_read_time": "2026-11-13 21:04:22 UTC"
+      "last_read_id": 8262,
+      "last_read_time": "2026-11-13 21:36:52 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79102,
-      "last_read_time": "2026-11-13 20:42:03 UTC"
+      "last_read_id": 79103,
+      "last_read_time": "2026-11-13 21:15:16 UTC"
     },
     "iliaen": {
       "last_read_id": 4754,
@@ -31,108 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8243": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 946,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز و شنیده شدن صدای انفجارها در نزدیکی سواحل ایران در بندرعباس.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8243\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 946,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز و شنیده شدن صدای انفجارها در نزدیکی سواحل ایران در بندرعباس.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8243\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8243,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز و شنیده شدن صدای انفجارها در نزدیکی سواحل ایران در بندرعباس.\n\nMore Iranian missiles launched toward the Strait of Hormuz, with explosions heard near the Iranian coast in Bandar Abbas.",
-          "output_text": "شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز و شنیده شدن صدای انفجارها در نزدیکی سواحل ایران در بندرعباس.",
-          "last_edit_timestamp": 1794601508.2437732
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8243",
-      "sent_timestamp": 1794601508.70358,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8243,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز و شنیده شدن صدای انفجارها در نزدیکی سواحل ایران در بندرعباس.\n\nMore Iranian missiles launched toward the Strait of Hormuz, with explosions heard near the Iranian coast in Bandar Abbas.",
-      "output_text": "شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز و شنیده شدن صدای انفجارها در نزدیکی سواحل ایران در بندرعباس.",
-      "last_edit_timestamp": 1794601502.0
-    },
-    "Ali_bk_8_8244": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 947,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 نیروی هوایی آمریکا:\n\nحادثه‌ای که در پایگاه نیروی هوایی سلطنتی بریتانیا در لیکنهیث رخ داد، ناشی از «فعالیت غیرمجاز پهپادها» بوده است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8244\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 947,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 نیروی هوایی آمریکا:\n\nحادثه‌ای که در پایگاه نیروی هوایی سلطنتی بریتانیا در لیکنهیث رخ داد، ناشی از «فعالیت غیرمجاز پهپادها» بوده است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8244\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8244,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "نیروی هوایی آمریکا:\n\nحادثه‌ای که در پایگاه نیروی هوایی سلطنتی بریتانیا در لیکنهیث رخ داد، ناشی از «فعالیت غیرمجاز پهپادها» بوده است.\n\nU.S. Air Force:\n\nThe incident at RAF Lakenheath was caused by \"unauthorized drone activity.\"",
-          "output_text": "نیروی هوایی آمریکا:\n\nحادثه‌ای که در پایگاه نیروی هوایی سلطنتی بریتانیا در لیکنهیث رخ داد، ناشی از «فعالیت غیرمجاز پهپادها» بوده است.",
-          "last_edit_timestamp": 1794601822.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8244",
-      "sent_timestamp": 1794601809.1833332,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8244,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "نیروی هوایی آمریکا:\n\nحادثه‌ای که در پایگاه نیروی هوایی سلطنتی بریتانیا در لیکنهیث رخ داد، ناشی از «فعالیت غیرمجاز پهپادها» بوده است.\n\nU.S. Air Force:\n\nThe incident at RAF Lakenheath was caused by \"unauthorized drone activity.\"",
-      "output_text": "نیروی هوایی آمریکا:\n\nحادثه‌ای که در پایگاه نیروی هوایی سلطنتی بریتانیا در لیکنهیث رخ داد، ناشی از «فعالیت غیرمجاز پهپادها» بوده است.",
-      "last_edit_timestamp": 1794601822.0
-    },
-    "Ali_bk_8_8245": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 948,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سپاه پاسداران تأیید کرد که دو نفتکشِ متخلف در جنوب تنگه هرمز منفجر شده و آتش گرفته‌اند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8245\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 948,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سپاه پاسداران تأیید کرد که دو نفتکشِ متخلف در جنوب تنگه هرمز منفجر شده و آتش گرفته‌اند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8245\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8245,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "سپاه پاسداران تأیید کرد که دو نفتکشِ متخلف در جنوب تنگه هرمز منفجر شده و آتش گرفته‌اند.\n\nThe IRGC confirms that two oil tankers involved in violations exploded and caught fire south of the Strait of Hormuz.",
-          "output_text": "سپاه پاسداران تأیید کرد که دو نفتکشِ متخلف در جنوب تنگه هرمز منفجر شده و آتش گرفته‌اند.",
-          "last_edit_timestamp": 1794602403.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8245",
-      "sent_timestamp": 1794602363.4944985,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8245,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "سپاه پاسداران تأیید کرد که دو نفتکشِ متخلف در جنوب تنگه هرمز منفجر شده و آتش گرفته‌اند.\n\nThe IRGC confirms that two oil tankers involved in violations exploded and caught fire south of the Strait of Hormuz.",
-      "output_text": "سپاه پاسداران تأیید کرد که دو نفتکشِ متخلف در جنوب تنگه هرمز منفجر شده و آتش گرفته‌اند.",
-      "last_edit_timestamp": 1794602403.0
-    },
     "Ali_bk_8_8247": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 949,
@@ -202,5 +100,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-13T21:14:31.129443+00:00"
+  "updated_at": "2026-11-13T21:40:57.851992+00:00"
 }
