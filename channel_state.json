@@ -26,11 +26,45 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794519405.673982,
+    "@DidebanJang": 1794536601.1534052,
     "@DidehbanEghtesad": 1794513097.8797176,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_8205": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 911,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 سپاه پاسداران اعلام کرد که رادار هشدار زودهنگام نیروهای آمریکایی در بحرین را در پاسخ به حمله هوایی دشمن به یک برج ارتباطاتی در منطقه سیریک هدف قرار داده و منهدم کرده است.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8205\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 911,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 سپاه پاسداران اعلام کرد که رادار هشدار زودهنگام نیروهای آمریکایی در بحرین را در پاسخ به حمله هوایی دشمن به یک برج ارتباطاتی در منطقه سیریک هدف قرار داده و منهدم کرده است.\n\n📝 منبع: <a href=\"https://t.me/Ali_bk_8/8205\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8205,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "سپاه پاسداران اعلام کرد که رادار هشدار زودهنگام نیروهای آمریکایی در بحرین را در پاسخ به حمله هوایی دشمن به یک برج ارتباطاتی در منطقه سیریک هدف قرار داده و منهدم کرده است.\n\nThe IRGC announces that it targeted and destroyed the US forces' early-warning radar in Bahrain in response to the enemy's airstrike on a communications tower in the Sirik area.",
+          "output_text": "سپاه پاسداران اعلام کرد که رادار هشدار زودهنگام نیروهای آمریکایی در بحرین را در پاسخ به حمله هوایی دشمن به یک برج ارتباطاتی در منطقه سیریک هدف قرار داده و منهدم کرده است.",
+          "last_edit_timestamp": 1794536601.1534028
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8205",
+      "sent_timestamp": 1794536601.4540603,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8205,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "سپاه پاسداران اعلام کرد که رادار هشدار زودهنگام نیروهای آمریکایی در بحرین را در پاسخ به حمله هوایی دشمن به یک برج ارتباطاتی در منطقه سیریک هدف قرار داده و منهدم کرده است.\n\nThe IRGC announces that it targeted and destroyed the US forces' early-warning radar in Bahrain in response to the enemy's airstrike on a communications tower in the Sirik area.",
+      "output_text": "سپاه پاسداران اعلام کرد که رادار هشدار زودهنگام نیروهای آمریکایی در بحرین را در پاسخ به حمله هوایی دشمن به یک برج ارتباطاتی در منطقه سیریک هدف قرار داده و منهدم کرده است."
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-13T02:10:52.166863+00:00"
+  "updated_at": "2026-11-13T02:37:21.949069+00:00"
 }
