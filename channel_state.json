@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27998,
-      "last_read_time": "2026-11-13 16:30:43 UTC"
+      "last_read_id": 27999,
+      "last_read_time": "2026-11-13 16:59:22 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8229,
-      "last_read_time": "2026-11-13 15:57:23 UTC"
+      "last_read_id": 8231,
+      "last_read_time": "2026-11-13 16:45:18 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79100,
@@ -31,40 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8229": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 930,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تردد کشتی‌های عازم بندر فجیره در امارات به‌طور چشمگیری کاهش یافته و امروز تنها 5 مورد جابه‌جایی کشتی ثبت شده است. این وضعیت هم‌زمان با خروج تعدادی از کشتی‌ها از منطقه از طریق تنگه هرمز و حرکت کشتی‌های دیگر به‌سمت جنوب و سواحل عمان رخ داده است؛ موضوعی که نشان‌دهنده کاهش تردد دریایی و خودداری کشتی‌ها از ادامه دریانوردی در منطقه به‌دلیل ترس از حملات ایران است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8229\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 930,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تردد کشتی‌های عازم بندر فجیره در امارات به‌طور چشمگیری کاهش یافته و امروز تنها 5 مورد جابه‌جایی کشتی ثبت شده است. این وضعیت هم‌زمان با خروج تعدادی از کشتی‌ها از منطقه از طریق تنگه هرمز و حرکت کشتی‌های دیگر به‌سمت جنوب و سواحل عمان رخ داده است؛ موضوعی که نشان‌دهنده کاهش تردد دریایی و خودداری کشتی‌ها از ادامه دریانوردی در منطقه به‌دلیل ترس از حملات ایران است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8229\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8229,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "تردد کشتی‌های عازم بندر فجیره در امارات به‌طور چشمگیری کاهش یافته و امروز تنها 5 مورد جابه‌جایی کشتی ثبت شده است. این وضعیت هم‌زمان با خروج تعدادی از کشتی‌ها از منطقه از طریق تنگه هرمز و حرکت کشتی‌های دیگر به‌سمت جنوب و سواحل عمان رخ داده است؛ موضوعی که نشان‌دهنده کاهش تردد دریایی و خودداری کشتی‌ها از ادامه دریانوردی در منطقه به‌دلیل ترس از حملات ایران است.\n\nShip traffic heading to the UAE's Fujairah port has declined significantly, with only 5 vessel movements recorded today. This comes as several ships leave the area through the Strait of Hormuz, while others head south towards the Omani coast, indicating a decline in transit traffic and ships' reluctance to continue sailing in the area for fear of Iranian attacks.",
-          "output_text": "تردد کشتی‌های عازم بندر فجیره در امارات به‌طور چشمگیری کاهش یافته و امروز تنها 5 مورد جابه‌جایی کشتی ثبت شده است. این وضعیت هم‌زمان با خروج تعدادی از کشتی‌ها از منطقه از طریق تنگه هرمز و حرکت کشتی‌های دیگر به‌سمت جنوب و سواحل عمان رخ داده است؛ موضوعی که نشان‌دهنده کاهش تردد دریایی و خودداری کشتی‌ها از ادامه دریانوردی در منطقه به‌دلیل ترس از حملات ایران است.",
-          "last_edit_timestamp": 1794585530.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8229",
-      "sent_timestamp": 1794585462.0594215,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8229,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "تردد کشتی‌های عازم بندر فجیره در امارات به‌طور چشمگیری کاهش یافته و امروز تنها 5 مورد جابه‌جایی کشتی ثبت شده است. این وضعیت هم‌زمان با خروج تعدادی از کشتی‌ها از منطقه از طریق تنگه هرمز و حرکت کشتی‌های دیگر به‌سمت جنوب و سواحل عمان رخ داده است؛ موضوعی که نشان‌دهنده کاهش تردد دریایی و خودداری کشتی‌ها از ادامه دریانوردی در منطقه به‌دلیل ترس از حملات ایران است.\n\nShip traffic heading to the UAE's Fujairah port has declined significantly, with only 5 vessel movements recorded today. This comes as several ships leave the area through the Strait of Hormuz, while others head south towards the Omani coast, indicating a decline in transit traffic and ships' reluctance to continue sailing in the area for fear of Iranian attacks.",
-      "output_text": "تردد کشتی‌های عازم بندر فجیره در امارات به‌طور چشمگیری کاهش یافته و امروز تنها 5 مورد جابه‌جایی کشتی ثبت شده است. این وضعیت هم‌زمان با خروج تعدادی از کشتی‌ها از منطقه از طریق تنگه هرمز و حرکت کشتی‌های دیگر به‌سمت جنوب و سواحل عمان رخ داده است؛ موضوعی که نشان‌دهنده کاهش تردد دریایی و خودداری کشتی‌ها از ادامه دریانوردی در منطقه به‌دلیل ترس از حملات ایران است.",
-      "last_edit_timestamp": 1794585530.0
-    },
     "VahidOnline_79100": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 931,
@@ -132,8 +98,41 @@
       "raw_text": "‏دریانوردان در تنگه هرمز و خلیج فارس اکنون بین هشدارهای صوتی و تصویری رقیب از سوی نیروی دریایی ایالات متحده و سپاه پاسداران انقلاب اسلامی گرفتار شده‌اند.\n@WarRoom",
       "output_text": "‏دریانوردان در تنگه هرمز و خلیج فارس اکنون بین هشدارهای صوتی و تصویری رقیب از سوی نیروی دریایی ایالات متحده و سپاه پاسداران انقلاب اسلامی گرفتار شده‌اند.\n@WarRoom",
       "last_edit_timestamp": 1794587458.0
+    },
+    "Ali_bk_8_8230": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 933,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سخنگوی گردان‌های سیدالشهدا عراق:\n\nوطن‌دوستی جلوه‌های بسیاری دارد که مقدس‌ترین و صادقانه‌ترین آن‌ها فدا کردن جان و خریدن آن با خون است. برادران ما و خودمان در گردان‌های حزب‌الله و رهبرانشان با خون پاک خود میزان تعلق خاطرشان به این وطن مقدس را ثابت کردند و 1300 شهید تقدیم کردند. رهبرانشان نیز مانند فرزندانشان به سوی مرگ گام برمی‌داشتند تا از عزت و حاکمیت عراق دفاع کنند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8230\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 933,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سخنگوی گردان‌های سیدالشهدا عراق:\n\nوطن‌دوستی جلوه‌های بسیاری دارد که مقدس‌ترین و صادقانه‌ترین آن‌ها فدا کردن جان و خریدن آن با خون است. برادران ما و خودمان در گردان‌های حزب‌الله و رهبرانشان با خون پاک خود میزان تعلق خاطرشان به این وطن مقدس را ثابت کردند و 1300 شهید تقدیم کردند. رهبرانشان نیز مانند فرزندانشان به سوی مرگ گام برمی‌داشتند تا از عزت و حاکمیت عراق دفاع کنند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8230\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8230,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "سخنگوی گردان‌های سیدالشهدا عراق:\n\nوطن‌دوستی جلوه‌های بسیاری دارد که مقدس‌ترین و صادقانه‌ترین آن‌ها فدا کردن جان و خریدن آن با خون است. برادران ما و خودمان در گردان‌های حزب‌الله و رهبرانشان با خون پاک خود میزان تعلق خاطرشان به این وطن مقدس را ثابت کردند و 1300 شهید تقدیم کردند. رهبرانشان نیز مانند فرزندانشان به سوی مرگ گام برمی‌داشتند تا از عزت و حاکمیت عراق دفاع کنند.\n\nIraqi Kataib Sayyid al-Shuhada spokesperson:\n\nPatriotism manifests itself in many ways, the holiest and most sincere of which is sacrificing one's life and paying for it with blood. Our brothers and ourselves in Kataib Hezbollah, along with their leaders, have demonstrated through their pure blood the extent of their devotion to this sacred homeland. They have given 1300 martyrs, and their leaders marched toward death just like their sons, for the dignity and sovereignty of Iraq.",
+          "output_text": "سخنگوی گردان‌های سیدالشهدا عراق:\n\nوطن‌دوستی جلوه‌های بسیاری دارد که مقدس‌ترین و صادقانه‌ترین آن‌ها فدا کردن جان و خریدن آن با خون است. برادران ما و خودمان در گردان‌های حزب‌الله و رهبرانشان با خون پاک خود میزان تعلق خاطرشان به این وطن مقدس را ثابت کردند و 1300 شهید تقدیم کردند. رهبرانشان نیز مانند فرزندانشان به سوی مرگ گام برمی‌داشتند تا از عزت و حاکمیت عراق دفاع کنند.",
+          "last_edit_timestamp": 1794588400.636508
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8230",
+      "sent_timestamp": 1794588402.0085113,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8230,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "سخنگوی گردان‌های سیدالشهدا عراق:\n\nوطن‌دوستی جلوه‌های بسیاری دارد که مقدس‌ترین و صادقانه‌ترین آن‌ها فدا کردن جان و خریدن آن با خون است. برادران ما و خودمان در گردان‌های حزب‌الله و رهبرانشان با خون پاک خود میزان تعلق خاطرشان به این وطن مقدس را ثابت کردند و 1300 شهید تقدیم کردند. رهبرانشان نیز مانند فرزندانشان به سوی مرگ گام برمی‌داشتند تا از عزت و حاکمیت عراق دفاع کنند.\n\nIraqi Kataib Sayyid al-Shuhada spokesperson:\n\nPatriotism manifests itself in many ways, the holiest and most sincere of which is sacrificing one's life and paying for it with blood. Our brothers and ourselves in Kataib Hezbollah, along with their leaders, have demonstrated through their pure blood the extent of their devotion to this sacred homeland. They have given 1300 martyrs, and their leaders marched toward death just like their sons, for the dignity and sovereignty of Iraq.",
+      "output_text": "سخنگوی گردان‌های سیدالشهدا عراق:\n\nوطن‌دوستی جلوه‌های بسیاری دارد که مقدس‌ترین و صادقانه‌ترین آن‌ها فدا کردن جان و خریدن آن با خون است. برادران ما و خودمان در گردان‌های حزب‌الله و رهبرانشان با خون پاک خود میزان تعلق خاطرشان به این وطن مقدس را ثابت کردند و 1300 شهید تقدیم کردند. رهبرانشان نیز مانند فرزندانشان به سوی مرگ گام برمی‌داشتند تا از عزت و حاکمیت عراق دفاع کنند."
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-13T16:39:34.614202+00:00"
+  "updated_at": "2026-11-13T17:06:01.282231+00:00"
 }
