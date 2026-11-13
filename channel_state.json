@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27977,
-      "last_read_time": "2026-11-13 08:18:20 UTC"
+      "last_read_id": 27978,
+      "last_read_time": "2026-11-13 08:54:10 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8213,
@@ -97,8 +97,42 @@
       "grouped_id": null,
       "raw_text": "آژانس بین‌المللی انرژی اتمی:\n\nهیچ اطلاعاتی از ایران درباره وضعیت تأسیسات و مواد هسته‌ای این کشور دریافت نکرده‌ایم و نبود اطلاعات از زمان حملات ژوئن 2024 نگرانی‌های جدی درباره اشاعه هسته‌ای ایجاد می‌کند.\n\nThe IAEA:\n\nWe have received no information from Iran regarding the status of its nuclear facilities and materials. The lack of information since the June 2024 attacks raises serious concerns about nuclear proliferation.",
       "output_text": "آژانس بین‌المللی انرژی اتمی:\n\nهیچ اطلاعاتی از ایران درباره وضعیت تأسیسات و مواد هسته‌ای این کشور دریافت نکرده‌ایم و نبود اطلاعات از زمان حملات ژوئن 2024 نگرانی‌های جدی درباره اشاعه هسته‌ای ایجاد می‌کند."
+    },
+    "withyashar_27978": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 919,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سخنگوی ارتش اسرائیل اعلام کرد کورت رنشاو، فرمانده ناوگان پنجم نیروی دریایی آمریکا و فرمانده نیروهای دریایی سنتکام، پس از انجام سفر خود به اسرائیل، این کشور را ترک کرده است.\n\n📝 <a href=\"https://t.me/withyashar/27978\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 919,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سخنگوی ارتش اسرائیل اعلام کرد کورت رنشاو، فرمانده ناوگان پنجم نیروی دریایی آمریکا و فرمانده نیروهای دریایی سنتکام، پس از انجام سفر خود به اسرائیل، این کشور را ترک کرده است.\n\n📝 <a href=\"https://t.me/withyashar/27978\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 27978,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "سخنگوی ارتش اسرائیل اعلام کرد کورت رنشاو، فرمانده ناوگان پنجم نیروی دریایی آمریکا و فرمانده نیروهای دریایی سنتکام، پس از انجام سفر خود به اسرائیل، این کشور را ترک کرده است.\n@WarRoom",
+          "output_text": "سخنگوی ارتش اسرائیل اعلام کرد کورت رنشاو، فرمانده ناوگان پنجم نیروی دریایی آمریکا و فرمانده نیروهای دریایی سنتکام، پس از انجام سفر خود به اسرائیل، این کشور را ترک کرده است.\n@WarRoom",
+          "last_edit_timestamp": 1794560060.6725466
+        }
+      ],
+      "active_text_source": "withyashar_27978",
+      "sent_timestamp": 1794560061.0827932,
+      "source_node": "withyashar",
+      "msg_id": 27978,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "سخنگوی ارتش اسرائیل اعلام کرد کورت رنشاو، فرمانده ناوگان پنجم نیروی دریایی آمریکا و فرمانده نیروهای دریایی سنتکام، پس از انجام سفر خود به اسرائیل، این کشور را ترک کرده است.\n@WarRoom",
+      "output_text": "سخنگوی ارتش اسرائیل اعلام کرد کورت رنشاو، فرمانده ناوگان پنجم نیروی دریایی آمریکا و فرمانده نیروهای دریایی سنتکام، پس از انجام سفر خود به اسرائیل، این کشور را ترک کرده است.\n@WarRoom",
+      "last_edit_timestamp": 1794560060.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-13T08:30:56.175767+00:00"
+  "updated_at": "2026-11-13T08:57:20.858972+00:00"
 }
