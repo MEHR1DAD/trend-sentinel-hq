@@ -5,12 +5,12 @@
       "last_read_time": "2026-11-13 20:03:12 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8242,
-      "last_read_time": "2026-11-13 20:07:05 UTC"
+      "last_read_id": 8245,
+      "last_read_time": "2026-11-13 20:39:17 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79101,
-      "last_read_time": "2026-11-13 18:23:11 UTC"
+      "last_read_id": 79102,
+      "last_read_time": "2026-11-13 20:42:03 UTC"
     },
     "iliaen": {
       "last_read_id": 4754,
@@ -26,45 +26,11 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794600221.1566143,
+    "@DidebanJang": 1794601508.2437766,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28009": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 940,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 رسانه های انگلستان : منابع محلی از مشاهده یک پهپاد مسلح در حریم هوایی پایگاه هوایی سلطنتی بریتانیا، RAF Lakenheath، خبر می‌دهند. گزارش‌ها حاکی از آن است که این پایگاه به‌دلیل نفوذ پهپاد، در وضعیت قرنطینه امنیتی طولانی‌مدت قرار گرفته است. 🚨\n\n📝 <a href=\"https://t.me/withyashar/28009\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 940,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 رسانه های انگلستان : منابع محلی از مشاهده یک پهپاد مسلح در حریم هوایی پایگاه هوایی سلطنتی بریتانیا، RAF Lakenheath، خبر می‌دهند. گزارش‌ها حاکی از آن است که این پایگاه به‌دلیل نفوذ پهپاد، در وضعیت قرنطینه امنیتی طولانی‌مدت قرار گرفته است. 🚨\n\n📝 <a href=\"https://t.me/withyashar/28009\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28009,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "رسانه های انگلستان : منابع محلی از مشاهده یک پهپاد مسلح در حریم هوایی پایگاه هوایی سلطنتی بریتانیا، RAF Lakenheath، خبر می‌دهند. گزارش‌ها حاکی از آن است که این پایگاه به‌دلیل نفوذ پهپاد، در وضعیت قرنطینه امنیتی طولانی‌مدت قرار گرفته است.\n@WarRoom 🚨",
-          "output_text": "رسانه های انگلستان : منابع محلی از مشاهده یک پهپاد مسلح در حریم هوایی پایگاه هوایی سلطنتی بریتانیا، RAF Lakenheath، خبر می‌دهند. گزارش‌ها حاکی از آن است که این پایگاه به‌دلیل نفوذ پهپاد، در وضعیت قرنطینه امنیتی طولانی‌مدت قرار گرفته است.\n@WarRoom 🚨",
-          "last_edit_timestamp": 1794598858.037243
-        }
-      ],
-      "active_text_source": "withyashar_28009",
-      "sent_timestamp": 1794598858.5040789,
-      "source_node": "withyashar",
-      "msg_id": 28009,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "رسانه های انگلستان : منابع محلی از مشاهده یک پهپاد مسلح در حریم هوایی پایگاه هوایی سلطنتی بریتانیا، RAF Lakenheath، خبر می‌دهند. گزارش‌ها حاکی از آن است که این پایگاه به‌دلیل نفوذ پهپاد، در وضعیت قرنطینه امنیتی طولانی‌مدت قرار گرفته است.\n@WarRoom 🚨",
-      "output_text": "رسانه های انگلستان : منابع محلی از مشاهده یک پهپاد مسلح در حریم هوایی پایگاه هوایی سلطنتی بریتانیا، RAF Lakenheath، خبر می‌دهند. گزارش‌ها حاکی از آن است که این پایگاه به‌دلیل نفوذ پهپاد، در وضعیت قرنطینه امنیتی طولانی‌مدت قرار گرفته است.\n@WarRoom 🚨",
-      "last_edit_timestamp": 1794598849.0
-    },
     "Ali_bk_8_8239": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 941,
@@ -103,13 +69,13 @@
       "target_channel": "@DidebanJang",
       "bot_msg_id": 942,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 آژیرهای هشدار حمله هوایی در پایگاه نیروی هوایی سلطنتی بریتانیا در لاکن‌هیث به صدا درآمدند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8240\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 اسکای‌نیوز گزارش داد که نیروهای ارتش آمریکا مستقر در پایگاه هوایی لیکن‌هیث نیروی هوایی سلطنتی بریتانیا، شامگاه جمعه به فعالیت مشکوک پهپادی بدون مجوز واکنش نشان دادند.\n\nبر اساس این گزارش، سخنگوی نیروی هوایی آمریکا اعلام کرد: «هیچ‌یک از نیروها، هواپیماها یا زیرساخت‌ها آسیب ندیده‌اند.»\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8240\">@Ali_bk_8</a>\n📝 <a href=\"https://t.me/VahidOnline/79102\">@VahidOnline</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
           "bot_msg_id": 942,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 آژیرهای هشدار حمله هوایی در پایگاه نیروی هوایی سلطنتی بریتانیا در لاکن‌هیث به صدا درآمدند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8240\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 اسکای‌نیوز گزارش داد که نیروهای ارتش آمریکا مستقر در پایگاه هوایی لیکن‌هیث نیروی هوایی سلطنتی بریتانیا، شامگاه جمعه به فعالیت مشکوک پهپادی بدون مجوز واکنش نشان دادند.\n\nبر اساس این گزارش، سخنگوی نیروی هوایی آمریکا اعلام کرد: «هیچ‌یک از نیروها، هواپیماها یا زیرساخت‌ها آسیب ندیده‌اند.»\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8240\">@Ali_bk_8</a>\n📝 <a href=\"https://t.me/VahidOnline/79102\">@VahidOnline</a>"
         }
       ],
       "sources": [
@@ -121,16 +87,25 @@
           "raw_text": "آژیرهای هشدار حمله هوایی در پایگاه نیروی هوایی سلطنتی بریتانیا در لاکن‌هیث به صدا درآمدند.\n\nAir raid sirens sound at the Royal Air Force base in Lakenheath.",
           "output_text": "آژیرهای هشدار حمله هوایی در پایگاه نیروی هوایی سلطنتی بریتانیا در لاکن‌هیث به صدا درآمدند.",
           "last_edit_timestamp": 1794599894.1148605
+        },
+        {
+          "source_node": "VahidOnline",
+          "msg_id": 79102,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "اسکای‌نیوز گزارش داد که نیروهای ارتش آمریکا مستقر در پایگاه هوایی لیکن‌هیث نیروی هوایی سلطنتی بریتانیا، شامگاه جمعه به فعالیت مشکوک پهپادی بدون مجوز واکنش نشان دادند.\n\nبر اساس این گزارش، سخنگوی نیروی هوایی آمریکا اعلام کرد: «هیچ‌یک از نیروها، هواپیماها یا زیرساخت‌ها آسیب ندیده‌اند.»\n@VahidOOnLine\n\n📡 @VahidOnline",
+          "output_text": "اسکای‌نیوز گزارش داد که نیروهای ارتش آمریکا مستقر در پایگاه هوایی لیکن‌هیث نیروی هوایی سلطنتی بریتانیا، شامگاه جمعه به فعالیت مشکوک پهپادی بدون مجوز واکنش نشان دادند.\n\nبر اساس این گزارش، سخنگوی نیروی هوایی آمریکا اعلام کرد: «هیچ‌یک از نیروها، هواپیماها یا زیرساخت‌ها آسیب ندیده‌اند.»\n@VahidOOnLine\n\n📡 @VahidOnline",
+          "last_edit_timestamp": 1794602545.5958352
         }
       ],
-      "active_text_source": "Ali_bk_8_8240",
+      "active_text_source": "VahidOnline_79102",
       "sent_timestamp": 1794599894.5478666,
       "source_node": "Ali_bk_8",
       "msg_id": 8240,
       "media_icons": "🎥",
       "grouped_id": null,
-      "raw_text": "آژیرهای هشدار حمله هوایی در پایگاه نیروی هوایی سلطنتی بریتانیا در لاکن‌هیث به صدا درآمدند.\n\nAir raid sirens sound at the Royal Air Force base in Lakenheath.",
-      "output_text": "آژیرهای هشدار حمله هوایی در پایگاه نیروی هوایی سلطنتی بریتانیا در لاکن‌هیث به صدا درآمدند.",
+      "raw_text": "اسکای‌نیوز گزارش داد که نیروهای ارتش آمریکا مستقر در پایگاه هوایی لیکن‌هیث نیروی هوایی سلطنتی بریتانیا، شامگاه جمعه به فعالیت مشکوک پهپادی بدون مجوز واکنش نشان دادند.\n\nبر اساس این گزارش، سخنگوی نیروی هوایی آمریکا اعلام کرد: «هیچ‌یک از نیروها، هواپیماها یا زیرساخت‌ها آسیب ندیده‌اند.»\n@VahidOOnLine\n\n📡 @VahidOnline",
+      "output_text": "اسکای‌نیوز گزارش داد که نیروهای ارتش آمریکا مستقر در پایگاه هوایی لیکن‌هیث نیروی هوایی سلطنتی بریتانیا، شامگاه جمعه به فعالیت مشکوک پهپادی بدون مجوز واکنش نشان دادند.\n\nبر اساس این گزارش، سخنگوی نیروی هوایی آمریکا اعلام کرد: «هیچ‌یک از نیروها، هواپیماها یا زیرساخت‌ها آسیب ندیده‌اند.»\n@VahidOOnLine\n\n📡 @VahidOnline",
       "last_edit_timestamp": 1794599881.0
     },
     "withyashar_28012": {
@@ -233,6 +208,108 @@
       "grouped_id": null,
       "raw_text": "هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.\n\nExplosions heard in the Strait of Hormuz now.",
       "output_text": "هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود."
+    },
+    "Ali_bk_8_8243": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 946,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز و شنیده شدن صدای انفجارها در نزدیکی سواحل ایران در بندرعباس.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8243\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 946,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز و شنیده شدن صدای انفجارها در نزدیکی سواحل ایران در بندرعباس.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8243\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8243,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز و شنیده شدن صدای انفجارها در نزدیکی سواحل ایران در بندرعباس.\n\nMore Iranian missiles launched toward the Strait of Hormuz, with explosions heard near the Iranian coast in Bandar Abbas.",
+          "output_text": "شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز و شنیده شدن صدای انفجارها در نزدیکی سواحل ایران در بندرعباس.",
+          "last_edit_timestamp": 1794601508.2437732
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8243",
+      "sent_timestamp": 1794601508.70358,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8243,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز و شنیده شدن صدای انفجارها در نزدیکی سواحل ایران در بندرعباس.\n\nMore Iranian missiles launched toward the Strait of Hormuz, with explosions heard near the Iranian coast in Bandar Abbas.",
+      "output_text": "شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز و شنیده شدن صدای انفجارها در نزدیکی سواحل ایران در بندرعباس.",
+      "last_edit_timestamp": 1794601502.0
+    },
+    "Ali_bk_8_8244": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 947,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 نیروی هوایی آمریکا:\n\nحادثه‌ای که در پایگاه نیروی هوایی سلطنتی بریتانیا در لیکنهیث رخ داد، ناشی از «فعالیت غیرمجاز پهپادها» بوده است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8244\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 947,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 نیروی هوایی آمریکا:\n\nحادثه‌ای که در پایگاه نیروی هوایی سلطنتی بریتانیا در لیکنهیث رخ داد، ناشی از «فعالیت غیرمجاز پهپادها» بوده است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8244\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8244,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "نیروی هوایی آمریکا:\n\nحادثه‌ای که در پایگاه نیروی هوایی سلطنتی بریتانیا در لیکنهیث رخ داد، ناشی از «فعالیت غیرمجاز پهپادها» بوده است.\n\nU.S. Air Force:\n\nThe incident at RAF Lakenheath was caused by \"unauthorized drone activity.\"",
+          "output_text": "نیروی هوایی آمریکا:\n\nحادثه‌ای که در پایگاه نیروی هوایی سلطنتی بریتانیا در لیکنهیث رخ داد، ناشی از «فعالیت غیرمجاز پهپادها» بوده است.",
+          "last_edit_timestamp": 1794601822.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8244",
+      "sent_timestamp": 1794601809.1833332,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8244,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "نیروی هوایی آمریکا:\n\nحادثه‌ای که در پایگاه نیروی هوایی سلطنتی بریتانیا در لیکنهیث رخ داد، ناشی از «فعالیت غیرمجاز پهپادها» بوده است.\n\nU.S. Air Force:\n\nThe incident at RAF Lakenheath was caused by \"unauthorized drone activity.\"",
+      "output_text": "نیروی هوایی آمریکا:\n\nحادثه‌ای که در پایگاه نیروی هوایی سلطنتی بریتانیا در لیکنهیث رخ داد، ناشی از «فعالیت غیرمجاز پهپادها» بوده است.",
+      "last_edit_timestamp": 1794601822.0
+    },
+    "Ali_bk_8_8245": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 948,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سپاه پاسداران تأیید کرد که دو نفتکشِ متخلف در جنوب تنگه هرمز منفجر شده و آتش گرفته‌اند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8245\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 948,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سپاه پاسداران تأیید کرد که دو نفتکشِ متخلف در جنوب تنگه هرمز منفجر شده و آتش گرفته‌اند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8245\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8245,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "سپاه پاسداران تأیید کرد که دو نفتکشِ متخلف در جنوب تنگه هرمز منفجر شده و آتش گرفته‌اند.\n\nThe IRGC confirms that two oil tankers involved in violations exploded and caught fire south of the Strait of Hormuz.",
+          "output_text": "سپاه پاسداران تأیید کرد که دو نفتکشِ متخلف در جنوب تنگه هرمز منفجر شده و آتش گرفته‌اند.",
+          "last_edit_timestamp": 1794602403.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8245",
+      "sent_timestamp": 1794602363.4944985,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8245,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "سپاه پاسداران تأیید کرد که دو نفتکشِ متخلف در جنوب تنگه هرمز منفجر شده و آتش گرفته‌اند.\n\nThe IRGC confirms that two oil tankers involved in violations exploded and caught fire south of the Strait of Hormuz.",
+      "output_text": "سپاه پاسداران تأیید کرد که دو نفتکشِ متخلف در جنوب تنگه هرمز منفجر شده و آتش گرفته‌اند.",
+      "last_edit_timestamp": 1794602403.0
     }
   },
   "pending_translations": {
@@ -243,5 +320,5 @@
       "grouped_id": null
     }
   },
-  "updated_at": "2026-11-13T20:21:41.794477+00:00"
+  "updated_at": "2026-11-13T20:48:07.346376+00:00"
 }
