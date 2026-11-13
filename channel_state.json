@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-13 20:03:12 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8262,
-      "last_read_time": "2026-11-13 21:36:52 UTC"
+      "last_read_id": 8268,
+      "last_read_time": "2026-11-13 22:03:28 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79103,
@@ -30,75 +30,7 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8247": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 949,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 یک کشتی در تنگه هرمز در حال سوختن است.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8247\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 949,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 یک کشتی در تنگه هرمز در حال سوختن است.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8247\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8247,
-          "media_icons": "📷🎥",
-          "grouped_id": 14356827968799642,
-          "raw_text": "یک کشتی در تنگه هرمز در حال سوختن است.\n\nA ship is burning in the Strait of Hormuz.",
-          "output_text": "یک کشتی در تنگه هرمز در حال سوختن است.",
-          "last_edit_timestamp": 1794603518.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8247",
-      "sent_timestamp": 1794603513.7725954,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8247,
-      "media_icons": "📷🎥",
-      "grouped_id": 14356827968799642,
-      "raw_text": "یک کشتی در تنگه هرمز در حال سوختن است.\n\nA ship is burning in the Strait of Hormuz.",
-      "output_text": "یک کشتی در تنگه هرمز در حال سوختن است.",
-      "last_edit_timestamp": 1794603518.0
-    },
-    "Ali_bk_8_8250": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 950,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سپاه پاسداران تصاویری از انفجار و آتش‌سوزی دو نفتکش متخلف در جنوب تنگه هرمز منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8250\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 950,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سپاه پاسداران تصاویری از انفجار و آتش‌سوزی دو نفتکش متخلف در جنوب تنگه هرمز منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8250\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8250,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "سپاه پاسداران تصاویری از انفجار و آتش‌سوزی دو نفتکش متخلف در جنوب تنگه هرمز منتشر کرد.\n\nThe IRGC releases footage of two oil tankers involved in violations exploding and catching fire south of the Strait of Hormuz.",
-          "output_text": "سپاه پاسداران تصاویری از انفجار و آتش‌سوزی دو نفتکش متخلف در جنوب تنگه هرمز منتشر کرد.",
-          "last_edit_timestamp": 1794603889.5023243
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8250",
-      "sent_timestamp": 1794603890.4293025,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8250,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "سپاه پاسداران تصاویری از انفجار و آتش‌سوزی دو نفتکش متخلف در جنوب تنگه هرمز منتشر کرد.\n\nThe IRGC releases footage of two oil tankers involved in violations exploding and catching fire south of the Strait of Hormuz.",
-      "output_text": "سپاه پاسداران تصاویری از انفجار و آتش‌سوزی دو نفتکش متخلف در جنوب تنگه هرمز منتشر کرد."
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-13T21:40:57.851992+00:00"
+  "updated_at": "2026-11-13T22:07:23.761179+00:00"
 }
