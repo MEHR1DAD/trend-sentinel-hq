@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 27978,
-      "last_read_time": "2026-11-13 08:54:10 UTC"
+      "last_read_id": 27980,
+      "last_read_time": "2026-11-13 11:07:20 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8220,
-      "last_read_time": "2026-11-13 10:22:42 UTC"
+      "last_read_id": 8221,
+      "last_read_time": "2026-11-13 11:07:30 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79093,
@@ -31,39 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8215": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 921,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 ارتش ایران:\n\nساعاتی پیش، یک پهپاد MQ-1 متعلق به دشمن آمریکایی در سواحل سیریک سرنگون شد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8215\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 921,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 ارتش ایران:\n\nساعاتی پیش، یک پهپاد MQ-1 متعلق به دشمن آمریکایی در سواحل سیریک سرنگون شد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8215\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8215,
-          "media_icons": "📷",
-          "grouped_id": 14356513828988586,
-          "raw_text": "ارتش ایران:\n\nساعاتی پیش، یک پهپاد MQ-1 متعلق به دشمن آمریکایی در سواحل سیریک سرنگون شد.\n\nThe Iranian army:\n\nHours ago, a US enemy MQ-1 drone was shot down off the coast of Sirik.",
-          "output_text": "ارتش ایران:\n\nساعاتی پیش، یک پهپاد MQ-1 متعلق به دشمن آمریکایی در سواحل سیریک سرنگون شد.",
-          "last_edit_timestamp": 1794564329.850529
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8215",
-      "sent_timestamp": 1794564330.4064147,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8215,
-      "media_icons": "📷",
-      "grouped_id": 14356513828988586,
-      "raw_text": "ارتش ایران:\n\nساعاتی پیش، یک پهپاد MQ-1 متعلق به دشمن آمریکایی در سواحل سیریک سرنگون شد.\n\nThe Iranian army:\n\nHours ago, a US enemy MQ-1 drone was shot down off the coast of Sirik.",
-      "output_text": "ارتش ایران:\n\nساعاتی پیش، یک پهپاد MQ-1 متعلق به دشمن آمریکایی در سواحل سیریک سرنگون شد."
-    },
     "Ali_bk_8_8220": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 922,
@@ -97,8 +64,76 @@
       "raw_text": "فرمانده سپاه پاسداران، سرلشکر وحیدی:\n\nتهدیدهای دشمن چیزی جز آرزوهای بربادرفته آن درباره ایران نیست. نیروهای مسلح ما در بهترین وضعیت خود قرار دارند و دشمن را در عمق مواضعش هدف قرار خواهند داد.\n\nIRGC Commander Major General Vahidi:\n\nThe enemy's threats are nothing more than its wishful thinking about Iran. Our armed forces are in their best shape and will target the enemy deep inside its positions.",
       "output_text": "فرمانده سپاه پاسداران، سرلشکر وحیدی:\n\nتهدیدهای دشمن چیزی جز آرزوهای بربادرفته آن درباره ایران نیست. نیروهای مسلح ما در بهترین وضعیت خود قرار دارند و دشمن را در عمق مواضعش هدف قرار خواهند داد.",
       "last_edit_timestamp": 1794565403.0
+    },
+    "withyashar_27979": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 74,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 وزارت دادگستری آمریکا: واشنگتن با مجوز دادگاه به دنبال توقیف بیش از ۱.۲ میلیارد دلار از دارایی‌های سرقت‌شده در حمله سایبری ۲۹ اکتبر به بایننس است. ارزش کل سرقت حدود ۶.۳۴ میلیارد دلار برآورد شده که تاکنون ۲.۷ میلیارد دلار آن مسدود شده، ۲.۸۵ میلیارد دلار همچنان در اختیار هکرهاست و احتمال می‌رود ۸۹۱ میلیون دلار دیگر نیز جابه‌جا یا پول‌شویی شده باشد.\n\n📝 <a href=\"https://t.me/withyashar/27979\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 74,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 وزارت دادگستری آمریکا: واشنگتن با مجوز دادگاه به دنبال توقیف بیش از ۱.۲ میلیارد دلار از دارایی‌های سرقت‌شده در حمله سایبری ۲۹ اکتبر به بایننس است. ارزش کل سرقت حدود ۶.۳۴ میلیارد دلار برآورد شده که تاکنون ۲.۷ میلیارد دلار آن مسدود شده، ۲.۸۵ میلیارد دلار همچنان در اختیار هکرهاست و احتمال می‌رود ۸۹۱ میلیون دلار دیگر نیز جابه‌جا یا پول‌شویی شده باشد.\n\n📝 <a href=\"https://t.me/withyashar/27979\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 27979,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "وزارت دادگستری آمریکا: واشنگتن با مجوز دادگاه به دنبال توقیف بیش از ۱.۲ میلیارد دلار از دارایی‌های سرقت‌شده در حمله سایبری ۲۹ اکتبر به بایننس است. ارزش کل سرقت حدود ۶.۳۴ میلیارد دلار برآورد شده که تاکنون ۲.۷ میلیارد دلار آن مسدود شده، ۲.۸۵ میلیارد دلار همچنان در اختیار هکرهاست و احتمال می‌رود ۸۹۱ میلیون دلار دیگر نیز جابه‌جا یا پول‌شویی شده باشد.\n@WarRoom",
+          "output_text": "وزارت دادگستری آمریکا: واشنگتن با مجوز دادگاه به دنبال توقیف بیش از ۱.۲ میلیارد دلار از دارایی‌های سرقت‌شده در حمله سایبری ۲۹ اکتبر به بایننس است. ارزش کل سرقت حدود ۶.۳۴ میلیارد دلار برآورد شده که تاکنون ۲.۷ میلیارد دلار آن مسدود شده، ۲.۸۵ میلیارد دلار همچنان در اختیار هکرهاست و احتمال می‌رود ۸۹۱ میلیون دلار دیگر نیز جابه‌جا یا پول‌شویی شده باشد.\n@WarRoom",
+          "last_edit_timestamp": 1794567883.514132
+        }
+      ],
+      "active_text_source": "withyashar_27979",
+      "sent_timestamp": 1794567884.0315168,
+      "source_node": "withyashar",
+      "msg_id": 27979,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "وزارت دادگستری آمریکا: واشنگتن با مجوز دادگاه به دنبال توقیف بیش از ۱.۲ میلیارد دلار از دارایی‌های سرقت‌شده در حمله سایبری ۲۹ اکتبر به بایننس است. ارزش کل سرقت حدود ۶.۳۴ میلیارد دلار برآورد شده که تاکنون ۲.۷ میلیارد دلار آن مسدود شده، ۲.۸۵ میلیارد دلار همچنان در اختیار هکرهاست و احتمال می‌رود ۸۹۱ میلیون دلار دیگر نیز جابه‌جا یا پول‌شویی شده باشد.\n@WarRoom",
+      "output_text": "وزارت دادگستری آمریکا: واشنگتن با مجوز دادگاه به دنبال توقیف بیش از ۱.۲ میلیارد دلار از دارایی‌های سرقت‌شده در حمله سایبری ۲۹ اکتبر به بایننس است. ارزش کل سرقت حدود ۶.۳۴ میلیارد دلار برآورد شده که تاکنون ۲.۷ میلیارد دلار آن مسدود شده، ۲.۸۵ میلیارد دلار همچنان در اختیار هکرهاست و احتمال می‌رود ۸۹۱ میلیون دلار دیگر نیز جابه‌جا یا پول‌شویی شده باشد.\n@WarRoom",
+      "last_edit_timestamp": 1794567863.0
+    },
+    "Ali_bk_8_8221": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 75,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تصاویر ماهواره‌ای دود برخاسته از یک نفتکش در نزدیکی سواحل امارات را نشان می‌دهند که به احتمال زیاد پس از تلاش برای عبور غیرقانونی از تنگه هرمز هدف قرار گرفته است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8221\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 75,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تصاویر ماهواره‌ای دود برخاسته از یک نفتکش در نزدیکی سواحل امارات را نشان می‌دهند که به احتمال زیاد پس از تلاش برای عبور غیرقانونی از تنگه هرمز هدف قرار گرفته است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8221\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8221,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "تصاویر ماهواره‌ای دود برخاسته از یک نفتکش در نزدیکی سواحل امارات را نشان می‌دهند که به احتمال زیاد پس از تلاش برای عبور غیرقانونی از تنگه هرمز هدف قرار گرفته است.\n\nSatellite images show smoke rising from an oil tanker off the UAE coast. It was likely targeted after attempting to cross the Strait of Hormuz illegally.",
+          "output_text": "تصاویر ماهواره‌ای دود برخاسته از یک نفتکش در نزدیکی سواحل امارات را نشان می‌دهند که به احتمال زیاد پس از تلاش برای عبور غیرقانونی از تنگه هرمز هدف قرار گرفته است.",
+          "last_edit_timestamp": 1794568088.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8221",
+      "sent_timestamp": 1794568066.5459614,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8221,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "تصاویر ماهواره‌ای دود برخاسته از یک نفتکش در نزدیکی سواحل امارات را نشان می‌دهند که به احتمال زیاد پس از تلاش برای عبور غیرقانونی از تنگه هرمز هدف قرار گرفته است.\n\nSatellite images show smoke rising from an oil tanker off the UAE coast. It was likely targeted after attempting to cross the Strait of Hormuz illegally.",
+      "output_text": "تصاویر ماهواره‌ای دود برخاسته از یک نفتکش در نزدیکی سواحل امارات را نشان می‌دهند که به احتمال زیاد پس از تلاش برای عبور غیرقانونی از تنگه هرمز هدف قرار گرفته است.",
+      "last_edit_timestamp": 1794568088.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-13T10:42:58.957904+00:00"
+  "updated_at": "2026-11-13T11:13:07.788840+00:00"
 }
