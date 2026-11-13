@@ -30,42 +30,7 @@
     "@DidehbanEghtesad": 1794513097.8797176,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8206": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 913,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 پهپادهای دشمن بر فراز صنعا، پایتخت یمن.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8206\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 913,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 پهپادهای دشمن بر فراز صنعا، پایتخت یمن.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8206\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8206,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "پهپادهای دشمن بر فراز صنعا، پایتخت یمن.\n\nEnemy drones over the Yemeni capital, Sanaa.",
-          "output_text": "پهپادهای دشمن بر فراز صنعا، پایتخت یمن.",
-          "last_edit_timestamp": 1794544008.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8206",
-      "sent_timestamp": 1794543749.786556,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8206,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "پهپادهای دشمن بر فراز صنعا، پایتخت یمن.\n\nEnemy drones over the Yemeni capital, Sanaa.",
-      "output_text": "پهپادهای دشمن بر فراز صنعا، پایتخت یمن.",
-      "last_edit_timestamp": 1794544008.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-13T05:15:47.662932+00:00"
+  "updated_at": "2026-11-13T05:42:10.103064+00:00"
 }
