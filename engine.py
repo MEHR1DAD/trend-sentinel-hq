@@ -826,8 +826,11 @@ class SentinelEngine:
             return weighted_overlap >= 0.88 and weight_ratio <= 2.0 and len(shared_anchors) >= 3
 
         # Guard against a massive omnibus roundup (e.g. 16-min speech summary) swallowing a 1-line breaking alert
-        if weight_ratio > 4.5 and weighted_overlap < 0.85:
-            return False
+        if weight_ratio > 4.5:
+            if len(shared_anchors) <= 2 and weighted_overlap < 0.85:
+                return False
+            if weight_ratio > 7.0 and weighted_overlap < 0.85:
+                return False
 
         # Complementary Rule: breaking news sharing a specific location + incident/kinetic event
         shared_locs = locs1 & locs2
@@ -839,9 +842,13 @@ class SentinelEngine:
             if (shared_tokens & incident_tokens) and weighted_overlap >= 0.45 and len(shared_anchors) >= 1:
                 return True
 
-        if weighted_overlap >= 0.55 and len(shared_anchors) >= 3:
+        # Rich Upgrade: detailed official statement / multi-anchor report expanding on a breaking alert
+        if len(shared_anchors) >= 3 and weighted_overlap >= 0.60 and weight_ratio <= 7.0:
             return True
-        if weighted_overlap >= 0.65 and len(shared_anchors) >= 2:
+
+        if weighted_overlap >= 0.55 and len(shared_anchors) >= 3 and weight_ratio <= 4.5:
+            return True
+        if weighted_overlap >= 0.65 and len(shared_anchors) >= 2 and weight_ratio <= 4.5:
             return True
         if weight_ratio <= 4.0 and weighted_overlap >= 0.40 and len(shared_anchors) >= 7:
             return True

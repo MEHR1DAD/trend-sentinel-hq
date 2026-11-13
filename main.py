@@ -574,23 +574,51 @@ class TrendSentinelV4:
         all_body = [formatted_first_p] + paragraphs[1:]
         body_text = "\n\n".join(all_body)
 
-        # 5. Clean single-line hyperlinked source footer with per-source content icon(s)
-        if sources and len(sources) >= 2:
-            src_links = []
+        # 5. Clean multiline hyperlinked source footer with per-source content icon(s)
+        # Deduplicate contributing sources by source_node (keeping highest msg_id & media icons)
+        unique_sources = []
+        if sources:
+            node_map = {}
             for src in sources:
+                c_node = str(src.get("source_node", "")).lstrip('@')
+                if not c_node:
+                    continue
+                if c_node not in node_map:
+                    node_map[c_node] = dict(src)
+                    node_map[c_node]["source_node"] = c_node
+                else:
+                    cur = node_map[c_node]
+                    cur_mid = int(cur.get("msg_id") or 0)
+                    new_mid = int(src.get("msg_id") or 0)
+                    cur_icon = cur.get("media_icons") or "📝"
+                    new_icon = src.get("media_icons") or "📝"
+                    best_icon = new_icon if ("🎥" in new_icon or "📷" in new_icon) else cur_icon
+                    best_mid = max(cur_mid, new_mid)
+                    cur["msg_id"] = best_mid
+                    cur["media_icons"] = best_icon
+            unique_sources = list(node_map.values())
+
+        if unique_sources and len(unique_sources) >= 2:
+            src_lines = []
+            for src in unique_sources:
                 clean_src = str(src.get("source_node", "")).lstrip('@')
                 src_id = src.get("msg_id")
                 src_icons = src.get("media_icons") or "📝"
                 src_url = f"https://t.me/{clean_src}/{src_id}"
-                src_links.append(f'{src_icons} <a href="{src_url}">@{clean_src}</a>')
-            footer = "منبع: " + " | ".join(src_links)
-        else:
-            primary_src = sources[0] if sources else None
-            clean_node = (primary_src.get("source_node", source_node) if primary_src else source_node).lstrip('@')
-            primary_id = primary_src.get("msg_id", msg_id) if primary_src else msg_id
-            icons_prefix = (primary_src.get("media_icons") if primary_src else media_icons) or "📝"
+                src_lines.append(f'{src_icons} <a href="{src_url}">@{clean_src}</a>')
+            footer = "\n".join(src_lines)
+        elif unique_sources:
+            primary_src = unique_sources[0]
+            clean_node = str(primary_src.get("source_node", "")).lstrip('@')
+            primary_id = primary_src.get("msg_id", msg_id)
+            icons_prefix = primary_src.get("media_icons") or "📝"
             source_url = f"https://t.me/{clean_node}/{primary_id}"
-            footer = f'{icons_prefix} منبع: <a href="{source_url}">@{clean_node}</a>'
+            footer = f'{icons_prefix} <a href="{source_url}">@{clean_node}</a>'
+        else:
+            clean_node = str(source_node or "").lstrip('@')
+            icons_prefix = media_icons or "📝"
+            source_url = f"https://t.me/{clean_node}/{msg_id}"
+            footer = f'{icons_prefix} <a href="{source_url}">@{clean_node}</a>'
 
         return f"{body_text}\n\n{footer}"
 
