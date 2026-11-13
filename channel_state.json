@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-13 12:25:48 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8223,
-      "last_read_time": "2026-11-13 12:03:29 UTC"
+      "last_read_id": 8224,
+      "last_read_time": "2026-11-13 12:49:43 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79093,
@@ -64,8 +64,42 @@
       "raw_text": "گزارش انفجار در جاسک\n@WarRoom 🚨🚨🚨🚨",
       "output_text": "گزارش انفجار در جاسک\n@WarRoom 🚨🚨🚨🚨",
       "last_edit_timestamp": 1794571486.0
+    },
+    "Ali_bk_8_8224": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 924,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 نیروی دریایی آمریکا در ازای پرداخت پاداش، از مردم می‌خواهد تهدیدها و فعالیت‌های سپاه پاسداران در دریا را گزارش دهند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8224\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 924,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 نیروی دریایی آمریکا در ازای پرداخت پاداش، از مردم می‌خواهد تهدیدها و فعالیت‌های سپاه پاسداران در دریا را گزارش دهند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8224\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8224,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "نیروی دریایی آمریکا در ازای پرداخت پاداش، از مردم می‌خواهد تهدیدها و فعالیت‌های سپاه پاسداران در دریا را گزارش دهند.\n\nThe US Navy is asking people to report threats and IRGC activities at sea in exchange for a reward.",
+          "output_text": "نیروی دریایی آمریکا در ازای پرداخت پاداش، از مردم می‌خواهد تهدیدها و فعالیت‌های سپاه پاسداران در دریا را گزارش دهند.",
+          "last_edit_timestamp": 1794574204.1903565
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8224",
+      "sent_timestamp": 1794574195.9939609,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8224,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "نیروی دریایی آمریکا در ازای پرداخت پاداش، از مردم می‌خواهد تهدیدها و فعالیت‌های سپاه پاسداران در دریا را گزارش دهند.\n\nThe US Navy is asking people to report threats and IRGC activities at sea in exchange for a reward.",
+      "output_text": "نیروی دریایی آمریکا در ازای پرداخت پاداش، از مردم می‌خواهد تهدیدها و فعالیت‌های سپاه پاسداران در دریا را گزارش دهند.",
+      "last_edit_timestamp": 1794574204.1903565
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-13T12:32:22.328243+00:00"
+  "updated_at": "2026-11-13T12:58:54.793015+00:00"
 }
