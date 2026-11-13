@@ -31,73 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8211": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 917,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 آزمایش‌های موشکی سپاه پاسداران حدود یک ماه است که ادامه دارد و همچنان در جریان است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8211\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 917,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 آزمایش‌های موشکی سپاه پاسداران حدود یک ماه است که ادامه دارد و همچنان در جریان است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8211\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8211,
-          "media_icons": "📷",
-          "grouped_id": 14356458070534146,
-          "raw_text": "آزمایش‌های موشکی سپاه پاسداران حدود یک ماه است که ادامه دارد و همچنان در جریان است.\n\nThe IRGC's missile tests have been ongoing for about a month and are still continuing.",
-          "output_text": "آزمایش‌های موشکی سپاه پاسداران حدود یک ماه است که ادامه دارد و همچنان در جریان است.",
-          "last_edit_timestamp": 1794557301.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8211",
-      "sent_timestamp": 1794557277.8866777,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8211,
-      "media_icons": "📷",
-      "grouped_id": 14356458070534146,
-      "raw_text": "آزمایش‌های موشکی سپاه پاسداران حدود یک ماه است که ادامه دارد و همچنان در جریان است.\n\nThe IRGC's missile tests have been ongoing for about a month and are still continuing.",
-      "output_text": "آزمایش‌های موشکی سپاه پاسداران حدود یک ماه است که ادامه دارد و همچنان در جریان است.",
-      "last_edit_timestamp": 1794557301.0
-    },
-    "Ali_bk_8_8213": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 918,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 آژانس بین‌المللی انرژی اتمی:\n\nهیچ اطلاعاتی از ایران درباره وضعیت تأسیسات و مواد هسته‌ای این کشور دریافت نکرده‌ایم و نبود اطلاعات از زمان حملات ژوئن 2024 نگرانی‌های جدی درباره اشاعه هسته‌ای ایجاد می‌کند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8213\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 918,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 آژانس بین‌المللی انرژی اتمی:\n\nهیچ اطلاعاتی از ایران درباره وضعیت تأسیسات و مواد هسته‌ای این کشور دریافت نکرده‌ایم و نبود اطلاعات از زمان حملات ژوئن 2024 نگرانی‌های جدی درباره اشاعه هسته‌ای ایجاد می‌کند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8213\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8213,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "آژانس بین‌المللی انرژی اتمی:\n\nهیچ اطلاعاتی از ایران درباره وضعیت تأسیسات و مواد هسته‌ای این کشور دریافت نکرده‌ایم و نبود اطلاعات از زمان حملات ژوئن 2024 نگرانی‌های جدی درباره اشاعه هسته‌ای ایجاد می‌کند.\n\nThe IAEA:\n\nWe have received no information from Iran regarding the status of its nuclear facilities and materials. The lack of information since the June 2024 attacks raises serious concerns about nuclear proliferation.",
-          "output_text": "آژانس بین‌المللی انرژی اتمی:\n\nهیچ اطلاعاتی از ایران درباره وضعیت تأسیسات و مواد هسته‌ای این کشور دریافت نکرده‌ایم و نبود اطلاعات از زمان حملات ژوئن 2024 نگرانی‌های جدی درباره اشاعه هسته‌ای ایجاد می‌کند.",
-          "last_edit_timestamp": 1794558153.419823
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8213",
-      "sent_timestamp": 1794558153.762919,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8213,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "آژانس بین‌المللی انرژی اتمی:\n\nهیچ اطلاعاتی از ایران درباره وضعیت تأسیسات و مواد هسته‌ای این کشور دریافت نکرده‌ایم و نبود اطلاعات از زمان حملات ژوئن 2024 نگرانی‌های جدی درباره اشاعه هسته‌ای ایجاد می‌کند.\n\nThe IAEA:\n\nWe have received no information from Iran regarding the status of its nuclear facilities and materials. The lack of information since the June 2024 attacks raises serious concerns about nuclear proliferation.",
-      "output_text": "آژانس بین‌المللی انرژی اتمی:\n\nهیچ اطلاعاتی از ایران درباره وضعیت تأسیسات و مواد هسته‌ای این کشور دریافت نکرده‌ایم و نبود اطلاعات از زمان حملات ژوئن 2024 نگرانی‌های جدی درباره اشاعه هسته‌ای ایجاد می‌کند."
-    },
     "withyashar_27978": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 919,
@@ -134,5 +67,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-13T08:57:20.858972+00:00"
+  "updated_at": "2026-11-13T09:23:42.960522+00:00"
 }
