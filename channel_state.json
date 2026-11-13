@@ -35,13 +35,13 @@
       "target_channel": "@DidebanJang",
       "bot_msg_id": 913,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 پرتاب پهپادهای یمنی به‌سوی اهداف دشمن.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8206\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 پهپادهای دشمن بر فراز صنعا، پایتخت یمن.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8206\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
           "bot_msg_id": 913,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 پرتاب پهپادهای یمنی به‌سوی اهداف دشمن.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8206\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 پهپادهای دشمن بر فراز صنعا، پایتخت یمن.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8206\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
@@ -50,9 +50,9 @@
           "msg_id": 8206,
           "media_icons": "🎥",
           "grouped_id": null,
-          "raw_text": "پرتاب پهپادهای یمنی به‌سوی اهداف دشمن.\n\nLaunch of Yemeni drones toward enemy targets.",
-          "output_text": "پرتاب پهپادهای یمنی به‌سوی اهداف دشمن.",
-          "last_edit_timestamp": 1794543749.3470976
+          "raw_text": "پهپادهای دشمن بر فراز صنعا، پایتخت یمن.\n\nEnemy drones over the Yemeni capital, Sanaa.",
+          "output_text": "پهپادهای دشمن بر فراز صنعا، پایتخت یمن.",
+          "last_edit_timestamp": 1794544008.0
         }
       ],
       "active_text_source": "Ali_bk_8_8206",
@@ -61,10 +61,11 @@
       "msg_id": 8206,
       "media_icons": "🎥",
       "grouped_id": null,
-      "raw_text": "پرتاب پهپادهای یمنی به‌سوی اهداف دشمن.\n\nLaunch of Yemeni drones toward enemy targets.",
-      "output_text": "پرتاب پهپادهای یمنی به‌سوی اهداف دشمن."
+      "raw_text": "پهپادهای دشمن بر فراز صنعا، پایتخت یمن.\n\nEnemy drones over the Yemeni capital, Sanaa.",
+      "output_text": "پهپادهای دشمن بر فراز صنعا، پایتخت یمن.",
+      "last_edit_timestamp": 1794544008.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-13T04:22:57.818983+00:00"
+  "updated_at": "2026-11-13T04:49:23.961935+00:00"
 }
