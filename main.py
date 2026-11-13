@@ -263,6 +263,8 @@ class TrendSentinelV4:
         alert_info["media_icons"] = primary.get("media_icons", self.TEXT_ICON)
         alert_info["grouped_id"] = primary.get("grouped_id")
         if dispatches:
+            alert_info["target_channel"] = dispatches[0].get("target_channel", alert_info.get("target_channel", ""))
+            alert_info["bot_msg_id"] = dispatches[0].get("bot_msg_id", alert_info.get("bot_msg_id", 0))
             alert_info["status_icon"] = dispatches[0].get("status_icon", alert_info.get("status_icon", "🔕"))
             alert_info["last_formatted_text"] = dispatches[0].get("last_formatted_text", "")
         return any_edited
@@ -275,8 +277,12 @@ class TrendSentinelV4:
         new_fp = self.engine.build_event_fingerprint(display_text, source_node)
         now = time.time()
         target_set = set(target_channels)
+        self_key = f"{source_node}_{msg_id}"
 
         for entry_key, info in self.sent_alerts_map.items():
+            if entry_key == self_key:
+                continue
+
             sent_ts = float(info.get("sent_timestamp", 0))
             if now - sent_ts > config.EDIT_DELETE_WINDOW_SEC:
                 continue
@@ -798,6 +804,142 @@ class TrendSentinelV4:
             self.update_session_report()
         return True
 
+    def _sync_destination_reroute(
+        self,
+        alert_info: dict,
+        eval_res: Optional[dict],
+        display_text: str,
+        source_node: str,
+        src_msg_id: int,
+        media_icons: str,
+    ) -> bool:
+        """
+        Dynamically handles topical re-routing when an edit by the source channel within 60m
+        causes the event's target destination channel(s) to change.
+        - Deletes the message from the previous/abandoned channel(s) via deleteMessage.
+        - Either merges into an existing matching alert in the new destination, or
+          dispatches as a new message to the newly routed channel(s).
+        Returns True if any re-routing occurred, False otherwise.
+        """
+        if not eval_res or eval_res.get("status") != "MATCHED":
+            return False
+
+        current_dispatches = self._get_dispatches(alert_info)
+        current_channels = {d.get("target_channel") for d in current_dispatches if d.get("target_channel")}
+
+        dispatches_meta = eval_res.get("dispatches_meta") or [{
+            "target_channel": eval_res["target_channel"],
+            "severity": eval_res.get("severity", "SILENT"),
+        }]
+        new_channels = {m.get("target_channel") for m in dispatches_meta if m.get("target_channel")}
+
+        if not new_channels or new_channels == current_channels:
+            return False
+
+        channels_to_remove = current_channels - new_channels
+        channels_to_add = new_channels - current_channels
+
+        rerouted = False
+        remaining_dispatches = []
+
+        # 1. Delete message from abandoned channels
+        for d in current_dispatches:
+            target_ch = d.get("target_channel")
+            bot_msg_id = d.get("bot_msg_id")
+            if target_ch in channels_to_remove:
+                if bot_msg_id:
+                    print(f"🗑️ [REROUTE DELETE] Deleting alert from {target_ch} (#{bot_msg_id}) due to topical destination change.")
+                    if self.delete_bot_alert(target_ch, bot_msg_id):
+                        self.alerts_deleted += 1
+                rerouted = True
+            else:
+                remaining_dispatches.append(d)
+
+        alert_info["dispatches"] = remaining_dispatches
+        if not remaining_dispatches:
+            alert_info.pop("target_channel", None)
+            alert_info.pop("bot_msg_id", None)
+
+        # 2. Dispatch or merge into newly targeted channels
+        if channels_to_add:
+            sources = self._get_sources(alert_info)
+            primary = sources[0] if sources else {
+                "source_node": source_node,
+                "msg_id": src_msg_id,
+                "media_icons": media_icons
+            }
+            meta_map = {m["target_channel"]: m for m in dispatches_meta}
+
+            for target_ch in channels_to_add:
+                ch_meta = meta_map.get(target_ch, {})
+                is_engine_urgent = (ch_meta.get("severity") == "URGENT")
+
+                # Check if this re-routed alert matches an existing alert in the new destination channel
+                dup_match = self._find_duplicate_alert(display_text, source_node, src_msg_id, [target_ch])
+                if dup_match:
+                    entry_key, existing_info = dup_match
+                    existing_sources = self._get_sources(existing_info)
+                    if not any(s.get("source_node") == source_node and int(s.get("msg_id", 0)) == src_msg_id for s in existing_sources):
+                        existing_sources.append({
+                            "source_node": source_node,
+                            "msg_id": src_msg_id,
+                            "media_icons": media_icons,
+                            "grouped_id": alert_info.get("grouped_id"),
+                            "raw_text": alert_info.get("raw_text", ""),
+                            "output_text": display_text,
+                            "last_edit_timestamp": time.time(),
+                        })
+                        existing_info["sources"] = existing_sources
+
+                    current_active = existing_info.get("output_text") or existing_info.get("raw_text") or ""
+                    if self.engine.should_upgrade_text(current_active, display_text):
+                        existing_info["active_text_source"] = f"{source_node}_{src_msg_id}"
+                        existing_info["raw_text"] = alert_info.get("raw_text", "")
+                        existing_info["output_text"] = display_text
+
+                    self._rerender_alert_entry(existing_info, meta_by_ch=meta_map, eval_res=eval_res)
+                    print(f"🔗 [REROUTE MERGE] Merged re-routed @{source_node}/#{src_msg_id} into existing {entry_key} in {target_ch}")
+                    rerouted = True
+                    continue
+
+                # If no duplicate, dispatch as a new alert in target_ch
+                disable_notif, status_icon = self.resolve_alert_mode_and_icon(target_ch, is_engine_urgent)
+                formatted_text = self.sanitize_and_format_alert(
+                    display_text,
+                    primary.get("source_node", source_node),
+                    int(primary.get("msg_id", src_msg_id)),
+                    status_icon,
+                    media_icons=primary.get("media_icons", media_icons),
+                    sources=sources,
+                )
+                if not formatted_text:
+                    continue
+
+                bot_msg_id = self.send_bot_alert(target_ch, formatted_text, disable_notif)
+                if bot_msg_id:
+                    self.alerts_dispatched += 1
+                    alert_info["dispatches"].append({
+                        "target_channel": target_ch,
+                        "bot_msg_id": bot_msg_id,
+                        "status_icon": status_icon,
+                        "last_formatted_text": formatted_text,
+                    })
+                    print(f"🚀 [REROUTE DISPATCH] Re-routed alert to {target_ch} (#{bot_msg_id}) (Source: @{source_node}/#{src_msg_id})")
+                    rerouted = True
+
+        # Synchronize top-level fields
+        if alert_info.get("dispatches"):
+            primary_disp = alert_info["dispatches"][0]
+            alert_info["target_channel"] = primary_disp["target_channel"]
+            alert_info["bot_msg_id"] = primary_disp["bot_msg_id"]
+            alert_info["status_icon"] = primary_disp["status_icon"]
+            alert_info["last_formatted_text"] = primary_disp["last_formatted_text"]
+        elif rerouted:
+            # All dispatches were re-routed into an existing merged alert
+            self.sent_alerts_map.pop(f"{source_node}_{src_msg_id}", None)
+
+        return rerouted
+
     async def handle_edited_message(self, msg, source_node: str, album_msgs: Optional[list] = None):
         """
         Handles edited messages (including media changes, late Persian translations on @Ali_bk_8,
@@ -878,11 +1020,27 @@ class TrendSentinelV4:
             alert_info["raw_text"] = msg_text
             alert_info["output_text"] = display_text
 
-        any_edited = self._rerender_alert_entry(alert_info, meta_by_ch=meta_by_ch, eval_res=eval_res)
-        if any_edited:
-            print(f"🔄 [EDIT SYNC] Synced edit from @{source_node}/#{src_msg_id} (icons: {media_icons})")
+        # Dynamic Topical Re-routing: if edit changes destination channel(s) within 60m
+        rerouted = self._sync_destination_reroute(
+            alert_info,
+            eval_res,
+            display_text,
+            source_node,
+            src_msg_id,
+            media_icons,
+        )
+
+        any_edited = False
+        if not rerouted or alert_info.get("dispatches"):
+            any_edited = self._rerender_alert_entry(alert_info, meta_by_ch=meta_by_ch, eval_res=eval_res)
+
+        if any_edited or rerouted:
+            print(f"🔄 [EDIT SYNC] Synced edit from @{source_node}/#{src_msg_id} (icons: {media_icons}, rerouted: {rerouted})")
             alert_info["last_edit_timestamp"] = max(float(alert_info.get("last_edit_timestamp", 0)), edit_ts)
             self._save_channel_state()
+            self.update_session_report()
+        elif edit_date:
+            alert_info["last_edit_timestamp"] = max(float(alert_info.get("last_edit_timestamp", 0)), edit_ts)
             self.update_session_report()
         elif edit_date:
             alert_info["last_edit_timestamp"] = max(float(alert_info.get("last_edit_timestamp", 0)), edit_ts)
