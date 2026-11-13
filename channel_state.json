@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-12 23:28:16 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8205,
-      "last_read_time": "2026-11-13 02:22:48 UTC"
+      "last_read_id": 8206,
+      "last_read_time": "2026-11-13 04:21:53 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79093,
@@ -30,7 +30,41 @@
     "@DidehbanEghtesad": 1794513097.8797176,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_8206": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 913,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 پرتاب پهپادهای یمنی به‌سوی اهداف دشمن.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8206\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 913,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 پرتاب پهپادهای یمنی به‌سوی اهداف دشمن.\n\n🎥 منبع: <a href=\"https://t.me/Ali_bk_8/8206\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8206,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "پرتاب پهپادهای یمنی به‌سوی اهداف دشمن.\n\nLaunch of Yemeni drones toward enemy targets.",
+          "output_text": "پرتاب پهپادهای یمنی به‌سوی اهداف دشمن.",
+          "last_edit_timestamp": 1794543749.3470976
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8206",
+      "sent_timestamp": 1794543749.786556,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8206,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "پرتاب پهپادهای یمنی به‌سوی اهداف دشمن.\n\nLaunch of Yemeni drones toward enemy targets.",
+      "output_text": "پرتاب پهپادهای یمنی به‌سوی اهداف دشمن."
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-13T03:56:35.742422+00:00"
+  "updated_at": "2026-11-13T04:22:57.818983+00:00"
 }
