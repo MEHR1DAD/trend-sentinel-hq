@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-13 08:54:10 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8213,
-      "last_read_time": "2026-11-13 08:20:02 UTC"
+      "last_read_id": 8219,
+      "last_read_time": "2026-11-13 10:03:48 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79093,
@@ -26,46 +26,45 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794537559.3327029,
+    "@DidebanJang": 1794564329.8505313,
     "@DidehbanEghtesad": 1794513097.8797176,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_27978": {
+    "Ali_bk_8_8215": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 919,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سخنگوی ارتش اسرائیل اعلام کرد کورت رنشاو، فرمانده ناوگان پنجم نیروی دریایی آمریکا و فرمانده نیروهای دریایی سنتکام، پس از انجام سفر خود به اسرائیل، این کشور را ترک کرده است.\n\n📝 <a href=\"https://t.me/withyashar/27978\">@withyashar</a>",
+      "bot_msg_id": 921,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 ارتش ایران:\n\nساعاتی پیش، یک پهپاد MQ-1 متعلق به دشمن آمریکایی در سواحل سیریک سرنگون شد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8215\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 919,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سخنگوی ارتش اسرائیل اعلام کرد کورت رنشاو، فرمانده ناوگان پنجم نیروی دریایی آمریکا و فرمانده نیروهای دریایی سنتکام، پس از انجام سفر خود به اسرائیل، این کشور را ترک کرده است.\n\n📝 <a href=\"https://t.me/withyashar/27978\">@withyashar</a>"
+          "bot_msg_id": 921,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 ارتش ایران:\n\nساعاتی پیش، یک پهپاد MQ-1 متعلق به دشمن آمریکایی در سواحل سیریک سرنگون شد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8215\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
         {
-          "source_node": "withyashar",
-          "msg_id": 27978,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "سخنگوی ارتش اسرائیل اعلام کرد کورت رنشاو، فرمانده ناوگان پنجم نیروی دریایی آمریکا و فرمانده نیروهای دریایی سنتکام، پس از انجام سفر خود به اسرائیل، این کشور را ترک کرده است.\n@WarRoom",
-          "output_text": "سخنگوی ارتش اسرائیل اعلام کرد کورت رنشاو، فرمانده ناوگان پنجم نیروی دریایی آمریکا و فرمانده نیروهای دریایی سنتکام، پس از انجام سفر خود به اسرائیل، این کشور را ترک کرده است.\n@WarRoom",
-          "last_edit_timestamp": 1794560060.6725466
+          "source_node": "Ali_bk_8",
+          "msg_id": 8215,
+          "media_icons": "📷",
+          "grouped_id": 14356513828988586,
+          "raw_text": "ارتش ایران:\n\nساعاتی پیش، یک پهپاد MQ-1 متعلق به دشمن آمریکایی در سواحل سیریک سرنگون شد.\n\nThe Iranian army:\n\nHours ago, a US enemy MQ-1 drone was shot down off the coast of Sirik.",
+          "output_text": "ارتش ایران:\n\nساعاتی پیش، یک پهپاد MQ-1 متعلق به دشمن آمریکایی در سواحل سیریک سرنگون شد.",
+          "last_edit_timestamp": 1794564329.850529
         }
       ],
-      "active_text_source": "withyashar_27978",
-      "sent_timestamp": 1794560061.0827932,
-      "source_node": "withyashar",
-      "msg_id": 27978,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "سخنگوی ارتش اسرائیل اعلام کرد کورت رنشاو، فرمانده ناوگان پنجم نیروی دریایی آمریکا و فرمانده نیروهای دریایی سنتکام، پس از انجام سفر خود به اسرائیل، این کشور را ترک کرده است.\n@WarRoom",
-      "output_text": "سخنگوی ارتش اسرائیل اعلام کرد کورت رنشاو، فرمانده ناوگان پنجم نیروی دریایی آمریکا و فرمانده نیروهای دریایی سنتکام، پس از انجام سفر خود به اسرائیل، این کشور را ترک کرده است.\n@WarRoom",
-      "last_edit_timestamp": 1794560060.0
+      "active_text_source": "Ali_bk_8_8215",
+      "sent_timestamp": 1794564330.4064147,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8215,
+      "media_icons": "📷",
+      "grouped_id": 14356513828988586,
+      "raw_text": "ارتش ایران:\n\nساعاتی پیش، یک پهپاد MQ-1 متعلق به دشمن آمریکایی در سواحل سیریک سرنگون شد.\n\nThe Iranian army:\n\nHours ago, a US enemy MQ-1 drone was shot down off the coast of Sirik.",
+      "output_text": "ارتش ایران:\n\nساعاتی پیش، یک پهپاد MQ-1 متعلق به دشمن آمریکایی در سواحل سیریک سرنگون شد."
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-13T09:50:04.584454+00:00"
+  "updated_at": "2026-11-13T10:16:29.324697+00:00"
 }
