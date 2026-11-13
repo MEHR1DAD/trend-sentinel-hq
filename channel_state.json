@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28007,
-      "last_read_time": "2026-11-13 19:07:36 UTC"
+      "last_read_id": 28011,
+      "last_read_time": "2026-11-13 19:53:18 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8238,
-      "last_read_time": "2026-11-13 19:13:53 UTC"
+      "last_read_id": 8239,
+      "last_read_time": "2026-11-13 19:54:34 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79101,
@@ -31,73 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28005": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 935,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 ناو دیگه الان باید در دریای مکران و در منطقه سنتکام باشه ! 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28005\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 935,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 ناو دیگه الان باید در دریای مکران و در منطقه سنتکام باشه ! 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28005\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28005,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "ناو دیگه الان باید در دریای مکران و در منطقه سنتکام باشه !\n@WarRoom 🚨🚨🚨",
-          "output_text": "ناو دیگه الان باید در دریای مکران و در منطقه سنتکام باشه !\n@WarRoom 🚨🚨🚨",
-          "last_edit_timestamp": 1794595255.134093
-        }
-      ],
-      "active_text_source": "withyashar_28005",
-      "sent_timestamp": 1794595255.5758922,
-      "source_node": "withyashar",
-      "msg_id": 28005,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "ناو دیگه الان باید در دریای مکران و در منطقه سنتکام باشه !\n@WarRoom 🚨🚨🚨",
-      "output_text": "ناو دیگه الان باید در دریای مکران و در منطقه سنتکام باشه !\n@WarRoom 🚨🚨🚨"
-    },
-    "Ali_bk_8_8234": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 936,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 سازمان پخش عمومی اسرائیل:\n\nاسرائیل، آمریکا و کشورهای حوزه خلیج فارس برای حمله به ایران بلافاصله پس از صدور تصمیم، در حالت آماده‌باش قرار دارند.\n\nاین حملات ممکن است با هدف افزایش فشار بر تهران برای ارائه امتیازهای هسته‌ای انجام شوند؛ در شرایطی که ایران از مذاکره خودداری می‌کند و بر حق خود برای غنی‌سازی اورانیوم پافشاری دارد و هم‌زمان به توسعه موشک‌های بالستیک ادامه می‌دهد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8234\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 936,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 سازمان پخش عمومی اسرائیل:\n\nاسرائیل، آمریکا و کشورهای حوزه خلیج فارس برای حمله به ایران بلافاصله پس از صدور تصمیم، در حالت آماده‌باش قرار دارند.\n\nاین حملات ممکن است با هدف افزایش فشار بر تهران برای ارائه امتیازهای هسته‌ای انجام شوند؛ در شرایطی که ایران از مذاکره خودداری می‌کند و بر حق خود برای غنی‌سازی اورانیوم پافشاری دارد و هم‌زمان به توسعه موشک‌های بالستیک ادامه می‌دهد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8234\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8234,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "سازمان پخش عمومی اسرائیل:\n\nاسرائیل، آمریکا و کشورهای حوزه خلیج فارس برای حمله به ایران بلافاصله پس از صدور تصمیم، در حالت آماده‌باش قرار دارند.\n\nاین حملات ممکن است با هدف افزایش فشار بر تهران برای ارائه امتیازهای هسته‌ای انجام شوند؛ در شرایطی که ایران از مذاکره خودداری می‌کند و بر حق خود برای غنی‌سازی اورانیوم پافشاری دارد و هم‌زمان به توسعه موشک‌های بالستیک ادامه می‌دهد.\n\nIsraeli public broadcaster:\n\nIsrael, the United States and Gulf countries remain ready to launch an attack on Iran as soon as the decision is made.\n\nThe strikes could aim to increase pressure on Tehran to make nuclear concessions, amid its refusal to negotiate and insistence on its right to enrich uranium, while continuing to develop ballistic missiles.",
-          "output_text": "سازمان پخش عمومی اسرائیل:\n\nاسرائیل، آمریکا و کشورهای حوزه خلیج فارس برای حمله به ایران بلافاصله پس از صدور تصمیم، در حالت آماده‌باش قرار دارند.\n\nاین حملات ممکن است با هدف افزایش فشار بر تهران برای ارائه امتیازهای هسته‌ای انجام شوند؛ در شرایطی که ایران از مذاکره خودداری می‌کند و بر حق خود برای غنی‌سازی اورانیوم پافشاری دارد و هم‌زمان به توسعه موشک‌های بالستیک ادامه می‌دهد.",
-          "last_edit_timestamp": 1794595721.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8234",
-      "sent_timestamp": 1794595413.466916,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8234,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "سازمان پخش عمومی اسرائیل:\n\nاسرائیل، آمریکا و کشورهای حوزه خلیج فارس برای حمله به ایران بلافاصله پس از صدور تصمیم، در حالت آماده‌باش قرار دارند.\n\nاین حملات ممکن است با هدف افزایش فشار بر تهران برای ارائه امتیازهای هسته‌ای انجام شوند؛ در شرایطی که ایران از مذاکره خودداری می‌کند و بر حق خود برای غنی‌سازی اورانیوم پافشاری دارد و هم‌زمان به توسعه موشک‌های بالستیک ادامه می‌دهد.\n\nIsraeli public broadcaster:\n\nIsrael, the United States and Gulf countries remain ready to launch an attack on Iran as soon as the decision is made.\n\nThe strikes could aim to increase pressure on Tehran to make nuclear concessions, amid its refusal to negotiate and insistence on its right to enrich uranium, while continuing to develop ballistic missiles.",
-      "output_text": "سازمان پخش عمومی اسرائیل:\n\nاسرائیل، آمریکا و کشورهای حوزه خلیج فارس برای حمله به ایران بلافاصله پس از صدور تصمیم، در حالت آماده‌باش قرار دارند.\n\nاین حملات ممکن است با هدف افزایش فشار بر تهران برای ارائه امتیازهای هسته‌ای انجام شوند؛ در شرایطی که ایران از مذاکره خودداری می‌کند و بر حق خود برای غنی‌سازی اورانیوم پافشاری دارد و هم‌زمان به توسعه موشک‌های بالستیک ادامه می‌دهد.",
-      "last_edit_timestamp": 1794595721.0
-    },
     "Ali_bk_8_8235": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 937,
@@ -199,8 +132,76 @@
       "raw_text": "یک فروند هواپیمای ترابری نظامی آمریکایی از نوع C-130J وارد پایگاه هوایی العدید در قطر شد.\n\nA US C-130J military transport aircraft has arrived at Al Udeid Air Base in Qatar.",
       "output_text": "یک فروند هواپیمای ترابری نظامی آمریکایی از نوع C-130J وارد پایگاه هوایی العدید در قطر شد.",
       "last_edit_timestamp": 1794597019.0
+    },
+    "withyashar_28009": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 940,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 رسانه های انگلستان : منابع محلی از مشاهده یک پهپاد مسلح در حریم هوایی پایگاه هوایی سلطنتی بریتانیا، RAF Lakenheath، خبر می‌دهند. گزارش‌ها حاکی از آن است که این پایگاه به‌دلیل نفوذ پهپاد، در وضعیت قرنطینه امنیتی طولانی‌مدت قرار گرفته است. 🚨\n\n📝 <a href=\"https://t.me/withyashar/28009\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 940,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 رسانه های انگلستان : منابع محلی از مشاهده یک پهپاد مسلح در حریم هوایی پایگاه هوایی سلطنتی بریتانیا، RAF Lakenheath، خبر می‌دهند. گزارش‌ها حاکی از آن است که این پایگاه به‌دلیل نفوذ پهپاد، در وضعیت قرنطینه امنیتی طولانی‌مدت قرار گرفته است. 🚨\n\n📝 <a href=\"https://t.me/withyashar/28009\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28009,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "رسانه های انگلستان : منابع محلی از مشاهده یک پهپاد مسلح در حریم هوایی پایگاه هوایی سلطنتی بریتانیا، RAF Lakenheath، خبر می‌دهند. گزارش‌ها حاکی از آن است که این پایگاه به‌دلیل نفوذ پهپاد، در وضعیت قرنطینه امنیتی طولانی‌مدت قرار گرفته است.\n@WarRoom 🚨",
+          "output_text": "رسانه های انگلستان : منابع محلی از مشاهده یک پهپاد مسلح در حریم هوایی پایگاه هوایی سلطنتی بریتانیا، RAF Lakenheath، خبر می‌دهند. گزارش‌ها حاکی از آن است که این پایگاه به‌دلیل نفوذ پهپاد، در وضعیت قرنطینه امنیتی طولانی‌مدت قرار گرفته است.\n@WarRoom 🚨",
+          "last_edit_timestamp": 1794598858.037243
+        }
+      ],
+      "active_text_source": "withyashar_28009",
+      "sent_timestamp": 1794598858.5040789,
+      "source_node": "withyashar",
+      "msg_id": 28009,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "رسانه های انگلستان : منابع محلی از مشاهده یک پهپاد مسلح در حریم هوایی پایگاه هوایی سلطنتی بریتانیا، RAF Lakenheath، خبر می‌دهند. گزارش‌ها حاکی از آن است که این پایگاه به‌دلیل نفوذ پهپاد، در وضعیت قرنطینه امنیتی طولانی‌مدت قرار گرفته است.\n@WarRoom 🚨",
+      "output_text": "رسانه های انگلستان : منابع محلی از مشاهده یک پهپاد مسلح در حریم هوایی پایگاه هوایی سلطنتی بریتانیا، RAF Lakenheath، خبر می‌دهند. گزارش‌ها حاکی از آن است که این پایگاه به‌دلیل نفوذ پهپاد، در وضعیت قرنطینه امنیتی طولانی‌مدت قرار گرفته است.\n@WarRoom 🚨",
+      "last_edit_timestamp": 1794598849.0
+    },
+    "Ali_bk_8_8239": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 941,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به فضل خدا موفق شدند انبارهای تسلیحاتی دشمن سعودی در اردوگاه رأس عباس در استان عدن را با چندین موشک بالستیک و پهپاد هدف قرار دهند. این حملات به فضل خدا دقیق بودند و باعث آتش‌سوزی در این انبارها شدند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8239\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 941,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به فضل خدا موفق شدند انبارهای تسلیحاتی دشمن سعودی در اردوگاه رأس عباس در استان عدن را با چندین موشک بالستیک و پهپاد هدف قرار دهند. این حملات به فضل خدا دقیق بودند و باعث آتش‌سوزی در این انبارها شدند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8239\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8239,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به فضل خدا موفق شدند انبارهای تسلیحاتی دشمن سعودی در اردوگاه رأس عباس در استان عدن را با چندین موشک بالستیک و پهپاد هدف قرار دهند. این حملات به فضل خدا دقیق بودند و باعث آتش‌سوزی در این انبارها شدند.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces, with God's help, successfully targeted the Saudi enemy's weapons depots at Ras Abbas Camp in Aden Governorate with several ballistic missiles and drones. The strikes were accurate, thanks to God, and caused the depots to catch fire.",
+          "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به فضل خدا موفق شدند انبارهای تسلیحاتی دشمن سعودی در اردوگاه رأس عباس در استان عدن را با چندین موشک بالستیک و پهپاد هدف قرار دهند. این حملات به فضل خدا دقیق بودند و باعث آتش‌سوزی در این انبارها شدند.",
+          "last_edit_timestamp": 1794599704.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8239",
+      "sent_timestamp": 1794599677.6041744,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8239,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به فضل خدا موفق شدند انبارهای تسلیحاتی دشمن سعودی در اردوگاه رأس عباس در استان عدن را با چندین موشک بالستیک و پهپاد هدف قرار دهند. این حملات به فضل خدا دقیق بودند و باعث آتش‌سوزی در این انبارها شدند.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces, with God's help, successfully targeted the Saudi enemy's weapons depots at Ras Abbas Camp in Aden Governorate with several ballistic missiles and drones. The strikes were accurate, thanks to God, and caused the depots to catch fire.",
+      "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به فضل خدا موفق شدند انبارهای تسلیحاتی دشمن سعودی در اردوگاه رأس عباس در استان عدن را با چندین موشک بالستیک و پهپاد هدف قرار دهند. این حملات به فضل خدا دقیق بودند و باعث آتش‌سوزی در این انبارها شدند.",
+      "last_edit_timestamp": 1794599704.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-13T19:18:26.055922+00:00"
+  "updated_at": "2026-11-13T19:55:18.866076+00:00"
 }
