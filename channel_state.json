@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28057,
-      "last_read_time": "2026-11-14 13:49:39 UTC"
+      "last_read_id": 28058,
+      "last_read_time": "2026-11-14 14:17:45 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8294,
-      "last_read_time": "2026-11-14 14:08:40 UTC"
+      "last_read_id": 8296,
+      "last_read_time": "2026-11-14 14:20:26 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79112,
@@ -26,7 +26,7 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794601508.2437766,
+    "@DidebanJang": 1794666035.74294,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
@@ -63,8 +63,75 @@
       "grouped_id": null,
       "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما موفق شدند چندین تجمع از نیروهای دشمن سعودی وابسته به افسر سعودی بدر الحربی را در منطقه خرز در استان لحج با چندین موشک بالستیک هدف قرار دهند. این حملات به لطف خدا دقیق و مستقیم بودند و ده‌ها کشته و زخمی بر جای گذاشتند و شمار زیادی از خودروهای نظامی را منهدم کردند.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces successfully targeted several concentrations of Saudi enemy forces belonging to Saudi officer Badr al-Harbi in the Kharz area of Lahij province with several ballistic missiles. The strikes were accurate and direct, thanks be to God, leaving dozens killed and wounded and destroying a large number of military vehicles.",
       "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما موفق شدند چندین تجمع از نیروهای دشمن سعودی وابسته به افسر سعودی بدر الحربی را در منطقه خرز در استان لحج با چندین موشک بالستیک هدف قرار دهند. این حملات به لطف خدا دقیق و مستقیم بودند و ده‌ها کشته و زخمی بر جای گذاشتند و شمار زیادی از خودروهای نظامی را منهدم کردند."
+    },
+    "Ali_bk_8_8295": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 969,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 انفجار کنترل‌شده در شهر جرف‌النصر عراق.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8295\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 969,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 انفجار کنترل‌شده در شهر جرف‌النصر عراق.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8295\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8295,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "انفجار کنترل‌شده در شهر جرف‌النصر عراق.\n\nA controlled explosion in the Iraqi city of Jurf al-Nasr.",
+          "output_text": "انفجار کنترل‌شده در شهر جرف‌النصر عراق.",
+          "last_edit_timestamp": 1794665580.6843953
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8295",
+      "sent_timestamp": 1794665581.1877737,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8295,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "انفجار کنترل‌شده در شهر جرف‌النصر عراق.\n\nA controlled explosion in the Iraqi city of Jurf al-Nasr.",
+      "output_text": "انفجار کنترل‌شده در شهر جرف‌النصر عراق."
+    },
+    "Ali_bk_8_8296": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 970,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 یک بالن شناسایی دوربرد در شمال امارات رصد شده است که احتمال می‌رود نیروهای آمریکایی از آن برای شناسایی موشک‌ها و نظارت بر حملات ایران در تنگه هرمز استفاده می‌کنند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8296\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 970,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 یک بالن شناسایی دوربرد در شمال امارات رصد شده است که احتمال می‌رود نیروهای آمریکایی از آن برای شناسایی موشک‌ها و نظارت بر حملات ایران در تنگه هرمز استفاده می‌کنند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8296\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8296,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "یک بالن شناسایی دوربرد در شمال امارات رصد شده است که احتمال می‌رود نیروهای آمریکایی از آن برای شناسایی موشک‌ها و نظارت بر حملات ایران در تنگه هرمز استفاده می‌کنند.\n\nA long-range reconnaissance balloon has been spotted north of the UAE. The US military is believed to be using it to detect missiles and monitor Iranian attacks in the Strait of Hormuz.",
+          "output_text": "یک بالن شناسایی دوربرد در شمال امارات رصد شده است که احتمال می‌رود نیروهای آمریکایی از آن برای شناسایی موشک‌ها و نظارت بر حملات ایران در تنگه هرمز استفاده می‌کنند.",
+          "last_edit_timestamp": 1794666039.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8296",
+      "sent_timestamp": 1794666036.361682,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8296,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "یک بالن شناسایی دوربرد در شمال امارات رصد شده است که احتمال می‌رود نیروهای آمریکایی از آن برای شناسایی موشک‌ها و نظارت بر حملات ایران در تنگه هرمز استفاده می‌کنند.\n\nA long-range reconnaissance balloon has been spotted north of the UAE. The US military is believed to be using it to detect missiles and monitor Iranian attacks in the Strait of Hormuz.",
+      "output_text": "یک بالن شناسایی دوربرد در شمال امارات رصد شده است که احتمال می‌رود نیروهای آمریکایی از آن برای شناسایی موشک‌ها و نظارت بر حملات ایران در تنگه هرمز استفاده می‌کنند.",
+      "last_edit_timestamp": 1794666039.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T14:10:36.234118+00:00"
+  "updated_at": "2026-11-14T14:37:00.946203+00:00"
 }
