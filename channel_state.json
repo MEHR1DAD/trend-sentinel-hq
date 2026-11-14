@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28063,
-      "last_read_time": "2026-11-14 15:14:56 UTC"
+      "last_read_id": 28064,
+      "last_read_time": "2026-11-14 15:44:31 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8299,
@@ -69,13 +69,13 @@
       "target_channel": "@DidebanJang",
       "bot_msg_id": 972,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 سپاه پاسداران تصاویری از سرنگونی یک پهپاد MQ-1 در آسمان جزیره قشم منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8299\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 سپاه پاسداران تصاویری از سرنگونی یک پهپاد آمریکایی MQ-1 در آسمان جزیره قشم منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8299\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
           "bot_msg_id": 972,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 سپاه پاسداران تصاویری از سرنگونی یک پهپاد MQ-1 در آسمان جزیره قشم منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8299\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 سپاه پاسداران تصاویری از سرنگونی یک پهپاد آمریکایی MQ-1 در آسمان جزیره قشم منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8299\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
@@ -84,9 +84,9 @@
           "msg_id": 8299,
           "media_icons": "🎥",
           "grouped_id": null,
-          "raw_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد MQ-1 در آسمان جزیره قشم منتشر کرد.\n\nThe IRGC releases footage showing the downing of an MQ-1 drone over Qeshm Island.",
-          "output_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد MQ-1 در آسمان جزیره قشم منتشر کرد.",
-          "last_edit_timestamp": 1794669506.382658
+          "raw_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد آمریکایی MQ-1 در آسمان جزیره قشم منتشر کرد.\n\nThe IRGC releases footage showing the downing of a US MQ-1 drone over Qeshm Island.",
+          "output_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد آمریکایی MQ-1 در آسمان جزیره قشم منتشر کرد.",
+          "last_edit_timestamp": 1794670533.0
         }
       ],
       "active_text_source": "Ali_bk_8_8299",
@@ -95,11 +95,45 @@
       "msg_id": 8299,
       "media_icons": "🎥",
       "grouped_id": null,
-      "raw_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد MQ-1 در آسمان جزیره قشم منتشر کرد.\n\nThe IRGC releases footage showing the downing of an MQ-1 drone over Qeshm Island.",
-      "output_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد MQ-1 در آسمان جزیره قشم منتشر کرد.",
-      "last_edit_timestamp": 1794669496.0
+      "raw_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد آمریکایی MQ-1 در آسمان جزیره قشم منتشر کرد.\n\nThe IRGC releases footage showing the downing of a US MQ-1 drone over Qeshm Island.",
+      "output_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد آمریکایی MQ-1 در آسمان جزیره قشم منتشر کرد.",
+      "last_edit_timestamp": 1794670533.0
+    },
+    "withyashar_28064": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 973,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 منابع خبری هندی مدعی شدند هواپیمای نظامی چینی حریم هوایی هند را نقض کرد و به مدت ۲۰ دقیقه بر فراز منطقه «سیکیم» به پرواز درآمد.این امر موجب صدور هشدار از سوی نیروی هوایی هند شد.\n\n📝 <a href=\"https://t.me/withyashar/28064\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 973,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 منابع خبری هندی مدعی شدند هواپیمای نظامی چینی حریم هوایی هند را نقض کرد و به مدت ۲۰ دقیقه بر فراز منطقه «سیکیم» به پرواز درآمد.این امر موجب صدور هشدار از سوی نیروی هوایی هند شد.\n\n📝 <a href=\"https://t.me/withyashar/28064\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28064,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "منابع خبری هندی مدعی شدند هواپیمای نظامی چینی حریم هوایی هند را نقض کرد و به مدت ۲۰ دقیقه بر فراز منطقه «سیکیم» به پرواز درآمد.این امر موجب صدور هشدار از سوی نیروی هوایی هند شد.\n@WarRoom",
+          "output_text": "منابع خبری هندی مدعی شدند هواپیمای نظامی چینی حریم هوایی هند را نقض کرد و به مدت ۲۰ دقیقه بر فراز منطقه «سیکیم» به پرواز درآمد.این امر موجب صدور هشدار از سوی نیروی هوایی هند شد.\n@WarRoom",
+          "last_edit_timestamp": 1794671090.7856529
+        }
+      ],
+      "active_text_source": "withyashar_28064",
+      "sent_timestamp": 1794671091.1661391,
+      "source_node": "withyashar",
+      "msg_id": 28064,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "منابع خبری هندی مدعی شدند هواپیمای نظامی چینی حریم هوایی هند را نقض کرد و به مدت ۲۰ دقیقه بر فراز منطقه «سیکیم» به پرواز درآمد.این امر موجب صدور هشدار از سوی نیروی هوایی هند شد.\n@WarRoom",
+      "output_text": "منابع خبری هندی مدعی شدند هواپیمای نظامی چینی حریم هوایی هند را نقض کرد و به مدت ۲۰ دقیقه بر فراز منطقه «سیکیم» به پرواز درآمد.این امر موجب صدور هشدار از سوی نیروی هوایی هند شد.\n@WarRoom",
+      "last_edit_timestamp": 1794671084.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T15:29:50.806203+00:00"
+  "updated_at": "2026-11-14T15:56:15.402023+00:00"
 }
