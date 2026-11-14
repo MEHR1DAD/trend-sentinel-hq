@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28098,
-      "last_read_time": "2026-11-14 21:23:00 UTC"
+      "last_read_id": 28102,
+      "last_read_time": "2026-11-14 21:47:25 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8321,
-      "last_read_time": "2026-11-14 21:01:06 UTC"
+      "last_read_id": 8325,
+      "last_read_time": "2026-11-14 21:32:11 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79113,
-      "last_read_time": "2026-11-14 14:16:43 UTC"
+      "last_read_id": 79115,
+      "last_read_time": "2026-11-14 21:26:06 UTC"
     },
     "iliaen": {
       "last_read_id": 4754,
@@ -31,74 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28093": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 993,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 گزارش اولیه دیدبان ها : صدای انفجار شدید در بندر کنگ از سمت محدوده پایگاه امام حسین بوده 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28093\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 993,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 گزارش اولیه دیدبان ها : صدای انفجار شدید در بندر کنگ از سمت محدوده پایگاه امام حسین بوده 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28093\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28093,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "گزارش اولیه دیدبان ها : صدای انفجار شدید در بندر کنگ از سمت محدوده پایگاه امام حسین بوده\n@WarRoom 🚨🚨🚨",
-          "output_text": "گزارش اولیه دیدبان ها : صدای انفجار شدید در بندر کنگ از سمت محدوده پایگاه امام حسین بوده\n@WarRoom 🚨🚨🚨",
-          "last_edit_timestamp": 1794688108.4170954
-        }
-      ],
-      "active_text_source": "withyashar_28093",
-      "sent_timestamp": 1794688108.9636881,
-      "source_node": "withyashar",
-      "msg_id": 28093,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "گزارش اولیه دیدبان ها : صدای انفجار شدید در بندر کنگ از سمت محدوده پایگاه امام حسین بوده\n@WarRoom 🚨🚨🚨",
-      "output_text": "گزارش اولیه دیدبان ها : صدای انفجار شدید در بندر کنگ از سمت محدوده پایگاه امام حسین بوده\n@WarRoom 🚨🚨🚨",
-      "last_edit_timestamp": 1794688102.0
-    },
-    "Ali_bk_8_8320": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 994,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویری از حمله پهپادی در شمال صنعا، پایتخت یمن.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8320\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 994,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویری از حمله پهپادی در شمال صنعا، پایتخت یمن.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8320\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8320,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "تصاویری از حمله پهپادی در شمال صنعا، پایتخت یمن.\n\nFootage of a drone attack north of the Yemeni capital, Sanaa.",
-          "output_text": "تصاویری از حمله پهپادی در شمال صنعا، پایتخت یمن.",
-          "last_edit_timestamp": 1794689376.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8320",
-      "sent_timestamp": 1794688780.9699903,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8320,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "تصاویری از حمله پهپادی در شمال صنعا، پایتخت یمن.\n\nFootage of a drone attack north of the Yemeni capital, Sanaa.",
-      "output_text": "تصاویری از حمله پهپادی در شمال صنعا، پایتخت یمن.",
-      "last_edit_timestamp": 1794689376.0
-    },
     "withyashar_28095": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 995,
@@ -120,7 +52,7 @@
           "grouped_id": null,
           "raw_text": "دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن\n@WarRoom 🚨🚨🚨",
           "output_text": "دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن\n@WarRoom 🚨🚨🚨",
-          "last_edit_timestamp": 1794689584.880595
+          "last_edit_timestamp": 1794691858.0
         }
       ],
       "active_text_source": "withyashar_28095",
@@ -131,9 +63,212 @@
       "grouped_id": null,
       "raw_text": "دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن\n@WarRoom 🚨🚨🚨",
       "output_text": "دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن\n@WarRoom 🚨🚨🚨",
-      "last_edit_timestamp": 1794689583.0
+      "last_edit_timestamp": 1794691858.0
+    },
+    "Ali_bk_8_8322": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 996,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 حمله پهپادی یمن، مأرب را هدف قرار داد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8322\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 996,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 حمله پهپادی یمن، مأرب را هدف قرار داد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8322\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8322,
+          "media_icons": "🎥",
+          "grouped_id": 14357531780487042,
+          "raw_text": "حمله پهپادی یمن، مأرب را هدف قرار داد.\n\nA Yemeni drone attack targets Marib.",
+          "output_text": "حمله پهپادی یمن، مأرب را هدف قرار داد.",
+          "last_edit_timestamp": 1794691734.0641952
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8322",
+      "sent_timestamp": 1794691734.4166439,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8322,
+      "media_icons": "🎥",
+      "grouped_id": 14357531780487042,
+      "raw_text": "حمله پهپادی یمن، مأرب را هدف قرار داد.\n\nA Yemeni drone attack targets Marib.",
+      "output_text": "حمله پهپادی یمن، مأرب را هدف قرار داد."
+    },
+    "Ali_bk_8_8324": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 997,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تصاویری بیشتر از حمله پهپادی یمن به مواضع دشمن در شهر مأرب.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8324\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 997,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تصاویری بیشتر از حمله پهپادی یمن به مواضع دشمن در شهر مأرب.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8324\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8324,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "تصاویری بیشتر از حمله پهپادی یمن به مواضع دشمن در شهر مأرب.\n\nAdditional footage of the Yemeni drone attack targeting enemy positions in the city of Marib.",
+          "output_text": "تصاویری بیشتر از حمله پهپادی یمن به مواضع دشمن در شهر مأرب.",
+          "last_edit_timestamp": 1794691897.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8324",
+      "sent_timestamp": 1794691828.2831497,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8324,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "تصاویری بیشتر از حمله پهپادی یمن به مواضع دشمن در شهر مأرب.\n\nAdditional footage of the Yemeni drone attack targeting enemy positions in the city of Marib.",
+      "output_text": "تصاویری بیشتر از حمله پهپادی یمن به مواضع دشمن در شهر مأرب.",
+      "last_edit_timestamp": 1794691897.0
+    },
+    "withyashar_28099": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 998,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 حمله هوایی اسرائیل به جنوب لبنان\n\n📝 <a href=\"https://t.me/withyashar/28099\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 998,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 حمله هوایی اسرائیل به جنوب لبنان\n\n📝 <a href=\"https://t.me/withyashar/28099\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28099,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "حمله هوایی اسرائیل به جنوب لبنان \n@WarRoom",
+          "output_text": "حمله هوایی اسرائیل به جنوب لبنان \n@WarRoom",
+          "last_edit_timestamp": 1794691949.6886375
+        }
+      ],
+      "active_text_source": "withyashar_28099",
+      "sent_timestamp": 1794691950.011128,
+      "source_node": "withyashar",
+      "msg_id": 28099,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "حمله هوایی اسرائیل به جنوب لبنان \n@WarRoom",
+      "output_text": "حمله هوایی اسرائیل به جنوب لبنان \n@WarRoom",
+      "last_edit_timestamp": 1794691947.0
+    },
+    "Ali_bk_8_8325": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 999,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 نیروی دریایی سپاه پاسداران:\n\nدو نفتکش متخلف که مخفیانه تلاش می‌کردند از مسیری غیرمجاز از تنگه هرمز عبور کنند، پس از برخورد با مین‌های دریایی منفجر شدند و دچار آتش‌سوزی شدید شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8325\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 999,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 نیروی دریایی سپاه پاسداران:\n\nدو نفتکش متخلف که مخفیانه تلاش می‌کردند از مسیری غیرمجاز از تنگه هرمز عبور کنند، پس از برخورد با مین‌های دریایی منفجر شدند و دچار آتش‌سوزی شدید شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8325\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8325,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "نیروی دریایی سپاه پاسداران:\n\nدو نفتکش متخلف که مخفیانه تلاش می‌کردند از مسیری غیرمجاز از تنگه هرمز عبور کنند، پس از برخورد با مین‌های دریایی منفجر شدند و دچار آتش‌سوزی شدید شدند.\n\nIRGC Navy:\n\nTwo oil tankers involved in violations exploded while secretly attempting to cross the Strait of Hormuz via an unauthorized route. They struck naval mines and caught fire, with both vessels engulfed in intense flames.",
+          "output_text": "نیروی دریایی سپاه پاسداران:\n\nدو نفتکش متخلف که مخفیانه تلاش می‌کردند از مسیری غیرمجاز از تنگه هرمز عبور کنند، پس از برخورد با مین‌های دریایی منفجر شدند و دچار آتش‌سوزی شدید شدند.",
+          "last_edit_timestamp": 1794692063.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8325",
+      "sent_timestamp": 1794691950.389914,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8325,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "نیروی دریایی سپاه پاسداران:\n\nدو نفتکش متخلف که مخفیانه تلاش می‌کردند از مسیری غیرمجاز از تنگه هرمز عبور کنند، پس از برخورد با مین‌های دریایی منفجر شدند و دچار آتش‌سوزی شدید شدند.\n\nIRGC Navy:\n\nTwo oil tankers involved in violations exploded while secretly attempting to cross the Strait of Hormuz via an unauthorized route. They struck naval mines and caught fire, with both vessels engulfed in intense flames.",
+      "output_text": "نیروی دریایی سپاه پاسداران:\n\nدو نفتکش متخلف که مخفیانه تلاش می‌کردند از مسیری غیرمجاز از تنگه هرمز عبور کنند، پس از برخورد با مین‌های دریایی منفجر شدند و دچار آتش‌سوزی شدید شدند.",
+      "last_edit_timestamp": 1794692063.0
+    },
+    "withyashar_28100": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1000,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 پهپاد شناسایی آمریکایی هم اکنون بندر عباس\n\n🎥 <a href=\"https://t.me/withyashar/28100\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1000,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 پهپاد شناسایی آمریکایی هم اکنون بندر عباس\n\n🎥 <a href=\"https://t.me/withyashar/28100\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28100,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "پهپاد شناسایی آمریکایی هم اکنون بندر عباس\n@WarRoom",
+          "output_text": "پهپاد شناسایی آمریکایی هم اکنون بندر عباس\n@WarRoom",
+          "last_edit_timestamp": 1794692435.2722356
+        }
+      ],
+      "active_text_source": "withyashar_28100",
+      "sent_timestamp": 1794692435.66969,
+      "source_node": "withyashar",
+      "msg_id": 28100,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "پهپاد شناسایی آمریکایی هم اکنون بندر عباس\n@WarRoom",
+      "output_text": "پهپاد شناسایی آمریکایی هم اکنون بندر عباس\n@WarRoom",
+      "last_edit_timestamp": 1794692430.0
+    },
+    "withyashar_28102": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1001,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 اتاق جنگ با یاشار : هم اکنون یک فروند پی-۸ پوسایدون ، ۵ سوخترسان و ۱ پهپاد ام-کیو۴سی در منطقه 🚨🚨🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/28102\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1001,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 اتاق جنگ با یاشار : هم اکنون یک فروند پی-۸ پوسایدون ، ۵ سوخترسان و ۱ پهپاد ام-کیو۴سی در منطقه 🚨🚨🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/28102\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28102,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "اتاق جنگ با یاشار : هم اکنون یک فروند پی-۸ پوسایدون ، ۵ سوخترسان و ۱ پهپاد ام-کیو۴سی در منطقه\n@WarRoom 🚨🚨🚨🚨🚨",
+          "output_text": "اتاق جنگ با یاشار : هم اکنون یک فروند پی-۸ پوسایدون ، ۵ سوخترسان و ۱ پهپاد ام-کیو۴سی در منطقه\n@WarRoom 🚨🚨🚨🚨🚨",
+          "last_edit_timestamp": 1794692859.980571
+        }
+      ],
+      "active_text_source": "withyashar_28102",
+      "sent_timestamp": 1794692860.3923225,
+      "source_node": "withyashar",
+      "msg_id": 28102,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "اتاق جنگ با یاشار : هم اکنون یک فروند پی-۸ پوسایدون ، ۵ سوخترسان و ۱ پهپاد ام-کیو۴سی در منطقه\n@WarRoom 🚨🚨🚨🚨🚨",
+      "output_text": "اتاق جنگ با یاشار : هم اکنون یک فروند پی-۸ پوسایدون ، ۵ سوخترسان و ۱ پهپاد ام-کیو۴سی در منطقه\n@WarRoom 🚨🚨🚨🚨🚨",
+      "last_edit_timestamp": 1794692856.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T21:23:31.694987+00:00"
+  "updated_at": "2026-11-14T21:49:53.845863+00:00"
 }
