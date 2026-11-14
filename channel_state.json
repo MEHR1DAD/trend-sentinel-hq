@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28102,
-      "last_read_time": "2026-11-14 21:47:25 UTC"
+      "last_read_id": 28105,
+      "last_read_time": "2026-11-14 22:36:46 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8325,
-      "last_read_time": "2026-11-14 21:32:11 UTC"
+      "last_read_id": 8327,
+      "last_read_time": "2026-11-14 22:22:45 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79115,
@@ -31,141 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8322": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 996,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 حمله پهپادی یمن، مأرب را هدف قرار داد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8322\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 996,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 حمله پهپادی یمن، مأرب را هدف قرار داد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8322\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8322,
-          "media_icons": "🎥",
-          "grouped_id": 14357531780487042,
-          "raw_text": "حمله پهپادی یمن، مأرب را هدف قرار داد.\n\nA Yemeni drone attack targets Marib.",
-          "output_text": "حمله پهپادی یمن، مأرب را هدف قرار داد.",
-          "last_edit_timestamp": 1794691734.0641952
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8322",
-      "sent_timestamp": 1794691734.4166439,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8322,
-      "media_icons": "🎥",
-      "grouped_id": 14357531780487042,
-      "raw_text": "حمله پهپادی یمن، مأرب را هدف قرار داد.\n\nA Yemeni drone attack targets Marib.",
-      "output_text": "حمله پهپادی یمن، مأرب را هدف قرار داد."
-    },
-    "Ali_bk_8_8324": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 997,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویری بیشتر از حمله پهپادی یمن به مواضع دشمن در شهر مأرب.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8324\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 997,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویری بیشتر از حمله پهپادی یمن به مواضع دشمن در شهر مأرب.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8324\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8324,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "تصاویری بیشتر از حمله پهپادی یمن به مواضع دشمن در شهر مأرب.\n\nAdditional footage of the Yemeni drone attack targeting enemy positions in the city of Marib.",
-          "output_text": "تصاویری بیشتر از حمله پهپادی یمن به مواضع دشمن در شهر مأرب.",
-          "last_edit_timestamp": 1794691897.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8324",
-      "sent_timestamp": 1794691828.2831497,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8324,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "تصاویری بیشتر از حمله پهپادی یمن به مواضع دشمن در شهر مأرب.\n\nAdditional footage of the Yemeni drone attack targeting enemy positions in the city of Marib.",
-      "output_text": "تصاویری بیشتر از حمله پهپادی یمن به مواضع دشمن در شهر مأرب.",
-      "last_edit_timestamp": 1794691897.0
-    },
-    "withyashar_28099": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 998,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 حمله هوایی اسرائیل به جنوب لبنان\n\n📝 <a href=\"https://t.me/withyashar/28099\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 998,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 حمله هوایی اسرائیل به جنوب لبنان\n\n📝 <a href=\"https://t.me/withyashar/28099\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28099,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "حمله هوایی اسرائیل به جنوب لبنان \n@WarRoom",
-          "output_text": "حمله هوایی اسرائیل به جنوب لبنان \n@WarRoom",
-          "last_edit_timestamp": 1794691949.6886375
-        }
-      ],
-      "active_text_source": "withyashar_28099",
-      "sent_timestamp": 1794691950.011128,
-      "source_node": "withyashar",
-      "msg_id": 28099,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "حمله هوایی اسرائیل به جنوب لبنان \n@WarRoom",
-      "output_text": "حمله هوایی اسرائیل به جنوب لبنان \n@WarRoom",
-      "last_edit_timestamp": 1794691947.0
-    },
-    "Ali_bk_8_8325": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 999,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 نیروی دریایی سپاه پاسداران:\n\nدو نفتکش متخلف که مخفیانه تلاش می‌کردند از مسیری غیرمجاز از تنگه هرمز عبور کنند، پس از برخورد با مین‌های دریایی منفجر شدند و دچار آتش‌سوزی شدید شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8325\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 999,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 نیروی دریایی سپاه پاسداران:\n\nدو نفتکش متخلف که مخفیانه تلاش می‌کردند از مسیری غیرمجاز از تنگه هرمز عبور کنند، پس از برخورد با مین‌های دریایی منفجر شدند و دچار آتش‌سوزی شدید شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8325\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8325,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "نیروی دریایی سپاه پاسداران:\n\nدو نفتکش متخلف که مخفیانه تلاش می‌کردند از مسیری غیرمجاز از تنگه هرمز عبور کنند، پس از برخورد با مین‌های دریایی منفجر شدند و دچار آتش‌سوزی شدید شدند.\n\nIRGC Navy:\n\nTwo oil tankers involved in violations exploded while secretly attempting to cross the Strait of Hormuz via an unauthorized route. They struck naval mines and caught fire, with both vessels engulfed in intense flames.",
-          "output_text": "نیروی دریایی سپاه پاسداران:\n\nدو نفتکش متخلف که مخفیانه تلاش می‌کردند از مسیری غیرمجاز از تنگه هرمز عبور کنند، پس از برخورد با مین‌های دریایی منفجر شدند و دچار آتش‌سوزی شدید شدند.",
-          "last_edit_timestamp": 1794692063.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8325",
-      "sent_timestamp": 1794691950.389914,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8325,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "نیروی دریایی سپاه پاسداران:\n\nدو نفتکش متخلف که مخفیانه تلاش می‌کردند از مسیری غیرمجاز از تنگه هرمز عبور کنند، پس از برخورد با مین‌های دریایی منفجر شدند و دچار آتش‌سوزی شدید شدند.\n\nIRGC Navy:\n\nTwo oil tankers involved in violations exploded while secretly attempting to cross the Strait of Hormuz via an unauthorized route. They struck naval mines and caught fire, with both vessels engulfed in intense flames.",
-      "output_text": "نیروی دریایی سپاه پاسداران:\n\nدو نفتکش متخلف که مخفیانه تلاش می‌کردند از مسیری غیرمجاز از تنگه هرمز عبور کنند، پس از برخورد با مین‌های دریایی منفجر شدند و دچار آتش‌سوزی شدید شدند.",
-      "last_edit_timestamp": 1794692063.0
-    },
     "withyashar_28100": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1000,
@@ -255,7 +120,7 @@
           "grouped_id": null,
           "raw_text": "نیروهای یمنی شماری از عناصر نیروهای وابسته به عربستان را در جبهه‌های لحج به اسارت گرفتند.\n\nYemeni forces capture several members of Saudi-backed forces on the Lahij fronts.",
           "output_text": "نیروهای یمنی شماری از عناصر نیروهای وابسته به عربستان را در جبهه‌های لحج به اسارت گرفتند.",
-          "last_edit_timestamp": 1794693434.4029002
+          "last_edit_timestamp": 1794693471.0
         }
       ],
       "active_text_source": "Ali_bk_8_8326",
@@ -265,9 +130,112 @@
       "media_icons": "🎥",
       "grouped_id": null,
       "raw_text": "نیروهای یمنی شماری از عناصر نیروهای وابسته به عربستان را در جبهه‌های لحج به اسارت گرفتند.\n\nYemeni forces capture several members of Saudi-backed forces on the Lahij fronts.",
-      "output_text": "نیروهای یمنی شماری از عناصر نیروهای وابسته به عربستان را در جبهه‌های لحج به اسارت گرفتند."
+      "output_text": "نیروهای یمنی شماری از عناصر نیروهای وابسته به عربستان را در جبهه‌های لحج به اسارت گرفتند.",
+      "last_edit_timestamp": 1794693471.0
+    },
+    "withyashar_28104": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1003,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 ارتش اسرائیل و شین‌بت یک «تروریست ارشد حماس» را هدف قرار داده‌اند اطلاعات بیشتر طی ساعات آتی 🚨\n\n📝 <a href=\"https://t.me/withyashar/28104\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1003,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 ارتش اسرائیل و شین‌بت یک «تروریست ارشد حماس» را هدف قرار داده‌اند اطلاعات بیشتر طی ساعات آتی 🚨\n\n📝 <a href=\"https://t.me/withyashar/28104\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28104,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "ارتش اسرائیل و شین‌بت یک «تروریست ارشد حماس» را هدف قرار داده‌اند اطلاعات بیشتر طی ساعات آتی\n@WarRoom 🚨",
+          "output_text": "ارتش اسرائیل و شین‌بت یک «تروریست ارشد حماس» را هدف قرار داده‌اند اطلاعات بیشتر طی ساعات آتی\n@WarRoom 🚨",
+          "last_edit_timestamp": 1794694794.0
+        }
+      ],
+      "active_text_source": "withyashar_28104",
+      "sent_timestamp": 1794694792.7334814,
+      "source_node": "withyashar",
+      "msg_id": 28104,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "ارتش اسرائیل و شین‌بت یک «تروریست ارشد حماس» را هدف قرار داده‌اند اطلاعات بیشتر طی ساعات آتی\n@WarRoom 🚨",
+      "output_text": "ارتش اسرائیل و شین‌بت یک «تروریست ارشد حماس» را هدف قرار داده‌اند اطلاعات بیشتر طی ساعات آتی\n@WarRoom 🚨",
+      "last_edit_timestamp": 1794694794.0
+    },
+    "Ali_bk_8_8327": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1004,
+      "status_icon": "🚨🔕",
+      "last_formatted_text": "🚨🔕 ارتش اشغالگر از ترور فرمانده تیپ رفح در گردان‌های قسام خبر داد؛ این در حالی است که فرمانده پیشین دو ماه پیش ترور شده بود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8327\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1004,
+          "status_icon": "🚨🔕",
+          "last_formatted_text": "🚨🔕 ارتش اشغالگر از ترور فرمانده تیپ رفح در گردان‌های قسام خبر داد؛ این در حالی است که فرمانده پیشین دو ماه پیش ترور شده بود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8327\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8327,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "ارتش اشغالگر از ترور فرمانده تیپ رفح در گردان‌های قسام خبر داد؛ این در حالی است که فرمانده پیشین دو ماه پیش ترور شده بود.\n\nThe occupation army announces the assassination of the Rafah Brigade commander in the Al-Qassam Brigades, following the assassination of his predecessor two months ago.",
+          "output_text": "ارتش اشغالگر از ترور فرمانده تیپ رفح در گردان‌های قسام خبر داد؛ این در حالی است که فرمانده پیشین دو ماه پیش ترور شده بود.",
+          "last_edit_timestamp": 1794695040.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8327",
+      "sent_timestamp": 1794694975.530084,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8327,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "ارتش اشغالگر از ترور فرمانده تیپ رفح در گردان‌های قسام خبر داد؛ این در حالی است که فرمانده پیشین دو ماه پیش ترور شده بود.\n\nThe occupation army announces the assassination of the Rafah Brigade commander in the Al-Qassam Brigades, following the assassination of his predecessor two months ago.",
+      "output_text": "ارتش اشغالگر از ترور فرمانده تیپ رفح در گردان‌های قسام خبر داد؛ این در حالی است که فرمانده پیشین دو ماه پیش ترور شده بود.",
+      "last_edit_timestamp": 1794695040.0
+    },
+    "withyashar_28105": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1005,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سمیر ابو یونس (معروف به ابومحمود)، فرمانده تیپ رفح در گردان‌های عزالدین قسام (شاخه نظامی حماس)به هلاکت رسید , هواپیماهای اسرائیلی چادری را که او در منطقه «المواصی» در غرب خان‌یونس در آن حضور داشت، با چندین موشک هدف قرار دادند\n\n📝 <a href=\"https://t.me/withyashar/28105\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1005,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سمیر ابو یونس (معروف به ابومحمود)، فرمانده تیپ رفح در گردان‌های عزالدین قسام (شاخه نظامی حماس)به هلاکت رسید , هواپیماهای اسرائیلی چادری را که او در منطقه «المواصی» در غرب خان‌یونس در آن حضور داشت، با چندین موشک هدف قرار دادند\n\n📝 <a href=\"https://t.me/withyashar/28105\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28105,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "سمیر ابو یونس (معروف به ابومحمود)، فرمانده تیپ رفح در گردان‌های عزالدین قسام (شاخه نظامی حماس)به هلاکت رسید , هواپیماهای اسرائیلی چادری را که او در منطقه «المواصی» در غرب خان‌یونس در آن حضور داشت، با چندین موشک هدف قرار دادند\n@WarRoom",
+          "output_text": "سمیر ابو یونس (معروف به ابومحمود)، فرمانده تیپ رفح در گردان‌های عزالدین قسام (شاخه نظامی حماس)به هلاکت رسید , هواپیماهای اسرائیلی چادری را که او در منطقه «المواصی» در غرب خان‌یونس در آن حضور داشت، با چندین موشک هدف قرار دادند\n@WarRoom",
+          "last_edit_timestamp": 1794695826.1898434
+        }
+      ],
+      "active_text_source": "withyashar_28105",
+      "sent_timestamp": 1794695826.7287526,
+      "source_node": "withyashar",
+      "msg_id": 28105,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "سمیر ابو یونس (معروف به ابومحمود)، فرمانده تیپ رفح در گردان‌های عزالدین قسام (شاخه نظامی حماس)به هلاکت رسید , هواپیماهای اسرائیلی چادری را که او در منطقه «المواصی» در غرب خان‌یونس در آن حضور داشت، با چندین موشک هدف قرار دادند\n@WarRoom",
+      "output_text": "سمیر ابو یونس (معروف به ابومحمود)، فرمانده تیپ رفح در گردان‌های عزالدین قسام (شاخه نظامی حماس)به هلاکت رسید , هواپیماهای اسرائیلی چادری را که او در منطقه «المواصی» در غرب خان‌یونس در آن حضور داشت، با چندین موشک هدف قرار دادند\n@WarRoom",
+      "last_edit_timestamp": 1794695819.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T21:57:14.872948+00:00"
+  "updated_at": "2026-11-14T22:39:44.681473+00:00"
 }
