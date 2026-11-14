@@ -30,42 +30,7 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8279": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 952,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کرده بودیم...\n\nنیروی دریایی ارتش ایران از انفجار یک نفتکش متخلف در تنگه هرمز و آتش گرفتن آن خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8279\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 952,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کرده بودیم...\n\nنیروی دریایی ارتش ایران از انفجار یک نفتکش متخلف در تنگه هرمز و آتش گرفتن آن خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8279\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8279,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "در تأیید آنچه پیش‌تر منتشر کرده بودیم...\n\nنیروی دریایی ارتش ایران از انفجار یک نفتکش متخلف در تنگه هرمز و آتش گرفتن آن خبر داد.\n\nConfirming what we reported earlier...\n\nThe Iranian Army Navy announces that a noncompliant oil tanker exploded in the Strait of Hormuz and caught fire.",
-          "output_text": "در تأیید آنچه پیش‌تر منتشر کرده بودیم...\n\nنیروی دریایی ارتش ایران از انفجار یک نفتکش متخلف در تنگه هرمز و آتش گرفتن آن خبر داد.",
-          "last_edit_timestamp": 1794632152.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8279",
-      "sent_timestamp": 1794630319.9106197,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8279,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "در تأیید آنچه پیش‌تر منتشر کرده بودیم...\n\nنیروی دریایی ارتش ایران از انفجار یک نفتکش متخلف در تنگه هرمز و آتش گرفتن آن خبر داد.\n\nConfirming what we reported earlier...\n\nThe Iranian Army Navy announces that a noncompliant oil tanker exploded in the Strait of Hormuz and caught fire.",
-      "output_text": "در تأیید آنچه پیش‌تر منتشر کرده بودیم...\n\nنیروی دریایی ارتش ایران از انفجار یک نفتکش متخلف در تنگه هرمز و آتش گرفتن آن خبر داد.",
-      "last_edit_timestamp": 1794632152.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-14T05:20:04.069053+00:00"
+  "updated_at": "2026-11-14T05:46:24.252118+00:00"
 }
