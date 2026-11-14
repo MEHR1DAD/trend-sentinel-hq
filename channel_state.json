@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28074,
-      "last_read_time": "2026-11-14 18:08:05 UTC"
+      "last_read_id": 28077,
+      "last_read_time": "2026-11-14 18:34:28 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8312,
-      "last_read_time": "2026-11-14 18:04:46 UTC"
+      "last_read_id": 8315,
+      "last_read_time": "2026-11-14 18:39:16 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79113,
@@ -26,7 +26,7 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794666035.74294,
+    "@DidebanJang": 1794681058.4631224,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
@@ -85,7 +85,7 @@
           "grouped_id": null,
           "raw_text": "تلویزیون ایران:\n\nپاسخ هیچ محدودیت جغرافیایی نخواهد داشت و امکان هدف قرار دادن پایگاه هوایی RAF Fairford در جنوب انگلستان وجود دارد؛ پایگاهی که بمب‌افکن‌های آمریکایی در جریان جنگ اخیر علیه ایران از آن به پرواز درآمدند.\n\nسرجنگی موشک خرمشهر تغییر داده شده است که می‌تواند برد آن را چندین برابر افزایش دهد. برد موشک‌های ایرانی هیچ محدودیتی ندارد.\n\nIranian television:\n\nThe response will have no geographical limits, and RAF Fairford air base in southern England, from which US bombers took off during the recent war against Iran, could be targeted.\n\nThe warhead of the Khorramshahr missile has been modified, potentially multiplying its range several times. There are no limits to the range of Iranian missiles.",
           "output_text": "تلویزیون ایران:\n\nپاسخ هیچ محدودیت جغرافیایی نخواهد داشت و امکان هدف قرار دادن پایگاه هوایی RAF Fairford در جنوب انگلستان وجود دارد؛ پایگاهی که بمب‌افکن‌های آمریکایی در جریان جنگ اخیر علیه ایران از آن به پرواز درآمدند.\n\nسرجنگی موشک خرمشهر تغییر داده شده است که می‌تواند برد آن را چندین برابر افزایش دهد. برد موشک‌های ایرانی هیچ محدودیتی ندارد.",
-          "last_edit_timestamp": 1794679853.0
+          "last_edit_timestamp": 1794681654.0
         }
       ],
       "active_text_source": "Ali_bk_8_8312",
@@ -96,9 +96,188 @@
       "grouped_id": null,
       "raw_text": "تلویزیون ایران:\n\nپاسخ هیچ محدودیت جغرافیایی نخواهد داشت و امکان هدف قرار دادن پایگاه هوایی RAF Fairford در جنوب انگلستان وجود دارد؛ پایگاهی که بمب‌افکن‌های آمریکایی در جریان جنگ اخیر علیه ایران از آن به پرواز درآمدند.\n\nسرجنگی موشک خرمشهر تغییر داده شده است که می‌تواند برد آن را چندین برابر افزایش دهد. برد موشک‌های ایرانی هیچ محدودیتی ندارد.\n\nIranian television:\n\nThe response will have no geographical limits, and RAF Fairford air base in southern England, from which US bombers took off during the recent war against Iran, could be targeted.\n\nThe warhead of the Khorramshahr missile has been modified, potentially multiplying its range several times. There are no limits to the range of Iranian missiles.",
       "output_text": "تلویزیون ایران:\n\nپاسخ هیچ محدودیت جغرافیایی نخواهد داشت و امکان هدف قرار دادن پایگاه هوایی RAF Fairford در جنوب انگلستان وجود دارد؛ پایگاهی که بمب‌افکن‌های آمریکایی در جریان جنگ اخیر علیه ایران از آن به پرواز درآمدند.\n\nسرجنگی موشک خرمشهر تغییر داده شده است که می‌تواند برد آن را چندین برابر افزایش دهد. برد موشک‌های ایرانی هیچ محدودیتی ندارد.",
-      "last_edit_timestamp": 1794679853.0
+      "last_edit_timestamp": 1794681654.0
+    },
+    "Ali_bk_8_8313": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 981,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 شبکه آی‌۲۴ نیوز: بر اساس گزارش‌های منتشرشده، برد موشک‌های بالستیک ایران به ۴۰۰۰ کیلومتر و حتی بیشتر افزایش یافته است و این کشور توان تولید حدود ۵۰ موشک در ماه را دارد. همچنین، یک گزارش محرمانه آژانس بین‌المللی انرژی اتمی به ذخایر قابل‌توجه اورانیوم با غنای ۶۰ درصد در تأسیسات اصفهان اشاره دارد؛ این در حالی است که دسترسی بازرسان آژانس به این تأسیسات همچنان ممنوع است. وضعیت و محل دقیق نگهداری این ذخایر نیز همچنان از موضوعات مورد نگرانی آژانس است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8313\">@Ali_bk_8</a>\n📝 <a href=\"https://t.me/withyashar/28077\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 981,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 شبکه آی‌۲۴ نیوز: بر اساس گزارش‌های منتشرشده، برد موشک‌های بالستیک ایران به ۴۰۰۰ کیلومتر و حتی بیشتر افزایش یافته است و این کشور توان تولید حدود ۵۰ موشک در ماه را دارد. همچنین، یک گزارش محرمانه آژانس بین‌المللی انرژی اتمی به ذخایر قابل‌توجه اورانیوم با غنای ۶۰ درصد در تأسیسات اصفهان اشاره دارد؛ این در حالی است که دسترسی بازرسان آژانس به این تأسیسات همچنان ممنوع است. وضعیت و محل دقیق نگهداری این ذخایر نیز همچنان از موضوعات مورد نگرانی آژانس است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8313\">@Ali_bk_8</a>\n📝 <a href=\"https://t.me/withyashar/28077\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8313,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "شبکه ۱۵ عبری:\n\nبرد موشک‌های بالستیک به ۴۰۰۰ کیلومتر و بیشتر افزایش یافته و حدود ۵۰ موشک در هفته تولید می‌شود. علاوه بر این، یک گزارش محرمانه آژانس بین‌المللی انرژی اتمی از ذخایر بزرگ اورانیوم غنی‌شده در تأسیسات اصفهان خبر می‌دهد که شامل مقادیری اورانیوم با غنای ۶۰٪ است؛ در حالی که همچنان از دسترسی آژانس به تأسیسات جلوگیری می‌شود.\n\nHebrew Channel 15:\n\nThe range of ballistic missiles has been increased to 4,000 kilometers and beyond, with production of around 50 missiles per week. In addition, a secret IAEA report discusses a large stockpile of enriched uranium at the Isfahan facility, including quantities enriched to 60%, while the agency continues to be denied access to the facilities.",
+          "output_text": "شبکه ۱۵ عبری:\n\nبرد موشک‌های بالستیک به ۴۰۰۰ کیلومتر و بیشتر افزایش یافته و حدود ۵۰ موشک در هفته تولید می‌شود. علاوه بر این، یک گزارش محرمانه آژانس بین‌المللی انرژی اتمی از ذخایر بزرگ اورانیوم غنی‌شده در تأسیسات اصفهان خبر می‌دهد که شامل مقادیری اورانیوم با غنای ۶۰٪ است؛ در حالی که همچنان از دسترسی آژانس به تأسیسات جلوگیری می‌شود.",
+          "last_edit_timestamp": 1794681099.0
+        },
+        {
+          "source_node": "withyashar",
+          "msg_id": 28077,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "شبکه آی‌۲۴ نیوز: بر اساس گزارش‌های منتشرشده، برد موشک‌های بالستیک ایران به ۴۰۰۰ کیلومتر و حتی بیشتر افزایش یافته است و این کشور توان تولید حدود ۵۰ موشک در ماه را دارد. همچنین، یک گزارش محرمانه آژانس بین‌المللی انرژی اتمی به ذخایر قابل‌توجه اورانیوم با غنای ۶۰ درصد در تأسیسات اصفهان اشاره دارد؛ این در حالی است که دسترسی بازرسان آژانس به این تأسیسات همچنان ممنوع است. وضعیت و محل دقیق نگهداری این ذخایر نیز همچنان از موضوعات مورد نگرانی آژانس است.\n@WarRoom",
+          "output_text": "شبکه آی‌۲۴ نیوز: بر اساس گزارش‌های منتشرشده، برد موشک‌های بالستیک ایران به ۴۰۰۰ کیلومتر و حتی بیشتر افزایش یافته است و این کشور توان تولید حدود ۵۰ موشک در ماه را دارد. همچنین، یک گزارش محرمانه آژانس بین‌المللی انرژی اتمی به ذخایر قابل‌توجه اورانیوم با غنای ۶۰ درصد در تأسیسات اصفهان اشاره دارد؛ این در حالی است که دسترسی بازرسان آژانس به این تأسیسات همچنان ممنوع است. وضعیت و محل دقیق نگهداری این ذخایر نیز همچنان از موضوعات مورد نگرانی آژانس است.\n@WarRoom",
+          "last_edit_timestamp": 1794681284.0
+        }
+      ],
+      "active_text_source": "withyashar_28077",
+      "sent_timestamp": 1794680674.802937,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8313,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "شبکه آی‌۲۴ نیوز: بر اساس گزارش‌های منتشرشده، برد موشک‌های بالستیک ایران به ۴۰۰۰ کیلومتر و حتی بیشتر افزایش یافته است و این کشور توان تولید حدود ۵۰ موشک در ماه را دارد. همچنین، یک گزارش محرمانه آژانس بین‌المللی انرژی اتمی به ذخایر قابل‌توجه اورانیوم با غنای ۶۰ درصد در تأسیسات اصفهان اشاره دارد؛ این در حالی است که دسترسی بازرسان آژانس به این تأسیسات همچنان ممنوع است. وضعیت و محل دقیق نگهداری این ذخایر نیز همچنان از موضوعات مورد نگرانی آژانس است.\n@WarRoom",
+      "output_text": "شبکه آی‌۲۴ نیوز: بر اساس گزارش‌های منتشرشده، برد موشک‌های بالستیک ایران به ۴۰۰۰ کیلومتر و حتی بیشتر افزایش یافته است و این کشور توان تولید حدود ۵۰ موشک در ماه را دارد. همچنین، یک گزارش محرمانه آژانس بین‌المللی انرژی اتمی به ذخایر قابل‌توجه اورانیوم با غنای ۶۰ درصد در تأسیسات اصفهان اشاره دارد؛ این در حالی است که دسترسی بازرسان آژانس به این تأسیسات همچنان ممنوع است. وضعیت و محل دقیق نگهداری این ذخایر نیز همچنان از موضوعات مورد نگرانی آژانس است.\n@WarRoom",
+      "last_edit_timestamp": 1794681284.0
+    },
+    "withyashar_28075": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 982,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 ای۲۴ نیوز: رئیس موساد خواستار حمله به ایران است: گوفمن اطلاعاتی را در اختیار مقامات ارشد آمریکایی قرار داد که مربوط به تقویت مجدد توانمندی‌های تهران است. 🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28075\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 982,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 ای۲۴ نیوز: رئیس موساد خواستار حمله به ایران است: گوفمن اطلاعاتی را در اختیار مقامات ارشد آمریکایی قرار داد که مربوط به تقویت مجدد توانمندی‌های تهران است. 🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28075\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28075,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "ای۲۴ نیوز: رئیس موساد خواستار حمله به ایران است: گوفمن اطلاعاتی را در اختیار مقامات ارشد آمریکایی قرار داد که مربوط به تقویت مجدد توانمندی‌های تهران است. \n@WarRoom 🚨🚨🚨",
+          "output_text": "ای۲۴ نیوز: رئیس موساد خواستار حمله به ایران است: گوفمن اطلاعاتی را در اختیار مقامات ارشد آمریکایی قرار داد که مربوط به تقویت مجدد توانمندی‌های تهران است. \n@WarRoom 🚨🚨🚨",
+          "last_edit_timestamp": 1794681058.4631195
+        }
+      ],
+      "active_text_source": "withyashar_28075",
+      "sent_timestamp": 1794681059.0450392,
+      "source_node": "withyashar",
+      "msg_id": 28075,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "ای۲۴ نیوز: رئیس موساد خواستار حمله به ایران است: گوفمن اطلاعاتی را در اختیار مقامات ارشد آمریکایی قرار داد که مربوط به تقویت مجدد توانمندی‌های تهران است. \n@WarRoom 🚨🚨🚨",
+      "output_text": "ای۲۴ نیوز: رئیس موساد خواستار حمله به ایران است: گوفمن اطلاعاتی را در اختیار مقامات ارشد آمریکایی قرار داد که مربوط به تقویت مجدد توانمندی‌های تهران است. \n@WarRoom 🚨🚨🚨",
+      "last_edit_timestamp": 1794681051.0
+    },
+    "withyashar_28076": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 983,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 ای۲۴نیوز : وضعیت آماده‌باش در اسرائیل همچنان ادامه دارد: ارتش اسرائیل تخمین می‌زند که به مدت چند هفته آینده به حالت آماده‌باش نیاز خواهد داشت. 🚨🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28076\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 983,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 ای۲۴نیوز : وضعیت آماده‌باش در اسرائیل همچنان ادامه دارد: ارتش اسرائیل تخمین می‌زند که به مدت چند هفته آینده به حالت آماده‌باش نیاز خواهد داشت. 🚨🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28076\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28076,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "ای۲۴نیوز : وضعیت آماده‌باش در اسرائیل همچنان ادامه دارد: ارتش اسرائیل تخمین می‌زند که به مدت چند هفته آینده به حالت آماده‌باش نیاز خواهد داشت. \n@WarRoom 🚨🚨🚨🚨",
+          "output_text": "ای۲۴نیوز : وضعیت آماده‌باش در اسرائیل همچنان ادامه دارد: ارتش اسرائیل تخمین می‌زند که به مدت چند هفته آینده به حالت آماده‌باش نیاز خواهد داشت. \n@WarRoom 🚨🚨🚨🚨",
+          "last_edit_timestamp": 1794681178.4663434
+        }
+      ],
+      "active_text_source": "withyashar_28076",
+      "sent_timestamp": 1794681178.946238,
+      "source_node": "withyashar",
+      "msg_id": 28076,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "ای۲۴نیوز : وضعیت آماده‌باش در اسرائیل همچنان ادامه دارد: ارتش اسرائیل تخمین می‌زند که به مدت چند هفته آینده به حالت آماده‌باش نیاز خواهد داشت. \n@WarRoom 🚨🚨🚨🚨",
+      "output_text": "ای۲۴نیوز : وضعیت آماده‌باش در اسرائیل همچنان ادامه دارد: ارتش اسرائیل تخمین می‌زند که به مدت چند هفته آینده به حالت آماده‌باش نیاز خواهد داشت. \n@WarRoom 🚨🚨🚨🚨",
+      "last_edit_timestamp": 1794681165.0
+    },
+    "Ali_bk_8_8314": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 984,
+      "status_icon": "🚨🔕",
+      "last_formatted_text": "🚨🔕 شبکه ۱۵ عبری:\n\nتل‌آویو در حال آماده‌سازی برای حمله به ایران است و به‌دنبال مشارکت آمریکا در این حمله است. فضای انتظار و آزمودن خطوط قرمز برای تعیین اهداف طرف‌ها و زمان تصمیم‌گیری وجود دارد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8314\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 984,
+          "status_icon": "🚨🔕",
+          "last_formatted_text": "🚨🔕 شبکه ۱۵ عبری:\n\nتل‌آویو در حال آماده‌سازی برای حمله به ایران است و به‌دنبال مشارکت آمریکا در این حمله است. فضای انتظار و آزمودن خطوط قرمز برای تعیین اهداف طرف‌ها و زمان تصمیم‌گیری وجود دارد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8314\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8314,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "شبکه ۱۵ عبری:\n\nتل‌آویو در حال آماده‌سازی برای حمله به ایران است و به‌دنبال مشارکت آمریکا در این حمله است. فضای انتظار و آزمودن خطوط قرمز برای تعیین اهداف طرف‌ها و زمان تصمیم‌گیری وجود دارد.\n\nHebrew Channel 15:\n\nTel Aviv is preparing to launch an attack on Iran and is seeking US involvement. There is anticipation and a testing of limits to determine the parties' objectives and the timing of the decision.",
+          "output_text": "شبکه ۱۵ عبری:\n\nتل‌آویو در حال آماده‌سازی برای حمله به ایران است و به‌دنبال مشارکت آمریکا در این حمله است. فضای انتظار و آزمودن خطوط قرمز برای تعیین اهداف طرف‌ها و زمان تصمیم‌گیری وجود دارد.",
+          "last_edit_timestamp": 1794681592.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8314",
+      "sent_timestamp": 1794681344.2870698,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8314,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "شبکه ۱۵ عبری:\n\nتل‌آویو در حال آماده‌سازی برای حمله به ایران است و به‌دنبال مشارکت آمریکا در این حمله است. فضای انتظار و آزمودن خطوط قرمز برای تعیین اهداف طرف‌ها و زمان تصمیم‌گیری وجود دارد.\n\nHebrew Channel 15:\n\nTel Aviv is preparing to launch an attack on Iran and is seeking US involvement. There is anticipation and a testing of limits to determine the parties' objectives and the timing of the decision.",
+      "output_text": "شبکه ۱۵ عبری:\n\nتل‌آویو در حال آماده‌سازی برای حمله به ایران است و به‌دنبال مشارکت آمریکا در این حمله است. فضای انتظار و آزمودن خطوط قرمز برای تعیین اهداف طرف‌ها و زمان تصمیم‌گیری وجود دارد.",
+      "last_edit_timestamp": 1794681592.0
+    },
+    "Ali_bk_8_8315": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 985,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 اسرائیل هیوم:\n\nموساد اطلاعات مشخصی درباره قصد ایران برای هدف قرار دادن ترامپ و مقام‌های ارشد دولت او با پهپادها را در اختیار سازمان اطلاعات مرکزی آمریکا (CIA) قرار داده است.\n\nدر پی این تهدیدها، مقام‌های ارشد آمریکایی به مراکز حفاظت‌شده منتقل شده‌اند، حضور علنی ترامپ کاهش یافته و تدابیر امنیتی شدیدی اعمال شده است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8315\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 985,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 اسرائیل هیوم:\n\nموساد اطلاعات مشخصی درباره قصد ایران برای هدف قرار دادن ترامپ و مقام‌های ارشد دولت او با پهپادها را در اختیار سازمان اطلاعات مرکزی آمریکا (CIA) قرار داده است.\n\nدر پی این تهدیدها، مقام‌های ارشد آمریکایی به مراکز حفاظت‌شده منتقل شده‌اند، حضور علنی ترامپ کاهش یافته و تدابیر امنیتی شدیدی اعمال شده است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8315\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8315,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "اسرائیل هیوم:\n\nموساد اطلاعات مشخصی درباره قصد ایران برای هدف قرار دادن ترامپ و مقام‌های ارشد دولت او با پهپادها را در اختیار سازمان اطلاعات مرکزی آمریکا (CIA) قرار داده است.\n\nدر پی این تهدیدها، مقام‌های ارشد آمریکایی به مراکز حفاظت‌شده منتقل شده‌اند، حضور علنی ترامپ کاهش یافته و تدابیر امنیتی شدیدی اعمال شده است.\n\nIsrael Hayom:\n\nMossad has provided the US Central Intelligence Agency (CIA) with specific intelligence regarding Iranian intentions to target Trump and senior members of his administration with drones.\n\nAgainst the backdrop of these threats, senior US officials have been moved to secure facilities, while Trump's public appearances have been reduced and heightened security measures imposed.",
+          "output_text": "اسرائیل هیوم:\n\nموساد اطلاعات مشخصی درباره قصد ایران برای هدف قرار دادن ترامپ و مقام‌های ارشد دولت او با پهپادها را در اختیار سازمان اطلاعات مرکزی آمریکا (CIA) قرار داده است.\n\nدر پی این تهدیدها، مقام‌های ارشد آمریکایی به مراکز حفاظت‌شده منتقل شده‌اند، حضور علنی ترامپ کاهش یافته و تدابیر امنیتی شدیدی اعمال شده است.",
+          "last_edit_timestamp": 1794681587.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8315",
+      "sent_timestamp": 1794681575.5749016,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8315,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "اسرائیل هیوم:\n\nموساد اطلاعات مشخصی درباره قصد ایران برای هدف قرار دادن ترامپ و مقام‌های ارشد دولت او با پهپادها را در اختیار سازمان اطلاعات مرکزی آمریکا (CIA) قرار داده است.\n\nدر پی این تهدیدها، مقام‌های ارشد آمریکایی به مراکز حفاظت‌شده منتقل شده‌اند، حضور علنی ترامپ کاهش یافته و تدابیر امنیتی شدیدی اعمال شده است.\n\nIsrael Hayom:\n\nMossad has provided the US Central Intelligence Agency (CIA) with specific intelligence regarding Iranian intentions to target Trump and senior members of his administration with drones.\n\nAgainst the backdrop of these threats, senior US officials have been moved to secure facilities, while Trump's public appearances have been reduced and heightened security measures imposed.",
+      "output_text": "اسرائیل هیوم:\n\nموساد اطلاعات مشخصی درباره قصد ایران برای هدف قرار دادن ترامپ و مقام‌های ارشد دولت او با پهپادها را در اختیار سازمان اطلاعات مرکزی آمریکا (CIA) قرار داده است.\n\nدر پی این تهدیدها، مقام‌های ارشد آمریکایی به مراکز حفاظت‌شده منتقل شده‌اند، حضور علنی ترامپ کاهش یافته و تدابیر امنیتی شدیدی اعمال شده است.",
+      "last_edit_timestamp": 1794681587.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T18:18:31.120984+00:00"
+  "updated_at": "2026-11-14T18:44:58.379196+00:00"
 }
