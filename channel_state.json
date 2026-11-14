@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28058,
-      "last_read_time": "2026-11-14 14:17:45 UTC"
+      "last_read_id": 28062,
+      "last_read_time": "2026-11-14 14:47:06 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8296,
       "last_read_time": "2026-11-14 14:20:26 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79112,
-      "last_read_time": "2026-11-14 14:07:55 UTC"
+      "last_read_id": 79113,
+      "last_read_time": "2026-11-14 14:16:43 UTC"
     },
     "iliaen": {
       "last_read_id": 4754,
@@ -31,39 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8293": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 968,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما موفق شدند چندین تجمع از نیروهای دشمن سعودی وابسته به افسر سعودی بدر الحربی را در منطقه خرز در استان لحج با چندین موشک بالستیک هدف قرار دهند. این حملات به لطف خدا دقیق و مستقیم بودند و ده‌ها کشته و زخمی بر جای گذاشتند و شمار زیادی از خودروهای نظامی را منهدم کردند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8293\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 968,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما موفق شدند چندین تجمع از نیروهای دشمن سعودی وابسته به افسر سعودی بدر الحربی را در منطقه خرز در استان لحج با چندین موشک بالستیک هدف قرار دهند. این حملات به لطف خدا دقیق و مستقیم بودند و ده‌ها کشته و زخمی بر جای گذاشتند و شمار زیادی از خودروهای نظامی را منهدم کردند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8293\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8293,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما موفق شدند چندین تجمع از نیروهای دشمن سعودی وابسته به افسر سعودی بدر الحربی را در منطقه خرز در استان لحج با چندین موشک بالستیک هدف قرار دهند. این حملات به لطف خدا دقیق و مستقیم بودند و ده‌ها کشته و زخمی بر جای گذاشتند و شمار زیادی از خودروهای نظامی را منهدم کردند.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces successfully targeted several concentrations of Saudi enemy forces belonging to Saudi officer Badr al-Harbi in the Kharz area of Lahij province with several ballistic missiles. The strikes were accurate and direct, thanks be to God, leaving dozens killed and wounded and destroying a large number of military vehicles.",
-          "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما موفق شدند چندین تجمع از نیروهای دشمن سعودی وابسته به افسر سعودی بدر الحربی را در منطقه خرز در استان لحج با چندین موشک بالستیک هدف قرار دهند. این حملات به لطف خدا دقیق و مستقیم بودند و ده‌ها کشته و زخمی بر جای گذاشتند و شمار زیادی از خودروهای نظامی را منهدم کردند.",
-          "last_edit_timestamp": 1794663879.8385239
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8293",
-      "sent_timestamp": 1794663880.2712107,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8293,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما موفق شدند چندین تجمع از نیروهای دشمن سعودی وابسته به افسر سعودی بدر الحربی را در منطقه خرز در استان لحج با چندین موشک بالستیک هدف قرار دهند. این حملات به لطف خدا دقیق و مستقیم بودند و ده‌ها کشته و زخمی بر جای گذاشتند و شمار زیادی از خودروهای نظامی را منهدم کردند.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nOur armed forces successfully targeted several concentrations of Saudi enemy forces belonging to Saudi officer Badr al-Harbi in the Kharz area of Lahij province with several ballistic missiles. The strikes were accurate and direct, thanks be to God, leaving dozens killed and wounded and destroying a large number of military vehicles.",
-      "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما موفق شدند چندین تجمع از نیروهای دشمن سعودی وابسته به افسر سعودی بدر الحربی را در منطقه خرز در استان لحج با چندین موشک بالستیک هدف قرار دهند. این حملات به لطف خدا دقیق و مستقیم بودند و ده‌ها کشته و زخمی بر جای گذاشتند و شمار زیادی از خودروهای نظامی را منهدم کردند."
-    },
     "Ali_bk_8_8295": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 969,
@@ -133,5 +100,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T14:37:00.946203+00:00"
+  "updated_at": "2026-11-14T15:03:27.577600+00:00"
 }
