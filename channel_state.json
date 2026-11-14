@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-14 00:02:50 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8278,
-      "last_read_time": "2026-11-14 02:14:56 UTC"
+      "last_read_id": 8279,
+      "last_read_time": "2026-11-14 04:25:09 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79103,
@@ -30,7 +30,42 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_8279": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 952,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کرده بودیم...\n\nنیروی دریایی ارتش ایران از انفجار یک نفتکش متخلف خبر داد که هشدارهای قبلی را نادیده گرفته و پس از خاموش کردن سامانه‌های رهگیری و شناسایی خود، در منطقه‌ای ناامن و ممنوعه در شرق تنگه هرمز تردد می‌کرد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8279\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 952,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کرده بودیم...\n\nنیروی دریایی ارتش ایران از انفجار یک نفتکش متخلف خبر داد که هشدارهای قبلی را نادیده گرفته و پس از خاموش کردن سامانه‌های رهگیری و شناسایی خود، در منطقه‌ای ناامن و ممنوعه در شرق تنگه هرمز تردد می‌کرد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8279\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8279,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "در تأیید آنچه پیش‌تر منتشر کرده بودیم...\n\nنیروی دریایی ارتش ایران از انفجار یک نفتکش متخلف خبر داد که هشدارهای قبلی را نادیده گرفته و پس از خاموش کردن سامانه‌های رهگیری و شناسایی خود، در منطقه‌ای ناامن و ممنوعه در شرق تنگه هرمز تردد می‌کرد.\n\nConfirming what we reported earlier...\n\nThe Iranian Army Navy announces the explosion of a noncompliant oil tanker that ignored previous warnings and was sailing in an unsafe and prohibited area east of the Strait of Hormuz after disabling its tracking and identification systems.",
+          "output_text": "در تأیید آنچه پیش‌تر منتشر کرده بودیم...\n\nنیروی دریایی ارتش ایران از انفجار یک نفتکش متخلف خبر داد که هشدارهای قبلی را نادیده گرفته و پس از خاموش کردن سامانه‌های رهگیری و شناسایی خود، در منطقه‌ای ناامن و ممنوعه در شرق تنگه هرمز تردد می‌کرد.",
+          "last_edit_timestamp": 1794630344.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8279",
+      "sent_timestamp": 1794630319.9106197,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8279,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "در تأیید آنچه پیش‌تر منتشر کرده بودیم...\n\nنیروی دریایی ارتش ایران از انفجار یک نفتکش متخلف خبر داد که هشدارهای قبلی را نادیده گرفته و پس از خاموش کردن سامانه‌های رهگیری و شناسایی خود، در منطقه‌ای ناامن و ممنوعه در شرق تنگه هرمز تردد می‌کرد.\n\nConfirming what we reported earlier...\n\nThe Iranian Army Navy announces the explosion of a noncompliant oil tanker that ignored previous warnings and was sailing in an unsafe and prohibited area east of the Strait of Hormuz after disabling its tracking and identification systems.",
+      "output_text": "در تأیید آنچه پیش‌تر منتشر کرده بودیم...\n\nنیروی دریایی ارتش ایران از انفجار یک نفتکش متخلف خبر داد که هشدارهای قبلی را نادیده گرفته و پس از خاموش کردن سامانه‌های رهگیری و شناسایی خود، در منطقه‌ای ناامن و ممنوعه در شرق تنگه هرمز تردد می‌کرد.",
+      "last_edit_timestamp": 1794630344.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-14T04:00:57.505084+00:00"
+  "updated_at": "2026-11-14T04:27:18.522426+00:00"
 }
