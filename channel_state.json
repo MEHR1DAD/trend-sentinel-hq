@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28046,
-      "last_read_time": "2026-11-14 08:36:11 UTC"
+      "last_read_id": 28048,
+      "last_read_time": "2026-11-14 09:16:58 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8283,
-      "last_read_time": "2026-11-14 07:26:23 UTC"
+      "last_read_id": 8284,
+      "last_read_time": "2026-11-14 09:13:02 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79103,
@@ -30,7 +30,42 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_8284": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 959,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8284\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 959,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8284\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8284,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.\n\nThe IRGC is conducting missile tests in Iran now.",
+          "output_text": "سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.",
+          "last_edit_timestamp": 1794647623.471313
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8284",
+      "sent_timestamp": 1794647624.1583264,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8284,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.\n\nThe IRGC is conducting missile tests in Iran now.",
+      "output_text": "سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.",
+      "last_edit_timestamp": 1794647597.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-14T08:51:18.479054+00:00"
+  "updated_at": "2026-11-14T09:17:43.972908+00:00"
 }
