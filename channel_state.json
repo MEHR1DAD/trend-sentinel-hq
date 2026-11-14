@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28096,
-      "last_read_time": "2026-11-14 20:55:23 UTC"
+      "last_read_id": 28098,
+      "last_read_time": "2026-11-14 21:23:00 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8319,
-      "last_read_time": "2026-11-14 20:16:00 UTC"
+      "last_read_id": 8321,
+      "last_read_time": "2026-11-14 21:01:06 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79113,
@@ -31,142 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28084": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 989,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 آکسیوس: هم اکنون رئیس موساد در آمریکا در پی متقاعد کردن ترامپ برای حمله به ایران است 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28084\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 989,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 آکسیوس: هم اکنون رئیس موساد در آمریکا در پی متقاعد کردن ترامپ برای حمله به ایران است 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28084\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28084,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "آکسیوس: هم اکنون رئیس موساد در آمریکا در پی متقاعد کردن ترامپ برای حمله به ایران است\n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "آکسیوس: هم اکنون رئیس موساد در آمریکا در پی متقاعد کردن ترامپ برای حمله به ایران است\n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1794687089.0
-        }
-      ],
-      "active_text_source": "withyashar_28084",
-      "sent_timestamp": 1794686832.0359576,
-      "source_node": "withyashar",
-      "msg_id": 28084,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "آکسیوس: هم اکنون رئیس موساد در آمریکا در پی متقاعد کردن ترامپ برای حمله به ایران است\n@WarRoom 🚨🚨🚨🚨",
-      "output_text": "آکسیوس: هم اکنون رئیس موساد در آمریکا در پی متقاعد کردن ترامپ برای حمله به ایران است\n@WarRoom 🚨🚨🚨🚨",
-      "last_edit_timestamp": 1794687089.0
-    },
-    "Ali_bk_8_8319": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 990,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 شنیده شدن صدای انفجارها در تنگه هرمز.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8319\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 990,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 شنیده شدن صدای انفجارها در تنگه هرمز.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8319\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8319,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "شنیده شدن صدای انفجارها در تنگه هرمز.\n\nExplosions heard in the Strait of Hormuz.",
-          "output_text": "شنیده شدن صدای انفجارها در تنگه هرمز.",
-          "last_edit_timestamp": 1794687402.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8319",
-      "sent_timestamp": 1794687378.187422,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8319,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "شنیده شدن صدای انفجارها در تنگه هرمز.\n\nExplosions heard in the Strait of Hormuz.",
-      "output_text": "شنیده شدن صدای انفجارها در تنگه هرمز.",
-      "last_edit_timestamp": 1794687402.0
-    },
-    "withyashar_28087": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 991,
-      "status_icon": "🚨🔕",
-      "last_formatted_text": "🚨🔕 موج انفجار بندر لنگه هم احساس شده 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28087\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 991,
-          "status_icon": "🚨🔕",
-          "last_formatted_text": "🚨🔕 موج انفجار بندر لنگه هم احساس شده 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28087\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28087,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "موج انفجار بندر لنگه هم احساس شده\n@WarRoom 🚨🚨🚨",
-          "output_text": "موج انفجار بندر لنگه هم احساس شده\n@WarRoom 🚨🚨🚨",
-          "last_edit_timestamp": 1794687398.8685467
-        }
-      ],
-      "active_text_source": "withyashar_28087",
-      "sent_timestamp": 1794687399.789681,
-      "source_node": "withyashar",
-      "msg_id": 28087,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "موج انفجار بندر لنگه هم احساس شده\n@WarRoom 🚨🚨🚨",
-      "output_text": "موج انفجار بندر لنگه هم احساس شده\n@WarRoom 🚨🚨🚨",
-      "last_edit_timestamp": 1794687398.0
-    },
-    "withyashar_28088": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 992,
-      "status_icon": "🚨🔕",
-      "last_formatted_text": "🚨🔕 الان گزارش صدای انفجار جدید در بندر لنگه 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28088\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 992,
-          "status_icon": "🚨🔕",
-          "last_formatted_text": "🚨🔕 الان گزارش صدای انفجار جدید در بندر لنگه 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28088\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28088,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "الان گزارش صدای انفجار جدید در بندر لنگه \n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "الان گزارش صدای انفجار جدید در بندر لنگه \n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1794687529.8812807
-        }
-      ],
-      "active_text_source": "withyashar_28088",
-      "sent_timestamp": 1794687530.7125466,
-      "source_node": "withyashar",
-      "msg_id": 28088,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "الان گزارش صدای انفجار جدید در بندر لنگه \n@WarRoom 🚨🚨🚨🚨",
-      "output_text": "الان گزارش صدای انفجار جدید در بندر لنگه \n@WarRoom 🚨🚨🚨🚨",
-      "last_edit_timestamp": 1794687522.0
-    },
     "withyashar_28093": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 993,
@@ -271,5 +135,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T20:57:04.660757+00:00"
+  "updated_at": "2026-11-14T21:23:31.694987+00:00"
 }
