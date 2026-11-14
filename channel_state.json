@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28093,
-      "last_read_time": "2026-11-14 20:28:12 UTC"
+      "last_read_id": 28096,
+      "last_read_time": "2026-11-14 20:55:23 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8319,
@@ -200,8 +200,76 @@
       "raw_text": "گزارش اولیه دیدبان ها : صدای انفجار شدید در بندر کنگ از سمت محدوده پایگاه امام حسین بوده\n@WarRoom 🚨🚨🚨",
       "output_text": "گزارش اولیه دیدبان ها : صدای انفجار شدید در بندر کنگ از سمت محدوده پایگاه امام حسین بوده\n@WarRoom 🚨🚨🚨",
       "last_edit_timestamp": 1794688102.0
+    },
+    "Ali_bk_8_8320": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 994,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تصاویری از حمله پهپادی در شمال صنعا، پایتخت یمن.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8320\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 994,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تصاویری از حمله پهپادی در شمال صنعا، پایتخت یمن.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8320\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8320,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "تصاویری از حمله پهپادی در شمال صنعا، پایتخت یمن.\n\nFootage of a drone attack north of the Yemeni capital, Sanaa.",
+          "output_text": "تصاویری از حمله پهپادی در شمال صنعا، پایتخت یمن.",
+          "last_edit_timestamp": 1794689376.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8320",
+      "sent_timestamp": 1794688780.9699903,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8320,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "تصاویری از حمله پهپادی در شمال صنعا، پایتخت یمن.\n\nFootage of a drone attack north of the Yemeni capital, Sanaa.",
+      "output_text": "تصاویری از حمله پهپادی در شمال صنعا، پایتخت یمن.",
+      "last_edit_timestamp": 1794689376.0
+    },
+    "withyashar_28095": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 995,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28095\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 995,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28095\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28095,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن\n@WarRoom 🚨🚨🚨",
+          "output_text": "دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن\n@WarRoom 🚨🚨🚨",
+          "last_edit_timestamp": 1794689584.880595
+        }
+      ],
+      "active_text_source": "withyashar_28095",
+      "sent_timestamp": 1794689585.1976705,
+      "source_node": "withyashar",
+      "msg_id": 28095,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن\n@WarRoom 🚨🚨🚨",
+      "output_text": "دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن\n@WarRoom 🚨🚨🚨",
+      "last_edit_timestamp": 1794689583.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T20:30:38.738641+00:00"
+  "updated_at": "2026-11-14T20:57:04.660757+00:00"
 }
