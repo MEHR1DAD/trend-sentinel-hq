@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28068,
-      "last_read_time": "2026-11-14 16:59:12 UTC"
+      "last_read_id": 28069,
+      "last_read_time": "2026-11-14 17:21:53 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8310,
-      "last_read_time": "2026-11-14 17:06:58 UTC"
+      "last_read_id": 8311,
+      "last_read_time": "2026-11-14 17:22:55 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79113,
@@ -31,40 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8303": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 974,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویر ماهواره‌ای از وقوع آتش‌سوزی در تنگه هرمز در حال حاضر خبر می‌دهند. به نظر می‌رسد یک کشتی دیگر هدف قرار گرفته است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8303\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 974,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویر ماهواره‌ای از وقوع آتش‌سوزی در تنگه هرمز در حال حاضر خبر می‌دهند. به نظر می‌رسد یک کشتی دیگر هدف قرار گرفته است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8303\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8303,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "تصاویر ماهواره‌ای از وقوع آتش‌سوزی در تنگه هرمز در حال حاضر خبر می‌دهند. به نظر می‌رسد یک کشتی دیگر هدف قرار گرفته است.\n\nSatellite images show a fire in the Strait of Hormuz now. A new vessel appears to have been targeted.",
-          "output_text": "تصاویر ماهواره‌ای از وقوع آتش‌سوزی در تنگه هرمز در حال حاضر خبر می‌دهند. به نظر می‌رسد یک کشتی دیگر هدف قرار گرفته است.",
-          "last_edit_timestamp": 1794674201.9954875
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8303",
-      "sent_timestamp": 1794674202.5002499,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8303,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "تصاویر ماهواره‌ای از وقوع آتش‌سوزی در تنگه هرمز در حال حاضر خبر می‌دهند. به نظر می‌رسد یک کشتی دیگر هدف قرار گرفته است.\n\nSatellite images show a fire in the Strait of Hormuz now. A new vessel appears to have been targeted.",
-      "output_text": "تصاویر ماهواره‌ای از وقوع آتش‌سوزی در تنگه هرمز در حال حاضر خبر می‌دهند. به نظر می‌رسد یک کشتی دیگر هدف قرار گرفته است.",
-      "last_edit_timestamp": 1794674193.0
-    },
     "Ali_bk_8_8304": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 975,
@@ -167,5 +133,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T17:15:27.884442+00:00"
+  "updated_at": "2026-11-14T17:41:48.287779+00:00"
 }
