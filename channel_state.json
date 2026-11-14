@@ -31,39 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8280": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 955,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویر اختصاصی.. عربستان سعودی از ترس پهپادهای یمنی در حال ساخت قفس‌های فلزی مشبک عظیم در اطراف مخازن سوخت فرودگاه ریاض است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8280\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 955,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویر اختصاصی.. عربستان سعودی از ترس پهپادهای یمنی در حال ساخت قفس‌های فلزی مشبک عظیم در اطراف مخازن سوخت فرودگاه ریاض است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8280\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8280,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "تصاویر اختصاصی.. عربستان سعودی از ترس پهپادهای یمنی در حال ساخت قفس‌های فلزی مشبک عظیم در اطراف مخازن سوخت فرودگاه ریاض است.\n\nExclusive footage.. Saudi Arabia is building huge metal mesh cages around fuel tanks at Riyadh Airport, fearing Yemeni drones.",
-          "output_text": "تصاویر اختصاصی.. عربستان سعودی از ترس پهپادهای یمنی در حال ساخت قفس‌های فلزی مشبک عظیم در اطراف مخازن سوخت فرودگاه ریاض است.",
-          "last_edit_timestamp": 1794640264.0283968
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8280",
-      "sent_timestamp": 1794640264.3775504,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8280,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "تصاویر اختصاصی.. عربستان سعودی از ترس پهپادهای یمنی در حال ساخت قفس‌های فلزی مشبک عظیم در اطراف مخازن سوخت فرودگاه ریاض است.\n\nExclusive footage.. Saudi Arabia is building huge metal mesh cages around fuel tanks at Riyadh Airport, fearing Yemeni drones.",
-      "output_text": "تصاویر اختصاصی.. عربستان سعودی از ترس پهپادهای یمنی در حال ساخت قفس‌های فلزی مشبک عظیم در اطراف مخازن سوخت فرودگاه ریاض است."
-    },
     "Ali_bk_8_8283": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 956,
@@ -134,5 +101,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T07:58:34.680524+00:00"
+  "updated_at": "2026-11-14T08:24:55.460746+00:00"
 }
