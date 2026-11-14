@@ -31,40 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28095": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 995,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28095\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 995,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28095\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28095,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن\n@WarRoom 🚨🚨🚨",
-          "output_text": "دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن\n@WarRoom 🚨🚨🚨",
-          "last_edit_timestamp": 1794691858.0
-        }
-      ],
-      "active_text_source": "withyashar_28095",
-      "sent_timestamp": 1794689585.1976705,
-      "source_node": "withyashar",
-      "msg_id": 28095,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن\n@WarRoom 🚨🚨🚨",
-      "output_text": "دیدبان اتاق جنگ : یاشار داداش لانچر زدن صدای انفجار اولی برا رهگیری موشک بود صدای دومی لانچر زد با کامیون شلوغ شده آمبولانس داره میره مردم نزدیکی اون محل هم گفتن شیشه  پنجره شکسته عرزشیا ریختن بیرون ریدن\n@WarRoom 🚨🚨🚨",
-      "last_edit_timestamp": 1794691858.0
-    },
     "Ali_bk_8_8322": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 996,
@@ -267,8 +233,41 @@
       "raw_text": "اتاق جنگ با یاشار : هم اکنون یک فروند پی-۸ پوسایدون ، ۵ سوخترسان و ۱ پهپاد ام-کیو۴سی در منطقه\n@WarRoom 🚨🚨🚨🚨🚨",
       "output_text": "اتاق جنگ با یاشار : هم اکنون یک فروند پی-۸ پوسایدون ، ۵ سوخترسان و ۱ پهپاد ام-کیو۴سی در منطقه\n@WarRoom 🚨🚨🚨🚨🚨",
       "last_edit_timestamp": 1794692856.0
+    },
+    "Ali_bk_8_8326": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1002,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 نیروهای یمنی شماری از عناصر نیروهای وابسته به عربستان را در جبهه‌های لحج به اسارت گرفتند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8326\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1002,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 نیروهای یمنی شماری از عناصر نیروهای وابسته به عربستان را در جبهه‌های لحج به اسارت گرفتند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8326\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8326,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "نیروهای یمنی شماری از عناصر نیروهای وابسته به عربستان را در جبهه‌های لحج به اسارت گرفتند.\n\nYemeni forces capture several members of Saudi-backed forces on the Lahij fronts.",
+          "output_text": "نیروهای یمنی شماری از عناصر نیروهای وابسته به عربستان را در جبهه‌های لحج به اسارت گرفتند.",
+          "last_edit_timestamp": 1794693434.4029002
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8326",
+      "sent_timestamp": 1794693434.8727765,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8326,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "نیروهای یمنی شماری از عناصر نیروهای وابسته به عربستان را در جبهه‌های لحج به اسارت گرفتند.\n\nYemeni forces capture several members of Saudi-backed forces on the Lahij fronts.",
+      "output_text": "نیروهای یمنی شماری از عناصر نیروهای وابسته به عربستان را در جبهه‌های لحج به اسارت گرفتند."
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T21:49:53.845863+00:00"
+  "updated_at": "2026-11-14T21:57:14.872948+00:00"
 }
