@@ -1,16 +1,16 @@
 # Sentinel Session Report (v6.3.0 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 4
+- **Messages Processed:** 2
 - **Alerts Dispatched:** 1
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** روبیو، وزیر امور خارجه، درباره ایران: «آن‌ها ده‌ها هزار نفر از مردم خودشان را کشته‌اند و در خیابان‌ها به قتل‌عام مردم پر
-- **Last Message Time:** 2026-11-14 06:05:51 UTC
+- **Last Message Text:** وب‌سایت رهگیری پرواز فلایت‌رادار، تصاویر مقایسه‌ای از وضعیت آسمان آمریکا پیش و پس از توقف سراسری پروازها منتشر کرد. @War
+- **Last Message Time:** 2026-11-14 06:29:41 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28031 (2026-11-14 06:05:51 UTC)
+- `@withyashar`: #28035 (2026-11-14 06:29:41 UTC)
 - `@Ali_bk_8`: #8279 (2026-11-14 04:25:09 UTC)
 - `@VahidOnline`: #79103 (2026-11-13 21:15:16 UTC)
 - `@iliaen`: #4754 (2026-11-12 21:35:21 UTC)
@@ -18,9 +18,10 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 587m ago
-- `@DidehbanEghtesad`: Last loud alert 992m ago
-- `@DidebanEterazat`: Last loud alert 8251m ago
+- `@DidebanJang`: Last loud alert 614m ago
+- `@DidehbanEghtesad`: Last loud alert 1018m ago
+- `@DidebanEterazat`: Last loud alert 8278m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- `withyashar_28031` -> @DidebanJang (#953) (🎥, 5m ago)
+- `withyashar_28031` -> @DidebanJang (#953) (🎥, 32m ago)
+- `withyashar_28032` -> @DidebanJang (#954) (📝, 22m ago)
