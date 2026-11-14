@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28048,
-      "last_read_time": "2026-11-14 09:16:58 UTC"
+      "last_read_id": 28049,
+      "last_read_time": "2026-11-14 09:47:57 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8286,
@@ -98,8 +98,41 @@
       "raw_text": "به نظر می‌رسد سپاه پاسداران در تلاش است شهرهای موشکی را از موشک‌های قدیمی تخلیه کند.\n\nIt appears that the IRGC is trying to clear its missile cities of old missiles.",
       "output_text": "به نظر می‌رسد سپاه پاسداران در تلاش است شهرهای موشکی را از موشک‌های قدیمی تخلیه کند.",
       "last_edit_timestamp": 1794648683.0
+    },
+    "withyashar_28049": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 961,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 ‏تصویر از کشتی‌ای که در تنگه هرمز نزدیک قطر ، توسط ارتش جمهوری اسلامی هدف قرار گرفت.\n\n🎥 <a href=\"https://t.me/withyashar/28049\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 961,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 ‏تصویر از کشتی‌ای که در تنگه هرمز نزدیک قطر ، توسط ارتش جمهوری اسلامی هدف قرار گرفت.\n\n🎥 <a href=\"https://t.me/withyashar/28049\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28049,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "‏تصویر از کشتی‌ای که در تنگه هرمز نزدیک قطر ، توسط ارتش جمهوری اسلامی هدف قرار گرفت.\n@WarRoom",
+          "output_text": "‏تصویر از کشتی‌ای که در تنگه هرمز نزدیک قطر ، توسط ارتش جمهوری اسلامی هدف قرار گرفت.\n@WarRoom",
+          "last_edit_timestamp": 1794649685.9755983
+        }
+      ],
+      "active_text_source": "withyashar_28049",
+      "sent_timestamp": 1794649686.4876792,
+      "source_node": "withyashar",
+      "msg_id": 28049,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "‏تصویر از کشتی‌ای که در تنگه هرمز نزدیک قطر ، توسط ارتش جمهوری اسلامی هدف قرار گرفت.\n@WarRoom",
+      "output_text": "‏تصویر از کشتی‌ای که در تنگه هرمز نزدیک قطر ، توسط ارتش جمهوری اسلامی هدف قرار گرفت.\n@WarRoom"
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T09:44:15.315970+00:00"
+  "updated_at": "2026-11-14T09:48:06.487830+00:00"
 }
