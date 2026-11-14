@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28064,
-      "last_read_time": "2026-11-14 15:44:31 UTC"
+      "last_read_id": 28066,
+      "last_read_time": "2026-11-14 16:07:17 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8299,
@@ -31,74 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8298": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 971,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سفارت آمریکا در ریاض از شهروندان خود در خاورمیانه خواست نهایت احتیاط را به خرج دهند و نسبت به تهدید حملات حوثی‌ها و احتمال هدف قرار گرفتن مقام‌های آمریکایی در منطقه هشدار داد. این سفارتخانه اشاره کرد که حملات حوثی‌ها به عربستان سعودی ممکن است به‌سرعت تشدید شود.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8298\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 971,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سفارت آمریکا در ریاض از شهروندان خود در خاورمیانه خواست نهایت احتیاط را به خرج دهند و نسبت به تهدید حملات حوثی‌ها و احتمال هدف قرار گرفتن مقام‌های آمریکایی در منطقه هشدار داد. این سفارتخانه اشاره کرد که حملات حوثی‌ها به عربستان سعودی ممکن است به‌سرعت تشدید شود.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8298\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8298,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "سفارت آمریکا در ریاض از شهروندان خود در خاورمیانه خواست نهایت احتیاط را به خرج دهند و نسبت به تهدید حملات حوثی‌ها و احتمال هدف قرار گرفتن مقام‌های آمریکایی در منطقه هشدار داد. این سفارتخانه اشاره کرد که حملات حوثی‌ها به عربستان سعودی ممکن است به‌سرعت تشدید شود.\n\nThe US Embassy in Riyadh is urging its citizens in the Middle East to exercise extreme caution, warning of the threat of Houthi attacks and the possibility of US officials being targeted in the region. It noted that Houthi attacks on Saudi Arabia could escalate rapidly.",
-          "output_text": "سفارت آمریکا در ریاض از شهروندان خود در خاورمیانه خواست نهایت احتیاط را به خرج دهند و نسبت به تهدید حملات حوثی‌ها و احتمال هدف قرار گرفتن مقام‌های آمریکایی در منطقه هشدار داد. این سفارتخانه اشاره کرد که حملات حوثی‌ها به عربستان سعودی ممکن است به‌سرعت تشدید شود.",
-          "last_edit_timestamp": 1794669324.5484235
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8298",
-      "sent_timestamp": 1794669325.0246212,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8298,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "سفارت آمریکا در ریاض از شهروندان خود در خاورمیانه خواست نهایت احتیاط را به خرج دهند و نسبت به تهدید حملات حوثی‌ها و احتمال هدف قرار گرفتن مقام‌های آمریکایی در منطقه هشدار داد. این سفارتخانه اشاره کرد که حملات حوثی‌ها به عربستان سعودی ممکن است به‌سرعت تشدید شود.\n\nThe US Embassy in Riyadh is urging its citizens in the Middle East to exercise extreme caution, warning of the threat of Houthi attacks and the possibility of US officials being targeted in the region. It noted that Houthi attacks on Saudi Arabia could escalate rapidly.",
-      "output_text": "سفارت آمریکا در ریاض از شهروندان خود در خاورمیانه خواست نهایت احتیاط را به خرج دهند و نسبت به تهدید حملات حوثی‌ها و احتمال هدف قرار گرفتن مقام‌های آمریکایی در منطقه هشدار داد. این سفارتخانه اشاره کرد که حملات حوثی‌ها به عربستان سعودی ممکن است به‌سرعت تشدید شود.",
-      "last_edit_timestamp": 1794669322.0
-    },
-    "Ali_bk_8_8299": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 972,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سپاه پاسداران تصاویری از سرنگونی یک پهپاد آمریکایی MQ-1 در آسمان جزیره قشم منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8299\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 972,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سپاه پاسداران تصاویری از سرنگونی یک پهپاد آمریکایی MQ-1 در آسمان جزیره قشم منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8299\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8299,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد آمریکایی MQ-1 در آسمان جزیره قشم منتشر کرد.\n\nThe IRGC releases footage showing the downing of a US MQ-1 drone over Qeshm Island.",
-          "output_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد آمریکایی MQ-1 در آسمان جزیره قشم منتشر کرد.",
-          "last_edit_timestamp": 1794670533.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8299",
-      "sent_timestamp": 1794669506.8823836,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8299,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد آمریکایی MQ-1 در آسمان جزیره قشم منتشر کرد.\n\nThe IRGC releases footage showing the downing of a US MQ-1 drone over Qeshm Island.",
-      "output_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد آمریکایی MQ-1 در آسمان جزیره قشم منتشر کرد.",
-      "last_edit_timestamp": 1794670533.0
-    },
     "withyashar_28064": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 973,
@@ -135,5 +67,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T15:56:15.402023+00:00"
+  "updated_at": "2026-11-14T16:22:40.230156+00:00"
 }
