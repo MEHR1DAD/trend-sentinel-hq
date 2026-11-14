@@ -31,74 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28104": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1003,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 ارتش اسرائیل و شین‌بت یک «تروریست ارشد حماس» را هدف قرار داده‌اند اطلاعات بیشتر طی ساعات آتی 🚨\n\n📝 <a href=\"https://t.me/withyashar/28104\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1003,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 ارتش اسرائیل و شین‌بت یک «تروریست ارشد حماس» را هدف قرار داده‌اند اطلاعات بیشتر طی ساعات آتی 🚨\n\n📝 <a href=\"https://t.me/withyashar/28104\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28104,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "ارتش اسرائیل و شین‌بت یک «تروریست ارشد حماس» را هدف قرار داده‌اند اطلاعات بیشتر طی ساعات آتی\n@WarRoom 🚨",
-          "output_text": "ارتش اسرائیل و شین‌بت یک «تروریست ارشد حماس» را هدف قرار داده‌اند اطلاعات بیشتر طی ساعات آتی\n@WarRoom 🚨",
-          "last_edit_timestamp": 1794697017.0
-        }
-      ],
-      "active_text_source": "withyashar_28104",
-      "sent_timestamp": 1794694792.7334814,
-      "source_node": "withyashar",
-      "msg_id": 28104,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "ارتش اسرائیل و شین‌بت یک «تروریست ارشد حماس» را هدف قرار داده‌اند اطلاعات بیشتر طی ساعات آتی\n@WarRoom 🚨",
-      "output_text": "ارتش اسرائیل و شین‌بت یک «تروریست ارشد حماس» را هدف قرار داده‌اند اطلاعات بیشتر طی ساعات آتی\n@WarRoom 🚨",
-      "last_edit_timestamp": 1794697017.0
-    },
-    "Ali_bk_8_8327": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1004,
-      "status_icon": "🚨🔕",
-      "last_formatted_text": "🚨🔕 ارتش اشغالگر از ترور فرمانده تیپ رفح در گردان‌های قسام خبر داد؛ این در حالی است که فرمانده پیشین دو ماه پیش ترور شده بود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8327\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1004,
-          "status_icon": "🚨🔕",
-          "last_formatted_text": "🚨🔕 ارتش اشغالگر از ترور فرمانده تیپ رفح در گردان‌های قسام خبر داد؛ این در حالی است که فرمانده پیشین دو ماه پیش ترور شده بود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8327\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8327,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "ارتش اشغالگر از ترور فرمانده تیپ رفح در گردان‌های قسام خبر داد؛ این در حالی است که فرمانده پیشین دو ماه پیش ترور شده بود.\n\nThe occupation army announces the assassination of the Rafah Brigade commander in the Al-Qassam Brigades, following the assassination of his predecessor two months ago.",
-          "output_text": "ارتش اشغالگر از ترور فرمانده تیپ رفح در گردان‌های قسام خبر داد؛ این در حالی است که فرمانده پیشین دو ماه پیش ترور شده بود.",
-          "last_edit_timestamp": 1794695040.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8327",
-      "sent_timestamp": 1794694975.530084,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8327,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "ارتش اشغالگر از ترور فرمانده تیپ رفح در گردان‌های قسام خبر داد؛ این در حالی است که فرمانده پیشین دو ماه پیش ترور شده بود.\n\nThe occupation army announces the assassination of the Rafah Brigade commander in the Al-Qassam Brigades, following the assassination of his predecessor two months ago.",
-      "output_text": "ارتش اشغالگر از ترور فرمانده تیپ رفح در گردان‌های قسام خبر داد؛ این در حالی است که فرمانده پیشین دو ماه پیش ترور شده بود.",
-      "last_edit_timestamp": 1794695040.0
-    },
     "withyashar_28105": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1005,
@@ -168,5 +100,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T23:06:12.323783+00:00"
+  "updated_at": "2026-11-14T23:32:43.568765+00:00"
 }
