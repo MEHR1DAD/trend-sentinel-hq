@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-14 09:16:58 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8284,
-      "last_read_time": "2026-11-14 09:13:02 UTC"
+      "last_read_id": 8286,
+      "last_read_time": "2026-11-14 09:29:58 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79103,
@@ -64,8 +64,42 @@
       "raw_text": "سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.\n\nThe IRGC is conducting missile tests in Iran now.",
       "output_text": "سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.",
       "last_edit_timestamp": 1794647597.0
+    },
+    "Ali_bk_8_8285": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 960,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 به نظر می‌رسد سپاه پاسداران در تلاش است شهرهای موشکی را از موشک‌های قدیمی تخلیه کند.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8285\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 960,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 به نظر می‌رسد سپاه پاسداران در تلاش است شهرهای موشکی را از موشک‌های قدیمی تخلیه کند.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8285\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8285,
+          "media_icons": "📷🎥",
+          "grouped_id": 14357188787346994,
+          "raw_text": "به نظر می‌رسد سپاه پاسداران در تلاش است شهرهای موشکی را از موشک‌های قدیمی تخلیه کند.\n\nIt appears that the IRGC is trying to clear its missile cities of old missiles.",
+          "output_text": "به نظر می‌رسد سپاه پاسداران در تلاش است شهرهای موشکی را از موشک‌های قدیمی تخلیه کند.",
+          "last_edit_timestamp": 1794648683.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8285",
+      "sent_timestamp": 1794648618.5933356,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8285,
+      "media_icons": "📷🎥",
+      "grouped_id": 14357188787346994,
+      "raw_text": "به نظر می‌رسد سپاه پاسداران در تلاش است شهرهای موشکی را از موشک‌های قدیمی تخلیه کند.\n\nIt appears that the IRGC is trying to clear its missile cities of old missiles.",
+      "output_text": "به نظر می‌رسد سپاه پاسداران در تلاش است شهرهای موشکی را از موشک‌های قدیمی تخلیه کند.",
+      "last_edit_timestamp": 1794648683.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T09:17:43.972908+00:00"
+  "updated_at": "2026-11-14T09:44:15.315970+00:00"
 }
