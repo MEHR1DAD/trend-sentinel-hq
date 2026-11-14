@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28049,
-      "last_read_time": "2026-11-14 09:47:57 UTC"
+      "last_read_id": 28050,
+      "last_read_time": "2026-11-14 10:19:30 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8286,
-      "last_read_time": "2026-11-14 09:29:58 UTC"
+      "last_read_id": 8287,
+      "last_read_time": "2026-11-14 10:24:22 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79103,
@@ -31,40 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8284": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 959,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8284\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 959,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8284\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8284,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.\n\nThe IRGC is conducting missile tests in Iran now.",
-          "output_text": "سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.",
-          "last_edit_timestamp": 1794647623.471313
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8284",
-      "sent_timestamp": 1794647624.1583264,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8284,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.\n\nThe IRGC is conducting missile tests in Iran now.",
-      "output_text": "سپاه پاسداران هم‌اکنون در ایران آزمایش‌های موشکی انجام می‌دهد.",
-      "last_edit_timestamp": 1794647597.0
-    },
     "Ali_bk_8_8285": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 960,
@@ -120,7 +86,7 @@
           "grouped_id": null,
           "raw_text": "‏تصویر از کشتی‌ای که در تنگه هرمز نزدیک قطر ، توسط ارتش جمهوری اسلامی هدف قرار گرفت.\n@WarRoom",
           "output_text": "‏تصویر از کشتی‌ای که در تنگه هرمز نزدیک قطر ، توسط ارتش جمهوری اسلامی هدف قرار گرفت.\n@WarRoom",
-          "last_edit_timestamp": 1794649685.9755983
+          "last_edit_timestamp": 1794649692.0
         }
       ],
       "active_text_source": "withyashar_28049",
@@ -130,9 +96,44 @@
       "media_icons": "🎥",
       "grouped_id": null,
       "raw_text": "‏تصویر از کشتی‌ای که در تنگه هرمز نزدیک قطر ، توسط ارتش جمهوری اسلامی هدف قرار گرفت.\n@WarRoom",
-      "output_text": "‏تصویر از کشتی‌ای که در تنگه هرمز نزدیک قطر ، توسط ارتش جمهوری اسلامی هدف قرار گرفت.\n@WarRoom"
+      "output_text": "‏تصویر از کشتی‌ای که در تنگه هرمز نزدیک قطر ، توسط ارتش جمهوری اسلامی هدف قرار گرفت.\n@WarRoom",
+      "last_edit_timestamp": 1794649692.0
+    },
+    "Ali_bk_8_8287": {
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کردیم..\n\nارتش ایران اعلام کرد یک نفتکش دیگر پس از تلاش برای عبور غیرقانونی از تنگه هرمز، بر اثر انفجار مین دریایی هدف قرار گرفته است.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8287\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 962,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کردیم..\n\nارتش ایران اعلام کرد یک نفتکش دیگر پس از تلاش برای عبور غیرقانونی از تنگه هرمز، بر اثر انفجار مین دریایی هدف قرار گرفته است.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8287\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8287,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "در تأیید آنچه پیش‌تر منتشر کردیم..\n\nارتش ایران اعلام کرد یک نفتکش دیگر پس از تلاش برای عبور غیرقانونی از تنگه هرمز، بر اثر انفجار مین دریایی هدف قرار گرفته است.\n\nConfirming what we reported..\n\nThe Iranian army announces that another oil tanker was hit by a naval mine explosion after attempting to cross the Strait of Hormuz illegally.",
+          "output_text": "در تأیید آنچه پیش‌تر منتشر کردیم..\n\nارتش ایران اعلام کرد یک نفتکش دیگر پس از تلاش برای عبور غیرقانونی از تنگه هرمز، بر اثر انفجار مین دریایی هدف قرار گرفته است.",
+          "last_edit_timestamp": 1794651887.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8287",
+      "sent_timestamp": 1794651865.5884387,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8287,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "در تأیید آنچه پیش‌تر منتشر کردیم..\n\nارتش ایران اعلام کرد یک نفتکش دیگر پس از تلاش برای عبور غیرقانونی از تنگه هرمز، بر اثر انفجار مین دریایی هدف قرار گرفته است.\n\nConfirming what we reported..\n\nThe Iranian army announces that another oil tanker was hit by a naval mine explosion after attempting to cross the Strait of Hormuz illegally.",
+      "output_text": "در تأیید آنچه پیش‌تر منتشر کردیم..\n\nارتش ایران اعلام کرد یک نفتکش دیگر پس از تلاش برای عبور غیرقانونی از تنگه هرمز، بر اثر انفجار مین دریایی هدف قرار گرفته است.",
+      "last_edit_timestamp": 1794651887.0,
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 962
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T09:48:06.487830+00:00"
+  "updated_at": "2026-11-14T10:28:02.940613+00:00"
 }
