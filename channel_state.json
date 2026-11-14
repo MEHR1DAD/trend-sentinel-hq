@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28062,
-      "last_read_time": "2026-11-14 14:47:06 UTC"
+      "last_read_id": 28063,
+      "last_read_time": "2026-11-14 15:14:56 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8296,
-      "last_read_time": "2026-11-14 14:20:26 UTC"
+      "last_read_id": 8299,
+      "last_read_time": "2026-11-14 15:17:46 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79113,
@@ -31,74 +31,75 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8295": {
+    "Ali_bk_8_8298": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 969,
+      "bot_msg_id": 971,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 انفجار کنترل‌شده در شهر جرف‌النصر عراق.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8295\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 سفارت آمریکا در ریاض از شهروندان خود در خاورمیانه خواست نهایت احتیاط را به خرج دهند و نسبت به تهدید حملات حوثی‌ها و احتمال هدف قرار گرفتن مقام‌های آمریکایی در منطقه هشدار داد. این سفارتخانه اشاره کرد که حملات حوثی‌ها به عربستان سعودی ممکن است به‌سرعت تشدید شود.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8298\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 969,
+          "bot_msg_id": 971,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 انفجار کنترل‌شده در شهر جرف‌النصر عراق.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8295\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 سفارت آمریکا در ریاض از شهروندان خود در خاورمیانه خواست نهایت احتیاط را به خرج دهند و نسبت به تهدید حملات حوثی‌ها و احتمال هدف قرار گرفتن مقام‌های آمریکایی در منطقه هشدار داد. این سفارتخانه اشاره کرد که حملات حوثی‌ها به عربستان سعودی ممکن است به‌سرعت تشدید شود.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8298\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
         {
           "source_node": "Ali_bk_8",
-          "msg_id": 8295,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "انفجار کنترل‌شده در شهر جرف‌النصر عراق.\n\nA controlled explosion in the Iraqi city of Jurf al-Nasr.",
-          "output_text": "انفجار کنترل‌شده در شهر جرف‌النصر عراق.",
-          "last_edit_timestamp": 1794665580.6843953
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8295",
-      "sent_timestamp": 1794665581.1877737,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8295,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "انفجار کنترل‌شده در شهر جرف‌النصر عراق.\n\nA controlled explosion in the Iraqi city of Jurf al-Nasr.",
-      "output_text": "انفجار کنترل‌شده در شهر جرف‌النصر عراق."
-    },
-    "Ali_bk_8_8296": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 970,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 یک بالن شناسایی دوربرد در شمال امارات رصد شده است که احتمال می‌رود نیروهای آمریکایی از آن برای شناسایی موشک‌ها و نظارت بر حملات ایران در تنگه هرمز استفاده می‌کنند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8296\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 970,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 یک بالن شناسایی دوربرد در شمال امارات رصد شده است که احتمال می‌رود نیروهای آمریکایی از آن برای شناسایی موشک‌ها و نظارت بر حملات ایران در تنگه هرمز استفاده می‌کنند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8296\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8296,
+          "msg_id": 8298,
           "media_icons": "📷",
           "grouped_id": null,
-          "raw_text": "یک بالن شناسایی دوربرد در شمال امارات رصد شده است که احتمال می‌رود نیروهای آمریکایی از آن برای شناسایی موشک‌ها و نظارت بر حملات ایران در تنگه هرمز استفاده می‌کنند.\n\nA long-range reconnaissance balloon has been spotted north of the UAE. The US military is believed to be using it to detect missiles and monitor Iranian attacks in the Strait of Hormuz.",
-          "output_text": "یک بالن شناسایی دوربرد در شمال امارات رصد شده است که احتمال می‌رود نیروهای آمریکایی از آن برای شناسایی موشک‌ها و نظارت بر حملات ایران در تنگه هرمز استفاده می‌کنند.",
-          "last_edit_timestamp": 1794666039.0
+          "raw_text": "سفارت آمریکا در ریاض از شهروندان خود در خاورمیانه خواست نهایت احتیاط را به خرج دهند و نسبت به تهدید حملات حوثی‌ها و احتمال هدف قرار گرفتن مقام‌های آمریکایی در منطقه هشدار داد. این سفارتخانه اشاره کرد که حملات حوثی‌ها به عربستان سعودی ممکن است به‌سرعت تشدید شود.\n\nThe US Embassy in Riyadh is urging its citizens in the Middle East to exercise extreme caution, warning of the threat of Houthi attacks and the possibility of US officials being targeted in the region. It noted that Houthi attacks on Saudi Arabia could escalate rapidly.",
+          "output_text": "سفارت آمریکا در ریاض از شهروندان خود در خاورمیانه خواست نهایت احتیاط را به خرج دهند و نسبت به تهدید حملات حوثی‌ها و احتمال هدف قرار گرفتن مقام‌های آمریکایی در منطقه هشدار داد. این سفارتخانه اشاره کرد که حملات حوثی‌ها به عربستان سعودی ممکن است به‌سرعت تشدید شود.",
+          "last_edit_timestamp": 1794669324.5484235
         }
       ],
-      "active_text_source": "Ali_bk_8_8296",
-      "sent_timestamp": 1794666036.361682,
+      "active_text_source": "Ali_bk_8_8298",
+      "sent_timestamp": 1794669325.0246212,
       "source_node": "Ali_bk_8",
-      "msg_id": 8296,
+      "msg_id": 8298,
       "media_icons": "📷",
       "grouped_id": null,
-      "raw_text": "یک بالن شناسایی دوربرد در شمال امارات رصد شده است که احتمال می‌رود نیروهای آمریکایی از آن برای شناسایی موشک‌ها و نظارت بر حملات ایران در تنگه هرمز استفاده می‌کنند.\n\nA long-range reconnaissance balloon has been spotted north of the UAE. The US military is believed to be using it to detect missiles and monitor Iranian attacks in the Strait of Hormuz.",
-      "output_text": "یک بالن شناسایی دوربرد در شمال امارات رصد شده است که احتمال می‌رود نیروهای آمریکایی از آن برای شناسایی موشک‌ها و نظارت بر حملات ایران در تنگه هرمز استفاده می‌کنند.",
-      "last_edit_timestamp": 1794666039.0
+      "raw_text": "سفارت آمریکا در ریاض از شهروندان خود در خاورمیانه خواست نهایت احتیاط را به خرج دهند و نسبت به تهدید حملات حوثی‌ها و احتمال هدف قرار گرفتن مقام‌های آمریکایی در منطقه هشدار داد. این سفارتخانه اشاره کرد که حملات حوثی‌ها به عربستان سعودی ممکن است به‌سرعت تشدید شود.\n\nThe US Embassy in Riyadh is urging its citizens in the Middle East to exercise extreme caution, warning of the threat of Houthi attacks and the possibility of US officials being targeted in the region. It noted that Houthi attacks on Saudi Arabia could escalate rapidly.",
+      "output_text": "سفارت آمریکا در ریاض از شهروندان خود در خاورمیانه خواست نهایت احتیاط را به خرج دهند و نسبت به تهدید حملات حوثی‌ها و احتمال هدف قرار گرفتن مقام‌های آمریکایی در منطقه هشدار داد. این سفارتخانه اشاره کرد که حملات حوثی‌ها به عربستان سعودی ممکن است به‌سرعت تشدید شود.",
+      "last_edit_timestamp": 1794669322.0
+    },
+    "Ali_bk_8_8299": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 972,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سپاه پاسداران تصاویری از سرنگونی یک پهپاد MQ-1 در آسمان جزیره قشم منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8299\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 972,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سپاه پاسداران تصاویری از سرنگونی یک پهپاد MQ-1 در آسمان جزیره قشم منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8299\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8299,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد MQ-1 در آسمان جزیره قشم منتشر کرد.\n\nThe IRGC releases footage showing the downing of an MQ-1 drone over Qeshm Island.",
+          "output_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد MQ-1 در آسمان جزیره قشم منتشر کرد.",
+          "last_edit_timestamp": 1794669506.382658
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8299",
+      "sent_timestamp": 1794669506.8823836,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8299,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد MQ-1 در آسمان جزیره قشم منتشر کرد.\n\nThe IRGC releases footage showing the downing of an MQ-1 drone over Qeshm Island.",
+      "output_text": "سپاه پاسداران تصاویری از سرنگونی یک پهپاد MQ-1 در آسمان جزیره قشم منتشر کرد.",
+      "last_edit_timestamp": 1794669496.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T15:03:27.577600+00:00"
+  "updated_at": "2026-11-14T15:29:50.806203+00:00"
 }
