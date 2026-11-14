@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28044,
-      "last_read_time": "2026-11-14 07:41:04 UTC"
+      "last_read_id": 28046,
+      "last_read_time": "2026-11-14 08:36:11 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8283,
@@ -30,76 +30,7 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8283": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 956,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویری از نزدیکی تنگه هرمز، از کشتی‌ای که پس از تلاش برای عبور غیرقانونی از تنگه، هدف ارتش ایران قرار گرفت.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8283\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 956,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویری از نزدیکی تنگه هرمز، از کشتی‌ای که پس از تلاش برای عبور غیرقانونی از تنگه، هدف ارتش ایران قرار گرفت.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8283\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8283,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "تصاویری از نزدیکی تنگه هرمز، از کشتی‌ای که پس از تلاش برای عبور غیرقانونی از تنگه، هدف ارتش ایران قرار گرفت.\n\nFootage near the Strait of Hormuz shows the vessel targeted by the Iranian army after attempting to cross the strait illegally.",
-          "output_text": "تصاویری از نزدیکی تنگه هرمز، از کشتی‌ای که پس از تلاش برای عبور غیرقانونی از تنگه، هدف ارتش ایران قرار گرفت.",
-          "last_edit_timestamp": 1794641364.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8283",
-      "sent_timestamp": 1794641204.3900435,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8283,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "تصاویری از نزدیکی تنگه هرمز، از کشتی‌ای که پس از تلاش برای عبور غیرقانونی از تنگه، هدف ارتش ایران قرار گرفت.\n\nFootage near the Strait of Hormuz shows the vessel targeted by the Iranian army after attempting to cross the strait illegally.",
-      "output_text": "تصاویری از نزدیکی تنگه هرمز، از کشتی‌ای که پس از تلاش برای عبور غیرقانونی از تنگه، هدف ارتش ایران قرار گرفت.",
-      "last_edit_timestamp": 1794641364.0
-    },
-    "withyashar_28043": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 958,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 اتاق جنگ با یاشار : موقعیت ناو هواپیمابر آمریکایی یو‌اس‌اس تئودور روزولت را پیدا کردم. این ناو هم‌اکنون در دریای هند و در ابتدای دریای مکران (دریای عرب) قرار دارد. این موقعیت با ردیابی پرواز هواپیمای ترابری CMV-22B Osprey متعلق به نیروی دریایی آمریکا، با شماره ثبت 168705 و کال‌ساین Rocky12 مشخص شده است. 🚨🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/28043\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 958,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 اتاق جنگ با یاشار : موقعیت ناو هواپیمابر آمریکایی یو‌اس‌اس تئودور روزولت را پیدا کردم. این ناو هم‌اکنون در دریای هند و در ابتدای دریای مکران (دریای عرب) قرار دارد. این موقعیت با ردیابی پرواز هواپیمای ترابری CMV-22B Osprey متعلق به نیروی دریایی آمریکا، با شماره ثبت 168705 و کال‌ساین Rocky12 مشخص شده است. 🚨🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/28043\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28043,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "اتاق جنگ با یاشار : موقعیت ناو هواپیمابر آمریکایی یو‌اس‌اس تئودور روزولت را پیدا کردم. این ناو هم‌اکنون در دریای هند و در ابتدای دریای مکران (دریای عرب) قرار دارد. این موقعیت با ردیابی پرواز هواپیمای ترابری CMV-22B Osprey متعلق به نیروی دریایی آمریکا، با شماره ثبت 168705 و کال‌ساین Rocky12 مشخص شده است.\n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "اتاق جنگ با یاشار : موقعیت ناو هواپیمابر آمریکایی یو‌اس‌اس تئودور روزولت را پیدا کردم. این ناو هم‌اکنون در دریای هند و در ابتدای دریای مکران (دریای عرب) قرار دارد. این موقعیت با ردیابی پرواز هواپیمای ترابری CMV-22B Osprey متعلق به نیروی دریایی آمریکا، با شماره ثبت 168705 و کال‌ساین Rocky12 مشخص شده است.\n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1794641674.1388385
-        }
-      ],
-      "active_text_source": "withyashar_28043",
-      "sent_timestamp": 1794641674.6928203,
-      "source_node": "withyashar",
-      "msg_id": 28043,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "اتاق جنگ با یاشار : موقعیت ناو هواپیمابر آمریکایی یو‌اس‌اس تئودور روزولت را پیدا کردم. این ناو هم‌اکنون در دریای هند و در ابتدای دریای مکران (دریای عرب) قرار دارد. این موقعیت با ردیابی پرواز هواپیمای ترابری CMV-22B Osprey متعلق به نیروی دریایی آمریکا، با شماره ثبت 168705 و کال‌ساین Rocky12 مشخص شده است.\n@WarRoom 🚨🚨🚨🚨",
-      "output_text": "اتاق جنگ با یاشار : موقعیت ناو هواپیمابر آمریکایی یو‌اس‌اس تئودور روزولت را پیدا کردم. این ناو هم‌اکنون در دریای هند و در ابتدای دریای مکران (دریای عرب) قرار دارد. این موقعیت با ردیابی پرواز هواپیمای ترابری CMV-22B Osprey متعلق به نیروی دریایی آمریکا، با شماره ثبت 168705 و کال‌ساین Rocky12 مشخص شده است.\n@WarRoom 🚨🚨🚨🚨",
-      "last_edit_timestamp": 1794641665.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-14T08:24:55.460746+00:00"
+  "updated_at": "2026-11-14T08:51:18.479054+00:00"
 }
