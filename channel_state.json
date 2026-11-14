@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28067,
-      "last_read_time": "2026-11-14 16:34:57 UTC"
+      "last_read_id": 28068,
+      "last_read_time": "2026-11-14 16:59:12 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8304,
-      "last_read_time": "2026-11-14 16:47:38 UTC"
+      "last_read_id": 8310,
+      "last_read_time": "2026-11-14 17:06:58 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79113,
@@ -98,8 +98,74 @@
       "raw_text": "هم‌اکنون موشک‌هایی به سمت تنگه هرمز شلیک شدند.\n\nMissiles launched toward the Strait of Hormuz now.",
       "output_text": "هم‌اکنون موشک‌هایی به سمت تنگه هرمز شلیک شدند.",
       "last_edit_timestamp": 1794674878.0
+    },
+    "Ali_bk_8_8305": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 976,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 با رسیدن آمبولانس‌ها به محل انفجار در حومه دمشق سوریه، چندین نفر زخمی شدند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8305\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 976,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 با رسیدن آمبولانس‌ها به محل انفجار در حومه دمشق سوریه، چندین نفر زخمی شدند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8305\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8305,
+          "media_icons": "🎥",
+          "grouped_id": 14357401269379610,
+          "raw_text": "با رسیدن آمبولانس‌ها به محل انفجار در حومه دمشق سوریه، چندین نفر زخمی شدند.\n\nSeveral people were injured as ambulances arrived at the scene of the explosion in the Damascus countryside, Syria.",
+          "output_text": "با رسیدن آمبولانس‌ها به محل انفجار در حومه دمشق سوریه، چندین نفر زخمی شدند.",
+          "last_edit_timestamp": 1794675601.7868366
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8305",
+      "sent_timestamp": 1794675602.229341,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8305,
+      "media_icons": "🎥",
+      "grouped_id": 14357401269379610,
+      "raw_text": "با رسیدن آمبولانس‌ها به محل انفجار در حومه دمشق سوریه، چندین نفر زخمی شدند.\n\nSeveral people were injured as ambulances arrived at the scene of the explosion in the Damascus countryside, Syria.",
+      "output_text": "با رسیدن آمبولانس‌ها به محل انفجار در حومه دمشق سوریه، چندین نفر زخمی شدند."
+    },
+    "Ali_bk_8_8309": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 978,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 لحظات اولیه انفجار در اطراف کورنیش النسیم در حومه دمشق سوریه.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8309\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 978,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 لحظات اولیه انفجار در اطراف کورنیش النسیم در حومه دمشق سوریه.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8309\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8309,
+          "media_icons": "🎥",
+          "grouped_id": 14357408147307354,
+          "raw_text": "لحظات اولیه انفجار در اطراف کورنیش النسیم در حومه دمشق سوریه.\n\nThe first moments of the explosion near al-Naseem Corniche in the Damascus countryside, Syria.",
+          "output_text": "لحظات اولیه انفجار در اطراف کورنیش النسیم در حومه دمشق سوریه.",
+          "last_edit_timestamp": 1794676085.192027
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8309",
+      "sent_timestamp": 1794676085.5096958,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8309,
+      "media_icons": "🎥",
+      "grouped_id": 14357408147307354,
+      "raw_text": "لحظات اولیه انفجار در اطراف کورنیش النسیم در حومه دمشق سوریه.\n\nThe first moments of the explosion near al-Naseem Corniche in the Damascus countryside, Syria.",
+      "output_text": "لحظات اولیه انفجار در اطراف کورنیش النسیم در حومه دمشق سوریه."
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-14T16:49:04.471580+00:00"
+  "updated_at": "2026-11-14T17:15:27.884442+00:00"
 }
