@@ -6,21 +6,21 @@
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** تصاویر بیشتری از نیروهای یمنی در مناطق آزادشده‌ای که نیروهای وابسته به عربستان از آن‌ها در باب‌المندب و جبهه‌های ساحل جن
-- **Last Message Time:** 2026-11-15 17:42:15 UTC
+- **Last Message Text:** وای‌نت : مقام‌های امنیتی اسرائیل در حال حاضر نشانه‌ای از حمله قریب‌الوقوع ایران مشاهده نمی‌کنند؛ با این حال، ارتش اسرائی
+- **Last Message Time:** 2026-11-15 18:09:20 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28148 (2026-11-15 16:51:03 UTC)
-- `@Ali_bk_8`: #8396 (2026-11-15 17:42:15 UTC)
+- `@withyashar`: #28149 (2026-11-15 18:09:20 UTC)
+- `@Ali_bk_8`: #8398 (2026-11-15 17:59:32 UTC)
 - `@VahidOnline`: #79121 (2026-11-15 15:25:32 UTC)
 - `@iliaen`: #4754 (2026-11-12 21:35:21 UTC)
 - `@netblocks`: #1583 (2026-11-11 21:41:59 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 142m ago
-- `@DidehbanEghtesad`: Last loud alert 3127m ago
-- `@DidebanEterazat`: Last loud alert 10386m ago
+- `@DidebanJang`: Last loud alert 168m ago
+- `@DidehbanEghtesad`: Last loud alert 3153m ago
+- `@DidebanEterazat`: Last loud alert 10413m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- `Ali_bk_8_8393` -> @DidebanJang (#1039) (📝, 37m ago)
+- *(No active posts in 60m edit/delete window)*
