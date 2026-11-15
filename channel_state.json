@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28159,
-      "last_read_time": "2026-11-15 19:11:04 UTC"
+      "last_read_id": 28165,
+      "last_read_time": "2026-11-15 19:58:25 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8404,
-      "last_read_time": "2026-11-15 19:32:17 UTC"
+      "last_read_id": 8408,
+      "last_read_time": "2026-11-15 19:55:05 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79121,
@@ -26,125 +26,11 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794768406.82103,
+    "@DidebanJang": 1794772378.0109217,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28154": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1040,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 ‏ شلیک موشک پدافندی در قشم ساعاتی پیش حدود ساعت ۸ شب\n\n🎥 <a href=\"https://t.me/withyashar/28154\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1040,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 ‏ شلیک موشک پدافندی در قشم ساعاتی پیش حدود ساعت ۸ شب\n\n🎥 <a href=\"https://t.me/withyashar/28154\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28154,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "‏ شلیک موشک پدافندی در قشم ساعاتی پیش حدود ساعت ۸ شب\n@WarRoom",
-          "output_text": "‏ شلیک موشک پدافندی در قشم ساعاتی پیش حدود ساعت ۸ شب\n@WarRoom",
-          "last_edit_timestamp": 1794768406.8210273
-        }
-      ],
-      "active_text_source": "withyashar_28154",
-      "sent_timestamp": 1794768407.202265,
-      "source_node": "withyashar",
-      "msg_id": 28154,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "‏ شلیک موشک پدافندی در قشم ساعاتی پیش حدود ساعت ۸ شب\n@WarRoom",
-      "output_text": "‏ شلیک موشک پدافندی در قشم ساعاتی پیش حدود ساعت ۸ شب\n@WarRoom",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794768385.0
-    },
-    "withyashar_28155": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1041,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 آسمان زاهدان ، استان سیستان بلوچستان درگیری با پهپاد شناسایی شاید هم تست\n\n🎥 <a href=\"https://t.me/withyashar/28155\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1041,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 آسمان زاهدان ، استان سیستان بلوچستان درگیری با پهپاد شناسایی شاید هم تست\n\n🎥 <a href=\"https://t.me/withyashar/28155\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28155,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "آسمان زاهدان ، استان سیستان بلوچستان درگیری با پهپاد شناسایی شاید هم تست\n@WarRoom",
-          "output_text": "آسمان زاهدان ، استان سیستان بلوچستان درگیری با پهپاد شناسایی شاید هم تست\n@WarRoom",
-          "last_edit_timestamp": 1794768494.1628733
-        }
-      ],
-      "active_text_source": "withyashar_28155",
-      "sent_timestamp": 1794768494.4823267,
-      "source_node": "withyashar",
-      "msg_id": 28155,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "آسمان زاهدان ، استان سیستان بلوچستان درگیری با پهپاد شناسایی شاید هم تست\n@WarRoom",
-      "output_text": "آسمان زاهدان ، استان سیستان بلوچستان درگیری با پهپاد شناسایی شاید هم تست\n@WarRoom",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794768471.0
-    },
-    "withyashar_28156": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1042,
-      "status_icon": "🚨🔕",
-      "last_formatted_text": "🚨🔕 پرتاب ۴ موشک/پهپاد از محدوده بندر لنگه/بندر کنگ 🚨🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28158\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1042,
-          "status_icon": "🚨🔕",
-          "last_formatted_text": "🚨🔕 پرتاب ۴ موشک/پهپاد از محدوده بندر لنگه/بندر کنگ 🚨🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28158\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28156,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "پرتاب ۴ موشک/پهپاد از محدوده بندر لنگه/بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "پرتاب ۴ موشک/پهپاد از محدوده بندر لنگه/بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1794769194.1310897
-        },
-        {
-          "source_node": "withyashar",
-          "msg_id": 28158,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "دقایقی پیش پرتاب موشک بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "دقایقی پیش پرتاب موشک بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1794769466.7056563
-        }
-      ],
-      "active_text_source": "withyashar_28156",
-      "sent_timestamp": 1794769194.465515,
-      "source_node": "withyashar",
-      "msg_id": 28156,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "پرتاب ۴ موشک/پهپاد از محدوده بندر لنگه/بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-      "output_text": "پرتاب ۴ موشک/پهپاد از محدوده بندر لنگه/بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794769462.0
-    },
     "withyashar_28157": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1043,
@@ -249,8 +135,113 @@
       "output_text": "بار دیگر موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک می‌شوند.",
       "is_seismic": false,
       "last_edit_timestamp": 1794769681.0
+    },
+    "withyashar_28160": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1046,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 لحظه پرتاب ۴ موشک دید از آسمان بندر لنگه\n\n📷 <a href=\"https://t.me/withyashar/28160\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1046,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 لحظه پرتاب ۴ موشک دید از آسمان بندر لنگه\n\n📷 <a href=\"https://t.me/withyashar/28160\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28160,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "لحظه پرتاب ۴ موشک دید از آسمان بندر لنگه\n@WarRoom",
+          "output_text": "لحظه پرتاب ۴ موشک دید از آسمان بندر لنگه\n@WarRoom",
+          "last_edit_timestamp": 1794771473.0
+        }
+      ],
+      "active_text_source": "withyashar_28160",
+      "sent_timestamp": 1794771239.5937119,
+      "source_node": "withyashar",
+      "msg_id": 28160,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "لحظه پرتاب ۴ موشک دید از آسمان بندر لنگه\n@WarRoom",
+      "output_text": "لحظه پرتاب ۴ موشک دید از آسمان بندر لنگه\n@WarRoom",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794771473.0
+    },
+    "Ali_bk_8_8405": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1047,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 موشک‌هایی که لحظاتی پیش به‌سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8405\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1047,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 موشک‌هایی که لحظاتی پیش به‌سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8405\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8405,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "موشک‌هایی که لحظاتی پیش به‌سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\nMissiles launched a short while ago toward noncompliant vessels in the Strait of Hormuz.",
+          "output_text": "موشک‌هایی که لحظاتی پیش به‌سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.",
+          "last_edit_timestamp": 1794771446.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8405",
+      "sent_timestamp": 1794771418.8168507,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8405,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "موشک‌هایی که لحظاتی پیش به‌سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\nMissiles launched a short while ago toward noncompliant vessels in the Strait of Hormuz.",
+      "output_text": "موشک‌هایی که لحظاتی پیش به‌سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794771446.0
+    },
+    "withyashar_28164": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1048,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 صدای انفجار از کنگ در غرب قشم هم شنیده شد 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28164\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1048,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 صدای انفجار از کنگ در غرب قشم هم شنیده شد 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28164\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28164,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "صدای انفجار از کنگ در غرب قشم هم شنیده شد\n@WarRoom 🚨🚨🚨",
+          "output_text": "صدای انفجار از کنگ در غرب قشم هم شنیده شد\n@WarRoom 🚨🚨🚨",
+          "last_edit_timestamp": 1794772378.0109205
+        }
+      ],
+      "active_text_source": "withyashar_28164",
+      "sent_timestamp": 1794772378.4118602,
+      "source_node": "withyashar",
+      "msg_id": 28164,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "صدای انفجار از کنگ در غرب قشم هم شنیده شد\n@WarRoom 🚨🚨🚨",
+      "output_text": "صدای انفجار از کنگ در غرب قشم هم شنیده شد\n@WarRoom 🚨🚨🚨",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794772366.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-15T19:33:37.616013+00:00"
+  "updated_at": "2026-11-15T19:59:58.711688+00:00"
 }
