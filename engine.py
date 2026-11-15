@@ -429,19 +429,23 @@ class SentinelEngine:
                 war_score += 3 if " " in p else 1
 
         if war_score > 0 and not is_seismic:
-            # Version 7: Territorial Gatekeeper for War Channel
-            is_outbound_from_iran = self._clause_is_outbound_iran_strike(norm_text)
-            is_diplomatic_or_commander = self._contains_any(match_text, self.geo_diplomatic_and_commanders)
-            is_iran_land_or_sea = self._has_iran_land_or_maritime_binding(match_text)
-
-            has_valid_iran_territorial_context = is_iran_land_or_sea or is_outbound_from_iran or is_diplomatic_or_commander
-
-            is_proxy = self._is_foreign_proxy_conflict_without_iran(match_text)
-            is_verbal = self._is_foreign_verbal_threat(match_text)
-            is_nuke_tech = self._is_nuclear_technical_non_kinetic(match_text)
-
-            if not has_valid_iran_territorial_context or is_proxy or is_verbal or is_nuke_tech:
+            # Version 7.3: Kinetic Gatekeeper - War channel is strictly an operational radar of physical incidents.
+            if not self._has_kinetic_or_operational_event(match_text):
                 war_score = 0
+            else:
+                # Version 7: Territorial Gatekeeper for War Channel
+                is_outbound_from_iran = self._clause_is_outbound_iran_strike(norm_text)
+                is_diplomatic_or_commander = self._contains_any(match_text, self.geo_diplomatic_and_commanders)
+                is_iran_land_or_sea = self._has_iran_land_or_maritime_binding(match_text)
+
+                has_valid_iran_territorial_context = is_iran_land_or_sea or is_outbound_from_iran or is_diplomatic_or_commander
+
+                is_proxy = self._is_foreign_proxy_conflict_without_iran(match_text)
+                is_verbal = self._is_foreign_verbal_threat(match_text)
+                is_nuke_tech = self._is_nuclear_technical_non_kinetic(match_text)
+
+                if not has_valid_iran_territorial_context or is_proxy or is_verbal or is_nuke_tech:
+                    war_score = 0
 
         for p in self.economy_patterns:
             if self._contains_term(match_text, p):
@@ -521,6 +525,21 @@ class SentinelEngine:
             return False
         return True
 
+    def _has_kinetic_or_operational_event(self, match_text: str) -> bool:
+        """
+        True when text contains a genuine physical, operational, kinetic or security incident:
+        strikes, launches, explosions, missiles, drones, air defense, bombings, shootings,
+        clashes, assassinations, seizures, downings, sirens, crashes, or combat casualties.
+        """
+        kinetic_patterns = [
+            "انفجار", "شلیک", "حمله", "بمباران", "اصابت", "موشک", "پهپاد", "پدافند",
+            "ساقط شد", "سرنگون شد", "سقوط", "تیراندازی", "درگیری مسلحانه", "ترور",
+            "شهادت", "کشته شدن سرباز", "کشته شدند", "زخمی شدند", "آژیر خطر", "آژیر قرمز",
+            "آماده باش کامل", "آماده‌باش کامل", "توقیف", "هدف قرار داد", "هدف قرار گرفت",
+            "منهدم شد", "آتش سوزی", "آتش‌سوزی", "زلزله", "لرزش زمین", "زمین لرزه", "زمین‌لرزه"
+        ]
+        return self._contains_any(match_text, kinetic_patterns)
+
     def _is_foreign_proxy_conflict_without_iran(self, match_text: str) -> bool:
         """
         True when text involves regional/proxy conflicts (Yemen, Lebanon, Gaza, Ukraine, etc.)
@@ -529,9 +548,11 @@ class SentinelEngine:
         if not self._contains_any(match_text, self.foreign_proxy_conflict_markers):
             return False
         direct_iran_indicators = [
-            "از خاک ایران", "از ایران", "شلیک از ایران", "شلیک از خاک ایران", "به سمت ایران",
-            "در ایران", "آب های ایران", "تنگه هرمز", "خلیج فارس", "دریای عمان", "دریای خزر",
-            "سفارت ایران", "کنسولگری ایران", "فرماندهان سپاه", "مستشاران نظامی ایران"
+            "از خاک ایران", "شلیک از ایران", "شلیک از خاک ایران", "پرتاب از ایران",
+            "پرتاب از خاک ایران", "حمله از ایران", "حمله از خاک ایران", "پاسخ موشکی ایران",
+            "پاسخ مستقیم ایران", "به سمت ایران", "در ایران", "آب های ایران", "تنگه هرمز",
+            "خلیج فارس", "دریای عمان", "دریای خزر", "سفارت ایران", "کنسولگری ایران",
+            "فرماندهان سپاه", "مستشاران نظامی ایران"
         ] + self.geo_diplomatic_and_commanders
         if self._contains_any(match_text, direct_iran_indicators):
             return False
