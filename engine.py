@@ -685,6 +685,15 @@ class SentinelEngine:
         if self._contains_any(full_norm, self.non_combat_debunks) or self._contains_any(full_norm, self.ordinary_accidents):
             return False
 
+        # Media footage / video release suppression (downgrade to SILENT 🔕 unless explicit live/breaking)
+        media_footage_markers = [
+            "تصاویری از", "تصاویر حمله", "فیلم حمله", "ویدیویی از", "کلیپ از",
+            "تصاویر اصابت", "فیلم اصابت", "تصاویر عملیات", "فیلم عملیات", "انتشار تصاویر"
+        ]
+        live_breaking_markers = ["هم اکنون", "لحظاتی پیش", "لحظاتی قبل", "فوری"]
+        if self._contains_any(full_norm, media_footage_markers) and not self._contains_any(full_norm, live_breaking_markers):
+            return False
+
         for norm_sent, clauses in sentences:
             if self._is_blocked_sentence(norm_sent):
                 continue
@@ -802,7 +811,26 @@ class SentinelEngine:
 
     @staticmethod
     def _stem_persian_token(token: str) -> str:
-        """Safe plural suffix stripping (preserves roots like ایران / سازمان / تولید / تصمیم)."""
+        """Safe plural and nationality/relative suffix stripping."""
+        rel_adjectives = {
+            "امریکایی": "امریکا",
+            "آمریکایی": "امریکا",
+            "اسرائیلی": "اسرائیل",
+            "ایرانی": "ایران",
+            "روسی": "روسیه",
+            "اوکراینی": "اوکراین",
+            "یمنی": "یمن",
+            "سعودی": "عربستان",
+            "بحرینی": "بحرین",
+            "عراقی": "عراق",
+            "سوری": "سوریه",
+            "لبنانی": "لبنان",
+            "فرانسوی": "فرانسه",
+            "انگلیسی": "انگلیس",
+            "بریتانیایی": "انگلیس",
+        }
+        if token in rel_adjectives:
+            return rel_adjectives[token]
         if len(token) > 4:
             stemmed = re.sub(r"(?:هایی|های|ها)$", "", token)
             if len(stemmed) >= 3:
@@ -811,10 +839,12 @@ class SentinelEngine:
 
     @staticmethod
     def strip_promotional_noise(raw_text: str) -> str:
-        """Removes @mentions, URLs, hashtags, and footer watermarks for clean length/fingerprint comparison."""
+        """Removes @mentions, URLs, hashtags, footer watermarks, and editorial commentary."""
         if not raw_text:
             return ""
-        text = re.sub(r"https?://\S+", " ", raw_text)
+        # Strip channel-specific personal chatter blocks like "یاشار : ..."
+        text = re.sub(r"(?:^|\n)\s*یاشار\s*:.*$", " ", raw_text, flags=re.MULTILINE)
+        text = re.sub(r"https?://\S+", " ", text)
         text = re.sub(r"@[\w_]+", " ", text)
         text = re.sub(r"#[a-zA-Z0-9_\u0600-\u06FF]+", " ", text)
         text = re.sub(r"\*+", "", text)
@@ -862,7 +892,8 @@ class SentinelEngine:
                 tok = self.dedup_synonyms.get(tok, tok)
                 tok = self._stem_persian_token(tok)
                 tok = self.dedup_synonyms.get(tok, tok)
-                if len(tok) <= 1 or tok in self.dedup_stopwords:
+                is_num = tok.isdigit()
+                if not is_num and (len(tok) <= 1 or tok in self.dedup_stopwords):
                     continue
 
             if is_num:
@@ -948,7 +979,7 @@ class SentinelEngine:
                 "انفجار", "حمله", "شلیک", "برخورد", "موشک", "پهپاد", "پدافند",
                 "اتش", "سقوط", "اصابت", "پرتاب", "تیراندازی", "توقیف", "کشته", "زخمی", "تلفات"
             }
-            if (shared_tokens & incident_tokens) and weighted_overlap >= 0.45 and len(shared_anchors) >= 1:
+            if (shared_tokens & incident_tokens) and weighted_overlap >= 0.40 and len(shared_anchors) >= 1:
                 return True
 
         # Rich Upgrade: detailed official statement / multi-anchor report expanding on a breaking alert
