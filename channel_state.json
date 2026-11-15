@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28158,
-      "last_read_time": "2026-11-15 19:04:12 UTC"
+      "last_read_id": 28159,
+      "last_read_time": "2026-11-15 19:11:04 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8402,
-      "last_read_time": "2026-11-15 19:07:07 UTC"
+      "last_read_id": 8404,
+      "last_read_time": "2026-11-15 19:32:17 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79121,
@@ -214,15 +214,43 @@
       "output_text": "هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.",
       "is_seismic": false,
       "last_edit_timestamp": 1794769398.0
-    }
-  },
-  "pending_translations": {
+    },
     "Ali_bk_8_8402": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1045,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 بار دیگر موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک می‌شوند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8402\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1045,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 بار دیگر موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک می‌شوند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8402\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8402,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "بار دیگر موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک می‌شوند.\n\nMissiles are being launched toward noncompliant ships in the Strait of Hormuz once again.",
+          "output_text": "بار دیگر موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک می‌شوند.",
+          "last_edit_timestamp": 1794769681.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8402",
+      "sent_timestamp": 1794769660.405905,
       "source_node": "Ali_bk_8",
       "msg_id": 8402,
-      "timestamp": 1794769634.3273017,
-      "grouped_id": null
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "بار دیگر موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک می‌شوند.\n\nMissiles are being launched toward noncompliant ships in the Strait of Hormuz once again.",
+      "output_text": "بار دیگر موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک می‌شوند.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794769681.0
     }
   },
-  "updated_at": "2026-11-15T19:07:14.689507+00:00"
+  "pending_translations": {},
+  "updated_at": "2026-11-15T19:33:37.616013+00:00"
 }
