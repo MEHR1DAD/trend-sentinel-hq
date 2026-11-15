@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28119,
-      "last_read_time": "2026-11-15 07:45:24 UTC"
+      "last_read_id": 28121,
+      "last_read_time": "2026-11-15 08:15:31 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8348,
@@ -52,7 +52,7 @@
           "grouped_id": 14357831036050010,
           "raw_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\nOngoing missile tests by Iran's IRGC.",
           "output_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.",
-          "last_edit_timestamp": 1794728891.412256
+          "last_edit_timestamp": 1794728899.0
         }
       ],
       "active_text_source": "Ali_bk_8_8347",
@@ -63,9 +63,10 @@
       "grouped_id": 14357831036050010,
       "raw_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\nOngoing missile tests by Iran's IRGC.",
       "output_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.",
-      "is_seismic": false
+      "is_seismic": false,
+      "last_edit_timestamp": 1794728899.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-15T07:48:12.013590+00:00"
+  "updated_at": "2026-11-15T08:19:22.588054+00:00"
 }
