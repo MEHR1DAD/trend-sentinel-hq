@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-15 14:42:44 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8381,
-      "last_read_time": "2026-11-15 14:41:54 UTC"
+      "last_read_id": 8382,
+      "last_read_time": "2026-11-15 15:01:16 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79120,
@@ -30,7 +30,43 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_8382": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 82,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تصاویر ماهواره‌ای یک نفتکش غول‌پیکر آسیب‌دیده را هنگام یدک‌کشی از تنگه هرمز، پس از هدف قرار گرفتن، نشان می‌دهند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8382\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 82,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تصاویر ماهواره‌ای یک نفتکش غول‌پیکر آسیب‌دیده را هنگام یدک‌کشی از تنگه هرمز، پس از هدف قرار گرفتن، نشان می‌دهند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8382\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8382,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "تصاویر ماهواره‌ای یک نفتکش غول‌پیکر آسیب‌دیده را هنگام یدک‌کشی از تنگه هرمز، پس از هدف قرار گرفتن، نشان می‌دهند.\n\nSatellite images show a damaged supertanker being towed out of the Strait of Hormuz after being struck.",
+          "output_text": "تصاویر ماهواره‌ای یک نفتکش غول‌پیکر آسیب‌دیده را هنگام یدک‌کشی از تنگه هرمز، پس از هدف قرار گرفتن، نشان می‌دهند.",
+          "last_edit_timestamp": 1794754976.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8382",
+      "sent_timestamp": 1794754887.0333786,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8382,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "تصاویر ماهواره‌ای یک نفتکش غول‌پیکر آسیب‌دیده را هنگام یدک‌کشی از تنگه هرمز، پس از هدف قرار گرفتن، نشان می‌دهند.\n\nSatellite images show a damaged supertanker being towed out of the Strait of Hormuz after being struck.",
+      "output_text": "تصاویر ماهواره‌ای یک نفتکش غول‌پیکر آسیب‌دیده را هنگام یدک‌کشی از تنگه هرمز، پس از هدف قرار گرفتن، نشان می‌دهند.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794754976.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-15T14:43:00.129498+00:00"
+  "updated_at": "2026-11-15T15:09:26.318554+00:00"
 }
