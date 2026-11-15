@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28168,
-      "last_read_time": "2026-11-15 20:05:44 UTC"
+      "last_read_id": 28172,
+      "last_read_time": "2026-11-15 20:41:49 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8411,
-      "last_read_time": "2026-11-15 20:15:16 UTC"
+      "last_read_id": 8413,
+      "last_read_time": "2026-11-15 20:25:03 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79121,
@@ -31,76 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28160": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1046,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 لحظه پرتاب ۴ موشک دید از آسمان بندر لنگه\n\n📷 <a href=\"https://t.me/withyashar/28160\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1046,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 لحظه پرتاب ۴ موشک دید از آسمان بندر لنگه\n\n📷 <a href=\"https://t.me/withyashar/28160\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28160,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "لحظه پرتاب ۴ موشک دید از آسمان بندر لنگه\n@WarRoom",
-          "output_text": "لحظه پرتاب ۴ موشک دید از آسمان بندر لنگه\n@WarRoom",
-          "last_edit_timestamp": 1794771473.0
-        }
-      ],
-      "active_text_source": "withyashar_28160",
-      "sent_timestamp": 1794771239.5937119,
-      "source_node": "withyashar",
-      "msg_id": 28160,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "لحظه پرتاب ۴ موشک دید از آسمان بندر لنگه\n@WarRoom",
-      "output_text": "لحظه پرتاب ۴ موشک دید از آسمان بندر لنگه\n@WarRoom",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794771473.0
-    },
-    "Ali_bk_8_8405": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1047,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 موشک‌هایی که لحظاتی پیش به‌سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8405\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1047,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 موشک‌هایی که لحظاتی پیش به‌سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8405\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8405,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "موشک‌هایی که لحظاتی پیش به‌سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\nMissiles launched a short while ago toward noncompliant vessels in the Strait of Hormuz.",
-          "output_text": "موشک‌هایی که لحظاتی پیش به‌سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.",
-          "last_edit_timestamp": 1794771446.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8405",
-      "sent_timestamp": 1794771418.8168507,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8405,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "موشک‌هایی که لحظاتی پیش به‌سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\nMissiles launched a short while ago toward noncompliant vessels in the Strait of Hormuz.",
-      "output_text": "موشک‌هایی که لحظاتی پیش به‌سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794771446.0
-    },
     "withyashar_28164": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1048,
@@ -262,7 +192,7 @@
           "grouped_id": null,
           "raw_text": "سپاه پاسداران:\n\nیک نفتکش متخلف در شرق تنگه هرمز با مین دریایی برخورد کرد که باعث آتش‌سوزی در آن شد.\n\nThe IRGC:\n\nA noncompliant oil tanker struck a sea mine east of the Strait of Hormuz, causing a fire on board.",
           "output_text": "سپاه پاسداران:\n\nیک نفتکش متخلف در شرق تنگه هرمز با مین دریایی برخورد کرد که باعث آتش‌سوزی در آن شد.",
-          "last_edit_timestamp": 1794773729.0
+          "last_edit_timestamp": 1794773764.0
         }
       ],
       "active_text_source": "Ali_bk_8_8411",
@@ -274,9 +204,44 @@
       "raw_text": "سپاه پاسداران:\n\nیک نفتکش متخلف در شرق تنگه هرمز با مین دریایی برخورد کرد که باعث آتش‌سوزی در آن شد.\n\nThe IRGC:\n\nA noncompliant oil tanker struck a sea mine east of the Strait of Hormuz, causing a fire on board.",
       "output_text": "سپاه پاسداران:\n\nیک نفتکش متخلف در شرق تنگه هرمز با مین دریایی برخورد کرد که باعث آتش‌سوزی در آن شد.",
       "is_seismic": false,
-      "last_edit_timestamp": 1794773729.0
+      "last_edit_timestamp": 1794773764.0
+    },
+    "withyashar_28170": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1054,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 بندر کنگ دارن شلیک میکنن به پهپاد شناسایی\n\n📝 <a href=\"https://t.me/withyashar/28170\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1054,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 بندر کنگ دارن شلیک میکنن به پهپاد شناسایی\n\n📝 <a href=\"https://t.me/withyashar/28170\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28170,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "بندر کنگ دارن شلیک میکنن به پهپاد شناسایی\n@WarRoom",
+          "output_text": "بندر کنگ دارن شلیک میکنن به پهپاد شناسایی\n@WarRoom",
+          "last_edit_timestamp": 1794773958.2928033
+        }
+      ],
+      "active_text_source": "withyashar_28170",
+      "sent_timestamp": 1794773958.5881598,
+      "source_node": "withyashar",
+      "msg_id": 28170,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "بندر کنگ دارن شلیک میکنن به پهپاد شناسایی\n@WarRoom",
+      "output_text": "بندر کنگ دارن شلیک میکنن به پهپاد شناسایی\n@WarRoom",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794773935.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-15T20:15:37.311453+00:00"
+  "updated_at": "2026-11-15T20:43:17.806324+00:00"
 }
