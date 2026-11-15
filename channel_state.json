@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28117,
-      "last_read_time": "2026-11-15 06:40:14 UTC"
+      "last_read_id": 28119,
+      "last_read_time": "2026-11-15 07:45:24 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8346,
-      "last_read_time": "2026-11-15 07:08:47 UTC"
+      "last_read_id": 8348,
+      "last_read_time": "2026-11-15 07:47:59 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79119,
@@ -31,42 +31,41 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8343": {
+    "Ali_bk_8_8347": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 1024,
+      "bot_msg_id": 1025,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 به فضل خدا..\n\nنیروهای وابسته به عربستان از مناطق باب‌المندب و ذوباب در حال فرار هستند؛ پس از آنکه نیروهای یمنی به تکمیل محاصره آن‌ها نزدیک شدند. این در حالی است که آن‌ها مدعی شده بودند تحرکاتشان در چارچوب دفاع از عدن صورت می‌گیرد.\n\nاین تحولات پس از سلسله اعلام‌های مکرر درباره تسلط بر باب‌المندب و اعلام عربستان مبنی بر آغاز یک عملیات نظامی گسترده با پشتیبانی هوایی عربستان و مشارکت حدود 100 جنگنده با هدف تسلط بر این منطقه رخ می‌دهد؛ اما این تلاش‌ها به اهداف اعلام‌شده خود دست نیافتند!\n\n📷 <a href=\"https://t.me/Ali_bk_8/8343\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8347\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 1024,
+          "bot_msg_id": 1025,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 به فضل خدا..\n\nنیروهای وابسته به عربستان از مناطق باب‌المندب و ذوباب در حال فرار هستند؛ پس از آنکه نیروهای یمنی به تکمیل محاصره آن‌ها نزدیک شدند. این در حالی است که آن‌ها مدعی شده بودند تحرکاتشان در چارچوب دفاع از عدن صورت می‌گیرد.\n\nاین تحولات پس از سلسله اعلام‌های مکرر درباره تسلط بر باب‌المندب و اعلام عربستان مبنی بر آغاز یک عملیات نظامی گسترده با پشتیبانی هوایی عربستان و مشارکت حدود 100 جنگنده با هدف تسلط بر این منطقه رخ می‌دهد؛ اما این تلاش‌ها به اهداف اعلام‌شده خود دست نیافتند!\n\n📷 <a href=\"https://t.me/Ali_bk_8/8343\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8347\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
         {
           "source_node": "Ali_bk_8",
-          "msg_id": 8343,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "به فضل خدا..\n\nنیروهای وابسته به عربستان از مناطق باب‌المندب و ذوباب در حال فرار هستند؛ پس از آنکه نیروهای یمنی به تکمیل محاصره آن‌ها نزدیک شدند. این در حالی است که آن‌ها مدعی شده بودند تحرکاتشان در چارچوب دفاع از عدن صورت می‌گیرد.\n\nاین تحولات پس از سلسله اعلام‌های مکرر درباره تسلط بر باب‌المندب و اعلام عربستان مبنی بر آغاز یک عملیات نظامی گسترده با پشتیبانی هوایی عربستان و مشارکت حدود 100 جنگنده با هدف تسلط بر این منطقه رخ می‌دهد؛ اما این تلاش‌ها به اهداف اعلام‌شده خود دست نیافتند!\n\nBy the grace of God..\n\nSaudi-backed forces are fleeing the Bab al-Mandab and Dhubab areas after Yemeni forces came close to completing their encirclement, following their claim that their movements were part of efforts to defend Aden.\n\nThis comes after repeated announcements of taking control of Bab al-Mandab, and Saudi Arabia's announcement of launching a large-scale military operation with Saudi air support, involving around 100 fighter jets, aimed at taking control of the area. However, these attempts failed to achieve their declared objectives!",
-          "output_text": "به فضل خدا..\n\nنیروهای وابسته به عربستان از مناطق باب‌المندب و ذوباب در حال فرار هستند؛ پس از آنکه نیروهای یمنی به تکمیل محاصره آن‌ها نزدیک شدند. این در حالی است که آن‌ها مدعی شده بودند تحرکاتشان در چارچوب دفاع از عدن صورت می‌گیرد.\n\nاین تحولات پس از سلسله اعلام‌های مکرر درباره تسلط بر باب‌المندب و اعلام عربستان مبنی بر آغاز یک عملیات نظامی گسترده با پشتیبانی هوایی عربستان و مشارکت حدود 100 جنگنده با هدف تسلط بر این منطقه رخ می‌دهد؛ اما این تلاش‌ها به اهداف اعلام‌شده خود دست نیافتند!",
-          "last_edit_timestamp": 1794724753.0
+          "msg_id": 8347,
+          "media_icons": "📷🎥",
+          "grouped_id": 14357831036050010,
+          "raw_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\nOngoing missile tests by Iran's IRGC.",
+          "output_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.",
+          "last_edit_timestamp": 1794728891.412256
         }
       ],
-      "active_text_source": "Ali_bk_8_8343",
-      "sent_timestamp": 1794724717.1929386,
+      "active_text_source": "Ali_bk_8_8347",
+      "sent_timestamp": 1794728892.0134463,
       "source_node": "Ali_bk_8",
-      "msg_id": 8343,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "به فضل خدا..\n\nنیروهای وابسته به عربستان از مناطق باب‌المندب و ذوباب در حال فرار هستند؛ پس از آنکه نیروهای یمنی به تکمیل محاصره آن‌ها نزدیک شدند. این در حالی است که آن‌ها مدعی شده بودند تحرکاتشان در چارچوب دفاع از عدن صورت می‌گیرد.\n\nاین تحولات پس از سلسله اعلام‌های مکرر درباره تسلط بر باب‌المندب و اعلام عربستان مبنی بر آغاز یک عملیات نظامی گسترده با پشتیبانی هوایی عربستان و مشارکت حدود 100 جنگنده با هدف تسلط بر این منطقه رخ می‌دهد؛ اما این تلاش‌ها به اهداف اعلام‌شده خود دست نیافتند!\n\nBy the grace of God..\n\nSaudi-backed forces are fleeing the Bab al-Mandab and Dhubab areas after Yemeni forces came close to completing their encirclement, following their claim that their movements were part of efforts to defend Aden.\n\nThis comes after repeated announcements of taking control of Bab al-Mandab, and Saudi Arabia's announcement of launching a large-scale military operation with Saudi air support, involving around 100 fighter jets, aimed at taking control of the area. However, these attempts failed to achieve their declared objectives!",
-      "output_text": "به فضل خدا..\n\nنیروهای وابسته به عربستان از مناطق باب‌المندب و ذوباب در حال فرار هستند؛ پس از آنکه نیروهای یمنی به تکمیل محاصره آن‌ها نزدیک شدند. این در حالی است که آن‌ها مدعی شده بودند تحرکاتشان در چارچوب دفاع از عدن صورت می‌گیرد.\n\nاین تحولات پس از سلسله اعلام‌های مکرر درباره تسلط بر باب‌المندب و اعلام عربستان مبنی بر آغاز یک عملیات نظامی گسترده با پشتیبانی هوایی عربستان و مشارکت حدود 100 جنگنده با هدف تسلط بر این منطقه رخ می‌دهد؛ اما این تلاش‌ها به اهداف اعلام‌شده خود دست نیافتند!",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794724753.0
+      "msg_id": 8347,
+      "media_icons": "📷🎥",
+      "grouped_id": 14357831036050010,
+      "raw_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\nOngoing missile tests by Iran's IRGC.",
+      "output_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.",
+      "is_seismic": false
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-15T07:33:48.454135+00:00"
+  "updated_at": "2026-11-15T07:48:12.013590+00:00"
 }
