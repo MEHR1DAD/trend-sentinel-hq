@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28146,
-      "last_read_time": "2026-11-15 16:15:19 UTC"
+      "last_read_id": 28148,
+      "last_read_time": "2026-11-15 16:51:03 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8390,
-      "last_read_time": "2026-11-15 16:02:18 UTC"
+      "last_read_id": 8391,
+      "last_read_time": "2026-11-15 16:34:08 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79121,
@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8388": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1038,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویر بیشتر، آثار شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز را نشان می‌دهد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8388\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1038,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویر بیشتر، آثار شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز را نشان می‌دهد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8388\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8388,
-          "media_icons": "📷",
-          "grouped_id": 14358055329035010,
-          "raw_text": "تصاویر بیشتر، آثار شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز را نشان می‌دهد.\n\nAdditional footage shows the effects of missile launches toward noncompliant vessels in the Strait of Hormuz.",
-          "output_text": "تصاویر بیشتر، آثار شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز را نشان می‌دهد.",
-          "last_edit_timestamp": 1794756944.2343926
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8388",
-      "sent_timestamp": 1794756944.846908,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8388,
-      "media_icons": "📷",
-      "grouped_id": 14358055329035010,
-      "raw_text": "تصاویر بیشتر، آثار شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز را نشان می‌دهد.\n\nAdditional footage shows the effects of missile launches toward noncompliant vessels in the Strait of Hormuz.",
-      "output_text": "تصاویر بیشتر، آثار شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز را نشان می‌دهد.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794756943.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-15T16:28:43.186151+00:00"
+  "updated_at": "2026-11-15T16:55:06.646827+00:00"
 }
