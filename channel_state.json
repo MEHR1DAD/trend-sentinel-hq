@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28132,
-      "last_read_time": "2026-11-15 11:45:30 UTC"
+      "last_read_id": 28134,
+      "last_read_time": "2026-11-15 12:00:26 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8361,
-      "last_read_time": "2026-11-15 11:52:22 UTC"
+      "last_read_id": 8366,
+      "last_read_time": "2026-11-15 12:19:55 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79119,
@@ -31,119 +31,17 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28130": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1029,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 گزارش زلزله شرق تهران این بار شدیدتر 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28130\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1029,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 گزارش زلزله شرق تهران این بار شدیدتر 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28130\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28130,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "گزارش زلزله شرق تهران این بار شدیدتر\n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "گزارش زلزله شرق تهران این بار شدیدتر\n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1794740569.1872163
-        }
-      ],
-      "active_text_source": "withyashar_28130",
-      "sent_timestamp": 1794740569.5075064,
-      "source_node": "withyashar",
-      "msg_id": 28130,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "گزارش زلزله شرق تهران این بار شدیدتر\n@WarRoom 🚨🚨🚨🚨",
-      "output_text": "گزارش زلزله شرق تهران این بار شدیدتر\n@WarRoom 🚨🚨🚨🚨",
-      "is_seismic": true
-    },
-    "withyashar_28131": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1030,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 زمین لرزه به بزرگی ۳ ریشتر لواسانات تهران را لرزاند\n\n📷 <a href=\"https://t.me/withyashar/28131\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1030,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 زمین لرزه به بزرگی ۳ ریشتر لواسانات تهران را لرزاند\n\n📷 <a href=\"https://t.me/withyashar/28131\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28131,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "زمین لرزه به بزرگی ۳ ریشتر لواسانات تهران را لرزاند \n@WarRoom",
-          "output_text": "زمین لرزه به بزرگی ۳ ریشتر لواسانات تهران را لرزاند \n@WarRoom",
-          "last_edit_timestamp": 1794740569.5121207
-        }
-      ],
-      "active_text_source": "withyashar_28131",
-      "sent_timestamp": 1794740569.8534684,
-      "source_node": "withyashar",
-      "msg_id": 28131,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "زمین لرزه به بزرگی ۳ ریشتر لواسانات تهران را لرزاند \n@WarRoom",
-      "output_text": "زمین لرزه به بزرگی ۳ ریشتر لواسانات تهران را لرزاند \n@WarRoom",
-      "is_seismic": true
-    },
-    "Ali_bk_8_8356": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1031,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 نیروی دریایی بریتانیا، رویداد امنیتی رخ‌داده در تنگه هرمز در یک هفته پیش را در گزارش شماره 199 به‌عنوان «حمله» طبقه‌بندی کرد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8356\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1031,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 نیروی دریایی بریتانیا، رویداد امنیتی رخ‌داده در تنگه هرمز در یک هفته پیش را در گزارش شماره 199 به‌عنوان «حمله» طبقه‌بندی کرد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8356\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8356,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "نیروی دریایی بریتانیا، رویداد امنیتی رخ‌داده در تنگه هرمز در یک هفته پیش را در گزارش شماره 199 به‌عنوان «حمله» طبقه‌بندی کرد.\n\nThe British Navy classifies the security incident that took place in the Strait of Hormuz a week ago in report 199 as an \"attack.\"",
-          "output_text": "نیروی دریایی بریتانیا، رویداد امنیتی رخ‌داده در تنگه هرمز در یک هفته پیش را در گزارش شماره 199 به‌عنوان «حمله» طبقه‌بندی کرد.",
-          "last_edit_timestamp": 1794740571.0576198
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8356",
-      "sent_timestamp": 1794740571.3999457,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8356,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "نیروی دریایی بریتانیا، رویداد امنیتی رخ‌داده در تنگه هرمز در یک هفته پیش را در گزارش شماره 199 به‌عنوان «حمله» طبقه‌بندی کرد.\n\nThe British Navy classifies the security incident that took place in the Strait of Hormuz a week ago in report 199 as an \"attack.\"",
-      "output_text": "نیروی دریایی بریتانیا، رویداد امنیتی رخ‌داده در تنگه هرمز در یک هفته پیش را در گزارش شماره 199 به‌عنوان «حمله» طبقه‌بندی کرد.",
-      "is_seismic": false
-    },
     "Ali_bk_8_8361": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1032,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 نیروی دریایی بریتانیا از حمله به یک نفتکش اماراتی در نزدیکی تنگه هرمز خبر داد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8361\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 سازمان عملیات تجارت دریایی بریتانیا (UKMTO) اعلام کرد که گزارشی از سوی مقامات کشتیرانی هند درباره حمله به یک نفتکش در حال عبور از خلیج فارس به سمت شرق، پیش از ورود به تنگه هرمز، دریافت کرده است.بر اساس این گزارش، تمامی خدمه در سلامت هستند\n\n📷 <a href=\"https://t.me/Ali_bk_8/8361\">@Ali_bk_8</a>\n📷 <a href=\"https://t.me/withyashar/28133\">@withyashar</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
           "bot_msg_id": 1032,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 نیروی دریایی بریتانیا از حمله به یک نفتکش اماراتی در نزدیکی تنگه هرمز خبر داد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8361\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 سازمان عملیات تجارت دریایی بریتانیا (UKMTO) اعلام کرد که گزارشی از سوی مقامات کشتیرانی هند درباره حمله به یک نفتکش در حال عبور از خلیج فارس به سمت شرق، پیش از ورود به تنگه هرمز، دریافت کرده است.بر اساس این گزارش، تمامی خدمه در سلامت هستند\n\n📷 <a href=\"https://t.me/Ali_bk_8/8361\">@Ali_bk_8</a>\n📷 <a href=\"https://t.me/withyashar/28133\">@withyashar</a>"
         }
       ],
       "sources": [
@@ -152,23 +50,32 @@
           "msg_id": 8361,
           "media_icons": "📷",
           "grouped_id": null,
-          "raw_text": "نیروی دریایی بریتانیا از حمله به یک نفتکش اماراتی در نزدیکی تنگه هرمز خبر داد.\n\nThe British Navy announces an attack targeting an Emirati oil tanker near the Strait of Hormuz.",
-          "output_text": "نیروی دریایی بریتانیا از حمله به یک نفتکش اماراتی در نزدیکی تنگه هرمز خبر داد.",
-          "last_edit_timestamp": 1794743635.1468785
+          "raw_text": "نیروی دریایی بریتانیا از حمله به یک نفتکش هندی در نزدیکی تنگه هرمز خبر داد.\n\nThe British Navy announces an attack targeting an Indian oil tanker near the Strait of Hormuz.",
+          "output_text": "نیروی دریایی بریتانیا از حمله به یک نفتکش هندی در نزدیکی تنگه هرمز خبر داد.",
+          "last_edit_timestamp": 1794743878.0
+        },
+        {
+          "source_node": "withyashar",
+          "msg_id": 28133,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "سازمان عملیات تجارت دریایی بریتانیا (UKMTO) اعلام کرد که گزارشی از سوی مقامات کشتیرانی هند درباره حمله به یک نفتکش در حال عبور از خلیج فارس به سمت شرق، پیش از ورود به تنگه هرمز، دریافت کرده است.بر اساس این گزارش، تمامی خدمه در سلامت هستند\n@WarRoom",
+          "output_text": "سازمان عملیات تجارت دریایی بریتانیا (UKMTO) اعلام کرد که گزارشی از سوی مقامات کشتیرانی هند درباره حمله به یک نفتکش در حال عبور از خلیج فارس به سمت شرق، پیش از ورود به تنگه هرمز، دریافت کرده است.بر اساس این گزارش، تمامی خدمه در سلامت هستند\n@WarRoom",
+          "last_edit_timestamp": 1794743736.0
         }
       ],
-      "active_text_source": "Ali_bk_8_8361",
+      "active_text_source": "withyashar_28133",
       "sent_timestamp": 1794743635.5139136,
       "source_node": "Ali_bk_8",
       "msg_id": 8361,
       "media_icons": "📷",
       "grouped_id": null,
-      "raw_text": "نیروی دریایی بریتانیا از حمله به یک نفتکش اماراتی در نزدیکی تنگه هرمز خبر داد.\n\nThe British Navy announces an attack targeting an Emirati oil tanker near the Strait of Hormuz.",
-      "output_text": "نیروی دریایی بریتانیا از حمله به یک نفتکش اماراتی در نزدیکی تنگه هرمز خبر داد.",
+      "raw_text": "سازمان عملیات تجارت دریایی بریتانیا (UKMTO) اعلام کرد که گزارشی از سوی مقامات کشتیرانی هند درباره حمله به یک نفتکش در حال عبور از خلیج فارس به سمت شرق، پیش از ورود به تنگه هرمز، دریافت کرده است.بر اساس این گزارش، تمامی خدمه در سلامت هستند\n@WarRoom",
+      "output_text": "سازمان عملیات تجارت دریایی بریتانیا (UKMTO) اعلام کرد که گزارشی از سوی مقامات کشتیرانی هند درباره حمله به یک نفتکش در حال عبور از خلیج فارس به سمت شرق، پیش از ورود به تنگه هرمز، دریافت کرده است.بر اساس این گزارش، تمامی خدمه در سلامت هستند\n@WarRoom",
       "is_seismic": false,
-      "last_edit_timestamp": 1794743620.0
+      "last_edit_timestamp": 1794743878.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-15T11:55:10.192459+00:00"
+  "updated_at": "2026-11-15T12:21:34.044844+00:00"
 }
