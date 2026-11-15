@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28128,
-      "last_read_time": "2026-11-15 10:12:59 UTC"
+      "last_read_id": 28131,
+      "last_read_time": "2026-11-15 10:46:51 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8355,
-      "last_read_time": "2026-11-15 09:59:01 UTC"
+      "last_read_id": 8360,
+      "last_read_time": "2026-11-15 11:18:59 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79119,
@@ -26,47 +26,114 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794733458.8324065,
+    "@DidebanJang": 1794740569.5121229,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28127": {
+    "withyashar_28130": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 1028,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 شبکه ۱۲ اسرائیل گزارش داد که حزب‌الله تلاش‌های خود برای قاچاق سلاح از سوریه به لبنان را افزایش داده است. به گفته یک مقام نظامی ارشد اسرائیل، این قاچاق با استفاده از کامیون‌ها و در قالب یک مسیر زمینی انجام می‌شود که از ایران آغاز شده، از عراق و سوریه عبور می‌کند و به لبنان می‌رسد. همچنین نیروی قدس سپاه پاسداران تأمین مالی و مدیریت این شبکه انتقال تسلیحات را بر عهده دارد.\n\n📝 <a href=\"https://t.me/withyashar/28127\">@withyashar</a>",
+      "bot_msg_id": 1029,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 گزارش زلزله شرق تهران این بار شدیدتر 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28130\">@withyashar</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 1028,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 شبکه ۱۲ اسرائیل گزارش داد که حزب‌الله تلاش‌های خود برای قاچاق سلاح از سوریه به لبنان را افزایش داده است. به گفته یک مقام نظامی ارشد اسرائیل، این قاچاق با استفاده از کامیون‌ها و در قالب یک مسیر زمینی انجام می‌شود که از ایران آغاز شده، از عراق و سوریه عبور می‌کند و به لبنان می‌رسد. همچنین نیروی قدس سپاه پاسداران تأمین مالی و مدیریت این شبکه انتقال تسلیحات را بر عهده دارد.\n\n📝 <a href=\"https://t.me/withyashar/28127\">@withyashar</a>"
+          "bot_msg_id": 1029,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 گزارش زلزله شرق تهران این بار شدیدتر 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28130\">@withyashar</a>"
         }
       ],
       "sources": [
         {
           "source_node": "withyashar",
-          "msg_id": 28127,
+          "msg_id": 28130,
           "media_icons": "📝",
           "grouped_id": null,
-          "raw_text": "شبکه ۱۲ اسرائیل گزارش داد که حزب‌الله تلاش‌های خود برای قاچاق سلاح از سوریه به لبنان را افزایش داده است. به گفته یک مقام نظامی ارشد اسرائیل، این قاچاق با استفاده از کامیون‌ها و در قالب یک مسیر زمینی انجام می‌شود که از ایران آغاز شده، از عراق و سوریه عبور می‌کند و به لبنان می‌رسد. همچنین نیروی قدس سپاه پاسداران تأمین مالی و مدیریت این شبکه انتقال تسلیحات را بر عهده دارد.\n@WarRoom",
-          "output_text": "شبکه ۱۲ اسرائیل گزارش داد که حزب‌الله تلاش‌های خود برای قاچاق سلاح از سوریه به لبنان را افزایش داده است. به گفته یک مقام نظامی ارشد اسرائیل، این قاچاق با استفاده از کامیون‌ها و در قالب یک مسیر زمینی انجام می‌شود که از ایران آغاز شده، از عراق و سوریه عبور می‌کند و به لبنان می‌رسد. همچنین نیروی قدس سپاه پاسداران تأمین مالی و مدیریت این شبکه انتقال تسلیحات را بر عهده دارد.\n@WarRoom",
-          "last_edit_timestamp": 1794737002.0
+          "raw_text": "گزارش زلزله شرق تهران این بار شدیدتر\n@WarRoom 🚨🚨🚨🚨",
+          "output_text": "گزارش زلزله شرق تهران این بار شدیدتر\n@WarRoom 🚨🚨🚨🚨",
+          "last_edit_timestamp": 1794740569.1872163
         }
       ],
-      "active_text_source": "withyashar_28127",
-      "sent_timestamp": 1794737000.993777,
+      "active_text_source": "withyashar_28130",
+      "sent_timestamp": 1794740569.5075064,
       "source_node": "withyashar",
-      "msg_id": 28127,
+      "msg_id": 28130,
       "media_icons": "📝",
       "grouped_id": null,
-      "raw_text": "شبکه ۱۲ اسرائیل گزارش داد که حزب‌الله تلاش‌های خود برای قاچاق سلاح از سوریه به لبنان را افزایش داده است. به گفته یک مقام نظامی ارشد اسرائیل، این قاچاق با استفاده از کامیون‌ها و در قالب یک مسیر زمینی انجام می‌شود که از ایران آغاز شده، از عراق و سوریه عبور می‌کند و به لبنان می‌رسد. همچنین نیروی قدس سپاه پاسداران تأمین مالی و مدیریت این شبکه انتقال تسلیحات را بر عهده دارد.\n@WarRoom",
-      "output_text": "شبکه ۱۲ اسرائیل گزارش داد که حزب‌الله تلاش‌های خود برای قاچاق سلاح از سوریه به لبنان را افزایش داده است. به گفته یک مقام نظامی ارشد اسرائیل، این قاچاق با استفاده از کامیون‌ها و در قالب یک مسیر زمینی انجام می‌شود که از ایران آغاز شده، از عراق و سوریه عبور می‌کند و به لبنان می‌رسد. همچنین نیروی قدس سپاه پاسداران تأمین مالی و مدیریت این شبکه انتقال تسلیحات را بر عهده دارد.\n@WarRoom",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794737002.0
+      "raw_text": "گزارش زلزله شرق تهران این بار شدیدتر\n@WarRoom 🚨🚨🚨🚨",
+      "output_text": "گزارش زلزله شرق تهران این بار شدیدتر\n@WarRoom 🚨🚨🚨🚨",
+      "is_seismic": true
+    },
+    "withyashar_28131": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1030,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 زمین لرزه به بزرگی ۳ ریشتر لواسانات تهران را لرزاند\n\n📷 <a href=\"https://t.me/withyashar/28131\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1030,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 زمین لرزه به بزرگی ۳ ریشتر لواسانات تهران را لرزاند\n\n📷 <a href=\"https://t.me/withyashar/28131\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28131,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "زمین لرزه به بزرگی ۳ ریشتر لواسانات تهران را لرزاند \n@WarRoom",
+          "output_text": "زمین لرزه به بزرگی ۳ ریشتر لواسانات تهران را لرزاند \n@WarRoom",
+          "last_edit_timestamp": 1794740569.5121207
+        }
+      ],
+      "active_text_source": "withyashar_28131",
+      "sent_timestamp": 1794740569.8534684,
+      "source_node": "withyashar",
+      "msg_id": 28131,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "زمین لرزه به بزرگی ۳ ریشتر لواسانات تهران را لرزاند \n@WarRoom",
+      "output_text": "زمین لرزه به بزرگی ۳ ریشتر لواسانات تهران را لرزاند \n@WarRoom",
+      "is_seismic": true
+    },
+    "Ali_bk_8_8356": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1031,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 نیروی دریایی بریتانیا، رویداد امنیتی رخ‌داده در تنگه هرمز در یک هفته پیش را در گزارش شماره 199 به‌عنوان «حمله» طبقه‌بندی کرد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8356\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1031,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 نیروی دریایی بریتانیا، رویداد امنیتی رخ‌داده در تنگه هرمز در یک هفته پیش را در گزارش شماره 199 به‌عنوان «حمله» طبقه‌بندی کرد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8356\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8356,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "نیروی دریایی بریتانیا، رویداد امنیتی رخ‌داده در تنگه هرمز در یک هفته پیش را در گزارش شماره 199 به‌عنوان «حمله» طبقه‌بندی کرد.\n\nThe British Navy classifies the security incident that took place in the Strait of Hormuz a week ago in report 199 as an \"attack.\"",
+          "output_text": "نیروی دریایی بریتانیا، رویداد امنیتی رخ‌داده در تنگه هرمز در یک هفته پیش را در گزارش شماره 199 به‌عنوان «حمله» طبقه‌بندی کرد.",
+          "last_edit_timestamp": 1794740571.0576198
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8356",
+      "sent_timestamp": 1794740571.3999457,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8356,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "نیروی دریایی بریتانیا، رویداد امنیتی رخ‌داده در تنگه هرمز در یک هفته پیش را در گزارش شماره 199 به‌عنوان «حمله» طبقه‌بندی کرد.\n\nThe British Navy classifies the security incident that took place in the Strait of Hormuz a week ago in report 199 as an \"attack.\"",
+      "output_text": "نیروی دریایی بریتانیا، رویداد امنیتی رخ‌داده در تنگه هرمز در یک هفته پیش را در گزارش شماره 199 به‌عنوان «حمله» طبقه‌بندی کرد.",
+      "is_seismic": false
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-15T10:13:14.053555+00:00"
+  "updated_at": "2026-11-15T11:28:47.854077+00:00"
 }
