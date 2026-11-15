@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8416": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1055,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 جروزالم پست:\n\nبرآوردهای آمریکا نشان می‌دهد که ایران همچنان تا 2500 موشک در اختیار دارد که قادر به انجام حمله‌ای گسترده پس از چندین دور حمله هستند؛ موضوعی که با ادعاهای ترامپ در تناقض است. مسئله بازسازی ذخایر موشکی تهران نیز در بحث‌های دولت ترامپ درباره ازسرگیری حملات مورد توجه قرار گرفته است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8416\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1055,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 جروزالم پست:\n\nبرآوردهای آمریکا نشان می‌دهد که ایران همچنان تا 2500 موشک در اختیار دارد که قادر به انجام حمله‌ای گسترده پس از چندین دور حمله هستند؛ موضوعی که با ادعاهای ترامپ در تناقض است. مسئله بازسازی ذخایر موشکی تهران نیز در بحث‌های دولت ترامپ درباره ازسرگیری حملات مورد توجه قرار گرفته است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8416\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8416,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "جروزالم پست:\n\nبرآوردهای آمریکا نشان می‌دهد که ایران همچنان تا 2500 موشک در اختیار دارد که قادر به انجام حمله‌ای گسترده پس از چندین دور حمله هستند؛ موضوعی که با ادعاهای ترامپ در تناقض است. مسئله بازسازی ذخایر موشکی تهران نیز در بحث‌های دولت ترامپ درباره ازسرگیری حملات مورد توجه قرار گرفته است.\n\nThe Jerusalem Post:\n\nU.S. estimates indicate that Iran still possesses up to 2,500 missiles capable of launching a major attack following several rounds of strikes, contradicting Trump's claims. The issue of Tehran rebuilding its missile stockpile has been taken into account in Trump administration discussions over whether to resume strikes.",
-          "output_text": "جروزالم پست:\n\nبرآوردهای آمریکا نشان می‌دهد که ایران همچنان تا 2500 موشک در اختیار دارد که قادر به انجام حمله‌ای گسترده پس از چندین دور حمله هستند؛ موضوعی که با ادعاهای ترامپ در تناقض است. مسئله بازسازی ذخایر موشکی تهران نیز در بحث‌های دولت ترامپ درباره ازسرگیری حملات مورد توجه قرار گرفته است.",
-          "last_edit_timestamp": 1794780243.8749435
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8416",
-      "sent_timestamp": 1794780244.3864002,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8416,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "جروزالم پست:\n\nبرآوردهای آمریکا نشان می‌دهد که ایران همچنان تا 2500 موشک در اختیار دارد که قادر به انجام حمله‌ای گسترده پس از چندین دور حمله هستند؛ موضوعی که با ادعاهای ترامپ در تناقض است. مسئله بازسازی ذخایر موشکی تهران نیز در بحث‌های دولت ترامپ درباره ازسرگیری حملات مورد توجه قرار گرفته است.\n\nThe Jerusalem Post:\n\nU.S. estimates indicate that Iran still possesses up to 2,500 missiles capable of launching a major attack following several rounds of strikes, contradicting Trump's claims. The issue of Tehran rebuilding its missile stockpile has been taken into account in Trump administration discussions over whether to resume strikes.",
-      "output_text": "جروزالم پست:\n\nبرآوردهای آمریکا نشان می‌دهد که ایران همچنان تا 2500 موشک در اختیار دارد که قادر به انجام حمله‌ای گسترده پس از چندین دور حمله هستند؛ موضوعی که با ادعاهای ترامپ در تناقض است. مسئله بازسازی ذخایر موشکی تهران نیز در بحث‌های دولت ترامپ درباره ازسرگیری حملات مورد توجه قرار گرفته است.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794780222.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-15T22:55:27.134455+00:00"
+  "updated_at": "2026-11-15T23:21:53.813250+00:00"
 }
