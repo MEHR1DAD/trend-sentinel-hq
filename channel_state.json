@@ -9,8 +9,8 @@
       "last_read_time": "2026-11-15 15:35:16 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79120,
-      "last_read_time": "2026-11-15 12:58:29 UTC"
+      "last_read_id": 79121,
+      "last_read_time": "2026-11-15 15:25:32 UTC"
     },
     "iliaen": {
       "last_read_id": 4754,
@@ -31,52 +31,17 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8382": {
-      "target_channel": "@DidehbanEghtesad",
-      "bot_msg_id": 82,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویر ماهواره‌ای یک نفتکش غول‌پیکر آسیب‌دیده را هنگام یدک‌کشی از تنگه هرمز، پس از هدف قرار گرفتن، نشان می‌دهند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8382\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidehbanEghtesad",
-          "bot_msg_id": 82,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویر ماهواره‌ای یک نفتکش غول‌پیکر آسیب‌دیده را هنگام یدک‌کشی از تنگه هرمز، پس از هدف قرار گرفتن، نشان می‌دهند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8382\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8382,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "تصاویر ماهواره‌ای یک نفتکش غول‌پیکر آسیب‌دیده را هنگام یدک‌کشی از تنگه هرمز، پس از هدف قرار گرفتن، نشان می‌دهند.\n\nSatellite images show a damaged supertanker being towed out of the Strait of Hormuz after being struck.",
-          "output_text": "تصاویر ماهواره‌ای یک نفتکش غول‌پیکر آسیب‌دیده را هنگام یدک‌کشی از تنگه هرمز، پس از هدف قرار گرفتن، نشان می‌دهند.",
-          "last_edit_timestamp": 1794754976.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8382",
-      "sent_timestamp": 1794754887.0333786,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8382,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "تصاویر ماهواره‌ای یک نفتکش غول‌پیکر آسیب‌دیده را هنگام یدک‌کشی از تنگه هرمز، پس از هدف قرار گرفتن، نشان می‌دهند.\n\nSatellite images show a damaged supertanker being towed out of the Strait of Hormuz after being struck.",
-      "output_text": "تصاویر ماهواره‌ای یک نفتکش غول‌پیکر آسیب‌دیده را هنگام یدک‌کشی از تنگه هرمز، پس از هدف قرار گرفتن، نشان می‌دهند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794754976.0
-    },
     "withyashar_28139": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1034,
       "status_icon": "🚨",
-      "last_formatted_text": "🚨 گزارش پرتاب موشک از طولا در قشم 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28139\">@withyashar</a>",
+      "last_formatted_text": "🚨 پیام‌های دریافتی:\n\nوحید جان الان از قشم صدایی شبیه پرتاب موشک اومد\n\nالان الان موشک رد شد قشم\n\nسلام پدافند قشم همین الان موشک زد\n\n📝 <a href=\"https://t.me/withyashar/28139\">@withyashar</a>\n📷 <a href=\"https://t.me/VahidOnline/79121\">@VahidOnline</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
           "bot_msg_id": 1034,
           "status_icon": "🚨",
-          "last_formatted_text": "🚨 گزارش پرتاب موشک از طولا در قشم 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28139\">@withyashar</a>"
+          "last_formatted_text": "🚨 پیام‌های دریافتی:\n\nوحید جان الان از قشم صدایی شبیه پرتاب موشک اومد\n\nالان الان موشک رد شد قشم\n\nسلام پدافند قشم همین الان موشک زد\n\n📝 <a href=\"https://t.me/withyashar/28139\">@withyashar</a>\n📷 <a href=\"https://t.me/VahidOnline/79121\">@VahidOnline</a>"
         }
       ],
       "sources": [
@@ -87,19 +52,28 @@
           "grouped_id": null,
           "raw_text": "گزارش پرتاب موشک از طولا در قشم \n@WarRoom 🚨🚨🚨",
           "output_text": "گزارش پرتاب موشک از طولا در قشم \n@WarRoom 🚨🚨🚨",
-          "last_edit_timestamp": 1794756332.0
+          "last_edit_timestamp": 1794756965.0
+        },
+        {
+          "source_node": "VahidOnline",
+          "msg_id": 79121,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "پیام‌های دریافتی:\n\nوحید جان الان از قشم صدایی شبیه پرتاب موشک اومد\n\nالان الان موشک رد شد قشم\n\nسلام پدافند قشم همین الان موشک زد\n📡 @VahidOnline",
+          "output_text": "پیام‌های دریافتی:\n\nوحید جان الان از قشم صدایی شبیه پرتاب موشک اومد\n\nالان الان موشک رد شد قشم\n\nسلام پدافند قشم همین الان موشک زد\n📡 @VahidOnline",
+          "last_edit_timestamp": 1794756981.4630125
         }
       ],
-      "active_text_source": "withyashar_28139",
+      "active_text_source": "VahidOnline_79121",
       "sent_timestamp": 1794756332.286907,
       "source_node": "withyashar",
       "msg_id": 28139,
       "media_icons": "📝",
       "grouped_id": null,
-      "raw_text": "گزارش پرتاب موشک از طولا در قشم \n@WarRoom 🚨🚨🚨",
-      "output_text": "گزارش پرتاب موشک از طولا در قشم \n@WarRoom 🚨🚨🚨",
+      "raw_text": "پیام‌های دریافتی:\n\nوحید جان الان از قشم صدایی شبیه پرتاب موشک اومد\n\nالان الان موشک رد شد قشم\n\nسلام پدافند قشم همین الان موشک زد\n📡 @VahidOnline",
+      "output_text": "پیام‌های دریافتی:\n\nوحید جان الان از قشم صدایی شبیه پرتاب موشک اومد\n\nالان الان موشک رد شد قشم\n\nسلام پدافند قشم همین الان موشک زد\n📡 @VahidOnline",
       "is_seismic": false,
-      "last_edit_timestamp": 1794756332.0
+      "last_edit_timestamp": 1794756965.0
     },
     "Ali_bk_8_8384": {
       "target_channel": "@DidebanJang",
@@ -208,5 +182,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-15T15:35:53.172124+00:00"
+  "updated_at": "2026-11-15T16:02:20.048190+00:00"
 }
