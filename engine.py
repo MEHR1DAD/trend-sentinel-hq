@@ -64,6 +64,14 @@ class SentinelEngine:
         self.foreign_attackers = self.patterns.get("foreign_attackers", [])
         self.iran_actors = self.patterns.get("iran_actors", ["ایران", "سپاه"])
 
+        # Version 7: Territorial & Domain Filter Lexicons
+        self.iran_seismic_and_tremor_patterns = self.patterns.get("iran_seismic_and_tremor_patterns", [])
+        self.geo_iran_market_contexts = self.patterns.get("geo_iran_market_contexts", [])
+        self.geo_diplomatic_and_commanders = self.patterns.get("geo_diplomatic_and_commanders", [])
+        self.foreign_proxy_conflict_markers = self.patterns.get("foreign_proxy_conflict_markers", [])
+        self.foreign_verbal_threat_markers = self.patterns.get("foreign_verbal_threat_markers", [])
+        self.nuclear_technical_markers = self.patterns.get("nuclear_technical_markers", [])
+
         # Negative / Blocker lexicons
         self.non_combat_debunks = self.patterns.get("non_combat_debunks", [])
         self.ordinary_accidents = self.patterns.get("ordinary_accidents", [])
@@ -411,13 +419,41 @@ class SentinelEngine:
         economy_score = 0
         protest_score = 0
 
+        # Dedicated path for Iran seismic / tremor events (Guaranteed route to @DidebanJang)
+        is_seismic = self.is_iran_seismic_event(match_text)
+        if is_seismic:
+            war_score += 15
+
         for p in self.war_patterns:
             if self._contains_term(match_text, p):
                 war_score += 3 if " " in p else 1
 
+        if war_score > 0 and not is_seismic:
+            # Version 7: Territorial Gatekeeper for War Channel
+            is_outbound_from_iran = self._clause_is_outbound_iran_strike(norm_text)
+            is_diplomatic_or_commander = self._contains_any(match_text, self.geo_diplomatic_and_commanders)
+            is_iran_land_or_sea = self._has_iran_land_or_maritime_binding(match_text)
+
+            has_valid_iran_territorial_context = is_iran_land_or_sea or is_outbound_from_iran or is_diplomatic_or_commander
+
+            is_proxy = self._is_foreign_proxy_conflict_without_iran(match_text)
+            is_verbal = self._is_foreign_verbal_threat(match_text)
+            is_nuke_tech = self._is_nuclear_technical_non_kinetic(match_text)
+
+            if not has_valid_iran_territorial_context or is_proxy or is_verbal or is_nuke_tech:
+                war_score = 0
+
         for p in self.economy_patterns:
             if self._contains_term(match_text, p):
                 economy_score += 3 if " " in p else 1
+
+        if economy_score > 0:
+            # Version 7: Territorial Gatekeeper for Economy Channel
+            has_market_context = self._contains_any(match_text, self.geo_iran_market_contexts)
+            is_iran_land_or_sea = self._has_iran_land_or_maritime_binding(match_text)
+
+            if not (has_market_context or is_iran_land_or_sea):
+                economy_score = 0
 
         if self.is_domestic_iran_protest(match_text, source_node):
             for p in self.protest_patterns:
@@ -433,6 +469,75 @@ class SentinelEngine:
         if scores[best_channel] > 0:
             return [best_channel], False
         return [], False
+
+    def is_seismic_event(self, text: str) -> bool:
+        """Checks whether text describes an earthquake, tremor, shaking, or blast shockwave."""
+        clean_text = self.clean_for_matching(self.normalize_text(text))
+        if self._contains_any(clean_text, self.ordinary_accidents):
+            return False
+        return self._contains_any(clean_text, self.iran_seismic_and_tremor_patterns)
+
+    def is_iran_seismic_event(self, text: str) -> bool:
+        """Checks whether text is a seismic/tremor event occurring in Iranian territory or territorial waters."""
+        if not self.is_seismic_event(text):
+            return False
+        clean_text = self.clean_for_matching(self.normalize_text(text))
+        return self._has_iran_land_or_maritime_binding(clean_text)
+
+    def _has_iran_land_or_maritime_binding(self, match_text: str) -> bool:
+        """Checks whether match_text refers to Iranian mainland, islands, airspace or territorial waters."""
+        if self._contains_any(match_text, self.geo_iran_land):
+            return True
+        if self._contains_any(match_text, self.geo_iran_country_contexts):
+            return True
+        if self._contains_any(match_text, self.geo_maritime):
+            return True
+        return False
+
+    def _is_foreign_verbal_threat(self, match_text: str) -> bool:
+        """
+        True when text consists of foreign political posturing, verbal warnings or threats
+        without any actual physical kinetic strike/incident.
+        """
+        if not self._contains_any(match_text, self.foreign_verbal_threat_markers):
+            return False
+        real_kinetic = [
+            "شلیک شد", "شلیک کردند", "حمله کرد", "حمله کردند", "اصابت کرد", "منهدم شد",
+            "ساقط شد", "انفجار رخ داد", "انفجار شدید", "زلزله", "لرزش زمین"
+        ]
+        if self._contains_any(match_text, real_kinetic):
+            return False
+        return True
+
+    def _is_nuclear_technical_non_kinetic(self, match_text: str) -> bool:
+        """
+        True when text covers administrative, political or technical enrichment/centrifuge news
+        without any military attack, sabotage or physical explosion at nuclear facilities.
+        """
+        if not self._contains_any(match_text, self.nuclear_technical_markers):
+            return False
+        kinetic_nuke = ["حمله به", "اصابت به", "انفجار در", "انفجار سایت", "خرابکاری در", "آتش سوزی در", "بمباران"]
+        if self._contains_any(match_text, kinetic_nuke):
+            return False
+        return True
+
+    def _is_foreign_proxy_conflict_without_iran(self, match_text: str) -> bool:
+        """
+        True when text involves regional/proxy conflicts (Yemen, Lebanon, Gaza, Ukraine, etc.)
+        where neither origin nor destination is Iran's sovereign territory or official missions.
+        """
+        if not self._contains_any(match_text, self.foreign_proxy_conflict_markers):
+            return False
+        direct_iran_indicators = [
+            "از خاک ایران", "از ایران", "به سمت ایران", "در ایران", "آب های ایران",
+            "تنگه هرمز", "خلیج فارس", "دریای عمان", "دریای خزر", "سفارت ایران", "کنسولگری ایران",
+            "فرماندهان سپاه", "مستشاران نظامی ایران"
+        ]
+        if self._contains_any(match_text, direct_iran_indicators):
+            return False
+        if self._contains_any(match_text, self.geo_iran_land):
+            return False
+        return True
 
     def sieve(self, raw_text: str, source_node: str = "") -> Tuple[bool, str]:
         """Compatibility sieve method using v5 source-aware rules."""
@@ -614,6 +719,8 @@ class SentinelEngine:
         norm_text = self.clean_for_matching(self.normalize_text(eval_raw_text))
 
         if target_channel == config.CHANNELS["WAR"]:
+            if self.is_iran_seismic_event(eval_raw_text):
+                return "URGENT", False
             if self._is_war_urgent(eval_raw_text, is_iran_internet=is_iran_internet):
                 return "URGENT", False
             return "SILENT", True
@@ -651,6 +758,8 @@ class SentinelEngine:
         if not target_channels:
             return None
 
+        is_seismic = self.is_iran_seismic_event(eval_raw_text)
+
         dispatches_meta = []
         any_urgent = False
         for ch in target_channels:
@@ -662,6 +771,7 @@ class SentinelEngine:
                 "tag": config.CHANNEL_TAGS.get(ch, ""),
                 "severity": sev,
                 "disable_notification": disable_notif,
+                "is_seismic": is_seismic,
             })
 
         primary = dispatches_meta[0]
@@ -676,6 +786,7 @@ class SentinelEngine:
             "source_node": source_node,
             "output_text": output_raw_text,
             "is_iran_internet": is_iran_internet,
+            "is_seismic": is_seismic,
         }
 
     # =========================================================================

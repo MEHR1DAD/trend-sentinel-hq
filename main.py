@@ -269,22 +269,36 @@ class TrendSentinelV4:
             alert_info["last_formatted_text"] = dispatches[0].get("last_formatted_text", "")
         return any_edited
 
-    def _find_duplicate_alert(self, display_text: str, source_node: str, msg_id: int, target_channels: list) -> Optional[tuple]:
+    def _find_duplicate_alert(
+        self,
+        display_text: str,
+        source_node: str,
+        msg_id: int,
+        target_channels: list,
+        is_seismic: bool = False,
+    ) -> Optional[tuple]:
         """
-        Searches active (<60m) alerts sharing at least one destination channel for an equivalent
-        real-world event using the v6 3-signal deduplicator.
+        Searches active alerts sharing at least one destination channel for an equivalent
+        real-world event using the v6/v7 multi-signal deduplicator.
+        - For seismic events: Window is strictly 5 minutes (300s) to allow subsequent tremors/aftershocks
+          to be posted as distinct new alerts.
+        - For standard events: Window is 60 minutes (3600s).
         """
         new_fp = self.engine.build_event_fingerprint(display_text, source_node)
         now = time.time()
         target_set = set(target_channels)
         self_key = f"{source_node}_{msg_id}"
+        is_new_seismic = is_seismic or self.engine.is_iran_seismic_event(display_text)
 
         for entry_key, info in self.sent_alerts_map.items():
             if entry_key == self_key:
                 continue
 
             sent_ts = float(info.get("sent_timestamp", 0))
-            if now - sent_ts > config.EDIT_DELETE_WINDOW_SEC:
+            is_entry_seismic = info.get("is_seismic", False) or is_new_seismic
+            max_window = 300 if is_entry_seismic else config.EDIT_DELETE_WINDOW_SEC
+
+            if now - sent_ts > max_window:
                 continue
 
             existing_channels = {d.get("target_channel") for d in self._get_dispatches(info) if d.get("target_channel")}
@@ -302,16 +316,24 @@ class TrendSentinelV4:
                     return entry_key, info
         return None
 
-    def resolve_alert_mode_and_icon(self, target_channel: str, is_engine_urgent: bool) -> tuple:
+    def resolve_alert_mode_and_icon(self, target_channel: str, is_engine_urgent: bool, is_seismic: bool = False) -> tuple:
         """
-        Anti-Spam 15-Minute Rule:
-        - In each channel, an URGENT alert can only be sent loud once every 15 minutes.
-        - Subsequent urgent alerts within 15 minutes are downgraded to SILENT and use the combined icon: 🚨🔕
+        Determines notification mode and status icon:
+        - Earthquake/seismic alerts are ALWAYS loud with sound: (False, "🚨")
+        - Anti-Spam 15-Minute Rule for other urgent alerts:
+          - An URGENT alert can only be sent loud once every 15 minutes.
+          - Subsequent urgent alerts within 15 minutes are downgraded to SILENT with combined icon: 🚨🔕
         - Normal silent alerts use: 🔕
         Returns: (disable_notification: bool, status_icon: str)
         """
         if not is_engine_urgent:
             return True, "🔕"
+
+        if is_seismic:
+            now = time.time()
+            self.urgent_alert_state[target_channel] = now
+            self._save_channel_state()
+            return False, "🚨"
 
         now = time.time()
         last_urgent_ts = float(self.urgent_alert_state.get(target_channel, 0))
@@ -869,13 +891,14 @@ class TrendSentinelV4:
                 "media_icons": media_icons
             }
             meta_map = {m["target_channel"]: m for m in dispatches_meta}
+            is_seismic = eval_res.get("is_seismic", False)
 
             for target_ch in channels_to_add:
                 ch_meta = meta_map.get(target_ch, {})
                 is_engine_urgent = (ch_meta.get("severity") == "URGENT")
 
                 # Check if this re-routed alert matches an existing alert in the new destination channel
-                dup_match = self._find_duplicate_alert(display_text, source_node, src_msg_id, [target_ch])
+                dup_match = self._find_duplicate_alert(display_text, source_node, src_msg_id, [target_ch], is_seismic=is_seismic)
                 if dup_match:
                     entry_key, existing_info = dup_match
                     existing_sources = self._get_sources(existing_info)
@@ -903,7 +926,7 @@ class TrendSentinelV4:
                     continue
 
                 # If no duplicate, dispatch as a new alert in target_ch
-                disable_notif, status_icon = self.resolve_alert_mode_and_icon(target_ch, is_engine_urgent)
+                disable_notif, status_icon = self.resolve_alert_mode_and_icon(target_ch, is_engine_urgent, is_seismic=is_seismic)
                 formatted_text = self.sanitize_and_format_alert(
                     display_text,
                     primary.get("source_node", source_node),
@@ -1304,9 +1327,10 @@ class TrendSentinelV4:
             "severity": eval_res.get("severity", "SILENT"),
         }]
         target_channels = [m["target_channel"] for m in dispatches_meta]
+        is_seismic = eval_res.get("is_seismic", False)
 
-        # Option C Cross-Source Event Deduplication (60-min window)
-        dup_match = self._find_duplicate_alert(display_text, source_node, msg_id, target_channels)
+        # Option C Cross-Source Event Deduplication (60-min window, 5-min for seismic)
+        dup_match = self._find_duplicate_alert(display_text, source_node, msg_id, target_channels, is_seismic=is_seismic)
         if dup_match:
             entry_key, existing_info = dup_match
             sources = self._get_sources(existing_info)
@@ -1355,7 +1379,7 @@ class TrendSentinelV4:
             is_engine_urgent = (meta.get("severity") == "URGENT")
 
             # Anti-Spam 15-Minute Rule per target channel: resolve sound and icon (🚨, 🚨🔕, or 🔕)
-            disable_notif, status_icon = self.resolve_alert_mode_and_icon(target_ch, is_engine_urgent)
+            disable_notif, status_icon = self.resolve_alert_mode_and_icon(target_ch, is_engine_urgent, is_seismic=is_seismic)
 
             # Format Final Alert using the exact user-specified typographic template
             alert_body = self.sanitize_and_format_alert(
@@ -1402,6 +1426,7 @@ class TrendSentinelV4:
                 "grouped_id": grouped_id,
                 "raw_text": msg_text,
                 "output_text": display_text,
+                "is_seismic": is_seismic,
             }
             self._save_channel_state()
             self.update_session_report()
