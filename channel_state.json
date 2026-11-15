@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-15 05:36:45 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8339,
-      "last_read_time": "2026-11-15 05:34:26 UTC"
+      "last_read_id": 8340,
+      "last_read_time": "2026-11-15 05:43:21 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79119,
@@ -131,8 +131,41 @@
       "raw_text": "روابط عمومی سپاه انقلاب اسلامی : در دومین مرحله از پاسخ قاطع و کوبنده به تجاوز آشکار ارتش ایالات متحده (حمله مهیب دیشب به کنگ) ، رادار سایت پدافندی آمریکا در پایگاه بالگردی الرفاع بحرین با شش فروند پهپاد نیروی هوافضای سپاه انقلاب اسلامی هدف قرار گرفت. \n@WarRoom",
       "output_text": "روابط عمومی سپاه انقلاب اسلامی : در دومین مرحله از پاسخ قاطع و کوبنده به تجاوز آشکار ارتش ایالات متحده (حمله مهیب دیشب به کنگ) ، رادار سایت پدافندی آمریکا در پایگاه بالگردی الرفاع بحرین با شش فروند پهپاد نیروی هوافضای سپاه انقلاب اسلامی هدف قرار گرفت. \n@WarRoom",
       "last_edit_timestamp": 1794721016.0
+    },
+    "Ali_bk_8_8340": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1022,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 منابع ویژه:\n\nعقب‌نشینی نیروهای وابسته به عربستان از منطقه باب‌المندب به سمت خور عمیره، در پی پیشروی نیروهای یمنی در جبل خرز و نزدیک شدن آن‌ها به محاصره هزاران نفر از این نیروها.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8340\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1022,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 منابع ویژه:\n\nعقب‌نشینی نیروهای وابسته به عربستان از منطقه باب‌المندب به سمت خور عمیره، در پی پیشروی نیروهای یمنی در جبل خرز و نزدیک شدن آن‌ها به محاصره هزاران نفر از این نیروها.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8340\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8340,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "منابع ویژه:\n\nعقب‌نشینی نیروهای وابسته به عربستان از منطقه باب‌المندب به سمت خور عمیره، در پی پیشروی نیروهای یمنی در جبل خرز و نزدیک شدن آن‌ها به محاصره هزاران نفر از این نیروها.\n\nSpecial sources:\n\nWithdrawals by Saudi-backed forces from the Bab al-Mandab area toward Khor Umaira, following the advance of Yemeni forces in Jabal Kharaz and their approaching encirclement of thousands of them.",
+          "output_text": "منابع ویژه:\n\nعقب‌نشینی نیروهای وابسته به عربستان از منطقه باب‌المندب به سمت خور عمیره، در پی پیشروی نیروهای یمنی در جبل خرز و نزدیک شدن آن‌ها به محاصره هزاران نفر از این نیروها.",
+          "last_edit_timestamp": 1794721420.6891196
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8340",
+      "sent_timestamp": 1794721421.1087527,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8340,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "منابع ویژه:\n\nعقب‌نشینی نیروهای وابسته به عربستان از منطقه باب‌المندب به سمت خور عمیره، در پی پیشروی نیروهای یمنی در جبل خرز و نزدیک شدن آن‌ها به محاصره هزاران نفر از این نیروها.\n\nSpecial sources:\n\nWithdrawals by Saudi-backed forces from the Bab al-Mandab area toward Khor Umaira, following the advance of Yemeni forces in Jabal Kharaz and their approaching encirclement of thousands of them.",
+      "output_text": "منابع ویژه:\n\nعقب‌نشینی نیروهای وابسته به عربستان از منطقه باب‌المندب به سمت خور عمیره، در پی پیشروی نیروهای یمنی در جبل خرز و نزدیک شدن آن‌ها به محاصره هزاران نفر از این نیروها."
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-15T05:42:45.869495+00:00"
+  "updated_at": "2026-11-15T05:43:41.108950+00:00"
 }
