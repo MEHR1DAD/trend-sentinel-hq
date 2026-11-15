@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-15 16:51:03 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8391,
-      "last_read_time": "2026-11-15 16:34:08 UTC"
+      "last_read_id": 8393,
+      "last_read_time": "2026-11-15 17:09:33 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79121,
@@ -30,7 +30,42 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_8393": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1039,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 شنیده شدن صدای دو انفجار در صنعا، پایتخت یمن.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8393\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1039,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 شنیده شدن صدای دو انفجار در صنعا، پایتخت یمن.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8393\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8393,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "شنیده شدن صدای دو انفجار در صنعا، پایتخت یمن.\n\nTwo explosions heard in the Yemeni capital, Sanaa.",
+          "output_text": "شنیده شدن صدای دو انفجار در صنعا، پایتخت یمن.",
+          "last_edit_timestamp": 1794762630.844828
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8393",
+      "sent_timestamp": 1794762631.246652,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8393,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "شنیده شدن صدای دو انفجار در صنعا، پایتخت یمن.\n\nTwo explosions heard in the Yemeni capital, Sanaa.",
+      "output_text": "شنیده شدن صدای دو انفجار در صنعا، پایتخت یمن.",
+      "is_seismic": false
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-15T16:55:06.646827+00:00"
+  "updated_at": "2026-11-15T17:21:31.467129+00:00"
 }
