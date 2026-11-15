@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28123,
-      "last_read_time": "2026-11-15 08:29:47 UTC"
+      "last_read_id": 28125,
+      "last_read_time": "2026-11-15 09:08:39 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8348,
-      "last_read_time": "2026-11-15 07:47:59 UTC"
+      "last_read_id": 8349,
+      "last_read_time": "2026-11-15 09:02:21 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79119,
@@ -26,47 +26,82 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794721018.8152008,
+    "@DidebanJang": 1794733458.8324065,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8347": {
+    "Ali_bk_8_8349": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 1025,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8347\">@Ali_bk_8</a>",
+      "bot_msg_id": 1026,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 سپاه پاسداران تصاویری از حمله به یک رادار آمریکایی در بحرین با استفاده از 6 پهپاد در ساعات اولیه بامداد امروز منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8349\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 1025,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8347\">@Ali_bk_8</a>"
+          "bot_msg_id": 1026,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 سپاه پاسداران تصاویری از حمله به یک رادار آمریکایی در بحرین با استفاده از 6 پهپاد در ساعات اولیه بامداد امروز منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8349\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
         {
           "source_node": "Ali_bk_8",
-          "msg_id": 8347,
-          "media_icons": "📷🎥",
-          "grouped_id": 14357831036050010,
-          "raw_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\nOngoing missile tests by Iran's IRGC.",
-          "output_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.",
-          "last_edit_timestamp": 1794728899.0
+          "msg_id": 8349,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "سپاه پاسداران تصاویری از حمله به یک رادار آمریکایی در بحرین با استفاده از 6 پهپاد در ساعات اولیه بامداد امروز منتشر کرد.\n\nThe IRGC releases footage of a strike on a US radar in Bahrain using 6 drones early this morning.",
+          "output_text": "سپاه پاسداران تصاویری از حمله به یک رادار آمریکایی در بحرین با استفاده از 6 پهپاد در ساعات اولیه بامداد امروز منتشر کرد.",
+          "last_edit_timestamp": 1794733458.832405
         }
       ],
-      "active_text_source": "Ali_bk_8_8347",
-      "sent_timestamp": 1794728892.0134463,
+      "active_text_source": "Ali_bk_8_8349",
+      "sent_timestamp": 1794733459.356559,
       "source_node": "Ali_bk_8",
-      "msg_id": 8347,
-      "media_icons": "📷🎥",
-      "grouped_id": 14357831036050010,
-      "raw_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.\n\nOngoing missile tests by Iran's IRGC.",
-      "output_text": "آزمایش‌های موشکی سپاه پاسداران در ایران همچنان ادامه دارد.",
+      "msg_id": 8349,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "سپاه پاسداران تصاویری از حمله به یک رادار آمریکایی در بحرین با استفاده از 6 پهپاد در ساعات اولیه بامداد امروز منتشر کرد.\n\nThe IRGC releases footage of a strike on a US radar in Bahrain using 6 drones early this morning.",
+      "output_text": "سپاه پاسداران تصاویری از حمله به یک رادار آمریکایی در بحرین با استفاده از 6 پهپاد در ساعات اولیه بامداد امروز منتشر کرد.",
       "is_seismic": false,
-      "last_edit_timestamp": 1794728899.0
+      "last_edit_timestamp": 1794733433.0
+    },
+    "withyashar_28125": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1027,
+      "status_icon": "🚨🔕",
+      "last_formatted_text": "🚨🔕 سپاه : تصاویری از حمله به رادار سایت پدافندی آمریکا در پایگاه بالگردی الرفاع بحرین با شش فروند پهپاد\n\nیاشار : فقط پرتاب اینه بعدش زد یا نا معلوم نیست\n\n🎥 <a href=\"https://t.me/withyashar/28125\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1027,
+          "status_icon": "🚨🔕",
+          "last_formatted_text": "🚨🔕 سپاه : تصاویری از حمله به رادار سایت پدافندی آمریکا در پایگاه بالگردی الرفاع بحرین با شش فروند پهپاد\n\nیاشار : فقط پرتاب اینه بعدش زد یا نا معلوم نیست\n\n🎥 <a href=\"https://t.me/withyashar/28125\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28125,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "سپاه : تصاویری از حمله به رادار سایت پدافندی آمریکا در پایگاه بالگردی الرفاع بحرین با شش فروند پهپاد\n@WarRoom\nیاشار : فقط پرتاب اینه بعدش زد یا نا معلوم نیست",
+          "output_text": "سپاه : تصاویری از حمله به رادار سایت پدافندی آمریکا در پایگاه بالگردی الرفاع بحرین با شش فروند پهپاد\n@WarRoom\nیاشار : فقط پرتاب اینه بعدش زد یا نا معلوم نیست",
+          "last_edit_timestamp": 1794733902.0
+        }
+      ],
+      "active_text_source": "withyashar_28125",
+      "sent_timestamp": 1794733731.7512066,
+      "source_node": "withyashar",
+      "msg_id": 28125,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "سپاه : تصاویری از حمله به رادار سایت پدافندی آمریکا در پایگاه بالگردی الرفاع بحرین با شش فروند پهپاد\n@WarRoom\nیاشار : فقط پرتاب اینه بعدش زد یا نا معلوم نیست",
+      "output_text": "سپاه : تصاویری از حمله به رادار سایت پدافندی آمریکا در پایگاه بالگردی الرفاع بحرین با شش فروند پهپاد\n@WarRoom\nیاشار : فقط پرتاب اینه بعدش زد یا نا معلوم نیست",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794733902.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-15T08:45:54.392880+00:00"
+  "updated_at": "2026-11-15T09:12:19.593553+00:00"
 }
