@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28172,
-      "last_read_time": "2026-11-15 20:41:49 UTC"
+      "last_read_id": 28174,
+      "last_read_time": "2026-11-15 20:48:39 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8413,
-      "last_read_time": "2026-11-15 20:25:03 UTC"
+      "last_read_id": 8415,
+      "last_read_time": "2026-11-15 21:01:09 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79121,
@@ -31,146 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28164": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1048,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 صدای انفجار از کنگ در غرب قشم هم شنیده شد 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28164\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1048,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 صدای انفجار از کنگ در غرب قشم هم شنیده شد 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28164\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28164,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "صدای انفجار از کنگ در غرب قشم هم شنیده شد\n@WarRoom 🚨🚨🚨",
-          "output_text": "صدای انفجار از کنگ در غرب قشم هم شنیده شد\n@WarRoom 🚨🚨🚨",
-          "last_edit_timestamp": 1794772821.0
-        }
-      ],
-      "active_text_source": "withyashar_28164",
-      "sent_timestamp": 1794772378.4118602,
-      "source_node": "withyashar",
-      "msg_id": 28164,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "صدای انفجار از کنگ در غرب قشم هم شنیده شد\n@WarRoom 🚨🚨🚨",
-      "output_text": "صدای انفجار از کنگ در غرب قشم هم شنیده شد\n@WarRoom 🚨🚨🚨",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794772821.0
-    },
-    "withyashar_28166": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1049,
-      "status_icon": "🚨🔕",
-      "last_formatted_text": "🚨🔕 گزارش انفجار سیریک 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28166\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1049,
-          "status_icon": "🚨🔕",
-          "last_formatted_text": "🚨🔕 گزارش انفجار سیریک 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28166\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28166,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "گزارش انفجار سیریک 🚨🚨🚨\n@WarRoom",
-          "output_text": "گزارش انفجار سیریک 🚨🚨🚨\n@WarRoom",
-          "last_edit_timestamp": 1794773002.779053
-        }
-      ],
-      "active_text_source": "withyashar_28166",
-      "sent_timestamp": 1794773003.3661706,
-      "source_node": "withyashar",
-      "msg_id": 28166,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "گزارش انفجار سیریک 🚨🚨🚨\n@WarRoom",
-      "output_text": "گزارش انفجار سیریک 🚨🚨🚨\n@WarRoom",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794772981.0
-    },
-    "withyashar_28167": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1050,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 گزارش زلزله جدید شرق تهران 🚨\n\n📝 <a href=\"https://t.me/withyashar/28167\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1050,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 گزارش زلزله جدید شرق تهران 🚨\n\n📝 <a href=\"https://t.me/withyashar/28167\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28167,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "گزارش زلزله جدید شرق تهران\n@WarRoom 🚨",
-          "output_text": "گزارش زلزله جدید شرق تهران\n@WarRoom 🚨",
-          "last_edit_timestamp": 1794773062.763008
-        }
-      ],
-      "active_text_source": "withyashar_28167",
-      "sent_timestamp": 1794773063.3399162,
-      "source_node": "withyashar",
-      "msg_id": 28167,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "گزارش زلزله جدید شرق تهران\n@WarRoom 🚨",
-      "output_text": "گزارش زلزله جدید شرق تهران\n@WarRoom 🚨",
-      "is_seismic": true,
-      "last_edit_timestamp": 1794773058.0
-    },
-    "Ali_bk_8_8410": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1051,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 5 فروند هواپیمای سوخت‌رسان آمریکایی هم‌زمان با شنیده‌شدن صدای انفجار در نزدیکی سواحل ایران، بر فراز تنگه هرمز در حال پرواز هستند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8410\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1051,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 5 فروند هواپیمای سوخت‌رسان آمریکایی هم‌زمان با شنیده‌شدن صدای انفجار در نزدیکی سواحل ایران، بر فراز تنگه هرمز در حال پرواز هستند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8410\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8410,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "5 فروند هواپیمای سوخت‌رسان آمریکایی هم‌زمان با شنیده‌شدن صدای انفجار در نزدیکی سواحل ایران، بر فراز تنگه هرمز در حال پرواز هستند.\n\n5 US aerial refueling aircraft are flying over the Strait of Hormuz as explosions are heard near the Iranian coast.",
-          "output_text": "5 فروند هواپیمای سوخت‌رسان آمریکایی هم‌زمان با شنیده‌شدن صدای انفجار در نزدیکی سواحل ایران، بر فراز تنگه هرمز در حال پرواز هستند.",
-          "last_edit_timestamp": 1794773248.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8410",
-      "sent_timestamp": 1794773183.4233446,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8410,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "5 فروند هواپیمای سوخت‌رسان آمریکایی هم‌زمان با شنیده‌شدن صدای انفجار در نزدیکی سواحل ایران، بر فراز تنگه هرمز در حال پرواز هستند.\n\n5 US aerial refueling aircraft are flying over the Strait of Hormuz as explosions are heard near the Iranian coast.",
-      "output_text": "5 فروند هواپیمای سوخت‌رسان آمریکایی هم‌زمان با شنیده‌شدن صدای انفجار در نزدیکی سواحل ایران، بر فراز تنگه هرمز در حال پرواز هستند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794773248.0
-    },
     "Ali_bk_8_8411": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1052,
@@ -243,5 +103,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-15T20:43:17.806324+00:00"
+  "updated_at": "2026-11-15T21:09:45.452892+00:00"
 }
