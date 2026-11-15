@@ -529,13 +529,11 @@ class SentinelEngine:
         if not self._contains_any(match_text, self.foreign_proxy_conflict_markers):
             return False
         direct_iran_indicators = [
-            "از خاک ایران", "از ایران", "به سمت ایران", "در ایران", "آب های ایران",
-            "تنگه هرمز", "خلیج فارس", "دریای عمان", "دریای خزر", "سفارت ایران", "کنسولگری ایران",
-            "فرماندهان سپاه", "مستشاران نظامی ایران"
-        ]
+            "از خاک ایران", "از ایران", "شلیک از ایران", "شلیک از خاک ایران", "به سمت ایران",
+            "در ایران", "آب های ایران", "تنگه هرمز", "خلیج فارس", "دریای عمان", "دریای خزر",
+            "سفارت ایران", "کنسولگری ایران", "فرماندهان سپاه", "مستشاران نظامی ایران"
+        ] + self.geo_diplomatic_and_commanders
         if self._contains_any(match_text, direct_iran_indicators):
-            return False
-        if self._contains_any(match_text, self.geo_iran_land):
             return False
         return True
 

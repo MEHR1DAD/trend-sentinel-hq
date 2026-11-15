@@ -8,7 +8,7 @@ Central configuration module for source nodes, destination channels, credentials
 import os
 
 # --- System Version ---
-VERSION = "7.0.0"
+VERSION = "7.1.0"
 
 # --- Credentials ---
 API_ID = int(os.environ.get("TELEGRAM_API_ID", "24738417"))
