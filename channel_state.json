@@ -31,40 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8328": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1009,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 صدای آژیرهای هشدار حمله هوایی در بحرین به صدا درآمد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8328\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1009,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 صدای آژیرهای هشدار حمله هوایی در بحرین به صدا درآمد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8328\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8328,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "صدای آژیرهای هشدار حمله هوایی در بحرین به صدا درآمد.\n\nAir raid sirens sound in Bahrain.",
-          "output_text": "صدای آژیرهای هشدار حمله هوایی در بحرین به صدا درآمد.",
-          "last_edit_timestamp": 1794706046.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8328",
-      "sent_timestamp": 1794706010.6665752,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8328,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "صدای آژیرهای هشدار حمله هوایی در بحرین به صدا درآمد.\n\nAir raid sirens sound in Bahrain.",
-      "output_text": "صدای آژیرهای هشدار حمله هوایی در بحرین به صدا درآمد.",
-      "last_edit_timestamp": 1794706046.0
-    },
     "withyashar_28110": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1010,
@@ -168,5 +134,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-15T02:11:15.788862+00:00"
+  "updated_at": "2026-11-15T02:37:44.479611+00:00"
 }
