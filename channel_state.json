@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28226,
-      "last_read_time": "2026-11-16 19:55:10 UTC"
+      "last_read_id": 28230,
+      "last_read_time": "2026-11-16 20:17:04 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8482,
-      "last_read_time": "2026-11-16 19:43:56 UTC"
+      "last_read_id": 8487,
+      "last_read_time": "2026-11-16 20:16:02 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79131,
@@ -26,11 +26,82 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794848139.2957013,
+    "@DidebanJang": 1794860241.730126,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_8485": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1066,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش خبر داد؛ این چهارمین مورد طی ۲۴ ساعت گذشته در شرق تنگه هرمز است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8485\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1066,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش خبر داد؛ این چهارمین مورد طی ۲۴ ساعت گذشته در شرق تنگه هرمز است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8485\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8485,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش خبر داد؛ این چهارمین مورد طی ۲۴ ساعت گذشته در شرق تنگه هرمز است.\n\nConfirming what we reported…\n\nThe Iranian army announces that an oil tanker has caught fire, the fourth such incident in the past 24 hours east of the Strait of Hormuz.",
+          "output_text": "تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش خبر داد؛ این چهارمین مورد طی ۲۴ ساعت گذشته در شرق تنگه هرمز است.",
+          "last_edit_timestamp": 1794860266.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8485",
+      "sent_timestamp": 1794860214.1694767,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8485,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش خبر داد؛ این چهارمین مورد طی ۲۴ ساعت گذشته در شرق تنگه هرمز است.\n\nConfirming what we reported…\n\nThe Iranian army announces that an oil tanker has caught fire, the fourth such incident in the past 24 hours east of the Strait of Hormuz.",
+      "output_text": "تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش خبر داد؛ این چهارمین مورد طی ۲۴ ساعت گذشته در شرق تنگه هرمز است.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794860266.0
+    },
+    "withyashar_28230": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1067,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 گزارش انفجار در سیریک 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28230\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1067,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 گزارش انفجار در سیریک 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28230\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28230,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "گزارش انفجار در سیریک \n@WarRoom 🚨🚨🚨🚨",
+          "output_text": "گزارش انفجار در سیریک \n@WarRoom 🚨🚨🚨🚨",
+          "last_edit_timestamp": 1794860241.730123
+        }
+      ],
+      "active_text_source": "withyashar_28230",
+      "sent_timestamp": 1794860242.1338387,
+      "source_node": "withyashar",
+      "msg_id": 28230,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "گزارش انفجار در سیریک \n@WarRoom 🚨🚨🚨🚨",
+      "output_text": "گزارش انفجار در سیریک \n@WarRoom 🚨🚨🚨🚨",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794860232.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-16T20:00:58.300882+00:00"
+  "updated_at": "2026-11-16T20:27:22.715149+00:00"
 }
