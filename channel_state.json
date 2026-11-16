@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28213,
-      "last_read_time": "2026-11-16 17:24:54 UTC"
+      "last_read_id": 28219,
+      "last_read_time": "2026-11-16 18:09:44 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8473,
-      "last_read_time": "2026-11-16 17:40:26 UTC"
+      "last_read_id": 8474,
+      "last_read_time": "2026-11-16 18:07:11 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79128,
-      "last_read_time": "2026-11-16 14:52:38 UTC"
+      "last_read_id": 79131,
+      "last_read_time": "2026-11-16 18:10:56 UTC"
     },
     "iliaen": {
       "last_read_id": 4754,
@@ -31,86 +31,42 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28210": {
+    "Ali_bk_8_8474": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 1063,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 پدافند تهران غرب و اصفهان با پهپاد‌های شناسایی درگیر شدند کوتاه\n\n📝 <a href=\"https://t.me/withyashar/28210\">@withyashar</a>",
+      "bot_msg_id": 1065,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8474\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 1063,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 پدافند تهران غرب و اصفهان با پهپاد‌های شناسایی درگیر شدند کوتاه\n\n📝 <a href=\"https://t.me/withyashar/28210\">@withyashar</a>"
+          "bot_msg_id": 1065,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8474\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28210,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "پدافند تهران غرب و اصفهان با پهپاد‌های شناسایی درگیر شدند کوتاه\n@WarRoom",
-          "output_text": "پدافند تهران غرب و اصفهان با پهپاد‌های شناسایی درگیر شدند کوتاه\n@WarRoom",
-          "last_edit_timestamp": 1794848139.2956991
-        }
-      ],
-      "active_text_source": "withyashar_28210",
-      "sent_timestamp": 1794848139.766897,
-      "source_node": "withyashar",
-      "msg_id": 28210,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "پدافند تهران غرب و اصفهان با پهپاد‌های شناسایی درگیر شدند کوتاه\n@WarRoom",
-      "output_text": "پدافند تهران غرب و اصفهان با پهپاد‌های شناسایی درگیر شدند کوتاه\n@WarRoom",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794848121.0
-    },
-    "withyashar_28211": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1064,
-      "status_icon": "🚨🔕",
-      "last_formatted_text": "🚨🔕 تصاویر منتشرشده از فعال شدن پدافند هوایی ایران و مقابله با پهپادهای شناسایی حکایت دارد.\n\n🎥 <a href=\"https://t.me/withyashar/28211\">@withyashar</a>\n🎥 <a href=\"https://t.me/Ali_bk_8/8471\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1064,
-          "status_icon": "🚨🔕",
-          "last_formatted_text": "🚨🔕 تصاویر منتشرشده از فعال شدن پدافند هوایی ایران و مقابله با پهپادهای شناسایی حکایت دارد.\n\n🎥 <a href=\"https://t.me/withyashar/28211\">@withyashar</a>\n🎥 <a href=\"https://t.me/Ali_bk_8/8471\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28211,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "الان لحظه درگیری پدافند اصفهان با پهپاد \n@WarRoom 🚨🚨🚨",
-          "output_text": "الان لحظه درگیری پدافند اصفهان با پهپاد \n@WarRoom 🚨🚨🚨",
-          "last_edit_timestamp": 1794848306.5864165
-        },
         {
           "source_node": "Ali_bk_8",
-          "msg_id": 8471,
-          "media_icons": "🎥",
+          "msg_id": 8474,
+          "media_icons": "📝",
           "grouped_id": null,
-          "raw_text": "تصاویر منتشرشده از فعال شدن پدافند هوایی ایران و مقابله با پهپادهای شناسایی حکایت دارد.\n\nFootage circulating online shows Iranian air defenses being activated and engaging reconnaissance drones.",
-          "output_text": "تصاویر منتشرشده از فعال شدن پدافند هوایی ایران و مقابله با پهپادهای شناسایی حکایت دارد.",
-          "last_edit_timestamp": 1794849028.0
+          "raw_text": "هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.\n\nExplosions are heard in the Strait of Hormuz now.",
+          "output_text": "هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.",
+          "last_edit_timestamp": 1794852539.0
         }
       ],
-      "active_text_source": "Ali_bk_8_8471",
-      "sent_timestamp": 1794848307.120219,
-      "source_node": "withyashar",
-      "msg_id": 28211,
-      "media_icons": "🎥",
+      "active_text_source": "Ali_bk_8_8474",
+      "sent_timestamp": 1794852437.3614578,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8474,
+      "media_icons": "📝",
       "grouped_id": null,
-      "raw_text": "تصاویر منتشرشده از فعال شدن پدافند هوایی ایران و مقابله با پهپادهای شناسایی حکایت دارد.\n\nFootage circulating online shows Iranian air defenses being activated and engaging reconnaissance drones.",
-      "output_text": "تصاویر منتشرشده از فعال شدن پدافند هوایی ایران و مقابله با پهپادهای شناسایی حکایت دارد.",
+      "raw_text": "هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.\n\nExplosions are heard in the Strait of Hormuz now.",
+      "output_text": "هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.",
       "is_seismic": false,
-      "last_edit_timestamp": 1794849028.0
+      "last_edit_timestamp": 1794852539.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-16T17:48:52.149857+00:00"
+  "updated_at": "2026-11-16T18:15:16.648932+00:00"
 }
