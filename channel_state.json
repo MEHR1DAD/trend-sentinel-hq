@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28210,
-      "last_read_time": "2026-11-16 16:55:07 UTC"
+      "last_read_id": 28211,
+      "last_read_time": "2026-11-16 16:58:12 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8470,
-      "last_read_time": "2026-11-16 16:31:15 UTC"
+      "last_read_id": 8471,
+      "last_read_time": "2026-11-16 17:08:02 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79128,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8466": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1062,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 ارتش ایران از سرنگونی یک پهپاد MQ-1 بر فراز تنگه هرمز خبر داد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8466\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1062,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 ارتش ایران از سرنگونی یک پهپاد MQ-1 بر فراز تنگه هرمز خبر داد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8466\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8466,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "ارتش ایران از سرنگونی یک پهپاد MQ-1 بر فراز تنگه هرمز خبر داد.\n\nThe Iranian army announces the downing of an MQ-1 drone over the Strait of Hormuz.",
-          "output_text": "ارتش ایران از سرنگونی یک پهپاد MQ-1 بر فراز تنگه هرمز خبر داد.",
-          "last_edit_timestamp": 1794845357.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8466",
-      "sent_timestamp": 1794845349.580471,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8466,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "ارتش ایران از سرنگونی یک پهپاد MQ-1 بر فراز تنگه هرمز خبر داد.\n\nThe Iranian army announces the downing of an MQ-1 drone over the Strait of Hormuz.",
-      "output_text": "ارتش ایران از سرنگونی یک پهپاد MQ-1 بر فراز تنگه هرمز خبر داد.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794845357.0
-    },
     "withyashar_28210": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1063,
@@ -100,8 +65,52 @@
       "output_text": "پدافند تهران غرب و اصفهان با پهپاد‌های شناسایی درگیر شدند کوتاه\n@WarRoom",
       "is_seismic": false,
       "last_edit_timestamp": 1794848121.0
+    },
+    "withyashar_28211": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1064,
+      "status_icon": "🚨🔕",
+      "last_formatted_text": "🚨🔕 تصاویر منتشرشده از فعال شدن پدافند هوایی ایران و مقابله با پهپادهای شناسایی حکایت دارد.\n\n🎥 <a href=\"https://t.me/withyashar/28211\">@withyashar</a>\n🎥 <a href=\"https://t.me/Ali_bk_8/8471\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1064,
+          "status_icon": "🚨🔕",
+          "last_formatted_text": "🚨🔕 تصاویر منتشرشده از فعال شدن پدافند هوایی ایران و مقابله با پهپادهای شناسایی حکایت دارد.\n\n🎥 <a href=\"https://t.me/withyashar/28211\">@withyashar</a>\n🎥 <a href=\"https://t.me/Ali_bk_8/8471\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28211,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "الان لحظه درگیری پدافند اصفهان با پهپاد \n@WarRoom 🚨🚨🚨",
+          "output_text": "الان لحظه درگیری پدافند اصفهان با پهپاد \n@WarRoom 🚨🚨🚨",
+          "last_edit_timestamp": 1794848306.5864165
+        },
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8471,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "تصاویر منتشرشده از فعال شدن پدافند هوایی ایران و مقابله با پهپادهای شناسایی حکایت دارد.\n\nFootage circulating online shows Iranian air defenses being activated and engaging reconnaissance drones.",
+          "output_text": "تصاویر منتشرشده از فعال شدن پدافند هوایی ایران و مقابله با پهپادهای شناسایی حکایت دارد.",
+          "last_edit_timestamp": 1794849028.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8471",
+      "sent_timestamp": 1794848307.120219,
+      "source_node": "withyashar",
+      "msg_id": 28211,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "تصاویر منتشرشده از فعال شدن پدافند هوایی ایران و مقابله با پهپادهای شناسایی حکایت دارد.\n\nFootage circulating online shows Iranian air defenses being activated and engaging reconnaissance drones.",
+      "output_text": "تصاویر منتشرشده از فعال شدن پدافند هوایی ایران و مقابله با پهپادهای شناسایی حکایت دارد.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794849028.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-16T16:55:58.195828+00:00"
+  "updated_at": "2026-11-16T17:22:26.490865+00:00"
 }
