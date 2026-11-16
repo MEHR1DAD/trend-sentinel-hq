@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28183,
-      "last_read_time": "2026-11-16 07:49:18 UTC"
+      "last_read_id": 28184,
+      "last_read_time": "2026-11-16 08:21:01 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8440,
-      "last_read_time": "2026-11-16 07:56:28 UTC"
+      "last_read_id": 8441,
+      "last_read_time": "2026-11-16 08:13:03 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79121,
@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8429": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1059,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 نیروی دریایی بریتانیا اعلام کرد یک نفتکش در تنگه هرمز مورد حمله قرار گرفت و پس از تلاش برای عبور غیرقانونی از تنگه، دچار آتش‌سوزی شد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8429\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1059,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 نیروی دریایی بریتانیا اعلام کرد یک نفتکش در تنگه هرمز مورد حمله قرار گرفت و پس از تلاش برای عبور غیرقانونی از تنگه، دچار آتش‌سوزی شد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8429\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8429,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "نیروی دریایی بریتانیا اعلام کرد یک نفتکش در تنگه هرمز مورد حمله قرار گرفت و پس از تلاش برای عبور غیرقانونی از تنگه، دچار آتش‌سوزی شد.\n\nThe British Navy announces that an oil tanker came under attack in the Strait of Hormuz and caught fire after attempting to cross the strait illegally.",
-          "output_text": "نیروی دریایی بریتانیا اعلام کرد یک نفتکش در تنگه هرمز مورد حمله قرار گرفت و پس از تلاش برای عبور غیرقانونی از تنگه، دچار آتش‌سوزی شد.",
-          "last_edit_timestamp": 1794813104.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8429",
-      "sent_timestamp": 1794813053.7673593,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8429,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "نیروی دریایی بریتانیا اعلام کرد یک نفتکش در تنگه هرمز مورد حمله قرار گرفت و پس از تلاش برای عبور غیرقانونی از تنگه، دچار آتش‌سوزی شد.\n\nThe British Navy announces that an oil tanker came under attack in the Strait of Hormuz and caught fire after attempting to cross the strait illegally.",
-      "output_text": "نیروی دریایی بریتانیا اعلام کرد یک نفتکش در تنگه هرمز مورد حمله قرار گرفت و پس از تلاش برای عبور غیرقانونی از تنگه، دچار آتش‌سوزی شد.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794813104.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-16T07:57:12.142953+00:00"
+  "updated_at": "2026-11-16T08:23:38.422551+00:00"
 }
