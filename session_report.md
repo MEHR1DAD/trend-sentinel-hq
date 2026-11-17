@@ -6,21 +6,21 @@
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** دفتر آیت‌الله العظمی وحید خراسانی:  با نهایت اندوه و تأسف، درگذشت فقیه اهل‌بیت علیهم‌السلام، مرجع دینی، عالم ربانی و است
-- **Last Message Time:** 2026-11-17 03:32:06 UTC
+- **Last Message Text:** تصاویری از گشت‌زنی قایق‌های تندرو تهاجمی نیروی دریایی سپاه پاسداران در سواحل جنوبی ایران در روز گذشته.  Footage shows fa
+- **Last Message Time:** 2026-11-17 03:59:40 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
 - `@withyashar`: #28235 (2026-11-16 22:02:07 UTC)
-- `@Ali_bk_8`: #8493 (2026-11-17 03:32:06 UTC)
+- `@Ali_bk_8`: #8494 (2026-11-17 03:59:40 UTC)
 - `@VahidOnline`: #79134 (2026-11-16 23:38:01 UTC)
 - `@iliaen`: #4755 (2026-11-16 19:05:46 UTC)
 - `@netblocks`: #1584 (2026-11-16 17:26:01 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 439m ago
-- `@DidehbanEghtesad`: Last loud alert 5156m ago
-- `@DidebanEterazat`: Last loud alert 12415m ago
+- `@DidebanJang`: Last loud alert 466m ago
+- `@DidehbanEghtesad`: Last loud alert 5182m ago
+- `@DidebanEterazat`: Last loud alert 12442m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
 - *(No active posts in 60m edit/delete window)*
