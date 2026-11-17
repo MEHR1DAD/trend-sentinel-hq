@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-17 18:09:10 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8572,
-      "last_read_time": "2026-11-17 18:13:26 UTC"
+      "last_read_id": 8577,
+      "last_read_time": "2026-11-17 18:31:44 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79158,
@@ -17,8 +17,8 @@
       "last_read_time": "2026-11-17 15:25:09 UTC"
     },
     "netblocks": {
-      "last_read_id": 1584,
-      "last_read_time": "2026-11-16 17:26:01 UTC"
+      "last_read_id": 1585,
+      "last_read_time": "2026-11-17 18:27:48 UTC"
     },
     "kianmeli1": {
       "last_read_id": 93820,
@@ -109,8 +109,43 @@
       "output_text": "تصاویر ماهواره‌ای آتش‌سوزی ناشی از هدف قرار گرفتن کشتی‌ها در تنگه هرمز را ثبت کرده‌اند.",
       "is_seismic": false,
       "last_edit_timestamp": 1794939263.0
+    },
+    "Ali_bk_8_8574": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1096,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 یک کشتی دیگر در تنگه هرمز هدف قرار گرفت.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8574\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1096,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 یک کشتی دیگر در تنگه هرمز هدف قرار گرفت.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8574\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8574,
+          "media_icons": "📷🎥",
+          "grouped_id": 14359518850307002,
+          "raw_text": "یک کشتی دیگر در تنگه هرمز هدف قرار گرفت.\n\nA new ship targeted in the Strait of Hormuz.",
+          "output_text": "یک کشتی دیگر در تنگه هرمز هدف قرار گرفت.",
+          "last_edit_timestamp": 1794939860.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8574",
+      "sent_timestamp": 1794939859.0166357,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8574,
+      "media_icons": "📷🎥",
+      "grouped_id": 14359518850307002,
+      "raw_text": "یک کشتی دیگر در تنگه هرمز هدف قرار گرفت.\n\nA new ship targeted in the Strait of Hormuz.",
+      "output_text": "یک کشتی دیگر در تنگه هرمز هدف قرار گرفت.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794939860.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-17T18:22:13.907011+00:00"
+  "updated_at": "2026-11-17T18:48:42.204040+00:00"
 }
