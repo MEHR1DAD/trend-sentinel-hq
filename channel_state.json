@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-17 19:36:36 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8583,
-      "last_read_time": "2026-11-17 19:35:35 UTC"
+      "last_read_id": 8585,
+      "last_read_time": "2026-11-17 20:03:33 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79158,
@@ -65,15 +65,43 @@
       "output_text": "یک مقام نظامی آمریکایی:\n\nامروز پیش‌تر، جنگنده‌های آمریکایی در اقدامی دفاعی از مهمات هدایت‌شونده دقیق برای حمله به یک موضع پرتاب موشک متعلق به سپاه پاسداران در جزیره قشم استفاده کردند. این حمله در پاسخ به هدف قرار دادن نیروها و اموال آمریکا توسط سپاه پاسداران انجام شد. فرماندهی مرکزی آمریکا همچنان در بالاترین سطح آماده‌باش و آمادگی کامل قرار دارد.",
       "is_seismic": false,
       "last_edit_timestamp": 1794943591.0
-    }
-  },
-  "pending_translations": {
-    "Ali_bk_8_8578": {
+    },
+    "Ali_bk_8_8585": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1098,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 همین حالا موشک‌هایی به سمت تنگه هرمز شلیک شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8585\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1098,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 همین حالا موشک‌هایی به سمت تنگه هرمز شلیک شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8585\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8585,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "همین حالا موشک‌هایی به سمت تنگه هرمز شلیک شدند.\n\nMissiles launched toward the Strait of Hormuz now.",
+          "output_text": "همین حالا موشک‌هایی به سمت تنگه هرمز شلیک شدند.",
+          "last_edit_timestamp": 1794945826.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8585",
+      "sent_timestamp": 1794945823.6684175,
       "source_node": "Ali_bk_8",
-      "msg_id": 8578,
-      "timestamp": 1794941351.396809,
-      "grouped_id": null
+      "msg_id": 8585,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "همین حالا موشک‌هایی به سمت تنگه هرمز شلیک شدند.\n\nMissiles launched toward the Strait of Hormuz now.",
+      "output_text": "همین حالا موشک‌هایی به سمت تنگه هرمز شلیک شدند.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794945826.0
     }
   },
-  "updated_at": "2026-11-17T19:41:35.534438+00:00"
+  "pending_translations": {},
+  "updated_at": "2026-11-17T20:08:01.541875+00:00"
 }
