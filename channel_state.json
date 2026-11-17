@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28294,
-      "last_read_time": "2026-11-17 12:46:37 UTC"
+      "last_read_id": 28303,
+      "last_read_time": "2026-11-17 13:17:49 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8531,
-      "last_read_time": "2026-11-17 12:46:53 UTC"
+      "last_read_id": 8543,
+      "last_read_time": "2026-11-17 13:15:51 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79134,
@@ -26,7 +26,7 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794918022.552108,
+    "@DidebanJang": 1794920077.6448429,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
@@ -99,8 +99,164 @@
       "raw_text": "ارتش ایران از سرنگونی یک فروند پهپاد آمریکایی از نوع لوکاس بر فراز تنگه هرمز خبر داد.\n\nThe Iranian army announces that it has shot down a US-made LUCAS drone over the Strait of Hormuz.",
       "output_text": "ارتش ایران از سرنگونی یک فروند پهپاد آمریکایی از نوع لوکاس بر فراز تنگه هرمز خبر داد.",
       "is_seismic": false
+    },
+    "Ali_bk_8_8532": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1078,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 هم‌اکنون صدای انفجارهایی در جزیره قشم شنیده می‌شود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8532\">@Ali_bk_8</a>\n📝 <a href=\"https://t.me/withyashar/28295\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1078,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 هم‌اکنون صدای انفجارهایی در جزیره قشم شنیده می‌شود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8532\">@Ali_bk_8</a>\n📝 <a href=\"https://t.me/withyashar/28295\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8532,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "هم‌اکنون صدای انفجارهایی در جزیره قشم شنیده می‌شود.\n\nLoud noises heard on Qeshm Island now.",
+          "output_text": "هم‌اکنون صدای انفجارهایی در جزیره قشم شنیده می‌شود.",
+          "last_edit_timestamp": 1794920077.6448407
+        },
+        {
+          "source_node": "withyashar",
+          "msg_id": 28295,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "گزارش های زیااااد از انفجار در قشم\n@WarRoom 🚨🚨🚨🚨",
+          "output_text": "گزارش های زیااااد از انفجار در قشم\n@WarRoom 🚨🚨🚨🚨",
+          "last_edit_timestamp": 1794920165.1619735
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8532",
+      "sent_timestamp": 1794920078.1750743,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8532,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "هم‌اکنون صدای انفجارهایی در جزیره قشم شنیده می‌شود.\n\nLoud noises heard on Qeshm Island now.",
+      "output_text": "هم‌اکنون صدای انفجارهایی در جزیره قشم شنیده می‌شود.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794920164.0
+    },
+    "Ali_bk_8_8534": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1079,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 آتش‌سوزی روی آب در نزدیکی جزایر عمانی در تنگه هرمز مشاهده شده است. به نظر می‌رسد یک کشتی در آن نقطه هدف قرار گرفته است.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8534\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1079,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 آتش‌سوزی روی آب در نزدیکی جزایر عمانی در تنگه هرمز مشاهده شده است. به نظر می‌رسد یک کشتی در آن نقطه هدف قرار گرفته است.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8534\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8534,
+          "media_icons": "📷🎥",
+          "grouped_id": 14359362490017562,
+          "raw_text": "آتش‌سوزی روی آب در نزدیکی جزایر عمانی در تنگه هرمز مشاهده شده است. به نظر می‌رسد یک کشتی در آن نقطه هدف قرار گرفته است.\n\nA fire has been spotted on the water near the Omani islands in the Strait of Hormuz. It appears that a ship was targeted at that location.",
+          "output_text": "آتش‌سوزی روی آب در نزدیکی جزایر عمانی در تنگه هرمز مشاهده شده است. به نظر می‌رسد یک کشتی در آن نقطه هدف قرار گرفته است.",
+          "last_edit_timestamp": 1794920427.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8534",
+      "sent_timestamp": 1794920322.740727,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8534,
+      "media_icons": "📷🎥",
+      "grouped_id": 14359362490017562,
+      "raw_text": "آتش‌سوزی روی آب در نزدیکی جزایر عمانی در تنگه هرمز مشاهده شده است. به نظر می‌رسد یک کشتی در آن نقطه هدف قرار گرفته است.\n\nA fire has been spotted on the water near the Omani islands in the Strait of Hormuz. It appears that a ship was targeted at that location.",
+      "output_text": "آتش‌سوزی روی آب در نزدیکی جزایر عمانی در تنگه هرمز مشاهده شده است. به نظر می‌رسد یک کشتی در آن نقطه هدف قرار گرفته است.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794920427.0
+    },
+    "Ali_bk_8_8536": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1080,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 هم‌اکنون صدای انفجار در تنگه هرمز شنیده می‌شود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8536\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1080,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 هم‌اکنون صدای انفجار در تنگه هرمز شنیده می‌شود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8536\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8536,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "هم‌اکنون صدای انفجار در تنگه هرمز شنیده می‌شود.\n\nAn explosion heard in the Strait of Hormuz now.",
+          "output_text": "هم‌اکنون صدای انفجار در تنگه هرمز شنیده می‌شود.",
+          "last_edit_timestamp": 1794920563.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8536",
+      "sent_timestamp": 1794920442.3013961,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8536,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "هم‌اکنون صدای انفجار در تنگه هرمز شنیده می‌شود.\n\nAn explosion heard in the Strait of Hormuz now.",
+      "output_text": "هم‌اکنون صدای انفجار در تنگه هرمز شنیده می‌شود.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794920563.0
+    },
+    "withyashar_28298": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1081,
+      "status_icon": "🚨🔕",
+      "last_formatted_text": "🚨🔕 ۵ انفجار شدید نقاط مختلف قشم 🚨🚨🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/28298\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1081,
+          "status_icon": "🚨🔕",
+          "last_formatted_text": "🚨🔕 ۵ انفجار شدید نقاط مختلف قشم 🚨🚨🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/28298\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28298,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "۵ انفجار شدید نقاط مختلف قشم\n@WarRoom 🚨🚨🚨🚨🚨",
+          "output_text": "۵ انفجار شدید نقاط مختلف قشم\n@WarRoom 🚨🚨🚨🚨🚨",
+          "last_edit_timestamp": 1794920563.45028
+        }
+      ],
+      "active_text_source": "withyashar_28298",
+      "sent_timestamp": 1794920563.9000075,
+      "source_node": "withyashar",
+      "msg_id": 28298,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "۵ انفجار شدید نقاط مختلف قشم\n@WarRoom 🚨🚨🚨🚨🚨",
+      "output_text": "۵ انفجار شدید نقاط مختلف قشم\n@WarRoom 🚨🚨🚨🚨🚨",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794920557.0
     }
   },
-  "pending_translations": {},
-  "updated_at": "2026-11-17T12:51:44.647170+00:00"
+  "pending_translations": {
+    "Ali_bk_8_8541": {
+      "source_node": "Ali_bk_8",
+      "msg_id": 8541,
+      "timestamp": 1794920978.311266,
+      "grouped_id": null
+    }
+  },
+  "updated_at": "2026-11-17T13:18:06.079876+00:00"
 }
