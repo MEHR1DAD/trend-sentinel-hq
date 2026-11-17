@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28271,
-      "last_read_time": "2026-11-17 08:52:43 UTC"
+      "last_read_id": 28274,
+      "last_read_time": "2026-11-17 09:13:17 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8511,
-      "last_read_time": "2026-11-17 08:51:39 UTC"
+      "last_read_id": 8513,
+      "last_read_time": "2026-11-17 09:19:09 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79134,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8506": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1069,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 سپاه پاسداران یک نفتکش متخلف را در سواحل عمان هدف قرار داد و ستون‌های غلیظ دود به هوا برخاست.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8506\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1069,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 سپاه پاسداران یک نفتکش متخلف را در سواحل عمان هدف قرار داد و ستون‌های غلیظ دود به هوا برخاست.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8506\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8506,
-          "media_icons": "📷",
-          "grouped_id": 14359224434118034,
-          "raw_text": "سپاه پاسداران یک نفتکش متخلف را در سواحل عمان هدف قرار داد و ستون‌های غلیظ دود به هوا برخاست.\n\nThe IRGC targets a noncompliant oil tanker off the coast of Oman, with thick plumes of smoke rising.",
-          "output_text": "سپاه پاسداران یک نفتکش متخلف را در سواحل عمان هدف قرار داد و ستون‌های غلیظ دود به هوا برخاست.",
-          "last_edit_timestamp": 1794903082.2066674
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8506",
-      "sent_timestamp": 1794903082.9449623,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8506,
-      "media_icons": "📷",
-      "grouped_id": 14359224434118034,
-      "raw_text": "سپاه پاسداران یک نفتکش متخلف را در سواحل عمان هدف قرار داد و ستون‌های غلیظ دود به هوا برخاست.\n\nThe IRGC targets a noncompliant oil tanker off the coast of Oman, with thick plumes of smoke rising.",
-      "output_text": "سپاه پاسداران یک نفتکش متخلف را در سواحل عمان هدف قرار داد و ستون‌های غلیظ دود به هوا برخاست.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794903076.0
-    },
     "Ali_bk_8_8508": {
       "target_channel": "@DidehbanEghtesad",
       "bot_msg_id": 85,
@@ -196,8 +161,77 @@
       "output_text": "نفتکش هدف قرارگرفته در تنگه هرمز.",
       "is_seismic": false,
       "last_edit_timestamp": 1794905568.0
+    },
+    "Ali_bk_8_8512": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 87,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تصاویر بیشتر از نفتکش هدف قرارگرفته در تنگه هرمز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8512\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 87,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تصاویر بیشتر از نفتکش هدف قرارگرفته در تنگه هرمز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8512\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8512,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "تصاویر بیشتر از نفتکش هدف قرارگرفته در تنگه هرمز.\n\nMore footage of the oil tanker targeted in the Strait of Hormuz.",
+          "output_text": "تصاویر بیشتر از نفتکش هدف قرارگرفته در تنگه هرمز.",
+          "last_edit_timestamp": 1794906043.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8512",
+      "sent_timestamp": 1794906018.1233037,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8512,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "تصاویر بیشتر از نفتکش هدف قرارگرفته در تنگه هرمز.\n\nMore footage of the oil tanker targeted in the Strait of Hormuz.",
+      "output_text": "تصاویر بیشتر از نفتکش هدف قرارگرفته در تنگه هرمز.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794906043.0
+    },
+    "Ali_bk_8_8513": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1071,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8513\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1071,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8513\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8513,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.\n\nThe British Navy issues an update on the renewed targeting of a noncompliant vessel in the Strait of Hormuz, which resulted in it catching fire.",
+          "output_text": "نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.",
+          "last_edit_timestamp": 1794907151.7625985
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8513",
+      "sent_timestamp": 1794907152.1875174,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8513,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.\n\nThe British Navy issues an update on the renewed targeting of a noncompliant vessel in the Strait of Hormuz, which resulted in it catching fire.",
+      "output_text": "نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.",
+      "is_seismic": false
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-17T08:53:47.112918+00:00"
+  "updated_at": "2026-11-17T09:20:10.829158+00:00"
 }
