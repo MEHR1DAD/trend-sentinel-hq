@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28350,
-      "last_read_time": "2026-11-17 20:57:51 UTC"
+      "last_read_id": 28354,
+      "last_read_time": "2026-11-17 21:22:42 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8590,
-      "last_read_time": "2026-11-17 20:47:06 UTC"
+      "last_read_id": 8592,
+      "last_read_time": "2026-11-17 21:06:21 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79159,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8585": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1098,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 همین حالا موشک‌هایی به سمت تنگه هرمز شلیک شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8585\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1098,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 همین حالا موشک‌هایی به سمت تنگه هرمز شلیک شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8585\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8585,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "همین حالا موشک‌هایی به سمت تنگه هرمز شلیک شدند.\n\nMissiles launched toward the Strait of Hormuz now.",
-          "output_text": "همین حالا موشک‌هایی به سمت تنگه هرمز شلیک شدند.",
-          "last_edit_timestamp": 1794945826.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8585",
-      "sent_timestamp": 1794945823.6684175,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8585,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "همین حالا موشک‌هایی به سمت تنگه هرمز شلیک شدند.\n\nMissiles launched toward the Strait of Hormuz now.",
-      "output_text": "همین حالا موشک‌هایی به سمت تنگه هرمز شلیک شدند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794945826.0
-    },
     "Ali_bk_8_8589": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1099,
@@ -103,5 +68,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-17T21:00:54.769143+00:00"
+  "updated_at": "2026-11-17T21:27:22.895450+00:00"
 }
