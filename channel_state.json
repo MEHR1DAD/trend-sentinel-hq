@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28281,
-      "last_read_time": "2026-11-17 10:05:43 UTC"
+      "last_read_id": 28284,
+      "last_read_time": "2026-11-17 10:34:32 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8517,
-      "last_read_time": "2026-11-17 10:09:48 UTC"
+      "last_read_id": 8520,
+      "last_read_time": "2026-11-17 10:21:49 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79134,
@@ -26,81 +26,11 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794903082.2066698,
+    "@DidebanJang": 1794911678.7830758,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8513": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1071,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8513\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1071,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8513\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8513,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.\n\nThe British Navy issues an update on the renewed targeting of a noncompliant vessel in the Strait of Hormuz, which resulted in it catching fire.",
-          "output_text": "نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.",
-          "last_edit_timestamp": 1794907376.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8513",
-      "sent_timestamp": 1794907152.1875174,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8513,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.\n\nThe British Navy issues an update on the renewed targeting of a noncompliant vessel in the Strait of Hormuz, which resulted in it catching fire.",
-      "output_text": "نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794907376.0
-    },
-    "Ali_bk_8_8514": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1072,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سپاه پاسداران:\n\nانفجار مهیب در یک نفتکش غول‌پیکر و یک کشتی دیگر حامل گاز مایع که هر دو در تنگه هرمز مرتکب تخلف شده بودند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8514\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1072,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سپاه پاسداران:\n\nانفجار مهیب در یک نفتکش غول‌پیکر و یک کشتی دیگر حامل گاز مایع که هر دو در تنگه هرمز مرتکب تخلف شده بودند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8514\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8514,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "سپاه پاسداران:\n\nانفجار مهیب در یک نفتکش غول‌پیکر و یک کشتی دیگر حامل گاز مایع که هر دو در تنگه هرمز مرتکب تخلف شده بودند.\n\nThe IRGC:\n\nA massive explosion aboard a giant oil tanker and another vessel carrying liquefied gas, both involved in violations in the Strait of Hormuz.",
-          "output_text": "سپاه پاسداران:\n\nانفجار مهیب در یک نفتکش غول‌پیکر و یک کشتی دیگر حامل گاز مایع که هر دو در تنگه هرمز مرتکب تخلف شده بودند.",
-          "last_edit_timestamp": 1794907538.0878232
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8514",
-      "sent_timestamp": 1794907538.5827587,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8514,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "سپاه پاسداران:\n\nانفجار مهیب در یک نفتکش غول‌پیکر و یک کشتی دیگر حامل گاز مایع که هر دو در تنگه هرمز مرتکب تخلف شده بودند.\n\nThe IRGC:\n\nA massive explosion aboard a giant oil tanker and another vessel carrying liquefied gas, both involved in violations in the Strait of Hormuz.",
-      "output_text": "سپاه پاسداران:\n\nانفجار مهیب در یک نفتکش غول‌پیکر و یک کشتی دیگر حامل گاز مایع که هر دو در تنگه هرمز مرتکب تخلف شده بودند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794907531.0
-    },
     "withyashar_28277": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1073,
@@ -135,6 +65,76 @@
       "output_text": "فردی آگاه به اتاق جنگ می‌گوید محل آتش‌سوزی امروز در نزدیکی پارک جوانمردان، سال‌ها محل ساخت‌وساز بوده و گاهی گفته می‌شد برای توسعه پارک، احداث بیمارستان سوانح سوختکی یا مترو است. او مدعی است شبکه‌ای از تونل‌های زیرزمینی از پایگاه سابق یگان ویژه در محدوده ورزشگاه آزادی، از زیر پارک جوانمردان تا نقاط مختلف غرب تهران امتداد دارد و به ساختمان امنیتی تقاطع بلوار الهام و بزرگراه حکیم نیز متصل است. به گفته او، این ساختمان به‌شدت حفاظت می‌شود و در جنگ ۱۲روزه بخشی از فعالیت‌هایش به پروژه ساختمانی روبه‌رو منتقل شده بود. او معتقد است آتش‌سوزی ممکن است با جابه‌جایی در این تونل‌ها ارتباط داشته باشد و توضیح آتش گرفتن دو مخزن ۵ هزار لیتری گازوئیل روی پشت‌بام ساختمان را قانع‌کننده نمی‌داند.\n@WarRoom",
       "is_seismic": false,
       "last_edit_timestamp": 1794909024.0
+    },
+    "Ali_bk_8_8518": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 88,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 نفتکش هدف‌قرارگرفته در تنگه هرمز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8518\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 88,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 نفتکش هدف‌قرارگرفته در تنگه هرمز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8518\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8518,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "نفتکش هدف‌قرارگرفته در تنگه هرمز.\n\nThe targeted tanker in the Strait of Hormuz.",
+          "output_text": "نفتکش هدف‌قرارگرفته در تنگه هرمز.",
+          "last_edit_timestamp": 1794910836.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8518",
+      "sent_timestamp": 1794910778.4865992,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8518,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "نفتکش هدف‌قرارگرفته در تنگه هرمز.\n\nThe targeted tanker in the Strait of Hormuz.",
+      "output_text": "نفتکش هدف‌قرارگرفته در تنگه هرمز.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794910836.0
+    },
+    "withyashar_28284": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1074,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 ارسالی : سمت اسکله شهيد باهنر بندرعباس وردی ناوگان منطقه یک دریایی ارتش رو ساعتی پیش زدن صدای انفجار بسیار شدید بود 🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28284\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1074,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 ارسالی : سمت اسکله شهيد باهنر بندرعباس وردی ناوگان منطقه یک دریایی ارتش رو ساعتی پیش زدن صدای انفجار بسیار شدید بود 🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28284\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28284,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "ارسالی : سمت اسکله شهيد باهنر بندرعباس وردی ناوگان منطقه یک دریایی ارتش رو ساعتی پیش زدن صدای انفجار بسیار شدید بود\n@WarRoom 🚨🚨🚨",
+          "output_text": "ارسالی : سمت اسکله شهيد باهنر بندرعباس وردی ناوگان منطقه یک دریایی ارتش رو ساعتی پیش زدن صدای انفجار بسیار شدید بود\n@WarRoom 🚨🚨🚨",
+          "last_edit_timestamp": 1794911685.0
+        }
+      ],
+      "active_text_source": "withyashar_28284",
+      "sent_timestamp": 1794911679.2959814,
+      "source_node": "withyashar",
+      "msg_id": 28284,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "ارسالی : سمت اسکله شهيد باهنر بندرعباس وردی ناوگان منطقه یک دریایی ارتش رو ساعتی پیش زدن صدای انفجار بسیار شدید بود\n@WarRoom 🚨🚨🚨",
+      "output_text": "ارسالی : سمت اسکله شهيد باهنر بندرعباس وردی ناوگان منطقه یک دریایی ارتش رو ساعتی پیش زدن صدای انفجار بسیار شدید بود\n@WarRoom 🚨🚨🚨",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794911685.0
     }
   },
   "pending_translations": {
@@ -143,7 +143,13 @@
       "msg_id": 8517,
       "timestamp": 1794910194.2269745,
       "grouped_id": null
+    },
+    "Ali_bk_8_8519": {
+      "source_node": "Ali_bk_8",
+      "msg_id": 8519,
+      "timestamp": 1794910897.2815468,
+      "grouped_id": null
     }
   },
-  "updated_at": "2026-11-17T10:13:04.592951+00:00"
+  "updated_at": "2026-11-17T10:39:36.235699+00:00"
 }
