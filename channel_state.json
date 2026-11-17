@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28354,
-      "last_read_time": "2026-11-17 21:22:42 UTC"
+      "last_read_id": 28358,
+      "last_read_time": "2026-11-17 21:49:54 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8592,
@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8589": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1099,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز در حال حاضر\n\n📷 <a href=\"https://t.me/Ali_bk_8/8589\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1099,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز در حال حاضر\n\n📷 <a href=\"https://t.me/Ali_bk_8/8589\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8589,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز در حال حاضر\n\nMore Iranian missiles launched toward the Strait of Hormuz now",
-          "output_text": "شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز در حال حاضر",
-          "last_edit_timestamp": 1794948341.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8589",
-      "sent_timestamp": 1794947937.3076031,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8589,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز در حال حاضر\n\nMore Iranian missiles launched toward the Strait of Hormuz now",
-      "output_text": "شلیک موشک‌های بیشتر ایران به سمت تنگه هرمز در حال حاضر",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794948341.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-17T21:27:22.895450+00:00"
+  "updated_at": "2026-11-17T21:53:50.912135+00:00"
 }
