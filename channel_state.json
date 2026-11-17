@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28343,
-      "last_read_time": "2026-11-17 19:08:02 UTC"
+      "last_read_id": 28345,
+      "last_read_time": "2026-11-17 19:36:36 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8581,
-      "last_read_time": "2026-11-17 19:07:01 UTC"
+      "last_read_id": 8583,
+      "last_read_time": "2026-11-17 19:35:35 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79158,
@@ -26,45 +26,45 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794938294.5174632,
+    "@DidebanJang": 1794943354.3592272,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8574": {
+    "Ali_bk_8_8582": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 1096,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 یک کشتی دیگر در تنگه هرمز هدف قرار گرفت.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8574\">@Ali_bk_8</a>",
+      "bot_msg_id": 1097,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 یک مقام نظامی آمریکایی:\n\nامروز پیش‌تر، جنگنده‌های آمریکایی در اقدامی دفاعی از مهمات هدایت‌شونده دقیق برای حمله به یک موضع پرتاب موشک متعلق به سپاه پاسداران در جزیره قشم استفاده کردند. این حمله در پاسخ به هدف قرار دادن نیروها و اموال آمریکا توسط سپاه پاسداران انجام شد. فرماندهی مرکزی آمریکا همچنان در بالاترین سطح آماده‌باش و آمادگی کامل قرار دارد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8582\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 1096,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 یک کشتی دیگر در تنگه هرمز هدف قرار گرفت.\n\n📷🎥 <a href=\"https://t.me/Ali_bk_8/8574\">@Ali_bk_8</a>"
+          "bot_msg_id": 1097,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 یک مقام نظامی آمریکایی:\n\nامروز پیش‌تر، جنگنده‌های آمریکایی در اقدامی دفاعی از مهمات هدایت‌شونده دقیق برای حمله به یک موضع پرتاب موشک متعلق به سپاه پاسداران در جزیره قشم استفاده کردند. این حمله در پاسخ به هدف قرار دادن نیروها و اموال آمریکا توسط سپاه پاسداران انجام شد. فرماندهی مرکزی آمریکا همچنان در بالاترین سطح آماده‌باش و آمادگی کامل قرار دارد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8582\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
         {
           "source_node": "Ali_bk_8",
-          "msg_id": 8574,
-          "media_icons": "📷🎥",
-          "grouped_id": 14359518850307002,
-          "raw_text": "یک کشتی دیگر در تنگه هرمز هدف قرار گرفت.\n\nA new ship targeted in the Strait of Hormuz.",
-          "output_text": "یک کشتی دیگر در تنگه هرمز هدف قرار گرفت.",
-          "last_edit_timestamp": 1794939860.0
+          "msg_id": 8582,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "یک مقام نظامی آمریکایی:\n\nامروز پیش‌تر، جنگنده‌های آمریکایی در اقدامی دفاعی از مهمات هدایت‌شونده دقیق برای حمله به یک موضع پرتاب موشک متعلق به سپاه پاسداران در جزیره قشم استفاده کردند. این حمله در پاسخ به هدف قرار دادن نیروها و اموال آمریکا توسط سپاه پاسداران انجام شد. فرماندهی مرکزی آمریکا همچنان در بالاترین سطح آماده‌باش و آمادگی کامل قرار دارد.\n\nA US military official:\n\nEarlier today, US fighter jets used precision-guided munitions to strike an IRGC missile launch site on Qeshm Island in self-defense. The strike was in response to the IRGC targeting US personnel and property. US Central Command remains on high alert and fully prepared.",
+          "output_text": "یک مقام نظامی آمریکایی:\n\nامروز پیش‌تر، جنگنده‌های آمریکایی در اقدامی دفاعی از مهمات هدایت‌شونده دقیق برای حمله به یک موضع پرتاب موشک متعلق به سپاه پاسداران در جزیره قشم استفاده کردند. این حمله در پاسخ به هدف قرار دادن نیروها و اموال آمریکا توسط سپاه پاسداران انجام شد. فرماندهی مرکزی آمریکا همچنان در بالاترین سطح آماده‌باش و آمادگی کامل قرار دارد.",
+          "last_edit_timestamp": 1794943591.0
         }
       ],
-      "active_text_source": "Ali_bk_8_8574",
-      "sent_timestamp": 1794939859.0166357,
+      "active_text_source": "Ali_bk_8_8582",
+      "sent_timestamp": 1794943354.7147074,
       "source_node": "Ali_bk_8",
-      "msg_id": 8574,
-      "media_icons": "📷🎥",
-      "grouped_id": 14359518850307002,
-      "raw_text": "یک کشتی دیگر در تنگه هرمز هدف قرار گرفت.\n\nA new ship targeted in the Strait of Hormuz.",
-      "output_text": "یک کشتی دیگر در تنگه هرمز هدف قرار گرفت.",
+      "msg_id": 8582,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "یک مقام نظامی آمریکایی:\n\nامروز پیش‌تر، جنگنده‌های آمریکایی در اقدامی دفاعی از مهمات هدایت‌شونده دقیق برای حمله به یک موضع پرتاب موشک متعلق به سپاه پاسداران در جزیره قشم استفاده کردند. این حمله در پاسخ به هدف قرار دادن نیروها و اموال آمریکا توسط سپاه پاسداران انجام شد. فرماندهی مرکزی آمریکا همچنان در بالاترین سطح آماده‌باش و آمادگی کامل قرار دارد.\n\nA US military official:\n\nEarlier today, US fighter jets used precision-guided munitions to strike an IRGC missile launch site on Qeshm Island in self-defense. The strike was in response to the IRGC targeting US personnel and property. US Central Command remains on high alert and fully prepared.",
+      "output_text": "یک مقام نظامی آمریکایی:\n\nامروز پیش‌تر، جنگنده‌های آمریکایی در اقدامی دفاعی از مهمات هدایت‌شونده دقیق برای حمله به یک موضع پرتاب موشک متعلق به سپاه پاسداران در جزیره قشم استفاده کردند. این حمله در پاسخ به هدف قرار دادن نیروها و اموال آمریکا توسط سپاه پاسداران انجام شد. فرماندهی مرکزی آمریکا همچنان در بالاترین سطح آماده‌باش و آمادگی کامل قرار دارد.",
       "is_seismic": false,
-      "last_edit_timestamp": 1794939860.0
+      "last_edit_timestamp": 1794943591.0
     }
   },
   "pending_translations": {
@@ -75,5 +75,5 @@
       "grouped_id": null
     }
   },
-  "updated_at": "2026-11-17T19:15:08.497079+00:00"
+  "updated_at": "2026-11-17T19:41:35.534438+00:00"
 }
