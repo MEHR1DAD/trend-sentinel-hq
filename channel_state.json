@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28336,
-      "last_read_time": "2026-11-17 17:18:27 UTC"
+      "last_read_id": 28339,
+      "last_read_time": "2026-11-17 18:09:10 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8570,
-      "last_read_time": "2026-11-17 17:41:09 UTC"
+      "last_read_id": 8572,
+      "last_read_time": "2026-11-17 18:13:26 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79158,
@@ -26,11 +26,91 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794933416.6550512,
+    "@DidebanJang": 1794938294.5174632,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "withyashar_28338": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1093,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 شنیده شدن صدای انفجار در جزیره قشم ایران در پی شلیک موشک‌هایی به سمت تنگه هرمز.\n\n📝 <a href=\"https://t.me/withyashar/28338\">@withyashar</a>\n📝 <a href=\"https://t.me/Ali_bk_8/8571\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1093,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 شنیده شدن صدای انفجار در جزیره قشم ایران در پی شلیک موشک‌هایی به سمت تنگه هرمز.\n\n📝 <a href=\"https://t.me/withyashar/28338\">@withyashar</a>\n📝 <a href=\"https://t.me/Ali_bk_8/8571\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28338,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "گزارش صدای انفجار یا پرتاب از قشم\n@WarRoom 🚨🚨🚨🚨",
+          "output_text": "گزارش صدای انفجار یا پرتاب از قشم\n@WarRoom 🚨🚨🚨🚨",
+          "last_edit_timestamp": 1794938294.5174592
+        },
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8571,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "شنیده شدن صدای انفجار در جزیره قشم ایران در پی شلیک موشک‌هایی به سمت تنگه هرمز.\n\nAn explosion was heard on Iran's Qeshm Island following the launch of missiles toward the Strait of Hormuz.",
+          "output_text": "شنیده شدن صدای انفجار در جزیره قشم ایران در پی شلیک موشک‌هایی به سمت تنگه هرمز.",
+          "last_edit_timestamp": 1794938361.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8571",
+      "sent_timestamp": 1794938294.9923606,
+      "source_node": "withyashar",
+      "msg_id": 28338,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "شنیده شدن صدای انفجار در جزیره قشم ایران در پی شلیک موشک‌هایی به سمت تنگه هرمز.\n\nAn explosion was heard on Iran's Qeshm Island following the launch of missiles toward the Strait of Hormuz.",
+      "output_text": "شنیده شدن صدای انفجار در جزیره قشم ایران در پی شلیک موشک‌هایی به سمت تنگه هرمز.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794938361.0
+    },
+    "Ali_bk_8_8572": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1094,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تصاویر ماهواره‌ای آتش‌سوزی ناشی از هدف قرار گرفتن کشتی‌ها در تنگه هرمز را ثبت کرده‌اند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8572\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1094,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تصاویر ماهواره‌ای آتش‌سوزی ناشی از هدف قرار گرفتن کشتی‌ها در تنگه هرمز را ثبت کرده‌اند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8572\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8572,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "تصاویر ماهواره‌ای آتش‌سوزی ناشی از هدف قرار گرفتن کشتی‌ها در تنگه هرمز را ثبت کرده‌اند.\n\nSatellite images show a fire caused by ships being targeted in the Strait of Hormuz.",
+          "output_text": "تصاویر ماهواره‌ای آتش‌سوزی ناشی از هدف قرار گرفتن کشتی‌ها در تنگه هرمز را ثبت کرده‌اند.",
+          "last_edit_timestamp": 1794939263.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8572",
+      "sent_timestamp": 1794939237.107656,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8572,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "تصاویر ماهواره‌ای آتش‌سوزی ناشی از هدف قرار گرفتن کشتی‌ها در تنگه هرمز را ثبت کرده‌اند.\n\nSatellite images show a fire caused by ships being targeted in the Strait of Hormuz.",
+      "output_text": "تصاویر ماهواره‌ای آتش‌سوزی ناشی از هدف قرار گرفتن کشتی‌ها در تنگه هرمز را ثبت کرده‌اند.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794939263.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-17T17:55:47.461844+00:00"
+  "updated_at": "2026-11-17T18:22:13.907011+00:00"
 }
