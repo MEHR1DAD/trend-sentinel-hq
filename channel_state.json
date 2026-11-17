@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28249,
-      "last_read_time": "2026-11-17 07:47:55 UTC"
+      "last_read_id": 28252,
+      "last_read_time": "2026-11-17 08:26:32 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8505,
-      "last_read_time": "2026-11-17 07:46:32 UTC"
+      "last_read_id": 8508,
+      "last_read_time": "2026-11-17 08:26:46 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79134,
@@ -26,11 +26,54 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1794860241.730126,
+    "@DidebanJang": 1794903082.2066698,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
-  "pending_translations": {},
-  "updated_at": "2026-11-17T08:00:50.647618+00:00"
+  "sent_alerts_map": {
+    "Ali_bk_8_8506": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1069,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 سپاه پاسداران یک نفتکش متخلف را در سواحل عمان هدف قرار داد و ستون‌های غلیظ دود به هوا برخاست.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8506\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1069,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 سپاه پاسداران یک نفتکش متخلف را در سواحل عمان هدف قرار داد و ستون‌های غلیظ دود به هوا برخاست.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8506\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8506,
+          "media_icons": "📷",
+          "grouped_id": 14359224434118034,
+          "raw_text": "سپاه پاسداران یک نفتکش متخلف را در سواحل عمان هدف قرار داد و ستون‌های غلیظ دود به هوا برخاست.\n\nThe IRGC targets a noncompliant oil tanker off the coast of Oman, with thick plumes of smoke rising.",
+          "output_text": "سپاه پاسداران یک نفتکش متخلف را در سواحل عمان هدف قرار داد و ستون‌های غلیظ دود به هوا برخاست.",
+          "last_edit_timestamp": 1794903082.2066674
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8506",
+      "sent_timestamp": 1794903082.9449623,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8506,
+      "media_icons": "📷",
+      "grouped_id": 14359224434118034,
+      "raw_text": "سپاه پاسداران یک نفتکش متخلف را در سواحل عمان هدف قرار داد و ستون‌های غلیظ دود به هوا برخاست.\n\nThe IRGC targets a noncompliant oil tanker off the coast of Oman, with thick plumes of smoke rising.",
+      "output_text": "سپاه پاسداران یک نفتکش متخلف را در سواحل عمان هدف قرار داد و ستون‌های غلیظ دود به هوا برخاست.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794903076.0
+    }
+  },
+  "pending_translations": {
+    "Ali_bk_8_8508": {
+      "source_node": "Ali_bk_8",
+      "msg_id": 8508,
+      "timestamp": 1794904021.0612526,
+      "grouped_id": null
+    }
+  },
+  "updated_at": "2026-11-17T08:27:21.230903+00:00"
 }
