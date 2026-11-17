@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28286,
-      "last_read_time": "2026-11-17 10:53:24 UTC"
+      "last_read_id": 28290,
+      "last_read_time": "2026-11-17 11:23:39 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8525,
-      "last_read_time": "2026-11-17 11:01:48 UTC"
+      "last_read_id": 8526,
+      "last_read_time": "2026-11-17 11:08:54 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79134,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8518": {
-      "target_channel": "@DidehbanEghtesad",
-      "bot_msg_id": 88,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 نفتکش هدف‌قرارگرفته در تنگه هرمز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8518\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidehbanEghtesad",
-          "bot_msg_id": 88,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 نفتکش هدف‌قرارگرفته در تنگه هرمز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8518\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8518,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "نفتکش هدف‌قرارگرفته در تنگه هرمز.\n\nThe targeted tanker in the Strait of Hormuz.",
-          "output_text": "نفتکش هدف‌قرارگرفته در تنگه هرمز.",
-          "last_edit_timestamp": 1794910836.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8518",
-      "sent_timestamp": 1794910778.4865992,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8518,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "نفتکش هدف‌قرارگرفته در تنگه هرمز.\n\nThe targeted tanker in the Strait of Hormuz.",
-      "output_text": "نفتکش هدف‌قرارگرفته در تنگه هرمز.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794910836.0
-    },
     "withyashar_28284": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1074,
@@ -137,13 +102,6 @@
       "last_edit_timestamp": 1794912182.0
     }
   },
-  "pending_translations": {
-    "Ali_bk_8_8517": {
-      "source_node": "Ali_bk_8",
-      "msg_id": 8517,
-      "timestamp": 1794910194.2269745,
-      "grouped_id": null
-    }
-  },
-  "updated_at": "2026-11-17T11:06:06.944898+00:00"
+  "pending_translations": {},
+  "updated_at": "2026-11-17T11:32:31.256770+00:00"
 }
