@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28274,
-      "last_read_time": "2026-11-17 09:13:17 UTC"
+      "last_read_id": 28276,
+      "last_read_time": "2026-11-17 09:25:58 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8513,
-      "last_read_time": "2026-11-17 09:19:09 UTC"
+      "last_read_id": 8514,
+      "last_read_time": "2026-11-17 09:25:02 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79134,
@@ -31,102 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8508": {
-      "target_channel": "@DidehbanEghtesad",
-      "bot_msg_id": 85,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 یک نفتکش متخلف در تنگه هرمز در آتش می‌سوزد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8508\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidehbanEghtesad",
-          "bot_msg_id": 85,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 یک نفتکش متخلف در تنگه هرمز در آتش می‌سوزد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8508\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8508,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "یک نفتکش متخلف در تنگه هرمز در آتش می‌سوزد.\n\nA noncompliant oil tanker is burning in the Strait of Hormuz.",
-          "output_text": "یک نفتکش متخلف در تنگه هرمز در آتش می‌سوزد.",
-          "last_edit_timestamp": 1794904069.1525695
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8508",
-      "sent_timestamp": 1794904069.5668826,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8508,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "یک نفتکش متخلف در تنگه هرمز در آتش می‌سوزد.\n\nA noncompliant oil tanker is burning in the Strait of Hormuz.",
-      "output_text": "یک نفتکش متخلف در تنگه هرمز در آتش می‌سوزد.",
-      "is_seismic": false
-    },
-    "withyashar_28256": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1070,
-      "status_icon": "🚨🔕",
-      "last_formatted_text": "🚨🔕 شنیده شدن صدای انفجار در اهواز در پی انفجار مهمات منفجرنشده.\n\n📝 <a href=\"https://t.me/withyashar/28266\">@withyashar</a>\n📝 <a href=\"https://t.me/Ali_bk_8/8510\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1070,
-          "status_icon": "🚨🔕",
-          "last_formatted_text": "🚨🔕 شنیده شدن صدای انفجار در اهواز در پی انفجار مهمات منفجرنشده.\n\n📝 <a href=\"https://t.me/withyashar/28266\">@withyashar</a>\n📝 <a href=\"https://t.me/Ali_bk_8/8510\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28256,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "گزارش انفجار اهواز\n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "گزارش انفجار اهواز\n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1794904522.3122416
-        },
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8510,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "شنیده شدن صدای انفجار در اهواز در پی انفجار مهمات منفجرنشده.\n\nAn explosion was heard in Ahvaz due to the detonation of unexploded ordnance.",
-          "output_text": "شنیده شدن صدای انفجار در اهواز در پی انفجار مهمات منفجرنشده.",
-          "last_edit_timestamp": 1794904842.0
-        },
-        {
-          "source_node": "withyashar",
-          "msg_id": 28264,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "صدای انفجار اهواز ساعت 12:4",
-          "output_text": "صدای انفجار اهواز ساعت 12:4",
-          "last_edit_timestamp": 1794904765.0
-        },
-        {
-          "source_node": "withyashar",
-          "msg_id": 28266,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "حاجی از منطقه پردیس اهواز صدای شدید انفجار شنیدیم",
-          "output_text": "حاجی از منطقه پردیس اهواز صدای شدید انفجار شنیدیم",
-          "last_edit_timestamp": 1794904765.4363573
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8510",
-      "sent_timestamp": 1794904522.7308137,
-      "source_node": "withyashar",
-      "msg_id": 28256,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "شنیده شدن صدای انفجار در اهواز در پی انفجار مهمات منفجرنشده.\n\nAn explosion was heard in Ahvaz due to the detonation of unexploded ordnance.",
-      "output_text": "شنیده شدن صدای انفجار در اهواز در پی انفجار مهمات منفجرنشده.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794904842.0
-    },
     "Ali_bk_8_8511": {
       "target_channel": "@DidehbanEghtesad",
       "bot_msg_id": 86,
@@ -218,7 +122,7 @@
           "grouped_id": null,
           "raw_text": "نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.\n\nThe British Navy issues an update on the renewed targeting of a noncompliant vessel in the Strait of Hormuz, which resulted in it catching fire.",
           "output_text": "نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.",
-          "last_edit_timestamp": 1794907151.7625985
+          "last_edit_timestamp": 1794907376.0
         }
       ],
       "active_text_source": "Ali_bk_8_8513",
@@ -229,9 +133,45 @@
       "grouped_id": null,
       "raw_text": "نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.\n\nThe British Navy issues an update on the renewed targeting of a noncompliant vessel in the Strait of Hormuz, which resulted in it catching fire.",
       "output_text": "نیروی دریایی بریتانیا درباره هدف قرار گرفتن مجدد یک کشتی متخلف در تنگه هرمز که منجر به آتش‌سوزی آن شد، اطلاعیه‌ای منتشر کرد.",
-      "is_seismic": false
+      "is_seismic": false,
+      "last_edit_timestamp": 1794907376.0
+    },
+    "Ali_bk_8_8514": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1072,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سپاه پاسداران:\n\nانفجار مهیب در یک نفتکش غول‌پیکر و یک کشتی دیگر حامل گاز مایع که هر دو در تنگه هرمز مرتکب تخلف شده بودند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8514\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1072,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سپاه پاسداران:\n\nانفجار مهیب در یک نفتکش غول‌پیکر و یک کشتی دیگر حامل گاز مایع که هر دو در تنگه هرمز مرتکب تخلف شده بودند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8514\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8514,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "سپاه پاسداران:\n\nانفجار مهیب در یک نفتکش غول‌پیکر و یک کشتی دیگر حامل گاز مایع که هر دو در تنگه هرمز مرتکب تخلف شده بودند.\n\nThe IRGC:\n\nA massive explosion aboard a giant oil tanker and another vessel carrying liquefied gas, both involved in violations in the Strait of Hormuz.",
+          "output_text": "سپاه پاسداران:\n\nانفجار مهیب در یک نفتکش غول‌پیکر و یک کشتی دیگر حامل گاز مایع که هر دو در تنگه هرمز مرتکب تخلف شده بودند.",
+          "last_edit_timestamp": 1794907538.0878232
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8514",
+      "sent_timestamp": 1794907538.5827587,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8514,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "سپاه پاسداران:\n\nانفجار مهیب در یک نفتکش غول‌پیکر و یک کشتی دیگر حامل گاز مایع که هر دو در تنگه هرمز مرتکب تخلف شده بودند.\n\nThe IRGC:\n\nA massive explosion aboard a giant oil tanker and another vessel carrying liquefied gas, both involved in violations in the Strait of Hormuz.",
+      "output_text": "سپاه پاسداران:\n\nانفجار مهیب در یک نفتکش غول‌پیکر و یک کشتی دیگر حامل گاز مایع که هر دو در تنگه هرمز مرتکب تخلف شده بودند.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794907531.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-17T09:20:10.829158+00:00"
+  "updated_at": "2026-11-17T09:46:38.464040+00:00"
 }
