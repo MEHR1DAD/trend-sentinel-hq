@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28419,
-      "last_read_time": "2026-11-18 15:01:41 UTC"
+      "last_read_id": 28425,
+      "last_read_time": "2026-11-18 16:55:10 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8634,
-      "last_read_time": "2026-11-18 16:16:51 UTC"
+      "last_read_id": 8636,
+      "last_read_time": "2026-11-18 16:46:20 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79164,
@@ -26,11 +26,47 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1795015775.107289,
+    "@DidebanJang": 1795020139.5016408,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "withyashar_28422": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1118,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 رسانه های عبری : آیا در آستانه یک حمله به ایران هستیم؟ فرمانده ستاد کل نیروهای دفاعی، رئیس سازمان اطلاعات (موساد) و فرمانده فرماندهی مرکزی ارتش آمریکا، در مقر مرکزی (کریا). 🚨🚨🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/28422\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1118,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 رسانه های عبری : آیا در آستانه یک حمله به ایران هستیم؟ فرمانده ستاد کل نیروهای دفاعی، رئیس سازمان اطلاعات (موساد) و فرمانده فرماندهی مرکزی ارتش آمریکا، در مقر مرکزی (کریا). 🚨🚨🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/28422\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28422,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "رسانه های عبری : آیا در آستانه یک حمله به ایران هستیم؟\nفرمانده ستاد کل نیروهای دفاعی، رئیس سازمان اطلاعات (موساد) و فرمانده فرماندهی مرکزی ارتش آمریکا، در مقر مرکزی (کریا).\n@WarRoom 🚨🚨🚨🚨🚨",
+          "output_text": "رسانه های عبری : آیا در آستانه یک حمله به ایران هستیم؟\nفرمانده ستاد کل نیروهای دفاعی، رئیس سازمان اطلاعات (موساد) و فرمانده فرماندهی مرکزی ارتش آمریکا، در مقر مرکزی (کریا).\n@WarRoom 🚨🚨🚨🚨🚨",
+          "last_edit_timestamp": 1795020139.5016375
+        }
+      ],
+      "active_text_source": "withyashar_28422",
+      "sent_timestamp": 1795020140.0583398,
+      "source_node": "withyashar",
+      "msg_id": 28422,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "رسانه های عبری : آیا در آستانه یک حمله به ایران هستیم؟\nفرمانده ستاد کل نیروهای دفاعی، رئیس سازمان اطلاعات (موساد) و فرمانده فرماندهی مرکزی ارتش آمریکا، در مقر مرکزی (کریا).\n@WarRoom 🚨🚨🚨🚨🚨",
+      "output_text": "رسانه های عبری : آیا در آستانه یک حمله به ایران هستیم؟\nفرمانده ستاد کل نیروهای دفاعی، رئیس سازمان اطلاعات (موساد) و فرمانده فرماندهی مرکزی ارتش آمریکا، در مقر مرکزی (کریا).\n@WarRoom 🚨🚨🚨🚨🚨",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795020132.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-18T16:38:53.019135+00:00"
+  "updated_at": "2026-11-18T17:05:18.418949+00:00"
 }
