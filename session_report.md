@@ -1,16 +1,16 @@
 # Sentinel Session Report (v7.3.0 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 3
-- **Alerts Dispatched:** 0
+- **Messages Processed:** 5
+- **Alerts Dispatched:** 1
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** ‏عراقچی : من سفر بسیار موفقی به مسقط داشتم که طی آن جلسه‌ای پربار با همتای عمانی خود و همچنین جلسه‌ای مهم با سلطان عمان 
-- **Last Message Time:** 2026-11-18 19:42:46 UTC
+- **Last Message Text:** حقیقت‌یاب اتاق جنگ : دو فروند هواپیمای سوخت‌رسان آمریکایی که شایئه کردند‌ برای پشتیبانی از انتقال ۱۰ فروند جنگنده‌های F-
+- **Last Message Time:** 2026-11-18 20:08:11 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28437 (2026-11-18 19:42:46 UTC)
+- `@withyashar`: #28444 (2026-11-18 20:08:11 UTC)
 - `@Ali_bk_8`: #8647 (2026-11-18 19:40:30 UTC)
 - `@VahidOnline`: #79164 (2026-11-18 14:51:10 UTC)
 - `@iliaen`: #4759 (2026-11-17 15:25:09 UTC)
@@ -18,9 +18,9 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 86m ago
-- `@DidehbanEghtesad`: Last loud alert 7563m ago
-- `@DidebanEterazat`: Last loud alert 14822m ago
+- `@DidebanJang`: Last loud alert 113m ago
+- `@DidehbanEghtesad`: Last loud alert 7589m ago
+- `@DidebanEterazat`: Last loud alert 14849m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- *(No active posts in 60m edit/delete window)*
+- `withyashar_28441` -> @DidebanEterazat (#61) (📷, 10m ago)
