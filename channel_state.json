@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-18 00:53:18 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8604,
-      "last_read_time": "2026-11-18 01:13:58 UTC"
+      "last_read_id": 8605,
+      "last_read_time": "2026-11-18 03:32:56 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79160,
@@ -30,7 +30,43 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_8605": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1103,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 همین حالا موشکی به سمت تنگه هرمز شلیک شد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8605\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1103,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 همین حالا موشکی به سمت تنگه هرمز شلیک شد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8605\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8605,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "همین حالا موشکی به سمت تنگه هرمز شلیک شد.\n\nA missile launched toward the Strait of Hormuz now.",
+          "output_text": "همین حالا موشکی به سمت تنگه هرمز شلیک شد.",
+          "last_edit_timestamp": 1794972816.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8605",
+      "sent_timestamp": 1794972806.019304,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8605,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "همین حالا موشکی به سمت تنگه هرمز شلیک شد.\n\nA missile launched toward the Strait of Hormuz now.",
+      "output_text": "همین حالا موشکی به سمت تنگه هرمز شلیک شد.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794972816.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-18T03:16:00.217572+00:00"
+  "updated_at": "2026-11-18T03:42:24.976669+00:00"
 }
