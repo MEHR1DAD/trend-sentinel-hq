@@ -1,16 +1,16 @@
 # Sentinel Session Report (v7.3.0 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 3
-- **Alerts Dispatched:** 0
+- **Messages Processed:** 2
+- **Alerts Dispatched:** 2
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** هانگ کائو، مقام ارشد نیروی دریایی آمریکا، فاش کرد که این کشور در عملیات «خشم حماسی» علیه ایران، از موشک‌های تاریخ‌مصرف‌گ
-- **Last Message Time:** 2026-11-18 08:31:59 UTC
+- **Last Message Text:** ولی‌الله حیاتی، معاون امنیتی و انتظامی استانداری خوزستان، اعلام کرد عملیات انفجار کنترل‌شده مهمات عمل‌نکرده باقی‌مانده ا
+- **Last Message Time:** 2026-11-18 08:50:48 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28395 (2026-11-18 08:31:59 UTC)
+- `@withyashar`: #28397 (2026-11-18 08:50:48 UTC)
 - `@Ali_bk_8`: #8611 (2026-11-18 08:13:41 UTC)
 - `@VahidOnline`: #79162 (2026-11-18 05:25:48 UTC)
 - `@iliaen`: #4759 (2026-11-17 15:25:09 UTC)
@@ -18,9 +18,11 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 30m ago
-- `@DidehbanEghtesad`: Last loud alert 6892m ago
-- `@DidebanEterazat`: Last loud alert 14151m ago
+- `@DidebanJang`: Last loud alert 8m ago
+- `@DidehbanEghtesad`: Last loud alert 6918m ago
+- `@DidebanEterazat`: Last loud alert 14178m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- `withyashar_28393` -> @DidebanJang (#1108) (📝, 30m ago)
+- `withyashar_28393` -> @DidebanJang (#1108) (📝, 56m ago)
+- `withyashar_28396` -> @DidebanJang (#1109) (📝, 8m ago)
+- `withyashar_28397` -> @DidebanJang (#1110) (📝, 8m ago)
