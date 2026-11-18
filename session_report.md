@@ -1,28 +1,28 @@
 # Sentinel Session Report (v7.3.0 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 2
-- **Alerts Dispatched:** 2
+- **Messages Processed:** 1
+- **Alerts Dispatched:** 1
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** ولی‌الله حیاتی، معاون امنیتی و انتظامی استانداری خوزستان، اعلام کرد عملیات انفجار کنترل‌شده مهمات عمل‌نکرده باقی‌مانده ا
-- **Last Message Time:** 2026-11-18 08:50:48 UTC
+- **Last Message Text:** عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.  Saudi Arabia announces that its capita
+- **Last Message Time:** 2026-11-18 09:08:42 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
 - `@withyashar`: #28397 (2026-11-18 08:50:48 UTC)
-- `@Ali_bk_8`: #8611 (2026-11-18 08:13:41 UTC)
+- `@Ali_bk_8`: #8613 (2026-11-18 09:08:42 UTC)
 - `@VahidOnline`: #79162 (2026-11-18 05:25:48 UTC)
 - `@iliaen`: #4759 (2026-11-17 15:25:09 UTC)
 - `@netblocks`: #1585 (2026-11-17 18:27:48 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 8m ago
-- `@DidehbanEghtesad`: Last loud alert 6918m ago
-- `@DidebanEterazat`: Last loud alert 14178m ago
+- `@DidebanJang`: Last loud alert 35m ago
+- `@DidehbanEghtesad`: Last loud alert 6945m ago
+- `@DidebanEterazat`: Last loud alert 14204m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- `withyashar_28393` -> @DidebanJang (#1108) (📝, 56m ago)
-- `withyashar_28396` -> @DidebanJang (#1109) (📝, 8m ago)
-- `withyashar_28397` -> @DidebanJang (#1110) (📝, 8m ago)
+- `withyashar_28396` -> @DidebanJang (#1109) (📝, 35m ago)
+- `withyashar_28397` -> @DidebanJang (#1110) (📝, 34m ago)
+- `Ali_bk_8_8613` -> @DidebanJang (#1111) (📝, 17m ago)

@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-18 08:50:48 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8611,
-      "last_read_time": "2026-11-18 08:13:41 UTC"
+      "last_read_id": 8613,
+      "last_read_time": "2026-11-18 09:08:42 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79162,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28393": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1108,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 پلیس البرز: تا ساعاتی دیگر انفجار کنترل‌شده مهمات عمل‌نکرده در بخش‌هایی از استان البرز اجرا می‌شود.\n\n📝 <a href=\"https://t.me/withyashar/28393\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1108,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 پلیس البرز: تا ساعاتی دیگر انفجار کنترل‌شده مهمات عمل‌نکرده در بخش‌هایی از استان البرز اجرا می‌شود.\n\n📝 <a href=\"https://t.me/withyashar/28393\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28393,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "پلیس البرز: تا ساعاتی دیگر انفجار کنترل‌شده مهمات عمل‌نکرده در بخش‌هایی از استان البرز اجرا می‌شود.\n@WarRoom",
-          "output_text": "پلیس البرز: تا ساعاتی دیگر انفجار کنترل‌شده مهمات عمل‌نکرده در بخش‌هایی از استان البرز اجرا می‌شود.\n@WarRoom",
-          "last_edit_timestamp": 1794988955.495425
-        }
-      ],
-      "active_text_source": "withyashar_28393",
-      "sent_timestamp": 1794988955.957566,
-      "source_node": "withyashar",
-      "msg_id": 28393,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "پلیس البرز: تا ساعاتی دیگر انفجار کنترل‌شده مهمات عمل‌نکرده در بخش‌هایی از استان البرز اجرا می‌شود.\n@WarRoom",
-      "output_text": "پلیس البرز: تا ساعاتی دیگر انفجار کنترل‌شده مهمات عمل‌نکرده در بخش‌هایی از استان البرز اجرا می‌شود.\n@WarRoom",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794988947.0
-    },
     "withyashar_28396": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1109,
@@ -135,8 +100,43 @@
       "output_text": "ولی‌الله حیاتی، معاون امنیتی و انتظامی استانداری خوزستان، اعلام کرد عملیات انفجار کنترل‌شده مهمات عمل‌نکرده باقی‌مانده از جنگ ایران از ساعت ۱۲ ظهر امروز در اطراف اهواز ادامه می‌یابد. این عملیات از دوشنبه ۲۵ آبان آغاز شده و به گفته مسئولان، انفجارها برنامه‌ریزی‌شده هستند و جای نگرانی برای شهروندان وجود ندارد.\n@WarRoom",
       "is_seismic": false,
       "last_edit_timestamp": 1794991855.0
+    },
+    "Ali_bk_8_8613": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1111,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8613\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1111,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8613\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8613,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.\n\nSaudi Arabia announces that its capital, Riyadh, has been targeted by cruise missiles.",
+          "output_text": "عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.",
+          "last_edit_timestamp": 1794992932.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8613",
+      "sent_timestamp": 1794992929.1537664,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8613,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.\n\nSaudi Arabia announces that its capital, Riyadh, has been targeted by cruise missiles.",
+      "output_text": "عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794992932.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-18T08:59:25.221364+00:00"
+  "updated_at": "2026-11-18T09:25:49.398975+00:00"
 }
