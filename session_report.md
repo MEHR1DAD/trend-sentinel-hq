@@ -1,16 +1,16 @@
 # Sentinel Session Report (v7.3.0 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 3
-- **Alerts Dispatched:** 0
+- **Messages Processed:** 1
+- **Alerts Dispatched:** 1
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** رافائل گروسی، مدیرکل آژانس بین‌المللی انرژی اتمی، روز چهارشنبه ۲۷ آبان اعلام کرد که این نهاد، به‌استثنای نیروگاه هسته‌ای
-- **Last Message Time:** 2026-11-18 14:51:10 UTC
+- **Last Message Text:** رسانه‌های رژیم : صدای انفجار در بندرعباس شنیده شد؛ گزارش‌ها حاکی از شلیک موشک به سمت شناورهایی است که در تنگه هرمز مرتکب
+- **Last Message Time:** 2026-11-18 15:01:41 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28418 (2026-11-18 14:01:04 UTC)
+- `@withyashar`: #28419 (2026-11-18 15:01:41 UTC)
 - `@Ali_bk_8`: #8629 (2026-11-18 14:33:21 UTC)
 - `@VahidOnline`: #79164 (2026-11-18 14:51:10 UTC)
 - `@iliaen`: #4759 (2026-11-17 15:25:09 UTC)
@@ -18,9 +18,10 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 32m ago
-- `@DidehbanEghtesad`: Last loud alert 7272m ago
-- `@DidebanEterazat`: Last loud alert 14531m ago
+- `@DidebanJang`: Last loud alert 17m ago
+- `@DidehbanEghtesad`: Last loud alert 7298m ago
+- `@DidebanEterazat`: Last loud alert 14558m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- `Ali_bk_8_8627` -> @DidebanJang (#1115) (📷🎥, 32m ago)
+- `Ali_bk_8_8627` -> @DidebanJang (#1115) (📷🎥, 59m ago)
+- `withyashar_28419` -> @DidebanJang (#1116) (📝, 17m ago)
