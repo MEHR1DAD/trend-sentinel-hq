@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8606": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1104,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 ارتش ایران:\n\nسامانه‌های پدافند هوایی «پاتریوت» و سکوهای پرتاب پهپاد و موشک آمریکا در پایگاه هوایی علی السالم در کویت، بامداد امروز با پهپاد هدف قرار گرفتند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8606\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1104,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 ارتش ایران:\n\nسامانه‌های پدافند هوایی «پاتریوت» و سکوهای پرتاب پهپاد و موشک آمریکا در پایگاه هوایی علی السالم در کویت، بامداد امروز با پهپاد هدف قرار گرفتند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8606\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8606,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "ارتش ایران:\n\nسامانه‌های پدافند هوایی «پاتریوت» و سکوهای پرتاب پهپاد و موشک آمریکا در پایگاه هوایی علی السالم در کویت، بامداد امروز با پهپاد هدف قرار گرفتند.\n\nIranian Army:\n\nPatriot air defense systems and U.S. drone and missile launch platforms at Ali Al Salem Air Base in Kuwait were targeted by drones at dawn today.",
-          "output_text": "ارتش ایران:\n\nسامانه‌های پدافند هوایی «پاتریوت» و سکوهای پرتاب پهپاد و موشک آمریکا در پایگاه هوایی علی السالم در کویت، بامداد امروز با پهپاد هدف قرار گرفتند.",
-          "last_edit_timestamp": 1794974035.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8606",
-      "sent_timestamp": 1794974003.509873,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8606,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "ارتش ایران:\n\nسامانه‌های پدافند هوایی «پاتریوت» و سکوهای پرتاب پهپاد و موشک آمریکا در پایگاه هوایی علی السالم در کویت، بامداد امروز با پهپاد هدف قرار گرفتند.\n\nIranian Army:\n\nPatriot air defense systems and U.S. drone and missile launch platforms at Ali Al Salem Air Base in Kuwait were targeted by drones at dawn today.",
-      "output_text": "ارتش ایران:\n\nسامانه‌های پدافند هوایی «پاتریوت» و سکوهای پرتاب پهپاد و موشک آمریکا در پایگاه هوایی علی السالم در کویت، بامداد امروز با پهپاد هدف قرار گرفتند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794974035.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-18T04:35:14.538779+00:00"
+  "updated_at": "2026-11-18T05:01:37.183521+00:00"
 }
