@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-18 09:51:41 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8613,
-      "last_read_time": "2026-11-18 09:08:42 UTC"
+      "last_read_id": 8617,
+      "last_read_time": "2026-11-18 10:15:59 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79162,
@@ -31,42 +31,41 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8613": {
+    "Ali_bk_8_8616": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 1111,
+      "bot_msg_id": 1112,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8613\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 پهپادها در آسمان استان بابل عراق در حال پرواز هستند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8616\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 1111,
+          "bot_msg_id": 1112,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8613\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 پهپادها در آسمان استان بابل عراق در حال پرواز هستند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8616\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
         {
           "source_node": "Ali_bk_8",
-          "msg_id": 8613,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.\n\nSaudi Arabia announces that its capital, Riyadh, has been targeted by cruise missiles.",
-          "output_text": "عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.",
-          "last_edit_timestamp": 1794992932.0
+          "msg_id": 8616,
+          "media_icons": "🎥",
+          "grouped_id": 14359975671311306,
+          "raw_text": "پهپادها در آسمان استان بابل عراق در حال پرواز هستند.\n\nDrones are flying over Iraq's Babil Governorate.",
+          "output_text": "پهپادها در آسمان استان بابل عراق در حال پرواز هستند.",
+          "last_edit_timestamp": 1794997056.2752142
         }
       ],
-      "active_text_source": "Ali_bk_8_8613",
-      "sent_timestamp": 1794992929.1537664,
+      "active_text_source": "Ali_bk_8_8616",
+      "sent_timestamp": 1794997056.7529416,
       "source_node": "Ali_bk_8",
-      "msg_id": 8613,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.\n\nSaudi Arabia announces that its capital, Riyadh, has been targeted by cruise missiles.",
-      "output_text": "عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف موشک‌های کروز قرار گرفته است.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1794992932.0
+      "msg_id": 8616,
+      "media_icons": "🎥",
+      "grouped_id": 14359975671311306,
+      "raw_text": "پهپادها در آسمان استان بابل عراق در حال پرواز هستند.\n\nDrones are flying over Iraq's Babil Governorate.",
+      "output_text": "پهپادها در آسمان استان بابل عراق در حال پرواز هستند.",
+      "is_seismic": false
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-18T09:52:12.778370+00:00"
+  "updated_at": "2026-11-18T10:18:35.165369+00:00"
 }
