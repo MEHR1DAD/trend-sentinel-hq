@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28447,
-      "last_read_time": "2026-11-18 21:01:49 UTC"
+      "last_read_id": 28448,
+      "last_read_time": "2026-11-18 21:19:27 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8650,
-      "last_read_time": "2026-11-18 21:01:09 UTC"
+      "last_read_id": 8651,
+      "last_read_time": "2026-11-18 21:18:10 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79164,
@@ -30,78 +30,7 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8648": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1123,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خدا موفق شدند فرودگاه بین‌المللی ملک خالد و مرکز مالی در پایتخت دشمن سعودی، ریاض، را با تعداد زیادی موشک کروز هدف قرار دهند. اصابت‌ها دقیق و مستقیم بود. این حمله در چارچوب پاسخ به هدف قرار دادن تأسیسات غیرنظامی در کشور عزیزمان از سوی دشمن سعودی صورت می‌گیرد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8648\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1123,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خدا موفق شدند فرودگاه بین‌المللی ملک خالد و مرکز مالی در پایتخت دشمن سعودی، ریاض، را با تعداد زیادی موشک کروز هدف قرار دهند. اصابت‌ها دقیق و مستقیم بود. این حمله در چارچوب پاسخ به هدف قرار دادن تأسیسات غیرنظامی در کشور عزیزمان از سوی دشمن سعودی صورت می‌گیرد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8648\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8648,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خدا موفق شدند فرودگاه بین‌المللی ملک خالد و مرکز مالی در پایتخت دشمن سعودی، ریاض، را با تعداد زیادی موشک کروز هدف قرار دهند. اصابت‌ها دقیق و مستقیم بود. این حمله در چارچوب پاسخ به هدف قرار دادن تأسیسات غیرنظامی در کشور عزیزمان از سوی دشمن سعودی صورت می‌گیرد.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nThanks to God, our armed forces successfully targeted King Khalid International Airport and the financial center in the Saudi enemy's capital, Riyadh, with a large number of cruise missiles. The strikes were accurate and direct. This targeting comes in response to the Saudi enemy's targeting of civilian facilities in our beloved country.",
-          "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خدا موفق شدند فرودگاه بین‌المللی ملک خالد و مرکز مالی در پایتخت دشمن سعودی، ریاض، را با تعداد زیادی موشک کروز هدف قرار دهند. اصابت‌ها دقیق و مستقیم بود. این حمله در چارچوب پاسخ به هدف قرار دادن تأسیسات غیرنظامی در کشور عزیزمان از سوی دشمن سعودی صورت می‌گیرد.",
-          "last_edit_timestamp": 1795033773.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8648",
-      "sent_timestamp": 1795033065.5689464,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8648,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خدا موفق شدند فرودگاه بین‌المللی ملک خالد و مرکز مالی در پایتخت دشمن سعودی، ریاض، را با تعداد زیادی موشک کروز هدف قرار دهند. اصابت‌ها دقیق و مستقیم بود. این حمله در چارچوب پاسخ به هدف قرار دادن تأسیسات غیرنظامی در کشور عزیزمان از سوی دشمن سعودی صورت می‌گیرد.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nThanks to God, our armed forces successfully targeted King Khalid International Airport and the financial center in the Saudi enemy's capital, Riyadh, with a large number of cruise missiles. The strikes were accurate and direct. This targeting comes in response to the Saudi enemy's targeting of civilian facilities in our beloved country.",
-      "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خدا موفق شدند فرودگاه بین‌المللی ملک خالد و مرکز مالی در پایتخت دشمن سعودی، ریاض، را با تعداد زیادی موشک کروز هدف قرار دهند. اصابت‌ها دقیق و مستقیم بود. این حمله در چارچوب پاسخ به هدف قرار دادن تأسیسات غیرنظامی در کشور عزیزمان از سوی دشمن سعودی صورت می‌گیرد.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795033773.0
-    },
-    "Ali_bk_8_8649": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1124,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 ارتش ایران:\n\nاز صبح امروز، 3 نفتکش متخلف پس از برخورد با مین‌های دریایی در منطقه ممنوعه در شرق تنگه هرمز دچار آتش‌سوزی شده و از حرکت بازمانده‌اند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8649\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1124,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 ارتش ایران:\n\nاز صبح امروز، 3 نفتکش متخلف پس از برخورد با مین‌های دریایی در منطقه ممنوعه در شرق تنگه هرمز دچار آتش‌سوزی شده و از حرکت بازمانده‌اند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8649\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8649,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "ارتش ایران:\n\nاز صبح امروز، 3 نفتکش متخلف پس از برخورد با مین‌های دریایی در منطقه ممنوعه در شرق تنگه هرمز دچار آتش‌سوزی شده و از حرکت بازمانده‌اند.\n\nThe Iranian Army:\n\nSince this morning, fires have broken out aboard 3 noncompliant oil tankers, which have come to a standstill after striking naval mines while sailing in the prohibited area east of the Strait of Hormuz.",
-          "output_text": "ارتش ایران:\n\nاز صبح امروز، 3 نفتکش متخلف پس از برخورد با مین‌های دریایی در منطقه ممنوعه در شرق تنگه هرمز دچار آتش‌سوزی شده و از حرکت بازمانده‌اند.",
-          "last_edit_timestamp": 1795033927.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8649",
-      "sent_timestamp": 1795033152.4754975,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8649,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "ارتش ایران:\n\nاز صبح امروز، 3 نفتکش متخلف پس از برخورد با مین‌های دریایی در منطقه ممنوعه در شرق تنگه هرمز دچار آتش‌سوزی شده و از حرکت بازمانده‌اند.\n\nThe Iranian Army:\n\nSince this morning, fires have broken out aboard 3 noncompliant oil tankers, which have come to a standstill after striking naval mines while sailing in the prohibited area east of the Strait of Hormuz.",
-      "output_text": "ارتش ایران:\n\nاز صبح امروز، 3 نفتکش متخلف پس از برخورد با مین‌های دریایی در منطقه ممنوعه در شرق تنگه هرمز دچار آتش‌سوزی شده و از حرکت بازمانده‌اند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795033927.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-18T21:11:34.193495+00:00"
+  "updated_at": "2026-11-18T21:37:57.192314+00:00"
 }
