@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28398,
-      "last_read_time": "2026-11-18 09:51:41 UTC"
+      "last_read_id": 28404,
+      "last_read_time": "2026-11-18 10:30:37 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8617,
-      "last_read_time": "2026-11-18 10:15:59 UTC"
+      "last_read_id": 8618,
+      "last_read_time": "2026-11-18 10:42:40 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79162,
@@ -64,8 +64,78 @@
       "raw_text": "پهپادها در آسمان استان بابل عراق در حال پرواز هستند.\n\nDrones are flying over Iraq's Babil Governorate.",
       "output_text": "پهپادها در آسمان استان بابل عراق در حال پرواز هستند.",
       "is_seismic": false
+    },
+    "withyashar_28403": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 92,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تن ماهی گران شد. قیمت هر قوطی ۱۸۰ گرمی با درِ آسان‌بازشو از ۲۹۹ هزار تومان به ۳۲۹ هزار تومان رسید.\n\n📝 <a href=\"https://t.me/withyashar/28403\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 92,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تن ماهی گران شد. قیمت هر قوطی ۱۸۰ گرمی با درِ آسان‌بازشو از ۲۹۹ هزار تومان به ۳۲۹ هزار تومان رسید.\n\n📝 <a href=\"https://t.me/withyashar/28403\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28403,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "تن ماهی گران شد.\nقیمت هر قوطی ۱۸۰ گرمی با درِ آسان‌بازشو از ۲۹۹ هزار تومان به ۳۲۹ هزار تومان رسید.\n@WarRoom",
+          "output_text": "تن ماهی گران شد.\nقیمت هر قوطی ۱۸۰ گرمی با درِ آسان‌بازشو از ۲۹۹ هزار تومان به ۳۲۹ هزار تومان رسید.\n@WarRoom",
+          "last_edit_timestamp": 1794998338.0
+        }
+      ],
+      "active_text_source": "withyashar_28403",
+      "sent_timestamp": 1794997718.0902598,
+      "source_node": "withyashar",
+      "msg_id": 28403,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "تن ماهی گران شد.\nقیمت هر قوطی ۱۸۰ گرمی با درِ آسان‌بازشو از ۲۹۹ هزار تومان به ۳۲۹ هزار تومان رسید.\n@WarRoom",
+      "output_text": "تن ماهی گران شد.\nقیمت هر قوطی ۱۸۰ گرمی با درِ آسان‌بازشو از ۲۹۹ هزار تومان به ۳۲۹ هزار تومان رسید.\n@WarRoom",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794998338.0
+    },
+    "Ali_bk_8_8618": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1113,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 ارتش ایران از سرنگونی یک پهپاد آمریکایی MQ-9 در شرق تنگه هرمز خبر داد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8618\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1113,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 ارتش ایران از سرنگونی یک پهپاد آمریکایی MQ-9 در شرق تنگه هرمز خبر داد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8618\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8618,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "ارتش ایران از سرنگونی یک پهپاد آمریکایی MQ-9 در شرق تنگه هرمز خبر داد.\n\nThe Iranian army announces that it has shot down a US MQ-9 drone east of the Strait of Hormuz.",
+          "output_text": "ارتش ایران از سرنگونی یک پهپاد آمریکایی MQ-9 در شرق تنگه هرمز خبر داد.",
+          "last_edit_timestamp": 1794998604.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8618",
+      "sent_timestamp": 1794998598.6830914,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8618,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "ارتش ایران از سرنگونی یک پهپاد آمریکایی MQ-9 در شرق تنگه هرمز خبر داد.\n\nThe Iranian army announces that it has shot down a US MQ-9 drone east of the Strait of Hormuz.",
+      "output_text": "ارتش ایران از سرنگونی یک پهپاد آمریکایی MQ-9 در شرق تنگه هرمز خبر داد.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1794998604.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-18T10:18:35.165369+00:00"
+  "updated_at": "2026-11-18T10:45:01.895169+00:00"
 }
