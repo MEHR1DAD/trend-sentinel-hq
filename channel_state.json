@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28433,
-      "last_read_time": "2026-11-18 18:49:12 UTC"
+      "last_read_id": 28436,
+      "last_read_time": "2026-11-18 19:09:34 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8644,
-      "last_read_time": "2026-11-18 18:46:01 UTC"
+      "last_read_id": 8645,
+      "last_read_time": "2026-11-18 18:52:21 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79164,
@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8642": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1122,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 تصاویر بیشتری از لحظه فعال شدن پدافند هوایی ایران در خوزستان.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8642\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1122,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 تصاویر بیشتری از لحظه فعال شدن پدافند هوایی ایران در خوزستان.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8642\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8642,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "تصاویر بیشتری از لحظه فعال شدن پدافند هوایی ایران در خوزستان.\n\nMore footage of the moment Iranian air defenses were activated in Khuzestan.",
-          "output_text": "تصاویر بیشتری از لحظه فعال شدن پدافند هوایی ایران در خوزستان.",
-          "last_edit_timestamp": 1795025813.8402946
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8642",
-      "sent_timestamp": 1795025814.343997,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8642,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "تصاویر بیشتری از لحظه فعال شدن پدافند هوایی ایران در خوزستان.\n\nMore footage of the moment Iranian air defenses were activated in Khuzestan.",
-      "output_text": "تصاویر بیشتری از لحظه فعال شدن پدافند هوایی ایران در خوزستان.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795025808.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-18T18:51:05.024133+00:00"
+  "updated_at": "2026-11-18T19:17:28.209435+00:00"
 }
