@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-18 20:08:11 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8647,
-      "last_read_time": "2026-11-18 19:40:30 UTC"
+      "last_read_id": 8648,
+      "last_read_time": "2026-11-18 20:17:21 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79164,
@@ -64,8 +64,43 @@
       "raw_text": "کمیته سوم مجمع عمومی سازمان ملل متحد، امروز چهارشنبه ۲۷ آبان، قطعنامه پیشنهادی کانادا در محکومیت نقض حقوق بشر در ایران را با ۷۶ رأی موافق، ۲۷ رأی مخالف و ۶۴ رأی ممتنع تصویب کرد. این قطعنامه به افزایش اعدام‌ها، بازداشت‌های خودسرانه، سرکوب زنان و دختران و تبعیض علیه اقلیت‌ها اشاره دارد و برای تصویب نهایی به مجمع عمومی ارجاع خواهد شد. \n@WarRoom",
       "output_text": "کمیته سوم مجمع عمومی سازمان ملل متحد، امروز چهارشنبه ۲۷ آبان، قطعنامه پیشنهادی کانادا در محکومیت نقض حقوق بشر در ایران را با ۷۶ رأی موافق، ۲۷ رأی مخالف و ۶۴ رأی ممتنع تصویب کرد. این قطعنامه به افزایش اعدام‌ها، بازداشت‌های خودسرانه، سرکوب زنان و دختران و تبعیض علیه اقلیت‌ها اشاره دارد و برای تصویب نهایی به مجمع عمومی ارجاع خواهد شد. \n@WarRoom",
       "is_seismic": false
+    },
+    "Ali_bk_8_8648": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1123,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند موفق شدند فرودگاه بین‌المللی ملک خالد و مرکز مالی در پایتخت دشمن سعودی، ریاض را با تعداد زیادی موشک کروز هدف قرار دهند. این حملات دقیق و مستقیم بودند. این حمله در چارچوب پاسخ به هدف قرار دادن تأسیسات غیرنظامی کشور عزیزمان توسط دشمن سعودی انجام شده است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8648\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1123,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند موفق شدند فرودگاه بین‌المللی ملک خالد و مرکز مالی در پایتخت دشمن سعودی، ریاض را با تعداد زیادی موشک کروز هدف قرار دهند. این حملات دقیق و مستقیم بودند. این حمله در چارچوب پاسخ به هدف قرار دادن تأسیسات غیرنظامی کشور عزیزمان توسط دشمن سعودی انجام شده است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8648\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8648,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند موفق شدند فرودگاه بین‌المللی ملک خالد و مرکز مالی در پایتخت دشمن سعودی، ریاض را با تعداد زیادی موشک کروز هدف قرار دهند. این حملات دقیق و مستقیم بودند. این حمله در چارچوب پاسخ به هدف قرار دادن تأسیسات غیرنظامی کشور عزیزمان توسط دشمن سعودی انجام شده است.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nThanks to God, our armed forces successfully targeted King Khalid International Airport and the Financial District in the Saudi enemy’s capital, Riyadh, with a large number of cruise missiles. The strikes were accurate and direct. This targeting comes as part of the response to the Saudi enemy’s targeting of civilian facilities in our beloved country.",
+          "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند موفق شدند فرودگاه بین‌المللی ملک خالد و مرکز مالی در پایتخت دشمن سعودی، ریاض را با تعداد زیادی موشک کروز هدف قرار دهند. این حملات دقیق و مستقیم بودند. این حمله در چارچوب پاسخ به هدف قرار دادن تأسیسات غیرنظامی کشور عزیزمان توسط دشمن سعودی انجام شده است.",
+          "last_edit_timestamp": 1795033097.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8648",
+      "sent_timestamp": 1795033065.5689464,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8648,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند موفق شدند فرودگاه بین‌المللی ملک خالد و مرکز مالی در پایتخت دشمن سعودی، ریاض را با تعداد زیادی موشک کروز هدف قرار دهند. این حملات دقیق و مستقیم بودند. این حمله در چارچوب پاسخ به هدف قرار دادن تأسیسات غیرنظامی کشور عزیزمان توسط دشمن سعودی انجام شده است.\n\nYemeni Armed Forces spokesman Brigadier General Yahya Saree:\n\nThanks to God, our armed forces successfully targeted King Khalid International Airport and the Financial District in the Saudi enemy’s capital, Riyadh, with a large number of cruise missiles. The strikes were accurate and direct. This targeting comes as part of the response to the Saudi enemy’s targeting of civilian facilities in our beloved country.",
+      "output_text": "سخنگوی نیروهای مسلح یمن، سرتیپ یحیی سریع:\n\nنیروهای مسلح ما به لطف خداوند موفق شدند فرودگاه بین‌المللی ملک خالد و مرکز مالی در پایتخت دشمن سعودی، ریاض را با تعداد زیادی موشک کروز هدف قرار دهند. این حملات دقیق و مستقیم بودند. این حمله در چارچوب پاسخ به هدف قرار دادن تأسیسات غیرنظامی کشور عزیزمان توسط دشمن سعودی انجام شده است.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795033097.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-18T20:10:19.725005+00:00"
+  "updated_at": "2026-11-18T20:18:21.318471+00:00"
 }
