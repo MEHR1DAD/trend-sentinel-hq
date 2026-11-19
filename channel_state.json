@@ -31,85 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8683": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1132,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویر جدیدی از یک کشتی متخلف که روز گذشته در تنگه هرمز هدف قرار گرفت.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8683\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1132,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویر جدیدی از یک کشتی متخلف که روز گذشته در تنگه هرمز هدف قرار گرفت.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8683\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8683,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "تصاویر جدیدی از یک کشتی متخلف که روز گذشته در تنگه هرمز هدف قرار گرفت.\n\nNew footage of a noncompliant vessel targeted in the Strait of Hormuz yesterday.",
-          "output_text": "تصاویر جدیدی از یک کشتی متخلف که روز گذشته در تنگه هرمز هدف قرار گرفت.",
-          "last_edit_timestamp": 1795090694.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8683",
-      "sent_timestamp": 1795090609.3518658,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8683,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "تصاویر جدیدی از یک کشتی متخلف که روز گذشته در تنگه هرمز هدف قرار گرفت.\n\nNew footage of a noncompliant vessel targeted in the Strait of Hormuz yesterday.",
-      "output_text": "تصاویر جدیدی از یک کشتی متخلف که روز گذشته در تنگه هرمز هدف قرار گرفت.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795090694.0
-    },
-    "Ali_bk_8_8685": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1133,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 آکسیوس به نقل از منابع:\n\nکاخ سفید از پنتاگون و کارشناسان اطلاعاتی خواسته است ارزیابی کنند که ایران در واکنش به هر یک از سناریوهای حمله‌ای که ارتش آمریکا آماده کرده است، چه واکنشی نشان خواهد داد.\n\nهمچنین درباره امکان جلوگیری از برانگیخته شدن واکنشی ویرانگر از سوی ایران که تأسیسات نفت و گاز کشورهای حاشیه خلیج فارس را هدف قرار دهد، پرس‌وجو شده است.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8685\">@Ali_bk_8</a>\n📝 <a href=\"https://t.me/withyashar/28492\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1133,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 آکسیوس به نقل از منابع:\n\nکاخ سفید از پنتاگون و کارشناسان اطلاعاتی خواسته است ارزیابی کنند که ایران در واکنش به هر یک از سناریوهای حمله‌ای که ارتش آمریکا آماده کرده است، چه واکنشی نشان خواهد داد.\n\nهمچنین درباره امکان جلوگیری از برانگیخته شدن واکنشی ویرانگر از سوی ایران که تأسیسات نفت و گاز کشورهای حاشیه خلیج فارس را هدف قرار دهد، پرس‌وجو شده است.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8685\">@Ali_bk_8</a>\n📝 <a href=\"https://t.me/withyashar/28492\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8685,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "آکسیوس به نقل از منابع:\n\nکاخ سفید از پنتاگون و کارشناسان اطلاعاتی خواسته است ارزیابی کنند که ایران در واکنش به هر یک از سناریوهای حمله‌ای که ارتش آمریکا آماده کرده است، چه واکنشی نشان خواهد داد.\n\nهمچنین درباره امکان جلوگیری از برانگیخته شدن واکنشی ویرانگر از سوی ایران که تأسیسات نفت و گاز کشورهای حاشیه خلیج فارس را هدف قرار دهد، پرس‌وجو شده است.\n\nAxios, citing sources:\n\nThe White House has asked the Pentagon and intelligence experts to assess how Iran would respond to each of the strike scenarios prepared by the US military.\n\nIt also asked whether any of the options under consideration could avoid triggering a devastating Iranian response targeting oil and gas facilities in the Gulf states.",
-          "output_text": "آکسیوس به نقل از منابع:\n\nکاخ سفید از پنتاگون و کارشناسان اطلاعاتی خواسته است ارزیابی کنند که ایران در واکنش به هر یک از سناریوهای حمله‌ای که ارتش آمریکا آماده کرده است، چه واکنشی نشان خواهد داد.\n\nهمچنین درباره امکان جلوگیری از برانگیخته شدن واکنشی ویرانگر از سوی ایران که تأسیسات نفت و گاز کشورهای حاشیه خلیج فارس را هدف قرار دهد، پرس‌وجو شده است.",
-          "last_edit_timestamp": 1795091639.0
-        },
-        {
-          "source_node": "withyashar",
-          "msg_id": 28492,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "باراک راوید ، آکسیوس : به گفته دو منبع آگاه، کاخ سفید از پنتاگون و کارشناسان اطلاعاتی خواسته است ارزیابی کنند که ایران به هر یک از سناریوهای حمله نظامی طراحی‌شده توسط ارتش آمریکا چه واکنشی نشان خواهد داد. کاخ سفید همچنین پرسیده است آیا گزینه‌ای وجود دارد که بتواند از واکنش تلافی‌جویانه و ویرانگر ایران علیه تأسیسات نفت و گاز کشورهای حاشیه خلیج فارس جلوگیری کند.\n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "باراک راوید ، آکسیوس : به گفته دو منبع آگاه، کاخ سفید از پنتاگون و کارشناسان اطلاعاتی خواسته است ارزیابی کنند که ایران به هر یک از سناریوهای حمله نظامی طراحی‌شده توسط ارتش آمریکا چه واکنشی نشان خواهد داد. کاخ سفید همچنین پرسیده است آیا گزینه‌ای وجود دارد که بتواند از واکنش تلافی‌جویانه و ویرانگر ایران علیه تأسیسات نفت و گاز کشورهای حاشیه خلیج فارس جلوگیری کند.\n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1795092940.0931466
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8685",
-      "sent_timestamp": 1795091392.2430618,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8685,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "آکسیوس به نقل از منابع:\n\nکاخ سفید از پنتاگون و کارشناسان اطلاعاتی خواسته است ارزیابی کنند که ایران در واکنش به هر یک از سناریوهای حمله‌ای که ارتش آمریکا آماده کرده است، چه واکنشی نشان خواهد داد.\n\nهمچنین درباره امکان جلوگیری از برانگیخته شدن واکنشی ویرانگر از سوی ایران که تأسیسات نفت و گاز کشورهای حاشیه خلیج فارس را هدف قرار دهد، پرس‌وجو شده است.\n\nAxios, citing sources:\n\nThe White House has asked the Pentagon and intelligence experts to assess how Iran would respond to each of the strike scenarios prepared by the US military.\n\nIt also asked whether any of the options under consideration could avoid triggering a devastating Iranian response targeting oil and gas facilities in the Gulf states.",
-      "output_text": "آکسیوس به نقل از منابع:\n\nکاخ سفید از پنتاگون و کارشناسان اطلاعاتی خواسته است ارزیابی کنند که ایران در واکنش به هر یک از سناریوهای حمله‌ای که ارتش آمریکا آماده کرده است، چه واکنشی نشان خواهد داد.\n\nهمچنین درباره امکان جلوگیری از برانگیخته شدن واکنشی ویرانگر از سوی ایران که تأسیسات نفت و گاز کشورهای حاشیه خلیج فارس را هدف قرار دهد، پرس‌وجو شده است.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795092935.0
-    },
     "VahidOnline_79170": {
       "target_channel": "@DidebanEterazat",
       "bot_msg_id": 62,
@@ -217,5 +138,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-19T13:10:39.250044+00:00"
+  "updated_at": "2026-11-19T13:37:05.547287+00:00"
 }
