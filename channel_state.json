@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28527,
-      "last_read_time": "2026-11-19 22:44:24 UTC"
+      "last_read_id": 28528,
+      "last_read_time": "2026-11-19 23:27:30 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8721,
-      "last_read_time": "2026-11-19 22:23:05 UTC"
+      "last_read_id": 8723,
+      "last_read_time": "2026-11-19 23:27:31 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79177,
@@ -26,11 +26,54 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1795107960.3381991,
+    "@DidebanJang": 1795129452.5026064,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
-  "pending_translations": {},
-  "updated_at": "2026-11-19T23:01:43.850902+00:00"
+  "sent_alerts_map": {
+    "Ali_bk_8_8722": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1145,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 حمله پهپادی در صنعا، پایتخت یمن، و فعال شدن سامانه‌های پدافند هوایی زمینی.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8722\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1145,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 حمله پهپادی در صنعا، پایتخت یمن، و فعال شدن سامانه‌های پدافند هوایی زمینی.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8722\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8722,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "حمله پهپادی در صنعا، پایتخت یمن، و فعال شدن سامانه‌های پدافند هوایی زمینی.\n\nDrone attack in the Yemeni capital, Sanaa, and activation of ground-based air defenses.",
+          "output_text": "حمله پهپادی در صنعا، پایتخت یمن، و فعال شدن سامانه‌های پدافند هوایی زمینی.",
+          "last_edit_timestamp": 1795129624.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8722",
+      "sent_timestamp": 1795129452.9552197,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8722,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "حمله پهپادی در صنعا، پایتخت یمن، و فعال شدن سامانه‌های پدافند هوایی زمینی.\n\nDrone attack in the Yemeni capital, Sanaa, and activation of ground-based air defenses.",
+      "output_text": "حمله پهپادی در صنعا، پایتخت یمن، و فعال شدن سامانه‌های پدافند هوایی زمینی.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795129624.0
+    }
+  },
+  "pending_translations": {
+    "Ali_bk_8_8723": {
+      "source_node": "Ali_bk_8",
+      "msg_id": 8723,
+      "timestamp": 1795130873.006691,
+      "grouped_id": null
+    }
+  },
+  "updated_at": "2026-11-19T23:28:11.094750+00:00"
 }
