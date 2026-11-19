@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28484,
-      "last_read_time": "2026-11-19 09:48:16 UTC"
+      "last_read_id": 28487,
+      "last_read_time": "2026-11-19 10:39:59 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8673,
-      "last_read_time": "2026-11-19 09:54:48 UTC"
+      "last_read_id": 8674,
+      "last_read_time": "2026-11-19 10:31:21 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79169,
@@ -65,8 +65,43 @@
       "last_edit_timestamp": 1795082241.0,
       "target_channel": "@DidehbanEghtesad",
       "bot_msg_id": 95
+    },
+    "Ali_bk_8_8674": {
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 ارتش ایران از انفجار 3 نفتکش در تنگه هرمز از صبح امروز خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8674\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1130,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 ارتش ایران از انفجار 3 نفتکش در تنگه هرمز از صبح امروز خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8674\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8674,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "ارتش ایران از انفجار 3 نفتکش در تنگه هرمز از صبح امروز خبر داد.\n\nThe Iranian army announces that 3 oil tankers have exploded in the Strait of Hormuz since this morning.",
+          "output_text": "ارتش ایران از انفجار 3 نفتکش در تنگه هرمز از صبح امروز خبر داد.",
+          "last_edit_timestamp": 1795084307.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8674",
+      "sent_timestamp": 1795084291.6826806,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8674,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "ارتش ایران از انفجار 3 نفتکش در تنگه هرمز از صبح امروز خبر داد.\n\nThe Iranian army announces that 3 oil tankers have exploded in the Strait of Hormuz since this morning.",
+      "output_text": "ارتش ایران از انفجار 3 نفتکش در تنگه هرمز از صبح امروز خبر داد.",
+      "is_seismic": false,
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1130,
+      "last_edit_timestamp": 1795084307.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-19T10:23:05.845209+00:00"
+  "updated_at": "2026-11-19T10:49:31.080861+00:00"
 }
