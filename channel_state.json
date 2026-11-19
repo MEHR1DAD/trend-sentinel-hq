@@ -67,13 +67,6 @@
       "last_edit_timestamp": 1795129624.0
     }
   },
-  "pending_translations": {
-    "Ali_bk_8_8723": {
-      "source_node": "Ali_bk_8",
-      "msg_id": 8723,
-      "timestamp": 1795130873.006691,
-      "grouped_id": null
-    }
-  },
-  "updated_at": "2026-11-19T23:28:11.094750+00:00"
+  "pending_translations": {},
+  "updated_at": "2026-11-19T23:54:37.684124+00:00"
 }
