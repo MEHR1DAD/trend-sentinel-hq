@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28502,
-      "last_read_time": "2026-11-19 17:56:08 UTC"
+      "last_read_id": 28506,
+      "last_read_time": "2026-11-19 18:26:11 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8704,
-      "last_read_time": "2026-11-19 17:44:51 UTC"
+      "last_read_id": 8705,
+      "last_read_time": "2026-11-19 18:04:47 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79176,
-      "last_read_time": "2026-11-19 16:19:03 UTC"
+      "last_read_id": 79177,
+      "last_read_time": "2026-11-19 18:16:56 UTC"
     },
     "iliaen": {
       "last_read_id": 4759,
@@ -31,50 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8699": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1137,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 کانال ۱۴ عبری:\n\nنشانه‌های آمریکایی از نزدیک بودن ازسرگیری جنگ علیه ایران حکایت دارند؛ زیرا سفر رئیس موساد به ایالات متحده با هدف ترغیب آمریکایی‌ها به حمله به ایران در همین مقطع انجام شده است. او هشدار داده که تهران در حال انتقال برنامه هسته‌ای خود به منطقه‌ای مصون است که هدف قرار دادن آن در آینده را غیرممکن می‌کند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8699\">@Ali_bk_8</a>\n🎥 <a href=\"https://t.me/withyashar/28500\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1137,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 کانال ۱۴ عبری:\n\nنشانه‌های آمریکایی از نزدیک بودن ازسرگیری جنگ علیه ایران حکایت دارند؛ زیرا سفر رئیس موساد به ایالات متحده با هدف ترغیب آمریکایی‌ها به حمله به ایران در همین مقطع انجام شده است. او هشدار داده که تهران در حال انتقال برنامه هسته‌ای خود به منطقه‌ای مصون است که هدف قرار دادن آن در آینده را غیرممکن می‌کند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8699\">@Ali_bk_8</a>\n🎥 <a href=\"https://t.me/withyashar/28500\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8699,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "کانال ۱۴ عبری:\n\nنشانه‌های آمریکایی از نزدیک بودن ازسرگیری جنگ علیه ایران حکایت دارند؛ زیرا سفر رئیس موساد به ایالات متحده با هدف ترغیب آمریکایی‌ها به حمله به ایران در همین مقطع انجام شده است. او هشدار داده که تهران در حال انتقال برنامه هسته‌ای خود به منطقه‌ای مصون است که هدف قرار دادن آن در آینده را غیرممکن می‌کند.\n\nHebrew Channel 14:\n\nU.S. indicators point to an imminent resumption of the war on Iran, as the Mossad chief's visit to the United States was intended to urge the Americans to attack Iran now, warning that Tehran is moving its nuclear program to an area of immunity that would make it impossible to target later.",
-          "output_text": "کانال ۱۴ عبری:\n\nنشانه‌های آمریکایی از نزدیک بودن ازسرگیری جنگ علیه ایران حکایت دارند؛ زیرا سفر رئیس موساد به ایالات متحده با هدف ترغیب آمریکایی‌ها به حمله به ایران در همین مقطع انجام شده است. او هشدار داده که تهران در حال انتقال برنامه هسته‌ای خود به منطقه‌ای مصون است که هدف قرار دادن آن در آینده را غیرممکن می‌کند.",
-          "last_edit_timestamp": 1795108123.0
-        },
-        {
-          "source_node": "withyashar",
-          "msg_id": 28500,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "شبکه ۱۴ اسرائیل: نشانه‌هایی از سوی آمریکا حاکی از احتمال آغاز مجدد جنگ علیه ایران است. بر اساس این گزارش، هدف از سفر رئیس موساد به آمریکا، ترغیب واشنگتن به حمله فوری به ایران بوده است. او هشدار داده که تهران در حال انتقال برنامه هسته‌ای خود به مناطق حفاظت‌شده و غیرقابل نفوذ است؛ به‌گونه‌ای که هدف قرار دادن این تأسیسات در آینده ممکن است غیرممکن شود. \n@WarRoom",
-          "output_text": "شبکه ۱۴ اسرائیل: نشانه‌هایی از سوی آمریکا حاکی از احتمال آغاز مجدد جنگ علیه ایران است. بر اساس این گزارش، هدف از سفر رئیس موساد به آمریکا، ترغیب واشنگتن به حمله فوری به ایران بوده است. او هشدار داده که تهران در حال انتقال برنامه هسته‌ای خود به مناطق حفاظت‌شده و غیرقابل نفوذ است؛ به‌گونه‌ای که هدف قرار دادن این تأسیسات در آینده ممکن است غیرممکن شود. \n@WarRoom",
-          "last_edit_timestamp": 1795110743.8794441
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8699",
-      "sent_timestamp": 1795107960.850785,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8699,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "کانال ۱۴ عبری:\n\nنشانه‌های آمریکایی از نزدیک بودن ازسرگیری جنگ علیه ایران حکایت دارند؛ زیرا سفر رئیس موساد به ایالات متحده با هدف ترغیب آمریکایی‌ها به حمله به ایران در همین مقطع انجام شده است. او هشدار داده که تهران در حال انتقال برنامه هسته‌ای خود به منطقه‌ای مصون است که هدف قرار دادن آن در آینده را غیرممکن می‌کند.\n\nHebrew Channel 14:\n\nU.S. indicators point to an imminent resumption of the war on Iran, as the Mossad chief's visit to the United States was intended to urge the Americans to attack Iran now, warning that Tehran is moving its nuclear program to an area of immunity that would make it impossible to target later.",
-      "output_text": "کانال ۱۴ عبری:\n\nنشانه‌های آمریکایی از نزدیک بودن ازسرگیری جنگ علیه ایران حکایت دارند؛ زیرا سفر رئیس موساد به ایالات متحده با هدف ترغیب آمریکایی‌ها به حمله به ایران در همین مقطع انجام شده است. او هشدار داده که تهران در حال انتقال برنامه هسته‌ای خود به منطقه‌ای مصون است که هدف قرار دادن آن در آینده را غیرممکن می‌کند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795110734.0
-    },
     "Ali_bk_8_8701": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1138,
@@ -147,5 +103,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-19T18:01:24.595702+00:00"
+  "updated_at": "2026-11-19T18:27:54.437327+00:00"
 }
