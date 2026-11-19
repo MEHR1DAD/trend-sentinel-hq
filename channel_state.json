@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28517,
-      "last_read_time": "2026-11-19 19:07:17 UTC"
+      "last_read_id": 28518,
+      "last_read_time": "2026-11-19 19:24:13 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8714,
-      "last_read_time": "2026-11-19 19:20:08 UTC"
+      "last_read_id": 8716,
+      "last_read_time": "2026-11-19 19:42:37 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79177,
@@ -192,7 +192,7 @@
           "grouped_id": null,
           "raw_text": "شنیده شدن صدای انفجارهای جدید در تنگه هرمز در پی هدف قرار گرفتن کشتی‌های متخلف.\n\nNew explosions heard in the Strait of Hormuz now as non-compliant vessels are targeted.",
           "output_text": "شنیده شدن صدای انفجارهای جدید در تنگه هرمز در پی هدف قرار گرفتن کشتی‌های متخلف.",
-          "last_edit_timestamp": 1795116028.4437885
+          "last_edit_timestamp": 1795116049.0
         }
       ],
       "active_text_source": "Ali_bk_8_8714",
@@ -203,9 +203,10 @@
       "grouped_id": null,
       "raw_text": "شنیده شدن صدای انفجارهای جدید در تنگه هرمز در پی هدف قرار گرفتن کشتی‌های متخلف.\n\nNew explosions heard in the Strait of Hormuz now as non-compliant vessels are targeted.",
       "output_text": "شنیده شدن صدای انفجارهای جدید در تنگه هرمز در پی هدف قرار گرفتن کشتی‌های متخلف.",
-      "is_seismic": false
+      "is_seismic": false,
+      "last_edit_timestamp": 1795116049.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-19T19:20:44.828443+00:00"
+  "updated_at": "2026-11-19T19:47:11.293799+00:00"
 }
