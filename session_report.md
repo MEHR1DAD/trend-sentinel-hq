@@ -1,27 +1,26 @@
 # Sentinel Session Report (v7.3.0 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 3
+- **Messages Processed:** 5
 - **Alerts Dispatched:** 1
 - **Alerts Edited:** 2
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** ترامپ خطاب به پوتین و شی : بسیار حیاتی است که برای مقابله با تهدید اشاعه هسته‌ای در سایر کشورهای جهان، با یکدیگر همکاری 
-- **Last Message Time:** 2026-11-19 11:11:10 UTC
+- **Last Message Text:** تصاویر جدیدی از یک کشتی متخلف که روز گذشته در تنگه هرمز هدف قرار گرفت.  New footage of a noncompliant vessel targeted in
+- **Last Message Time:** 2026-11-19 12:16:45 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28489 (2026-11-19 11:11:10 UTC)
-- `@Ali_bk_8`: #8675 (2026-11-19 10:54:41 UTC)
+- `@withyashar`: #28490 (2026-11-19 11:27:51 UTC)
+- `@Ali_bk_8`: #8683 (2026-11-19 12:16:45 UTC)
 - `@VahidOnline`: #79169 (2026-11-19 05:42:05 UTC)
 - `@iliaen`: #4759 (2026-11-17 15:25:09 UTC)
 - `@netblocks`: #1586 (2026-11-18 17:14:39 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 118m ago
-- `@DidehbanEghtesad`: Last loud alert 8495m ago
-- `@DidebanEterazat`: Last loud alert 15754m ago
+- `@DidebanJang`: Last loud alert 180m ago
+- `@DidehbanEghtesad`: Last loud alert 8556m ago
+- `@DidebanEterazat`: Last loud alert 15816m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- `Ali_bk_8_8674` -> @DidebanJang (#1130) (📝, 44m ago)
-- `Ali_bk_8_8675` -> @DidebanJang (#1131) (🎥, 20m ago)
+- `Ali_bk_8_8683` -> @DidebanJang (#1132) (📝, 0m ago)
