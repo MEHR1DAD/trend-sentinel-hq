@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28523,
-      "last_read_time": "2026-11-19 20:10:52 UTC"
+      "last_read_id": 28524,
+      "last_read_time": "2026-11-19 20:40:17 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8718,
-      "last_read_time": "2026-11-19 20:15:19 UTC"
+      "last_read_id": 8719,
+      "last_read_time": "2026-11-19 20:31:55 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79177,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8714": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1142,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 شنیده شدن صدای انفجارهای جدید در تنگه هرمز در پی هدف قرار گرفتن کشتی‌های متخلف.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8714\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1142,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 شنیده شدن صدای انفجارهای جدید در تنگه هرمز در پی هدف قرار گرفتن کشتی‌های متخلف.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8714\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8714,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "شنیده شدن صدای انفجارهای جدید در تنگه هرمز در پی هدف قرار گرفتن کشتی‌های متخلف.\n\nNew explosions heard in the Strait of Hormuz now as non-compliant vessels are targeted.",
-          "output_text": "شنیده شدن صدای انفجارهای جدید در تنگه هرمز در پی هدف قرار گرفتن کشتی‌های متخلف.",
-          "last_edit_timestamp": 1795116049.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8714",
-      "sent_timestamp": 1795116028.8026028,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8714,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "شنیده شدن صدای انفجارهای جدید در تنگه هرمز در پی هدف قرار گرفتن کشتی‌های متخلف.\n\nNew explosions heard in the Strait of Hormuz now as non-compliant vessels are targeted.",
-      "output_text": "شنیده شدن صدای انفجارهای جدید در تنگه هرمز در پی هدف قرار گرفتن کشتی‌های متخلف.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795116049.0
-    },
     "withyashar_28520": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1143,
@@ -122,7 +87,7 @@
           "grouped_id": null,
           "raw_text": "کانال ۱۴ اسرائیل:\n\nترامپ به حمله نظامی به ایران تمایل دارد، زیرا محافل سیاسی و امنیتی اسرائیل احتمال می‌دهند ترامپ گزینه نظامی را انتخاب کند. اهداف احتمالی این حمله شامل زیرساخت‌های هسته‌ای، موشک‌ها و سامانه‌های فرماندهی و کنترل ایران خواهد بود. اسرائیل آمادگی دفاعی و تهاجمی خود را تأیید کرده است.\n\nIsrael's Channel 14:\n\nTrump is leaning towards launching a military attack on Iran, as Israeli political and security circles believe Trump is likely to choose the military option. The potential targets of the attack include nuclear infrastructure, missiles, and Iran's command-and-control systems. Israel has confirmed its defensive and offensive readiness.",
           "output_text": "کانال ۱۴ اسرائیل:\n\nترامپ به حمله نظامی به ایران تمایل دارد، زیرا محافل سیاسی و امنیتی اسرائیل احتمال می‌دهند ترامپ گزینه نظامی را انتخاب کند. اهداف احتمالی این حمله شامل زیرساخت‌های هسته‌ای، موشک‌ها و سامانه‌های فرماندهی و کنترل ایران خواهد بود. اسرائیل آمادگی دفاعی و تهاجمی خود را تأیید کرده است.",
-          "last_edit_timestamp": 1795119346.5302138
+          "last_edit_timestamp": 1795119550.0
         }
       ],
       "active_text_source": "Ali_bk_8_8718",
@@ -133,9 +98,10 @@
       "grouped_id": null,
       "raw_text": "کانال ۱۴ اسرائیل:\n\nترامپ به حمله نظامی به ایران تمایل دارد، زیرا محافل سیاسی و امنیتی اسرائیل احتمال می‌دهند ترامپ گزینه نظامی را انتخاب کند. اهداف احتمالی این حمله شامل زیرساخت‌های هسته‌ای، موشک‌ها و سامانه‌های فرماندهی و کنترل ایران خواهد بود. اسرائیل آمادگی دفاعی و تهاجمی خود را تأیید کرده است.\n\nIsrael's Channel 14:\n\nTrump is leaning towards launching a military attack on Iran, as Israeli political and security circles believe Trump is likely to choose the military option. The potential targets of the attack include nuclear infrastructure, missiles, and Iran's command-and-control systems. Israel has confirmed its defensive and offensive readiness.",
       "output_text": "کانال ۱۴ اسرائیل:\n\nترامپ به حمله نظامی به ایران تمایل دارد، زیرا محافل سیاسی و امنیتی اسرائیل احتمال می‌دهند ترامپ گزینه نظامی را انتخاب کند. اهداف احتمالی این حمله شامل زیرساخت‌های هسته‌ای، موشک‌ها و سامانه‌های فرماندهی و کنترل ایران خواهد بود. اسرائیل آمادگی دفاعی و تهاجمی خود را تأیید کرده است.",
-      "is_seismic": false
+      "is_seismic": false,
+      "last_edit_timestamp": 1795119550.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-19T20:15:47.084547+00:00"
+  "updated_at": "2026-11-19T20:49:29.227962+00:00"
 }
