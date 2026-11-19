@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28464,
-      "last_read_time": "2026-11-19 06:21:07 UTC"
+      "last_read_id": 28467,
+      "last_read_time": "2026-11-19 06:35:34 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8664,
@@ -65,8 +65,43 @@
       "output_text": "خبرگزاری فرانسه:\n\nحمله جدیدی از یمن مرکز مالی ریاض، پایتخت عربستان سعودی را هدف قرار داد و به یکی از برج‌ها آسیب رساند.",
       "is_seismic": false,
       "last_edit_timestamp": 1795067964.0
+    },
+    "withyashar_28465": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1126,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 دیدبان اتاق جنگ : همین الان از صدرا موشک فرستادن شیراز پشت دانشگاه ازاد پردیس 🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/28465\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1126,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 دیدبان اتاق جنگ : همین الان از صدرا موشک فرستادن شیراز پشت دانشگاه ازاد پردیس 🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/28465\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28465,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "دیدبان اتاق جنگ : همین الان از صدرا موشک فرستادن شیراز پشت دانشگاه ازاد پردیس\n@WarRoom 🚨🚨🚨",
+          "output_text": "دیدبان اتاق جنگ : همین الان از صدرا موشک فرستادن شیراز پشت دانشگاه ازاد پردیس\n@WarRoom 🚨🚨🚨",
+          "last_edit_timestamp": 1795069697.087261
+        }
+      ],
+      "active_text_source": "withyashar_28465",
+      "sent_timestamp": 1795069697.6710606,
+      "source_node": "withyashar",
+      "msg_id": 28465,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "دیدبان اتاق جنگ : همین الان از صدرا موشک فرستادن شیراز پشت دانشگاه ازاد پردیس\n@WarRoom 🚨🚨🚨",
+      "output_text": "دیدبان اتاق جنگ : همین الان از صدرا موشک فرستادن شیراز پشت دانشگاه ازاد پردیس\n@WarRoom 🚨🚨🚨",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795069689.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-19T06:25:20.371523+00:00"
+  "updated_at": "2026-11-19T06:51:45.236760+00:00"
 }
