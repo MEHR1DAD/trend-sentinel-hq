@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28457,
-      "last_read_time": "2026-11-18 23:53:02 UTC"
+      "last_read_id": 28458,
+      "last_read_time": "2026-11-19 05:49:09 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8663,
       "last_read_time": "2026-11-19 04:10:15 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79167,
-      "last_read_time": "2026-11-19 03:43:26 UTC"
+      "last_read_id": 79169,
+      "last_read_time": "2026-11-19 05:42:05 UTC"
     },
     "iliaen": {
       "last_read_id": 4759,
@@ -26,11 +26,46 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1795025813.8402972,
+    "@DidebanJang": 1795067878.4448447,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_8664": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1125,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 خبرگزاری فرانسه:\n\nحمله جدیدی از یمن مرکز مالی ریاض، پایتخت عربستان سعودی را هدف قرار داد و به یکی از برج‌ها آسیب رساند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8664\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1125,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 خبرگزاری فرانسه:\n\nحمله جدیدی از یمن مرکز مالی ریاض، پایتخت عربستان سعودی را هدف قرار داد و به یکی از برج‌ها آسیب رساند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8664\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8664,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "خبرگزاری فرانسه:\n\nحمله جدیدی از یمن مرکز مالی ریاض، پایتخت عربستان سعودی را هدف قرار داد و به یکی از برج‌ها آسیب رساند.\n\nAgence France-Presse:\n\nA new attack from Yemen targeted the financial center in the Saudi capital, Riyadh, damaging one of the towers.",
+          "output_text": "خبرگزاری فرانسه:\n\nحمله جدیدی از یمن مرکز مالی ریاض، پایتخت عربستان سعودی را هدف قرار داد و به یکی از برج‌ها آسیب رساند.",
+          "last_edit_timestamp": 1795067878.444842
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8664",
+      "sent_timestamp": 1795067879.0815694,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8664,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "خبرگزاری فرانسه:\n\nحمله جدیدی از یمن مرکز مالی ریاض، پایتخت عربستان سعودی را هدف قرار داد و به یکی از برج‌ها آسیب رساند.\n\nAgence France-Presse:\n\nA new attack from Yemen targeted the financial center in the Saudi capital, Riyadh, damaging one of the towers.",
+      "output_text": "خبرگزاری فرانسه:\n\nحمله جدیدی از یمن مرکز مالی ریاض، پایتخت عربستان سعودی را هدف قرار داد و به یکی از برج‌ها آسیب رساند.",
+      "is_seismic": false
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-19T05:32:34.012339+00:00"
+  "updated_at": "2026-11-19T05:58:57.424581+00:00"
 }
