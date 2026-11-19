@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28475,
-      "last_read_time": "2026-11-19 08:08:05 UTC"
+      "last_read_id": 28476,
+      "last_read_time": "2026-11-19 08:11:40 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8666,
@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "withyashar_28471": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1127,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 پدافند هوایی جنوب‌شرق: خنثی سازی مهمات عمل‌ نکرده به‌مدت یک هفته در شرق بندرعباس انجام می‌شود\n\n📝 <a href=\"https://t.me/withyashar/28471\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1127,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 پدافند هوایی جنوب‌شرق: خنثی سازی مهمات عمل‌ نکرده به‌مدت یک هفته در شرق بندرعباس انجام می‌شود\n\n📝 <a href=\"https://t.me/withyashar/28471\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28471,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "پدافند هوایی جنوب‌شرق: خنثی سازی مهمات عمل‌ نکرده به‌مدت یک هفته در شرق بندرعباس انجام می‌شود\n@WarRoom",
-          "output_text": "پدافند هوایی جنوب‌شرق: خنثی سازی مهمات عمل‌ نکرده به‌مدت یک هفته در شرق بندرعباس انجام می‌شود\n@WarRoom",
-          "last_edit_timestamp": 1795072992.0
-        }
-      ],
-      "active_text_source": "withyashar_28471",
-      "sent_timestamp": 1795072987.2301707,
-      "source_node": "withyashar",
-      "msg_id": 28471,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "پدافند هوایی جنوب‌شرق: خنثی سازی مهمات عمل‌ نکرده به‌مدت یک هفته در شرق بندرعباس انجام می‌شود\n@WarRoom",
-      "output_text": "پدافند هوایی جنوب‌شرق: خنثی سازی مهمات عمل‌ نکرده به‌مدت یک هفته در شرق بندرعباس انجام می‌شود\n@WarRoom",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795072992.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-19T08:10:57.427551+00:00"
+  "updated_at": "2026-11-19T08:37:22.691036+00:00"
 }
