@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28487,
-      "last_read_time": "2026-11-19 10:39:59 UTC"
+      "last_read_id": 28489,
+      "last_read_time": "2026-11-19 11:11:10 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8674,
-      "last_read_time": "2026-11-19 10:31:21 UTC"
+      "last_read_id": 8675,
+      "last_read_time": "2026-11-19 10:54:41 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79169,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8673": {
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سپاه پاسداران از انفجار دو نفتکش غول‌پیکر حامل بیش از ۴ میلیون بشکه نفت در تنگه هرمز پس از تلاش آن‌ها برای عبور غیرقانونی از این تنگه خبر داد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8673\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidehbanEghtesad",
-          "bot_msg_id": 95,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سپاه پاسداران از انفجار دو نفتکش غول‌پیکر حامل بیش از ۴ میلیون بشکه نفت در تنگه هرمز پس از تلاش آن‌ها برای عبور غیرقانونی از این تنگه خبر داد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8673\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8673,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "سپاه پاسداران از انفجار دو نفتکش غول‌پیکر حامل بیش از ۴ میلیون بشکه نفت در تنگه هرمز پس از تلاش آن‌ها برای عبور غیرقانونی از این تنگه خبر داد.\n\nThe IRGC announces that two giant oil tankers carrying more than 4 million barrels of oil exploded in the Strait of Hormuz after attempting to cross the strait illegally.",
-          "output_text": "سپاه پاسداران از انفجار دو نفتکش غول‌پیکر حامل بیش از ۴ میلیون بشکه نفت در تنگه هرمز پس از تلاش آن‌ها برای عبور غیرقانونی از این تنگه خبر داد.",
-          "last_edit_timestamp": 1795082241.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8673",
-      "sent_timestamp": 1795082090.6767163,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8673,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "سپاه پاسداران از انفجار دو نفتکش غول‌پیکر حامل بیش از ۴ میلیون بشکه نفت در تنگه هرمز پس از تلاش آن‌ها برای عبور غیرقانونی از این تنگه خبر داد.\n\nThe IRGC announces that two giant oil tankers carrying more than 4 million barrels of oil exploded in the Strait of Hormuz after attempting to cross the strait illegally.",
-      "output_text": "سپاه پاسداران از انفجار دو نفتکش غول‌پیکر حامل بیش از ۴ میلیون بشکه نفت در تنگه هرمز پس از تلاش آن‌ها برای عبور غیرقانونی از این تنگه خبر داد.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795082241.0,
-      "target_channel": "@DidehbanEghtesad",
-      "bot_msg_id": 95
-    },
     "Ali_bk_8_8674": {
       "status_icon": "🔕",
       "last_formatted_text": "🔕 ارتش ایران از انفجار 3 نفتکش در تنگه هرمز از صبح امروز خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8674\">@Ali_bk_8</a>",
@@ -100,8 +65,43 @@
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1130,
       "last_edit_timestamp": 1795084307.0
+    },
+    "Ali_bk_8_8675": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1131,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تصاویری از کشتی‌هایی که روز گذشته در تنگه هرمز هدف قرار گرفتند و دچار آتش‌سوزی شدند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8675\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1131,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تصاویری از کشتی‌هایی که روز گذشته در تنگه هرمز هدف قرار گرفتند و دچار آتش‌سوزی شدند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8675\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8675,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "تصاویری از کشتی‌هایی که روز گذشته در تنگه هرمز هدف قرار گرفتند و دچار آتش‌سوزی شدند.\n\nFootage of the ships targeted in the Strait of Hormuz and the fires that broke out aboard them yesterday.",
+          "output_text": "تصاویری از کشتی‌هایی که روز گذشته در تنگه هرمز هدف قرار گرفتند و دچار آتش‌سوزی شدند.",
+          "last_edit_timestamp": 1795085715.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8675",
+      "sent_timestamp": 1795085696.5483432,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8675,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "تصاویری از کشتی‌هایی که روز گذشته در تنگه هرمز هدف قرار گرفتند و دچار آتش‌سوزی شدند.\n\nFootage of the ships targeted in the Strait of Hormuz and the fires that broke out aboard them yesterday.",
+      "output_text": "تصاویری از کشتی‌هایی که روز گذشته در تنگه هرمز هدف قرار گرفتند و دچار آتش‌سوزی شدند.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795085715.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-19T10:49:31.080861+00:00"
+  "updated_at": "2026-11-19T11:15:54.503191+00:00"
 }
