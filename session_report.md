@@ -1,13 +1,13 @@
 # Sentinel Session Report (v7.3.0 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 1
+- **Messages Processed:** 0
 - **Alerts Dispatched:** 0
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** حمله‌ای از یمن ابها و خمیس مشیط در عربستان سعودی را هدف قرار می‌دهد.  A Yemeni attack targets Abha and Khamis Mushait in
-- **Last Message Time:** 2026-11-20 02:27:13 UTC
+- **Last Message Text:** None
+- **Last Message Time:** None
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
 - `@withyashar`: #28529 (2026-11-20 00:04:45 UTC)
@@ -18,9 +18,9 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 240m ago
-- `@DidehbanEghtesad`: Last loud alert 9444m ago
-- `@DidebanEterazat`: Last loud alert 16703m ago
+- `@DidebanJang`: Last loud alert 267m ago
+- `@DidehbanEghtesad`: Last loud alert 9470m ago
+- `@DidebanEterazat`: Last loud alert 16730m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
 - *(No active posts in 60m edit/delete window)*
