@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28551,
-      "last_read_time": "2026-11-20 10:33:36 UTC"
+      "last_read_id": 28554,
+      "last_read_time": "2026-11-20 10:59:51 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8733,
-      "last_read_time": "2026-11-20 10:06:33 UTC"
+      "last_read_id": 8736,
+      "last_read_time": "2026-11-20 10:55:23 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79178,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28548": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1151,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 گزارش‌های تایید نشده اولیه از انهدام یک پهپاد در آسمان اصفهان دقایقی پیش\n\n📷 <a href=\"https://t.me/withyashar/28548\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1151,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 گزارش‌های تایید نشده اولیه از انهدام یک پهپاد در آسمان اصفهان دقایقی پیش\n\n📷 <a href=\"https://t.me/withyashar/28548\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28548,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "گزارش‌های تایید نشده اولیه از انهدام یک پهپاد در آسمان اصفهان دقایقی پیش\n@WarRoom",
-          "output_text": "گزارش‌های تایید نشده اولیه از انهدام یک پهپاد در آسمان اصفهان دقایقی پیش\n@WarRoom",
-          "last_edit_timestamp": 1795167393.7799823
-        }
-      ],
-      "active_text_source": "withyashar_28548",
-      "sent_timestamp": 1795167394.392617,
-      "source_node": "withyashar",
-      "msg_id": 28548,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "گزارش‌های تایید نشده اولیه از انهدام یک پهپاد در آسمان اصفهان دقایقی پیش\n@WarRoom",
-      "output_text": "گزارش‌های تایید نشده اولیه از انهدام یک پهپاد در آسمان اصفهان دقایقی پیش\n@WarRoom",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795167374.0
-    },
     "withyashar_28551": {
       "target_channel": "@DidehbanEghtesad",
       "bot_msg_id": 100,
@@ -103,5 +68,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-20T10:34:49.018893+00:00"
+  "updated_at": "2026-11-20T11:01:15.857361+00:00"
 }
