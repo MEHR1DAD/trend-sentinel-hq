@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28558,
-      "last_read_time": "2026-11-20 12:00:12 UTC"
+      "last_read_id": 28562,
+      "last_read_time": "2026-11-20 12:36:44 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8743,
-      "last_read_time": "2026-11-20 11:56:18 UTC"
+      "last_read_id": 8744,
+      "last_read_time": "2026-11-20 12:35:46 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79178,
@@ -26,11 +26,56 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1795129452.5026064,
+    "@DidebanJang": 1795177931.7872858,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "withyashar_28561": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1152,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 هم اکنون پرتاب موشک از جزیره قشم 🚨🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28561\">@withyashar</a>\n📷 <a href=\"https://t.me/Ali_bk_8/8744\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1152,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 هم اکنون پرتاب موشک از جزیره قشم 🚨🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28561\">@withyashar</a>\n📷 <a href=\"https://t.me/Ali_bk_8/8744\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28561,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "هم اکنون پرتاب موشک از جزیره قشم\n@WarRoom 🚨🚨🚨🚨",
+          "output_text": "هم اکنون پرتاب موشک از جزیره قشم\n@WarRoom 🚨🚨🚨🚨",
+          "last_edit_timestamp": 1795177931.7872832
+        },
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8744,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "لحظاتی پیش پس از شلیک موشک، صدای انفجارهایی در جزیره قشم شنیده شد.\n\nExplosions heard on Qeshm Island a short while ago following a missile launch.",
+          "output_text": "لحظاتی پیش پس از شلیک موشک، صدای انفجارهایی در جزیره قشم شنیده شد.",
+          "last_edit_timestamp": 1795178192.0
+        }
+      ],
+      "active_text_source": "withyashar_28561",
+      "sent_timestamp": 1795177932.385597,
+      "source_node": "withyashar",
+      "msg_id": 28561,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "هم اکنون پرتاب موشک از جزیره قشم\n@WarRoom 🚨🚨🚨🚨",
+      "output_text": "هم اکنون پرتاب موشک از جزیره قشم\n@WarRoom 🚨🚨🚨🚨",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795178192.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-20T12:27:42.980101+00:00"
+  "updated_at": "2026-11-20T12:54:11.468767+00:00"
 }
