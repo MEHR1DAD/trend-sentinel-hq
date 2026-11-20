@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-20 22:44:55 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8783,
-      "last_read_time": "2026-11-20 22:54:26 UTC"
+      "last_read_id": 8788,
+      "last_read_time": "2026-11-20 23:23:44 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79191,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8779": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1165,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویر بیشتری از انفجار یک نفتکش متخلف در تنگه هرمز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8779\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1165,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویر بیشتری از انفجار یک نفتکش متخلف در تنگه هرمز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8779\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8779,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "تصاویر بیشتری از انفجار یک نفتکش متخلف در تنگه هرمز.\n\nFurther footage of an explosion aboard a noncompliant oil tanker in the Strait of Hormuz.",
-          "output_text": "تصاویر بیشتری از انفجار یک نفتکش متخلف در تنگه هرمز.",
-          "last_edit_timestamp": 1795212133.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8779",
-      "sent_timestamp": 1795212084.9840772,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8779,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "تصاویر بیشتری از انفجار یک نفتکش متخلف در تنگه هرمز.\n\nFurther footage of an explosion aboard a noncompliant oil tanker in the Strait of Hormuz.",
-      "output_text": "تصاویر بیشتری از انفجار یک نفتکش متخلف در تنگه هرمز.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795212133.0
-    },
     "Ali_bk_8_8781": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1166,
@@ -103,5 +68,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-20T22:58:39.976277+00:00"
+  "updated_at": "2026-11-20T23:25:02.429657+00:00"
 }
