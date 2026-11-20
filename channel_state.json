@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28571,
-      "last_read_time": "2026-11-20 15:02:31 UTC"
+      "last_read_id": 28575,
+      "last_read_time": "2026-11-20 15:27:35 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8750,
-      "last_read_time": "2026-11-20 14:58:17 UTC"
+      "last_read_id": 8752,
+      "last_read_time": "2026-11-20 15:19:26 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79186,
-      "last_read_time": "2026-11-20 13:42:24 UTC"
+      "last_read_id": 79187,
+      "last_read_time": "2026-11-20 15:17:18 UTC"
     },
     "iliaen": {
       "last_read_id": 4759,
@@ -26,7 +26,7 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1795182162.5251958,
+    "@DidebanJang": 1795187861.521903,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
@@ -65,8 +65,113 @@
       "output_text": "هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.",
       "is_seismic": false,
       "last_edit_timestamp": 1795186775.0
+    },
+    "Ali_bk_8_8751": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1155,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 لحظه شلیک موشک به سمت یک کشتی متخلف در تنگه هرمز در امروز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8751\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1155,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 لحظه شلیک موشک به سمت یک کشتی متخلف در تنگه هرمز در امروز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8751\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8751,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "لحظه شلیک موشک به سمت یک کشتی متخلف در تنگه هرمز در امروز.\n\nThe moment a missile is launched toward a noncompliant vessel in the Strait of Hormuz today.",
+          "output_text": "لحظه شلیک موشک به سمت یک کشتی متخلف در تنگه هرمز در امروز.",
+          "last_edit_timestamp": 1795187511.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8751",
+      "sent_timestamp": 1795187354.4081504,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8751,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "لحظه شلیک موشک به سمت یک کشتی متخلف در تنگه هرمز در امروز.\n\nThe moment a missile is launched toward a noncompliant vessel in the Strait of Hormuz today.",
+      "output_text": "لحظه شلیک موشک به سمت یک کشتی متخلف در تنگه هرمز در امروز.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795187511.0
+    },
+    "VahidOnline_79187": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1156,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 پیام‌های دریافتی:\n\nساعت 18.45 یه انفجار در محدوده شهر قشم\n\nسلام وحید جان همین الان یه موشک به پدافند قشم خورد\n\nسلام وحید جان امروز ۲۹ ابان ساعت ۱۸:۴۶ دقیقه در قشم فقط یک صدای مهیب شنیده شد که احتملا از سمت پدافند قشم بوده و شاید پرتابه به پدافند خورده\n\nسلام وحید جان ساعت ۶ و ۴۶ دقیقه یک صدای انفجاری اومد قشم\n\n📝 <a href=\"https://t.me/VahidOnline/79187\">@VahidOnline</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1156,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 پیام‌های دریافتی:\n\nساعت 18.45 یه انفجار در محدوده شهر قشم\n\nسلام وحید جان همین الان یه موشک به پدافند قشم خورد\n\nسلام وحید جان امروز ۲۹ ابان ساعت ۱۸:۴۶ دقیقه در قشم فقط یک صدای مهیب شنیده شد که احتملا از سمت پدافند قشم بوده و شاید پرتابه به پدافند خورده\n\nسلام وحید جان ساعت ۶ و ۴۶ دقیقه یک صدای انفجاری اومد قشم\n\n📝 <a href=\"https://t.me/VahidOnline/79187\">@VahidOnline</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "VahidOnline",
+          "msg_id": 79187,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "پیام‌های دریافتی:\n\nساعت 18.45 یه انفجار در محدوده شهر قشم\n\nسلام وحید جان همین الان یه موشک به پدافند قشم خورد\n\nسلام وحید جان امروز ۲۹ ابان ساعت ۱۸:۴۶ دقیقه در قشم فقط یک صدای مهیب شنیده شد که احتملا از سمت پدافند قشم بوده و شاید پرتابه به پدافند خورده\n\nسلام وحید جان ساعت ۶ و ۴۶ دقیقه یک صدای انفجاری اومد قشم\n📡 @VahidOnline",
+          "output_text": "پیام‌های دریافتی:\n\nساعت 18.45 یه انفجار در محدوده شهر قشم\n\nسلام وحید جان همین الان یه موشک به پدافند قشم خورد\n\nسلام وحید جان امروز ۲۹ ابان ساعت ۱۸:۴۶ دقیقه در قشم فقط یک صدای مهیب شنیده شد که احتملا از سمت پدافند قشم بوده و شاید پرتابه به پدافند خورده\n\nسلام وحید جان ساعت ۶ و ۴۶ دقیقه یک صدای انفجاری اومد قشم\n📡 @VahidOnline",
+          "last_edit_timestamp": 1795188161.0
+        }
+      ],
+      "active_text_source": "VahidOnline_79187",
+      "sent_timestamp": 1795187861.8437743,
+      "source_node": "VahidOnline",
+      "msg_id": 79187,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "پیام‌های دریافتی:\n\nساعت 18.45 یه انفجار در محدوده شهر قشم\n\nسلام وحید جان همین الان یه موشک به پدافند قشم خورد\n\nسلام وحید جان امروز ۲۹ ابان ساعت ۱۸:۴۶ دقیقه در قشم فقط یک صدای مهیب شنیده شد که احتملا از سمت پدافند قشم بوده و شاید پرتابه به پدافند خورده\n\nسلام وحید جان ساعت ۶ و ۴۶ دقیقه یک صدای انفجاری اومد قشم\n📡 @VahidOnline",
+      "output_text": "پیام‌های دریافتی:\n\nساعت 18.45 یه انفجار در محدوده شهر قشم\n\nسلام وحید جان همین الان یه موشک به پدافند قشم خورد\n\nسلام وحید جان امروز ۲۹ ابان ساعت ۱۸:۴۶ دقیقه در قشم فقط یک صدای مهیب شنیده شد که احتملا از سمت پدافند قشم بوده و شاید پرتابه به پدافند خورده\n\nسلام وحید جان ساعت ۶ و ۴۶ دقیقه یک صدای انفجاری اومد قشم\n📡 @VahidOnline",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795188161.0
+    },
+    "Ali_bk_8_8752": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1157,
+      "status_icon": "🚨🔕",
+      "last_formatted_text": "🚨🔕 صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8752\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1157,
+          "status_icon": "🚨🔕",
+          "last_formatted_text": "🚨🔕 صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8752\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8752,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.\n\nExplosions heard on Iran's Qeshm Island, with reports of an enemy aerial target being shot down.",
+          "output_text": "صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.",
+          "last_edit_timestamp": 1795188028.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8752",
+      "sent_timestamp": 1795187981.8930793,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8752,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.\n\nExplosions heard on Iran's Qeshm Island, with reports of an enemy aerial target being shot down.",
+      "output_text": "صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795188028.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-20T15:06:16.712329+00:00"
+  "updated_at": "2026-11-20T15:32:42.258431+00:00"
 }
