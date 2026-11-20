@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28577,
-      "last_read_time": "2026-11-20 15:37:30 UTC"
+      "last_read_id": 28581,
+      "last_read_time": "2026-11-20 16:21:58 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8754,
-      "last_read_time": "2026-11-20 15:57:55 UTC"
+      "last_read_id": 8755,
+      "last_read_time": "2026-11-20 16:01:29 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79187,
-      "last_read_time": "2026-11-20 15:17:18 UTC"
+      "last_read_id": 79188,
+      "last_read_time": "2026-11-20 16:24:08 UTC"
     },
     "iliaen": {
       "last_read_id": 4759,
@@ -31,157 +31,17 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8750": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1154,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8750\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1154,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8750\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8750,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.\n\nExplosions heard in the Strait of Hormuz now.",
-          "output_text": "هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.",
-          "last_edit_timestamp": 1795186775.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8750",
-      "sent_timestamp": 1795186756.6046355,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8750,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.\n\nExplosions heard in the Strait of Hormuz now.",
-      "output_text": "هم‌اکنون صدای انفجارهایی در تنگه هرمز شنیده می‌شود.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795186775.0
-    },
-    "Ali_bk_8_8751": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1155,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 لحظه شلیک موشک به سمت یک کشتی متخلف در تنگه هرمز در امروز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8751\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1155,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 لحظه شلیک موشک به سمت یک کشتی متخلف در تنگه هرمز در امروز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8751\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8751,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "لحظه شلیک موشک به سمت یک کشتی متخلف در تنگه هرمز در امروز.\n\nThe moment a missile is launched toward a noncompliant vessel in the Strait of Hormuz today.",
-          "output_text": "لحظه شلیک موشک به سمت یک کشتی متخلف در تنگه هرمز در امروز.",
-          "last_edit_timestamp": 1795187511.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8751",
-      "sent_timestamp": 1795187354.4081504,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8751,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "لحظه شلیک موشک به سمت یک کشتی متخلف در تنگه هرمز در امروز.\n\nThe moment a missile is launched toward a noncompliant vessel in the Strait of Hormuz today.",
-      "output_text": "لحظه شلیک موشک به سمت یک کشتی متخلف در تنگه هرمز در امروز.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795187511.0
-    },
-    "VahidOnline_79187": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1156,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 پیام‌های دریافتی:\n\nساعت 18.45 یه انفجار در محدوده شهر قشم\n\nسلام وحید جان همین الان یه موشک به پدافند قشم خورد\n\nسلام وحید جان امروز ۲۹ ابان ساعت ۱۸:۴۶ دقیقه در قشم فقط یک صدای مهیب شنیده شد که احتملا از سمت پدافند قشم بوده و شاید پرتابه به پدافند خورده\n\nسلام وحید جان ساعت ۶ و ۴۶ دقیقه یک صدای انفجاری اومد قشم\n\n📝 <a href=\"https://t.me/VahidOnline/79187\">@VahidOnline</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1156,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 پیام‌های دریافتی:\n\nساعت 18.45 یه انفجار در محدوده شهر قشم\n\nسلام وحید جان همین الان یه موشک به پدافند قشم خورد\n\nسلام وحید جان امروز ۲۹ ابان ساعت ۱۸:۴۶ دقیقه در قشم فقط یک صدای مهیب شنیده شد که احتملا از سمت پدافند قشم بوده و شاید پرتابه به پدافند خورده\n\nسلام وحید جان ساعت ۶ و ۴۶ دقیقه یک صدای انفجاری اومد قشم\n\n📝 <a href=\"https://t.me/VahidOnline/79187\">@VahidOnline</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "VahidOnline",
-          "msg_id": 79187,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "پیام‌های دریافتی:\n\nساعت 18.45 یه انفجار در محدوده شهر قشم\n\nسلام وحید جان همین الان یه موشک به پدافند قشم خورد\n\nسلام وحید جان امروز ۲۹ ابان ساعت ۱۸:۴۶ دقیقه در قشم فقط یک صدای مهیب شنیده شد که احتملا از سمت پدافند قشم بوده و شاید پرتابه به پدافند خورده\n\nسلام وحید جان ساعت ۶ و ۴۶ دقیقه یک صدای انفجاری اومد قشم\n📡 @VahidOnline",
-          "output_text": "پیام‌های دریافتی:\n\nساعت 18.45 یه انفجار در محدوده شهر قشم\n\nسلام وحید جان همین الان یه موشک به پدافند قشم خورد\n\nسلام وحید جان امروز ۲۹ ابان ساعت ۱۸:۴۶ دقیقه در قشم فقط یک صدای مهیب شنیده شد که احتملا از سمت پدافند قشم بوده و شاید پرتابه به پدافند خورده\n\nسلام وحید جان ساعت ۶ و ۴۶ دقیقه یک صدای انفجاری اومد قشم\n📡 @VahidOnline",
-          "last_edit_timestamp": 1795188161.0
-        }
-      ],
-      "active_text_source": "VahidOnline_79187",
-      "sent_timestamp": 1795187861.8437743,
-      "source_node": "VahidOnline",
-      "msg_id": 79187,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "پیام‌های دریافتی:\n\nساعت 18.45 یه انفجار در محدوده شهر قشم\n\nسلام وحید جان همین الان یه موشک به پدافند قشم خورد\n\nسلام وحید جان امروز ۲۹ ابان ساعت ۱۸:۴۶ دقیقه در قشم فقط یک صدای مهیب شنیده شد که احتملا از سمت پدافند قشم بوده و شاید پرتابه به پدافند خورده\n\nسلام وحید جان ساعت ۶ و ۴۶ دقیقه یک صدای انفجاری اومد قشم\n📡 @VahidOnline",
-      "output_text": "پیام‌های دریافتی:\n\nساعت 18.45 یه انفجار در محدوده شهر قشم\n\nسلام وحید جان همین الان یه موشک به پدافند قشم خورد\n\nسلام وحید جان امروز ۲۹ ابان ساعت ۱۸:۴۶ دقیقه در قشم فقط یک صدای مهیب شنیده شد که احتملا از سمت پدافند قشم بوده و شاید پرتابه به پدافند خورده\n\nسلام وحید جان ساعت ۶ و ۴۶ دقیقه یک صدای انفجاری اومد قشم\n📡 @VahidOnline",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795188161.0
-    },
-    "Ali_bk_8_8752": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1157,
-      "status_icon": "🚨🔕",
-      "last_formatted_text": "🚨🔕 صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8752\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1157,
-          "status_icon": "🚨🔕",
-          "last_formatted_text": "🚨🔕 صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8752\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8752,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.\n\nExplosions heard on Iran's Qeshm Island, with reports of an enemy aerial target being shot down.",
-          "output_text": "صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.",
-          "last_edit_timestamp": 1795189082.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8752",
-      "sent_timestamp": 1795187981.8930793,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8752,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.\n\nExplosions heard on Iran's Qeshm Island, with reports of an enemy aerial target being shot down.",
-      "output_text": "صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795189082.0
-    },
     "withyashar_28577": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1158,
       "status_icon": "🚨",
-      "last_formatted_text": "🚨 موشک پدافند در آسمان قشم\n\n🎥 <a href=\"https://t.me/withyashar/28577\">@withyashar</a>\n📝 <a href=\"https://t.me/Ali_bk_8/8754\">@Ali_bk_8</a>",
+      "last_formatted_text": "🚨 تجاوز آمریکا با موشک، حومه شهر قشم ایران را هدف قرار داد.\n\n🎥 <a href=\"https://t.me/withyashar/28577\">@withyashar</a>\n📝 <a href=\"https://t.me/Ali_bk_8/8754\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
           "bot_msg_id": 1158,
           "status_icon": "🚨",
-          "last_formatted_text": "🚨 موشک پدافند در آسمان قشم\n\n🎥 <a href=\"https://t.me/withyashar/28577\">@withyashar</a>\n📝 <a href=\"https://t.me/Ali_bk_8/8754\">@Ali_bk_8</a>"
+          "last_formatted_text": "🚨 تجاوز آمریکا با موشک، حومه شهر قشم ایران را هدف قرار داد.\n\n🎥 <a href=\"https://t.me/withyashar/28577\">@withyashar</a>\n📝 <a href=\"https://t.me/Ali_bk_8/8754\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
@@ -199,23 +59,66 @@
           "msg_id": 8754,
           "media_icons": "📝",
           "grouped_id": null,
-          "raw_text": "اصابت موشک به حومه شهر قشم ایران.\n\nA missile strikes the outskirts of Iran's Qeshm city.",
-          "output_text": "اصابت موشک به حومه شهر قشم ایران.",
-          "last_edit_timestamp": 1795190324.0
+          "raw_text": "تجاوز آمریکا با موشک، حومه شهر قشم ایران را هدف قرار داد.\n\nA US missile attack targets the outskirts of Iran's Qeshm city.",
+          "output_text": "تجاوز آمریکا با موشک، حومه شهر قشم ایران را هدف قرار داد.",
+          "last_edit_timestamp": 1795190554.0
         }
       ],
-      "active_text_source": "withyashar_28577",
+      "active_text_source": "Ali_bk_8_8754",
       "sent_timestamp": 1795189063.1661375,
       "source_node": "withyashar",
       "msg_id": 28577,
       "media_icons": "🎥",
       "grouped_id": 14361512400404540,
-      "raw_text": "موشک پدافند در آسمان قشم\n@WarRoom",
-      "output_text": "موشک پدافند در آسمان قشم\n@WarRoom",
+      "raw_text": "تجاوز آمریکا با موشک، حومه شهر قشم ایران را هدف قرار داد.\n\nA US missile attack targets the outskirts of Iran's Qeshm city.",
+      "output_text": "تجاوز آمریکا با موشک، حومه شهر قشم ایران را هدف قرار داد.",
       "is_seismic": false,
-      "last_edit_timestamp": 1795190324.0
+      "last_edit_timestamp": 1795190554.0
+    },
+    "Ali_bk_8_8755": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1159,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 مرکز عملیات تجارت دریایی بریتانیا () گزارشی درباره وقوع حادثه‌ای در فاصله ۸ مایل دریایی شمال خصب در عمان دریافت کرده است. یک نفتکش که در حال خروج از تنگه هرمز بوده، از ناحیه دماغه سمت چپ با پرتابه‌ای ناشناس هدف قرار گرفته است. مسئول امنیت شرکت کشتیرانی (CSO) از وقوع آتش‌سوزی در این شناور خبر داده است. UK_MTO\n\n📷 <a href=\"https://t.me/Ali_bk_8/8755\">@Ali_bk_8</a>\n📷 <a href=\"https://t.me/VahidOnline/79188\">@VahidOnline</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1159,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 مرکز عملیات تجارت دریایی بریتانیا () گزارشی درباره وقوع حادثه‌ای در فاصله ۸ مایل دریایی شمال خصب در عمان دریافت کرده است. یک نفتکش که در حال خروج از تنگه هرمز بوده، از ناحیه دماغه سمت چپ با پرتابه‌ای ناشناس هدف قرار گرفته است. مسئول امنیت شرکت کشتیرانی (CSO) از وقوع آتش‌سوزی در این شناور خبر داده است. UK_MTO\n\n📷 <a href=\"https://t.me/Ali_bk_8/8755\">@Ali_bk_8</a>\n📷 <a href=\"https://t.me/VahidOnline/79188\">@VahidOnline</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8755,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "نیروی دریایی بریتانیا تأیید کرد که یک نفتکش هنگام عبور از تنگه هرمز از ناحیه جلوی سمت چپ کشتی مورد اصابت قرار گرفته است.\n\nThe British Navy confirms that an oil tanker was hit on its port bow while transiting the Strait of Hormuz.",
+          "output_text": "نیروی دریایی بریتانیا تأیید کرد که یک نفتکش هنگام عبور از تنگه هرمز از ناحیه جلوی سمت چپ کشتی مورد اصابت قرار گرفته است.",
+          "last_edit_timestamp": 1795190989.653773
+        },
+        {
+          "source_node": "VahidOnline",
+          "msg_id": 79188,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "مرکز عملیات تجارت دریایی بریتانیا () گزارشی درباره وقوع حادثه‌ای در فاصله ۸ مایل دریایی شمال خصب در عمان دریافت کرده است.\nیک نفتکش که در حال خروج از تنگه هرمز بوده، از ناحیه دماغه سمت چپ با پرتابه‌ای ناشناس هدف قرار گرفته است.\nمسئول امنیت شرکت کشتیرانی (CSO) از وقوع آتش‌سوزی در این شناور خبر داده است. \nUK_MTO\n\n📡 @VahidOnline",
+          "output_text": "مرکز عملیات تجارت دریایی بریتانیا () گزارشی درباره وقوع حادثه‌ای در فاصله ۸ مایل دریایی شمال خصب در عمان دریافت کرده است.\nیک نفتکش که در حال خروج از تنگه هرمز بوده، از ناحیه دماغه سمت چپ با پرتابه‌ای ناشناس هدف قرار گرفته است.\nمسئول امنیت شرکت کشتیرانی (CSO) از وقوع آتش‌سوزی در این شناور خبر داده است. \nUK_MTO\n\n📡 @VahidOnline",
+          "last_edit_timestamp": 1795191874.4050858
+        }
+      ],
+      "active_text_source": "VahidOnline_79188",
+      "sent_timestamp": 1795190990.1732905,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8755,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "مرکز عملیات تجارت دریایی بریتانیا () گزارشی درباره وقوع حادثه‌ای در فاصله ۸ مایل دریایی شمال خصب در عمان دریافت کرده است.\nیک نفتکش که در حال خروج از تنگه هرمز بوده، از ناحیه دماغه سمت چپ با پرتابه‌ای ناشناس هدف قرار گرفته است.\nمسئول امنیت شرکت کشتیرانی (CSO) از وقوع آتش‌سوزی در این شناور خبر داده است. \nUK_MTO\n\n📡 @VahidOnline",
+      "output_text": "مرکز عملیات تجارت دریایی بریتانیا () گزارشی درباره وقوع حادثه‌ای در فاصله ۸ مایل دریایی شمال خصب در عمان دریافت کرده است.\nیک نفتکش که در حال خروج از تنگه هرمز بوده، از ناحیه دماغه سمت چپ با پرتابه‌ای ناشناس هدف قرار گرفته است.\nمسئول امنیت شرکت کشتیرانی (CSO) از وقوع آتش‌سوزی در این شناور خبر داده است. \nUK_MTO\n\n📡 @VahidOnline",
+      "is_seismic": false
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-20T15:59:07.017007+00:00"
+  "updated_at": "2026-11-20T16:25:33.688587+00:00"
 }
