@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28546,
-      "last_read_time": "2026-11-20 08:43:50 UTC"
+      "last_read_id": 28548,
+      "last_read_time": "2026-11-20 09:36:01 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8731,
-      "last_read_time": "2026-11-20 08:38:59 UTC"
+      "last_read_id": 8732,
+      "last_read_time": "2026-11-20 09:38:09 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79178,
@@ -31,42 +31,42 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8731": {
+    "withyashar_28548": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 1150,
+      "bot_msg_id": 1151,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 گزارش‌های اولیه از سرنگونی یک پهپاد در حریم هوایی ایران دقایقی پیش.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8731\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 گزارش‌های تایید نشده اولیه از انهدام یک پهپاد در آسمان اصفهان دقایقی پیش\n\n📷 <a href=\"https://t.me/withyashar/28548\">@withyashar</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 1150,
+          "bot_msg_id": 1151,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 گزارش‌های اولیه از سرنگونی یک پهپاد در حریم هوایی ایران دقایقی پیش.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8731\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 گزارش‌های تایید نشده اولیه از انهدام یک پهپاد در آسمان اصفهان دقایقی پیش\n\n📷 <a href=\"https://t.me/withyashar/28548\">@withyashar</a>"
         }
       ],
       "sources": [
         {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8731,
+          "source_node": "withyashar",
+          "msg_id": 28548,
           "media_icons": "📷",
           "grouped_id": null,
-          "raw_text": "گزارش‌های اولیه از سرنگونی یک پهپاد در حریم هوایی ایران دقایقی پیش.\n\nInitial reports of a drone being shot down in Iranian airspace a short while ago.",
-          "output_text": "گزارش‌های اولیه از سرنگونی یک پهپاد در حریم هوایی ایران دقایقی پیش.",
-          "last_edit_timestamp": 1795164000.2121794
+          "raw_text": "گزارش‌های تایید نشده اولیه از انهدام یک پهپاد در آسمان اصفهان دقایقی پیش\n@WarRoom",
+          "output_text": "گزارش‌های تایید نشده اولیه از انهدام یک پهپاد در آسمان اصفهان دقایقی پیش\n@WarRoom",
+          "last_edit_timestamp": 1795167393.7799823
         }
       ],
-      "active_text_source": "Ali_bk_8_8731",
-      "sent_timestamp": 1795164000.7700005,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8731,
+      "active_text_source": "withyashar_28548",
+      "sent_timestamp": 1795167394.392617,
+      "source_node": "withyashar",
+      "msg_id": 28548,
       "media_icons": "📷",
       "grouped_id": null,
-      "raw_text": "گزارش‌های اولیه از سرنگونی یک پهپاد در حریم هوایی ایران دقایقی پیش.\n\nInitial reports of a drone being shot down in Iranian airspace a short while ago.",
-      "output_text": "گزارش‌های اولیه از سرنگونی یک پهپاد در حریم هوایی ایران دقایقی پیش.",
+      "raw_text": "گزارش‌های تایید نشده اولیه از انهدام یک پهپاد در آسمان اصفهان دقایقی پیش\n@WarRoom",
+      "output_text": "گزارش‌های تایید نشده اولیه از انهدام یک پهپاد در آسمان اصفهان دقایقی پیش\n@WarRoom",
       "is_seismic": false,
-      "last_edit_timestamp": 1795163959.0
+      "last_edit_timestamp": 1795167374.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-20T09:15:24.797601+00:00"
+  "updated_at": "2026-11-20T09:41:51.070029+00:00"
 }
