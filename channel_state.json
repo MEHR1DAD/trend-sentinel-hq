@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8729": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1148,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف حمله پهپادی از یمن قرار گرفته است.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8729\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1148,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف حمله پهپادی از یمن قرار گرفته است.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8729\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8729,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف حمله پهپادی از یمن قرار گرفته است.\n\nSaudi Arabia announces that its capital, Riyadh, has come under a drone attack from Yemen.",
-          "output_text": "عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف حمله پهپادی از یمن قرار گرفته است.",
-          "last_edit_timestamp": 1795159216.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8729",
-      "sent_timestamp": 1795159197.8360877,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8729,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف حمله پهپادی از یمن قرار گرفته است.\n\nSaudi Arabia announces that its capital, Riyadh, has come under a drone attack from Yemen.",
-      "output_text": "عربستان سعودی اعلام کرد پایتخت این کشور، ریاض، هدف حمله پهپادی از یمن قرار گرفته است.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795159216.0
-    },
     "withyashar_28540": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1149,
@@ -103,5 +68,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-20T07:56:10.997049+00:00"
+  "updated_at": "2026-11-20T08:22:34.659619+00:00"
 }
