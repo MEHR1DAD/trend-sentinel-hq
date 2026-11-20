@@ -2,26 +2,26 @@
 
 - **Uptime:** 26 minutes
 - **Messages Processed:** 4
-- **Alerts Dispatched:** 2
+- **Alerts Dispatched:** 0
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** پیام‌های دریافتی:  #قشم 29 ابان 15:55 صدای شلیک موشک از قشم  وحید جان یه صدای مهیب شبیه صدای فعال شدن پدافند هوایی در قش
-- **Last Message Time:** 2026-11-20 13:42:24 UTC
+- **Last Message Text:** نیروهای مسلح یمن جیزان را با یک موج موشکی هدف قرار دادند.  The Yemeni Armed Forces target Jizan with a barrage of missil
+- **Last Message Time:** 2026-11-20 14:06:58 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28567 (2026-11-20 13:18:15 UTC)
-- `@Ali_bk_8`: #8747 (2026-11-20 13:27:40 UTC)
+- `@withyashar`: #28570 (2026-11-20 14:01:48 UTC)
+- `@Ali_bk_8`: #8748 (2026-11-20 14:06:58 UTC)
 - `@VahidOnline`: #79186 (2026-11-20 13:42:24 UTC)
 - `@iliaen`: #4759 (2026-11-17 15:25:09 UTC)
 - `@netblocks`: #1587 (2026-11-20 11:37:43 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 4m ago
-- `@DidehbanEghtesad`: Last loud alert 10086m ago
-- `@DidebanEterazat`: Last loud alert 17345m ago
+- `@DidebanJang`: Last loud alert 30m ago
+- `@DidehbanEghtesad`: Last loud alert 10112m ago
+- `@DidebanEterazat`: Last loud alert 17372m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- `VahidOnline_79179` -> @DidebanEterazat (#64) (📷, 6m ago)
-- `VahidOnline_79186` -> @DidebanJang (#1153) (📷, 4m ago)
+- `VahidOnline_79179` -> @DidebanEterazat (#64) (📷, 32m ago)
+- `VahidOnline_79186` -> @DidebanJang (#1153) (📷, 30m ago)
