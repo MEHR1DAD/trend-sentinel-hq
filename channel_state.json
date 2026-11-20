@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28575,
-      "last_read_time": "2026-11-20 15:27:35 UTC"
+      "last_read_id": 28577,
+      "last_read_time": "2026-11-20 15:37:30 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8752,
-      "last_read_time": "2026-11-20 15:19:26 UTC"
+      "last_read_id": 8754,
+      "last_read_time": "2026-11-20 15:57:55 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79187,
@@ -26,7 +26,7 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1795187861.521903,
+    "@DidebanJang": 1795189062.7074008,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
@@ -157,7 +157,7 @@
           "grouped_id": null,
           "raw_text": "صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.\n\nExplosions heard on Iran's Qeshm Island, with reports of an enemy aerial target being shot down.",
           "output_text": "صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.",
-          "last_edit_timestamp": 1795188028.0
+          "last_edit_timestamp": 1795189082.0
         }
       ],
       "active_text_source": "Ali_bk_8_8752",
@@ -169,9 +169,53 @@
       "raw_text": "صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.\n\nExplosions heard on Iran's Qeshm Island, with reports of an enemy aerial target being shot down.",
       "output_text": "صدای انفجارهایی در جزیره قشم ایران شنیده شده و گزارش‌هایی از سرنگونی یک هدف هوایی متخاصم منتشر شده است.",
       "is_seismic": false,
-      "last_edit_timestamp": 1795188028.0
+      "last_edit_timestamp": 1795189082.0
+    },
+    "withyashar_28577": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1158,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 موشک پدافند در آسمان قشم\n\n🎥 <a href=\"https://t.me/withyashar/28577\">@withyashar</a>\n📝 <a href=\"https://t.me/Ali_bk_8/8754\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1158,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 موشک پدافند در آسمان قشم\n\n🎥 <a href=\"https://t.me/withyashar/28577\">@withyashar</a>\n📝 <a href=\"https://t.me/Ali_bk_8/8754\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28577,
+          "media_icons": "🎥",
+          "grouped_id": 14361512400404540,
+          "raw_text": "موشک پدافند در آسمان قشم\n@WarRoom",
+          "output_text": "موشک پدافند در آسمان قشم\n@WarRoom",
+          "last_edit_timestamp": 1795189063.0
+        },
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8754,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "اصابت موشک به حومه شهر قشم ایران.\n\nA missile strikes the outskirts of Iran's Qeshm city.",
+          "output_text": "اصابت موشک به حومه شهر قشم ایران.",
+          "last_edit_timestamp": 1795190324.0
+        }
+      ],
+      "active_text_source": "withyashar_28577",
+      "sent_timestamp": 1795189063.1661375,
+      "source_node": "withyashar",
+      "msg_id": 28577,
+      "media_icons": "🎥",
+      "grouped_id": 14361512400404540,
+      "raw_text": "موشک پدافند در آسمان قشم\n@WarRoom",
+      "output_text": "موشک پدافند در آسمان قشم\n@WarRoom",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795190324.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-20T15:32:42.258431+00:00"
+  "updated_at": "2026-11-20T15:59:07.017007+00:00"
 }
