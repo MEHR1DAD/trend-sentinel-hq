@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28633,
-      "last_read_time": "2026-11-20 22:25:15 UTC"
+      "last_read_id": 28636,
+      "last_read_time": "2026-11-20 22:44:55 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8779,
-      "last_read_time": "2026-11-20 22:00:34 UTC"
+      "last_read_id": 8783,
+      "last_read_time": "2026-11-20 22:54:26 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79191,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8778": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1164,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویری از انفجار یک نفتکش متخلف در ورودی بندر خصب در تنگه هرمز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8778\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1164,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویری از انفجار یک نفتکش متخلف در ورودی بندر خصب در تنگه هرمز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8778\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8778,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "تصاویری از انفجار یک نفتکش متخلف در ورودی بندر خصب در تنگه هرمز.\n\nFootage of an explosion aboard a noncompliant oil tanker at the entrance to Khasab Port in the Strait of Hormuz.",
-          "output_text": "تصاویری از انفجار یک نفتکش متخلف در ورودی بندر خصب در تنگه هرمز.",
-          "last_edit_timestamp": 1795211388.7979996
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8778",
-      "sent_timestamp": 1795211389.3206913,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8778,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "تصاویری از انفجار یک نفتکش متخلف در ورودی بندر خصب در تنگه هرمز.\n\nFootage of an explosion aboard a noncompliant oil tanker at the entrance to Khasab Port in the Strait of Hormuz.",
-      "output_text": "تصاویری از انفجار یک نفتکش متخلف در ورودی بندر خصب در تنگه هرمز.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795211368.0
-    },
     "Ali_bk_8_8779": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1165,
@@ -100,8 +65,43 @@
       "output_text": "تصاویر بیشتری از انفجار یک نفتکش متخلف در تنگه هرمز.",
       "is_seismic": false,
       "last_edit_timestamp": 1795212133.0
+    },
+    "Ali_bk_8_8781": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1166,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تصاویری از سرنگونی یک پهپاد سعودی در صنعا، پایتخت یمن، دقایقی پیش.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8781\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1166,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تصاویری از سرنگونی یک پهپاد سعودی در صنعا، پایتخت یمن، دقایقی پیش.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8781\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8781,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "تصاویری از سرنگونی یک پهپاد سعودی در صنعا، پایتخت یمن، دقایقی پیش.\n\nFootage of a Saudi drone being shot down in the Yemeni capital, Sanaa, a short while ago.",
+          "output_text": "تصاویری از سرنگونی یک پهپاد سعودی در صنعا، پایتخت یمن، دقایقی پیش.",
+          "last_edit_timestamp": 1795215009.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8781",
+      "sent_timestamp": 1795214896.8523202,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8781,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "تصاویری از سرنگونی یک پهپاد سعودی در صنعا، پایتخت یمن، دقایقی پیش.\n\nFootage of a Saudi drone being shot down in the Yemeni capital, Sanaa, a short while ago.",
+      "output_text": "تصاویری از سرنگونی یک پهپاد سعودی در صنعا، پایتخت یمن، دقایقی پیش.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795215009.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-20T22:32:14.894573+00:00"
+  "updated_at": "2026-11-20T22:58:39.976277+00:00"
 }
