@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28689,
-      "last_read_time": "2026-11-21 21:03:44 UTC"
+      "last_read_id": 28692,
+      "last_read_time": "2026-11-21 21:36:08 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8857,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28684": {
-      "target_channel": "@DidebanEterazat",
-      "bot_msg_id": 68,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 شاهزاده رضا پهلوی از مردم خواست در برابر خطر اعدام میلاد آرمون و نوید نجاران، دو زندانی سیاسی پرونده اکباتان، سکوت نکنند و از همه ظرفیت‌های موجود برای نجات جان آن‌ها استفاده کنند.\n\n📝 <a href=\"https://t.me/withyashar/28684\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanEterazat",
-          "bot_msg_id": 68,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 شاهزاده رضا پهلوی از مردم خواست در برابر خطر اعدام میلاد آرمون و نوید نجاران، دو زندانی سیاسی پرونده اکباتان، سکوت نکنند و از همه ظرفیت‌های موجود برای نجات جان آن‌ها استفاده کنند.\n\n📝 <a href=\"https://t.me/withyashar/28684\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28684,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "شاهزاده رضا پهلوی از مردم خواست در برابر خطر اعدام میلاد آرمون و نوید نجاران، دو زندانی سیاسی پرونده اکباتان، سکوت نکنند و از همه ظرفیت‌های موجود برای نجات جان آن‌ها استفاده کنند.\n@WarRoom",
-          "output_text": "شاهزاده رضا پهلوی از مردم خواست در برابر خطر اعدام میلاد آرمون و نوید نجاران، دو زندانی سیاسی پرونده اکباتان، سکوت نکنند و از همه ظرفیت‌های موجود برای نجات جان آن‌ها استفاده کنند.\n@WarRoom",
-          "last_edit_timestamp": 1795292528.0
-        }
-      ],
-      "active_text_source": "withyashar_28684",
-      "sent_timestamp": 1795292365.9948618,
-      "source_node": "withyashar",
-      "msg_id": 28684,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "شاهزاده رضا پهلوی از مردم خواست در برابر خطر اعدام میلاد آرمون و نوید نجاران، دو زندانی سیاسی پرونده اکباتان، سکوت نکنند و از همه ظرفیت‌های موجود برای نجات جان آن‌ها استفاده کنند.\n@WarRoom",
-      "output_text": "شاهزاده رضا پهلوی از مردم خواست در برابر خطر اعدام میلاد آرمون و نوید نجاران، دو زندانی سیاسی پرونده اکباتان، سکوت نکنند و از همه ظرفیت‌های موجود برای نجات جان آن‌ها استفاده کنند.\n@WarRoom",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795292528.0
-    },
     "Ali_bk_8_8857": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1179,
@@ -103,5 +68,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-21T21:11:50.117943+00:00"
+  "updated_at": "2026-11-21T21:38:16.668742+00:00"
 }
