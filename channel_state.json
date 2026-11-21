@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28694,
-      "last_read_time": "2026-11-21 21:53:13 UTC"
+      "last_read_id": 28695,
+      "last_read_time": "2026-11-21 22:58:15 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8858,
-      "last_read_time": "2026-11-21 21:45:00 UTC"
+      "last_read_id": 8863,
+      "last_read_time": "2026-11-21 23:18:31 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79209,
@@ -30,7 +30,78 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_8861": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 105,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 یک نفتکش غول‌پیکر ایرانی در حال عبور از تنگه هرمز به سمت دریای عمان، در نخستین تلاش‌ها برای شکستن محاصره رصد شده است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8861\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 105,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 یک نفتکش غول‌پیکر ایرانی در حال عبور از تنگه هرمز به سمت دریای عمان، در نخستین تلاش‌ها برای شکستن محاصره رصد شده است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8861\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8861,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "یک نفتکش غول‌پیکر ایرانی در حال عبور از تنگه هرمز به سمت دریای عمان، در نخستین تلاش‌ها برای شکستن محاصره رصد شده است.\n\nA giant Iranian oil tanker has been spotted crossing the Strait of Hormuz towards the Gulf of Oman in one of the first attempts to break the blockade.",
+          "output_text": "یک نفتکش غول‌پیکر ایرانی در حال عبور از تنگه هرمز به سمت دریای عمان، در نخستین تلاش‌ها برای شکستن محاصره رصد شده است.",
+          "last_edit_timestamp": 1795302717.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8861",
+      "sent_timestamp": 1795302657.1170406,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8861,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "یک نفتکش غول‌پیکر ایرانی در حال عبور از تنگه هرمز به سمت دریای عمان، در نخستین تلاش‌ها برای شکستن محاصره رصد شده است.\n\nA giant Iranian oil tanker has been spotted crossing the Strait of Hormuz towards the Gulf of Oman in one of the first attempts to break the blockade.",
+      "output_text": "یک نفتکش غول‌پیکر ایرانی در حال عبور از تنگه هرمز به سمت دریای عمان، در نخستین تلاش‌ها برای شکستن محاصره رصد شده است.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795302717.0
+    },
+    "Ali_bk_8_8862": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 106,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 نام نفتکش غول‌پیکر ایرانی که به سمت دریای عمان در حرکت است، «خط‌شکن» (به معنای کاسر خط در زبان عربی) است.\n\nنام این نفتکش به‌روشنی نشان می‌دهد که مأموریت آن شکستن محاصره دریایی است.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8862\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 106,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 نام نفتکش غول‌پیکر ایرانی که به سمت دریای عمان در حرکت است، «خط‌شکن» (به معنای کاسر خط در زبان عربی) است.\n\nنام این نفتکش به‌روشنی نشان می‌دهد که مأموریت آن شکستن محاصره دریایی است.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8862\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8862,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "نام نفتکش غول‌پیکر ایرانی که به سمت دریای عمان در حرکت است، «خط‌شکن» (به معنای کاسر خط در زبان عربی) است.\n\nنام این نفتکش به‌روشنی نشان می‌دهد که مأموریت آن شکستن محاصره دریایی است.\n\nThe giant Iranian oil tanker heading towards the Gulf of Oman is named \"Khat-Shekan\" (Line Breaker in Arabic).\n\nThe tanker's name strongly indicates that its mission is to break the naval blockade.",
+          "output_text": "نام نفتکش غول‌پیکر ایرانی که به سمت دریای عمان در حرکت است، «خط‌شکن» (به معنای کاسر خط در زبان عربی) است.\n\nنام این نفتکش به‌روشنی نشان می‌دهد که مأموریت آن شکستن محاصره دریایی است.",
+          "last_edit_timestamp": 1795302956.7056699
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8862",
+      "sent_timestamp": 1795302957.1854002,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8862,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "نام نفتکش غول‌پیکر ایرانی که به سمت دریای عمان در حرکت است، «خط‌شکن» (به معنای کاسر خط در زبان عربی) است.\n\nنام این نفتکش به‌روشنی نشان می‌دهد که مأموریت آن شکستن محاصره دریایی است.\n\nThe giant Iranian oil tanker heading towards the Gulf of Oman is named \"Khat-Shekan\" (Line Breaker in Arabic).\n\nThe tanker's name strongly indicates that its mission is to break the naval blockade.",
+      "output_text": "نام نفتکش غول‌پیکر ایرانی که به سمت دریای عمان در حرکت است، «خط‌شکن» (به معنای کاسر خط در زبان عربی) است.\n\nنام این نفتکش به‌روشنی نشان می‌دهد که مأموریت آن شکستن محاصره دریایی است.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795302949.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-21T22:57:32.821678+00:00"
+  "updated_at": "2026-11-21T23:23:56.757978+00:00"
 }
