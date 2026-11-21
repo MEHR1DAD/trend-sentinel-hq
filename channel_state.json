@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28651,
-      "last_read_time": "2026-11-21 09:35:11 UTC"
+      "last_read_id": 28655,
+      "last_read_time": "2026-11-21 11:31:31 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8804,
-      "last_read_time": "2026-11-21 10:15:42 UTC"
+      "last_read_id": 8812,
+      "last_read_time": "2026-11-21 10:54:50 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79191,
@@ -31,42 +31,75 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8804": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1170,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 سپاه پاسداران اعلام کرد یک پهپاد آمریکایی از نوع MQ-1، نوزدهمین پهپاد از این نوع، دقایقی پیش در آسمان جزیره قشم منهدم شد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8804\">@Ali_bk_8</a>",
+    "withyashar_28654": {
+      "target_channel": "@DidebanEterazat",
+      "bot_msg_id": 66,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 ‏سازمان حقوق بشر هانا گزارش داد حیدر ملایی، شهروند اهل مورموری در شهرستان آبدانان، شامگاه جمعه ۲۹ آبان در جریان اعتراضات در حمایت از بازداشت‌شدگان اخیر آبدانان، به دست نیروهای امنیتی بازداشت و به مکانی نامعلوم منتقل شد.\n\n📝 <a href=\"https://t.me/withyashar/28654\">@withyashar</a>",
       "dispatches": [
         {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1170,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 سپاه پاسداران اعلام کرد یک پهپاد آمریکایی از نوع MQ-1، نوزدهمین پهپاد از این نوع، دقایقی پیش در آسمان جزیره قشم منهدم شد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8804\">@Ali_bk_8</a>"
+          "target_channel": "@DidebanEterazat",
+          "bot_msg_id": 66,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 ‏سازمان حقوق بشر هانا گزارش داد حیدر ملایی، شهروند اهل مورموری در شهرستان آبدانان، شامگاه جمعه ۲۹ آبان در جریان اعتراضات در حمایت از بازداشت‌شدگان اخیر آبدانان، به دست نیروهای امنیتی بازداشت و به مکانی نامعلوم منتقل شد.\n\n📝 <a href=\"https://t.me/withyashar/28654\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28654,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "‏سازمان حقوق بشر هانا گزارش داد حیدر ملایی، شهروند اهل مورموری در شهرستان آبدانان، شامگاه جمعه ۲۹ آبان در جریان اعتراضات در حمایت از بازداشت‌شدگان اخیر آبدانان، به دست نیروهای امنیتی بازداشت و به مکانی نامعلوم منتقل شد.\n@WarRoom",
+          "output_text": "‏سازمان حقوق بشر هانا گزارش داد حیدر ملایی، شهروند اهل مورموری در شهرستان آبدانان، شامگاه جمعه ۲۹ آبان در جریان اعتراضات در حمایت از بازداشت‌شدگان اخیر آبدانان، به دست نیروهای امنیتی بازداشت و به مکانی نامعلوم منتقل شد.\n@WarRoom",
+          "last_edit_timestamp": 1795259892.3775
+        }
+      ],
+      "active_text_source": "withyashar_28654",
+      "sent_timestamp": 1795259892.9039147,
+      "source_node": "withyashar",
+      "msg_id": 28654,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "‏سازمان حقوق بشر هانا گزارش داد حیدر ملایی، شهروند اهل مورموری در شهرستان آبدانان، شامگاه جمعه ۲۹ آبان در جریان اعتراضات در حمایت از بازداشت‌شدگان اخیر آبدانان، به دست نیروهای امنیتی بازداشت و به مکانی نامعلوم منتقل شد.\n@WarRoom",
+      "output_text": "‏سازمان حقوق بشر هانا گزارش داد حیدر ملایی، شهروند اهل مورموری در شهرستان آبدانان، شامگاه جمعه ۲۹ آبان در جریان اعتراضات در حمایت از بازداشت‌شدگان اخیر آبدانان، به دست نیروهای امنیتی بازداشت و به مکانی نامعلوم منتقل شد.\n@WarRoom",
+      "is_seismic": false
+    },
+    "Ali_bk_8_8805": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 103,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سپاه پاسداران تصاویری از انهدام دومین نفتکش متخلف در سواحل جنوبی تنگه هرمز منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8805\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 103,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سپاه پاسداران تصاویری از انهدام دومین نفتکش متخلف در سواحل جنوبی تنگه هرمز منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8805\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
         {
           "source_node": "Ali_bk_8",
-          "msg_id": 8804,
-          "media_icons": "📷",
+          "msg_id": 8805,
+          "media_icons": "🎥",
           "grouped_id": null,
-          "raw_text": "سپاه پاسداران اعلام کرد یک پهپاد آمریکایی از نوع MQ-1، نوزدهمین پهپاد از این نوع، دقایقی پیش در آسمان جزیره قشم منهدم شد.\n\nThe IRGC announces that an American MQ-1 drone, the nineteenth of its type, was destroyed over Qeshm Island minutes ago.",
-          "output_text": "سپاه پاسداران اعلام کرد یک پهپاد آمریکایی از نوع MQ-1، نوزدهمین پهپاد از این نوع، دقایقی پیش در آسمان جزیره قشم منهدم شد.",
-          "last_edit_timestamp": 1795256636.0
+          "raw_text": "سپاه پاسداران تصاویری از انهدام دومین نفتکش متخلف در سواحل جنوبی تنگه هرمز منتشر کرد.\n\nThe IRGC releases footage showing the destruction of a second oil tanker involved in violations off the southern coast of the Strait of Hormuz.",
+          "output_text": "سپاه پاسداران تصاویری از انهدام دومین نفتکش متخلف در سواحل جنوبی تنگه هرمز منتشر کرد.",
+          "last_edit_timestamp": 1795259894.0482748
         }
       ],
-      "active_text_source": "Ali_bk_8_8804",
-      "sent_timestamp": 1795256193.0415962,
+      "active_text_source": "Ali_bk_8_8805",
+      "sent_timestamp": 1795259894.3974016,
       "source_node": "Ali_bk_8",
-      "msg_id": 8804,
-      "media_icons": "📷",
+      "msg_id": 8805,
+      "media_icons": "🎥",
       "grouped_id": null,
-      "raw_text": "سپاه پاسداران اعلام کرد یک پهپاد آمریکایی از نوع MQ-1، نوزدهمین پهپاد از این نوع، دقایقی پیش در آسمان جزیره قشم منهدم شد.\n\nThe IRGC announces that an American MQ-1 drone, the nineteenth of its type, was destroyed over Qeshm Island minutes ago.",
-      "output_text": "سپاه پاسداران اعلام کرد یک پهپاد آمریکایی از نوع MQ-1، نوزدهمین پهپاد از این نوع، دقایقی پیش در آسمان جزیره قشم منهدم شد.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795256636.0
+      "raw_text": "سپاه پاسداران تصاویری از انهدام دومین نفتکش متخلف در سواحل جنوبی تنگه هرمز منتشر کرد.\n\nThe IRGC releases footage showing the destruction of a second oil tanker involved in violations off the southern coast of the Strait of Hormuz.",
+      "output_text": "سپاه پاسداران تصاویری از انهدام دومین نفتکش متخلف در سواحل جنوبی تنگه هرمز منتشر کرد.",
+      "is_seismic": false
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-21T10:25:31.488237+00:00"
+  "updated_at": "2026-11-21T11:44:10.681822+00:00"
 }
