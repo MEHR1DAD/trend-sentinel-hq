@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28756,
-      "last_read_time": "2026-11-22 17:47:27 UTC"
+      "last_read_id": 28757,
+      "last_read_time": "2026-11-22 18:07:35 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8892,
-      "last_read_time": "2026-11-22 17:46:55 UTC"
+      "last_read_id": 8896,
+      "last_read_time": "2026-11-22 18:14:11 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79214,
@@ -26,7 +26,7 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1795365883.6257582,
+    "@DidebanJang": 1795370881.4774442,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
@@ -64,8 +64,77 @@
       "raw_text": "سازمان عملیات تجارت دریایی بریتانیا اعلام کرد که گزارشی مبنی بر وقوع حادثه‌ای «میان یک نفت‌کش و نیروهای نظامی» در دریای عمان دریافت کرده است.\n\nاین سازمان جزئیات بیشتری درباره این حادثه ارائه نکرد و افزود که مقامات در جریان امر قرار گرفته‌اند و تحقیقات در این زمینه ادامه دارد.\nدر مورد مالکیت این نفتکش و هویت نیروهای نظامی تاکنون اطلاعاتی منتشر نشده است.\n@VahidOnLive\n\n📡 @VahidOnline",
       "output_text": "سازمان عملیات تجارت دریایی بریتانیا اعلام کرد که گزارشی مبنی بر وقوع حادثه‌ای «میان یک نفت‌کش و نیروهای نظامی» در دریای عمان دریافت کرده است.\n\nاین سازمان جزئیات بیشتری درباره این حادثه ارائه نکرد و افزود که مقامات در جریان امر قرار گرفته‌اند و تحقیقات در این زمینه ادامه دارد.\nدر مورد مالکیت این نفتکش و هویت نیروهای نظامی تاکنون اطلاعاتی منتشر نشده است.\n@VahidOnLive\n\n📡 @VahidOnline",
       "is_seismic": false
+    },
+    "withyashar_28757": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1187,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 پرتاب موشک از بندر کنگ 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28757\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1187,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 پرتاب موشک از بندر کنگ 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28757\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28757,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "پرتاب موشک از بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
+          "output_text": "پرتاب موشک از بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
+          "last_edit_timestamp": 1795370881.477441
+        }
+      ],
+      "active_text_source": "withyashar_28757",
+      "sent_timestamp": 1795370881.8785512,
+      "source_node": "withyashar",
+      "msg_id": 28757,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "پرتاب موشک از بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
+      "output_text": "پرتاب موشک از بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795370864.0
+    },
+    "Ali_bk_8_8893": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1188,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 هم‌اکنون موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8893\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1188,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 هم‌اکنون موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8893\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8893,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "هم‌اکنون موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\nMissiles launched toward noncompliant vessels in the Strait of Hormuz now.",
+          "output_text": "هم‌اکنون موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.",
+          "last_edit_timestamp": 1795370914.900648
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8893",
+      "sent_timestamp": 1795370915.2605464,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8893,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "هم‌اکنون موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\nMissiles launched toward noncompliant vessels in the Strait of Hormuz now.",
+      "output_text": "هم‌اکنون موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.",
+      "is_seismic": false
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-22T18:02:37.284037+00:00"
+  "updated_at": "2026-11-22T18:29:01.036945+00:00"
 }
