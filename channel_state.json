@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28764,
-      "last_read_time": "2026-11-22 19:06:32 UTC"
+      "last_read_id": 28765,
+      "last_read_time": "2026-11-22 19:38:50 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8900,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8898": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1189,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 شبکه ۱۵ عبری:\n\nهماهنگی میان اسرائیل و آمریکا در سطح بالایی قرار دارد و موساد و ارتش اسرائیل برای انجام حمله به ایران فشار می‌آورند؛ این در حالی است که بر سر زمان‌بندی آن اختلاف‌نظر وجود دارد. همچنین هشدار داده شده است که هرگونه اقدام ایران می‌تواند حمله را تسریع کند و دو طرف را پیش از موعد تعیین‌شده وارد یک عملیات نظامی کند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8898\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1189,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 شبکه ۱۵ عبری:\n\nهماهنگی میان اسرائیل و آمریکا در سطح بالایی قرار دارد و موساد و ارتش اسرائیل برای انجام حمله به ایران فشار می‌آورند؛ این در حالی است که بر سر زمان‌بندی آن اختلاف‌نظر وجود دارد. همچنین هشدار داده شده است که هرگونه اقدام ایران می‌تواند حمله را تسریع کند و دو طرف را پیش از موعد تعیین‌شده وارد یک عملیات نظامی کند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8898\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8898,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "شبکه ۱۵ عبری:\n\nهماهنگی میان اسرائیل و آمریکا در سطح بالایی قرار دارد و موساد و ارتش اسرائیل برای انجام حمله به ایران فشار می‌آورند؛ این در حالی است که بر سر زمان‌بندی آن اختلاف‌نظر وجود دارد. همچنین هشدار داده شده است که هرگونه اقدام ایران می‌تواند حمله را تسریع کند و دو طرف را پیش از موعد تعیین‌شده وارد یک عملیات نظامی کند.\n\nHebrew Channel 15:\n\nCoordination between Israel and the United States is at a high level. The Mossad and the Israeli army are pushing for an attack on Iran amid a disagreement over timing. There is a warning that an Iranian move could accelerate the attack and draw both sides into a military operation ahead of schedule.",
-          "output_text": "شبکه ۱۵ عبری:\n\nهماهنگی میان اسرائیل و آمریکا در سطح بالایی قرار دارد و موساد و ارتش اسرائیل برای انجام حمله به ایران فشار می‌آورند؛ این در حالی است که بر سر زمان‌بندی آن اختلاف‌نظر وجود دارد. همچنین هشدار داده شده است که هرگونه اقدام ایران می‌تواند حمله را تسریع کند و دو طرف را پیش از موعد تعیین‌شده وارد یک عملیات نظامی کند.",
-          "last_edit_timestamp": 1795373644.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8898",
-      "sent_timestamp": 1795373246.0813916,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8898,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "شبکه ۱۵ عبری:\n\nهماهنگی میان اسرائیل و آمریکا در سطح بالایی قرار دارد و موساد و ارتش اسرائیل برای انجام حمله به ایران فشار می‌آورند؛ این در حالی است که بر سر زمان‌بندی آن اختلاف‌نظر وجود دارد. همچنین هشدار داده شده است که هرگونه اقدام ایران می‌تواند حمله را تسریع کند و دو طرف را پیش از موعد تعیین‌شده وارد یک عملیات نظامی کند.\n\nHebrew Channel 15:\n\nCoordination between Israel and the United States is at a high level. The Mossad and the Israeli army are pushing for an attack on Iran amid a disagreement over timing. There is a warning that an Iranian move could accelerate the attack and draw both sides into a military operation ahead of schedule.",
-      "output_text": "شبکه ۱۵ عبری:\n\nهماهنگی میان اسرائیل و آمریکا در سطح بالایی قرار دارد و موساد و ارتش اسرائیل برای انجام حمله به ایران فشار می‌آورند؛ این در حالی است که بر سر زمان‌بندی آن اختلاف‌نظر وجود دارد. همچنین هشدار داده شده است که هرگونه اقدام ایران می‌تواند حمله را تسریع کند و دو طرف را پیش از موعد تعیین‌شده وارد یک عملیات نظامی کند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795373644.0
-    },
     "Ali_bk_8_8899": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1190,
@@ -138,5 +103,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-22T19:22:43.682272+00:00"
+  "updated_at": "2026-11-22T19:49:35.300216+00:00"
 }
