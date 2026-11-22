@@ -6,11 +6,11 @@
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** شبکه کان اسرائیل: تصاویر ماهواره‌ای نشان می‌دهد ایران در حال ساخت یک پایگاه موشکی زیرزمینی در شمال اصفهان است که بنا بر 
-- **Last Message Time:** 2026-11-22 06:12:05 UTC
+- **Last Message Text:** شرکت آمریکایی تانکرترکرز : ایرانی‌ها آنقدر از شرایط آگاه هستند که با توجه به هدف قرار گرفته شدن تعداد زیادی از نفتکش‌های
+- **Last Message Time:** 2026-11-22 06:37:27 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28716 (2026-11-22 06:12:05 UTC)
+- `@withyashar`: #28718 (2026-11-22 06:37:27 UTC)
 - `@Ali_bk_8`: #8867 (2026-11-22 04:36:46 UTC)
 - `@VahidOnline`: #79209 (2026-11-21 20:29:06 UTC)
 - `@iliaen`: #4759 (2026-11-17 15:25:09 UTC)
@@ -18,9 +18,9 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 625m ago
-- `@DidehbanEghtesad`: Last loud alert 12522m ago
-- `@DidebanEterazat`: Last loud alert 19782m ago
+- `@DidebanJang`: Last loud alert 652m ago
+- `@DidehbanEghtesad`: Last loud alert 12549m ago
+- `@DidebanEterazat`: Last loud alert 19809m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
 - *(No active posts in 60m edit/delete window)*
