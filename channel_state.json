@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28760,
-      "last_read_time": "2026-11-22 18:45:59 UTC"
+      "last_read_id": 28764,
+      "last_read_time": "2026-11-22 19:06:32 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8898,
-      "last_read_time": "2026-11-22 18:46:58 UTC"
+      "last_read_id": 8899,
+      "last_read_time": "2026-11-22 18:57:18 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79214,
@@ -31,75 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28757": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1187,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 پرتاب موشک از بندر کنگ 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28757\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1187,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 پرتاب موشک از بندر کنگ 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28757\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28757,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "پرتاب موشک از بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "پرتاب موشک از بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1795370881.477441
-        }
-      ],
-      "active_text_source": "withyashar_28757",
-      "sent_timestamp": 1795370881.8785512,
-      "source_node": "withyashar",
-      "msg_id": 28757,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "پرتاب موشک از بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-      "output_text": "پرتاب موشک از بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795370864.0
-    },
-    "Ali_bk_8_8893": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1188,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 هم‌اکنون موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8893\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1188,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 هم‌اکنون موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8893\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8893,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "هم‌اکنون موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\nMissiles launched toward noncompliant vessels in the Strait of Hormuz now.",
-          "output_text": "هم‌اکنون موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.",
-          "last_edit_timestamp": 1795370914.900648
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8893",
-      "sent_timestamp": 1795370915.2605464,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8893,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "هم‌اکنون موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.\n\nMissiles launched toward noncompliant vessels in the Strait of Hormuz now.",
-      "output_text": "هم‌اکنون موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شدند.",
-      "is_seismic": false
-    },
     "Ali_bk_8_8898": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1189,
@@ -134,8 +65,78 @@
       "output_text": "شبکه ۱۵ عبری:\n\nهماهنگی میان اسرائیل و آمریکا در سطح بالایی قرار دارد و موساد و ارتش اسرائیل برای انجام حمله به ایران فشار می‌آورند؛ این در حالی است که بر سر زمان‌بندی آن اختلاف‌نظر وجود دارد. همچنین هشدار داده شده است که هرگونه اقدام ایران می‌تواند حمله را تسریع کند و دو طرف را پیش از موعد تعیین‌شده وارد یک عملیات نظامی کند.",
       "is_seismic": false,
       "last_edit_timestamp": 1795373644.0
+    },
+    "Ali_bk_8_8899": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1190,
+      "status_icon": "🚨🔕",
+      "last_formatted_text": "🚨🔕 فعال شدن پدافند هوایی در سیریک ایران.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8899\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1190,
+          "status_icon": "🚨🔕",
+          "last_formatted_text": "🚨🔕 فعال شدن پدافند هوایی در سیریک ایران.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8899\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8899,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "فعال شدن پدافند هوایی در سیریک ایران.\n\nAir defenses activated in Iran's Sirik.",
+          "output_text": "فعال شدن پدافند هوایی در سیریک ایران.",
+          "last_edit_timestamp": 1795373893.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8899",
+      "sent_timestamp": 1795373840.6867101,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8899,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "فعال شدن پدافند هوایی در سیریک ایران.\n\nAir defenses activated in Iran's Sirik.",
+      "output_text": "فعال شدن پدافند هوایی در سیریک ایران.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795373893.0
+    },
+    "withyashar_28761": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1191,
+      "status_icon": "🚨🔕",
+      "last_formatted_text": "🚨🔕 پرتاب موشک از سیریک 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28761\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1191,
+          "status_icon": "🚨🔕",
+          "last_formatted_text": "🚨🔕 پرتاب موشک از سیریک 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28761\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28761,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "پرتاب موشک از سیریک \n@WarRoom 🚨🚨🚨",
+          "output_text": "پرتاب موشک از سیریک \n@WarRoom 🚨🚨🚨",
+          "last_edit_timestamp": 1795373927.9732735
+        }
+      ],
+      "active_text_source": "withyashar_28761",
+      "sent_timestamp": 1795373928.5670893,
+      "source_node": "withyashar",
+      "msg_id": 28761,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "پرتاب موشک از سیریک \n@WarRoom 🚨🚨🚨",
+      "output_text": "پرتاب موشک از سیریک \n@WarRoom 🚨🚨🚨",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795373924.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-22T18:55:25.998620+00:00"
+  "updated_at": "2026-11-22T19:21:47.563283+00:00"
 }
