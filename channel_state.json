@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28737,
-      "last_read_time": "2026-11-22 14:19:03 UTC"
+      "last_read_id": 28740,
+      "last_read_time": "2026-11-22 15:49:59 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8882,
-      "last_read_time": "2026-11-22 15:13:59 UTC"
+      "last_read_id": 8885,
+      "last_read_time": "2026-11-22 15:43:17 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79209,
@@ -30,7 +30,78 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "withyashar_28738": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1183,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 مدیر پروژه ایران در گروه بین‌المللی بحران: آمریکا به ایران اطلاع داده که به تأسیسات کوه کلنگ حمله خواهد کرد و اگر ایران واکنش نشان ندهد، جنگ پایان می‌یابد. واعظ هشدار داده که در پاسخ , ایران با حمله به تأسیسات هسته‌ای اسرائیل و منطقه می‌تواند پیامدهای ویرانگری در دو سوی خلیج فارس داشته باشد.\n\n📝 <a href=\"https://t.me/withyashar/28738\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1183,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 مدیر پروژه ایران در گروه بین‌المللی بحران: آمریکا به ایران اطلاع داده که به تأسیسات کوه کلنگ حمله خواهد کرد و اگر ایران واکنش نشان ندهد، جنگ پایان می‌یابد. واعظ هشدار داده که در پاسخ , ایران با حمله به تأسیسات هسته‌ای اسرائیل و منطقه می‌تواند پیامدهای ویرانگری در دو سوی خلیج فارس داشته باشد.\n\n📝 <a href=\"https://t.me/withyashar/28738\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28738,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "مدیر پروژه ایران در گروه بین‌المللی بحران: آمریکا به ایران اطلاع داده که به تأسیسات کوه کلنگ حمله خواهد کرد و اگر ایران واکنش نشان ندهد، جنگ پایان می‌یابد. واعظ هشدار داده که در پاسخ , ایران با حمله به تأسیسات هسته‌ای اسرائیل و منطقه می‌تواند پیامدهای ویرانگری در دو سوی خلیج فارس داشته باشد. \n@WarRoom",
+          "output_text": "مدیر پروژه ایران در گروه بین‌المللی بحران: آمریکا به ایران اطلاع داده که به تأسیسات کوه کلنگ حمله خواهد کرد و اگر ایران واکنش نشان ندهد، جنگ پایان می‌یابد. واعظ هشدار داده که در پاسخ , ایران با حمله به تأسیسات هسته‌ای اسرائیل و منطقه می‌تواند پیامدهای ویرانگری در دو سوی خلیج فارس داشته باشد. \n@WarRoom",
+          "last_edit_timestamp": 1795361558.0
+        }
+      ],
+      "active_text_source": "withyashar_28738",
+      "sent_timestamp": 1795361367.2118967,
+      "source_node": "withyashar",
+      "msg_id": 28738,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "مدیر پروژه ایران در گروه بین‌المللی بحران: آمریکا به ایران اطلاع داده که به تأسیسات کوه کلنگ حمله خواهد کرد و اگر ایران واکنش نشان ندهد، جنگ پایان می‌یابد. واعظ هشدار داده که در پاسخ , ایران با حمله به تأسیسات هسته‌ای اسرائیل و منطقه می‌تواند پیامدهای ویرانگری در دو سوی خلیج فارس داشته باشد. \n@WarRoom",
+      "output_text": "مدیر پروژه ایران در گروه بین‌المللی بحران: آمریکا به ایران اطلاع داده که به تأسیسات کوه کلنگ حمله خواهد کرد و اگر ایران واکنش نشان ندهد، جنگ پایان می‌یابد. واعظ هشدار داده که در پاسخ , ایران با حمله به تأسیسات هسته‌ای اسرائیل و منطقه می‌تواند پیامدهای ویرانگری در دو سوی خلیج فارس داشته باشد. \n@WarRoom",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795361558.0
+    },
+    "Ali_bk_8_8885": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1184,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 نیروی دریایی ایران:\n\nدو نفتکش در شرق تنگه هرمز پس از برخورد با مین دریایی دچار آتش‌سوزی شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8885\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1184,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 نیروی دریایی ایران:\n\nدو نفتکش در شرق تنگه هرمز پس از برخورد با مین دریایی دچار آتش‌سوزی شدند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8885\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8885,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "نیروی دریایی ایران:\n\nدو نفتکش در شرق تنگه هرمز پس از برخورد با مین دریایی دچار آتش‌سوزی شدند.\n\nIranian Navy:\n\nTwo oil tankers caught fire east of the Strait of Hormuz after striking a naval mine.",
+          "output_text": "نیروی دریایی ایران:\n\nدو نفتکش در شرق تنگه هرمز پس از برخورد با مین دریایی دچار آتش‌سوزی شدند.",
+          "last_edit_timestamp": 1795362214.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8885",
+      "sent_timestamp": 1795362206.1401863,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8885,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "نیروی دریایی ایران:\n\nدو نفتکش در شرق تنگه هرمز پس از برخورد با مین دریایی دچار آتش‌سوزی شدند.\n\nIranian Navy:\n\nTwo oil tankers caught fire east of the Strait of Hormuz after striking a naval mine.",
+      "output_text": "نیروی دریایی ایران:\n\nدو نفتکش در شرق تنگه هرمز پس از برخورد با مین دریایی دچار آتش‌سوزی شدند.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795362214.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-22T15:23:58.347790+00:00"
+  "updated_at": "2026-11-22T15:50:25.119430+00:00"
 }
