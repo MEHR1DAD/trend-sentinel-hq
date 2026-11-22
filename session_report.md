@@ -10,7 +10,7 @@
 - **Last Message Time:** None
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28730 (2026-11-22 11:21:46 UTC)
+- `@withyashar`: #28731 (2026-11-22 11:44:10 UTC)
 - `@Ali_bk_8`: #8877 (2026-11-22 10:20:24 UTC)
 - `@VahidOnline`: #79209 (2026-11-21 20:29:06 UTC)
 - `@iliaen`: #4759 (2026-11-17 15:25:09 UTC)
@@ -18,9 +18,9 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 954m ago
-- `@DidehbanEghtesad`: Last loud alert 12851m ago
-- `@DidebanEterazat`: Last loud alert 20111m ago
+- `@DidebanJang`: Last loud alert 981m ago
+- `@DidehbanEghtesad`: Last loud alert 12878m ago
+- `@DidebanEterazat`: Last loud alert 20137m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
 - *(No active posts in 60m edit/delete window)*
