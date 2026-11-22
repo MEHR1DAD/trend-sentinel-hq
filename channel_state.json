@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28750,
-      "last_read_time": "2026-11-22 17:35:28 UTC"
+      "last_read_id": 28756,
+      "last_read_time": "2026-11-22 17:47:27 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8891,
-      "last_read_time": "2026-11-22 17:33:14 UTC"
+      "last_read_id": 8892,
+      "last_read_time": "2026-11-22 17:46:55 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79212,
-      "last_read_time": "2026-11-22 15:55:13 UTC"
+      "last_read_id": 79214,
+      "last_read_time": "2026-11-22 17:44:36 UTC"
     },
     "iliaen": {
       "last_read_id": 4759,
@@ -31,77 +31,41 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28744": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1185,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 دیدبان اتاق جنگ : سلام درگیری مسلحانه  , اول امامت مشهد ،چند تا مامور و زدن یاشار 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28744\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1185,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 دیدبان اتاق جنگ : سلام درگیری مسلحانه  , اول امامت مشهد ،چند تا مامور و زدن یاشار 🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28744\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28744,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "دیدبان اتاق جنگ : سلام درگیری مسلحانه  , اول امامت مشهد ،چند تا مامور و زدن یاشار\n@WarRoom 🚨🚨🚨",
-          "output_text": "دیدبان اتاق جنگ : سلام درگیری مسلحانه  , اول امامت مشهد ،چند تا مامور و زدن یاشار\n@WarRoom 🚨🚨🚨",
-          "last_edit_timestamp": 1795365883.6257548
-        }
-      ],
-      "active_text_source": "withyashar_28744",
-      "sent_timestamp": 1795365884.0608592,
-      "source_node": "withyashar",
-      "msg_id": 28744,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "دیدبان اتاق جنگ : سلام درگیری مسلحانه  , اول امامت مشهد ،چند تا مامور و زدن یاشار\n@WarRoom 🚨🚨🚨",
-      "output_text": "دیدبان اتاق جنگ : سلام درگیری مسلحانه  , اول امامت مشهد ،چند تا مامور و زدن یاشار\n@WarRoom 🚨🚨🚨",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795365876.0
-    },
-    "Ali_bk_8_8890": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1186,
+    "VahidOnline_79213": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 112,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 سپاه پاسداران:\n\nتصاویری از انهدام پهپاد پیشرفته شناسایی و رزمی آمریکایی از نوع MQ-1؛ بیستمین پهپادی که در شرق تنگه هرمز سرنگون شده است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8890\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 سازمان عملیات تجارت دریایی بریتانیا اعلام کرد که گزارشی مبنی بر وقوع حادثه‌ای «میان یک نفت‌کش و نیروهای نظامی» در دریای عمان دریافت کرده است.\n\nاین سازمان جزئیات بیشتری درباره این حادثه ارائه نکرد و افزود که مقامات در جریان امر قرار گرفته‌اند و تحقیقات در این زمینه ادامه دارد. در مورد مالکیت این نفتکش و هویت نیروهای نظامی تاکنون اطلاعاتی منتشر نشده است.\n\n📷 <a href=\"https://t.me/VahidOnline/79213\">@VahidOnline</a>",
       "dispatches": [
         {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1186,
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 112,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 سپاه پاسداران:\n\nتصاویری از انهدام پهپاد پیشرفته شناسایی و رزمی آمریکایی از نوع MQ-1؛ بیستمین پهپادی که در شرق تنگه هرمز سرنگون شده است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8890\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 سازمان عملیات تجارت دریایی بریتانیا اعلام کرد که گزارشی مبنی بر وقوع حادثه‌ای «میان یک نفت‌کش و نیروهای نظامی» در دریای عمان دریافت کرده است.\n\nاین سازمان جزئیات بیشتری درباره این حادثه ارائه نکرد و افزود که مقامات در جریان امر قرار گرفته‌اند و تحقیقات در این زمینه ادامه دارد. در مورد مالکیت این نفتکش و هویت نیروهای نظامی تاکنون اطلاعاتی منتشر نشده است.\n\n📷 <a href=\"https://t.me/VahidOnline/79213\">@VahidOnline</a>"
         }
       ],
       "sources": [
         {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8890,
-          "media_icons": "🎥",
+          "source_node": "VahidOnline",
+          "msg_id": 79213,
+          "media_icons": "📷",
           "grouped_id": null,
-          "raw_text": "سپاه پاسداران:\n\nتصاویری از انهدام پهپاد پیشرفته شناسایی و رزمی آمریکایی از نوع MQ-1؛ بیستمین پهپادی که در شرق تنگه هرمز سرنگون شده است.\n\nThe IRGC:\n\nFootage of the destruction of an advanced American MQ-1 reconnaissance and combat drone, the twentieth drone to be shot down, east of the Strait of Hormuz.",
-          "output_text": "سپاه پاسداران:\n\nتصاویری از انهدام پهپاد پیشرفته شناسایی و رزمی آمریکایی از نوع MQ-1؛ بیستمین پهپادی که در شرق تنگه هرمز سرنگون شده است.",
-          "last_edit_timestamp": 1795366438.0
+          "raw_text": "سازمان عملیات تجارت دریایی بریتانیا اعلام کرد که گزارشی مبنی بر وقوع حادثه‌ای «میان یک نفت‌کش و نیروهای نظامی» در دریای عمان دریافت کرده است.\n\nاین سازمان جزئیات بیشتری درباره این حادثه ارائه نکرد و افزود که مقامات در جریان امر قرار گرفته‌اند و تحقیقات در این زمینه ادامه دارد.\nدر مورد مالکیت این نفتکش و هویت نیروهای نظامی تاکنون اطلاعاتی منتشر نشده است.\n@VahidOnLive\n\n📡 @VahidOnline",
+          "output_text": "سازمان عملیات تجارت دریایی بریتانیا اعلام کرد که گزارشی مبنی بر وقوع حادثه‌ای «میان یک نفت‌کش و نیروهای نظامی» در دریای عمان دریافت کرده است.\n\nاین سازمان جزئیات بیشتری درباره این حادثه ارائه نکرد و افزود که مقامات در جریان امر قرار گرفته‌اند و تحقیقات در این زمینه ادامه دارد.\nدر مورد مالکیت این نفتکش و هویت نیروهای نظامی تاکنون اطلاعاتی منتشر نشده است.\n@VahidOnLive\n\n📡 @VahidOnline",
+          "last_edit_timestamp": 1795369090.8258736
         }
       ],
-      "active_text_source": "Ali_bk_8_8890",
-      "sent_timestamp": 1795366283.9076,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8890,
-      "media_icons": "🎥",
+      "active_text_source": "VahidOnline_79213",
+      "sent_timestamp": 1795369091.1956983,
+      "source_node": "VahidOnline",
+      "msg_id": 79213,
+      "media_icons": "📷",
       "grouped_id": null,
-      "raw_text": "سپاه پاسداران:\n\nتصاویری از انهدام پهپاد پیشرفته شناسایی و رزمی آمریکایی از نوع MQ-1؛ بیستمین پهپادی که در شرق تنگه هرمز سرنگون شده است.\n\nThe IRGC:\n\nFootage of the destruction of an advanced American MQ-1 reconnaissance and combat drone, the twentieth drone to be shot down, east of the Strait of Hormuz.",
-      "output_text": "سپاه پاسداران:\n\nتصاویری از انهدام پهپاد پیشرفته شناسایی و رزمی آمریکایی از نوع MQ-1؛ بیستمین پهپادی که در شرق تنگه هرمز سرنگون شده است.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795366438.0
+      "raw_text": "سازمان عملیات تجارت دریایی بریتانیا اعلام کرد که گزارشی مبنی بر وقوع حادثه‌ای «میان یک نفت‌کش و نیروهای نظامی» در دریای عمان دریافت کرده است.\n\nاین سازمان جزئیات بیشتری درباره این حادثه ارائه نکرد و افزود که مقامات در جریان امر قرار گرفته‌اند و تحقیقات در این زمینه ادامه دارد.\nدر مورد مالکیت این نفتکش و هویت نیروهای نظامی تاکنون اطلاعاتی منتشر نشده است.\n@VahidOnLive\n\n📡 @VahidOnline",
+      "output_text": "سازمان عملیات تجارت دریایی بریتانیا اعلام کرد که گزارشی مبنی بر وقوع حادثه‌ای «میان یک نفت‌کش و نیروهای نظامی» در دریای عمان دریافت کرده است.\n\nاین سازمان جزئیات بیشتری درباره این حادثه ارائه نکرد و افزود که مقامات در جریان امر قرار گرفته‌اند و تحقیقات در این زمینه ادامه دارد.\nدر مورد مالکیت این نفتکش و هویت نیروهای نظامی تاکنون اطلاعاتی منتشر نشده است.\n@VahidOnLive\n\n📡 @VahidOnline",
+      "is_seismic": false
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-22T17:36:08.815215+00:00"
+  "updated_at": "2026-11-22T18:02:37.284037+00:00"
 }
