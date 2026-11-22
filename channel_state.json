@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28735,
-      "last_read_time": "2026-11-22 13:11:35 UTC"
+      "last_read_id": 28737,
+      "last_read_time": "2026-11-22 14:19:03 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8880,
-      "last_read_time": "2026-11-22 13:59:03 UTC"
+      "last_read_id": 8881,
+      "last_read_time": "2026-11-22 14:08:35 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79209,
@@ -32,5 +32,5 @@
   },
   "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-22T14:04:49.061655+00:00"
+  "updated_at": "2026-11-22T14:31:13.891204+00:00"
 }
