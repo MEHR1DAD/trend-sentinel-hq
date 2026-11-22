@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28747,
-      "last_read_time": "2026-11-22 17:05:43 UTC"
+      "last_read_id": 28750,
+      "last_read_time": "2026-11-22 17:35:28 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8890,
-      "last_read_time": "2026-11-22 16:50:45 UTC"
+      "last_read_id": 8891,
+      "last_read_time": "2026-11-22 17:33:14 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79212,
@@ -31,111 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8887": {
-      "target_channel": "@DidehbanEghtesad",
-      "bot_msg_id": 109,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویر ماهواره‌ای نفتکش حامل گاز مایع «TANIA STAR» مرتبط با ایران را در حال حرکت در دریای عمان به سمت خط محاصره دریایی آمریکا نشان می‌دهند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8887\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidehbanEghtesad",
-          "bot_msg_id": 109,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویر ماهواره‌ای نفتکش حامل گاز مایع «TANIA STAR» مرتبط با ایران را در حال حرکت در دریای عمان به سمت خط محاصره دریایی آمریکا نشان می‌دهند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8887\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8887,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "تصاویر ماهواره‌ای نفتکش حامل گاز مایع «TANIA STAR» مرتبط با ایران را در حال حرکت در دریای عمان به سمت خط محاصره دریایی آمریکا نشان می‌دهند.\n\nSatellite images show the Iran-linked liquefied petroleum gas tanker \"TANIA STAR\" sailing in the Gulf of Oman towards the US naval blockade line.",
-          "output_text": "تصاویر ماهواره‌ای نفتکش حامل گاز مایع «TANIA STAR» مرتبط با ایران را در حال حرکت در دریای عمان به سمت خط محاصره دریایی آمریکا نشان می‌دهند.",
-          "last_edit_timestamp": 1795365383.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8887",
-      "sent_timestamp": 1795364479.8814929,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8887,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "تصاویر ماهواره‌ای نفتکش حامل گاز مایع «TANIA STAR» مرتبط با ایران را در حال حرکت در دریای عمان به سمت خط محاصره دریایی آمریکا نشان می‌دهند.\n\nSatellite images show the Iran-linked liquefied petroleum gas tanker \"TANIA STAR\" sailing in the Gulf of Oman towards the US naval blockade line.",
-      "output_text": "تصاویر ماهواره‌ای نفتکش حامل گاز مایع «TANIA STAR» مرتبط با ایران را در حال حرکت در دریای عمان به سمت خط محاصره دریایی آمریکا نشان می‌دهند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795365383.0
-    },
-    "withyashar_28742": {
-      "target_channel": "@DidehbanEghtesad",
-      "bot_msg_id": 110,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 گزارش اولیه : آمریکا یک نفتکش ایرانی رو زد سازمان عملیات تجارت دریایی بریتانیا (UKMTO): گزارشی از وقوع یک حادثه میان یک نفتکش و نیروهای نظامی در دریای عمان دریافت کرده‌ایم.\n\n📷 <a href=\"https://t.me/withyashar/28742\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidehbanEghtesad",
-          "bot_msg_id": 110,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 گزارش اولیه : آمریکا یک نفتکش ایرانی رو زد سازمان عملیات تجارت دریایی بریتانیا (UKMTO): گزارشی از وقوع یک حادثه میان یک نفتکش و نیروهای نظامی در دریای عمان دریافت کرده‌ایم.\n\n📷 <a href=\"https://t.me/withyashar/28742\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28742,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "گزارش اولیه : آمریکا یک نفتکش ایرانی رو زد\nسازمان عملیات تجارت دریایی بریتانیا (UKMTO): گزارشی از وقوع یک حادثه میان یک نفتکش و نیروهای نظامی در دریای عمان دریافت کرده‌ایم.\n@WarRoom",
-          "output_text": "گزارش اولیه : آمریکا یک نفتکش ایرانی رو زد\nسازمان عملیات تجارت دریایی بریتانیا (UKMTO): گزارشی از وقوع یک حادثه میان یک نفتکش و نیروهای نظامی در دریای عمان دریافت کرده‌ایم.\n@WarRoom",
-          "last_edit_timestamp": 1795364697.9041593
-        }
-      ],
-      "active_text_source": "withyashar_28742",
-      "sent_timestamp": 1795364698.4406085,
-      "source_node": "withyashar",
-      "msg_id": 28742,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "گزارش اولیه : آمریکا یک نفتکش ایرانی رو زد\nسازمان عملیات تجارت دریایی بریتانیا (UKMTO): گزارشی از وقوع یک حادثه میان یک نفتکش و نیروهای نظامی در دریای عمان دریافت کرده‌ایم.\n@WarRoom",
-      "output_text": "گزارش اولیه : آمریکا یک نفتکش ایرانی رو زد\nسازمان عملیات تجارت دریایی بریتانیا (UKMTO): گزارشی از وقوع یک حادثه میان یک نفتکش و نیروهای نظامی در دریای عمان دریافت کرده‌ایم.\n@WarRoom",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795364678.0
-    },
-    "Ali_bk_8_8888": {
-      "target_channel": "@DidehbanEghtesad",
-      "bot_msg_id": 111,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سپاه پاسداران اعلام کرد دو نفتکش غول‌پیکر در شمال جزیره غنم و شرق تنگه هرمز بر اثر برخورد با مین‌های دریایی منفجر و از حرکت متوقف شدند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8888\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidehbanEghtesad",
-          "bot_msg_id": 111,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سپاه پاسداران اعلام کرد دو نفتکش غول‌پیکر در شمال جزیره غنم و شرق تنگه هرمز بر اثر برخورد با مین‌های دریایی منفجر و از حرکت متوقف شدند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8888\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8888,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "سپاه پاسداران اعلام کرد دو نفتکش غول‌پیکر در شمال جزیره غنم و شرق تنگه هرمز بر اثر برخورد با مین‌های دریایی منفجر و از حرکت متوقف شدند.\n\nThe IRGC announces that two giant oil tankers exploded and were disabled north of Ghannam Island and east of the Strait of Hormuz after striking naval mines.",
-          "output_text": "سپاه پاسداران اعلام کرد دو نفتکش غول‌پیکر در شمال جزیره غنم و شرق تنگه هرمز بر اثر برخورد با مین‌های دریایی منفجر و از حرکت متوقف شدند.",
-          "last_edit_timestamp": 1795365850.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8888",
-      "sent_timestamp": 1795365126.9228063,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8888,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "سپاه پاسداران اعلام کرد دو نفتکش غول‌پیکر در شمال جزیره غنم و شرق تنگه هرمز بر اثر برخورد با مین‌های دریایی منفجر و از حرکت متوقف شدند.\n\nThe IRGC announces that two giant oil tankers exploded and were disabled north of Ghannam Island and east of the Strait of Hormuz after striking naval mines.",
-      "output_text": "سپاه پاسداران اعلام کرد دو نفتکش غول‌پیکر در شمال جزیره غنم و شرق تنگه هرمز بر اثر برخورد با مین‌های دریایی منفجر و از حرکت متوقف شدند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795365850.0
-    },
     "withyashar_28744": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1185,
@@ -208,5 +103,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-22T17:09:43.034771+00:00"
+  "updated_at": "2026-11-22T17:36:08.815215+00:00"
 }
