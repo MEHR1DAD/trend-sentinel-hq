@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-22 08:23:35 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8873,
-      "last_read_time": "2026-11-22 08:25:04 UTC"
+      "last_read_id": 8874,
+      "last_read_time": "2026-11-22 08:36:55 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79209,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8869": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1180,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 صدای انفجارهای پی‌درپی در تنگه هرمز، در نزدیکی سواحل ایران شنیده می‌شود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8869\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1180,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 صدای انفجارهای پی‌درپی در تنگه هرمز، در نزدیکی سواحل ایران شنیده می‌شود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8869\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8869,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "صدای انفجارهای پی‌درپی در تنگه هرمز، در نزدیکی سواحل ایران شنیده می‌شود.\n\nContinuous explosions are being heard in the Strait of Hormuz near the Iranian coast.",
-          "output_text": "صدای انفجارهای پی‌درپی در تنگه هرمز، در نزدیکی سواحل ایران شنیده می‌شود.",
-          "last_edit_timestamp": 1795333204.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8869",
-      "sent_timestamp": 1795333164.4517245,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8869,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "صدای انفجارهای پی‌درپی در تنگه هرمز، در نزدیکی سواحل ایران شنیده می‌شود.\n\nContinuous explosions are being heard in the Strait of Hormuz near the Iranian coast.",
-      "output_text": "صدای انفجارهای پی‌درپی در تنگه هرمز، در نزدیکی سواحل ایران شنیده می‌شود.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795333204.0
-    },
     "Ali_bk_8_8872": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1181,
@@ -103,5 +68,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-22T08:36:09.180124+00:00"
+  "updated_at": "2026-11-22T09:02:32.325915+00:00"
 }
