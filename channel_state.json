@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-23 22:43:18 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8943,
-      "last_read_time": "2026-11-23 22:40:32 UTC"
+      "last_read_id": 8944,
+      "last_read_time": "2026-11-23 23:03:15 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79223,
@@ -65,8 +65,43 @@
       "output_text": "تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را در پی هدف قرار گرفتن یک کشتی نشان می‌دهند.",
       "is_seismic": false,
       "last_edit_timestamp": 1795473768.0
+    },
+    "Ali_bk_8_8944": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1207,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تجاوز عربستان سعودی، پایتخت یمن، صنعا را هدف قرار می‌دهد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8944\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1207,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تجاوز عربستان سعودی، پایتخت یمن، صنعا را هدف قرار می‌دهد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8944\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8944,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "تجاوز عربستان سعودی، پایتخت یمن، صنعا را هدف قرار می‌دهد.\n\nSaudi aggression targets the Yemeni capital, Sanaa.",
+          "output_text": "تجاوز عربستان سعودی، پایتخت یمن، صنعا را هدف قرار می‌دهد.",
+          "last_edit_timestamp": 1795475844.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8944",
+      "sent_timestamp": 1795474998.5352488,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8944,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "تجاوز عربستان سعودی، پایتخت یمن، صنعا را هدف قرار می‌دهد.\n\nSaudi aggression targets the Yemeni capital, Sanaa.",
+      "output_text": "تجاوز عربستان سعودی، پایتخت یمن، صنعا را هدف قرار می‌دهد.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795475844.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-23T22:57:53.120190+00:00"
+  "updated_at": "2026-11-23T23:24:15.975569+00:00"
 }
