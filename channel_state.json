@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28819,
-      "last_read_time": "2026-11-23 18:05:50 UTC"
+      "last_read_id": 28823,
+      "last_read_time": "2026-11-23 18:18:12 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8931,
-      "last_read_time": "2026-11-23 17:23:59 UTC"
+      "last_read_id": 8932,
+      "last_read_time": "2026-11-23 18:18:12 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79221,
@@ -17,8 +17,8 @@
       "last_read_time": "2026-11-17 15:25:09 UTC"
     },
     "netblocks": {
-      "last_read_id": 1588,
-      "last_read_time": "2026-11-21 18:16:56 UTC"
+      "last_read_id": 1589,
+      "last_read_time": "2026-11-23 18:32:25 UTC"
     },
     "kianmeli1": {
       "last_read_id": 93820,
@@ -26,82 +26,117 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1795454590.1223905,
+    "@DidebanJang": 1795457930.9741476,
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28817": {
+    "withyashar_28821": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 1198,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 پرتاب موشک از بندر کنگ 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28817\">@withyashar</a>",
+      "bot_msg_id": 1200,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 دیدبان اتاق جنگ میناب : یاشار همین الان دوتا موشک به فاصله ی ۵ ثانیه از روستای گوربند ۲۰ کیلومتری میناب شلیک کردن ث صداشم خیلی زیاد بود\n\n📝 <a href=\"https://t.me/withyashar/28821\">@withyashar</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 1198,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 پرتاب موشک از بندر کنگ 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28817\">@withyashar</a>"
+          "bot_msg_id": 1200,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 دیدبان اتاق جنگ میناب : یاشار همین الان دوتا موشک به فاصله ی ۵ ثانیه از روستای گوربند ۲۰ کیلومتری میناب شلیک کردن ث صداشم خیلی زیاد بود\n\n📝 <a href=\"https://t.me/withyashar/28821\">@withyashar</a>"
         }
       ],
       "sources": [
         {
           "source_node": "withyashar",
-          "msg_id": 28817,
+          "msg_id": 28821,
           "media_icons": "📝",
           "grouped_id": null,
-          "raw_text": "پرتاب موشک از بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "پرتاب موشک از بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1795454590.122387
+          "raw_text": "دیدبان اتاق جنگ میناب : یاشار همین الان دوتا موشک به فاصله ی ۵ ثانیه از روستای گوربند ۲۰ کیلومتری میناب شلیک کردن ث صداشم خیلی زیاد بود\n@WarRoom",
+          "output_text": "دیدبان اتاق جنگ میناب : یاشار همین الان دوتا موشک به فاصله ی ۵ ثانیه از روستای گوربند ۲۰ کیلومتری میناب شلیک کردن ث صداشم خیلی زیاد بود\n@WarRoom",
+          "last_edit_timestamp": 1795457625.4232922
         }
       ],
-      "active_text_source": "withyashar_28817",
-      "sent_timestamp": 1795454590.7026904,
+      "active_text_source": "withyashar_28821",
+      "sent_timestamp": 1795457625.9802077,
       "source_node": "withyashar",
-      "msg_id": 28817,
+      "msg_id": 28821,
       "media_icons": "📝",
       "grouped_id": null,
-      "raw_text": "پرتاب موشک از بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
-      "output_text": "پرتاب موشک از بندر کنگ \n@WarRoom 🚨🚨🚨🚨",
+      "raw_text": "دیدبان اتاق جنگ میناب : یاشار همین الان دوتا موشک به فاصله ی ۵ ثانیه از روستای گوربند ۲۰ کیلومتری میناب شلیک کردن ث صداشم خیلی زیاد بود\n@WarRoom",
+      "output_text": "دیدبان اتاق جنگ میناب : یاشار همین الان دوتا موشک به فاصله ی ۵ ثانیه از روستای گوربند ۲۰ کیلومتری میناب شلیک کردن ث صداشم خیلی زیاد بود\n@WarRoom",
       "is_seismic": false,
-      "last_edit_timestamp": 1795454574.0
+      "last_edit_timestamp": 1795457618.0
     },
-    "Ali_bk_8_8931": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1199,
+    "withyashar_28823": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 116,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 بار دیگر صدای انفجارهایی در تنگه هرمز شنیده شد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8931\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 تکمیلی ۲: شرکت نسیم بهاران قشم به‌عنوان شرکت راهبر بانک سرمایه معرفی شده است. همچنین وزارت خزانه‌داری اعلام کرده شرکت Recaz Star بیش از ۱۷۰ میلیون دلار تراکنش مرتبط با صرافی صدف انجام داده، شرکت OGA Global پرداخت‌های چندمیلیون‌دلاری شرکت ملی نفتکش ایران را مدیریت کرده و شرکت H N B Trading در پرداخت هزینه اجاره کشتی SERENE I برای شبکه مرتبط با ستاد کل نیروهای مسلح ایران نقش داشته است. مرکز مبادله ارز و طلای ایران نیز به گفته واشنگتن، در تسهیل تجارت با روبل روسیه و یوان چین بدون استفاده از دلار نقش دارد\n\n📝 <a href=\"https://t.me/withyashar/28823\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 116,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تکمیلی ۲: شرکت نسیم بهاران قشم به‌عنوان شرکت راهبر بانک سرمایه معرفی شده است. همچنین وزارت خزانه‌داری اعلام کرده شرکت Recaz Star بیش از ۱۷۰ میلیون دلار تراکنش مرتبط با صرافی صدف انجام داده، شرکت OGA Global پرداخت‌های چندمیلیون‌دلاری شرکت ملی نفتکش ایران را مدیریت کرده و شرکت H N B Trading در پرداخت هزینه اجاره کشتی SERENE I برای شبکه مرتبط با ستاد کل نیروهای مسلح ایران نقش داشته است. مرکز مبادله ارز و طلای ایران نیز به گفته واشنگتن، در تسهیل تجارت با روبل روسیه و یوان چین بدون استفاده از دلار نقش دارد\n\n📝 <a href=\"https://t.me/withyashar/28823\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28823,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "تکمیلی ۲: شرکت نسیم بهاران قشم به‌عنوان شرکت راهبر بانک سرمایه معرفی شده است. همچنین وزارت خزانه‌داری اعلام کرده شرکت Recaz Star بیش از ۱۷۰ میلیون دلار تراکنش مرتبط با صرافی صدف انجام داده، شرکت OGA Global پرداخت‌های چندمیلیون‌دلاری شرکت ملی نفتکش ایران را مدیریت کرده و شرکت H N B Trading در پرداخت هزینه اجاره کشتی SERENE I برای شبکه مرتبط با ستاد کل نیروهای مسلح ایران نقش داشته است. مرکز مبادله ارز و طلای ایران نیز به گفته واشنگتن، در تسهیل تجارت با روبل روسیه و یوان چین بدون استفاده از دلار نقش دارد\n@WarRoom",
+          "output_text": "تکمیلی ۲: شرکت نسیم بهاران قشم به‌عنوان شرکت راهبر بانک سرمایه معرفی شده است. همچنین وزارت خزانه‌داری اعلام کرده شرکت Recaz Star بیش از ۱۷۰ میلیون دلار تراکنش مرتبط با صرافی صدف انجام داده، شرکت OGA Global پرداخت‌های چندمیلیون‌دلاری شرکت ملی نفتکش ایران را مدیریت کرده و شرکت H N B Trading در پرداخت هزینه اجاره کشتی SERENE I برای شبکه مرتبط با ستاد کل نیروهای مسلح ایران نقش داشته است. مرکز مبادله ارز و طلای ایران نیز به گفته واشنگتن، در تسهیل تجارت با روبل روسیه و یوان چین بدون استفاده از دلار نقش دارد\n@WarRoom",
+          "last_edit_timestamp": 1795457904.0
+        }
+      ],
+      "active_text_source": "withyashar_28823",
+      "sent_timestamp": 1795457900.3617606,
+      "source_node": "withyashar",
+      "msg_id": 28823,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "تکمیلی ۲: شرکت نسیم بهاران قشم به‌عنوان شرکت راهبر بانک سرمایه معرفی شده است. همچنین وزارت خزانه‌داری اعلام کرده شرکت Recaz Star بیش از ۱۷۰ میلیون دلار تراکنش مرتبط با صرافی صدف انجام داده، شرکت OGA Global پرداخت‌های چندمیلیون‌دلاری شرکت ملی نفتکش ایران را مدیریت کرده و شرکت H N B Trading در پرداخت هزینه اجاره کشتی SERENE I برای شبکه مرتبط با ستاد کل نیروهای مسلح ایران نقش داشته است. مرکز مبادله ارز و طلای ایران نیز به گفته واشنگتن، در تسهیل تجارت با روبل روسیه و یوان چین بدون استفاده از دلار نقش دارد\n@WarRoom",
+      "output_text": "تکمیلی ۲: شرکت نسیم بهاران قشم به‌عنوان شرکت راهبر بانک سرمایه معرفی شده است. همچنین وزارت خزانه‌داری اعلام کرده شرکت Recaz Star بیش از ۱۷۰ میلیون دلار تراکنش مرتبط با صرافی صدف انجام داده، شرکت OGA Global پرداخت‌های چندمیلیون‌دلاری شرکت ملی نفتکش ایران را مدیریت کرده و شرکت H N B Trading در پرداخت هزینه اجاره کشتی SERENE I برای شبکه مرتبط با ستاد کل نیروهای مسلح ایران نقش داشته است. مرکز مبادله ارز و طلای ایران نیز به گفته واشنگتن، در تسهیل تجارت با روبل روسیه و یوان چین بدون استفاده از دلار نقش دارد\n@WarRoom",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795457904.0
+    },
+    "Ali_bk_8_8932": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1201,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 شبکه ۱۵ اسرائیل:\n\nاسرائیل همچنان برای حمله به ایران فشار می‌آورد و به ایالات متحده پیام می‌دهد که باید هرچه سریع‌تر حمله کند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8932\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 1199,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 بار دیگر صدای انفجارهایی در تنگه هرمز شنیده شد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8931\">@Ali_bk_8</a>"
+          "bot_msg_id": 1201,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 شبکه ۱۵ اسرائیل:\n\nاسرائیل همچنان برای حمله به ایران فشار می‌آورد و به ایالات متحده پیام می‌دهد که باید هرچه سریع‌تر حمله کند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8932\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
         {
           "source_node": "Ali_bk_8",
-          "msg_id": 8931,
-          "media_icons": "📝",
+          "msg_id": 8932,
+          "media_icons": "🎥",
           "grouped_id": null,
-          "raw_text": "بار دیگر صدای انفجارهایی در تنگه هرمز شنیده شد.\n\nExplosions were heard in the Strait of Hormuz again.",
-          "output_text": "بار دیگر صدای انفجارهایی در تنگه هرمز شنیده شد.",
-          "last_edit_timestamp": 1795454652.0
+          "raw_text": "شبکه ۱۵ اسرائیل:\n\nاسرائیل همچنان برای حمله به ایران فشار می‌آورد و به ایالات متحده پیام می‌دهد که باید هرچه سریع‌تر حمله کند.\n\nIsrael's Channel 15:\n\nIsrael continues to push for a strike on Iran, sending a message to the United States that an attack must be launched as soon as possible.",
+          "output_text": "شبکه ۱۵ اسرائیل:\n\nاسرائیل همچنان برای حمله به ایران فشار می‌آورد و به ایالات متحده پیام می‌دهد که باید هرچه سریع‌تر حمله کند.",
+          "last_edit_timestamp": 1795458125.0
         }
       ],
-      "active_text_source": "Ali_bk_8_8931",
-      "sent_timestamp": 1795454651.1767957,
+      "active_text_source": "Ali_bk_8_8932",
+      "sent_timestamp": 1795457931.5309954,
       "source_node": "Ali_bk_8",
-      "msg_id": 8931,
-      "media_icons": "📝",
+      "msg_id": 8932,
+      "media_icons": "🎥",
       "grouped_id": null,
-      "raw_text": "بار دیگر صدای انفجارهایی در تنگه هرمز شنیده شد.\n\nExplosions were heard in the Strait of Hormuz again.",
-      "output_text": "بار دیگر صدای انفجارهایی در تنگه هرمز شنیده شد.",
+      "raw_text": "شبکه ۱۵ اسرائیل:\n\nاسرائیل همچنان برای حمله به ایران فشار می‌آورد و به ایالات متحده پیام می‌دهد که باید هرچه سریع‌تر حمله کند.\n\nIsrael's Channel 15:\n\nIsrael continues to push for a strike on Iran, sending a message to the United States that an attack must be launched as soon as possible.",
+      "output_text": "شبکه ۱۵ اسرائیل:\n\nاسرائیل همچنان برای حمله به ایران فشار می‌آورد و به ایالات متحده پیام می‌دهد که باید هرچه سریع‌تر حمله کند.",
       "is_seismic": false,
-      "last_edit_timestamp": 1795454652.0
+      "last_edit_timestamp": 1795458125.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-23T18:06:37.954965+00:00"
+  "updated_at": "2026-11-23T18:33:08.384432+00:00"
 }
