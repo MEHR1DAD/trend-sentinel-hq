@@ -31,76 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28824": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1202,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 ارسالی : پرتاب ۳ موشک از محدوده ارومیه 🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/28824\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1202,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 ارسالی : پرتاب ۳ موشک از محدوده ارومیه 🚨🚨🚨\n\n📷 <a href=\"https://t.me/withyashar/28824\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28824,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "ارسالی : پرتاب ۳ موشک از محدوده ارومیه\n@WarRoom 🚨🚨🚨",
-          "output_text": "ارسالی : پرتاب ۳ موشک از محدوده ارومیه\n@WarRoom 🚨🚨🚨",
-          "last_edit_timestamp": 1795461308.0
-        }
-      ],
-      "active_text_source": "withyashar_28824",
-      "sent_timestamp": 1795459757.9567661,
-      "source_node": "withyashar",
-      "msg_id": 28824,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "ارسالی : پرتاب ۳ موشک از محدوده ارومیه\n@WarRoom 🚨🚨🚨",
-      "output_text": "ارسالی : پرتاب ۳ موشک از محدوده ارومیه\n@WarRoom 🚨🚨🚨",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795461308.0
-    },
-    "Ali_bk_8_8934": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1203,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8934\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1203,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8934\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8934,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شد.\n\nMissiles launched toward noncompliant ships in the Strait of Hormuz.",
-          "output_text": "موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شد.",
-          "last_edit_timestamp": 1795459847.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8934",
-      "sent_timestamp": 1795459807.5542672,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8934,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شد.\n\nMissiles launched toward noncompliant ships in the Strait of Hormuz.",
-      "output_text": "موشک‌هایی به سمت کشتی‌های متخلف در تنگه هرمز شلیک شد.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795459847.0
-    },
     "Ali_bk_8_8935": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1204,
@@ -138,5 +68,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-23T19:26:04.044769+00:00"
+  "updated_at": "2026-11-23T19:52:33.246511+00:00"
 }
