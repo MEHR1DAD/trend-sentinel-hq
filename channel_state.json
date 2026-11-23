@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1794577248.9585698,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "withyashar_28773": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1192,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 دیدبان اتاق جنگ :هم اکنون پرتاب دو موشک بالستیک از محدوده کرج 🚨🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28773\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1192,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 دیدبان اتاق جنگ :هم اکنون پرتاب دو موشک بالستیک از محدوده کرج 🚨🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28773\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28773,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "دیدبان اتاق جنگ :هم اکنون پرتاب دو موشک بالستیک از محدوده کرج\n@WarRoom 🚨🚨🚨🚨",
-          "output_text": "دیدبان اتاق جنگ :هم اکنون پرتاب دو موشک بالستیک از محدوده کرج\n@WarRoom 🚨🚨🚨🚨",
-          "last_edit_timestamp": 1795391309.0
-        }
-      ],
-      "active_text_source": "withyashar_28773",
-      "sent_timestamp": 1795390279.4749043,
-      "source_node": "withyashar",
-      "msg_id": 28773,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "دیدبان اتاق جنگ :هم اکنون پرتاب دو موشک بالستیک از محدوده کرج\n@WarRoom 🚨🚨🚨🚨",
-      "output_text": "دیدبان اتاق جنگ :هم اکنون پرتاب دو موشک بالستیک از محدوده کرج\n@WarRoom 🚨🚨🚨🚨",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795391309.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-23T00:13:44.391769+00:00"
+  "updated_at": "2026-11-23T00:40:07.604415+00:00"
 }
