@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28804,
-      "last_read_time": "2026-11-23 12:34:04 UTC"
+      "last_read_id": 28806,
+      "last_read_time": "2026-11-23 13:23:55 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8921,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8918": {
-      "target_channel": "@DidehbanEghtesad",
-      "bot_msg_id": 114,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 طی 14 روز گذشته، میانگین حجم روزانه نفت خام عربی که از تنگه هرمز عبور کرده، 6.5 میلیون بشکه بوده است که در مقایسه با گزارش قبلی 2.5 میلیون بشکه کاهش داشته است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8918\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidehbanEghtesad",
-          "bot_msg_id": 114,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 طی 14 روز گذشته، میانگین حجم روزانه نفت خام عربی که از تنگه هرمز عبور کرده، 6.5 میلیون بشکه بوده است که در مقایسه با گزارش قبلی 2.5 میلیون بشکه کاهش داشته است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8918\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8918,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "طی 14 روز گذشته، میانگین حجم روزانه نفت خام عربی که از تنگه هرمز عبور کرده، 6.5 میلیون بشکه بوده است که در مقایسه با گزارش قبلی 2.5 میلیون بشکه کاهش داشته است.\n\nOver the past 14 days, the average daily volume of Arab crude oil shipped through the Strait of Hormuz stood at 6.5 million barrels, down 2.5 million barrels from the previous report.",
-          "output_text": "طی 14 روز گذشته، میانگین حجم روزانه نفت خام عربی که از تنگه هرمز عبور کرده، 6.5 میلیون بشکه بوده است که در مقایسه با گزارش قبلی 2.5 میلیون بشکه کاهش داشته است.",
-          "last_edit_timestamp": 1795437651.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8918",
-      "sent_timestamp": 1795437590.416798,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8918,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "طی 14 روز گذشته، میانگین حجم روزانه نفت خام عربی که از تنگه هرمز عبور کرده، 6.5 میلیون بشکه بوده است که در مقایسه با گزارش قبلی 2.5 میلیون بشکه کاهش داشته است.\n\nOver the past 14 days, the average daily volume of Arab crude oil shipped through the Strait of Hormuz stood at 6.5 million barrels, down 2.5 million barrels from the previous report.",
-      "output_text": "طی 14 روز گذشته، میانگین حجم روزانه نفت خام عربی که از تنگه هرمز عبور کرده، 6.5 میلیون بشکه بوده است که در مقایسه با گزارش قبلی 2.5 میلیون بشکه کاهش داشته است.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795437651.0
-    },
     "Ali_bk_8_8921": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1194,
@@ -103,5 +68,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-23T13:15:37.729802+00:00"
+  "updated_at": "2026-11-23T13:42:02.776535+00:00"
 }
