@@ -1,26 +1,26 @@
 # Sentinel Session Report (v7.3.0 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 5
+- **Messages Processed:** 3
 - **Alerts Dispatched:** 0
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** ‏آتلانتیک: پیت هگست، وزیر جنگ آمریکا، در ماه مارس دستورالعملی صادر کرد که بر اساس آن، هرگونه پشتیبانی پنتاگون از سفر اعض
-- **Last Message Time:** 2026-11-23 06:46:04 UTC
+- **Last Message Text:** فاکس نیوز: جردن رایت، نماینده دموکرات مجلس ایالتی نیویورک، هنگام نشست خبری شهردار زهران ممدانی درباره تعطیلی زندان رایکر
+- **Last Message Time:** 2026-11-23 07:07:44 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28777 (2026-11-23 06:46:04 UTC)
+- `@withyashar`: #28779 (2026-11-23 07:07:44 UTC)
 - `@Ali_bk_8`: #8910 (2026-11-23 06:22:37 UTC)
-- `@VahidOnline`: #79215 (2026-11-22 23:26:26 UTC)
+- `@VahidOnline`: #79216 (2026-11-23 06:51:41 UTC)
 - `@iliaen`: #4759 (2026-11-17 15:25:09 UTC)
 - `@netblocks`: #1588 (2026-11-21 18:16:56 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 719m ago
-- `@DidehbanEghtesad`: Last loud alert 13985m ago
-- `@DidebanEterazat`: Last loud alert 21245m ago
+- `@DidebanJang`: Last loud alert 745m ago
+- `@DidehbanEghtesad`: Last loud alert 14012m ago
+- `@DidebanEterazat`: Last loud alert 21271m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- `Ali_bk_8_8909` -> @DidehbanEghtesad (#113) (🎥, 38m ago)
+- *(No active posts in 60m edit/delete window)*
