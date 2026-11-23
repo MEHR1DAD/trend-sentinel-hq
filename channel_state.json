@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-23 22:43:18 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8944,
-      "last_read_time": "2026-11-23 23:03:15 UTC"
+      "last_read_id": 8946,
+      "last_read_time": "2026-11-23 23:40:37 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79223,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8943": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1206,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را در پی هدف قرار گرفتن یک کشتی نشان می‌دهند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8943\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1206,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را در پی هدف قرار گرفتن یک کشتی نشان می‌دهند.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8943\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8943,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را در پی هدف قرار گرفتن یک کشتی نشان می‌دهند.\n\nSatellite imagery shows a fire in the Strait of Hormuz now, caused by a ship being targeted.",
-          "output_text": "تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را در پی هدف قرار گرفتن یک کشتی نشان می‌دهند.",
-          "last_edit_timestamp": 1795473768.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8943",
-      "sent_timestamp": 1795473654.2602217,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8943,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را در پی هدف قرار گرفتن یک کشتی نشان می‌دهند.\n\nSatellite imagery shows a fire in the Strait of Hormuz now, caused by a ship being targeted.",
-      "output_text": "تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را در پی هدف قرار گرفتن یک کشتی نشان می‌دهند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795473768.0
-    },
     "Ali_bk_8_8944": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1207,
@@ -103,5 +68,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-23T23:24:15.975569+00:00"
+  "updated_at": "2026-11-23T23:51:25.631465+00:00"
 }
