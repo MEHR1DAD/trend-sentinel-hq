@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28876,
-      "last_read_time": "2026-11-24 18:50:31 UTC"
+      "last_read_id": 28880,
+      "last_read_time": "2026-11-24 19:53:06 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 9002,
       "last_read_time": "2026-11-24 19:37:22 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79245,
-      "last_read_time": "2026-11-24 19:21:42 UTC"
+      "last_read_id": 79246,
+      "last_read_time": "2026-11-24 19:21:49 UTC"
     },
     "iliaen": {
       "last_read_id": 4760,
@@ -104,38 +104,73 @@
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1223,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 ارتش ایران از انهدام دو پهپاد از نوع «لوکاس» و «MQ-9» بر فراز خلیج فارس خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9002\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 ارتش ایران از انهدام دو پهپاد از نوع «لوکاس» و «MQ-9» بر فراز خلیج فارس خبر داد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/9002\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
           "bot_msg_id": 1223,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 ارتش ایران از انهدام دو پهپاد از نوع «لوکاس» و «MQ-9» بر فراز خلیج فارس خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9002\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 ارتش ایران از انهدام دو پهپاد از نوع «لوکاس» و «MQ-9» بر فراز خلیج فارس خبر داد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/9002\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
         {
           "source_node": "Ali_bk_8",
           "msg_id": 9002,
-          "media_icons": "📝",
+          "media_icons": "📷",
           "grouped_id": null,
-          "raw_text": "ارتش ایران از انهدام دو پهپاد از نوع «لوکاس» و «MQ-9» بر فراز خلیج فارس خبر داد.\n\nThe Iranian army announces the destruction of two drones, a \"Lucas\" and an \"MQ-9\", over the Persian Gulf.",
+          "raw_text": "ارتش ایران از انهدام دو پهپاد از نوع «لوکاس» و «MQ-9» بر فراز خلیج فارس خبر داد.\n\nThe Iranian army announces the destruction of two drones, of the \"Lucas\" and \"MQ-9\" models, over the Persian Gulf.",
           "output_text": "ارتش ایران از انهدام دو پهپاد از نوع «لوکاس» و «MQ-9» بر فراز خلیج فارس خبر داد.",
-          "last_edit_timestamp": 1795549049.0
+          "last_edit_timestamp": 1795549611.0
         }
       ],
       "active_text_source": "Ali_bk_8_9002",
       "sent_timestamp": 1795549047.067897,
       "source_node": "Ali_bk_8",
       "msg_id": 9002,
-      "media_icons": "📝",
+      "media_icons": "📷",
       "grouped_id": null,
-      "raw_text": "ارتش ایران از انهدام دو پهپاد از نوع «لوکاس» و «MQ-9» بر فراز خلیج فارس خبر داد.\n\nThe Iranian army announces the destruction of two drones, a \"Lucas\" and an \"MQ-9\", over the Persian Gulf.",
+      "raw_text": "ارتش ایران از انهدام دو پهپاد از نوع «لوکاس» و «MQ-9» بر فراز خلیج فارس خبر داد.\n\nThe Iranian army announces the destruction of two drones, of the \"Lucas\" and \"MQ-9\" models, over the Persian Gulf.",
       "output_text": "ارتش ایران از انهدام دو پهپاد از نوع «لوکاس» و «MQ-9» بر فراز خلیج فارس خبر داد.",
       "is_seismic": false,
-      "last_edit_timestamp": 1795549049.0
+      "last_edit_timestamp": 1795549611.0
+    },
+    "withyashar_28877": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1224,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 ترامپ: در ایران، آن‌ها دیگر ارتش ندارند؛ نیروی دریایی ندارند و نیروی هوایی‌شان هم وجود ندارد. تقریباً به‌طور کامل نابود شده‌اند. آن‌ها هنوز ظرفیت محدودی برای شلیک موشک دارند. در حال حاضر، ما از طریق تنگه هرمز نفت بیشتری نسبت به قبل از آغاز جنگ عبور می‌دهیم.\n\n🎥 <a href=\"https://t.me/withyashar/28877\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1224,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 ترامپ: در ایران، آن‌ها دیگر ارتش ندارند؛ نیروی دریایی ندارند و نیروی هوایی‌شان هم وجود ندارد. تقریباً به‌طور کامل نابود شده‌اند. آن‌ها هنوز ظرفیت محدودی برای شلیک موشک دارند. در حال حاضر، ما از طریق تنگه هرمز نفت بیشتری نسبت به قبل از آغاز جنگ عبور می‌دهیم.\n\n🎥 <a href=\"https://t.me/withyashar/28877\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28877,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "ترامپ: در ایران، آن‌ها دیگر ارتش ندارند؛ نیروی دریایی ندارند و نیروی هوایی‌شان هم وجود ندارد. تقریباً به‌طور کامل نابود شده‌اند. آن‌ها هنوز ظرفیت محدودی برای شلیک موشک دارند. در حال حاضر، ما از طریق تنگه هرمز نفت بیشتری نسبت به قبل از آغاز جنگ عبور می‌دهیم.\n@WarRoom",
+          "output_text": "ترامپ: در ایران، آن‌ها دیگر ارتش ندارند؛ نیروی دریایی ندارند و نیروی هوایی‌شان هم وجود ندارد. تقریباً به‌طور کامل نابود شده‌اند. آن‌ها هنوز ظرفیت محدودی برای شلیک موشک دارند. در حال حاضر، ما از طریق تنگه هرمز نفت بیشتری نسبت به قبل از آغاز جنگ عبور می‌دهیم.\n@WarRoom",
+          "last_edit_timestamp": 1795549315.5354795
+        }
+      ],
+      "active_text_source": "withyashar_28877",
+      "sent_timestamp": 1795549316.1110108,
+      "source_node": "withyashar",
+      "msg_id": 28877,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "ترامپ: در ایران، آن‌ها دیگر ارتش ندارند؛ نیروی دریایی ندارند و نیروی هوایی‌شان هم وجود ندارد. تقریباً به‌طور کامل نابود شده‌اند. آن‌ها هنوز ظرفیت محدودی برای شلیک موشک دارند. در حال حاضر، ما از طریق تنگه هرمز نفت بیشتری نسبت به قبل از آغاز جنگ عبور می‌دهیم.\n@WarRoom",
+      "output_text": "ترامپ: در ایران، آن‌ها دیگر ارتش ندارند؛ نیروی دریایی ندارند و نیروی هوایی‌شان هم وجود ندارد. تقریباً به‌طور کامل نابود شده‌اند. آن‌ها هنوز ظرفیت محدودی برای شلیک موشک دارند. در حال حاضر، ما از طریق تنگه هرمز نفت بیشتری نسبت به قبل از آغاز جنگ عبور می‌دهیم.\n@WarRoom",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795549297.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-24T19:39:27.205042+00:00"
+  "updated_at": "2026-11-24T20:05:53.541216+00:00"
 }
