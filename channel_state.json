@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-24 20:44:41 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 9006,
-      "last_read_time": "2026-11-24 21:10:32 UTC"
+      "last_read_id": 9007,
+      "last_read_time": "2026-11-24 22:00:52 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79246,
@@ -30,77 +30,7 @@
     "@DidehbanEghtesad": 1795528522.572416,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "withyashar_28882": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1225,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 پرتاب موشک از بندر لنگه به سمت تنگه\n\n📝 <a href=\"https://t.me/withyashar/28882\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1225,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 پرتاب موشک از بندر لنگه به سمت تنگه\n\n📝 <a href=\"https://t.me/withyashar/28882\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 28882,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "پرتاب موشک از بندر لنگه به سمت تنگه\n@WarRoom",
-          "output_text": "پرتاب موشک از بندر لنگه به سمت تنگه\n@WarRoom",
-          "last_edit_timestamp": 1795553717.712669
-        }
-      ],
-      "active_text_source": "withyashar_28882",
-      "sent_timestamp": 1795553718.1144648,
-      "source_node": "withyashar",
-      "msg_id": 28882,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "پرتاب موشک از بندر لنگه به سمت تنگه\n@WarRoom",
-      "output_text": "پرتاب موشک از بندر لنگه به سمت تنگه\n@WarRoom",
-      "is_seismic": false
-    },
-    "Ali_bk_8_9006": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1226,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را نشان می‌دهند که به نظر می‌رسد یک کشتی دیگر همین حالا هدف قرار گرفته است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9006\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1226,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را نشان می‌دهند که به نظر می‌رسد یک کشتی دیگر همین حالا هدف قرار گرفته است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9006\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 9006,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را نشان می‌دهند که به نظر می‌رسد یک کشتی دیگر همین حالا هدف قرار گرفته است.\n\nSatellite images show a fire in the Strait of Hormuz, suggesting that another ship has just been targeted.",
-          "output_text": "تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را نشان می‌دهند که به نظر می‌رسد یک کشتی دیگر همین حالا هدف قرار گرفته است.",
-          "last_edit_timestamp": 1795554659.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_9006",
-      "sent_timestamp": 1795554656.41529,
-      "source_node": "Ali_bk_8",
-      "msg_id": 9006,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را نشان می‌دهند که به نظر می‌رسد یک کشتی دیگر همین حالا هدف قرار گرفته است.\n\nSatellite images show a fire in the Strait of Hormuz, suggesting that another ship has just been targeted.",
-      "output_text": "تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را نشان می‌دهند که به نظر می‌رسد یک کشتی دیگر همین حالا هدف قرار گرفته است.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795554659.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-24T21:47:41.177377+00:00"
+  "updated_at": "2026-11-24T22:14:08.537822+00:00"
 }
