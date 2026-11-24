@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1795467784.327893,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8955": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1210,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کردیم...\n\nنیروی دریایی ارتش ایران اعلام کرد که بامداد امروز، پس از برخورد دو نفتکش متخلف با یک مین دریایی، آتش‌سوزی در آن‌ها رخ داد و هر دو نفتکش از حرکت بازماندند. این حادثه پس از ورود آن‌ها به منطقه ممنوعه در شرق تنگه هرمز و در حالی رخ داد که سامانه‌های شناسایی و ناوبری خود را غیرفعال کرده بودند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8955\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1210,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کردیم...\n\nنیروی دریایی ارتش ایران اعلام کرد که بامداد امروز، پس از برخورد دو نفتکش متخلف با یک مین دریایی، آتش‌سوزی در آن‌ها رخ داد و هر دو نفتکش از حرکت بازماندند. این حادثه پس از ورود آن‌ها به منطقه ممنوعه در شرق تنگه هرمز و در حالی رخ داد که سامانه‌های شناسایی و ناوبری خود را غیرفعال کرده بودند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8955\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8955,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "در تأیید آنچه پیش‌تر منتشر کردیم...\n\nنیروی دریایی ارتش ایران اعلام کرد که بامداد امروز، پس از برخورد دو نفتکش متخلف با یک مین دریایی، آتش‌سوزی در آن‌ها رخ داد و هر دو نفتکش از حرکت بازماندند. این حادثه پس از ورود آن‌ها به منطقه ممنوعه در شرق تنگه هرمز و در حالی رخ داد که سامانه‌های شناسایی و ناوبری خود را غیرفعال کرده بودند.\n\nIn confirmation of what we published...\n\nThe Iranian Army's Navy announced early today that a fire broke out aboard two noncompliant oil tankers after they struck a sea mine, bringing them to a halt. This occurred after they entered the prohibited area east of the Strait of Hormuz with their identification and navigation systems disabled.",
-          "output_text": "در تأیید آنچه پیش‌تر منتشر کردیم...\n\nنیروی دریایی ارتش ایران اعلام کرد که بامداد امروز، پس از برخورد دو نفتکش متخلف با یک مین دریایی، آتش‌سوزی در آن‌ها رخ داد و هر دو نفتکش از حرکت بازماندند. این حادثه پس از ورود آن‌ها به منطقه ممنوعه در شرق تنگه هرمز و در حالی رخ داد که سامانه‌های شناسایی و ناوبری خود را غیرفعال کرده بودند.",
-          "last_edit_timestamp": 1795510765.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8955",
-      "sent_timestamp": 1795510751.3193712,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8955,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "در تأیید آنچه پیش‌تر منتشر کردیم...\n\nنیروی دریایی ارتش ایران اعلام کرد که بامداد امروز، پس از برخورد دو نفتکش متخلف با یک مین دریایی، آتش‌سوزی در آن‌ها رخ داد و هر دو نفتکش از حرکت بازماندند. این حادثه پس از ورود آن‌ها به منطقه ممنوعه در شرق تنگه هرمز و در حالی رخ داد که سامانه‌های شناسایی و ناوبری خود را غیرفعال کرده بودند.\n\nIn confirmation of what we published...\n\nThe Iranian Army's Navy announced early today that a fire broke out aboard two noncompliant oil tankers after they struck a sea mine, bringing them to a halt. This occurred after they entered the prohibited area east of the Strait of Hormuz with their identification and navigation systems disabled.",
-      "output_text": "در تأیید آنچه پیش‌تر منتشر کردیم...\n\nنیروی دریایی ارتش ایران اعلام کرد که بامداد امروز، پس از برخورد دو نفتکش متخلف با یک مین دریایی، آتش‌سوزی در آن‌ها رخ داد و هر دو نفتکش از حرکت بازماندند. این حادثه پس از ورود آن‌ها به منطقه ممنوعه در شرق تنگه هرمز و در حالی رخ داد که سامانه‌های شناسایی و ناوبری خود را غیرفعال کرده بودند.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795510765.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-24T09:35:08.761750+00:00"
+  "updated_at": "2026-11-24T10:01:36.624080+00:00"
 }
