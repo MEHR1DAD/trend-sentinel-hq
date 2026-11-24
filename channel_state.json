@@ -31,42 +31,42 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_8944": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1207,
+    "Ali_bk_8_8947": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 119,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 تجاوز عربستان سعودی، پایتخت یمن، صنعا را هدف قرار می‌دهد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8944\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 وال استریت ژورنال به نقل از مقام‌های آمریکایی:\n\nایران مظنون به دست داشتن در حملات سایبری علیه 50 نفتکش حامل انرژی است. تیم‌های حفاظت سایبری برای رسیدگی به کشتی‌های هدف قرارگرفته‌ای که به آمریکا نزدیک شده‌اند، مستقر شده‌اند.\n\nکشتی‌های دیگری که در این حملات سایبری هدف قرار گرفتند، در نزدیکی سواحل اروپا و آسیا در حال حرکت بودند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8947\">@Ali_bk_8</a>",
       "dispatches": [
         {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1207,
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 119,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 تجاوز عربستان سعودی، پایتخت یمن، صنعا را هدف قرار می‌دهد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8944\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 وال استریت ژورنال به نقل از مقام‌های آمریکایی:\n\nایران مظنون به دست داشتن در حملات سایبری علیه 50 نفتکش حامل انرژی است. تیم‌های حفاظت سایبری برای رسیدگی به کشتی‌های هدف قرارگرفته‌ای که به آمریکا نزدیک شده‌اند، مستقر شده‌اند.\n\nکشتی‌های دیگری که در این حملات سایبری هدف قرار گرفتند، در نزدیکی سواحل اروپا و آسیا در حال حرکت بودند.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8947\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
         {
           "source_node": "Ali_bk_8",
-          "msg_id": 8944,
-          "media_icons": "📝",
+          "msg_id": 8947,
+          "media_icons": "📷",
           "grouped_id": null,
-          "raw_text": "تجاوز عربستان سعودی، پایتخت یمن، صنعا را هدف قرار می‌دهد.\n\nSaudi aggression targets the Yemeni capital, Sanaa.",
-          "output_text": "تجاوز عربستان سعودی، پایتخت یمن، صنعا را هدف قرار می‌دهد.",
-          "last_edit_timestamp": 1795475844.0
+          "raw_text": "وال استریت ژورنال به نقل از مقام‌های آمریکایی:\n\nایران مظنون به دست داشتن در حملات سایبری علیه 50 نفتکش حامل انرژی است. تیم‌های حفاظت سایبری برای رسیدگی به کشتی‌های هدف قرارگرفته‌ای که به آمریکا نزدیک شده‌اند، مستقر شده‌اند.\n\nکشتی‌های دیگری که در این حملات سایبری هدف قرار گرفتند، در نزدیکی سواحل اروپا و آسیا در حال حرکت بودند.\n\nThe Wall Street Journal, citing U.S. officials:\n\nIran is suspected of carrying out cyberattacks on 50 energy tankers. Cybersecurity teams have been deployed to deal with targeted ships that approached the United States.\n\nOther ships targeted in the cyberattacks were sailing near the coasts of Europe and Asia.",
+          "output_text": "وال استریت ژورنال به نقل از مقام‌های آمریکایی:\n\nایران مظنون به دست داشتن در حملات سایبری علیه 50 نفتکش حامل انرژی است. تیم‌های حفاظت سایبری برای رسیدگی به کشتی‌های هدف قرارگرفته‌ای که به آمریکا نزدیک شده‌اند، مستقر شده‌اند.\n\nکشتی‌های دیگری که در این حملات سایبری هدف قرار گرفتند، در نزدیکی سواحل اروپا و آسیا در حال حرکت بودند.",
+          "last_edit_timestamp": 1795479412.0
         }
       ],
-      "active_text_source": "Ali_bk_8_8944",
-      "sent_timestamp": 1795474998.5352488,
+      "active_text_source": "Ali_bk_8_8947",
+      "sent_timestamp": 1795479237.5438623,
       "source_node": "Ali_bk_8",
-      "msg_id": 8944,
-      "media_icons": "📝",
+      "msg_id": 8947,
+      "media_icons": "📷",
       "grouped_id": null,
-      "raw_text": "تجاوز عربستان سعودی، پایتخت یمن، صنعا را هدف قرار می‌دهد.\n\nSaudi aggression targets the Yemeni capital, Sanaa.",
-      "output_text": "تجاوز عربستان سعودی، پایتخت یمن، صنعا را هدف قرار می‌دهد.",
+      "raw_text": "وال استریت ژورنال به نقل از مقام‌های آمریکایی:\n\nایران مظنون به دست داشتن در حملات سایبری علیه 50 نفتکش حامل انرژی است. تیم‌های حفاظت سایبری برای رسیدگی به کشتی‌های هدف قرارگرفته‌ای که به آمریکا نزدیک شده‌اند، مستقر شده‌اند.\n\nکشتی‌های دیگری که در این حملات سایبری هدف قرار گرفتند، در نزدیکی سواحل اروپا و آسیا در حال حرکت بودند.\n\nThe Wall Street Journal, citing U.S. officials:\n\nIran is suspected of carrying out cyberattacks on 50 energy tankers. Cybersecurity teams have been deployed to deal with targeted ships that approached the United States.\n\nOther ships targeted in the cyberattacks were sailing near the coasts of Europe and Asia.",
+      "output_text": "وال استریت ژورنال به نقل از مقام‌های آمریکایی:\n\nایران مظنون به دست داشتن در حملات سایبری علیه 50 نفتکش حامل انرژی است. تیم‌های حفاظت سایبری برای رسیدگی به کشتی‌های هدف قرارگرفته‌ای که به آمریکا نزدیک شده‌اند، مستقر شده‌اند.\n\nکشتی‌های دیگری که در این حملات سایبری هدف قرار گرفتند، در نزدیکی سواحل اروپا و آسیا در حال حرکت بودند.",
       "is_seismic": false,
-      "last_edit_timestamp": 1795475844.0
+      "last_edit_timestamp": 1795479412.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-23T23:51:25.631465+00:00"
+  "updated_at": "2026-11-24T00:17:56.954285+00:00"
 }
