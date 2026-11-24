@@ -1,27 +1,29 @@
 # Sentinel Session Report (v7.3.0 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 4
+- **Messages Processed:** 3
 - **Alerts Dispatched:** 2
-- **Alerts Edited:** 1
+- **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** دلار در بازار آزاد سه‌شنبه سوم آذر تا ۲۸۵ هزار و ۲۰۰ تومان بالا رفت و رکورد تازه‌ای ثبت کرد.  آخرین نرخ ثبت‌شده ساعت ۱۶ 
-- **Last Message Time:** 2026-11-24 13:54:57 UTC
+- **Last Message Text:** جمهوری اسلامی قصد دارد میلاد آرمون و نوید نجاران، از معترضان اعتراضات ۱۴۰۱ در پرونده “اکباتان” را سحرگاه چهارشنبه، یعنی 
+- **Last Message Time:** 2026-11-24 14:12:55 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
 - `@withyashar`: #28862 (2026-11-24 13:08:20 UTC)
-- `@Ali_bk_8`: #8973 (2026-11-24 13:31:46 UTC)
-- `@VahidOnline`: #79227 (2026-11-24 13:54:57 UTC)
-- `@iliaen`: #4759 (2026-11-17 15:25:09 UTC)
+- `@Ali_bk_8`: #8974 (2026-11-24 14:11:32 UTC)
+- `@VahidOnline`: #79228 (2026-11-24 13:56:01 UTC)
+- `@iliaen`: #4760 (2026-11-24 14:12:55 UTC)
 - `@netblocks`: #1589 (2026-11-23 18:32:25 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 159m ago
-- `@DidehbanEghtesad`: Last loud alert 0m ago
-- `@DidebanEterazat`: Last loud alert 23114m ago
+- `@DidebanJang`: Last loud alert 185m ago
+- `@DidehbanEghtesad`: Last loud alert 26m ago
+- `@DidebanEterazat`: Last loud alert 23140m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- `Ali_bk_8_8972` -> @DidebanJang (#1215) (📷🎥, 21m ago)
-- `VahidOnline_79227` -> @DidehbanEghtesad (#122) (📷, 0m ago)
+- `Ali_bk_8_8972` -> @DidebanJang (#1215) (📷🎥, 48m ago)
+- `VahidOnline_79227` -> @DidehbanEghtesad (#122) (📷, 26m ago)
+- `VahidOnline_79228` -> @DidebanEterazat (#70) (📷, 25m ago)
+- `iliaen_4760` -> @DidebanEterazat (#71) (📷, 8m ago)
