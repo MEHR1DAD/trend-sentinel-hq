@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-24 16:42:41 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8990,
-      "last_read_time": "2026-11-24 16:54:44 UTC"
+      "last_read_id": 8991,
+      "last_read_time": "2026-11-24 17:05:03 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79229,
@@ -26,7 +26,7 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1795518972.027886,
+    "@DidebanJang": 1795539908.30416,
     "@DidehbanEghtesad": 1795528522.572416,
     "@DidebanEterazat": 1794141668.1579325
   },
@@ -65,8 +65,78 @@
       "output_text": "ان‌بی‌سی نیوز: مقام‌های دولت ترامپ در حال بررسی احتمال ترور رهبران ارشد جمهوری اسلامی با هدف پایان دادن به جنگ هستند. حامیان این گزینه معتقدند چنین اقدامی می‌تواند تهران را به دادن امتیاز وادار کند؛ اما مخالفان هشدار می‌دهند که این اقدام ممکن است موضع ایران را سخت‌تر کند، مذاکرات را با شکست مواجه سازد و جان مقام‌های آمریکایی را نیز به خطر بیندازد. ترامپ هنوز تصمیم نهایی خود را در این زمینه اتخاذ نکرده است. \n@WarRoom 🚨🚨🚨🚨🚨",
       "is_seismic": false,
       "last_edit_timestamp": 1795538572.0
+    },
+    "Ali_bk_8_8991": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1218,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 وزیر دفاع اسرائیل، کاتس:\n\nارتش اسرائیل و فرماندهی مرکزی آمریکا در حال آماده‌سازی برای حمله به ایران هستند، اما تصمیم نهایی در دست ترامپ است.\n\nاسرائیل و آمریکا از توسعه سلاح‌های شیمیایی توسط ایران آگاه هستند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8991\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1218,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 وزیر دفاع اسرائیل، کاتس:\n\nارتش اسرائیل و فرماندهی مرکزی آمریکا در حال آماده‌سازی برای حمله به ایران هستند، اما تصمیم نهایی در دست ترامپ است.\n\nاسرائیل و آمریکا از توسعه سلاح‌های شیمیایی توسط ایران آگاه هستند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8991\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8991,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "وزیر دفاع اسرائیل، کاتس:\n\nارتش اسرائیل و فرماندهی مرکزی آمریکا در حال آماده‌سازی برای حمله به ایران هستند، اما تصمیم نهایی در دست ترامپ است.\n\nاسرائیل و آمریکا از توسعه سلاح‌های شیمیایی توسط ایران آگاه هستند.\n\nIsraeli Defense Minister Katz:\n\nThe Israeli army and US Central Command are preparing to launch an attack on Iran, but the decision rests with Trump.\n\nIsrael and the United States are aware of Iran's development of chemical weapons.",
+          "output_text": "وزیر دفاع اسرائیل، کاتس:\n\nارتش اسرائیل و فرماندهی مرکزی آمریکا در حال آماده‌سازی برای حمله به ایران هستند، اما تصمیم نهایی در دست ترامپ است.\n\nاسرائیل و آمریکا از توسعه سلاح‌های شیمیایی توسط ایران آگاه هستند.",
+          "last_edit_timestamp": 1795540195.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8991",
+      "sent_timestamp": 1795539908.7495632,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8991,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "وزیر دفاع اسرائیل، کاتس:\n\nارتش اسرائیل و فرماندهی مرکزی آمریکا در حال آماده‌سازی برای حمله به ایران هستند، اما تصمیم نهایی در دست ترامپ است.\n\nاسرائیل و آمریکا از توسعه سلاح‌های شیمیایی توسط ایران آگاه هستند.\n\nIsraeli Defense Minister Katz:\n\nThe Israeli army and US Central Command are preparing to launch an attack on Iran, but the decision rests with Trump.\n\nIsrael and the United States are aware of Iran's development of chemical weapons.",
+      "output_text": "وزیر دفاع اسرائیل، کاتس:\n\nارتش اسرائیل و فرماندهی مرکزی آمریکا در حال آماده‌سازی برای حمله به ایران هستند، اما تصمیم نهایی در دست ترامپ است.\n\nاسرائیل و آمریکا از توسعه سلاح‌های شیمیایی توسط ایران آگاه هستند.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795540195.0
+    },
+    "Ali_bk_8_8992": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1219,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سپاه پاسداران:\n\nتصاویری از انفجار چهارمین نفتکش متخلف در شرق تنگه هرمز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8992\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1219,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سپاه پاسداران:\n\nتصاویری از انفجار چهارمین نفتکش متخلف در شرق تنگه هرمز.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8992\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8992,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "سپاه پاسداران:\n\nتصاویری از انفجار چهارمین نفتکش متخلف در شرق تنگه هرمز.\n\nThe IRGC:\n\nFootage of a fourth noncompliant oil tanker exploding east of the Strait of Hormuz.",
+          "output_text": "سپاه پاسداران:\n\nتصاویری از انفجار چهارمین نفتکش متخلف در شرق تنگه هرمز.",
+          "last_edit_timestamp": 1795540245.2364173
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8992",
+      "sent_timestamp": 1795540245.6613646,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8992,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "سپاه پاسداران:\n\nتصاویری از انفجار چهارمین نفتکش متخلف در شرق تنگه هرمز.\n\nThe IRGC:\n\nFootage of a fourth noncompliant oil tanker exploding east of the Strait of Hormuz.",
+      "output_text": "سپاه پاسداران:\n\nتصاویری از انفجار چهارمین نفتکش متخلف در شرق تنگه هرمز.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795540229.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-24T17:00:40.909347+00:00"
+  "updated_at": "2026-11-24T17:27:08.091232+00:00"
 }
