@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28842,
-      "last_read_time": "2026-11-24 08:37:26 UTC"
+      "last_read_id": 28845,
+      "last_read_time": "2026-11-24 09:07:11 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 8954,
@@ -31,41 +31,42 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_28840": {
+    "Ali_bk_8_8955": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 1209,
+      "bot_msg_id": 1210,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 ‏مدیرکل مدیریت بحران استانداری اصفهان: انهدام مهمات عمل‌نکرده از صبح امروز در شمال و جنوب اصفهان انجام می‌شود؛ احتمال شنیدن صدای انفجار ناشی‌از این عملیات وجود دارد.\n\n📝 <a href=\"https://t.me/withyashar/28840\">@withyashar</a>",
+      "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کردیم...\n\nنیروی دریایی ارتش ایران اعلام کرد که بامداد امروز، پس از برخورد دو نفتکش متخلف با یک مین دریایی، آتش‌سوزی در آن‌ها رخ داد و هر دو نفتکش از حرکت بازماندند. این حادثه پس از ورود آن‌ها به منطقه ممنوعه در شرق تنگه هرمز و در حالی رخ داد که سامانه‌های شناسایی و ناوبری خود را غیرفعال کرده بودند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8955\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 1209,
+          "bot_msg_id": 1210,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 ‏مدیرکل مدیریت بحران استانداری اصفهان: انهدام مهمات عمل‌نکرده از صبح امروز در شمال و جنوب اصفهان انجام می‌شود؛ احتمال شنیدن صدای انفجار ناشی‌از این عملیات وجود دارد.\n\n📝 <a href=\"https://t.me/withyashar/28840\">@withyashar</a>"
+          "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کردیم...\n\nنیروی دریایی ارتش ایران اعلام کرد که بامداد امروز، پس از برخورد دو نفتکش متخلف با یک مین دریایی، آتش‌سوزی در آن‌ها رخ داد و هر دو نفتکش از حرکت بازماندند. این حادثه پس از ورود آن‌ها به منطقه ممنوعه در شرق تنگه هرمز و در حالی رخ داد که سامانه‌های شناسایی و ناوبری خود را غیرفعال کرده بودند.\n\n📝 <a href=\"https://t.me/Ali_bk_8/8955\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
         {
-          "source_node": "withyashar",
-          "msg_id": 28840,
+          "source_node": "Ali_bk_8",
+          "msg_id": 8955,
           "media_icons": "📝",
           "grouped_id": null,
-          "raw_text": "‏مدیرکل مدیریت بحران استانداری اصفهان: انهدام مهمات عمل‌نکرده از صبح امروز در شمال و جنوب اصفهان انجام می‌شود؛ احتمال شنیدن صدای انفجار ناشی‌از این عملیات وجود دارد.\n@WarRoom",
-          "output_text": "‏مدیرکل مدیریت بحران استانداری اصفهان: انهدام مهمات عمل‌نکرده از صبح امروز در شمال و جنوب اصفهان انجام می‌شود؛ احتمال شنیدن صدای انفجار ناشی‌از این عملیات وجود دارد.\n@WarRoom",
-          "last_edit_timestamp": 1795507494.0310872
+          "raw_text": "در تأیید آنچه پیش‌تر منتشر کردیم...\n\nنیروی دریایی ارتش ایران اعلام کرد که بامداد امروز، پس از برخورد دو نفتکش متخلف با یک مین دریایی، آتش‌سوزی در آن‌ها رخ داد و هر دو نفتکش از حرکت بازماندند. این حادثه پس از ورود آن‌ها به منطقه ممنوعه در شرق تنگه هرمز و در حالی رخ داد که سامانه‌های شناسایی و ناوبری خود را غیرفعال کرده بودند.\n\nIn confirmation of what we published...\n\nThe Iranian Army's Navy announced early today that a fire broke out aboard two noncompliant oil tankers after they struck a sea mine, bringing them to a halt. This occurred after they entered the prohibited area east of the Strait of Hormuz with their identification and navigation systems disabled.",
+          "output_text": "در تأیید آنچه پیش‌تر منتشر کردیم...\n\nنیروی دریایی ارتش ایران اعلام کرد که بامداد امروز، پس از برخورد دو نفتکش متخلف با یک مین دریایی، آتش‌سوزی در آن‌ها رخ داد و هر دو نفتکش از حرکت بازماندند. این حادثه پس از ورود آن‌ها به منطقه ممنوعه در شرق تنگه هرمز و در حالی رخ داد که سامانه‌های شناسایی و ناوبری خود را غیرفعال کرده بودند.",
+          "last_edit_timestamp": 1795510765.0
         }
       ],
-      "active_text_source": "withyashar_28840",
-      "sent_timestamp": 1795507494.4804237,
-      "source_node": "withyashar",
-      "msg_id": 28840,
+      "active_text_source": "Ali_bk_8_8955",
+      "sent_timestamp": 1795510751.3193712,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8955,
       "media_icons": "📝",
       "grouped_id": null,
-      "raw_text": "‏مدیرکل مدیریت بحران استانداری اصفهان: انهدام مهمات عمل‌نکرده از صبح امروز در شمال و جنوب اصفهان انجام می‌شود؛ احتمال شنیدن صدای انفجار ناشی‌از این عملیات وجود دارد.\n@WarRoom",
-      "output_text": "‏مدیرکل مدیریت بحران استانداری اصفهان: انهدام مهمات عمل‌نکرده از صبح امروز در شمال و جنوب اصفهان انجام می‌شود؛ احتمال شنیدن صدای انفجار ناشی‌از این عملیات وجود دارد.\n@WarRoom",
-      "is_seismic": false
+      "raw_text": "در تأیید آنچه پیش‌تر منتشر کردیم...\n\nنیروی دریایی ارتش ایران اعلام کرد که بامداد امروز، پس از برخورد دو نفتکش متخلف با یک مین دریایی، آتش‌سوزی در آن‌ها رخ داد و هر دو نفتکش از حرکت بازماندند. این حادثه پس از ورود آن‌ها به منطقه ممنوعه در شرق تنگه هرمز و در حالی رخ داد که سامانه‌های شناسایی و ناوبری خود را غیرفعال کرده بودند.\n\nIn confirmation of what we published...\n\nThe Iranian Army's Navy announced early today that a fire broke out aboard two noncompliant oil tankers after they struck a sea mine, bringing them to a halt. This occurred after they entered the prohibited area east of the Strait of Hormuz with their identification and navigation systems disabled.",
+      "output_text": "در تأیید آنچه پیش‌تر منتشر کردیم...\n\nنیروی دریایی ارتش ایران اعلام کرد که بامداد امروز، پس از برخورد دو نفتکش متخلف با یک مین دریایی، آتش‌سوزی در آن‌ها رخ داد و هر دو نفتکش از حرکت بازماندند. این حادثه پس از ورود آن‌ها به منطقه ممنوعه در شرق تنگه هرمز و در حالی رخ داد که سامانه‌های شناسایی و ناوبری خود را غیرفعال کرده بودند.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795510765.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-24T08:42:16.077207+00:00"
+  "updated_at": "2026-11-24T09:08:39.598073+00:00"
 }
