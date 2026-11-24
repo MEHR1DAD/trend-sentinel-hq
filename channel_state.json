@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-24 14:35:48 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8980,
-      "last_read_time": "2026-11-24 15:12:22 UTC"
+      "last_read_id": 8983,
+      "last_read_time": "2026-11-24 15:33:35 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79228,
@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1795528522.572416,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8980": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1216,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویری از برجی که در پایتخت عربستان سعودی، ریاض، هدف قرار گرفت.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8980\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1216,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویری از برجی که در پایتخت عربستان سعودی، ریاض، هدف قرار گرفت.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8980\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8980,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "تصاویری از برجی که در پایتخت عربستان سعودی، ریاض، هدف قرار گرفت.\n\nFootage of the tower targeted in the Saudi capital, Riyadh.",
-          "output_text": "تصاویری از برجی که در پایتخت عربستان سعودی، ریاض، هدف قرار گرفت.",
-          "last_edit_timestamp": 1795533238.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8980",
-      "sent_timestamp": 1795533206.408444,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8980,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "تصاویری از برجی که در پایتخت عربستان سعودی، ریاض، هدف قرار گرفت.\n\nFootage of the tower targeted in the Saudi capital, Riyadh.",
-      "output_text": "تصاویری از برجی که در پایتخت عربستان سعودی، ریاض، هدف قرار گرفت.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795533238.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-24T15:14:42.840549+00:00"
+  "updated_at": "2026-11-24T15:41:08.672575+00:00"
 }
