@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1795467784.327893,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_8947": {
-      "target_channel": "@DidehbanEghtesad",
-      "bot_msg_id": 119,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 وال استریت ژورنال به نقل از مقام‌های آمریکایی:\n\nایران مظنون به دست داشتن در حملات سایبری علیه 50 نفتکش حامل انرژی است. تیم‌های حفاظت سایبری برای رسیدگی به کشتی‌های هدف قرارگرفته‌ای که به آمریکا نزدیک شده‌اند، مستقر شده‌اند.\n\nعلاوه بر این، کشتی‌های دیگری که در حملات سایبری هدف قرار گرفتند، در نزدیکی سواحل اروپا و آسیا در حال حرکت بودند. این کشتی‌ها پیام‌های تهدیدآمیزی به زبان فارسی دریافت کردند که به آن‌ها درباره بارگیری محصولات آمریکایی هشدار می‌داد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8947\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidehbanEghtesad",
-          "bot_msg_id": 119,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 وال استریت ژورنال به نقل از مقام‌های آمریکایی:\n\nایران مظنون به دست داشتن در حملات سایبری علیه 50 نفتکش حامل انرژی است. تیم‌های حفاظت سایبری برای رسیدگی به کشتی‌های هدف قرارگرفته‌ای که به آمریکا نزدیک شده‌اند، مستقر شده‌اند.\n\nعلاوه بر این، کشتی‌های دیگری که در حملات سایبری هدف قرار گرفتند، در نزدیکی سواحل اروپا و آسیا در حال حرکت بودند. این کشتی‌ها پیام‌های تهدیدآمیزی به زبان فارسی دریافت کردند که به آن‌ها درباره بارگیری محصولات آمریکایی هشدار می‌داد.\n\n📷 <a href=\"https://t.me/Ali_bk_8/8947\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 8947,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "وال استریت ژورنال به نقل از مقام‌های آمریکایی:\n\nایران مظنون به دست داشتن در حملات سایبری علیه 50 نفتکش حامل انرژی است. تیم‌های حفاظت سایبری برای رسیدگی به کشتی‌های هدف قرارگرفته‌ای که به آمریکا نزدیک شده‌اند، مستقر شده‌اند.\n\nعلاوه بر این، کشتی‌های دیگری که در حملات سایبری هدف قرار گرفتند، در نزدیکی سواحل اروپا و آسیا در حال حرکت بودند. این کشتی‌ها پیام‌های تهدیدآمیزی به زبان فارسی دریافت کردند که به آن‌ها درباره بارگیری محصولات آمریکایی هشدار می‌داد.\n\nThe Wall Street Journal, citing U.S. officials:\n\nIran is suspected of carrying out cyberattacks on 50 energy tankers. Cybersecurity teams have been deployed to deal with targeted ships that approached the United States.\n\nIn addition, other ships targeted in the cyberattacks were sailing near the coasts of Europe and Asia. The ships received threatening messages in Persian warning them against loading American products.",
-          "output_text": "وال استریت ژورنال به نقل از مقام‌های آمریکایی:\n\nایران مظنون به دست داشتن در حملات سایبری علیه 50 نفتکش حامل انرژی است. تیم‌های حفاظت سایبری برای رسیدگی به کشتی‌های هدف قرارگرفته‌ای که به آمریکا نزدیک شده‌اند، مستقر شده‌اند.\n\nعلاوه بر این، کشتی‌های دیگری که در حملات سایبری هدف قرار گرفتند، در نزدیکی سواحل اروپا و آسیا در حال حرکت بودند. این کشتی‌ها پیام‌های تهدیدآمیزی به زبان فارسی دریافت کردند که به آن‌ها درباره بارگیری محصولات آمریکایی هشدار می‌داد.",
-          "last_edit_timestamp": 1795479808.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_8947",
-      "sent_timestamp": 1795479237.5438623,
-      "source_node": "Ali_bk_8",
-      "msg_id": 8947,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "وال استریت ژورنال به نقل از مقام‌های آمریکایی:\n\nایران مظنون به دست داشتن در حملات سایبری علیه 50 نفتکش حامل انرژی است. تیم‌های حفاظت سایبری برای رسیدگی به کشتی‌های هدف قرارگرفته‌ای که به آمریکا نزدیک شده‌اند، مستقر شده‌اند.\n\nعلاوه بر این، کشتی‌های دیگری که در حملات سایبری هدف قرار گرفتند، در نزدیکی سواحل اروپا و آسیا در حال حرکت بودند. این کشتی‌ها پیام‌های تهدیدآمیزی به زبان فارسی دریافت کردند که به آن‌ها درباره بارگیری محصولات آمریکایی هشدار می‌داد.\n\nThe Wall Street Journal, citing U.S. officials:\n\nIran is suspected of carrying out cyberattacks on 50 energy tankers. Cybersecurity teams have been deployed to deal with targeted ships that approached the United States.\n\nIn addition, other ships targeted in the cyberattacks were sailing near the coasts of Europe and Asia. The ships received threatening messages in Persian warning them against loading American products.",
-      "output_text": "وال استریت ژورنال به نقل از مقام‌های آمریکایی:\n\nایران مظنون به دست داشتن در حملات سایبری علیه 50 نفتکش حامل انرژی است. تیم‌های حفاظت سایبری برای رسیدگی به کشتی‌های هدف قرارگرفته‌ای که به آمریکا نزدیک شده‌اند، مستقر شده‌اند.\n\nعلاوه بر این، کشتی‌های دیگری که در حملات سایبری هدف قرار گرفتند، در نزدیکی سواحل اروپا و آسیا در حال حرکت بودند. این کشتی‌ها پیام‌های تهدیدآمیزی به زبان فارسی دریافت کردند که به آن‌ها درباره بارگیری محصولات آمریکایی هشدار می‌داد.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795479808.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-24T01:10:46.839641+00:00"
+  "updated_at": "2026-11-24T01:37:10.935194+00:00"
 }
