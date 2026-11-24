@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-23 22:43:18 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 8948,
-      "last_read_time": "2026-11-24 02:57:52 UTC"
+      "last_read_id": 8949,
+      "last_read_time": "2026-11-24 05:27:16 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79223,
@@ -30,7 +30,43 @@
     "@DidehbanEghtesad": 1795467784.327893,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_8949": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1208,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تصاویر ماهواره‌ای از وقوع آتش‌سوزی در تنگه هرمز در همین لحظه حکایت دارند که به نظر می‌رسد در پی هدف قرار گرفتن یک کشتی رخ داده است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8949\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1208,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تصاویر ماهواره‌ای از وقوع آتش‌سوزی در تنگه هرمز در همین لحظه حکایت دارند که به نظر می‌رسد در پی هدف قرار گرفتن یک کشتی رخ داده است.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/8949\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 8949,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "تصاویر ماهواره‌ای از وقوع آتش‌سوزی در تنگه هرمز در همین لحظه حکایت دارند که به نظر می‌رسد در پی هدف قرار گرفتن یک کشتی رخ داده است.\n\nSatellite imagery shows a fire in the Strait of Hormuz now, apparently following a ship being targeted.",
+          "output_text": "تصاویر ماهواره‌ای از وقوع آتش‌سوزی در تنگه هرمز در همین لحظه حکایت دارند که به نظر می‌رسد در پی هدف قرار گرفتن یک کشتی رخ داده است.",
+          "last_edit_timestamp": 1795498060.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_8949",
+      "sent_timestamp": 1795498047.479546,
+      "source_node": "Ali_bk_8",
+      "msg_id": 8949,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "تصاویر ماهواره‌ای از وقوع آتش‌سوزی در تنگه هرمز در همین لحظه حکایت دارند که به نظر می‌رسد در پی هدف قرار گرفتن یک کشتی رخ داده است.\n\nSatellite imagery shows a fire in the Strait of Hormuz now, apparently following a ship being targeted.",
+      "output_text": "تصاویر ماهواره‌ای از وقوع آتش‌سوزی در تنگه هرمز در همین لحظه حکایت دارند که به نظر می‌رسد در پی هدف قرار گرفتن یک کشتی رخ داده است.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795498060.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-24T05:10:57.134775+00:00"
+  "updated_at": "2026-11-24T05:37:25.305699+00:00"
 }
