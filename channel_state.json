@@ -5,8 +5,8 @@
       "last_read_time": "2026-11-25 11:13:57 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 9028,
-      "last_read_time": "2026-11-25 11:42:24 UTC"
+      "last_read_id": 9031,
+      "last_read_time": "2026-11-25 12:16:15 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79248,
@@ -30,7 +30,43 @@
     "@DidehbanEghtesad": 1795528522.572416,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_9031": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1229,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سپاه پاسداران تصاویر دیگری از انفجار دو نفتکش متخلف در مسیر غیرمجاز تنگه هرمز منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9031\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1229,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سپاه پاسداران تصاویر دیگری از انفجار دو نفتکش متخلف در مسیر غیرمجاز تنگه هرمز منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9031\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 9031,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "سپاه پاسداران تصاویر دیگری از انفجار دو نفتکش متخلف در مسیر غیرمجاز تنگه هرمز منتشر کرد.\n\nThe IRGC releases additional footage of two noncompliant oil tankers exploding along the unauthorized route in the Strait of Hormuz.",
+          "output_text": "سپاه پاسداران تصاویر دیگری از انفجار دو نفتکش متخلف در مسیر غیرمجاز تنگه هرمز منتشر کرد.",
+          "last_edit_timestamp": 1795609032.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_9031",
+      "sent_timestamp": 1795609021.640954,
+      "source_node": "Ali_bk_8",
+      "msg_id": 9031,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "سپاه پاسداران تصاویر دیگری از انفجار دو نفتکش متخلف در مسیر غیرمجاز تنگه هرمز منتشر کرد.\n\nThe IRGC releases additional footage of two noncompliant oil tankers exploding along the unauthorized route in the Strait of Hormuz.",
+      "output_text": "سپاه پاسداران تصاویر دیگری از انفجار دو نفتکش متخلف در مسیر غیرمجاز تنگه هرمز منتشر کرد.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795609032.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-25T11:59:33.250387+00:00"
+  "updated_at": "2026-11-25T12:26:00.428192+00:00"
 }
