@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28919,
-      "last_read_time": "2026-11-25 14:09:41 UTC"
+      "last_read_id": 28921,
+      "last_read_time": "2026-11-25 14:34:03 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 9037,
-      "last_read_time": "2026-11-25 14:01:11 UTC"
+      "last_read_id": 9039,
+      "last_read_time": "2026-11-25 14:33:57 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79248,
@@ -65,8 +65,43 @@
       "output_text": "تصاویر ماهواره‌ای وقوع آتش‌سوزی در تنگه هرمز را نشان می‌دهند که به نظر می‌رسد یک کشتی دیگر همین حالا هدف قرار گرفته است.",
       "is_seismic": false,
       "last_edit_timestamp": 1795613905.0
+    },
+    "Ali_bk_8_9038": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1233,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش متخلف در شرق تنگه هرمز خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9038\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1233,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش متخلف در شرق تنگه هرمز خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9038\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 9038,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "در تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش متخلف در شرق تنگه هرمز خبر داد.\n\nConfirming what we published…\n\nThe Iranian army announces that a fire has broken out aboard a noncompliant oil tanker east of the Strait of Hormuz.",
+          "output_text": "در تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش متخلف در شرق تنگه هرمز خبر داد.",
+          "last_edit_timestamp": 1795616612.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_9038",
+      "sent_timestamp": 1795616539.765855,
+      "source_node": "Ali_bk_8",
+      "msg_id": 9038,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "در تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش متخلف در شرق تنگه هرمز خبر داد.\n\nConfirming what we published…\n\nThe Iranian army announces that a fire has broken out aboard a noncompliant oil tanker east of the Strait of Hormuz.",
+      "output_text": "در تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش متخلف در شرق تنگه هرمز خبر داد.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795616612.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-25T14:11:54.697801+00:00"
+  "updated_at": "2026-11-25T14:38:19.763067+00:00"
 }
