@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1795528522.572416,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_9015": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1227,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سپاه پاسداران از انفجار دو نفتکش متخلف در مسیر غیرمجاز در تنگه هرمز خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9015\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1227,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سپاه پاسداران از انفجار دو نفتکش متخلف در مسیر غیرمجاز در تنگه هرمز خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9015\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 9015,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "سپاه پاسداران از انفجار دو نفتکش متخلف در مسیر غیرمجاز در تنگه هرمز خبر داد.\n\nThe IRGC announces that two oil tankers violating regulations exploded while sailing along an unauthorized route in the Strait of Hormuz.",
-          "output_text": "سپاه پاسداران از انفجار دو نفتکش متخلف در مسیر غیرمجاز در تنگه هرمز خبر داد.",
-          "last_edit_timestamp": 1795581827.6500075
-        }
-      ],
-      "active_text_source": "Ali_bk_8_9015",
-      "sent_timestamp": 1795581828.178104,
-      "source_node": "Ali_bk_8",
-      "msg_id": 9015,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "سپاه پاسداران از انفجار دو نفتکش متخلف در مسیر غیرمجاز در تنگه هرمز خبر داد.\n\nThe IRGC announces that two oil tankers violating regulations exploded while sailing along an unauthorized route in the Strait of Hormuz.",
-      "output_text": "سپاه پاسداران از انفجار دو نفتکش متخلف در مسیر غیرمجاز در تنگه هرمز خبر داد.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795581786.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-25T05:33:13.931223+00:00"
+  "updated_at": "2026-11-25T05:59:41.126997+00:00"
 }
