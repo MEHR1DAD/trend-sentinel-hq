@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28885,
-      "last_read_time": "2026-11-24 20:44:41 UTC"
+      "last_read_id": 28886,
+      "last_read_time": "2026-11-25 04:49:55 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 9013,
-      "last_read_time": "2026-11-25 04:13:14 UTC"
+      "last_read_id": 9015,
+      "last_read_time": "2026-11-25 04:42:53 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79248,
@@ -30,7 +30,43 @@
     "@DidehbanEghtesad": 1795528522.572416,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_9015": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1227,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سپاه پاسداران از انفجار دو نفتکش متخلف در مسیر غیرمجاز در تنگه هرمز خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9015\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1227,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سپاه پاسداران از انفجار دو نفتکش متخلف در مسیر غیرمجاز در تنگه هرمز خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9015\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 9015,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "سپاه پاسداران از انفجار دو نفتکش متخلف در مسیر غیرمجاز در تنگه هرمز خبر داد.\n\nThe IRGC announces that two oil tankers violating regulations exploded while sailing along an unauthorized route in the Strait of Hormuz.",
+          "output_text": "سپاه پاسداران از انفجار دو نفتکش متخلف در مسیر غیرمجاز در تنگه هرمز خبر داد.",
+          "last_edit_timestamp": 1795581827.6500075
+        }
+      ],
+      "active_text_source": "Ali_bk_8_9015",
+      "sent_timestamp": 1795581828.178104,
+      "source_node": "Ali_bk_8",
+      "msg_id": 9015,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "سپاه پاسداران از انفجار دو نفتکش متخلف در مسیر غیرمجاز در تنگه هرمز خبر داد.\n\nThe IRGC announces that two oil tankers violating regulations exploded while sailing along an unauthorized route in the Strait of Hormuz.",
+      "output_text": "سپاه پاسداران از انفجار دو نفتکش متخلف در مسیر غیرمجاز در تنگه هرمز خبر داد.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795581786.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-25T04:40:19.829411+00:00"
+  "updated_at": "2026-11-25T05:06:48.084453+00:00"
 }
