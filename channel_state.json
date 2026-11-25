@@ -1,16 +1,16 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28922,
-      "last_read_time": "2026-11-25 14:38:18 UTC"
+      "last_read_id": 28923,
+      "last_read_time": "2026-11-25 15:06:06 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 9039,
       "last_read_time": "2026-11-25 14:33:57 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79255,
-      "last_read_time": "2026-11-25 14:51:42 UTC"
+      "last_read_id": 79256,
+      "last_read_time": "2026-11-25 15:05:17 UTC"
     },
     "iliaen": {
       "last_read_id": 4760,
@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_9038": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1233,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش متخلف در شرق تنگه هرمز خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9038\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1233,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 در تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش متخلف در شرق تنگه هرمز خبر داد.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9038\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 9038,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "در تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش متخلف در شرق تنگه هرمز خبر داد.\n\nConfirming what we published…\n\nThe Iranian army announces that a fire has broken out aboard a noncompliant oil tanker east of the Strait of Hormuz.",
-          "output_text": "در تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش متخلف در شرق تنگه هرمز خبر داد.",
-          "last_edit_timestamp": 1795616612.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_9038",
-      "sent_timestamp": 1795616539.765855,
-      "source_node": "Ali_bk_8",
-      "msg_id": 9038,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "در تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش متخلف در شرق تنگه هرمز خبر داد.\n\nConfirming what we published…\n\nThe Iranian army announces that a fire has broken out aboard a noncompliant oil tanker east of the Strait of Hormuz.",
-      "output_text": "در تأیید آنچه پیش‌تر منتشر کردیم…\n\nارتش ایران از وقوع آتش‌سوزی در یک نفتکش متخلف در شرق تنگه هرمز خبر داد.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795616612.0
-    },
     "VahidOnline_79249": {
       "target_channel": "@DidebanEterazat",
       "bot_msg_id": 73,
@@ -133,8 +98,78 @@
       "raw_text": "دلار آزاد تهران از ۲۹۰ هزار تومان گذشت. بازار چهارشنبه ۴ آذر، ساعت ۱۵:۵۹ به وقت تهران، نرخ فروش دلار را ۲۹۰٬۵۰۰ تومان ثبت کرد.\nهم‌زمان، خبرگزاری فارس مدعی شد محموله بزرگی از اسکناس دلار از یکی از کشورهای همسایه وارد ایران شده است.\nفارس مبلغ محموله و زمان عرضه آن را اعلام نکرده و ورود آن هنوز تایید مستقل نشده است. \nانتشار این خبر ممکن است بعضی خریداران را به صبر وادارد. \nاثر آن بر قیمت به این بستگی دارد که چه مقدار ارز و چه زمانی به بازار برسد.\n@VahidOOnLine\n\n📡 @VahidOnline",
       "output_text": "دلار آزاد تهران از ۲۹۰ هزار تومان گذشت. بازار چهارشنبه ۴ آذر، ساعت ۱۵:۵۹ به وقت تهران، نرخ فروش دلار را ۲۹۰٬۵۰۰ تومان ثبت کرد.\nهم‌زمان، خبرگزاری فارس مدعی شد محموله بزرگی از اسکناس دلار از یکی از کشورهای همسایه وارد ایران شده است.\nفارس مبلغ محموله و زمان عرضه آن را اعلام نکرده و ورود آن هنوز تایید مستقل نشده است. \nانتشار این خبر ممکن است بعضی خریداران را به صبر وادارد. \nاثر آن بر قیمت به این بستگی دارد که چه مقدار ارز و چه زمانی به بازار برسد.\n@VahidOOnLine\n\n📡 @VahidOnline",
       "is_seismic": false
+    },
+    "withyashar_28923": {
+      "target_channel": "@DidehbanEghtesad",
+      "bot_msg_id": 124,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 ‏قیمت اعلامی دلار از ۲۹۲ هزار تومان عبور کرده و هم اکنون ۲۹۲،۳۰۰ تومان میباشد\n\n📝 <a href=\"https://t.me/withyashar/28923\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidehbanEghtesad",
+          "bot_msg_id": 124,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 ‏قیمت اعلامی دلار از ۲۹۲ هزار تومان عبور کرده و هم اکنون ۲۹۲،۳۰۰ تومان میباشد\n\n📝 <a href=\"https://t.me/withyashar/28923\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28923,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "‏قیمت اعلامی دلار از ۲۹۲ هزار تومان عبور کرده و هم اکنون ۲۹۲،۳۰۰ تومان میباشد\n@WarRoom",
+          "output_text": "‏قیمت اعلامی دلار از ۲۹۲ هزار تومان عبور کرده و هم اکنون ۲۹۲،۳۰۰ تومان میباشد\n@WarRoom",
+          "last_edit_timestamp": 1795619178.0
+        }
+      ],
+      "active_text_source": "withyashar_28923",
+      "sent_timestamp": 1795619175.5357563,
+      "source_node": "withyashar",
+      "msg_id": 28923,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "‏قیمت اعلامی دلار از ۲۹۲ هزار تومان عبور کرده و هم اکنون ۲۹۲،۳۰۰ تومان میباشد\n@WarRoom",
+      "output_text": "‏قیمت اعلامی دلار از ۲۹۲ هزار تومان عبور کرده و هم اکنون ۲۹۲،۳۰۰ تومان میباشد\n@WarRoom",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795619178.0
+    },
+    "Ali_bk_8_9040": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1234,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سپاه پاسداران تصاویری از انفجار و آتش‌سوزی در یک کشتی متخلف حامل گاز طبیعی مایع (LNG) در تنگه هرمز منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9040\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1234,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سپاه پاسداران تصاویری از انفجار و آتش‌سوزی در یک کشتی متخلف حامل گاز طبیعی مایع (LNG) در تنگه هرمز منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9040\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 9040,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "سپاه پاسداران تصاویری از انفجار و آتش‌سوزی در یک کشتی متخلف حامل گاز طبیعی مایع (LNG) در تنگه هرمز منتشر کرد.\n\nThe IRGC releases footage of an explosion and fire aboard a noncompliant vessel carrying liquefied natural gas (LNG) in the Strait of Hormuz.",
+          "output_text": "سپاه پاسداران تصاویری از انفجار و آتش‌سوزی در یک کشتی متخلف حامل گاز طبیعی مایع (LNG) در تنگه هرمز منتشر کرد.",
+          "last_edit_timestamp": 1795620412.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_9040",
+      "sent_timestamp": 1795620393.6859272,
+      "source_node": "Ali_bk_8",
+      "msg_id": 9040,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "سپاه پاسداران تصاویری از انفجار و آتش‌سوزی در یک کشتی متخلف حامل گاز طبیعی مایع (LNG) در تنگه هرمز منتشر کرد.\n\nThe IRGC releases footage of an explosion and fire aboard a noncompliant vessel carrying liquefied natural gas (LNG) in the Strait of Hormuz.",
+      "output_text": "سپاه پاسداران تصاویری از انفجار و آتش‌سوزی در یک کشتی متخلف حامل گاز طبیعی مایع (LNG) در تنگه هرمز منتشر کرد.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795620412.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-25T15:04:47.762516+00:00"
+  "updated_at": "2026-11-25T15:31:12.508164+00:00"
 }
