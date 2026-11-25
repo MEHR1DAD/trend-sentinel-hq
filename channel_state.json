@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28906,
-      "last_read_time": "2026-11-25 11:13:57 UTC"
+      "last_read_id": 28908,
+      "last_read_time": "2026-11-25 13:05:08 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 9031,
-      "last_read_time": "2026-11-25 12:16:15 UTC"
+      "last_read_id": 9034,
+      "last_read_time": "2026-11-25 13:05:00 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79248,
@@ -31,42 +31,77 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_9031": {
+    "Ali_bk_8_9032": {
       "target_channel": "@DidebanJang",
-      "bot_msg_id": 1229,
+      "bot_msg_id": 1230,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 سپاه پاسداران تصاویر دیگری از انفجار دو نفتکش متخلف در مسیر غیرمجاز تنگه هرمز منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9031\">@Ali_bk_8</a>",
+      "last_formatted_text": "🔕 هم‌اکنون صدای چندین انفجار در تنگه هرمز شنیده می‌شود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9032\">@Ali_bk_8</a>",
       "dispatches": [
         {
           "target_channel": "@DidebanJang",
-          "bot_msg_id": 1229,
+          "bot_msg_id": 1230,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 سپاه پاسداران تصاویر دیگری از انفجار دو نفتکش متخلف در مسیر غیرمجاز تنگه هرمز منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9031\">@Ali_bk_8</a>"
+          "last_formatted_text": "🔕 هم‌اکنون صدای چندین انفجار در تنگه هرمز شنیده می‌شود.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9032\">@Ali_bk_8</a>"
         }
       ],
       "sources": [
         {
           "source_node": "Ali_bk_8",
-          "msg_id": 9031,
-          "media_icons": "🎥",
+          "msg_id": 9032,
+          "media_icons": "📝",
           "grouped_id": null,
-          "raw_text": "سپاه پاسداران تصاویر دیگری از انفجار دو نفتکش متخلف در مسیر غیرمجاز تنگه هرمز منتشر کرد.\n\nThe IRGC releases additional footage of two noncompliant oil tankers exploding along the unauthorized route in the Strait of Hormuz.",
-          "output_text": "سپاه پاسداران تصاویر دیگری از انفجار دو نفتکش متخلف در مسیر غیرمجاز تنگه هرمز منتشر کرد.",
-          "last_edit_timestamp": 1795609032.0
+          "raw_text": "هم‌اکنون صدای چندین انفجار در تنگه هرمز شنیده می‌شود.\n\nExplosions are heard in the Strait of Hormuz now.",
+          "output_text": "هم‌اکنون صدای چندین انفجار در تنگه هرمز شنیده می‌شود.",
+          "last_edit_timestamp": 1795611340.0
         }
       ],
-      "active_text_source": "Ali_bk_8_9031",
-      "sent_timestamp": 1795609021.640954,
+      "active_text_source": "Ali_bk_8_9032",
+      "sent_timestamp": 1795611337.5404158,
       "source_node": "Ali_bk_8",
-      "msg_id": 9031,
-      "media_icons": "🎥",
+      "msg_id": 9032,
+      "media_icons": "📝",
       "grouped_id": null,
-      "raw_text": "سپاه پاسداران تصاویر دیگری از انفجار دو نفتکش متخلف در مسیر غیرمجاز تنگه هرمز منتشر کرد.\n\nThe IRGC releases additional footage of two noncompliant oil tankers exploding along the unauthorized route in the Strait of Hormuz.",
-      "output_text": "سپاه پاسداران تصاویر دیگری از انفجار دو نفتکش متخلف در مسیر غیرمجاز تنگه هرمز منتشر کرد.",
+      "raw_text": "هم‌اکنون صدای چندین انفجار در تنگه هرمز شنیده می‌شود.\n\nExplosions are heard in the Strait of Hormuz now.",
+      "output_text": "هم‌اکنون صدای چندین انفجار در تنگه هرمز شنیده می‌شود.",
       "is_seismic": false,
-      "last_edit_timestamp": 1795609032.0
+      "last_edit_timestamp": 1795611340.0
+    },
+    "Ali_bk_8_9034": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1231,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز و شنیده شدن دوباره صدای انفجارها.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9034\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1231,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز و شنیده شدن دوباره صدای انفجارها.\n\n📝 <a href=\"https://t.me/Ali_bk_8/9034\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 9034,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز و شنیده شدن دوباره صدای انفجارها.\n\nMissiles fired toward noncompliant vessels in the Strait of Hormuz, with explosions heard again.",
+          "output_text": "شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز و شنیده شدن دوباره صدای انفجارها.",
+          "last_edit_timestamp": 1795611936.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_9034",
+      "sent_timestamp": 1795611904.9003744,
+      "source_node": "Ali_bk_8",
+      "msg_id": 9034,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز و شنیده شدن دوباره صدای انفجارها.\n\nMissiles fired toward noncompliant vessels in the Strait of Hormuz, with explosions heard again.",
+      "output_text": "شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز و شنیده شدن دوباره صدای انفجارها.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795611936.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-25T12:52:39.824677+00:00"
+  "updated_at": "2026-11-25T13:19:04.856947+00:00"
 }
