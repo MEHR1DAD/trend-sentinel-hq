@@ -1,16 +1,16 @@
 # Sentinel Session Report (v7.3.0 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 5
-- **Alerts Dispatched:** 0
+- **Messages Processed:** 2
+- **Alerts Dispatched:** 2
 - **Alerts Edited:** 0
-- **Alerts Deleted:** 0
+- **Alerts Deleted:** 1
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** ما خودمون یه پیشگو داریم به اسم یاشار که از قبل به ما گفته بود درگیریا تا ۲۰۲۸ طول میکشه😁
-- **Last Message Time:** 2026-11-26 08:33:03 UTC
+- **Last Message Text:** تتر دوباره خیز برداشت ۲۹۸،۵۰۰ تومان @WarRoom
+- **Last Message Time:** 2026-11-26 08:57:24 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28965 (2026-11-26 08:33:03 UTC)
+- `@withyashar`: #28968 (2026-11-26 08:57:24 UTC)
 - `@Ali_bk_8`: #9074 (2026-11-26 08:20:32 UTC)
 - `@VahidOnline`: #79260 (2026-11-26 06:25:30 UTC)
 - `@iliaen`: #4760 (2026-11-24 14:12:55 UTC)
@@ -18,9 +18,9 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 667m ago
-- `@DidehbanEghtesad`: Last loud alert 131m ago
-- `@DidebanEterazat`: Last loud alert 25683m ago
+- `@DidebanJang`: Last loud alert 694m ago
+- `@DidehbanEghtesad`: Last loud alert 158m ago
+- `@DidebanEterazat`: Last loud alert 25709m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- *(No active posts in 60m edit/delete window)*
+- `withyashar_28968` -> @DidehbanEghtesad (#127) (📝, 12m ago)
