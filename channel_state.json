@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28979,
-      "last_read_time": "2026-11-26 15:14:52 UTC"
+      "last_read_id": 28981,
+      "last_read_time": "2026-11-26 15:40:29 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 9090,
@@ -30,7 +30,43 @@
     "@DidehbanEghtesad": 1795674758.290145,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "withyashar_28981": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1249,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 هم‌اکنون گشت‌وگذار پهپاد شناسایی آمریکا در بندر عباس 🚨🚨🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28981\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1249,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 هم‌اکنون گشت‌وگذار پهپاد شناسایی آمریکا در بندر عباس 🚨🚨🚨🚨🚨\n\n🎥 <a href=\"https://t.me/withyashar/28981\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28981,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "هم‌اکنون گشت‌وگذار پهپاد شناسایی آمریکا در بندر عباس \n@WarRoom 🚨🚨🚨🚨🚨",
+          "output_text": "هم‌اکنون گشت‌وگذار پهپاد شناسایی آمریکا در بندر عباس \n@WarRoom 🚨🚨🚨🚨🚨",
+          "last_edit_timestamp": 1795707663.035151
+        }
+      ],
+      "active_text_source": "withyashar_28981",
+      "sent_timestamp": 1795707663.5419583,
+      "source_node": "withyashar",
+      "msg_id": 28981,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "هم‌اکنون گشت‌وگذار پهپاد شناسایی آمریکا در بندر عباس \n@WarRoom 🚨🚨🚨🚨🚨",
+      "output_text": "هم‌اکنون گشت‌وگذار پهپاد شناسایی آمریکا در بندر عباس \n@WarRoom 🚨🚨🚨🚨🚨",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795707633.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-26T15:17:35.940239+00:00"
+  "updated_at": "2026-11-26T15:44:03.152588+00:00"
 }
