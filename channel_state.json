@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28986,
-      "last_read_time": "2026-11-26 19:20:39 UTC"
+      "last_read_id": 28988,
+      "last_read_time": "2026-11-26 20:37:07 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 9097,
@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1795674758.290145,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_9097": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1254,
-      "status_icon": "🚨",
-      "last_formatted_text": "🚨 کانال ۱۵ عبری:\n\nترامپ تمایل دارد حمله به ایران را تا زمان تشکیل یک دولت باثبات در اسرائیل به تعویق بیندازد؛ یک مقام سابق آمریکایی نزدیک به ترامپ نیز احتمال می‌دهد این عملیات تا ژانویه به تعویق بیفتد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9097\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1254,
-          "status_icon": "🚨",
-          "last_formatted_text": "🚨 کانال ۱۵ عبری:\n\nترامپ تمایل دارد حمله به ایران را تا زمان تشکیل یک دولت باثبات در اسرائیل به تعویق بیندازد؛ یک مقام سابق آمریکایی نزدیک به ترامپ نیز احتمال می‌دهد این عملیات تا ژانویه به تعویق بیفتد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9097\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 9097,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "کانال ۱۵ عبری:\n\nترامپ تمایل دارد حمله به ایران را تا زمان تشکیل یک دولت باثبات در اسرائیل به تعویق بیندازد؛ یک مقام سابق آمریکایی نزدیک به ترامپ نیز احتمال می‌دهد این عملیات تا ژانویه به تعویق بیفتد.\n\nHebrew Channel 15:\n\nTrump is leaning toward postponing an attack on Iran until a stable government is formed in Israel, with a former U.S. official close to Trump expecting the operation to be delayed until January.",
-          "output_text": "کانال ۱۵ عبری:\n\nترامپ تمایل دارد حمله به ایران را تا زمان تشکیل یک دولت باثبات در اسرائیل به تعویق بیندازد؛ یک مقام سابق آمریکایی نزدیک به ترامپ نیز احتمال می‌دهد این عملیات تا ژانویه به تعویق بیفتد.",
-          "last_edit_timestamp": 1795722212.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_9097",
-      "sent_timestamp": 1795721849.0021327,
-      "source_node": "Ali_bk_8",
-      "msg_id": 9097,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "کانال ۱۵ عبری:\n\nترامپ تمایل دارد حمله به ایران را تا زمان تشکیل یک دولت باثبات در اسرائیل به تعویق بیندازد؛ یک مقام سابق آمریکایی نزدیک به ترامپ نیز احتمال می‌دهد این عملیات تا ژانویه به تعویق بیفتد.\n\nHebrew Channel 15:\n\nTrump is leaning toward postponing an attack on Iran until a stable government is formed in Israel, with a former U.S. official close to Trump expecting the operation to be delayed until January.",
-      "output_text": "کانال ۱۵ عبری:\n\nترامپ تمایل دارد حمله به ایران را تا زمان تشکیل یک دولت باثبات در اسرائیل به تعویق بیندازد؛ یک مقام سابق آمریکایی نزدیک به ترامپ نیز احتمال می‌دهد این عملیات تا ژانویه به تعویق بیفتد.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795722212.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-26T20:14:07.949820+00:00"
+  "updated_at": "2026-11-26T20:40:31.407340+00:00"
 }
