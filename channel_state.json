@@ -1,8 +1,8 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28993,
-      "last_read_time": "2026-11-26 21:04:33 UTC"
+      "last_read_id": 28996,
+      "last_read_time": "2026-11-26 21:57:43 UTC"
     },
     "Ali_bk_8": {
       "last_read_id": 9100,
@@ -30,7 +30,43 @@
     "@DidehbanEghtesad": 1795674758.290145,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "withyashar_28995": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1255,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 گزارش پرتاب دو موشک از شیراز 🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28995\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1255,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 گزارش پرتاب دو موشک از شیراز 🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/28995\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 28995,
+          "media_icons": "📝",
+          "grouped_id": null,
+          "raw_text": "گزارش پرتاب دو موشک از شیراز\n@WarRoom 🚨🚨",
+          "output_text": "گزارش پرتاب دو موشک از شیراز\n@WarRoom 🚨🚨",
+          "last_edit_timestamp": 1795730088.3375003
+        }
+      ],
+      "active_text_source": "withyashar_28995",
+      "sent_timestamp": 1795730088.7880008,
+      "source_node": "withyashar",
+      "msg_id": 28995,
+      "media_icons": "📝",
+      "grouped_id": null,
+      "raw_text": "گزارش پرتاب دو موشک از شیراز\n@WarRoom 🚨🚨",
+      "output_text": "گزارش پرتاب دو موشک از شیراز\n@WarRoom 🚨🚨",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795730085.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-26T21:33:24.855823+00:00"
+  "updated_at": "2026-11-26T21:59:47.746553+00:00"
 }
