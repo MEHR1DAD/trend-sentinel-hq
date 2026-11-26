@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 28985,
-      "last_read_time": "2026-11-26 18:58:22 UTC"
+      "last_read_id": 28986,
+      "last_read_time": "2026-11-26 19:20:39 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 9095,
-      "last_read_time": "2026-11-26 18:02:43 UTC"
+      "last_read_id": 9097,
+      "last_read_time": "2026-11-26 19:36:52 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79263,
@@ -26,45 +26,11 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1795719537.3694346,
+    "@DidebanJang": 1795721848.5518324,
     "@DidehbanEghtesad": 1795674758.290145,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "VahidOnline_79263": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1252,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 «عباس عراقچی»، وزیر خارجه جمهوری اسلامی، پنج‌شنبه پنجم آذر۱۴۰۵ در گفت‌وگویی تلفنی با «جراح جابر الاحمد الصباح»، وزیر خارجه کویت، دخالت جمهوری اسلامی در حمله پهپادی به این کشور را رد کرد.\n\nاو همچنین از آمادگی جمهوری اسلامی برای انجام تحقیقات مشترک با کویت خبر داد.\n\n📷 <a href=\"https://t.me/VahidOnline/79263\">@VahidOnline</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1252,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 «عباس عراقچی»، وزیر خارجه جمهوری اسلامی، پنج‌شنبه پنجم آذر۱۴۰۵ در گفت‌وگویی تلفنی با «جراح جابر الاحمد الصباح»، وزیر خارجه کویت، دخالت جمهوری اسلامی در حمله پهپادی به این کشور را رد کرد.\n\nاو همچنین از آمادگی جمهوری اسلامی برای انجام تحقیقات مشترک با کویت خبر داد.\n\n📷 <a href=\"https://t.me/VahidOnline/79263\">@VahidOnline</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "VahidOnline",
-          "msg_id": 79263,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "«عباس عراقچی»، وزیر خارجه جمهوری اسلامی، پنج‌شنبه پنجم آذر۱۴۰۵ در گفت‌وگویی تلفنی با «جراح جابر الاحمد الصباح»، وزیر خارجه کویت، دخالت جمهوری اسلامی در حمله پهپادی به این کشور را رد کرد.\n\nاو همچنین از آمادگی جمهوری اسلامی برای انجام تحقیقات مشترک با کویت خبر داد.\n@VahidHeadline\n\n📡 @VahidOnline",
-          "output_text": "«عباس عراقچی»، وزیر خارجه جمهوری اسلامی، پنج‌شنبه پنجم آذر۱۴۰۵ در گفت‌وگویی تلفنی با «جراح جابر الاحمد الصباح»، وزیر خارجه کویت، دخالت جمهوری اسلامی در حمله پهپادی به این کشور را رد کرد.\n\nاو همچنین از آمادگی جمهوری اسلامی برای انجام تحقیقات مشترک با کویت خبر داد.\n@VahidHeadline\n\n📡 @VahidOnline",
-          "last_edit_timestamp": 1795718159.9349046
-        }
-      ],
-      "active_text_source": "VahidOnline_79263",
-      "sent_timestamp": 1795718160.4202752,
-      "source_node": "VahidOnline",
-      "msg_id": 79263,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "«عباس عراقچی»، وزیر خارجه جمهوری اسلامی، پنج‌شنبه پنجم آذر۱۴۰۵ در گفت‌وگویی تلفنی با «جراح جابر الاحمد الصباح»، وزیر خارجه کویت، دخالت جمهوری اسلامی در حمله پهپادی به این کشور را رد کرد.\n\nاو همچنین از آمادگی جمهوری اسلامی برای انجام تحقیقات مشترک با کویت خبر داد.\n@VahidHeadline\n\n📡 @VahidOnline",
-      "output_text": "«عباس عراقچی»، وزیر خارجه جمهوری اسلامی، پنج‌شنبه پنجم آذر۱۴۰۵ در گفت‌وگویی تلفنی با «جراح جابر الاحمد الصباح»، وزیر خارجه کویت، دخالت جمهوری اسلامی در حمله پهپادی به این کشور را رد کرد.\n\nاو همچنین از آمادگی جمهوری اسلامی برای انجام تحقیقات مشترک با کویت خبر داد.\n@VahidHeadline\n\n📡 @VahidOnline",
-      "is_seismic": false
-    },
     "withyashar_28985": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1253,
@@ -99,8 +65,43 @@
       "output_text": "کانال ۱۴ اسرائیل: باید با هماهنگی آمریکا یا حتی به‌صورت یک‌جانبه، حمله به ایران را در دستور کار قرار داد. هشدار داده می‌شود که هرگونه تأخیر در حمله، دستاوردهای قبلی را از بین می‌برد و در درگیری بعدی، اسرائیل مجبور خواهد شد همه‌چیز را از نقطه صفر آغاز کند. \n@WarRoom",
       "is_seismic": false,
       "last_edit_timestamp": 1795719511.0
+    },
+    "Ali_bk_8_9097": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1254,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 کانال ۱۵ عبری:\n\nترامپ تمایل دارد حمله به ایران را تا زمان تشکیل یک دولت باثبات در اسرائیل به تعویق بیندازد؛ یک مقام سابق آمریکایی نزدیک به ترامپ نیز احتمال می‌دهد این عملیات تا ژانویه به تعویق بیفتد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9097\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1254,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 کانال ۱۵ عبری:\n\nترامپ تمایل دارد حمله به ایران را تا زمان تشکیل یک دولت باثبات در اسرائیل به تعویق بیندازد؛ یک مقام سابق آمریکایی نزدیک به ترامپ نیز احتمال می‌دهد این عملیات تا ژانویه به تعویق بیفتد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9097\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 9097,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "کانال ۱۵ عبری:\n\nترامپ تمایل دارد حمله به ایران را تا زمان تشکیل یک دولت باثبات در اسرائیل به تعویق بیندازد؛ یک مقام سابق آمریکایی نزدیک به ترامپ نیز احتمال می‌دهد این عملیات تا ژانویه به تعویق بیفتد.\n\nHebrew Channel 15:\n\nTrump is leaning toward postponing an attack on Iran until a stable government is formed in Israel, with a former U.S. official close to Trump expecting the operation to be delayed until January.",
+          "output_text": "کانال ۱۵ عبری:\n\nترامپ تمایل دارد حمله به ایران را تا زمان تشکیل یک دولت باثبات در اسرائیل به تعویق بیندازد؛ یک مقام سابق آمریکایی نزدیک به ترامپ نیز احتمال می‌دهد این عملیات تا ژانویه به تعویق بیفتد.",
+          "last_edit_timestamp": 1795722212.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_9097",
+      "sent_timestamp": 1795721849.0021327,
+      "source_node": "Ali_bk_8",
+      "msg_id": 9097,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "کانال ۱۵ عبری:\n\nترامپ تمایل دارد حمله به ایران را تا زمان تشکیل یک دولت باثبات در اسرائیل به تعویق بیندازد؛ یک مقام سابق آمریکایی نزدیک به ترامپ نیز احتمال می‌دهد این عملیات تا ژانویه به تعویق بیفتد.\n\nHebrew Channel 15:\n\nTrump is leaning toward postponing an attack on Iran until a stable government is formed in Israel, with a former U.S. official close to Trump expecting the operation to be delayed until January.",
+      "output_text": "کانال ۱۵ عبری:\n\nترامپ تمایل دارد حمله به ایران را تا زمان تشکیل یک دولت باثبات در اسرائیل به تعویق بیندازد؛ یک مقام سابق آمریکایی نزدیک به ترامپ نیز احتمال می‌دهد این عملیات تا ژانویه به تعویق بیفتد.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795722212.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-26T19:21:24.025315+00:00"
+  "updated_at": "2026-11-26T19:47:44.572250+00:00"
 }
