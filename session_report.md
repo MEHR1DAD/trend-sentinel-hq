@@ -6,11 +6,11 @@
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** «عباس عراقچی»، وزیر خارجه جمهوری اسلامی، پنج‌شنبه پنجم آذر۱۴۰۵ در گفت‌وگویی تلفنی با «جراح جابر الاحمد الصباح»، وزیر خار
-- **Last Message Time:** 2026-11-26 18:34:54 UTC
+- **Last Message Text:** کانال ۱۴ اسرائیل: باید با هماهنگی آمریکا یا حتی به‌صورت یک‌جانبه، حمله به ایران را در دستور کار قرار داد. هشدار داده می‌
+- **Last Message Time:** 2026-11-26 18:58:22 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28984 (2026-11-26 17:09:59 UTC)
+- `@withyashar`: #28985 (2026-11-26 18:58:22 UTC)
 - `@Ali_bk_8`: #9095 (2026-11-26 18:02:43 UTC)
 - `@VahidOnline`: #79263 (2026-11-26 18:34:54 UTC)
 - `@iliaen`: #4760 (2026-11-24 14:12:55 UTC)
@@ -18,9 +18,10 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 110m ago
-- `@DidehbanEghtesad`: Last loud alert 742m ago
-- `@DidebanEterazat`: Last loud alert 26293m ago
+- `@DidebanJang`: Last loud alert 22m ago
+- `@DidehbanEghtesad`: Last loud alert 768m ago
+- `@DidebanEterazat`: Last loud alert 26320m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
-- `VahidOnline_79263` -> @DidebanJang (#1252) (📷, 18m ago)
+- `VahidOnline_79263` -> @DidebanJang (#1252) (📷, 45m ago)
+- `withyashar_28985` -> @DidebanJang (#1253) (🎥, 22m ago)
