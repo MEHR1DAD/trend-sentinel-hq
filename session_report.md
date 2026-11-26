@@ -1,26 +1,26 @@
 # Sentinel Session Report (v7.3.0 Zero-Race Engine)
 
 - **Uptime:** 26 minutes
-- **Messages Processed:** 0
+- **Messages Processed:** 5
 - **Alerts Dispatched:** 0
 - **Alerts Edited:** 0
 - **Alerts Deleted:** 0
 - **Active VIP Nodes:** 6 channels
-- **Last Message Text:** None
-- **Last Message Time:** None
+- **Last Message Text:** ما خودمون یه پیشگو داریم به اسم یاشار که از قبل به ما گفته بود درگیریا تا ۲۰۲۸ طول میکشه😁
+- **Last Message Time:** 2026-11-26 08:33:03 UTC
 
 ### 📌 حافظه وضعیت کانال‌ها (Channel Last Read Memory):
-- `@withyashar`: #28961 (2026-11-26 07:21:23 UTC)
-- `@Ali_bk_8`: #9073 (2026-11-26 07:13:17 UTC)
+- `@withyashar`: #28965 (2026-11-26 08:33:03 UTC)
+- `@Ali_bk_8`: #9074 (2026-11-26 08:20:32 UTC)
 - `@VahidOnline`: #79260 (2026-11-26 06:25:30 UTC)
 - `@iliaen`: #4760 (2026-11-24 14:12:55 UTC)
 - `@netblocks`: #1589 (2026-11-23 18:32:25 UTC)
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 641m ago
-- `@DidehbanEghtesad`: Last loud alert 105m ago
-- `@DidebanEterazat`: Last loud alert 25656m ago
+- `@DidebanJang`: Last loud alert 667m ago
+- `@DidehbanEghtesad`: Last loud alert 131m ago
+- `@DidebanEterazat`: Last loud alert 25683m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
 - *(No active posts in 60m edit/delete window)*
