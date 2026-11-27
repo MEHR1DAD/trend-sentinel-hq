@@ -31,41 +31,6 @@
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "Ali_bk_8_9110": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1256,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 تصاویری از عقب‌نشینی یک جنگنده آمریکایی F-16 پس از فعال‌سازی سامانه پدافند هوایی پیشرفته جدید سپاه پاسداران ایران در منطقه جنوب شرقی جزیره هنگام.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9110\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1256,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 تصاویری از عقب‌نشینی یک جنگنده آمریکایی F-16 پس از فعال‌سازی سامانه پدافند هوایی پیشرفته جدید سپاه پاسداران ایران در منطقه جنوب شرقی جزیره هنگام.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9110\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 9110,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "تصاویری از عقب‌نشینی یک جنگنده آمریکایی F-16 پس از فعال‌سازی سامانه پدافند هوایی پیشرفته جدید سپاه پاسداران ایران در منطقه جنوب شرقی جزیره هنگام.\n\nFootage shows a US F-16 fighter jet retreating after Iran's IRGC deployed its new advanced air defense system in the southeastern area of Hengam Island.",
-          "output_text": "تصاویری از عقب‌نشینی یک جنگنده آمریکایی F-16 پس از فعال‌سازی سامانه پدافند هوایی پیشرفته جدید سپاه پاسداران ایران در منطقه جنوب شرقی جزیره هنگام.",
-          "last_edit_timestamp": 1795764220.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_9110",
-      "sent_timestamp": 1795764196.0658925,
-      "source_node": "Ali_bk_8",
-      "msg_id": 9110,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "تصاویری از عقب‌نشینی یک جنگنده آمریکایی F-16 پس از فعال‌سازی سامانه پدافند هوایی پیشرفته جدید سپاه پاسداران ایران در منطقه جنوب شرقی جزیره هنگام.\n\nFootage shows a US F-16 fighter jet retreating after Iran's IRGC deployed its new advanced air defense system in the southeastern area of Hengam Island.",
-      "output_text": "تصاویری از عقب‌نشینی یک جنگنده آمریکایی F-16 پس از فعال‌سازی سامانه پدافند هوایی پیشرفته جدید سپاه پاسداران ایران در منطقه جنوب شرقی جزیره هنگام.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795764220.0
-    },
     "withyashar_29013": {
       "target_channel": "@DidebanJang",
       "bot_msg_id": 1257,
@@ -103,5 +68,5 @@
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-27T08:14:44.644147+00:00"
+  "updated_at": "2026-11-27T08:41:08.712329+00:00"
 }
