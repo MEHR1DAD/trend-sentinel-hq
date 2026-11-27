@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1795674758.290145,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_9131": {
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 سپاه پاسداران تصاویری از انفجار دو نفتکش در ورودی بندر خصب و شرق تنگه هرمز در ساعاتی پیش منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9131\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1267,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 سپاه پاسداران تصاویری از انفجار دو نفتکش در ورودی بندر خصب و شرق تنگه هرمز در ساعاتی پیش منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9131\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 9131,
-          "media_icons": "🎥",
-          "grouped_id": null,
-          "raw_text": "سپاه پاسداران تصاویری از انفجار دو نفتکش در ورودی بندر خصب و شرق تنگه هرمز در ساعاتی پیش منتشر کرد.\n\nThe IRGC releases footage of two oil tankers exploding at the entrance to Khasab Port and east of the Strait of Hormuz hours ago.",
-          "output_text": "سپاه پاسداران تصاویری از انفجار دو نفتکش در ورودی بندر خصب و شرق تنگه هرمز در ساعاتی پیش منتشر کرد.",
-          "last_edit_timestamp": 1795815762.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_9131",
-      "sent_timestamp": 1795815754.59582,
-      "source_node": "Ali_bk_8",
-      "msg_id": 9131,
-      "media_icons": "🎥",
-      "grouped_id": null,
-      "raw_text": "سپاه پاسداران تصاویری از انفجار دو نفتکش در ورودی بندر خصب و شرق تنگه هرمز در ساعاتی پیش منتشر کرد.\n\nThe IRGC releases footage of two oil tankers exploding at the entrance to Khasab Port and east of the Strait of Hormuz hours ago.",
-      "output_text": "سپاه پاسداران تصاویری از انفجار دو نفتکش در ورودی بندر خصب و شرق تنگه هرمز در ساعاتی پیش منتشر کرد.",
-      "is_seismic": false,
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1267,
-      "last_edit_timestamp": 1795815762.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-27T22:22:59.805790+00:00"
+  "updated_at": "2026-11-27T22:49:28.931094+00:00"
 }
