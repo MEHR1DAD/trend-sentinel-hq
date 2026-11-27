@@ -30,42 +30,7 @@
     "@DidehbanEghtesad": 1795674758.290145,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "withyashar_29020": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1258,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 نیروی دریایی سه پا : انفجار یک تانکر نفتی در اثر برخورد با مین در تنگه هرمز و بازگشت یک تانکر دیگر.\n\n📝 <a href=\"https://t.me/withyashar/29020\">@withyashar</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1258,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 نیروی دریایی سه پا : انفجار یک تانکر نفتی در اثر برخورد با مین در تنگه هرمز و بازگشت یک تانکر دیگر.\n\n📝 <a href=\"https://t.me/withyashar/29020\">@withyashar</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "withyashar",
-          "msg_id": 29020,
-          "media_icons": "📝",
-          "grouped_id": null,
-          "raw_text": "نیروی دریایی سه پا : انفجار یک تانکر نفتی در اثر برخورد با مین در تنگه هرمز و بازگشت یک تانکر دیگر.\n@WarRoom",
-          "output_text": "نیروی دریایی سه پا : انفجار یک تانکر نفتی در اثر برخورد با مین در تنگه هرمز و بازگشت یک تانکر دیگر.\n@WarRoom",
-          "last_edit_timestamp": 1795778408.0676327
-        }
-      ],
-      "active_text_source": "withyashar_29020",
-      "sent_timestamp": 1795778408.5320148,
-      "source_node": "withyashar",
-      "msg_id": 29020,
-      "media_icons": "📝",
-      "grouped_id": null,
-      "raw_text": "نیروی دریایی سه پا : انفجار یک تانکر نفتی در اثر برخورد با مین در تنگه هرمز و بازگشت یک تانکر دیگر.\n@WarRoom",
-      "output_text": "نیروی دریایی سه پا : انفجار یک تانکر نفتی در اثر برخورد با مین در تنگه هرمز و بازگشت یک تانکر دیگر.\n@WarRoom",
-      "is_seismic": false
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-27T11:46:05.846554+00:00"
+  "updated_at": "2026-11-27T12:24:04.233653+00:00"
 }
