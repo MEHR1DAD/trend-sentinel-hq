@@ -5,12 +5,12 @@
       "last_read_time": "2026-11-27 19:25:09 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 9130,
-      "last_read_time": "2026-11-27 21:25:54 UTC"
+      "last_read_id": 9134,
+      "last_read_time": "2026-11-27 21:49:05 UTC"
     },
     "VahidOnline": {
-      "last_read_id": 79269,
-      "last_read_time": "2026-11-27 17:12:42 UTC"
+      "last_read_id": 79275,
+      "last_read_time": "2026-11-27 21:42:09 UTC"
     },
     "iliaen": {
       "last_read_id": 4760,
@@ -30,7 +30,43 @@
     "@DidehbanEghtesad": 1795674758.290145,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "Ali_bk_8_9131": {
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 سپاه پاسداران تصاویری از انفجار دو نفتکش در ورودی بندر خصب و شرق تنگه هرمز در ساعاتی پیش منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9131\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1267,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 سپاه پاسداران تصاویری از انفجار دو نفتکش در ورودی بندر خصب و شرق تنگه هرمز در ساعاتی پیش منتشر کرد.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9131\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 9131,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "سپاه پاسداران تصاویری از انفجار دو نفتکش در ورودی بندر خصب و شرق تنگه هرمز در ساعاتی پیش منتشر کرد.\n\nThe IRGC releases footage of two oil tankers exploding at the entrance to Khasab Port and east of the Strait of Hormuz hours ago.",
+          "output_text": "سپاه پاسداران تصاویری از انفجار دو نفتکش در ورودی بندر خصب و شرق تنگه هرمز در ساعاتی پیش منتشر کرد.",
+          "last_edit_timestamp": 1795815762.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_9131",
+      "sent_timestamp": 1795815754.59582,
+      "source_node": "Ali_bk_8",
+      "msg_id": 9131,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "سپاه پاسداران تصاویری از انفجار دو نفتکش در ورودی بندر خصب و شرق تنگه هرمز در ساعاتی پیش منتشر کرد.\n\nThe IRGC releases footage of two oil tankers exploding at the entrance to Khasab Port and east of the Strait of Hormuz hours ago.",
+      "output_text": "سپاه پاسداران تصاویری از انفجار دو نفتکش در ورودی بندر خصب و شرق تنگه هرمز در ساعاتی پیش منتشر کرد.",
+      "is_seismic": false,
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1267,
+      "last_edit_timestamp": 1795815762.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-27T21:30:04.862350+00:00"
+  "updated_at": "2026-11-27T21:56:33.109628+00:00"
 }
