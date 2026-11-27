@@ -30,43 +30,7 @@
     "@DidehbanEghtesad": 1795674758.290145,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {
-    "Ali_bk_8_9124": {
-      "target_channel": "@DidebanJang",
-      "bot_msg_id": 1264,
-      "status_icon": "🔕",
-      "last_formatted_text": "🔕 شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز.\n\n📷 <a href=\"https://t.me/Ali_bk_8/9124\">@Ali_bk_8</a>",
-      "dispatches": [
-        {
-          "target_channel": "@DidebanJang",
-          "bot_msg_id": 1264,
-          "status_icon": "🔕",
-          "last_formatted_text": "🔕 شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز.\n\n📷 <a href=\"https://t.me/Ali_bk_8/9124\">@Ali_bk_8</a>"
-        }
-      ],
-      "sources": [
-        {
-          "source_node": "Ali_bk_8",
-          "msg_id": 9124,
-          "media_icons": "📷",
-          "grouped_id": null,
-          "raw_text": "شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز.\n\nMissiles launched toward noncompliant vessels in the Strait of Hormuz.",
-          "output_text": "شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز.",
-          "last_edit_timestamp": 1795802072.0
-        }
-      ],
-      "active_text_source": "Ali_bk_8_9124",
-      "sent_timestamp": 1795802044.7035089,
-      "source_node": "Ali_bk_8",
-      "msg_id": 9124,
-      "media_icons": "📷",
-      "grouped_id": null,
-      "raw_text": "شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز.\n\nMissiles launched toward noncompliant vessels in the Strait of Hormuz.",
-      "output_text": "شلیک موشک به سمت کشتی‌های متخلف در تنگه هرمز.",
-      "is_seismic": false,
-      "last_edit_timestamp": 1795802072.0
-    }
-  },
+  "sent_alerts_map": {},
   "pending_translations": {},
-  "updated_at": "2026-11-27T18:53:30.459818+00:00"
+  "updated_at": "2026-11-27T19:19:52.757430+00:00"
 }
