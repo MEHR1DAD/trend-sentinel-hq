@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 29044,
-      "last_read_time": "2026-11-28 04:54:46 UTC"
+      "last_read_id": 29046,
+      "last_read_time": "2026-11-28 05:31:26 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 9136,
-      "last_read_time": "2026-11-27 22:09:32 UTC"
+      "last_read_id": 9137,
+      "last_read_time": "2026-11-28 06:09:32 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79276,
@@ -30,7 +30,77 @@
     "@DidehbanEghtesad": 1795674758.290145,
     "@DidebanEterazat": 1794141668.1579325
   },
-  "sent_alerts_map": {},
+  "sent_alerts_map": {
+    "withyashar_29045": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1268,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 لحظه انفجار در خلیج فارس و تنگه هرمز از دید ایستگاه فضایی بین المللی! ثانیه 15 بالای تصویر !\n\n📷🎥 <a href=\"https://t.me/withyashar/29045\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1268,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 لحظه انفجار در خلیج فارس و تنگه هرمز از دید ایستگاه فضایی بین المللی! ثانیه 15 بالای تصویر !\n\n📷🎥 <a href=\"https://t.me/withyashar/29045\">@withyashar</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "withyashar",
+          "msg_id": 29045,
+          "media_icons": "📷🎥",
+          "grouped_id": 14366751088676892,
+          "raw_text": "لحظه انفجار در خلیج فارس و تنگه هرمز از دید ایستگاه فضایی بین المللی!\nثانیه 15 بالای تصویر !\n@WarRoom",
+          "output_text": "لحظه انفجار در خلیج فارس و تنگه هرمز از دید ایستگاه فضایی بین المللی!\nثانیه 15 بالای تصویر !\n@WarRoom",
+          "last_edit_timestamp": 1795845147.7494805
+        }
+      ],
+      "active_text_source": "withyashar_29045",
+      "sent_timestamp": 1795845148.1122777,
+      "source_node": "withyashar",
+      "msg_id": 29045,
+      "media_icons": "📷🎥",
+      "grouped_id": 14366751088676892,
+      "raw_text": "لحظه انفجار در خلیج فارس و تنگه هرمز از دید ایستگاه فضایی بین المللی!\nثانیه 15 بالای تصویر !\n@WarRoom",
+      "output_text": "لحظه انفجار در خلیج فارس و تنگه هرمز از دید ایستگاه فضایی بین المللی!\nثانیه 15 بالای تصویر !\n@WarRoom",
+      "is_seismic": false
+    },
+    "Ali_bk_8_9137": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1269,
+      "status_icon": "🔕",
+      "last_formatted_text": "🔕 تصاویر جدیدی از یک کشتی که روز گذشته در تنگه هرمز هدف قرار گرفت.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9137\">@Ali_bk_8</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1269,
+          "status_icon": "🔕",
+          "last_formatted_text": "🔕 تصاویر جدیدی از یک کشتی که روز گذشته در تنگه هرمز هدف قرار گرفت.\n\n🎥 <a href=\"https://t.me/Ali_bk_8/9137\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 9137,
+          "media_icons": "🎥",
+          "grouped_id": null,
+          "raw_text": "تصاویر جدیدی از یک کشتی که روز گذشته در تنگه هرمز هدف قرار گرفت.\n\nNew footage of a ship targeted in the Strait of Hormuz yesterday.",
+          "output_text": "تصاویر جدیدی از یک کشتی که روز گذشته در تنگه هرمز هدف قرار گرفت.",
+          "last_edit_timestamp": 1795846274.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_9137",
+      "sent_timestamp": 1795846226.0307608,
+      "source_node": "Ali_bk_8",
+      "msg_id": 9137,
+      "media_icons": "🎥",
+      "grouped_id": null,
+      "raw_text": "تصاویر جدیدی از یک کشتی که روز گذشته در تنگه هرمز هدف قرار گرفت.\n\nNew footage of a ship targeted in the Strait of Hormuz yesterday.",
+      "output_text": "تصاویر جدیدی از یک کشتی که روز گذشته در تنگه هرمز هدف قرار گرفت.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795846274.0
+    }
+  },
   "pending_translations": {},
-  "updated_at": "2026-11-28T05:52:03.142344+00:00"
+  "updated_at": "2026-11-28T06:18:25.523922+00:00"
 }
