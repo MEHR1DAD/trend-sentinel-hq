@@ -18,9 +18,9 @@
 - `@kianmeli1`: #93820 (2026-10-28 21:57:02 UTC)
 
 ### ⏱️ وضعیت بازه ۱۵ دقیقه‌ای هشدار فوری (Anti-Spam 15m Cooldown):
-- `@DidebanJang`: Last loud alert 382m ago
-- `@DidehbanEghtesad`: Last loud alert 2628m ago
-- `@DidebanEterazat`: Last loud alert 28179m ago
+- `@DidebanJang`: Last loud alert 408m ago
+- `@DidehbanEghtesad`: Last loud alert 2654m ago
+- `@DidebanEterazat`: Last loud alert 28206m ago
 
 ### 🔄 پیام‌های تحت پایش برای ویرایش و حذف (Active 60m Edit/Delete Watchers):
 - *(No active posts in 60m edit/delete window)*
