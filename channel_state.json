@@ -1,12 +1,12 @@
 {
   "channels": {
     "withyashar": {
-      "last_read_id": 29056,
-      "last_read_time": "2026-11-28 09:31:14 UTC"
+      "last_read_id": 29057,
+      "last_read_time": "2026-11-28 09:49:53 UTC"
     },
     "Ali_bk_8": {
-      "last_read_id": 9141,
-      "last_read_time": "2026-11-28 08:13:35 UTC"
+      "last_read_id": 9146,
+      "last_read_time": "2026-11-28 09:46:19 UTC"
     },
     "VahidOnline": {
       "last_read_id": 79276,
@@ -26,46 +26,82 @@
     }
   },
   "last_urgent_alert": {
-    "@DidebanJang": 1795809499.166983,
+    "@DidebanJang": 1795859407.32234,
     "@DidehbanEghtesad": 1795674758.290145,
     "@DidebanEterazat": 1794141668.1579325
   },
   "sent_alerts_map": {
-    "withyashar_29054": {
-      "target_channel": "@DidebanEterazat",
-      "bot_msg_id": 78,
+    "Ali_bk_8_9142": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1271,
       "status_icon": "🔕",
-      "last_formatted_text": "🔕 ‏رکنا گزارش داد کژال صادقی، زن ۳۹ ساله اهل سقز و مادر دو دختر، که بنا بر گزارش‌های منتشرشده همسرش او را به آتش کشیده بود، شامگاه جمعه ششم آذر پس از ۱۲ روز بستری در بیمارستان، بر اثر شدت جراحات ناشی از سوختگی جان باخت.\n\n📝 <a href=\"https://t.me/withyashar/29054\">@withyashar</a>",
+      "last_formatted_text": "🔕 فایننشال تایمز:\n\n۶ پهپادی که به پایگاه RAF Lakenheath حمله کردند، رهگیری شدند. پایگاه RAF Lakenheath بزرگ‌ترین پایگاه جنگنده‌های آمریکایی در اروپا است. این حادثه باعث فعال شدن «هشدار چارلی» در این پایگاه شد که دومین سطح بالای هشدار است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/9142\">@Ali_bk_8</a>",
       "dispatches": [
         {
-          "target_channel": "@DidebanEterazat",
-          "bot_msg_id": 78,
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1271,
           "status_icon": "🔕",
-          "last_formatted_text": "🔕 ‏رکنا گزارش داد کژال صادقی، زن ۳۹ ساله اهل سقز و مادر دو دختر، که بنا بر گزارش‌های منتشرشده همسرش او را به آتش کشیده بود، شامگاه جمعه ششم آذر پس از ۱۲ روز بستری در بیمارستان، بر اثر شدت جراحات ناشی از سوختگی جان باخت.\n\n📝 <a href=\"https://t.me/withyashar/29054\">@withyashar</a>"
+          "last_formatted_text": "🔕 فایننشال تایمز:\n\n۶ پهپادی که به پایگاه RAF Lakenheath حمله کردند، رهگیری شدند. پایگاه RAF Lakenheath بزرگ‌ترین پایگاه جنگنده‌های آمریکایی در اروپا است. این حادثه باعث فعال شدن «هشدار چارلی» در این پایگاه شد که دومین سطح بالای هشدار است.\n\n📷 <a href=\"https://t.me/Ali_bk_8/9142\">@Ali_bk_8</a>"
+        }
+      ],
+      "sources": [
+        {
+          "source_node": "Ali_bk_8",
+          "msg_id": 9142,
+          "media_icons": "📷",
+          "grouped_id": null,
+          "raw_text": "فایننشال تایمز:\n\n۶ پهپادی که به پایگاه RAF Lakenheath حمله کردند، رهگیری شدند. پایگاه RAF Lakenheath بزرگ‌ترین پایگاه جنگنده‌های آمریکایی در اروپا است. این حادثه باعث فعال شدن «هشدار چارلی» در این پایگاه شد که دومین سطح بالای هشدار است.\n\nThe Financial Times:\n\n6 drones that attacked RAF Lakenheath were intercepted. RAF Lakenheath is the largest US fighter jet base in Europe. The incident triggered a \"Charlie Alert\" at the base, the second-highest alert level.",
+          "output_text": "فایننشال تایمز:\n\n۶ پهپادی که به پایگاه RAF Lakenheath حمله کردند، رهگیری شدند. پایگاه RAF Lakenheath بزرگ‌ترین پایگاه جنگنده‌های آمریکایی در اروپا است. این حادثه باعث فعال شدن «هشدار چارلی» در این پایگاه شد که دومین سطح بالای هشدار است.",
+          "last_edit_timestamp": 1795859412.0
+        }
+      ],
+      "active_text_source": "Ali_bk_8_9142",
+      "sent_timestamp": 1795858901.2824712,
+      "source_node": "Ali_bk_8",
+      "msg_id": 9142,
+      "media_icons": "📷",
+      "grouped_id": null,
+      "raw_text": "فایننشال تایمز:\n\n۶ پهپادی که به پایگاه RAF Lakenheath حمله کردند، رهگیری شدند. پایگاه RAF Lakenheath بزرگ‌ترین پایگاه جنگنده‌های آمریکایی در اروپا است. این حادثه باعث فعال شدن «هشدار چارلی» در این پایگاه شد که دومین سطح بالای هشدار است.\n\nThe Financial Times:\n\n6 drones that attacked RAF Lakenheath were intercepted. RAF Lakenheath is the largest US fighter jet base in Europe. The incident triggered a \"Charlie Alert\" at the base, the second-highest alert level.",
+      "output_text": "فایننشال تایمز:\n\n۶ پهپادی که به پایگاه RAF Lakenheath حمله کردند، رهگیری شدند. پایگاه RAF Lakenheath بزرگ‌ترین پایگاه جنگنده‌های آمریکایی در اروپا است. این حادثه باعث فعال شدن «هشدار چارلی» در این پایگاه شد که دومین سطح بالای هشدار است.",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795859412.0
+    },
+    "withyashar_29057": {
+      "target_channel": "@DidebanJang",
+      "bot_msg_id": 1272,
+      "status_icon": "🚨",
+      "last_formatted_text": "🚨 گزارش های زیاد از بندر عباس : انفجار‌خیلیییی شدید ، شاید مهمات باشه ولی خیلی شدید 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/29057\">@withyashar</a>",
+      "dispatches": [
+        {
+          "target_channel": "@DidebanJang",
+          "bot_msg_id": 1272,
+          "status_icon": "🚨",
+          "last_formatted_text": "🚨 گزارش های زیاد از بندر عباس : انفجار‌خیلیییی شدید ، شاید مهمات باشه ولی خیلی شدید 🚨🚨🚨🚨\n\n📝 <a href=\"https://t.me/withyashar/29057\">@withyashar</a>"
         }
       ],
       "sources": [
         {
           "source_node": "withyashar",
-          "msg_id": 29054,
+          "msg_id": 29057,
           "media_icons": "📝",
           "grouped_id": null,
-          "raw_text": "‏رکنا گزارش داد کژال صادقی، زن ۳۹ ساله اهل سقز و مادر دو دختر، که بنا بر گزارش‌های منتشرشده همسرش او را به آتش کشیده بود، شامگاه جمعه ششم آذر پس از ۱۲ روز بستری در بیمارستان، بر اثر شدت جراحات ناشی از سوختگی جان باخت.\n@WarRoom",
-          "output_text": "‏رکنا گزارش داد کژال صادقی، زن ۳۹ ساله اهل سقز و مادر دو دختر، که بنا بر گزارش‌های منتشرشده همسرش او را به آتش کشیده بود، شامگاه جمعه ششم آذر پس از ۱۲ روز بستری در بیمارستان، بر اثر شدت جراحات ناشی از سوختگی جان باخت.\n@WarRoom",
-          "last_edit_timestamp": 1795856241.5626795
+          "raw_text": "گزارش های زیاد از بندر عباس : انفجار‌خیلیییی شدید ، شاید مهمات باشه ولی خیلی شدید \n@WarRoom 🚨🚨🚨🚨",
+          "output_text": "گزارش های زیاد از بندر عباس : انفجار‌خیلیییی شدید ، شاید مهمات باشه ولی خیلی شدید \n@WarRoom 🚨🚨🚨🚨",
+          "last_edit_timestamp": 1795859407.3223376
         }
       ],
-      "active_text_source": "withyashar_29054",
-      "sent_timestamp": 1795856241.9929109,
+      "active_text_source": "withyashar_29057",
+      "sent_timestamp": 1795859407.8732507,
       "source_node": "withyashar",
-      "msg_id": 29054,
+      "msg_id": 29057,
       "media_icons": "📝",
       "grouped_id": null,
-      "raw_text": "‏رکنا گزارش داد کژال صادقی، زن ۳۹ ساله اهل سقز و مادر دو دختر، که بنا بر گزارش‌های منتشرشده همسرش او را به آتش کشیده بود، شامگاه جمعه ششم آذر پس از ۱۲ روز بستری در بیمارستان، بر اثر شدت جراحات ناشی از سوختگی جان باخت.\n@WarRoom",
-      "output_text": "‏رکنا گزارش داد کژال صادقی، زن ۳۹ ساله اهل سقز و مادر دو دختر، که بنا بر گزارش‌های منتشرشده همسرش او را به آتش کشیده بود، شامگاه جمعه ششم آذر پس از ۱۲ روز بستری در بیمارستان، بر اثر شدت جراحات ناشی از سوختگی جان باخت.\n@WarRoom",
-      "is_seismic": false
+      "raw_text": "گزارش های زیاد از بندر عباس : انفجار‌خیلیییی شدید ، شاید مهمات باشه ولی خیلی شدید \n@WarRoom 🚨🚨🚨🚨",
+      "output_text": "گزارش های زیاد از بندر عباس : انفجار‌خیلیییی شدید ، شاید مهمات باشه ولی خیلی شدید \n@WarRoom 🚨🚨🚨🚨",
+      "is_seismic": false,
+      "last_edit_timestamp": 1795859405.0
     }
   },
   "pending_translations": {},
-  "updated_at": "2026-11-28T09:34:43.803206+00:00"
+  "updated_at": "2026-11-28T10:01:06.317673+00:00"
 }
